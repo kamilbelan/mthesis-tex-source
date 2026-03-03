@@ -4,4 +4,158 @@
 \chapter{SPH}
 \label{chap:SPH}
 
+\section{Overview of SPH}
+\label{sec:SPH_OVERVIEW}
+
+\subsection{Pros and cons}
+\label{sec:PROS_CONS}
+
+\subsection{Uses}
+\label{sec:USES}
+
+\section{Cornerstones of SPH}
+\label{sec:CORNERSTONES}
+
+\subsection{Partition}
+\label{sec:PARTITION}
+
+\subsection{Kernel interpolation}
+\label{sec:INTERPOLATIOn}
+
+\subsection{Differential operators}
+\label{sec:DIFF_OPS}
+
+\section{SPH formulations}
+\label{sec:FORMULATIONS}
+
+\subsection{WCSPH}
+\label{sec:WCSPH}
+
+\subsection{Hopkins}
+\label{sec:HOPKINS}
+
+\subsubsection{Pressure - entropy}
+\label{sec:HOPKINS_PE}
+Recall that the entropy of an isentropic flow of an ideal gas has the form
+
+\begin{equations}[single,*]
+\eta = \eta_0 + c_v \log\left(\frac{P}{\rho^{\gamma}}\right)
+\end{equations}
+
+and $\eta = \, \text{const} \,.$ We see that the quantity $A$ defined as
+
+\begin{equations}[single,*]
+A = \frac{P}{\rho^{\gamma}},
+\end{equations}
+is in fact equal to
+
+\begin{equations}[single,*]
+A = \exp\left(\frac{\eta - \eta_0}{c_v}\right),
+\end{equations}
+meaning that the flow is \emph{isentropic,} if and only if the quantity $A$ is \emph{conserved} under the flow. Thus $A$ is a \emph{entropy-like} variable: conserved under isentropic flows.
+
+The choice
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:x_PE}
+	x_i = m_i A_i^{\frac{1}{\gamma}},
+\end{equations}
+
+gives the pressure $P_i$ as
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:P_PE}
+	P_i = \left(\sum_{j=1}^N m_j A_j^{\frac{1}{\gamma}} w_{ij}(h_i)\right)^{\gamma}
+\end{equations}
+
+and the evolution equations as
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:v_PE}
+	\dv{\vb{v}_i}{t} = - \sum_{j=1}^N m_j \left(A_i A_j\right)^{\frac{1}{\gamma}}\left(\frac{f_{i}P_i}{P_{i}^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_i\right) + \frac{f_{j}P_j}{P^{\frac{2}{\gamma}}_{j}} \nabla_i w_{ij}\left(h_j\right)\right),
+\end{equations}
+
+with
+
+\begin{equations}[single,*]
+	\label{eq:f_PE}
+	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}
+\end{equations}
+
+\subsubsection{Pressure - potential temperature}
+\label{sec:HOPKINS_theta}
+
+Recall the \emph{potential temperature} $\theta$
+
+\begin{equations}[single,*]
+\theta = T \left(\frac{P_0}{P}\right)^{\frac{R}{c_p}},
+\end{equations}
+
+where $T$ is the gas's \textcolor{gray}{thermodynamic} temperature, and $P_0$ is the reference pressure.\footnote{Potential temperature is the thermodynamic temperature the air parcel would possess if \emph{adiabatically} moved from the thermodynamic state $\left(T, P\right)$ to the state $\left(\theta, P_0\right).$} Using the thermal state equation
+
+\begin{equations}[single,*]
+P = R \rho T,
+\end{equations}
+
+together with the fact 
+
+\begin{equations}[single,*]
+\frac{R}{c_p} = \frac{\gamma - 1}{\gamma},
+\end{equations}
+
+we obtain
+
+\begin{equations}[single,*]
+\theta = \frac{P}{\rho R} P_0^{\frac{\gamma - 1}{\gamma}} P^{\frac{1 - \gamma}{\gamma}} = \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{P^{\frac{1}{\gamma}}}{\rho}\right) = \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}\left(\frac{P}{\rho^{\gamma}}\right)^{\frac{1}{\gamma}} = \frac{P_{0}^{\frac{\gamma - 1}{\gamma}}}{R} A^{\frac{1}{\gamma}},
+\end{equations}
+
+so setting 
+
+\begin{equations}[single,*]
+\tilde{\theta}_0 \coloneq \frac{P_0^{\frac{\gamma - 1}{\gamma}}}{R}
+\end{equations}
+
+we obtain
+
+\begin{equations}[single, !,numberline=all]
+	\label{eq:theta_A}
+	\theta = \tilde{\theta}_0 A^{\frac{1}{\gamma}}.
+\end{equations}
+
+Rewriting \ref{eq:x_PE} using \ref{eq:theta_A} we obtain
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:x_Ptheta}
+x_i = \frac{m_i}{\tilde{\theta}_0} \theta_i,
+\end{equations}
+
+and from \ref{eq:v_PE} we obtain
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:v_Ptheta}
+\dv{\vb{v}_i}{t} = - \sum_{j=1}^N m_j \frac{\theta_i \theta_j}{\tilde{\theta}_0^{2}}\left(\frac{f_{i}P_i}{P_i^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_i\right) + \frac{f_{j}P_j}{P_j^{\frac{2}{\gamma}}} \nabla_i w_{ij}\left(h_j\right)\right),
+\end{equations}
+
+with again
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:f_Ptheta}
+	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}
+\end{equations}
+
+\subsection{Comparison of the formulations}
+\label{sec:COMPARISON}
+
+\section{Additional techniques}
+\label{sec:EXTRA}
+
+\subsection{Packing algorithm}
+\label{sec:PACKING}
+
+\subsection{Adaptive smoothing length}
+\label{sec:ADAPTIVE_SMOOTHING}
+
+\subsection{Initial configuration}
+\label{sec:INITIAL_CONFIG}
+
 \end{document}
