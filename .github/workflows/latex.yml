@@ -40,6 +40,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
+          texlive_version: 2024
           compiler: latexmk
           args: -pdf
           working_directory: .
