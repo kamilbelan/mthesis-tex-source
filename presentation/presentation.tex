@@ -1,0 +1,306 @@
+%!TeX program = lualatex
+\documentclass[10pt, aspectratio=169, t]{beamer}
+\include{preamble.tex}
+
+% TITLE
+
+\title{\textbf{Numerical methods for the simulation of air flow past a mountain}}
+\subtitle{Master thesis presentation}
+\author{Kamil Belán}
+\date{\today}
+\addtobeamertemplate{frametitle}{}{\vspace{0.5em}}
+\begin{document}
+
+{
+	\setbeamercolor{background canvas}{bg=PaperBg}
+	\begin{frame}[plain]
+		\centering
+		\vspace*{\fill} % Pushes content to vertical center
+
+		{\Huge \textbf{\color{DragonRed} \inserttitle}} \\[0.5em]
+		\rule{0.6\textwidth}{0.5pt} \\[0.8em] % Minimalistic line
+
+		{\Large \color{DragonGray} \insertsubtitle} \\
+
+		\vspace{1.5cm}
+
+		{\large \textbf{\insertauthor}} \\[0.5em]
+		{\footnotesize \insertdate}
+
+		\vspace*{\fill}
+	\end{frame}
+}
+\begin{frame}{Presentation outline}
+	\tableofcontents
+	\vfill
+\end{frame}
+
+\section{Problem settings}
+\label{sec:SETTINGS}
+
+\begin{frame}{Phenomena}
+	The presence of complicated topography can have significant influence on the atmospheric state, leading to complicated \textbf{mesoscale phenomena.} Our main goal is to capture \textbf{internal gravity waves}, which influence
+	\vspace{1em}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.45\textwidth}
+		\begin{itemize}
+			\setlength{\itemsep}{1.5em} 
+			\item clear air turbulence,
+			\item transport and mixing dynamics,
+			\item downhill windstorms.
+		\end{itemize}
+		\column{0.55\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/clouds.jpg}
+		\vspace{0.5em}
+		{\tiny \textit{Mountain waves. \href{https://unsplash.com/photos/white-clouds-over-mountains-during-daytime-I8CF-ST8WxE}{Source: Marc Thunis}}\par}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Stratification}
+	The source of all interesting phenomena of our interest is the \textbf{stratification} of some physical quantities - \emph{density, pressure} and mainly \textbf{potential temperature.}
+
+	\vspace{1em}
+
+	\begin{columns}[T,onlytextwidth]
+		\begin{column}{0.55\textwidth}
+			\centering
+			\textbf{Internal gravity wave prototype}\\[1em]
+			\resizebox{\textwidth}{!}{%
+				\begin{tikzpicture}[node distance = 2cm]
+					\node (A) [draw, align=center, text width=3.5cm] at (0,2) {\scriptsize an air parcel ascends to a region of lower density};
+					\node (B) [draw, align=center, text width=3.5cm] at (3.5,0) {\scriptsize buoyancy decreases; gravity drives it downward};
+					\node (C) [draw, align=center, text width=3.5cm] at (0,-2) {\scriptsize the parcel reaches a region of higher density};
+					\node (D) [draw, align=center, text width=3.5cm] at (-3.5,0) {\scriptsize buoyancy increases; buoyancy force drives it upward};
+
+					\draw[->,thick] (A) -- (B);
+					\draw[->,thick] (B) -- (C);
+					\draw[->,thick] (C) -- (D);
+					\draw[->,thick] (D) -- (A);
+				\end{tikzpicture}%
+			}
+
+			\vspace{1em}
+		\end{column}
+
+		\begin{column}{0.40\textwidth}
+			\textbf{Potential Temperature} $\theta$
+			\vspace{0.5em}
+			\begin{itemize}
+				\setlength{\itemsep}{1.5em} 
+				\item thermodynamic temperature of an air parcel if it were \emph{adiabatically} moved from $(T, P)$ to $(\theta, P_0)$
+				\item conserved under isentropic flows
+				\item \textbf{stability condition} $$\partial_{y} \theta > 0.$$ 
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\section{Mathematical description}
+\label{sec:MATH}
+\begin{frame}{Governing equations}
+
+	\begin{itemize}
+		\item air is modelled as a dry inviscid ideal gas
+		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain the evolution is given by the \emph{compressible Euler equations}
+	\end{itemize}
+	\begin{math-block}{System of equations}
+		\begin{equations}[columns,*]
+			\rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g}, \\
+			\dv{\rho}{t} + \rho\left(\divergence{\vb{v}}\right) &= 0,\\
+			\dv{\theta}{t} &= 0,\\
+			p\left(\rho, T\right) &= \rho R T.
+		\end{equations}
+	\end{math-block}
+\end{frame}
+
+\begin{frame}{Boundary Conditions}
+	\begin{columns}[T,onlytextwidth]
+
+		\begin{column}{0.5\textwidth}
+			The boundary conditions on $\partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$ for the velocity field $\vb{v}$ read as
+			\begin{math-block}{Velocity boundary conditions}
+				\begin{equations}[columns,*]
+					\vb{v} &= v_0 \vb{e}_x, \, \text{on} \, \Gamma_{\, \text{west} \,}, \\
+					\vb{v} \vdot \vb{n} &= 0, \, \text{on} \, \Gamma_{\, \text{bot} \,}, \\
+					\partial_{x} p &= 0, \, \text{on} \, \Gamma_{\, \text{east} \,}, \\
+				\end{equations}
+			\end{math-block}
+			\vspace{0.5em}
+
+			together with a \emph{radiative boundary condition} on $\Gamma_{\, \text{top} \,}.$
+			\vspace{1em}
+		\end{column}
+
+		\begin{column}{0.45\textwidth}
+			\centering
+
+			\resizebox{0.9\textwidth}{!}{%
+				\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
+					% Boundaries
+					\draw[thick, blue] (-3,0.5) -- (-3,3.5); % <--- FIX IS HERE
+					\node[left, black, font=\small] at (-3, 1) {$\Gamma_{\text{west}}$};
+
+					\draw[thick, red] (3,0.5) -- (3,3.5) node[midway, right, black] {$\Gamma_{\text{east}}$};
+					\draw[thick, gray, dashed] (-3,3.5) -- (3,3.5) node[midway, above, black] {$\Gamma_{\text{top}}$};
+
+					\draw[thick, brown, domain=-3:3, samples=100] plot (\x, {0.5 + 1.5/( \x*\x + 1 )});
+					\node[below] at (0,0.5) {$\Gamma_{\text{bot}}$};
+
+					\node at (0,2.5) {\Large $\Omega$};
+
+					\draw[->, thick] (-4.3, 2) -- (-3.4, 2) node[midway, above] {$v_0\vb{e}_x$};
+				\end{tikzpicture}%
+			}
+
+			\vspace{0.5em}
+
+			\resizebox{\textwidth}{!}{%
+				\begin{tikzpicture}
+					\begin{axis}[
+						xlabel={$x$ (km)},
+						ylabel={$h(x)$ (m)},
+						xlabel style={anchor=north east},  
+						ylabel style={anchor=south east},  
+						xmin=-200, xmax=200,
+						ymin=0, ymax=110, 
+						xtick={-200,-100,0,100,200},  
+						ytick={0,25,50,75,100},  
+						axis lines=middle,
+						width=8cm, 
+						height=5cm,
+						]
+						\addplot[thick, black, domain=-200:200, samples=200] {10000/(x^2 + 100)};
+					\end{axis}
+				\end{tikzpicture}%
+			}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Initial conditions}
+	The initial conditions are given by an \textbf{isothermal hydrostatic balance} at $T_0 = \SI{250}{\kelvin}$
+	\begin{math-block}{Initial conditions}
+		\begin{equations}[columns,*]
+			\vb{v}\left(0, \vb{x}\right) &= \vb{0},\\
+			\rho\left(0, \vb{x}\right) &= \rho_0 \exp\left(-x_2 \frac{g}{R T_0}\right) \\
+			\theta\left(0, \vb{x}\right) &= T_0\left(\frac{p\left(\rho_0, T_0\right)}{P_0}\right)^{\frac{R}{c_p}}
+		\end{equations}
+	\end{math-block}
+	from the state equations it follows for the pressure
+
+	\begin{equations}[single,*]
+		p\left(0, \vb{x}\right) = \rho_0 R T_0 \exp\left(-x_2 \frac{g}{R T_0}\right).
+	\end{equations}
+
+\end{frame}
+
+\section{Numerical solution}
+\label{sec:NUMERICS}
+\begin{frame}{Smoothed Particle Hydrodynamics}
+	The governing equations are solved numericaly using the \textbf{Smoothed Particle Hydrodynamics (SPH)} method
+	\begin{itemize}
+		\item the fluid is partitioned into \emph{abstract material points}, so called \textbf{particles}
+		\item particle $a$ possess its $\vb{v}_a, \rho_a, \theta_a, p_a$ and interact \textbf{locally}
+		\item \emph{PDE's} for the continuum become \emph{ODE's} for the particles
+		\item main tool is the \textbf{interpolation kernel} $w_h\left(\vb{x}\right)$
+	\end{itemize}
+
+	\begin{equations}[columns,*]
+		\Phi\qty(t,\vb{x}) = \Phi\qty(t,\vb{x}) \star \delta\qty(\vb{x}) &=\int_{\Omega}\Phi\qty(t,\vb{x}') \delta\qty(\vb{x}-\vb{x}')\dd{\vb{x}'} \Rightarrow \\
+		[\Phi]^C_{w_h}\qty(t,\vb{x}) \coloneq \Phi\qty(t,\vb{x}) \star w_h\qty(\vb{x}) &= \int_{\Omega}\Phi\qty(t,\vb{x}')w_h\qty(\vb{x}-\vb{x}')\dd{\vb{x}'}, \\
+		\Phi_a(t) \equiv [\Phi]_{w_h}^D(t,\vb{x}_a) &\coloneq \sum_b \Phi_a w_{ab} V_b,\\
+		\Phi(t,\vb{x}) &\approx [\Phi]_{w_h}^C\qty(t,\vb{x}) \approx \Phi_a(t)
+	\end{equations}
+\end{frame}
+
+\begin{frame}{Different formulations}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.4\textwidth}
+		\centering
+		\begin{math-block}{Classical SPH}
+			\begin{equations}[columns,*]
+				\dv{\rho_a}{t} &= \sum_b m_b w'_{ab} \vb{v}_{ab}\vdot \vb{e}_{ab}, \\
+				\dv{\vb{v}_a}{t} &= -\sum_b\qty(\frac{p_a^{2}}{\rho_a}+\frac{p_b^{2}}{\rho_b})w'_{ab}\vb{e}_{ab} + \vb{g},
+			\end{equations}
+		\end{math-block}
+		\begin{itemize}
+			\item poor conservation properties, $\theta$ has to be computed extra,
+			\item not suitable for advanced techniques \textit{e.g.} \emph{adaptive $h$}.
+		\end{itemize}
+
+		\column{0.55\textwidth}
+		\centering
+		\begin{math-block}{$p-\theta$ formulation}
+			\begin{equations}[columns,*]
+				P_a &= \left(\sum_{b} \frac{m_b}{\tilde{\theta_0}} \theta_b w_{ab}\left(h_a\right)\right)^{\gamma},\\
+				\dv{\vb{v}_a}{t} &= - \sum_{b} m_b \frac{\theta_a \theta_b}{\tilde{\theta}_0^{2}}\left(\frac{f_{a}P_a}{P_a^{2/\gamma}} w'_{ab}\left(h_a\right) + \frac{f_{b}P_b}{P_b^{2/\gamma}} w'_{ab}\left(h_b\right)\right)\vb{e}_{ab} + \vb{g},\\
+				\theta_a &= \, \text{const} \,
+			\end{equations}
+		\end{math-block}
+		\begin{itemize}
+			\item guaranteed conservation properties, uses the primary variable $\theta$ directly
+			\item naturally includes formulations with adaptive $h$.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\section{Results}
+\label{sec:RESULTS}
+
+\begin{frame}{Without well-balancing}
+	\centering
+	\vspace*{\fill}
+
+	\textbf{Classical SPH}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/standardWCSPH.pdf}
+
+	\vspace{0.5em} 
+
+	\textbf{$p-\theta$ formulation}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/standardHopkins.pdf}
+
+	\vspace*{\fill}
+\end{frame}
+
+\begin{frame}{With well-balancing}
+	\centering
+	\vspace*{\fill}
+
+	\textbf{Classical SPH} 
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/WBalancedWCSPH.pdf}
+
+	\vspace{0.5em}
+
+	\textbf{$p-\theta$ formulation}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/WBalancedHopkins.pdf}
+
+	\vspace*{\fill}
+\end{frame}
+
+\begin{frame}{Summary and future plans}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.4\textwidth}
+		\centering
+		\textbf{Summary}
+		\begin{itemize}
+			\setlength{\itemsep}{1.5em} 
+			\item flows around a topography induce internal gravity waves
+			\item IGWs play a significant role in mesoscale atmospheric dynamics
+			\item large scale hydrostatic balance is problematic for classical SPH 
+			\item well-balanced schemes must to be used for non-stationary flows
+		\end{itemize}
+		\column{0.55\textwidth}
+		\centering
+		\textbf{Plans}
+		\begin{itemize}
+			\item \textbf{boundary conditions}, include real topography
+			\item comparison with other methods: \emph{finite differences, DG}
+		\end{itemize}
+		\includegraphics[width=\textwidth]{figures/results.jpg}
+		\vspace{0.5em}
+		{\tiny \textit{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}\par}
+	\end{columns}
+\end{frame}
+
+\end{document}
