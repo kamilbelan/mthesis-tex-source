@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  7 APR 2026 13:54
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  7 APR 2026 18:10
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2062,6 +2062,9 @@ File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 (./preamble/user/main.tex (./preamble/user/macros.tex
 (/opt/texlive/texdir/texmf-dist/tex/generic/hologo/hologo.sty
 Package: hologo 2021-11-16 v1.15 A logo collection with bookmark support (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ))
 (./preamble/user/math.tex)))
 (/opt/texlive/texdir/texmf-dist/tex/latex/subfiles/subfiles.sty
@@ -2379,7 +2382,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [3
 
 ]
-Overfull \hbox (3.4041pt too wide) detected at line 104
+Overfull \hbox (3.4041pt too wide) detected at line 106
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
@@ -2395,9 +2398,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 
-LaTeX Warning: Reference `eq:f_PE' on page 5 undefined on input line 142.
+LaTeX Warning: Reference `eq:f_PE' on page 5 undefined on input line 144.
 
-) (./chapters/trixi.tex
+) (./chapters/experiments.tex
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2474,25 +2477,25 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 60980 strings out of 475512
+ 61138 strings out of 475512
  125086,2848258 words of node,token memory allocated
- 5626 words of node memory still in use:
+ 5616 words of node memory still in use:
    72 hlist, 9 vlist, 14 rule, 20 disc, 3 local_par, 12 math, 108 glue, 28 kern,
- 6 penalty, 7 margin_kern, 192 glyph, 257 attribute, 111 glue_spec, 257 attribut
-e_list, 2 write, 118 pdf_literal, 3 pdf_action, 34 pdf_colorstack nodes
-   avail lists: 1:3,2:1197,3:921,4:132,5:400,6:136,7:2470,8:86,9:1055,10:14,11:1
-90
- 82132 multiletter control sequences out of 65536+600000
- 141 fonts using 10779319 bytes
- 109i,14n,121p,2020b,3020s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></o
-pt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf>
-{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/opt/texlive/t
-exdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/texdir/texmf-dis
-t/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/l
-m/lm-mathex.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman
-8-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman12
--italic.otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</
+ 6 penalty, 7 margin_kern, 192 glyph, 256 attribute, 111 glue_spec, 256 attribut
+e_list, 2 write, 118 pdf_literal, 2 pdf_action, 34 pdf_colorstack nodes
+   avail lists: 1:3,2:1268,3:921,4:135,5:400,6:137,7:2434,8:86,9:1057,10:14,11:1
+88
+ 82281 multiletter control sequences out of 65536+600000
+ 142 fonts using 10905407 bytes
+ 109i,14n,121p,2020b,3014s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/opt/texliv
+e/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/texdir/texmf-
+dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/texdir/texmf-dist/fonts/enc/dvip
+s/lm/lm-mathex.enc}</opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmro
+man8-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroma
+n12-italic.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmmono8-
+regular.otf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</
 opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></o
 pt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></opt
 /texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromanslant12-regular.otf><
@@ -2516,10 +2519,10 @@ pe1/public/lm/lmr6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmr
 live/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texm
 f-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (15 pages, 426021 bytes).
+Output written on main.pdf (15 pages, 430377 bytes).
 
-PDF statistics: 586 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 131072)
+PDF statistics: 594 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 131072)
  510 words of extra memory for PDF output out of 10000 (max. 100000000)
 
