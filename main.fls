@@ -115,7 +115,7 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/parskip/parskip.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/csquotes/csquotes.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/csquotes/csquotes.def
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/csquotes/csquotes.cfg
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/paralist/paralist.sty
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT ./preamble/general/floats.tex
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
@@ -531,8 +531,12 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cmbright/cmbrmi8.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
-INPUT ./chapters/mtn_wvs.tex
-INPUT ./chapters/mtn_wvs.tex
+INPUT ./chapters/oro_flows.tex
+INPUT ./chapters/oro_flows.tex
+INPUT ./figures/clouds.pdf
+INPUT ./figures/clouds.pdf
+INPUT ./figures/clouds.pdf
+INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmsans8-regular.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
 INPUT ./chapters/sph.tex
 INPUT ./chapters/sph.tex
