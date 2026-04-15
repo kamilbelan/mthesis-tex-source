@@ -533,9 +533,9 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
 INPUT ./chapters/oro_flows.tex
 INPUT ./chapters/oro_flows.tex
-INPUT ./figures/clouds.pdf
-INPUT ./figures/clouds.pdf
-INPUT ./figures/clouds.pdf
+INPUT ./figures/oro_flows/clouds.pdf
+INPUT ./figures/oro_flows/clouds.pdf
+INPUT ./figures/oro_flows/clouds.pdf
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmsans8-regular.luc
 INPUT /opt/texlive/texdir/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
 INPUT ./chapters/sph.tex

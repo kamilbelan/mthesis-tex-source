@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  14 APR 2026 19:26
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  15 APR 2026 19:58
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2356,10 +2356,11 @@ Package zref-clever Warning: Reference format option 'Name-sg' undefined for
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
 (zref-clever)                type 'sidenote' on line 12.
 
-<./figures/clouds.pdf, id=239, 1110.0672pt x 832.5504pt>
-File: ./figures/clouds.pdf Graphic file (type pdf)
-<use ./figures/clouds.pdf>
-Package luatex.def Info: ./figures/clouds.pdf  used on input line 33.
+<./figures/oro_flows/clouds.pdf, id=239, 1110.0672pt x 832.5504pt>
+File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
+<use ./figures/oro_flows/clouds.pdf>
+Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 33.
+
 (luatex.def)             Requested size: 320.0pt x 239.99791pt.
 
 
@@ -2385,7 +2386,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-15.39998pt}.
 
-[2<./figures/clouds.pdf>]
+[2<./figures/oro_flows/clouds.pdf>]
 Overfull \hbox (20.47069pt too wide) in paragraph at lines 105--105
 |[]\TU/lmss/bx/n/17.28 Math-e-mat-i-cal mod-elling of at-mo-spheric|
  []
@@ -2526,7 +2527,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 61606 strings out of 475512
+ 61630 strings out of 475512
  125086,2848258 words of node,token memory allocated
  12813 words of node memory still in use:
    123 hlist, 15 vlist, 14 rule, 76 disc, 6 local_par, 22 math, 245 glue, 74 ker
@@ -2570,7 +2571,7 @@ fb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texliv
 e/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-d
 ist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
 public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (18 pages, 2628728 bytes).
+Output written on main.pdf (18 pages, 2628829 bytes).
 
 PDF statistics: 612 PDF objects out of 1000 (max. 8388607)
  244 compressed objects within 3 object streams
