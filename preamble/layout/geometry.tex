@@ -57,6 +57,30 @@
 \geometry{
 	paperwidth=210mm,
 	paperheight=297mm,
+	width=145mm,
+	top=72pt,
+	hmarginratio=1:1,
+	textheight=650pt,
+	footskip=40pt,
+	headheight=28pt,
+	includehead,
+	marginparsep=0pt,
+	marginparwidth=0pt,
+}
+
+%%% Geometry switching commands
+\newcommand{\standardgeometry}{\newgeometry{%
+	width=145mm,
+	top=72pt,
+	hmarginratio=1:1,
+	textheight=650pt,
+	footskip=40pt,
+	headheight=28pt,
+	includehead,
+	marginparsep=0pt,
+	marginparwidth=0pt,
+}}
+\newcommand{\widegeometry}{\newgeometry{%
 	left=42pt,
 	top=72pt,
 	textwidth=320pt,
@@ -64,7 +88,9 @@
 	marginparwidth=180pt,
 	textheight=650pt,
 	footskip=40pt,
-}
+	headheight=28pt,
+	includehead,
+}}
 \newlength{\overhang}
 \setlength{\overhang}{\marginparwidth}
 \addtolength{\overhang}{\marginparsep}
