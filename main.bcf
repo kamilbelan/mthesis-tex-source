@@ -2431,9 +2431,12 @@
     <bcf:citekey order="9" intorder="2">smithInfluenceMountainsAtmosphere1979</bcf:citekey>
     <bcf:citekey order="9" intorder="3">frittsGravityWaveDynamics2003</bcf:citekey>
     <bcf:citekey order="9" intorder="4">doyleIntercomparisonTREXMountainwave2011</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">sutherlandInternalGravityWaves2010</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">smagorinskyGENERALCIRCULATIONEXPERIMENTS1963</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">popeTurbulentFlows2000</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">sutherlandInternalGravityWaves2010</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">sutherlandInternalGravityWaves2010</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  15 APR 2026 20:31
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  16 APR 2026 11:33
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2381,7 +2381,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [2<./figures/oro_flows/clouds.pdf>]
 
 [3<./figures/oro_flows/fohn.pdf>]
-Overfull \hbox (20.47069pt too wide) in paragraph at lines 120--120
+Overfull \hbox (20.47069pt too wide) in paragraph at lines 123--123
 |[]\TU/lmss/bx/n/17.28 Math-e-mat-i-cal mod-elling of at-mo-spheric|
  []
 
@@ -2490,18 +2490,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 61781 strings out of 475512
+ 61799 strings out of 475512
  125086,2848258 words of node,token memory allocated
- 23810 words of node memory still in use:
+ 23815 words of node memory still in use:
    202 hlist, 22 vlist, 16 rule, 147 disc, 10 local_par, 44 math, 483 glue, 136 
-kern, 38 penalty, 40 margin_kern, 1624 glyph, 579 attribute, 108 glue_spec, 579 
+kern, 38 penalty, 40 margin_kern, 1624 glyph, 579 attribute, 109 glue_spec, 579 
 attribute_list, 2 write, 266 pdf_literal, 2 pdf_start_link, 2 pdf_end_link, 2 pd
 f_action, 50 pdf_colorstack nodes
-   avail lists: 1:4,2:3774,3:2637,4:339,5:399,6:122,7:6420,8:86,9:1057,10:14,11:
-383
- 82826 multiletter control sequences out of 65536+600000
+   avail lists: 1:5,2:3778,3:2639,4:341,5:444,6:124,7:6508,8:86,9:1057,10:15,11:
+390,12:1
+ 82842 multiletter control sequences out of 65536+600000
  144 fonts using 11168847 bytes
- 109i,14n,121p,2020b,3704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,121p,4410b,3704s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/opt/texliv
 e/texdir/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/texdir/texmf-
@@ -2534,10 +2534,10 @@ ive/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/texdir/texm
 f-dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gy
 re/qzcmi.pfb>
-Output written on main.pdf (19 pages, 4592848 bytes).
+Output written on main.pdf (19 pages, 4597172 bytes).
 
-PDF statistics: 650 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 106 named destinations out of 1000 (max. 131072)
+PDF statistics: 658 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 108 named destinations out of 1000 (max. 131072)
  462 words of extra memory for PDF output out of 10000 (max. 100000000)
 
