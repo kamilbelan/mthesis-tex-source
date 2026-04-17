@@ -51,9 +51,8 @@
 \NewDocumentCommand{\I}{}{\mathring{\imath}}
 \NewDocumentCommand{\E}{s}{\IfBooleanTF{#1}{\mathrm{e}}{\mathinner{\mathrm{e}}}}
 
-%% Big O notation (\biggO for centered O)
-\NewDocumentCommand{\bigO} {l m}{\fbraces#1{\lparen}{\rparen}                   {O} {#2}}
-\NewDocumentCommand{\biggO}{l m}{\fbraces#1{\lparen}{\rparen}{\raisemath{-0.1ex}{O}}{#2}}
+%% Big O notation
+\NewDocumentCommand{\bigO}{m}{\mathcal{O}\!\left(#1\right)}
 
 %%% Various fields and number sets
 \newcommand*{\R}{\mathbb{R}}

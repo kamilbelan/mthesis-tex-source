@@ -1,0 +1,147 @@
+%% Code listings and algorithm pseudocode
+%% Two workflows:
+%%   1. `code` / `codebox`  — concrete syntax (minted + tcolorbox)
+%%   2. `algorithm`         — pseudocode (algpseudocodex + tcolorbox)
+
+%%% ────────────────────────────────────────────────
+%%% Minted — syntax-highlighted code listings
+%%% ────────────────────────────────────────────────
+
+\usepackage{minted}
+\tcbuselibrary{minted}
+
+%% Global minted defaults
+\setminted{
+    fontsize=\small,
+    baselinestretch=1.1,
+    breaklines,              % allow automatic line breaks
+    breakanywhere=false,     % break only at whitespace
+    tabsize=4,
+    numbersep=8pt,
+    xleftmargin=0.6em,
+    xrightmargin=0.6em,
+}
+
+%% Inline code with syntax highlighting: \mintinline or the short \code macro
+\NewDocumentCommand{\code}{O{text} v}{\mintinline{#1}{#2}}
+
+%%% tcolorbox wrapper for minted — "codebox"
+%%% Provides a framed, breakable box that matches the look of theorem-like environments.
+\tcbset{
+    codebox/.style={
+        breakable,
+        parbox=false,
+        colframe=black!50,
+        colback=LightGrayFill,
+        boxrule=0.4pt,
+        arc=3pt,
+        left=0.5em, right=0.5em,
+        top=0.8ex, bottom=0.8ex,
+        beforeafter skip=0.5\baselineskip plus 2pt,
+    },
+}
+
+%% Floating code listing environment
+%% Usage:
+%%   \begin{codebox}[float,caption={My listing},label={lst:example}]{julia}
+%%     function foo(x)
+%%         return x^2
+%%     end
+%%   \end{codebox}
+%%
+%% Non-floating (inline) usage:
+%%   \begin{codebox}{julia}
+%%     x = 1 + 2
+%%   \end{codebox}
+%%
+%% With line numbers:
+%%   \begin{codebox}[linenos]{julia}
+%%     ...
+%%   \end{codebox}
+\DeclareTCBListing{codebox}{ O{} m }{%
+    codebox,
+    listing engine=minted,
+    minted language=#2,
+    minted options={fontsize=\small, baselinestretch=1.1, breaklines},
+    listing only,
+    #1, % user options (float, caption, label, linenos, ...)
+}
+
+%% Share the `table` counter for code listings (consistent with figures/tables/equations/theorems)
+\makeatletter
+\AtBeginDocument{%
+    \@ifundefined{c@tcb@cnt@codebox}{}{%
+        \let\c@tcb@cnt@codebox\c@table
+    }%
+}
+\makeatother
+
+%% zref-clever type name for code listings
+\zcRefTypeSetup{tcb@cnt@codebox}{
+    name-sg = listing, Name-sg = Listing,
+    name-pl = listings, Name-pl = Listings,
+}
+
+
+%%% ────────────────────────────────────────────────
+%%% Pseudocode — algpseudocodex
+%%% ────────────────────────────────────────────────
+
+\usepackage{algorithm}           % float wrapper for algorithms
+\usepackage[noEnd=false]{algpseudocodex} % pseudocode typesetting with indent guides
+
+%% Share the `table` counter for algorithm floats
+\makeatletter
+\let\c@algorithm\c@table
+\makeatother
+
+%% zref-clever type name for algorithms
+\zcRefTypeSetup{algorithm}{
+    name-sg = algorithm, Name-sg = Algorithm,
+    name-pl = algorithms, Name-pl = Algorithms,
+}
+
+%% Visual style for the algorithm float — match the look of theorem-like tcolorbox environments
+%% We wrap the algorithm body in a tcolorbox via \floatsetup
+\floatsetup[algorithm]{
+    style=plain,
+}
+
+%% Style the algorithm caption to match other floats
+\captionsetup[algorithm]{
+    format=plain,
+    font=small,
+    labelfont={sf,bf},
+    labelsep=slash,
+}
+
+%% Sans-serif keyword style to match theorem headings
+\algrenewcommand\algorithmicfunction{\textsf{\textbf{function}}}
+\algrenewcommand\algorithmicprocedure{\textsf{\textbf{procedure}}}
+\algrenewcommand\algorithmicif{\textsf{\textbf{if}}}
+\algrenewcommand\algorithmicthen{\textsf{\textbf{then}}}
+\algrenewcommand\algorithmicelse{\textsf{\textbf{else}}}
+\algrenewcommand\algorithmicfor{\textsf{\textbf{for}}}
+\algrenewcommand\algorithmicwhile{\textsf{\textbf{while}}}
+\algrenewcommand\algorithmicdo{\textsf{\textbf{do}}}
+\algrenewcommand\algorithmicreturn{\textsf{\textbf{return}}}
+\algrenewcommand\algorithmicend{\textsf{\textbf{end}}}
+\algrenewcommand\algorithmicrequire{\textsf{\textbf{Require:}}}
+\algrenewcommand\algorithmicensure{\textsf{\textbf{Ensure:}}}
+
+%% tcolorbox wrapper for the algorithm body (non-float, for use inside algorithm environment)
+%% Usage:
+%%   \begin{algorithm}
+%%     \caption{Euler step}\label{alg:euler}
+%%     \begin{algobox}
+%%       \begin{algorithmic}[1]
+%%         \Procedure{EulerStep}{$u, \Delta t$}
+%%           \State $u \gets u + \Delta t \cdot f(u)$
+%%         \EndProcedure
+%%       \end{algorithmic}
+%%     \end{algobox}
+%%   \end{algorithm}
+\newtcolorbox{algobox}{
+    codebox, % reuse the same visual style
+    before skip=0pt, after skip=0pt, % no extra space inside the float
+}
