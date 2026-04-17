@@ -224,7 +224,15 @@ Let us look for \emph{stationary solutions of} the system \Cref{eq:GOVERNING-SYS
 	p = R \rho T
 \end{equations}
 
-From the first equation we see $\rho\left(t, \vb{x}\right) = \rho\left(\vb{x}\right).$ If we now moreover assume the atmosphere is isothermal, that is $T = \, \text{const},$ then $\grad p = R T \grad \rho$ and we are left to solve
+From the first equation we see $\rho\left(t, \vb{x}\right) = \rho\left(\vb{x}\right).$ Writing now the balance of momentum in component, we arrive at 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:HYDROSTATIC-P}
+\partial_{z} p = - \rho g.
+\end{equations}
+
+This relation between the pressure $p$ and density $\rho$ is known as the \emph{hydrostatic balance} and will be extensively in the following.
+If we now moreover assume the atmosphere is isothermal, that is $T = \, \text{const},$ then $\grad p = R T \grad \rho$ and we are left to solve
 
 \begin{equations}[columns,*]
 	\partial_{x}\rho &= 0,\\
@@ -248,7 +256,7 @@ T &= \, \text{const},\\
 \vb{v} &= \vb{0}.
 \end{equations}
 
-where $p_0 = R T \rho_0, H_s = \frac{RT}{g}$ is the scale height of an isothermal atmosphere. This static solution to the Euler system \Cref{eq:GOVERNING-SYSTEM} is referred to as the \emph{hydrostatic balance}. In our numerical simulations, the hydrostatic balance will serve as an initial state. Note that the solution has been obtained in the case of an \emph{isothermal} atmosphere, which of course is a considerable simplification -- our Earth's atmosphere is \emph{not isothermal.} It is nevertheless advantageous to depart from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
+where $p_0 = R T \rho_0, H_s = \frac{RT}{g}$ is the scale height of an isothermal atmosphere. This static solution to the Euler system \Cref{eq:GOVERNING-SYSTEM} is referred to as the \emph{isothermal hydrostatic balance}. In our numerical simulations, the isothermal hydrostatic balance will serve as an initial state. Note that the solution has been obtained in the case of an \emph{isothermal} atmosphere, which of course is a considerable simplification -- our Earth's atmosphere is \emph{not isothermal.} It is nevertheless advantageous to depart from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
 
 \subsection{Boussinesq approximation}
 \label{sec:BOUSSINESQ}
@@ -256,12 +264,43 @@ where $p_0 = R T \rho_0, H_s = \frac{RT}{g}$ is the scale height of an isotherma
 In the study of atmospheric gravity waves, yet another significant approximation is often made. We have discussed that a suitable system of equations describing the dynamics of a \textcolor{gray}{dry ideal} gas is the \emph{compressible} Euler system \Cref{eq:GOVERNING-SYSTEM}. The compressible Euler system is, to a sufficient degree, a physically consistent model, which has been proven throughout the history of science numerous times by solid comparison with experimental data. For instance, the Euler system is capable of predicting the existence of \emph{acoustic waves} with correct propagation speeds. 
 The atmosphere is however such a complicated system that one would like to devise a simplification of the Euler system. The simplification should be such that the resulting system \emph{captures} the phenomena we are interested in -- internal gravity waves -- but \emph{filters} out at least some\sidenote{Rossby waves...} of the phenomena we are not interested in -- acoustic waves. In this section, a set of simplified governing equations that filters out the propagation of acoustic waves will be derived. 
 
+Consider the following splitting of our field variables $\rho$ and $p$
+
+\begin{equations}[columns,*]
+	\rho &= \rho_0 + \rho_{1},
+	p &= p_0 + p_1.
+\end{equations}
+
+In both cases, the variable with the subscript zero stands for a \emph{background} \textcolor{gray}{mean} value, whereas the variable with the subscript one stands for the \emph{perturbation} from that background value. Assuming that the background pressure and density solve the hydrostatic \Cref{eq:HYDROSTATIC-P}, that is 
+
+\begin{equations}[columns,*]
+	\vb{e}_z\partial_{z} p_0 = \rho_0 \vb{g},\\
+	p_0\left(t, \vb{x}\right) = p_0\left(z\right),
+\end{equations}
+
+the Euler equations \Cref{eq:GOVERNING-SYSTEM}
+
+\begin{equations}[columns,*]
+	\tdot{\rho_0} + \tdot{\rho_1} +  \rho_0 \div \vb{v} +  \rho_1 \div \vb{v} &= 0,\\
+	\left(\rho_0 + \rho_1\right)\tdot{\vb{v}} &= - \vb{e}_z \partial_{z} p_0 - \grad p_1 + \rho_0 \vb{g} + \rho_1 \vb{g}, \\
+\end{equations}
+
+can be simplified to 
+
+\begin{equations}[columns,*]
+	\tdot{\rho_0} + \tdot{\rho_1} +  \rho_0 \div \vb{v} +  \rho_1 \div \vb{v} &= 0,\\
+	\left(\rho_0 + \rho_1\right)\tdot{\vb{v}} &= - \grad p_1 +  \rho_1 \vb{g}, \\
+\end{equations}
+
+
+
 \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013} 
 
 \section{Mountain waves}
 \label{sec:MTN-WVS}
 
-So far, our exploration of internal gravity waves has been rather formal; the goal of this section is to show that the system of governing equations \Cref{eq:GOVERNING-SYSTEM} allows for solutions in the form of \emph{waves.}\sidenote{Nappo reminds us to stay aware of the limitations of the linear theory: \textbf{quotation:} \autocite[p.~30]{nappoIntroductionAtmosphericGravity2013} \textit{"However, the possibility of waves is not a sufficient condition for waves".} There are certain cases when linear theory predicts the emergence of waves, yet in the real \emph{nonlinear} world, there are none - and vice versa.\autocite[p.~30]{nappoIntroductionAtmosphericGravity2013}. } 
+So far, our exploration of internal gravity waves has been rather formal; the goal of this section is to show that the system of governing equations \Cref{eq:GOVERNING-SYSTEM} allows for solutions in the form of \emph{waves.}\sidenote{Nappo reminds us to stay aware of the limitations of the linear theory -- \textbf{quotation:} \autocite[p.~30]{nappoIntroductionAtmosphericGravity2013} \textit{"However, the possibility of waves is not a sufficient condition for waves".} 
+There are certain cases when linear theory predicts the emergence of waves, yet in the real \emph{nonlinear} world, there are none, and vice versa.\autocite[p.~30]{nappoIntroductionAtmosphericGravity2013}. } 
 The reader should be disclosed that the goal of this thesis lies in the development \emph{numerical methods} -- not in meteorology. The following derivations will thus lack some mathematical rigor\sidenote{Mainly in the sense we assume a priori sufficient regularity (differentiability and integrability) of the functions.} and few steps will be skipped completely. Our objective here is to mainly present that our model is in fact capable of capturing \emph{mountain waves}\sidenote{Keep in mind we have made quite a few (although common) simplifications along the way
 
 \begin{compactitem}
