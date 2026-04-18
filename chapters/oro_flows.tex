@@ -199,9 +199,9 @@ and in particular
 \end{equations}
 
 \emph{Under isentropic flows, $\theta$ is conserved.}
+\subsection{Hydrostatic balance}
+\label{sec:HYDROSTATICS}
 
-\subsection{Complete system }
-\label{sec:SYSTEM}
 Let us summarize the governing equations, describing \emph{solely} the flow of inviscid dry air
 
 \begin{equations}[columns,!,numberline=all]
@@ -211,10 +211,6 @@ Let us summarize the governing equations, describing \emph{solely} the flow of i
 \tdot{\theta} &= 0,\\
 p(\rho, T) &= R \rho T.
 \end{equations}
-
-
-\subsection{Hydrostatic balance}
-\label{sec:HYDROSTATICS}
 
 Let us look for \emph{stationary solutions of} the system \Cref{eq:GOVERNING-SYSTEM} in the case of a \emph{trivial velocity field} $\vb{v} = \vb{0},$ \ie in the case of a static atmosphere. Choosing an inertial frame of reference $\left(\vb{e}_x, \vb{e}_z\right)$ such that $\vb{g} = - g \vb{e}_z$ the equations read as
 
@@ -261,8 +257,15 @@ where $p_0 = R T \rho_0, H_s = \frac{RT}{g} = \frac{\rho}{\abs{\partial_{z}\rho}
 \subsection{Boussinesq approximation}
 \label{sec:BOUSSINESQ}
 
-In the study of atmospheric gravity waves, yet another significant approximation is often made — the \emph{Boussinesq approximation} — which is by now standard in both textbooks on geophysical fluid dynamics \todo{CITE Vallis, Holton} and in the numerical-methods literature on atmospheric flows \todo{CITE DURRAN}. We have discussed that a suitable system of equations describing the dynamics of a \textcolor{gray}{dry ideal} gas is the \emph{compressible} Euler system \Cref{eq:GOVERNING-SYSTEM}. The compressible Euler system is, to a sufficient degree, a physically consistent model, which has been proven throughout the history of science numerous times by solid comparison with experimental data. For instance, the Euler system is capable of predicting the existence of \emph{acoustic waves} with correct propagation speeds. 
-The atmosphere is however such a complicated system that one would like to devise a simplification of the Euler system. The simplification should be such that the resulting system \emph{captures} the phenomena we are interested in -- internal gravity waves -- but \emph{filters} out at least some\sidenote{\todo{mention Rossby wave and other waves}} of the phenomena we are not interested in -- acoustic waves. In this section, a set of simplified governing equations that filters out the propagation of acoustic waves will be derived. 
+In the study of atmospheric gravity waves, yet another significant approximation is often made — the \emph{Boussinesq approximation} — which is by now standard in both textbooks on geophysical fluid dynamics \autocite{vallisAtmosphericOceanicFluid2017,holtonIntroductionDynamicMeteorology2013} and in the numerical-methods literature on atmospheric flows \autocite{durranNumericalMethodsFluid2010,teixeiraPhysicsOrographicGravity2014}. 
+We have discussed that a suitable system of equations describing the dynamics of a \textcolor{gray}{dry ideal} gas is the \emph{compressible} Euler system \Cref{eq:GOVERNING-SYSTEM}. The compressible Euler system is, to a sufficient degree, a physically consistent model, which has been proven throughout the history of science numerous times by solid comparison with experimental data. For instance, the Euler system is capable of predicting the existence of \emph{acoustic waves} with correct propagation speeds. 
+The atmosphere is however such a complicated system that one would like to devise a simplification of the Euler system. The simplification should be such that the resulting system \emph{captures} the phenomena we are interested in -- internal gravity waves -- but \emph{filters} out at least some\sidenote{There are numerous types of \emph{atmospheric waves}, though the forcing mechanism is often the Earth's rotatino and the Coriolis force, which we neglect. The examples include
+\begin{compactitem}
+	\item Rossby waves;
+	\item Kelvin waves;
+	\item inertio-gravity waves.
+\end{compactitem}
+} of the phenomena we are not interested in -- acoustic waves. In this section, a set of simplified governing equations that filters out the propagation of acoustic waves will be derived. 
 
 Consider the following splitting of our field variables $\rho$ and $p$
 
@@ -301,21 +304,22 @@ Upon dividing by $\rho_0$, we arrive at
 	\left(1 + \frac{\rho_1}{\rho_0}\right) \tdot{\vb{v}} &= - \frac{1}{\rho_0} \grad p_1 + \frac{\rho_1}{\rho_0} \vb{g}.
 \end{equations}
 
-Let us now introduce an approximation based on \emph{order-of-magnitude analysis}\sidenote{\todo{mention that this is a freeform BS that just motivates}}. Assume for a moment the existence of some wave phenomena propagating in the atmosphere with \textcolor{gray}{mean} amplitude $\lambda_z$. As the wave is only a perturbation \textcolor{gray}{of density and pressure} existing on the \emph{isothermal hydrostatic} background, it is natural to compare its amplitude $\lambda_z$ and the scale height of an isothermal atmosphere  $H_s = \frac{RT}{g} = \frac{\rho_0}{\abs{\partial_{z}\rho_0}}.$ Our assumption is that the amplitude of the wave is \emph{many orders smaller} than the scale height, \ie
+Let us now introduce an approximation based on \emph{order-of-magnitude analysis.}\sidenote{A mathematically inclined reader should be warned that this "analysis" should be thought of only as \emph{line of reasoning} leading to the simplified system of equations. Once the system is attained, experimental evidence should support its validity.} Assume for a moment the existence of some wave phenomena propagating in the atmosphere with \textcolor{gray}{mean} amplitude $\lambda_z$. As the wave is only a perturbation \textcolor{gray}{of density and pressure} existing on the \emph{isothermal hydrostatic} background, it is natural to compare its amplitude $\lambda_z$ and the scale height of an isothermal atmosphere  $H_s = \frac{RT}{g} = \frac{\rho_0}{\abs{\partial_{z}\rho_0}}.$ Our assumption is that the amplitude of the wave is \emph{many orders smaller} than the scale height, \ie
+
 
 \begin{equations}[single,*]
 \frac{\lambda_z}{H_s} = \epsilon \ll 1.
 \end{equations}
 
-At this point, the so-called \emph{Boussinesq approximation}\sidenote{\todo{mention about Rayleigh-Benard convection}} \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013} is introduced; it is assumed that
+At this point, the so-called \emph{Boussinesq approximation}\sidenote{Joseph Valentin Boussinesq introduced his approximaton to tackle buoyancy driven flows. Lord Rayleigh famously used Boussinesq's approximation for his analysis of Bénard cells in the problem of thermal convection of fluids -- the \emph{Rayeleigh - Bénard} thermal convection.} \autocite[p.~4]{spiegelBoussinesqApproximationCompressible1960} \autocite[p.~26]{nappoIntroductionAtmosphericGravity2013} is introduced; it is assumed that
 
 \begin{compactenum}
 \item the ratio of the density variation $\rho_1$ and the background density $\rho_0$ is of order $\epsilon$, \begin{equations}[single,*]
 		\frac{\rho_1}{\rho_0} = \bigO{\epsilon},
 	\end{equations}
-\item the density variations affect the buoyancy term $\frac{\rho_1}{\rho_0} \vb{g}$ substantially more then the inertial term $\frac{\rho_1}{\rho_{0}}\tdot{\vb{v}}.\sidenotemark$
+\item the density variations affect the buoyancy term $\frac{\rho_1}{\rho_0} \vb{g}$ substantially more than the inertial term $\frac{\rho_1}{\rho_{0}}\tdot{\vb{v}}.\sidenotemark$
 \end{compactenum}
-\sidenotetext{\todo{note that without it nothing works}}
+\sidenotetext{In the forthcoming section, we will show that buoyancy is in fact the driving force of internal gravity waves. Keeping the buoyancy term is essential.}
 
 With these approximations, the following manipulation is carried out. In the balance of linear momentum \Cref{eq:boussinesq_momentum}, the inertial forces proportional to the density ratio on the left-hand side are dropped, whereas the buoyancy force at the right-hand side is kept present, obtaining
 
@@ -354,7 +358,8 @@ Let us summarize the governing equations
 \end{equations}
 
 
-Equations \Cref{eq:BOUSSINESQ-TOTAL} are the standard form of the Boussinesq approximation of the Euler system used throughout the atmosphere-dynamics and geophysical-fluid-dynamics literature \todo{CITE Vallis; Holton; Sutherland; Durran; Nappo}. Note that under the deployed assumptions, the flow of a compressible fluid is effectively described as the flow of an incompressible fluid.
+Equations \Cref{eq:BOUSSINESQ-TOTAL} are the standard form of the Boussinesq approximation of the Euler system used throughout the atmosphere-dynamics and geophysical-fluid-dynamics literature \autocite{vallisAtmosphericOceanicFluid2017,holtonIntroductionDynamicMeteorology2013,sutherlandInternalGravityWaves2010,nappoIntroductionAtmosphericGravity2013,durranNumericalMethodsFluid2010}. Note that under the deployed assumptions, the flow of a \emph{compressible} fluid is effectively described as the flow of an \emph{incompressible} fluid. 
+Note that the incompressibility condition $\div \vb{v} = 0$ immediately \emph{filters out}\sidenote{One could assume they propagate at an infinite speed, leaving the domain instantly.} sound waves -- acoustic waves are longitudinal \emph{compression} waves, \ie they propagate only becuase the fluid parcel is allowed to locally compress/expand. The incompressibility condition enforces that the motion is isochoric, meaning cannot be any local compression nor expansion.
 
 \section{Mountain waves}
 \label{sec:MTN-WVS}
