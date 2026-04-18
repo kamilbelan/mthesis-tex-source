@@ -477,6 +477,125 @@
       \endverb
       \keyw{Turbulence}
     \endentry
+    \entry{vallisAtmosphericOceanicFluid2017}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=8f57bb65308f3d73b5310349ae662afd}{%
+           family={Vallis},
+           familyi={V\bibinitperiod},
+           given={Geoffrey\bibnamedelima K.},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{fullhash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{fullhashraw}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{bibnamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authorbibnamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authornamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authorfullhash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authorfullhashraw}{8f57bb65308f3d73b5310349ae662afd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The atmosphere and ocean are two of the most important components of the climate system, and fluid dynamics is central to our understanding of both. This book provides a unified and comprehensive treatment of the field that blends classical results with modern interpretations. It takes the reader seamlessly from the basics to the frontiers of knowledge, from the equations of motion to modern theories of the general circulation of the atmosphere and ocean. These concepts are illustrated throughout the book with observations and numerical examples. As well as updating existing chapters, this full-color second edition includes new chapters on tropical dynamics, El Niño, the stratosphere and gravity waves. Supplementary resources are provided online, including figures from the book and problem sets, making this new edition an ideal resource for students in the atmospheric, oceanic and climate sciences, as well as in applied mathematics and engineering.}
+      \field{edition}{2}
+      \field{isbn}{978-1-107-06550-5}
+      \field{shorttitle}{Atmospheric and {{Oceanic Fluid Dynamics}}}
+      \field{title}{Atmospheric and {{Oceanic Fluid Dynamics}}: {{Fundamentals}} and {{Large-Scale Circulation}}}
+      \field{urlday}{17}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/9781107588417
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Vallis - 2017 - Atmospheric and Oceanic Fluid Dynamics Fundamentals and Large-Scale Circulation.pdf;/home/moschehaus/Zotero/storage/M45VRBN2/41379BDDC4257CBE11143C466F6428A4.html
+      \endverb
+    \endentry
+    \entry{holtonIntroductionDynamicMeteorology2013}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=2681a6ad997013a413f2ca2bb15f9bfc}{%
+           family={Holton},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=d9ab0fdce6ec0d11b714e0d70ddd5bdc}{%
+           family={Hakim},
+           familyi={H\bibinitperiod},
+           given={Gregory\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{fullhash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{fullhashraw}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{bibnamehash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{authorbibnamehash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{authornamehash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{authorfullhash}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \strng{authorfullhashraw}{e67c392dd276adb9ddd2cc8307ae5a35}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Fifth edition}
+      \field{isbn}{978-0-12-384866-6}
+      \field{pagetotal}{532}
+      \field{title}{An Introduction to Dynamic Meteorology}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/An Introduction to Dynamic Meteorology.pdf;/home/moschehaus/Zotero/storage/LCQDP2W7/an-introduction-to-dynamic-meteorology.html
+      \endverb
+      \keyw{Dynamic meteorology}
+    \endentry
+    \entry{durranNumericalMethodsFluid2010}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cbd3f98db952dd6b2aa064dd3ac2c5a1}{%
+           family={Durran},
+           familyi={D\bibinitperiod},
+           given={Dale\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{fullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{fullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{bibnamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorbibnamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authornamehash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorfullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \strng{authorfullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4419-6411-3 978-1-4419-6412-0}
+      \field{title}{Numerical {{Methods}} for {{Fluid Dynamics}}}
+      \field{urlday}{17}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-1-4419-6412-0
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Durran - 2010 - Numerical Methods for Fluid Dynamics.pdf
+      \endverb
+      \keyw{concrete,design,finite element method,fluid dynamics,geophysics,mechanics,numerical analysis,numerical methods}
+    \endentry
     \entry{spiegelBoussinesqApproximationCompressible1960}{article}{}{}
       \name{author}{2}{}{%
         {{hash=5d15fb2ed228f6cf07a022474c4ba07a}{%
