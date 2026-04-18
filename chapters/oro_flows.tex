@@ -357,7 +357,47 @@ Let us summarize the governing equations
 \end{equations}
 
 Equations \Cref{eq:BOUSSINESQ-TOTAL} are the standard form of the Boussinesq approximation of the Euler system used throughout the atmosphere-dynamics and geophysical-fluid-dynamics literature \autocite{vallisAtmosphericOceanicFluid2017,holtonIntroductionDynamicMeteorology2013,sutherlandInternalGravityWaves2010,nappoIntroductionAtmosphericGravity2013,durranNumericalMethodsFluid2010}. Note that under the deployed assumptions, the flow of a \emph{compressible} fluid is effectively described as the flow of an \emph{incompressible} fluid. 
-Note that the incompressibility condition $\div \vb{v} = 0$ immediately \emph{filters out}\sidenote{One could assume they propagate at an infinite speed, leaving the domain instantly.} sound waves -- acoustic waves are longitudinal \emph{compression} waves, \ie they propagate only becuase the fluid parcel is allowed to locally compress/expand. The incompressibility condition enforces that the motion is isochoric, meaning cannot be any local compression nor expansion.
+Note that the incompressibility condition $\div \vb{v} = 0$ immediately \emph{filters out} sound waves -- acoustic waves are longitudinal \emph{compression} waves, \ie they propagate only becuase the fluid parcel is allowed to locally compress/expand. The incompressibility condition enforces that the motion is isochoric, meaning cannot be any local compression nor expansion. One could equivalently assume sound waves propagate at an infinite speed, leaving the domain instantly.
+
+At the end of this section, let us present an interesting result for the potential temperature \Cref{eq:POTENTIAL}. Through differentiating one obtains
+
+\begin{equations}[single,*]
+\frac{1}{\theta_0} \partial_{z} \theta_0 = \frac{1}{T_0} \partial_{z} T_0 - \frac{R}{p_0 c_p} \partial_{z} p_0.
+\end{equations}
+
+Using the thermal equation of state \Cref{eq:THERMAL} we can also obtain
+
+\begin{equations}[single,*]
+\frac{1}{T_0} \partial_{z} T_0 = \frac{1}{p_0} \partial_{z} p_0 - \frac{1}{\rho_0} \partial_{z}\rho_0,
+\end{equations}
+
+and so in total
+
+\begin{equations}[single,*]
+\frac{1}{\theta_0} \partial_{z} \theta_0 = \frac{1}{\rho_0}\left(\frac{\rho_0}{p_0} \frac{c_V}{c_p} \partial_{z} p_0 - \partial_{z} \rho_0\right).
+\end{equations}
+
+Realizing that
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SOUND-SPEED}
+\frac{c_V}{c_p} \frac{\rho_0}{p_0} = \gamma \frac{\rho_0}{p_0} = \frac{1}{c^{2}},
+\end{equations}
+
+where $c$ is the \emph{speed of sound} in the fluid, we can write
+
+\begin{equations}[single,*]
+\frac{1}{\theta_0} \partial_{z}\theta_0 =  \frac{1}{\rho_0}\left(\frac{1}{c^{2}}\partial_{z}p_0 - \partial_{z}\rho_0 \right).
+\end{equations}
+
+In the Boussinesq approximation, we have reasoned that $c = \infty$, and so we are left with
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:POT-TEMP-BOUSSINESQ}
+\frac{1}{\theta_0} \partial_{\theta_0}z = - \frac{1}{\rho_0} \partial_{z}\rho_0.
+\end{equations}
+
+This simple relation will prove useful to us in the next section \Cref{sec:STRAT}. 
 
 \section{Mountain waves}
 \label{sec:MTN-WVS}
@@ -412,7 +452,12 @@ is positive and independent of altitude. It is thus sensible to define
 N^{2} = \sqrt{\frac{g}{\theta}\partial_{z}\theta},
 \end{equations}
 
-as the \emph{Brunt–Väisälä} frequency. Meaning of this quantity will be discussed in \Cref{sec:TAYLOR-GOLDSTEIN}.
+as the \emph{Brunt–Väisälä} frequency. Meaning of this quantity will be made clearer in \Cref{sec:TAYLOR-GOLDSTEIN}. Notice finally that due to \Cref{eq:POT-TEMP-BOUSSINESQ}, under the Boussinesq approximation the Brunt–Väisälä frequency \Cref{eq:BRUINT} becomes
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:BV-BOUSSINESQ}
+N^{2} = - \frac{g}{\rho_0}\partial_{z} \rho_0.
+\end{equations}
 
 \subsection{Buoyancy oscillations}
 \label{sec:BUOYANCY}
@@ -471,7 +516,7 @@ where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omeg
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG}
 \I \left(\omega - u_0 k\right)\tilde{u} - \tilde{w} \dv{u_0}{z} &= \I\frac{1}{\rho_0}k \tilde{p},\\
-i\left(\omega - u_0 k\right)\tilde{w} &= \frac{1}{\rho_0} \dv{\tilde{p}}{z} + \frac{\tilde{\rho}}{\rho_0}g,\\
+\I\left(\omega - u_0 k\right)\tilde{w} &= \frac{1}{\rho_0} \dv{\tilde{p}}{z} + \frac{\tilde{\rho}}{\rho_0}g,\\
 \I k \tilde{u} + \dv{\tilde{w}}{z} &= 0,\\
 \I\left(\omega - u_0 k\right)\tilde{\rho} + \tilde{w} \dv{\rho_0}{z}  &= 0.
 \end{equations}
@@ -479,7 +524,17 @@ i\left(\omega - u_0 k\right)\tilde{w} &= \frac{1}{\rho_0} \dv{\tilde{p}}{z} + \f
 It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{It is in fact a frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} can be introduced in the last equation
 
 \begin{equations}[single,*]
-\dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2}.
+\dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2},
+\end{equations}
+
+due to the application of the Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewride to the form
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:ALG1}
+\I \Omega\tilde{u} - \tilde{w} \dv{u_0}{z} &= \I\frac{1}{\rho_0}k \tilde{p},\\
+\I \Omega\tilde{w} &= \frac{1}{\rho_0} \dv{\tilde{p}}{z} + \frac{\tilde{\rho}}{\rho_0}g,\\
+\I k \tilde{u} + \dv{\tilde{w}}{z} &= 0,\\
+\I \Omega \tilde{\rho} -\tilde{w} \frac{\rho_0}{g}N^{2} &= 0.
 \end{equations}
 
 
