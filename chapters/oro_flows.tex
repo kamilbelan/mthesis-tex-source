@@ -306,7 +306,6 @@ Upon dividing by $\rho_0$, we arrive at
 
 Let us now introduce an approximation based on \emph{order-of-magnitude analysis.}\sidenote{A mathematically inclined reader should be warned that this "analysis" should be thought of only as \emph{line of reasoning} leading to the simplified system of equations. Once the system is attained, experimental evidence should support its validity.} Assume for a moment the existence of some wave phenomena propagating in the atmosphere with \textcolor{gray}{mean} amplitude $\lambda_z$. As the wave is only a perturbation \textcolor{gray}{of density and pressure} existing on the \emph{isothermal hydrostatic} background, it is natural to compare its amplitude $\lambda_z$ and the scale height of an isothermal atmosphere  $H_s = \frac{RT}{g} = \frac{\rho_0}{\abs{\partial_{z}\rho_0}}.$ Our assumption is that the amplitude of the wave is \emph{many orders smaller} than the scale height, \ie
 
-
 \begin{equations}[single,*]
 \frac{\lambda_z}{H_s} = \epsilon \ll 1.
 \end{equations}
@@ -357,7 +356,6 @@ Let us summarize the governing equations
 \div \vb{v} &= 0.
 \end{equations}
 
-
 Equations \Cref{eq:BOUSSINESQ-TOTAL} are the standard form of the Boussinesq approximation of the Euler system used throughout the atmosphere-dynamics and geophysical-fluid-dynamics literature \autocite{vallisAtmosphericOceanicFluid2017,holtonIntroductionDynamicMeteorology2013,sutherlandInternalGravityWaves2010,nappoIntroductionAtmosphericGravity2013,durranNumericalMethodsFluid2010}. Note that under the deployed assumptions, the flow of a \emph{compressible} fluid is effectively described as the flow of an \emph{incompressible} fluid. 
 Note that the incompressibility condition $\div \vb{v} = 0$ immediately \emph{filters out}\sidenote{One could assume they propagate at an infinite speed, leaving the domain instantly.} sound waves -- acoustic waves are longitudinal \emph{compression} waves, \ie they propagate only becuase the fluid parcel is allowed to locally compress/expand. The incompressibility condition enforces that the motion is isochoric, meaning cannot be any local compression nor expansion.
 
@@ -366,8 +364,7 @@ Note that the incompressibility condition $\div \vb{v} = 0$ immediately \emph{fi
 
 So far, our exploration of internal gravity waves has been rather formal; the goal of this section is to show that the system of governing equations \Cref{eq:GOVERNING-SYSTEM} allows for solutions in the form of \emph{waves.}\sidenote{Nappo reminds us to stay aware of the limitations of the linear theory -- \textbf{quotation:} \autocite[p.~30]{nappoIntroductionAtmosphericGravity2013} \textit{"However, the possibility of waves is not a sufficient condition for waves".} 
 There are certain cases when linear theory predicts the emergence of waves, yet in the real \emph{nonlinear} world, there are none, and vice versa. \autocite[p.~30]{nappoIntroductionAtmosphericGravity2013}. } 
-The reader should be disclosed that the goal of this thesis lies in the development \emph{numerical methods} -- not in meteorology. The following derivations will thus lack some mathematical rigor\sidenote{Mainly in the sense we assume a priori sufficient regularity (differentiability and integrability) of the functions.} and few steps will be skipped completely. Our objective here is to mainly present that our model is in fact capable of capturing \emph{mountain waves}\sidenote{Keep in mind we have made quite a few (although common) simplifications along the way
-
+The reader should be disclosed that the goal of this thesis lies in the development \emph{numerical methods} -- not in meteorology nor PDE analysis. The following derivations will thus lack some mathematical rigor\sidenote{Mainly in the sense we assume a priori sufficient regularity (differentiability and integrability) of the functions.} and few steps will be skipped completely. Our objective here is to mainly present that our model is in fact capable of capturing \emph{mountain waves}\sidenote{Keep in mind we have made quite a few (although common) simplifications along the way
 	\begin{compactitem}
 	\item not tracking any phase changes (\ie precipitation);
 	\item no treatment of turbulence;
@@ -377,8 +374,8 @@ The reader should be disclosed that the goal of this thesis lies in the developm
 
 and also to motivate the use of some techniques used in \Cref{sec:EXTRA}.
 
-\subsection{Stratification}
-\label{sec:STRATIFICATION}
+\subsection{Stratification and the Brunt–Väisälä frequency}
+\label{sec:STRAT}
 
 Taking a look at the relations describing hydrostatic balance \Cref{eq:HYDROSTATIC}, we see that density, pressure and potential temperature are functions of the \emph{altitude only}. In particular, they are constant on the horizontal planes. Physical quantities dependent of altitude are said to be \emph{stratified}.
 
@@ -388,6 +385,34 @@ In the case of isothermal hydrostatic balance, it also holds
 \item $\partial_z \rho < 0, \partial_{z} p < 0$: density and pressure \emph{decrease} with altitude;
 \item $\partial_z \theta > 0$: potential temperature \emph{increases} with altitude.
 \end{compactitem}
+
+The atmosphere is said to be \emph{stably stratified} if the potential temperature increases with algtitude \autocite[p.~25]{nappoIntroductionAtmosphericGravity2013}, \ie
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:STABLE-STRAT}
+\partial_{z} \theta > 0.
+\end{equations}
+
+It is immediately obvious that the isothermal hydrostatic atmosphere \emph{is} stably stratified. Let us introduce at this point a of presentation a quantity which will prove useful in the forthocoming chapters. In a isothermal hydrostatic atmosphere, 
+
+\begin{equations}[single,*]
+\partial_{z}\theta(z) = \frac{R}{c_p H_s} T \exp\left(\frac{R}{c_p}\frac{z}{H_s}\right) = \frac{R}{c_p H_s} \theta(z) > 0,
+\end{equations}
+
+and so we see that the quantity 
+
+\begin{equations}[single,*]
+\frac{1}{\theta} \partial_{z} \theta = \frac{R}{c_p H_s}.
+\end{equations}
+
+is positive and independent of altitude. It is thus sensible to define
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:BRUINT}
+N^{2} = \sqrt{\frac{g}{\theta}\partial_{z}\theta},
+\end{equations}
+
+as the \emph{Brunt–Väisälä} frequency. Meaning of this quantity will be discussed in \Cref{sec:TAYLOR-GOLDSTEIN}.
 
 \subsection{Buoyancy oscillations}
 \label{sec:BUOYANCY}
@@ -409,8 +434,57 @@ When an air parcel hits a mountain barrier, the topography can act as a ramp and
 	\label{fig:GW-diagram}
 \end{figure}
 
-\subsection{Linear wave theory}
-\label{sec:LINEAR-THEORY}
+\subsection{The Taylor-Goldstein equation}
+\label{sec:TAYLOR-GOLDSTEIN}
+
+As usual, let us equip a two-dimensional domain with the coordinate system $\left(\vb{e}_x, \vb{e}_z\right).$ Denote the velocity field by $\vb{v} = u \vb{e}_x + w \vb{e}_z$ and introduce the splitting
+
+\begin{equations}[columns,*]
+	u\left(t, x , z\right) &= u_0(z) + u_1(t, x, z), \\
+	w\left(t, x , z\right) &= w_0(z) + w_1(t, x, z), \\
+	\rho\left(t, x , z\right) &= \rho_0(z) + \rho_1(t, x, z), \\
+	p\left(t, x , z\right) &= p_0(z) + p_1(t, x, z). \\
+\end{equations}
+
+We introduce some approximations: \begin{inparaenum} \item the background state is hydrostatic, \item the Boussinesq approximation \end{inparaenum}, under which the governing equations \Cref{eq:BOUSSINESQ-TOTAL} read as
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:APPROX}
+\partial_t u_1 + u_0 \partial_{x} u_1 + w_1 \dv{u_0}{z} &= - \frac{1}{\rho_0}\partial_{x}p_1,\\
+\partial_t w_1 + u_0 \partial_{x} w_1 &= - \frac{1}{\rho_0} \partial_{z} p_1 - \frac{\rho_1}{\rho_0}g, \\
+\partial_x u_1 + \partial_{z} w_1 &= 0, \\
+\partial_t \rho_1 + u_0 \partial_x \rho_1 + w_1 \dv{\rho_0}{z} &= 0.
+\end{equations}
+
+Next, the \emph{planar-wave ansatz} is assumed for the perturbed quantites\sidenote{This procedure is common in physics. Whereas a mathematician would presumably derive a wave equation/ hyperbolic equation and then \emph{prove the existence} of solution, in physics one starts from the \emph{assumption of existence} of wave-like solutions, manipulates the equations and derives expressions for the frequency $\omega$ and the wave vector $\vb{k}$; if the expressions match empirical data, the derivation is taken to be correct.}
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:PLANAR-ANSATZ}
+u_1\left(t, x, z\right) &= \tilde{u}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+w_1\left(t, x, z\right) &= \tilde{w}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+\rho_1\left(t, x, z\right) &= \tilde{\rho}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+p_1\left(t, x, z\right) &= \tilde{p}_1(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
+\end{equations}
+
+where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the wave vector. Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following \emph{algebraic equations} are obtained:\sidenote{Notice that the planar-wave ansatz produced from the original system of partial differential equations a system of algebraic equations. This approach is very similar to the technique of Fourier transform.}
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:ALG}
+\I \left(\omega - u_0 k\right)\tilde{u} - \tilde{w} \dv{u_0}{z} &= \I\frac{1}{\rho_0}k \tilde{p},\\
+i\left(\omega - u_0 k\right)\tilde{w} &= \frac{1}{\rho_0} \dv{\tilde{p}}{z} + \frac{\tilde{\rho}}{\rho_0}g,\\
+\I k \tilde{u} + \dv{\tilde{w}}{z} &= 0,\\
+\I\left(\omega - u_0 k\right)\tilde{\rho} + \tilde{w} \dv{\rho_0}{z}  &= 0.
+\end{equations}
+
+It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{It is in fact a frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} can be introduced in the last equation
+
+\begin{equations}[single,*]
+\dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2}.
+\end{equations}
+
+
+\subsection{Flow over a periodic corrugation}
+\label{sec:FLOW-CORRUGATION}
 
 \begin{figure}[htbp]
 	\centering
@@ -422,7 +496,6 @@ When an air parcel hits a mountain barrier, the topography can act as a ramp and
 		]
 		% ---- parameters -------------------------------------------------
 		\def\A{0.5}          % wave amplitude
-		% wavelength = 4 units: sin(90*x) has period 360/90 = 4
 		\def\xmin{-0.3}
 		\def\xmax{10.3}      % ~2.5 periods
 
