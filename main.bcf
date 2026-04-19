@@ -2454,7 +2454,9 @@
     <bcf:citekey order="24" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
     <bcf:citekey order="25" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
     <bcf:citekey order="26" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">nappoIntroductionAtmosphericGravity2013</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
