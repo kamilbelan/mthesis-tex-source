@@ -16,29 +16,29 @@
 \contentsline {subsection}{Stratification and the Brunt–Väisälä frequency}{13}{subsection*.20}%
 \contentsline {subsection}{Buoyancy oscillations}{14}{subsection*.21}%
 \contentsline {subsection}{The Taylor-Goldstein equation}{14}{subsection*.23}%
-\contentsline {subsection}{Flow over a periodic corrugation}{16}{subsection*.24}%
-\contentsline {chapter}{\numberline {2}Mathematical modelling of atmospheric flows}{17}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Initial and boundary conditions}{17}{section*.26}%
-\contentsline {section}{\numberline {2.2}Well-balancing}{17}{section*.27}%
-\contentsline {chapter}{\numberline {3}SPH}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview of SPH}{18}{section*.28}%
-\contentsline {subsection}{Pros and cons}{18}{subsection*.29}%
-\contentsline {subsection}{Uses}{18}{subsection*.30}%
-\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{18}{section*.31}%
-\contentsline {subsection}{Partition}{18}{subsection*.32}%
-\contentsline {subsection}{Kernel interpolation}{18}{subsection*.33}%
-\contentsline {subsection}{Differential operators}{18}{subsection*.34}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{18}{section*.35}%
-\contentsline {subsection}{WCSPH}{18}{subsection*.36}%
-\contentsline {subsection}{Hopkins}{18}{subsection*.37}%
-\contentsline {subsubsection}{Pressure - entropy}{18}{subsection*.37}%
-\contentsline {subsubsection}{Pressure -- potential temperature}{19}{equation.3.3}%
-\contentsline {section}{\numberline {3.4}Additional techniques}{20}{section*.38}%
-\contentsline {subsection}{Packing algorithm}{20}{subsection*.39}%
-\contentsline {subsection}{Adaptive smoothing length}{20}{subsection*.40}%
-\contentsline {subsection}{Initial configuration}{20}{subsection*.41}%
-\contentsline {chapter}{\numberline {4}Experiments}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Voronoi}{22}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{23}{chapter*.42}%
-\contentsline {chapter}{References}{24}{appendix*.43}%
+\contentsline {subsection}{Flow over a periodic corrugation}{18}{subsection*.24}%
+\contentsline {chapter}{\numberline {2}Mathematical modelling of atmospheric flows}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Initial and boundary conditions}{19}{section*.26}%
+\contentsline {section}{\numberline {2.2}Well-balancing}{19}{section*.27}%
+\contentsline {chapter}{\numberline {3}SPH}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview of SPH}{20}{section*.28}%
+\contentsline {subsection}{Pros and cons}{20}{subsection*.29}%
+\contentsline {subsection}{Uses}{20}{subsection*.30}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{20}{section*.31}%
+\contentsline {subsection}{Partition}{20}{subsection*.32}%
+\contentsline {subsection}{Kernel interpolation}{20}{subsection*.33}%
+\contentsline {subsection}{Differential operators}{20}{subsection*.34}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{20}{section*.35}%
+\contentsline {subsection}{WCSPH}{20}{subsection*.36}%
+\contentsline {subsection}{Hopkins}{20}{subsection*.37}%
+\contentsline {subsubsection}{Pressure - entropy}{20}{subsection*.37}%
+\contentsline {subsubsection}{Pressure -- potential temperature}{21}{equation.3.3}%
+\contentsline {section}{\numberline {3.4}Additional techniques}{22}{section*.38}%
+\contentsline {subsection}{Packing algorithm}{22}{subsection*.39}%
+\contentsline {subsection}{Adaptive smoothing length}{22}{subsection*.40}%
+\contentsline {subsection}{Initial configuration}{22}{subsection*.41}%
+\contentsline {chapter}{\numberline {4}Experiments}{23}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Voronoi}{24}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{25}{chapter*.42}%
+\contentsline {chapter}{References}{26}{appendix*.43}%
 \contentsfinish 
