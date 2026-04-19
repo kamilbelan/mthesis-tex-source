@@ -449,7 +449,7 @@ is positive and independent of altitude. It is thus sensible to define
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:BRUINT}
-N^{2} = \sqrt{\frac{g}{\theta}\partial_{z}\theta},
+N^{2} = \frac{g}{\theta}\partial_{z}\theta,
 \end{equations}
 
 as the \emph{Brunt–Väisälä} frequency. Meaning of this quantity will be made clearer in \Cref{sec:TAYLOR-GOLDSTEIN}. Notice finally that due to \Cref{eq:POT-TEMP-BOUSSINESQ}, under the Boussinesq approximation the Brunt–Väisälä frequency \Cref{eq:BRUINT} becomes
@@ -462,7 +462,10 @@ N^{2} = - \frac{g}{\rho_0}\partial_{z} \rho_0.
 \subsection{Buoyancy oscillations}
 \label{sec:BUOYANCY}
 
-When an air parcel hits a mountain barrier, the topography can act as a ramp and eject the air parcel into higher altitude. In the case of a \emph{stably stratified atmosphere}, the buoyancy force decreases with altitude, and thus the net force acting on the air parcel points downwards. On its way to lower altitude, the air parcel overshoots its equilibrium position, which in turn leads to the \emph{increase} of buoyancy force, resulting in a total acceleration pointing upwards. This buoyancy-driven oscillatory motion can be thought of as a prototype of an \emph{internal gravity wave}. When the initial displacement from the equilibrium state of the air parcel is caused by a flow over topography, the resulting gravity wave is called \emph{a mountain wave.} \autocite[p.~143]{sutherlandInternalGravityWaves2010} A different type of gravity waves associated with orographic flows are \emph{lee waves}: gravity waves trapped between the ground and upper levels of the atmosphere due to reflection \autocite[p.~60]{nappoIntroductionAtmosphericGravity2013}.
+When an air parcel hits a mountain barrier, the topography can act as a ramp and eject the air parcel into higher altitude. In the case of a \emph{stably stratified atmosphere}, the buoyancy force decreases with altitude, and thus the net force acting on the air parcel points downwards. On its way to lower altitude, the air parcel overshoots its equilibrium position, which in turn leads to the \emph{increase} of buoyancy force, resulting in a total acceleration pointing upwards. This buoyancy-driven oscillatory motion can be thought of as a prototype of an \emph{internal gravity wave}. Schematically, the mechanism of a buoyancy oscillation is shown also in \Cref{fig:GW-diagram}.
+
+When the initial displacement from the equilibrium state of the air parcel is caused by a flow over topography, the resulting gravity wave is called \emph{a mountain wave.} \autocite[p.~143]{sutherlandInternalGravityWaves2010} A different type of gravity waves associated with orographic flows are \eg \emph{lee waves}: gravity waves trapped between the ground and upper levels of the atmosphere due to reflection \autocite[p.~60]{nappoIntroductionAtmosphericGravity2013}.
+
 
 \begin{figure}[htbp]
 	\begin{tikzpicture}[node distance = 2cm]
@@ -485,13 +488,13 @@ When an air parcel hits a mountain barrier, the topography can act as a ramp and
 As usual, let us equip a two-dimensional domain with the coordinate system $\left(\vb{e}_x, \vb{e}_z\right).$ Denote the velocity field by $\vb{v} = u \vb{e}_x + w \vb{e}_z$ and introduce the splitting
 
 \begin{equations}[columns,*]
-	u\left(t, x , z\right) &= u_0(z) + u_1(t, x, z), \\
-	w\left(t, x , z\right) &= w_0(z) + w_1(t, x, z), \\
-	\rho\left(t, x , z\right) &= \rho_0(z) + \rho_1(t, x, z), \\
-	p\left(t, x , z\right) &= p_0(z) + p_1(t, x, z). \\
+	u\left(t, x, z\right) &= u_0(z) + u_1(t, x, z), \\
+	w\left(t, x, z\right) &= w_0(z) + w_1(t, x, z), \\
+	\rho\left(t, x, z\right) &= \rho_0(z) + \rho_1(t, x, z), \\
+	p\left(t, x, z\right) &= p_0(z) + p_1(t, x, z). \\
 \end{equations}
 
-We introduce some approximations: \begin{inparaenum} \item the background state is hydrostatic, \item the Boussinesq approximation \end{inparaenum}, under which the governing equations \Cref{eq:BOUSSINESQ-TOTAL} read as
+We exploit some approximations, namely \begin{inparaenum} \item the background state is hydrostatic, \item the Boussinesq approximation \end{inparaenum}. Under these the governing equations \Cref{eq:BOUSSINESQ-TOTAL} read as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:APPROX}
@@ -511,7 +514,7 @@ w_1\left(t, x, z\right) &= \tilde{w}(z)\exp\left(\I\left(kx - \omega t\right)\ri
 p_1\left(t, x, z\right) &= \tilde{p}(z)\exp\left(\I\left(kx - \omega t\right)\right), \\
 \end{equations}
 
-where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the wave vector. Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following system of \emph{algebro-differential equations} are obtained:\sidenote{Notice that the planar-wave ansatz produced from the original system of partial differential equations a system of algebro\textcolor{gray}{-differential} equations. This approach is very similar to the technique of Fourier transform.}
+where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omega$ is the wave frequency and $k$ is the horizontal wavenumber. Plugging \Cref{eq:PLANAR-ANSATZ} into \Cref{eq:APPROX}, the following system of \emph{algebro-differential equations} are obtained:\sidenote{Notice that the planar-wave ansatz transformed the original system of partial differential equations into a system of algebro\textcolor{gray}{-differential} equations. This approach is very similar to the technique of Fourier transform.}
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG}
@@ -521,13 +524,13 @@ where the quantites with tildas are \textcolor{gray}{complex} amplitudes, $\omeg
 \I\left(\omega - u_0 k\right)\tilde{\rho} + \tilde{w} \dv{\rho_0}{z}  &= 0.
 \end{equations}
 
-It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{It is in fact a frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} can be introduced in the last equation
+It is useful to set $\Omega = \omega - u_0 k$ as a type of \emph{reduced frequency.}\sidenote{It is in fact a frequency of the wave relative to the air flow.} Moreover, the \emph{Brunt–Väisälä} frequency can be introduced in the last equation
 
 \begin{equations}[single,*]
 \dv{\rho_0}{z} = - \frac{\rho_0}{g}N^{2},
 \end{equations}
 
-due to the application of the Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewritten to the form
+owing to the deployed Boussinesq approximation and the derived expression \Cref{eq:BV-BOUSSINESQ}. All in all, the system \Cref{eq:ALG} can be rewritten to the form
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:ALG1}
@@ -537,7 +540,7 @@ due to the application of the Boussinesq approximation and the derived expressio
 \I \Omega \tilde{\rho} -\tilde{w} \frac{\rho_0}{g}N^{2} &= 0.
 \end{equations}
 
-We do not carry out the computations in detail, as it consists of rather uninteresting yet time-consuming algebraic manipulation. To retain credibility, we only outline the process and reference the kind reader to \autocite[p.~34]{nappoIntroductionAtmosphericGravity2013} for further details.
+We do not carry out the computations in detail, as it consists of rather uninteresting and time-consuming algebraic manipulation. To retain credibility, we only outline the process and reference the kind reader to \autocite[p.~34]{nappoIntroductionAtmosphericGravity2013} for further details.
 
 \begin{compactenum}
 \item observe that all equations in \Cref{eq:ALG1} contain the complex amplitude of the vertical velocity perturbation $\tilde{w}$;
@@ -593,8 +596,43 @@ If $m$ is \emph{not a real number}\sidenote{If $m$ has a nonzero imaginary part,
 \subsection{Flow over a periodic corrugation}
 \label{sec:FLOW-CORRUGATION}
 
-In the previous section \Cref{sec:TAYLOR-GOLDSTEIN}, we have derived \textcolor{gray}{under common simplifications} the "wave equation for gravity waves", \ie the Taylor-Goldstein equation. The T-G equations is governs the vertical perturbation of the velocity field, but we have not clarified the \emph{source} of any perturbations whatsoever; \nb up to this point, the mountain terrain has not yet entered any of our consideration. At last, we will show that the mountain terrain can in fact \emph{generate} propagating gravity waves.
+In the previous section \Cref{sec:TAYLOR-GOLDSTEIN}, we have derived \textcolor{gray}{under common simplifications} the "wave equation for gravity waves", \ie the Taylor-Goldstein equation. The T-G equations  governs the vertical perturbation of the velocity field, but we have not clarified the \emph{source} of any perturbations whatsoever; \nb up to this point, the mountain terrain has not yet entered any of our consideration. At last, we will show that the mountain terrain can in fact \emph{generate} propagating gravity waves.
 
+Real physical topography is complicated. Our exposition to the mountain wave theory will be restricted to the case of a mere \emph{surface corrugation}, moreover a \emph{periodic one} with height many orders of magnitude lower than the typical atmospherical scales. It is evident that such assumptions are massively restrictive and won't be able to describe real complex orographic flows. Realize that however we are dealing with a \emph{linear theory}, \ie small perturbations of the flow field. If one considers real structured topographical profiles of substantial height, the linear theory is beyond its verge of applicability. 
+
+Assume a constant horizontal flow $u_0 \vb{e}_x, u_0 >0$ constant, in the $\vb{e}_x$ direction interacting with a corrugation, profile of which is given as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:CORR}
+h(x) = H \cos\left(k_s x\right), \ie h(x) =H \exp(\I k_s x)
+\end{equations}
+
+where $H > 0$ is the height of the corrugation and $k_s = \frac{2 \pi}{\lambda_s}$ is related to the spatial period of the corrugation peaks. The Taylor-Goldstein equation \Cref{eq:TAYLOR-GOLDSTEIN} reads as
+
+\begin{equations}[single,*]
+\hat{w}'' + \left(\frac{N^{2}}{\left(c- u_0\right)^{2}} + \frac{u_0''}{c - u_0} - \frac{1}{H_s}\frac{u_0'}{c-u_0} - \frac{1}{4 H_s^{2}} - k^{2}\right)\hat{w} = 0,
+\end{equations}
+
+with the following realizations and assumptions to be addressed, all of them springing from observed properties of mountain waves \autocite[p.~36]{nappoIntroductionAtmosphericGravity2013} 
+
+\begin{itemize}
+	\item since $u_0$ is constant, $u_0' = 0 = u_0''$;
+	\item the Brunt–Väisälä frequency $N$ is assumed to be constant;
+	\item for sufficiently short horizontal wavelengths $k$ it holds $\frac{1}{4H_s^{2}} \ll k^{2}$ and the term is dropped.
+\end{itemize}
+
+Under these approximations, the Taylor Goldstein equation yields
+
+\begin{equations}[single,*]
+\hat{w}'' +\left(\frac{N^{2}}{\left(c - u_0\right)^{2}} \right)\hat{w} = 0.
+\end{equations}
+
+Real life observed mountain waves are \emph{stationary} relative to the ground \autocite[p.~58]{nappoIntroductionAtmosphericGravity2013}, meaning $\omega = 0$ and so $\Omega = - k u_0$ also. This realization gives us the Taylor Goldstein equation in the form
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:T-G-surrogation}
+\hat{w}'' + \left(\frac{N^{2}}{u_0^{2}} - k^{2}\right)\hat{w} = 0.
+\end{equations}
 
 \begin{figure}[htbp]
 	\centering
