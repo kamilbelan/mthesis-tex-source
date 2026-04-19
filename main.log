@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  19 APR 2026 12:37
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  19 APR 2026 12:50
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2654,13 +2654,17 @@ Underfull \hbox (badness 4120) in paragraph at lines 590--590
  []
 
 
-Overfull \hbox (9.17104pt too wide) in paragraph at lines 649--650
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 596.
+
+
+
+[17]
+Overfull \hbox (9.17104pt too wide) in paragraph at lines 652--653
  [][] |
  []
 
-
-
-[17]) (./chapters/modelling.tex
+) (./chapters/modelling.tex
 
 [18]
 Chapter 2.
@@ -2760,7 +2764,7 @@ See the caption package documentation for explanation.
 
 
 [27]
-runsystem(latexminted cleantemp  --timestamp 20260419123702Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260419125028Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2777,7 +2781,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67198 strings out of 475512
+ 67199 strings out of 475512
  156364,2848258 words of node,token memory allocated
  56863 words of node memory still in use:
    421 hlist, 51 vlist, 16 rule, 396 disc, 33 local_par, 100 math, 1183 glue, 32
@@ -2786,7 +2790,7 @@ Here is how much of LuaTeX's memory you used:
 , 6 pdf_action, 88 pdf_colorstack nodes
    avail lists: 1:12,2:5546,3:4214,4:509,5:680,6:138,7:7091,8:86,9:1519,10:21,11
 :383,12:1
- 88047 multiletter control sequences out of 65536+600000
+ 88048 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
  109i,19n,121p,4410b,3698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2822,10 +2826,10 @@ e/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre
 /qzcmi.pfb>
-Output written on main.pdf (33 pages, 4717010 bytes).
+Output written on main.pdf (33 pages, 4717992 bytes).
 
-PDF statistics: 954 PDF objects out of 1000 (max. 8388607)
- 492 compressed objects within 5 object streams
+PDF statistics: 955 PDF objects out of 1000 (max. 8388607)
+ 493 compressed objects within 5 object streams
  205 named destinations out of 1000 (max. 131072)
  534 words of extra memory for PDF output out of 10000 (max. 100000000)
 
