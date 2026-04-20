@@ -4,14 +4,13 @@
 \chapter{Flows around a topography}
 \label{chap:FLOWS}
 
-The first chapter is devoted to the specification and description of the studied problem. Its structure is as follows
+This chapter defines the studied problem and establishes the theoretical framework. It proceeds as follows:
 
 \begin{compactenum}
-	\item important phenomena associated with orographic flows are described in \Cref{sec:PHENOMENA};
-	\item equations governing the flow are formulated in \Cref{sec:GOV-EQUATIONS};
-	\item a more detailed description of mountain waves is carried out in \Cref{sec:MTN-WVS};
+    \item \Cref{sec:PHENOMENA} outlines the key phenomena associated with orographic flows;
+    \item \Cref{sec:GOV-EQUATIONS} formulates the governing evolution equations;
+    \item \Cref{sec:MTN-WVS} details the mechanics of mountain waves.
 \end{compactenum}
-
 
 Let us begin by describing orographic flows from the point of physics, providing not only further motivation, but also significant physical aspects of the studied problem.
 
@@ -582,11 +581,21 @@ with the known solutions
 	\hat{w}(z; k, \omega) = C_{+} \exp\left(\I m z\right) + C_{-} \exp\left(-\I m z\right).
 \end{equations}
 
-Coming back to the physical space, the velocity perturbation can be reconstructed from the single-mode profile $\hat{w}\left(z; \omega, k\right)$ and the substitution \Cref{eq:W-HAT} using the Fourier transform\sidenote{Since the Taylor Goldstein equation is linear and the background profile is homogeneous in $t$ and $x$ \textcolor{gray}{(it is hydrostatic)}, the Fourier transform can informally be thought of as \enquote{summing over all modes $\left(\omega, k\right)$.}}
+Coming back to the physical space, the velocity perturbation can be reconstructed from the single-mode profile $\hat{w}\left(z; \omega, k\right)$ and the substitution \Cref{eq:W-HAT} using the Fourier transform\sidenote{We define the Fourier transform as 
+
+\begin{equations}[single,*]
+	\hat{f}(k) = \int_{-\infty}^{\infty}f(x)\exp(-\I kx) \dd{x},
+\end{equations}
+
+and the inverse Fourier transform as
+\begin{equations}[single,*]
+	f(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\hat{f}(k) \exp(\I kx) \dd{k}.
+\end{equations}}
+\sidenote{Since the Taylor Goldstein equation is linear and the background profile is homogeneous in $t$ and $x$ \textcolor{gray}{(it is hydrostatic)}, the Fourier transform can informally be thought of as \enquote{summing over all modes $\left(\omega, k\right)$.}}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:W-1-SOLUTION}
-w_1(t, x, z) =\frac{1}{\left(2 \pi\right)^{2}}\int_{-\infty}^\infty \int_{-\infty}^{\infty} \hat{w}(z; \omega, k) \exp\left(\frac{z}{2H_s}\right) \exp\left(\I\left(kx - \omega t\right)\right) \dd{\omega} \dd{k}.
+w_1(t, x, z) =\frac{1}{(2 \pi)^2}\int_{-\infty}^\infty \int_{-\infty}^{\infty} \hat{w}(z; \omega, k) \exp\left(\frac{z}{2H_s}\right) \exp\left(\I\left(kx - \omega t\right)\right) \dd{\omega} \dd{k}.
 \end{equations}
 
 If $m$ is a real number, then \Cref{eq:W-1-SOLUTION} describes a planar wave propagating in the $\vb{e}_x$ direction with the \emph{horizontal} wave number $k$, frequency $\omega$, whose vertical amplitude oscillates harmonically with the \emph{vertical} wave number $m$ in the $\vb{e}_z$ direction. This solution is referred to as a \emph{propagating gravity wave.} \autocite[p.~35]{nappoIntroductionAtmosphericGravity2013} 
@@ -605,7 +614,7 @@ Assume a constant horizontal flow $u_0 \vb{e}_x, u_0 >0$ constant, in the $\vb{e
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:CORR}
-h(x) = H \cos\left(k_s x\right), \ie h(x) =H \exp(\I k_s x)
+h(x) = H \cos\left(k_s x\right), \;\rightsquigarrow\; h(x) =H \exp(\I k_s x)
 \end{equations}
 
 where $H > 0$ is the height of the corrugation and $k_s = \frac{2 \pi}{\lambda_s}$ is related to the spatial period of the corrugation peaks. As usual, we compute with complex numbers and at the end restrict ourselves to their real parts. The Taylor-Goldstein equation \Cref{eq:TAYLOR-GOLDSTEIN} reads as
@@ -647,7 +656,16 @@ The general solution of \Cref{eq:T-G-surrogation} has the form
 \hat{w}(z; 0, k) = C_{+}\exp\left(\I m z\right) + C_{-}\exp\left(-\I m z\right),
 \end{equations}
 
-where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. In agreement with the notation used in the section \Cref{sec:TAYLOR-GOLDSTEIN}, we are denoting the solution of the T-G equation as $\hat{w}\left(z; \omega, k\right)$, so in the case of mountain waves $\omega = 0,$ we denote the solution as $\hat{w}\left(z; 0, k\right).$
+where $C_{+}, C_{-} \in \R$ are constants to be determined using the boundary conditions. If $C_{+}$ were to be nonzero, it would mean that some gravity waves are propagating downward, resulting in \emph{energy propagating downward}. Since the top of the domain could in theory be the whole outter atmosphere,nonzero $C_{+}$ would allow to \eg the space to influence our experiment; that we consider unphysical\sidenote{This assumption must therefore contain an assumption of no wave reflections at the upper boundary.}, and thus set $C_{+} \equiv 0.$ \autocite[p.~97]{smithInfluenceMountainsAtmosphere1979} This \enquote{boundary condition} is reffered to as the \emph{radiation condition.} \autocite[p.~62]{nappoIntroductionAtmosphericGravity2013}\autocite{klempUpperBoundaryCondition1983}. The numerical treatment of the radiation condition will be the main topic of section \todo{ADD}.
+
+As for $C_{-},$ we see that 
+
+\begin{equations}[single,!, numberline=all]
+	\label{eq:C-}
+	C_- = \eval{\hat{w}\left(z; 0, k\right)}_{z = 0},
+\end{equations}
+
+which motivates our need to study the bottom boundary condition.\emph{Realize this chapter is a mere presentation, whose goal is to provide some insight into the physics mainly. A well-posed problem should have the boundary conditions stated in its description.} In agreement with the notation used in the section \Cref{sec:TAYLOR-GOLDSTEIN}, we are denoting the solution of the T-G equation as $\hat{w}\left(z; \omega, k\right)$, so in the case of mountain waves $\omega = 0,$ thus we denote the solution as $\hat{w}\left(z; 0, k\right).$
 
 At the bottom boundary, \ie at the mountain surface, it is most natural to assume the \emph{no-penetration}, also known as the \emph{free-slip} boundary condition 
 
@@ -675,68 +693,63 @@ meaning at the mountain surface $z = h(x)$ it must hold
 
 and thus our bottom boundary condition is
 
-\begin{equations}[single,!,numberline=all]
-\label{eq:BOTTOM-BC}
-w_1(t, x, z) = h'(x) u_0, z = h(x), t > 0.
+\begin{equations}[single,*]
+	\eval{w_1(t, x, z)}_{z = h(x)} = h'(x) u_0, t > 0.
 \end{equations}
 
+At this point, another important assumption \textcolor{gray}{, \ie simplification,} of the linear theory has to be made\autocite[p.~96]{smithInfluenceMountainsAtmosphere1979}\autocite[p.~63]{nappoIntroductionAtmosphericGravity2013}: we assume the bottom boundary condition \emph{not at the mountain surface} $z = h(x),$ but rather \emph{at the line} $z = 0,$ \ie on the flat ground. In some sense, this is a statement about the height of the corrugation being small. The bottom boundary condition we will use thus is
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:BOTTOM-BC}
+\eval{w_1\left(t, x, z\right)}_{z = 0} = h'(x) u_0, t > 0.
+\end{equations}
+
+To find $C_{-},$ \Cref{eq:C-} we need to apply the Fourier transform 
+
+\begin{equations}[single,*]
+	\eval{\hat{w}\left(z; 0, k\right)}_{z = 0} = \int_{-\infty}^{\infty}u_0 h'(x) \exp\left(-\I kx\right)\dd{x},
+\end{equations}
+
+which using \Cref{eq:CORR} reads as
+
+\begin{equations}[single,*]
+	\eval{\hat{w}\left(z; 0, k\right)}_{z = 0} = - \I k_s H u_0 \int_{-\infty}^{\infty} \exp\left(-\I \left(k + k_s\right)x\right)\dd{x} = - 2 \pi \I k_s H u_0 \delta\left(k + k_s\right),
+\end{equations}
+
+thanks to the fact that inverse Fourier transform of $1$ is the Dirac's delta distribution
+
+\begin{equations}[single,*]
+	\delta\left(k + k_s\right) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\exp\left(-\I\left(k+k_s\right)x\right)\dd{x}.
+\end{equations}
+
+We have thus obtained $C_- = - 2 \pi \I k_s H u_0 \delta\left(k + k_s\right),$ and so the velocity has the form \Cref{eq:W-1-SOLUTION}
+
+\begin{equations}[columns,*]
+	w_1\left(t, x, z\right) &= \Re\frac{1}{2 \pi} \int_{-\infty}^{\infty}C_{-}\exp\left(-\I mz\right) \exp\left(\I kx\right) \delta\left(k + k_s\right)\dd{k} = \\
+				&= \Re\frac{-\I}{2 \pi} 2\pi k_s H u_0 \int_{-\infty}^{\infty}\exp\left(-\I \left(mz - kx\right)\right) \delta\left(k + k_s\right)\dd{k} = \\
+				&= -\Re{\I k_s H u_0\exp\left(-\I\left(m_s z + k_s x\right)\right)} \\
+				&= - u_0 k_s H \sin\left(m_s z + k_s x\right),
+\end{equations}
+
+where 
+
+\begin{equations}[single,*]
+m_s^{2} = \frac{N^{2}}{u_0^{2}} - k_s^{2},
+\end{equations}
+
+is the vertical wavenumber. The solution we have obtained
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:W-1-CORRUGATION-SOLUTION}
+	w_1\left(t, x, z\right) =  - u_0 k_s H \sin\left(m_sz + k_s x\right),
+\end{equations}
+
+is a monochromatic sinusoidal propagating gravity wave.
+
 \begin{figure}[htbp]
-	\centering
-	\begin{tikzpicture}[
-		>={Stealth[length=2.5mm]},
-		wave/.style = {thick},
-		flow/.style = {-Stealth, thick},
-		pert/.style = {-{Stealth[length=2mm]}, semithick},
-		]
-		% ---- parameters -------------------------------------------------
-		\def\A{0.5}          % wave amplitude
-		\def\xmin{-0.3}
-		\def\xmax{10.3}      % ~2.5 periods
-
-		% ---- corrugated surface -----------------------------------------
-		\draw[wave, samples=200, smooth, domain=\xmin:\xmax]
-		plot (\x, {\A*sin(90*\x)});
-
-		% ---- freestream arrow -------------------------------------------
-		\draw[flow] (1.0, 2.0) -- node[above] {$u_0$} ++(2.0, 0);
-
-		% ---- anchor points on the first period --------------------------
-		%   crest at x=1, zero-descend at x=2, trough at x=3
-		\coordinate (rise)  at (0.4, {\A*sin(90*0.4)});  % mid-ascent
-		\coordinate (crest) at (1.0, \A);
-		\coordinate (fall)  at (1.6, {\A*sin(90*1.6)});  % mid-descent
-
-		% ---- labels on the first period ---------------------------------
-		\node[align=center, anchor=south east]
-		at ($(rise) + (-0.05, 0.15)$)
-		{$\theta_1 < 0$ \\ $p_1 < 0$ \\ $u_0 - u_1$};
-
-		\node[align=center, anchor=south]
-		at ($(crest) + (0, 0.15)$)
-		{$w_1 = 0$ \\ $u_1 = 0$};
-
-		\node[align=center, anchor=south west]
-		at ($(fall) + (0.05, 0.15)$)
-		{$\theta_1 > 0$ \\ $p_1 > 0$ \\ $u_0 + u_1$};
-
-		% parcel-velocity arrows along the slopes
-		\draw[pert] ($(rise) + (-0.3,-0.15)$) -- ($(rise) + ( 0.15, 0.30)$);
-		\draw[pert] ($(fall) + (-0.15, 0.30)$) -- ($(fall) + ( 0.30,-0.15)$);
-
-		% ---- perturbation components at later phases --------------------
-		% descending zero at x=6: u_1 > 0, w_1 < 0
-		\coordinate (pA) at (6, 0);
-		\draw[pert] (pA) -- ++( 0.6, 0   ) node[right] {$u_1$};
-		\draw[pert] (pA) -- ++( 0,  -0.6 ) node[below] {$w_1$};
-
-		% ascending zero at x=8: u_1 < 0, w_1 > 0
-		\coordinate (pB) at (8, 0);
-		\draw[pert] (pB) -- ++(-0.6, 0  ) node[left]  {$u_1$};
-		\draw[pert] (pB) -- ++( 0,   0.6) node[above] {$w_1$};
-	\end{tikzpicture}
-	\caption{Variations of wave-perturbation quantities along a surface corrugation.}
-	\label{fig:surface-corrugation}
+	\includegraphics[width=\linewidth]{propagating}
+	\caption{The velocity perturbation field $w_1$ of a mountain wave.}
+	\label{fig:PROPAGATING}
 \end{figure}
-
 \end{document}
 
