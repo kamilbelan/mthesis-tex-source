@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  19 APR 2026 16:11
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  20 APR 2026 13:13
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2595,12 +2595,12 @@ Overfull \hbox (30.31953pt too wide) in paragraph at lines 337--338
 [11]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 400.
+(zref-clever)                type 'sidenote' on line 401.
 
 
 
 [12]
-Overfull \hbox (35.16469pt too wide) in paragraph at lines 415--416
+Overfull \hbox (35.16469pt too wide) in paragraph at lines 416--417
 []\TU/lmr/m/n/12 and also to mo-ti-vate the use of some tech-niques used in [][
 ][][][]. |
  []
@@ -2610,7 +2610,7 @@ Overfull \hbox (35.16469pt too wide) in paragraph at lines 415--416
 [13]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 455.
+(zref-clever)                type 'sidenote' on line 456.
 
 
 
@@ -2620,65 +2620,71 @@ i.1'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.2'
-
-Underfull \hbox (badness 1910) in paragraph at lines 517--517
-[]$[][]$ \TU/lmr/m/n/12 No-tice that the planar-wave
- []
-
+Missing character: There is no − (U+2212) in font rm-lmr12!
 
 
 [15]
 
 [16]
-Overfull \hbox (65.64203pt too wide) in paragraph at lines 584--585
-[]\TU/lmr/m/n/12 Com-ing back to the phys-i-cal ve-loc-ity per-tur-ba-tion us-in
-g [][][][][]|
+Overfull \hbox (47.34712pt too wide) detected at line 590
+[]$\OML/lmm/m/it/12 w[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x; z\OT1/lmr/m/n/12
+ ) = [] [][] [][] []\OML/lmm/m/it/12 w\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z\OT1/l
+mr/m/n/12 ; \OML/lmm/m/it/12 !; k\OT1/lmr/m/n/12 ) [][][] [][][] [] [] \OML/lmm
+/m/it/12 :$ |
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 593--593
+Underfull \hbox (badness 2653) in paragraph at lines 594--594
 []$[][]$ \TU/lmr/m/n/12 If $\OML/lmm/m/it/12 m$ \TU/lmr/m/n/12 has a nonzero ima
 g-i-
  []
 
 
-Underfull \hbox (badness 1308) in paragraph at lines 593--593
+Underfull \hbox (badness 1308) in paragraph at lines 594--594
 \TU/lmr/m/n/12 nary part, then $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = [] \OML/lm
 m/m/it/12 m \OT1/lmr/m/n/12 +
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 593--593
+Underfull \hbox (badness 4120) in paragraph at lines 594--594
 []\OML/lmm/m/it/12 { [] m$\TU/lmr/m/n/12 , and so $[]\OT1/lmr/m/n/12 (\OMS/lmsy
 /m/n/12 []\OML/lmm/m/it/12 {mz\OT1/lmr/m/n/12 ) =
  []
 
 
-Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 599.
-
-
 
 [17]
 
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 600.
+
+
+
 [18]
-Overfull \hbox (9.17104pt too wide) in paragraph at lines 690--691
+
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 650.
+
+
+
+[19]
+Overfull \hbox (9.17104pt too wide) in paragraph at lines 736--737
  [][] |
  []
 
 ) (./chapters/modelling.tex
 
-[19]
+[20]
 Chapter 2.
 ) (./chapters/sph.tex
 
-[20
+[21
 
 ]
 Chapter 3.
 
 
-[21
+[22
 
 ]
 Overfull \hbox (3.4041pt too wide) detected at line 106
@@ -2688,23 +2694,23 @@ Overfull \hbox (3.4041pt too wide) detected at line 106
 
 
 
-[22]
+[23]
 
-LaTeX Warning: Reference `eq:f_PE' on page 23 undefined on input line 144.
+LaTeX Warning: Reference `eq:f_PE' on page 24 undefined on input line 144.
 
 ) (./chapters/experiments.tex
 
-[23]
+[24]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[24
+[25
 
 ]
 Chapter 5.
 )
 
-[25
+[26
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2742,7 +2748,7 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[26
+[27
 
 
 ]
@@ -2756,7 +2762,7 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[27
+[28
 
 ]
 
@@ -2765,8 +2771,8 @@ See the caption package documentation for explanation.
 
 
 
-[28]
-runsystem(latexminted cleantemp  --timestamp 20260419161106Z FAD58DE7366495DB465
+[29]
+runsystem(latexminted cleantemp  --timestamp 20260420131312Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2783,16 +2789,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67262 strings out of 475512
+ 67274 strings out of 475512
  195462,2848258 words of node,token memory allocated
- 56884 words of node memory still in use:
-   421 hlist, 51 vlist, 16 rule, 396 disc, 33 local_par, 100 math, 1183 glue, 32
-0 kern, 139 penalty, 119 margin_kern, 4271 glyph, 1059 attribute, 115 glue_spec,
- 1059 attribute_list, 4 write, 414 pdf_literal, 4 pdf_start_link, 4 pdf_end_link
-, 6 pdf_action, 88 pdf_colorstack nodes
-   avail lists: 1:12,2:5986,3:4664,4:557,5:685,6:138,7:7289,8:86,9:1663,10:21,11
+ 59681 words of node memory still in use:
+   464 hlist, 55 vlist, 16 rule, 398 disc, 34 local_par, 122 math, 1260 glue, 33
+2 kern, 149 penalty, 123 margin_kern, 4362 glyph, 1217 attribute, 115 glue_spec,
+ 1217 attribute_list, 6 write, 488 pdf_literal, 5 pdf_start_link, 5 pdf_end_link
+, 7 pdf_action, 96 pdf_colorstack nodes
+   avail lists: 1:11,2:5766,3:4439,4:533,5:659,6:138,7:7190,8:91,9:1591,10:21,11
 :383,12:1
- 88108 multiletter control sequences out of 65536+600000
+ 88117 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
  109i,19n,121p,4410b,3698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2828,10 +2834,10 @@ e/texdir/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre
 /qzcmi.pfb>
-Output written on main.pdf (34 pages, 4725137 bytes).
+Output written on main.pdf (35 pages, 4733627 bytes).
 
-PDF statistics: 969 PDF objects out of 1000 (max. 8388607)
- 505 compressed objects within 6 object streams
- 208 named destinations out of 1000 (max. 131072)
+PDF statistics: 979 PDF objects out of 1000 (max. 8388607)
+ 514 compressed objects within 6 object streams
+ 211 named destinations out of 1000 (max. 131072)
  534 words of extra memory for PDF output out of 10000 (max. 100000000)
 
