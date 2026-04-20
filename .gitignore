@@ -1,3 +1,11 @@
+# scripts for figure creation
+
+scripts/*
+
+# vale styles and config
+styles/*
+.vale.ini
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
