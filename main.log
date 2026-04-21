@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 16:49
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 16:55
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2819,7 +2819,7 @@ See the caption package documentation for explanation.
 
 
 [32]
-runsystem(latexminted cleantemp  --timestamp 20260421164914Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260421165513Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2837,14 +2837,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
 Here is how much of LuaTeX's memory you used:
  66990 strings out of 475512
- 195451,2848258 words of node,token memory allocated
- 65731 words of node memory still in use:
-   533 hlist, 61 vlist, 16 rule, 424 disc, 37 local_par, 129 math, 1372 glue, 37
-0 kern, 165 penalty, 138 margin_kern, 4672 glyph, 1522 attribute, 115 glue_spec,
+ 195455,2848258 words of node,token memory allocated
+ 65719 words of node memory still in use:
+   533 hlist, 61 vlist, 16 rule, 424 disc, 37 local_par, 129 math, 1372 glue, 36
+9 kern, 165 penalty, 138 margin_kern, 4671 glyph, 1522 attribute, 115 glue_spec,
  1522 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
 , 9 pdf_action, 112 pdf_colorstack nodes
-   avail lists: 1:13,2:6919,3:4778,4:589,5:700,6:140,7:7155,8:107,9:1694,10:24,1
-1:412,12:2
+   avail lists: 1:9,2:6919,3:4778,4:589,5:701,6:139,7:7155,8:107,9:1694,10:24,11
+:412,12:2
  87791 multiletter control sequences out of 65536+600000
  145 fonts using 11300535 bytes
  109i,19n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2883,7 +2883,7 @@ public/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6
 .pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texli
 ve/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texliv
 e/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (38 pages, 8264920 bytes).
+Output written on main.pdf (38 pages, 8264919 bytes).
 
 PDF statistics: 1084 PDF objects out of 1200 (max. 8388607)
  603 compressed objects within 7 object streams

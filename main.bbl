@@ -192,8 +192,8 @@
       \strng{authorfullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \strng{authorfullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{journaltitle}{Journal of the Atmospheric Sciences}
@@ -234,8 +234,8 @@
       \strng{authorfullhash}{4732e9f07ed4bb19ffea2205d9a2f38b}
       \strng{authorfullhashraw}{4732e9f07ed4bb19ffea2205d9a2f38b}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Atmospheric Sciences}
@@ -269,8 +269,8 @@
       \strng{authornamehash}{ca4325f0db0ee33e69bb2e4da534cdaf}
       \strng{authorfullhash}{ca4325f0db0ee33e69bb2e4da534cdaf}
       \strng{authorfullhashraw}{ca4325f0db0ee33e69bb2e4da534cdaf}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{27}
@@ -623,8 +623,8 @@
       \strng{authornamehash}{8f57bb65308f3d73b5310349ae662afd}
       \strng{authorfullhash}{8f57bb65308f3d73b5310349ae662afd}
       \strng{authorfullhashraw}{8f57bb65308f3d73b5310349ae662afd}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The atmosphere and ocean are two of the most important components of the climate system, and fluid dynamics is central to our understanding of both. This book provides a unified and comprehensive treatment of the field that blends classical results with modern interpretations. It takes the reader seamlessly from the basics to the frontiers of knowledge, from the equations of motion to modern theories of the general circulation of the atmosphere and ocean. These concepts are illustrated throughout the book with observations and numerical examples. As well as updating existing chapters, this full-color second edition includes new chapters on tropical dynamics, El Niño, the stratosphere and gravity waves. Supplementary resources are provided online, including figures from the book and problem sets, making this new edition an ideal resource for students in the atmospheric, oceanic and climate sciences, as well as in applied mathematics and engineering.}
@@ -669,8 +669,8 @@
       \strng{authornamehash}{e67c392dd276adb9ddd2cc8307ae5a35}
       \strng{authorfullhash}{e67c392dd276adb9ddd2cc8307ae5a35}
       \strng{authorfullhashraw}{e67c392dd276adb9ddd2cc8307ae5a35}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{Fifth edition}
@@ -704,8 +704,8 @@
       \strng{authorfullhash}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \strng{authorfullhashraw}{cbd3f98db952dd6b2aa064dd3ac2c5a1}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-4419-6411-3 978-1-4419-6412-0}
@@ -832,8 +832,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}
