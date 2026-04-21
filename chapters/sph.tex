@@ -1,10 +1,10 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{SPH}
+\chapter{Smoothed Particle Hydrodynamics}
 \label{chap:SPH}
 
-\section{Overview of SPH}
+\section{Method overview}
 \label{sec:SPH_OVERVIEW}
 
 \subsection{Pros and cons}
@@ -16,11 +16,11 @@
 \section{Cornerstones of SPH}
 \label{sec:CORNERSTONES}
 
-\subsection{Partition}
-\label{sec:PARTITION}
-
 \subsection{Kernel interpolation}
 \label{sec:INTERPOLATIOn}
+
+\subsection{Particle paradigm}
+\label{sec:PARTICLES}
 
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
@@ -28,13 +28,16 @@
 \section{SPH formulations}
 \label{sec:FORMULATIONS}
 
-\subsection{WCSPH}
+\subsection{Classical SPH}
 \label{sec:WCSPH}
 
-\subsection{Hopkins}
+\subsection{Hamiltonian formulation}
+\label{sec:HAMILTON}
+
+\subsection{Density-free formulations}
 \label{sec:HOPKINS}
 
-\subsubsection{Pressure - entropy}
+\subsubsection{Pressure-entropy}
 \label{sec:HOPKINS_PE}
 Recall that the entropy of an isentropic flow of an ideal gas has the form\sidenote{This is a test side note.}
 
@@ -78,7 +81,7 @@ with
 	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}
 \end{equations}
 
-\subsubsection{Pressure -- potential temperature}
+\subsubsection{Pressure-potential temperature}
 \label{sec:HOPKINS_theta}
 
 
@@ -147,17 +150,26 @@ with \ref{eq:f_PE} unchanged
 	f_{i} =  \left(1 + \frac{h_i}{2 n_i} \pdv{n_i}{h_i}\right)^{-1}.
 \end{equations}
 
-\section{Additional techniques}
-\label{sec:EXTRA}
+\section{Implementation specifics}
+\label{sec:IMPLEMENTATION}
 
-\subsection{Packing algorithm}
-\label{sec:PACKING}
+\subsection{Boundary conditions}
+\label{sec:SPH-BC}
+
+\subsubsection{Inflow \& Outflow}
+\label{sec:INFLOW-OUTFLOW}
+
+\subsubsection{Free-slip}
+\label{sec:FREE-SLIP}
 
 \subsection{Adaptive smoothing length}
 \label{sec:ADAPTIVE_SMOOTHING}
+Newton iterations
 
-\subsection{Initial configuration}
-\label{sec:INITIAL_CONFIG}
+\subsection{Particle placement}
+\label{sec:PLACEMENT}
+WitchExpGrid
+
 
 
 
