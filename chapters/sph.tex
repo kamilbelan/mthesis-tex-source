@@ -1,17 +1,25 @@
-\documentclass[../main.tex]{subfiles}
-\begin{document}
+\documentclass[../main.tex]{subfiles} \begin{document}
 
 \chapter{Smoothed Particle Hydrodynamics}
 \label{chap:SPH}
 
+This chapter presents the main numerical method used --- the \emph{Smoothed Particle Method}. In particular,
+
+\begin{compactitem}
+	\item section
+	\item section
+	\item section
+\end{compactitem}
+
 \section{Method overview}
 \label{sec:SPH_OVERVIEW}
 
-\subsection{Pros and cons}
-\label{sec:PROS_CONS}
+Smoothed Particle Hydrodynamics (SPH) is a general use numerical method first used in astrophysical stellar models \autocite{gingoldSmoothedParticleHydrodynamics1977}. The authors required a solution to a grid resolution problem arising with their use of the finite difference method (FDM).\sidenote{They argued that the treatment of highly distorted continuum would require an extremely fine grid, hence substantial computational cost \autocite[p.~1]{gingoldSmoothedParticleHydrodynamics1977}.} The method has found use in a variety of fields, \viz free-surface flows \autocite{monaghanSimulatingFreeSurface1994a}, solid mechanics \autocite{liberskySmoothParticleHydrodynamics1991}, geomechanics \autocite{buiLagrangianMeshfreeParticles2008}, and is still successfully used in astrophysics \autocite{springelSimulationsFormationEvolution2005}. 
 
-\subsection{Uses}
-\label{sec:USES}
+SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called Eulerian, since they approximate the evolution in the \emph{current, deformed} configuration. SPH, being a particle method, traces the evolution in the \emph{reference} configuration, and so particle methods are also called Lagrangian.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretization of the governing equations.} and the state of each particle is advanced in time. 
+We stress that \emph{SPH particles} are \emph{not} \textcolor{gray}{elementary} particles in the microscopic sense --- they are typically macroscopic fluid elements. Nonetheless, some intuition from the mechanics of point particles carries over naturally to SPH, as we shall see.
+
+In what follows, we introduce the theoretical foundations of SPH and the specific formulation developed in this work.
 
 \section{Cornerstones of SPH}
 \label{sec:CORNERSTONES}
