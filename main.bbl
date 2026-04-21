@@ -860,6 +860,48 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli and Mishra - 2016 - A well-balanced finite volume scheme for the Euler equations with gravitation The exact preservatio.pdf
       \endverb
     \endentry
+    \entry{kappeliWellbalancedMethodsComputational2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=15ab4e94eeaa8f9f83365d86ace1a6b9}{%
+           family={Käppeli},
+           familyi={K\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{fullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{fullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{bibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorbibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authornamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorfullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorfullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We review well-balanced methods for the faithful approximation of solutions of systems of hyperbolic balance laws that are of interest to computational astrophysics. Well-balanced methods are specialized numerical techniques that guarantee the accurate resolution of non-trivial steady-state solutions, that balance laws prominently feature, and perturbations thereof. We discuss versatile frameworks and techniques for generic systems of balance laws for finite volume and finite difference methods. The principal emphasis of the presentation is on the algorithms and their implementation. Subsequently, we specialize in hydrodynamics' Euler equations to exemplify the techniques and give an overview of the available well-balanced methods in the literature, including the classic hydrostatic equilibrium and steady adiabatic flows. The performance of the schemes is evaluated on a selection of test problems.}
+      \field{day}{19}
+      \field{issn}{2365-0524}
+      \field{journaltitle}{Living Reviews in Computational Astrophysics}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shortjournal}{Living Rev Comput Astrophys}
+      \field{title}{Well-Balanced Methods for Computational Astrophysics}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/s41115-022-00014-6
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli - 2022 - Well-balanced methods for computational astrophysics.pdf
+      \endverb
+      \keyw{Hydrodynamics,Numerical methods,Source terms,Well-balanced schemes}
+    \endentry
     \entry{artianoStructurePreservingHighOrderMethods2025}{online}{}{}
       \name{author}{4}{}{%
         {{hash=0edc7b2b85f05dc2f5fab55444be947f}{%
@@ -975,6 +1017,324 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Chertock et al. - 2023 - Well-balanced numerical method for atmospheric flow equations with gravity.pdf
       \endverb
     \endentry
+    \entry{gingoldSmoothedParticleHydrodynamics1977}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2d190aa1e11b8cda30e12d48640fb104}{%
+           family={Gingold},
+           familyi={G\bibinitperiod},
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=441fe88aa55fb5b33be74d8641d0d091}{%
+           family={Monaghan},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{fullhash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{fullhashraw}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{bibnamehash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{authorbibnamehash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{authornamehash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{authorfullhash}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \strng{authorfullhashraw}{44d73f60ae2252d9ae9c531ec4faaceb}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A new hydrodynamic code applicable to a space of an arbitrary number of dimensions is discussed and applied to a variety of polytropic stellar models. The principal feature of the method is the use of statistical techniques to recover analytical expressions for the physical variables from a known distribution of fluid elements. The equations of motion take the form of Newtonian equations for particles. Starting with a non-axisymmetric distribution of approximately 80 particles in three dimensions, the method is found to reproduce the structure of uniformly rotating and magnetic polytropes to within a few per cent. The method may be easily extended to deal with more complicated physical models.}
+      \field{day}{1}
+      \field{issn}{0035-8711}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{month}{12}
+      \field{shortjournal}{Mon Not R Astron Soc}
+      \field{shorttitle}{Smoothed Particle Hydrodynamics}
+      \field{title}{Smoothed Particle Hydrodynamics: Theory and Application to Non-Spherical Stars}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/mnras/181.3.375
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Gingold and Monaghan - 1977 - Smoothed particle hydrodynamics theory and application to non-spherical stars.pdf;/home/moschehaus/Zotero/storage/NGEQVXTU/181.3.html
+      \endverb
+    \endentry
+    \entry{monaghanSimulatingFreeSurface1994a}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=441fe88aa55fb5b33be74d8641d0d091}{%
+           family={Monaghan},
+           familyi={M\bibinitperiod},
+           given={J.J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{fullhash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{fullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{bibnamehash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{authorbibnamehash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{authornamehash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
+      \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00219991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Simulating {{Free Surface Flows}} with {{SPH}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1006/jcph.1994.1034
+      \endverb
+    \endentry
+    \entry{liberskySmoothParticleHydrodynamics1991}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=908985f6791c888d45ef2c3059fd49ae}{%
+           family={Libersky},
+           familyi={L\bibinitperiod},
+           given={Larry\bibnamedelima D.},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6ac53674e4bc911b35931e0578ab936a}{%
+           family={Petschek},
+           familyi={P\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=66ae721a9cc7f1cbb8a163e9964dc44d}{%
+           family={Trease},
+           familyi={T\bibinitperiod},
+           given={Harold\bibnamedelima E.},
+           giveni={H\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=655e17ff2ed82e0a2a17228558916240}{%
+           family={Fritts},
+           familyi={F\bibinitperiod},
+           given={Martin\bibnamedelima F.},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=6eccba4d8b677efdba09895ceb2938cd}{%
+           family={Crowley},
+           familyi={C\bibinitperiod},
+           given={W.\bibnamedelimi Patrick},
+           giveni={W\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{fullhash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{fullhashraw}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{bibnamehash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{authorbibnamehash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{authornamehash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{authorfullhash}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{authorfullhashraw}{2cf5ec6aa019ab62e3eb3dda86d38918}
+      \strng{editorbibnamehash}{83c42d4028513946fd524feb1252e2c8}
+      \strng{editornamehash}{83c42d4028513946fd524feb1252e2c8}
+      \strng{editorfullhash}{83c42d4028513946fd524feb1252e2c8}
+      \strng{editorfullhashraw}{83c42d4028513946fd524feb1252e2c8}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in the {{Free-Lagrange Method Including Contributions}} on {{Adaptive Gridding}} and the {{Smooth Particle Hydrodynamics Method}}}
+      \field{isbn}{978-3-540-46608-6}
+      \field{langid}{english}
+      \field{title}{Smooth Particle Hydrodynamics with Strength of Materials}
+      \field{year}{1991}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1007/3-540-54960-9_58
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Libersky and Petschek - 1991 - Smooth particle hydrodynamics with strength of materials.pdf
+      \endverb
+      \keyw{Artificial Viscosity,Smooth Particle Hydrodynamic,Smoothing Function,Strain Rate Tensor,Strength Model}
+    \endentry
+    \entry{buiLagrangianMeshfreeParticles2008}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=6a101539502d01f87851fdbb453294ea}{%
+           family={Bui},
+           familyi={B\bibinitperiod},
+           given={Ha\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=4da63fdde10b23b81d16898193472915}{%
+           family={Fukagawa},
+           familyi={F\bibinitperiod},
+           given={Ryoichi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=709dc27d2baa909d5a3c44645aec5e58}{%
+           family={Sako},
+           familyi={S\bibinitperiod},
+           given={Kazunari},
+           giveni={K\bibinitperiod}}}%
+        {{hash=94aefca0c11e8896e34debd7b14b1457}{%
+           family={Ohno},
+           familyi={O\bibinitperiod},
+           given={Shintaro},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{fullhash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{fullhashraw}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{bibnamehash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{authorbibnamehash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{authornamehash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{authorfullhash}{0d6027a35da2c28a9a42f429717c56b3}
+      \strng{authorfullhashraw}{0d6027a35da2c28a9a42f429717c56b3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Simulation of large deformation and post-failure of geomaterial in the framework of smoothed particle hydrodynamics (SPH) are presented in this study. The Drucker--Prager model with associated and non-associated plastic flow rules is implemented into the SPH code to describe elastic--plastic soil behavior. In contrast to previous work on SPH for solids, where the hydrostatic pressure is often estimated from density by an equation of state, this study proposes to calculate the hydrostatic pressure of soil directly from constitutive models. Results obtained in this paper show that the original SPH method, which has been successfully applied to a vast range of problems, is unable to directly solve elastic--plastic flows of soil because of the so-called SPH tensile instability. This numerical instability may result in unrealistic fracture and particles clustering in SPH simulation. For non-cohesive soil, the instability is not serious and can be completely removed by using a tension cracking treatment from soil constitutive model and thereby give realistic soil behavior. However, the serious tensile instability that is found in SPH application for cohesive soil requires a special treatment to overcome this problem. In this paper, an artificial stress method is applied to remove the SPH numerical instability in cohesive soil. A number of numerical tests are carried out to check the capability of SPH in the current application. Numerical results are then compared with experimental and finite element method solutions. The good agreement obtained from these comparisons suggests that SPH can be extended to general geotechnical problems. Copyright ©{} 2008 John Wiley \& Sons, Ltd.}
+      \field{issn}{1096-9853}
+      \field{journaltitle}{International Journal for Numerical and Analytical Methods in Geomechanics}
+      \field{langid}{english}
+      \field{title}{Lagrangian Meshfree Particles Method ({{SPH}}) for Large Deformation and Failure Flows of Geomaterial Using Elastic--Plastic Soil Constitutive Model}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/nag.688
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Bui et al. - 2008 - Lagrangian meshfree particles method (SPH) for large deformation and failure flows of geomaterial us.pdf;/home/moschehaus/Zotero/storage/MYZG6KL3/nag.html
+      \endverb
+      \keyw{elastic-plastic model,failure flows,smoothed particle hydrodynamics (SPH),tensile instability,tension cracking}
+    \endentry
+    \entry{springelSimulationsFormationEvolution2005}{article}{}{}
+      \name{author}{17}{}{%
+        {{hash=d673f4b06bc18145fb87123390b4948f}{%
+           family={Springel},
+           familyi={S\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod}}}%
+        {{hash=04393094616177a4b8448cc28119da88}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelimb D.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7b8cbec7a93ab16a62ad241b44e8f43b}{%
+           family={Jenkins},
+           familyi={J\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f4776d513b928b621a13d84daa52cd5b}{%
+           family={Frenk},
+           familyi={F\bibinitperiod},
+           given={Carlos\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=90a298f99b1c4d1edcac9c29e9c542b0}{%
+           family={Yoshida},
+           familyi={Y\bibinitperiod},
+           given={Naoki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a8eab9075a7e8567d259e822a8ff36e6}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=563c7e78fd833a07a3cd582a35253c08}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d92806406008a0dd21ce8685620f556d}{%
+           family={Thacker},
+           familyi={T\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bf60b458b55a6101474d4d1bb8df952f}{%
+           family={Croton},
+           familyi={C\bibinitperiod},
+           given={Darren},
+           giveni={D\bibinitperiod}}}%
+        {{hash=43271fd1052fe858f8711800f3f68537}{%
+           family={Helly},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f533a1ec276c4dfadd557bc79ca41271}{%
+           family={Peacock},
+           familyi={P\bibinitperiod},
+           given={John\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=66300718cc49492069c4af9657fdcba0}{%
+           family={Cole},
+           familyi={C\bibinitperiod},
+           given={Shaun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=12fb15e612a60d43340729211759d176}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ed2e2141cc4b65c639092da943ae6b56}{%
+           family={Couchman},
+           familyi={C\bibinitperiod},
+           given={Hugh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=217f7497c7f8f7db388dda761468703c}{%
+           family={Evrard},
+           familyi={E\bibinitperiod},
+           given={August},
+           giveni={A\bibinitperiod}}}%
+        {{hash=22eecfe8fac052d2a626ec31b0916ceb}{%
+           family={Colberg},
+           familyi={C\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=360d028020f0000a8cbaf4e3741b7f36}{%
+           family={Pearce},
+           familyi={P\bibinitperiod},
+           given={Frazer},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6310651d925c6f9bd6334da82082fecd}
+      \strng{fullhash}{a6bd75edb22f04c08a839ca6a2a51be7}
+      \strng{fullhashraw}{a6bd75edb22f04c08a839ca6a2a51be7}
+      \strng{bibnamehash}{6310651d925c6f9bd6334da82082fecd}
+      \strng{authorbibnamehash}{6310651d925c6f9bd6334da82082fecd}
+      \strng{authornamehash}{6310651d925c6f9bd6334da82082fecd}
+      \strng{authorfullhash}{a6bd75edb22f04c08a839ca6a2a51be7}
+      \strng{authorfullhashraw}{a6bd75edb22f04c08a839ca6a2a51be7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0028-0836, 1476-4687}
+      \field{journaltitle}{Nature}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shortjournal}{Nature}
+      \field{title}{Simulations of the Formation, Evolution and Clustering of Galaxies and Quasars}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1038/nature03597
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel et al. - 2005 - Simulations of the formation, evolution and clustering of galaxies and quasars.pdf
+      \endverb
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
@@ -1023,7 +1383,6 @@
       \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,Physics - Computational Physics,Physics - Fluid Dynamics}
     \endentry
   \enddatalist
-  \missing{kappeliWellbalancedMethodsComputational2022a}
 \endrefsection
 \endinput
 
