@@ -2478,7 +2478,11 @@
     <bcf:citekey order="46" intorder="1">liberskySmoothParticleHydrodynamics1991</bcf:citekey>
     <bcf:citekey order="47" intorder="1">buiLagrangianMeshfreeParticles2008</bcf:citekey>
     <bcf:citekey order="48" intorder="1">springelSimulationsFormationEvolution2005</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">koshizukaMovingParticleSemiImplicitMethod1996</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">hoogerbruggeSimulatingMicroscopicHydrodynamic1992</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">violeauFluidMechanicsSPH2012</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">liuSmoothedParticleHydrodynamics2004</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

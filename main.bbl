@@ -1335,6 +1335,188 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel et al. - 2005 - Simulations of the formation, evolution and clustering of galaxies and quasars.pdf
       \endverb
     \endentry
+    \entry{koshizukaMovingParticleSemiImplicitMethod1996}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f132328466caddb5acafc57f05f040d8}{%
+           family={Koshizuka},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c5869e7afd59e8a96bb253162c74c115}{%
+           family={Oka},
+           familyi={O\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{ec0143d3504dc74e1926cee085087276}
+      \strng{fullhash}{ec0143d3504dc74e1926cee085087276}
+      \strng{fullhashraw}{ec0143d3504dc74e1926cee085087276}
+      \strng{bibnamehash}{ec0143d3504dc74e1926cee085087276}
+      \strng{authorbibnamehash}{ec0143d3504dc74e1926cee085087276}
+      \strng{authornamehash}{ec0143d3504dc74e1926cee085087276}
+      \strng{authorfullhash}{ec0143d3504dc74e1926cee085087276}
+      \strng{authorfullhashraw}{ec0143d3504dc74e1926cee085087276}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A moving-particle semi-implicit (MPS) method for simulating fragmentation of incompressible fluids is presented. The motion of each particle is calculated through interactions with neighboring particles covered with the kernel function. Deterministic particle interaction models representing gradient, Laplacian, and free surfaces are proposed. Fluid density is implicitly required to be constant as the incompressibility condition, while the other terms are explicitly calculated. The Poisson equation of pressure is solved by the incomplete Cholesky conjugate gradient method. Collapse of a water column is calculated using MPS. The effect of parameters in the models is investigated in test calculations. Good agreement with an experiment is obtained even if fragmentation and coalescence of the fluid take place.}
+      \field{day}{1}
+      \field{issn}{0029-5639}
+      \field{journaltitle}{Nuclear Science and Engineering}
+      \field{month}{7}
+      \field{title}{Moving-{{Particle Semi-Implicit Method}} for {{Fragmentation}} of {{Incompressible Fluid}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.13182/NSE96-A24205
+      \endverb
+    \endentry
+    \entry{hoogerbruggeSimulatingMicroscopicHydrodynamic1992}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=bd79d3abbddccc8bd5a42e8b9034ad69}{%
+           family={Hoogerbrugge},
+           familyi={H\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=593fced12d5d83dbfc6c80eb08156fee}{%
+           family={Koelman},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi M.\bibnamedelimi V.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{fullhash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{fullhashraw}{73855f562a2563f3f8363722e3e092f9}
+      \strng{bibnamehash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{authorbibnamehash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{authornamehash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{authorfullhash}{73855f562a2563f3f8363722e3e092f9}
+      \strng{authorfullhashraw}{73855f562a2563f3f8363722e3e092f9}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a novel method for simulating hydrodynamic phenomena. This particle-based method combines features from molecular dynamics and lattice-gas automata. It is shown theoretically as well as in simulations that a quantitative description of isothermal Navier-Stokes flow is obtained with relatively few particles. Computationally, the method is much faster than molecular dynamics, and the at same time it is much more flexible than lattice-gas automata schemes.}
+      \field{issn}{0295-5075}
+      \field{journaltitle}{Europhysics Letters}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shortjournal}{EPL}
+      \field{title}{Simulating {{Microscopic Hydrodynamic Phenomena}} with {{Dissipative Particle Dynamics}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1992}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1209/0295-5075/19/3/001
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Hoogerbrugge and Koelman - 1992 - Simulating Microscopic Hydrodynamic Phenomena with Dissipative Particle Dynamics.pdf
+      \endverb
+    \endentry
+    \entry{violeauFluidMechanicsSPH2012}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=acc9950dd59f9e560b3dbd0ae83e2af1}{%
+           family={Violeau},
+           familyi={V\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{fullhash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{fullhashraw}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{bibnamehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{authorbibnamehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{authornamehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{authorfullhash}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \strng{authorfullhashraw}{acc9950dd59f9e560b3dbd0ae83e2af1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This book aims at presenting the SPH method for fluid modelling from a theoretical and applied viewpoint. It comprises two parts that refer to each other. The first, dealing with the fundamentals of Hydraulics, is based on the elementary principles of Lagrangian and Hamiltonian mechanics. The specific laws governing a system of macroscopic particles are built, then the large systems involving dissipative processes are explained. The continua are then discussed; lastly, a fairly exhaustive account of turbulence is given. The second part discloses the bases of the SPH Lagrangian numerical method from the continuous equations, as well as from discrete variational principles, setting out the method's specific properties of conservativity and invariance. Various numerical schemes are compared, permanently referring to physics as dealt with in the first part. Applications to schematic instances are then discussed; ultimately, practical applications to the dimensioning of coastal and fluvial structures are considered. Despite the rapid growth in the SPH field, this book is the first to present this method in a comprehensive way for fluids. It should serve as a rigorous introduction to SPH and a reference for fundamental mathematical fluid dynamics.}
+      \field{day}{1}
+      \field{isbn}{978-0-19-965552-6}
+      \field{month}{5}
+      \field{shorttitle}{Fluid {{Mechanics}} and the {{SPH Method}}}
+      \field{title}{Fluid {{Mechanics}} and the {{SPH Method}}: {{Theory}} and {{Applications}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/acprof:oso/9780199655526.001.0001
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Violeau - 2015 - Fluid mechanics and the SPH method theory and applications.pdf
+      \endverb
+    \endentry
+    \entry{liuSmoothedParticleHydrodynamics2004}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b878fd3cb1b0a8925c19f6ab1811b184}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={G.\bibnamedelimi R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=55e179d6ba605b2fc6e687c09beb3c02}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=c17c0b8db1a19277e780a8336f6caa72}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shaofan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{fullhash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{fullhashraw}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{bibnamehash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{authorbibnamehash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{authornamehash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{authorfullhash}{a0a8c2cb10c667930488d823cb7f9c70}
+      \strng{authorfullhashraw}{a0a8c2cb10c667930488d823cb7f9c70}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{1432-0924}
+      \field{journaltitle}{Computational Mechanics}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{shortjournal}{Computational Mechanics}
+      \field{title}{Smoothed Particle Hydrodynamics --- a Meshfree Particle Method}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/s00466-004-0573-1
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Liu et al. - 2004 - “Smoothed particle hydrodynamics — a meshfree method”.pdf;/home/moschehaus/Portable/Documents/Zotero Library/Smoothed particle hydrodynamics a meshfree particle method -- Liu, G_ R_, Liu, M_ B_, Liu, GUI-.pdf
+      \endverb
+      \keyw{Meshfree Method,Smooth Particle Hydrodynamic}
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
@@ -1351,8 +1533,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}
