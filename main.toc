@@ -1,6 +1,6 @@
 \contentsline {chapter}{Information \& Abstract}{iv}{page*.2}%
 \contentsline {chapter}{Contents}{v}{chapter*.5}%
-\contentsline {chapter}{Introduction}{vi}{chapter*.6}%
+\contentsline {chapter}{Introduction}{vii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Flows around a topography}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Observed phenomena}{1}{section*.8}%
 \contentsline {subsection}{Internal gravity waves}{1}{subsection*.9}%
@@ -19,31 +19,34 @@
 \contentsline {subsection}{Flow over a periodic corrugation}{18}{subsection*.24}%
 \contentsline {chapter}{\numberline {2}Mathematical modelling of atmospheric flows}{23}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Initial and boundary conditions}{23}{section*.26}%
-\contentsline {subsubsection}{Radiation condition}{23}{section*.26}%
-\contentsline {subsection}{Terrain-following coordinates}{23}{subsection*.27}%
-\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.28}%
+\contentsline {subsection}{Radiation condition}{23}{subsection*.27}%
+\contentsline {subsection}{Terrain-following coordinates}{23}{subsection*.28}%
+\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.29}%
 \contentsline {chapter}{\numberline {3}Smoothed Particle Hydrodynamics}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Method overview}{24}{section*.29}%
-\contentsline {subsection}{Pros and cons}{24}{subsection*.30}%
-\contentsline {subsection}{Uses}{24}{subsection*.31}%
-\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.32}%
-\contentsline {subsection}{Kernel interpolation}{24}{subsection*.33}%
-\contentsline {subsection}{Particle paradigm}{24}{subsection*.34}%
-\contentsline {subsection}{Differential operators}{24}{subsection*.35}%
-\contentsline {section}{\numberline {3.3}SPH formulations}{24}{section*.36}%
-\contentsline {subsection}{Classical SPH}{24}{subsection*.37}%
-\contentsline {subsection}{Hamiltonian formulation}{24}{subsection*.38}%
-\contentsline {subsection}{Density-free formulations}{24}{subsection*.39}%
-\contentsline {subsubsection}{Pressure-entropy}{24}{subsection*.39}%
+\contentsline {section}{\numberline {3.1}Method overview}{24}{section*.30}%
+\contentsline {subsection}{Pros and cons}{24}{subsection*.31}%
+\contentsline {subsection}{Uses}{24}{subsection*.32}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.33}%
+\contentsline {subsection}{Kernel interpolation}{24}{subsection*.34}%
+\contentsline {subsection}{Particle paradigm}{24}{subsection*.35}%
+\contentsline {subsection}{Differential operators}{24}{subsection*.36}%
+\contentsline {section}{\numberline {3.3}SPH formulations}{24}{section*.37}%
+\contentsline {subsection}{Classical SPH}{24}{subsection*.38}%
+\contentsline {subsection}{Hamiltonian formulation}{24}{subsection*.39}%
+\contentsline {subsection}{Density-free formulations}{24}{subsection*.40}%
+\contentsline {subsubsection}{Pressure-entropy}{24}{subsection*.40}%
 \contentsline {subsubsection}{Pressure-potential temperature}{25}{equation.3.3}%
-\contentsline {section}{\numberline {3.4}Implementation specifics}{27}{section*.40}%
-\contentsline {subsection}{Boundary conditions}{27}{subsection*.41}%
-\contentsline {subsubsection}{Inflow \& Outflow}{27}{subsection*.41}%
-\contentsline {subsubsection}{Free-slip}{27}{subsection*.41}%
-\contentsline {subsection}{Adaptive smoothing length}{27}{subsection*.42}%
-\contentsline {subsection}{Particle placement}{27}{subsection*.43}%
+\contentsline {section}{\numberline {3.4}Implementation specifics}{27}{section*.41}%
+\contentsline {subsection}{Extrapolating boundary conditions}{27}{subsection*.42}%
+\contentsline {subsubsection}{Inflow \& Outflow}{27}{subsection*.42}%
+\contentsline {subsubsection}{Free-slip}{27}{subsection*.42}%
+\contentsline {subsection}{Adaptive smoothing length}{27}{subsection*.43}%
+\contentsline {subsection}{Particle placement}{27}{subsection*.44}%
 \contentsline {chapter}{\numberline {4}Experiments}{28}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{28}{section*.45}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{28}{section*.46}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{28}{section*.47}%
 \contentsline {chapter}{\numberline {5}Voronoi}{29}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{30}{chapter*.44}%
-\contentsline {chapter}{References}{31}{appendix*.45}%
+\contentsline {chapter}{Summary and Outlook}{30}{chapter*.48}%
+\contentsline {chapter}{References}{31}{appendix*.49}%
 \contentsfinish 

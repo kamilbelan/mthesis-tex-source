@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 17:54
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  21 APR 2026 17:59
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2453,15 +2453,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./build/main.toc)
+(./build/main.toc
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+
+
+[5
+
+])
 \tf@toc=\write6
 
 \openout6 = main.toc
 
 
-[5
-
-]
+[6]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: luatex
 * paper: custom
@@ -2501,12 +2506,12 @@ Underfull \hbox (badness 1874) in paragraph at lines 28--28
 
 )
 
-[6
+[7
 
 
 ] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=283, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=303, 1110.0672pt x 832.5504pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
@@ -2518,7 +2523,9 @@ Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 
 
 ]
-<./figures/oro_flows/fohn.pdf, id=308, 3886.52pt x 2601.72pt>
+Package marginnote Info: Using workaround for absolute page number on input lin
+e 40.
+<./figures/oro_flows/fohn.pdf, id=328, 3886.52pt x 2601.72pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
@@ -2726,7 +2733,7 @@ Overfull \hbox (30.80154pt too wide) detected at line 739
 
 
 [21]
-<./figures/oro_flows/propagating.pdf, id=620, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/propagating.pdf, id=640, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/propagating.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/propagating.pdf>
 Package luatex.def Info: ./figures/oro_flows/propagating.pdf  used on input lin
@@ -2846,7 +2853,7 @@ See the caption package documentation for explanation.
 
 
 [33]
-runsystem(latexminted cleantemp  --timestamp 20260421175438Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260421175905Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2863,16 +2870,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67084 strings out of 475512
- 195512,2848258 words of node,token memory allocated
- 65729 words of node memory still in use:
+ 67102 strings out of 475512
+ 195455,2848258 words of node,token memory allocated
+ 65719 words of node memory still in use:
    533 hlist, 61 vlist, 16 rule, 424 disc, 37 local_par, 129 math, 1372 glue, 36
-9 kern, 165 penalty, 138 margin_kern, 4671 glyph, 1523 attribute, 115 glue_spec,
- 1523 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
-, 10 pdf_action, 112 pdf_colorstack nodes
-   avail lists: 1:12,2:6925,3:4778,4:589,5:701,6:152,7:7161,8:107,9:1694,10:24,1
+9 kern, 165 penalty, 138 margin_kern, 4671 glyph, 1522 attribute, 115 glue_spec,
+ 1522 attribute_list, 8 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_link
+, 9 pdf_action, 112 pdf_colorstack nodes
+   avail lists: 1:11,2:6925,3:4778,4:589,5:701,6:161,7:7161,8:107,9:1694,10:24,1
 1:412,12:3
- 87879 multiletter control sequences out of 65536+600000
+ 87889 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,19n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2911,10 +2918,10 @@ c/lm/lmsy10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy6.pfb>
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></opt/texlive/te
 xdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/texlive/tex
 dir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on main.pdf (39 pages, 8275926 bytes).
+Output written on main.pdf (40 pages, 8279363 bytes).
 
-PDF statistics: 1124 PDF objects out of 1200 (max. 8388607)
- 617 compressed objects within 7 object streams
- 229 named destinations out of 1000 (max. 131072)
- 550 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1159 PDF objects out of 1200 (max. 8388607)
+ 635 compressed objects within 7 object streams
+ 237 named destinations out of 1000 (max. 131072)
+ 582 words of extra memory for PDF output out of 10000 (max. 100000000)
 
