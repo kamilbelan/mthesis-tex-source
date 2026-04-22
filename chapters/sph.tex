@@ -106,11 +106,10 @@ Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w
 \sphc{\Phi}\left(t, \vb{x}\right) = \Phi\left(t, \vb{x}\right) + \bigO{h^{2}}.
 \end{equations}
 
-This approximation property evidently heavily influences the numerical accuracy of the method. A more involved discussion of SPH accuracy and consistency will be presented in chapter
+This approximation property evidently heavily influences the numerical accuracy of the method. A more involved discussion of SPH accuracy and consistency will be presented in section \Cref{sec:ACCURACY}.
 
-%% TODO: dopsat chapter s presnosti
 
-\subsection{Particle paradigm}
+\subsection{Particle approximation}
 \label{sec:PARTICLES}
 
 Let $\Omega \subset \R^d, d = 2, 3$ be a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_i\}_{i=1}^N \subset \R^{dN}$. Denote by $V_i$ some \emph{estimator} of the particle volume, \eg
@@ -176,6 +175,18 @@ In summary, SPH trades numerical accuracy for flexibility and implementational s
 
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
+
+This section employs the presented particle approximation framework to discretize differential operators appearing in the governing equations of fluid dynamics. Even though we have, up to this point, assumed only scalar fields, the generalization to vector and tensor fields is straightforward.
+
+\subsubsection{Gradient of a scalar field}
+\label{sec:GRADIENT}
+
+The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_i$ can be in the nature of \Cref{eq:DISC-INTERPOLATION} approximated as
+
+\begin{equations}[columns,*]
+	\grad_i \Phi\left(t, \vb{x}_i\right) &\approx \sphd{\grad_i \Phi}\left(t, \vb{x}_i\right) = \sum_{j=1}^N \grad_i\left(\Phi\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)\right)V_j =\\
+						    &= \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)\grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j.
+\end{equations}
 
 
 
