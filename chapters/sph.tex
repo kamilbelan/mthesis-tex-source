@@ -113,10 +113,71 @@ This approximation property evidently heavily influences the numerical accuracy 
 \subsection{Particle paradigm}
 \label{sec:PARTICLES}
 
+Let $\Omega \subset \R^d, d = 2, 3$ be a continuous medium, which we partition into $N \in \N$ particles with coordinates $\{\vb{x}_i\}_{i=1}^N \subset \R^{dN}$. Denote by $V_i$ some \emph{estimator} of the particle volume, \eg
 
+\begin{equations}[single,!,numberline=all]
+\label{eq:MASS-DENSITY}
+V_i = \frac{\rho_i}{m_i},
+\end{equations}
+
+with $\rho_i$ being the particles density and $m_i$ its mass. The choice \Cref{eq:MASS-DENSITY} is clearly \emph{not a unique} choice of the volume estimator; the freedom of choice will be invoked in 
+% TODO: dodelat referenci
+	Using this particle partition, we simplify the continuous interpolation \Cref{eq:CONT-INTERPOLATION} by deploying a quadrature rule. Let $\vb{x}_i$ be the position of an arbitrary particle, then we approximate
+
+\begin{equations}[single,*]
+	\sphc{\Phi}\left(t, \vb{x}_i\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\abs{\vb{x}_i - \vb{x}'}\right)\dd{\vb{x}'} \approx \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j, 
+\end{equations}
+that is, we approximate the integration by a \emph{quadrature rule} with nodes $\{\vb{x}_j\}_{j=1}^N$ and weights $\{V_j\}_{j=1}^N$. This procedure can be thought of as introducing a \emph{discrete interpolation} operator $\Phi\left(t, \vb{x}_i\right) \mapsto \sphd{\Phi}\left(t, \vb{x}_i\right)$ given as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DISC-INTERPOLATION}
+\sphd{\Phi}\left(t, \vb{x}_{i}\right) \coloneq \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right) w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j \equiv \sum_{j=1}^N \Phi_j w_{ij}V_j,
+\end{equations}
+
+where we have adopted the notation $\Phi_j \coloneq \Phi\left(t, \vb{x}_j\right),$ $w_{ij} \coloneq w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)$. The quantity $\Phi_j$ can be naturally interpreted as the quantity $\Phi$, \ie density, of the particle $\vb{x}_j$. It should be clarified that $\Phi_j = \Phi_j(t)$ is still a function of time.
+Notice also that since the kernel $w_h$ has a compact support, in practice the sum in \Cref{eq:DISC-INTERPOLATION} typically does \emph{not} consist of $N$ summands.\sidenote{Note well, if it were the case, all particles would have to be located within each other's support radius, \ie very closely. In SPH, extreme proximity gives rise to a serious instability issue known as \emph{tensile instability} \Cref{sec:INSTABILITY}.}
+
+Having introduced the \emph(discrete) interpolation, we deploy it to approximate the \emph{continuous} interpolation
+
+\begin{equations}[single,*]
+	\sphc{\Phi}\left(t, \vb{x}_i\right) \approx \sphd{\Phi}\left(t, \vb{x}_i\right),
+\end{equations}
+
+and one would immediately be interested in the quality of the approximation. It turns out that an involved discrete approximation error is a complicated \emph{open} problem \autocite[p.~3]{vacondioGrandChallengesSmoothed2021a}\autocite{quinlanTruncationErrorMeshfree2006}. The main difficulty lies in the fact that the error analysis depends on the particle positions \textcolor{gray}(that change in time). 
+If one considers particles evenly arranged in a Cartesian grid (which is a substantial simplification), it can be shown\sidenote{Deploying techniques from Fourier analysis and the Euler-MacLaurin formula.} that for the Wendland quintic kernel it holds
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DIS-ERROR}
+\sphd{\Phi}\left(t, \vb{x}\right) = \sphc{\Phi}\left(t, \vb{x}\right) + \bigO{\left(\frac{\dd{r}}{h}\right)^6},
+\end{equations}
+with $\dd{r}$ being the typical particle size, \ie $\dd{r} \propto V^{\frac{1}{d}}$, for particles of typical volume $V$.
+
+\subsection{Accuracy of SPH}
+\label{sec:ACCURACY}
+
+A presentation of a numerical method would not be complete without a mention of the \emph{error estimation} --- that is, what accuracy the method achieves. 
+
+There are two sources of errors in the SPH discretisation: \begin{inparaenum} \item continuous kernel interpolation, \item discrete particle approximation \end{inparaenum}, which we analysed in \Cref{eq:C-APPROX} and \Cref{eq:DIS-ERROR} respectively. Combining these, we obtain for a sufficiently smooth scalar field $\Phi$, the quintic Wendland kernel of smoothing length $h$, and particles of size $\dd{r}$ arranged on a regular Cartesian grid,
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:ERR}
+\sphd{\Phi} = \Phi + \bigO{h^{2}} + \bigO{\left(\frac{\dd{r}}{h}\right)^6}.
+\end{equations}
+
+This relation shows that the SPH method is \emph{at least first order}. We say \enquote{at least} because for particular combinations of kernel, geometry and particle arrangement, the observed order can be higher \autocite{quinlanTruncationErrorMeshfree2006}. 
+Moreover, the error decreases when both $h \to 0^+$ and $\dd{r}/h \to 0^+$, equivalently $h/\dd{r} \to \infty$. This reveals an interesting relationship between the smoothing length $h$ and the particle size $\dd{r}$: to improve accuracy, both must vanish\sidenote{This matches physical intuition: as the particles shrink and their number grows, the discrete particle system approaches continuum.}, but \emph{not independently} --- $\dd{r}$ must decay faster than $h$. The precise interplay of these two parameters remains an active area of analysis \autocite{quinlanTruncationErrorMeshfree2006}.
+
+
+Let us summarize the presented properties and situate SPH within the broader landscape of numerical methods for continuum mechanics. Mesh-based Eulerian methods such as the finite volume method and, in particular, the discontinuous Galerkin method can be constructed to achieve arbitrarily high order of convergence, at least in \emph{smooth regions of the solution}.\sidenote{Phenomena like shocks and other contact discontinuities decrease the order of convergence.} In this comparison, SPH --- which is often merely first order in practice --- is clearly less competitive.
+
+However, accuracy should not be the only criterion. The mesh-free nature of SPH allows us to tackle problems that are notoriously difficult for mesh schemes: free-surface flows, large deformations, plasticity, flows in complex or evolving geometries. No meshing routines are required. The method is also remarkably simple to implement.
+
+In summary, SPH trades numerical accuracy for flexibility and implementational simplicity. The choice of method is therefore dictated by the nature of the problem under study.
 
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
+
+
 
 \section{SPH formulations}
 \label{sec:FORMULATIONS}
