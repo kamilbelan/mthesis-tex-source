@@ -183,12 +183,75 @@ This section employs the presented particle approximation framework to discretiz
 
 The gradient of a differentiable scalar field $\Phi\left(t, \vb{x}\right)$ at particle $\vb{x}_i$ can be in the nature of \Cref{eq:DISC-INTERPOLATION} approximated as
 
-\begin{equations}[columns,*]
+\begin{equations}[columns]
 	\grad_i \Phi\left(t, \vb{x}_i\right) &\approx \sphd{\grad_i \Phi}\left(t, \vb{x}_i\right) = \sum_{j=1}^N \grad_i\left(\Phi\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)\right)V_j =\\
-						    &= \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)\grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j.
+						    &= \sum_{j=1}^N \Phi\left(t, \vb{x}_j\right)\grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)V_j =\\
+						    &=\sum_{j=1}^N \Phi_j \grad_i w_{ij} V_j,\label{eq:GRAD}
 \end{equations}
 
+since $\Phi\left(t, \vb{x}_j\right)$ is independent of $\vb{x}_i$,
 
+\subsubsection{Divergence of a vector field}
+\label{sec:DIVERGENCE}
+
+The discrete divergence of a continuously differentiable vector field $\vb{F}\left(t, \vb{x}\right)$ at a particle $\vb{x}_i$ is defined as
+
+\begin{equations}[columns,*]
+	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \sphd{\grad_i \cdot \vb{F}}\left(t, \vb{x}_i\right) = \sum_{j=1}^N\left(\grad_i \Big(\vb{F}\left(t, \vb{x}_j\right)w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right)\Big)V_j\right) = \\
+						     &= \sum_{j=1}^N \vb{F}\left(t, \vb{x}_j\right) \cdot \grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right) V_j = \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij} V_j.
+\end{equations}
+
+\subsubsection{Improved discretization}
+\label{sec:IMPROVED-DIFF-OPS}
+
+In summary, the straightforward way of discretizing the $\gradop$ and $\div$ operators give
+
+\begin{equations}[columns,!,numberline=all]
+\grad \Phi\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j,\label{eq:NAIVE-GRAD} \\
+\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j. \label{eq:NAIVE-DIV}
+\end{equations}
+
+However, this is not a unique way to discretize the differential operators --- and particularly not a good one either. To demonstrate, take the constant fields $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
+
+\begin{equations}[columns,*]
+	\grad_i \Phi\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j = \sum_{j=1}^N \grad_i w_{ij}V_j, \\
+	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \vb{e}_x \cdot \grad_i w_{ij}V_j.
+\end{equations}
+
+The naive discretization \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To account for constant fields, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:IDENTITIES}
+\grad \Phi &= \frac{1}{\rho} \grad\left(\rho \Phi\right) - \frac{\Phi}{\rho}\grad \rho, \\
+\divergence{\vb{F}} &= \frac{1}{\rho}\divergence{\left(\rho \vb{F}\right)} - \frac{1}{\rho}\vb{F} \cdot \grad \rho,
+\end{equations}
+
+valid for a nonzero continuously differentiable function $\rho$.\sidenote{The notation is suggestive --- in what follows, $\rho$ will indeed be the density. % HACK: is this correct?} We can improve our approximation by discretizing in the following manner
+
+\begin{equations}[columns,*]
+\grad_i \Phi_i &= \frac{1}{\rho_i} \grad_i \left(\rho_i \Phi_i\right) - \frac{\Phi_i}{\rho_i} \grad_i\left(\rho_i\right) \approx \\ 
+	       &\approx \frac{1}{\rho_i} \sum_{j=1}^N \rho_j \Phi_j \grad_i w_{ij} V_j - \frac{\Phi_i}{\rho_i} \sum_{j=1}^N \rho_j \grad_i w_{ij} V_j =\\
+	       &= \frac{1}{\rho_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right)\rho_j \grad_i w_{ij}V_j,
+\end{equations}
+
+and 
+
+\begin{equations}[columns,*]
+\grad_i \cdot \vb{F}_i &= \frac{1}{\rho_i} \grad_i \cdot \left(\rho_i \vb{F}_i\right) - \frac{1}{\rho_i} \vb{F}_i \cdot \grad_i \rho_i \approx \\
+                       &\approx \frac{1}{\rho_i} \sum_{j=1}^N \rho_j \vb{F}_j \cdot \grad_i w_{ij} V_j - \frac{1}{\rho_i} \vb{F}_i \cdot \sum_{j=1}^N \rho_j \grad_i w_{ij} V_j =\\
+		       &= \frac{1}{\rho_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right) \rho_j  \cdot \grad_i w_{ij} V_j.
+\end{equations}
+
+Evidently, thanks to the $\Phi_j - \Phi_i$ and $\vb{F}_j - \vb{F}_i$ terms respectively, this discretization correctly vanishes for constant fields. 
+
+All in all, the discretization
+
+\begin{equations}[columns,!,numberline=all]
+\grad \Phi\left(t, \vb{x}_i\right) &\approx \frac{1}{\rho_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right) \rho_j \grad_i w_{ij} V_j ,\label{eq:IMPROVED-GRAD} \\
+\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\rho_1}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right)\rho_j \cdot \grad_i w_{ij}V_j, \label{eq:IMPROVED-DIV}
+\end{equations}
+
+will be preferred in the section \Cref{sec:WCSPH}.
 
 \section{SPH formulations}
 \label{sec:FORMULATIONS}
