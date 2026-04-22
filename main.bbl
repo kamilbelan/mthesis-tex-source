@@ -1691,6 +1691,141 @@
       \verb https://arxiv.org/abs/1204.2471v1
       \endverb
     \endentry
+    \entry{vacondioGrandChallengesSmoothed2021a}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=348eba3c752d0b80f3b4158267e5691e}{%
+           family={Vacondio},
+           familyi={V\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d20fe09d9f48dbf5cb0f059ac2f37337}{%
+           family={Altomare},
+           familyi={A\bibinitperiod},
+           given={Corrado},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e64e5532bb45ae21b852ddaea85d549c}{%
+           family={De\bibnamedelima Leffe},
+           familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9be6af658c94174fe477db4bf590768a}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=53067c664cf88ed0640e47179311273e}{%
+           family={Le\bibnamedelima Touzé},
+           familyi={L\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bb9d5c9f5f0adbe307e77343bce5eaa8}{%
+           family={Lind},
+           familyi={L\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dba616f27979e02b8a980a21dca83001}{%
+           family={Marongiu},
+           familyi={M\bibinitperiod},
+           given={Jean-Christophe},
+           giveni={J\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=d212092d16dbf0d5565ee6e34fd6cfe3}{%
+           family={Marrone},
+           familyi={M\bibinitperiod},
+           given={Salvatore},
+           giveni={S\bibinitperiod}}}%
+        {{hash=40eeca794fdba5558b0d815a74535f56}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={Benedict\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c5d354edab07eb6ae7449545daf26591}{%
+           family={Souto-Iglesias},
+           familyi={S\bibinithyphendelim I\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{81c164ee3d2d9ec3e93e519bd01b7ec2}
+      \strng{fullhash}{5599530d0863f967ebfc15b67916c18d}
+      \strng{fullhashraw}{5599530d0863f967ebfc15b67916c18d}
+      \strng{bibnamehash}{5599530d0863f967ebfc15b67916c18d}
+      \strng{authorbibnamehash}{5599530d0863f967ebfc15b67916c18d}
+      \strng{authornamehash}{81c164ee3d2d9ec3e93e519bd01b7ec2}
+      \strng{authorfullhash}{5599530d0863f967ebfc15b67916c18d}
+      \strng{authorfullhashraw}{5599530d0863f967ebfc15b67916c18d}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents a brief review of grand challenges of Smoothed Particle Hydrodynamics (SPH) method. As a meshless method, SPH can simulate a large range of applications from astrophysics to free-surface flows, to complex mixing problems in industry and has had notable successes. As a young computational method, the SPH method still requires development to address important elements which prevent more widespread use. This effort has been led by members of the SPH rEsearch and engineeRing International Community (SPHERIC) who have identified SPH Grand Challenges. The SPHERIC SPH Grand Challenges (GCs) have been grouped into 5 categories: (GC1) convergence, consistency and stability, (GC2) boundary conditions, (GC3) adaptivity, (GC4) coupling to other models, and (GC5) applicability to industry. The SPH Grand Challenges have been formulated to focus the attention and activities of researchers, developers, and users around the world. The status of each SPH Grand Challenge is presented in this paper with a discussion on the areas for future development.}
+      \field{day}{1}
+      \field{issn}{2196-4386}
+      \field{journaltitle}{Computational Particle Mechanics}
+      \field{month}{5}
+      \field{shortjournal}{Computational Particle Mechanics}
+      \field{title}{Grand Challenges for {{Smoothed Particle Hydrodynamics}} Numerical Schemes}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/s40571-020-00354-1
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Vacondio et al. - 2021 - Grand challenges for Smoothed Particle Hydrodynamics numerical schemes 1.pdf;/home/moschehaus/Zotero/storage/MXYY429N/S2196438625000658.html
+      \endverb
+      \keyw{Grand challenges,Lagrangian,Meshless,Navier-Stokes equations,Smoothed Particle Hydrodynamics,SPH}
+    \endentry
+    \entry{quinlanTruncationErrorMeshfree2006}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a9e1dc7786c495ce68c04436b4c37339}{%
+           family={Quinlan},
+           familyi={Q\bibinitperiod},
+           given={N.\bibnamedelimi J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3d3d269d100eec7ecaf43b9f6dbb209d}{%
+           family={Basa},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d8932a6f6a8247e21f122d0273126bad}{%
+           family={Lastiwka},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{fullhash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{fullhashraw}{1e640468c2b25609a97e4131a91a7709}
+      \strng{bibnamehash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{authorbibnamehash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{authornamehash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{authorfullhash}{1e640468c2b25609a97e4131a91a7709}
+      \strng{authorfullhashraw}{1e640468c2b25609a97e4131a91a7709}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A truncation error analysis has been developed for the approximation of spatial derivatives in smoothed particle hydrodynamics (SPH) and related first-order consistent methods such as the first-order form of the reproducing kernel particle method. Error is shown to depend on both the smoothing length h and the ratio of particle spacing to smoothing length, {$\Delta$}x/h. For uniformly spaced particles in one dimension, analysis shows that as h is reduced while maintaining constant {$\Delta$}x/h, error decays as h2 until a limiting discretization error is reached, which is independent of h. If {$\Delta$}x/h is reduced while maintaining constant h (i.e. if the number of neighbours per particle is increased), error decreases at a rate which depends on the kernel function's smoothness. When particles are distributed non-uniformly, error can grow as h is reduced with constant {$\Delta$}x/h. First-order consistent methods are shown to remove this divergent behaviour. Numerical experiments confirm the theoretical analysis for one dimension, and indicate that the main results are also true in three dimensions. This investigation highlights the complexity of error behaviour in SPH, and shows that the roles of both h and {$\Delta$}x/h must be considered when choosing particle distributions and smoothing lengths. Copyright ©{} 2005 John Wiley \& Sons, Ltd.}
+      \field{issn}{1097-0207}
+      \field{journaltitle}{International Journal for Numerical Methods in Engineering}
+      \field{langid}{english}
+      \field{title}{Truncation Error in Mesh-Free Particle Methods}
+      \field{urlday}{22}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/nme.1617
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Quinlan et al. - 2006 - Truncation error in mesh-free particle methods.pdf;/home/moschehaus/Zotero/storage/PF6MDIY3/nme.html
+      \endverb
+      \keyw{error analysis,meshfree methods,meshless methods,particle methods,smoothed particle hydrodynamics}
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%

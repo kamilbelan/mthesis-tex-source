@@ -2489,7 +2489,11 @@
     <bcf:citekey order="57" intorder="1">dehnenNewKernelsSPH2012</bcf:citekey>
     <bcf:citekey order="58" intorder="1">wendlandPiecewisePolynomialPositive1995</bcf:citekey>
     <bcf:citekey order="59" intorder="1">violeauFluidMechanicsSPH2012</bcf:citekey>
-    <bcf:citekey order="60" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">vacondioGrandChallengesSmoothed2021a</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
