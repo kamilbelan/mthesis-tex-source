@@ -36,21 +36,72 @@ Let $\Omega \subset \R^d, d = 2, 3$ be the continuous medium and $\Phi: \Rplusno
 \Phi\left(t, \vb{x}\right) = \left(\Phi \star \delta\right)\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)\delta\left(\vb{x} - \vb{x'}\right)\dd{\vb{x'}},
 \end{equations}
 
-holds for almost all $\vb{x} \in \Omega$. A common assumption in the SPH literature is to assume $\vb{x} \mapsto \Phi\left(t, \vb{x}\right) \in \Czero{\Omega},$ and so the equality \Cref{eq:DIRAC-PROPERTY} holds pointwise in $\Omega$. To make the presentation simpler, throughout we always assume sufficient regularity of all quantities involved and do not pursue measure-theoretic rigor.
+holds for almost all $\vb{x} \in \Omega$. A common assumption in the SPH literature is to assume $\vb{x} \mapsto \Phi\left(t, \vb{x}\right) \in \Czero{\Omega}$, and so the equality \Cref{eq:DIRAC-PROPERTY} holds pointwise in $\Omega$. To make the presentation simpler, throughout we always assume sufficient regularity of all quantities involved and do not pursue measure-theoretic rigor.
 
 The main point of departure of the SPH method is to replace the Dirac delta distribution in \Cref{eq:DIRAC-PROPERTY} by an \emph{interpolation kernel} $w_h: \Omega \to \R$ \autocite[p.~305]{violeauFluidMechanicsSPH2012}, \ie
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:CONT-INTERPOLATION}
-\sphc{\Phi}\left(t, \vb{x}\right)\coloneq \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
+\sphc{\Phi}\left(t, \vb{x}\right)\coloneq \left(\Phi \star w_h\right)\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x'}\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
 \end{equations}
 
-The map $\Phi \mapsto \sphc{\Phi}$ is called \emph{continuous interpolation}.
+The map $\Phi \mapsto \sphc{\Phi}$ is called \emph{continuous interpolation}. Certainly, the interpolation kernel $w_{h}$ cannot be arbitrary. We aim to approximate the function $\Phi$ by its continuous interpolation $\sphc{\Phi}$, that is
 
-- properties of the kernel \autocite[p.~32]{liuSmoothedParticleHydrodynamics2004}
-- approximation properties 
-- possible choices : Gaussian kernels, $M_n$ splines
-- our choice 
+\begin{equations}[single,*]
+	\Phi\left(t, \vb{x}\right) \approx \sphc{\Phi}\left(t, \vb{x}\right) = \int_{\Omega}\Phi\left(t, \vb{x}'\right)w_h\left(\vb{x} - \vb{x'}\right)\dd{\vb{x}'}.
+\end{equations}
+
+To obtain a good approximation, the kernel must satisfy \autocite[p.~60]{liuSmoothedParticleHydrodynamics2004}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Properties of the interpolation kernel $w_h$.}
+	\label{tab:kernel-properties}
+	\begin{tabular}{@{}cll@{}}
+		\toprule
+		& Property & Condition \\
+		\midrule
+		(K1) & positivity & $w_h \geq 0$ \\
+		(K2) & monotonicity & $w_h$ is a decreasing function \\
+		(K3) & symmetry & $w_h$ is radial, \ie $w_h\left(\vb{x} - \vb{x}'\right) = w_h\left(\abs{\vb{x} - \vb{x}'}\right)$ \\
+		(K4) & normalization & $\int_{\Omega}w_h\left(\vb{r}\right)\dd{\vb{r}} = 1$ \\
+		(K5) & compact support/decay & $\supp w_h$ is compact or $\lim_{\abs{\vb{r}} \to \infty}w\left(\vb{r}\right) = 0$ sufficiently fast \\
+		(K6) & smoothness & $w_h$ be \emph{sufficiently smooth} \\
+		(K7) & concentration & $w_h \xrightharpoonup{*} \delta$ as $h \to 0^+$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+For compact kernels, $h$ is related to the size of the support radius as $\diam \supp = 2 \kappa h,$ where $\kappa$ is kernel-dependent. If $w_h$ is not compact, \eg for a Gaussian kernel \autocite[p.~8]{monaghanSmoothedParticleHydrodynamics2005} 
+
+\begin{equations}[single,*]
+w_h\left(\vb{r}\right) = \frac{1}{\left(h \sqrt{\pi}\right)^{d}}\exp\left(-\frac{\abs{\vb{r}}^{2}}{h^{2}}\right),
+\end{equations}
+
+$h$ is the characteristic width of the Gaussian.
+
+Common choice for the interpolation kernel are \enquote{bell shaped} functions, such as the Gaussian, B-splines \autocite{monaghanExtrapolatingSplinesInterpolation1985} and other splines. An overview of the commonly used kernels can be found in \autocite[p.~62]{liuSmoothedParticleHydrodynamics2004}. 
+
+In our application, we deployed the $\Ctwo$ Wendland polynomial kernels \autocite{wendlandPiecewisePolynomialPositive1995}\autocite{dehnenNewKernelsSPH2012}, \ie a special class of piecewise polynomial positive compactly supported functions.\sidenote{In the class of positive definite compactly supported radial univariate polynomials of prescribed smoothness and dimension, the Wendland functions are of minimal degree and moreover are unique. \autocite{wendlandPiecewisePolynomialPositive1995}} In particular, the quintic Wendland kernel has been used
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:WENDLAND-KERNEL}
+	w_h\left(q\right) = \begin{cases} \frac{7}{4 \pi h^{2}}\left(1 - \frac{q}{2}\right)^4\left(2q + 1\right),& 0 \leq q \leq 2, \\
+		0,& q > 2.
+	\end{cases}, q = \frac{\abs{\vb{r}}}{h}.
+\end{equations}
+
+It is evident that for the Wendland kernel \Cref{eq:WENDLAND-KERNEL}, $w_h\left(\frac{\vb{r}}{h}\right)$ for $\abs{\vb{r}} \leq 2 h$, meaning $4 h = \diam \supp w_h$.
+
+Under the conditions \Cref{tab:kernel-properties} on the interpolation kernel $w_h$, it can be shown\sidenote{The derivation is a straightforward application of the Taylor's expansion.}\autocite[p.~307]{violeauFluidMechanicsSPH2012} 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:C-APPROX}
+\sphc{\Phi}\left(t, \vb{x}\right) = \Phi\left(t, \vb{x}\right) + \bigO{h^{2}},
+\end{equations}
+
+where
+
 
 \subsection{Particle paradigm}
 \label{sec:PARTICLES}
