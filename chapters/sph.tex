@@ -341,8 +341,8 @@ The conservation property we discovered in the previous section aligns with our 
 \subsubsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $C\one$ diffeomorphism $\bm{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \bm{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
-The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{x}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M} and of sufficient regularity, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
+Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $\Cone{}$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
+The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{x}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$ and of sufficient regularity, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
@@ -361,7 +361,7 @@ Given an functional $F = F\left(t, \vb{x}, \vb{M}\right),$ its evolution in time
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:TIME-EVOL}
-\tdot{F} = \partial_t F + \pbr[L]{F, E},
+\tdot{F} = \partial_t F + \pbr[L]{F}{E},
 \end{equations}
 
 where $E$ is the total energy functional.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.}

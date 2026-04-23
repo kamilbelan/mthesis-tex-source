@@ -112,7 +112,7 @@
 % \DeclarePairedDelimiterX{\Liebracket}[2]{\lbrack}{\rbrack}{#1,#2}
 \makeatletter
 \DeclarePairedDelimiterX{\pbr@inner}[2]{\lbrace}{\rbrace}{#1,#2}
-\RenewDocumentCommand{\pbr}{O{} m m}{\pbr@inner*{#2}{#3}^{\mkern-2mu\text{(#1)}}}
+\NewDocumentCommand{\pbr}{O{} m m}{\pbr@inner*{#2}{#3}^{\mkern-2mu\text{(#1)}}}
 \makeatother
 
 \DeclareMathOperator{\Tor}{\mathsf{Tor}}
