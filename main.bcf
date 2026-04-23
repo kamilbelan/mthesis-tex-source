@@ -2493,7 +2493,8 @@
     <bcf:citekey order="61" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
     <bcf:citekey order="62" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
     <bcf:citekey order="63" intorder="1">quinlanTruncationErrorMeshfree2006</bcf:citekey>
-    <bcf:citekey order="64" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">monaghanSmoothedParticleHydrodynamics2005</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
