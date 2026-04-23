@@ -16,7 +16,7 @@ This chapter presents the main numerical method used --- the \emph{Smoothed Part
 
 Smoothed Particle Hydrodynamics (SPH) is a general use numerical method first used in astrophysical stellar models \autocite{gingoldSmoothedParticleHydrodynamics1977}. The authors required a solution to a grid resolution problem arising with their use of the finite difference method (FDM).\sidenote{They argued that the treatment of highly distorted continuum would require an extremely fine grid, hence substantial computational cost \autocite[p.~1]{gingoldSmoothedParticleHydrodynamics1977}.} The method has found use in a variety of fields, \viz free-surface flows \autocite{monaghanSimulatingFreeSurface1994a}, solid mechanics \autocite{liberskySmoothParticleHydrodynamics1991}, geomechanics \autocite{buiLagrangianMeshfreeParticles2008}, and is still successfully used in astrophysics \autocite{springelSimulationsFormationEvolution2005}. 
 
-SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called \emph{Eulerian}, since they approximate the evolution in the \emph{current, deformed} configuration. Particle methods like \begin{inparaenum} \item SPH; \item MPS (moving particle semi-implicit method) \autocite{koshizukaMovingParticleSemiImplicitMethod1996}; \item DPD (dissipative particle dynamics) \autocite{hoogerbruggeSimulatingMicroscopicHydrodynamic1992} \end{inparaenum} trace the evolution in the \emph{reference} configuration, and so particle methods are also called \emph{Lagrangian}.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretization of the governing equations.} and the state of each particle is advanced in time. 
+SPH is a particle (Lagrangian) method.\sidenote{In this sense grid/mesh methods such as the \begin{inparaenum} \item finite difference method; \item finite element method; \item finite volume method; \item discontinuous Galerkin method, \end{inparaenum} are called \emph{Eulerian}, since they approximate the evolution in the \emph{current, deformed} configuration. Particle methods like \begin{inparaenum} \item SPH; \item MPS (moving particle semi-implicit method) \autocite{koshizukaMovingParticleSemiImplicitMethod1996}; \item DPD (dissipative particle dynamics) \autocite{hoogerbruggeSimulatingMicroscopicHydrodynamic1992} \end{inparaenum} trace the evolution in the \emph{reference} configuration, and so particle methods are also called \emph{Lagrangian}.}   The continuum is partitioned into arbitrary \emph{material points}, in this context referred to as \emph{particles}, and basic physical properties such as density, velocity, entropy, and energy are assigned to them. Their mutual interaction is then prescribed,\sidenote{The interaction cannot be arbitrary. To capture the physics correctly, the interaction must in fact root in the discretisation of the governing equations.} and the state of each particle is advanced in time. 
 We stress that \emph{SPH particles} are \emph{not} \textcolor{gray}{elementary} particles in the microscopic sense --- they are typically macroscopic fluid elements. Nonetheless, some intuition from the mechanics of point particles carries over naturally to SPH, as we shall see.
 
 In what follows, we introduce the theoretical foundations of SPH and the specific formulation developed in this work.
@@ -24,7 +24,7 @@ In what follows, we introduce the theoretical foundations of SPH and the specifi
 \section{Cornerstones of SPH}
 \label{sec:CORNERSTONES}
 
-In this section, we outline the standard approach to SPH discretization.
+In this section, we outline the standard approach to SPH discretisation.
 
 \subsection{Kernel interpolation}
 \label{sec:INTERPOLATION}
@@ -176,7 +176,7 @@ In summary, SPH trades numerical accuracy for flexibility and implementational s
 \subsection{Differential operators}
 \label{sec:DIFF_OPS}
 
-This section employs the presented particle approximation framework to discretize differential operators appearing in the governing equations of fluid dynamics. Even though we have, up to this point, assumed only scalar fields, the generalization to vector and tensor fields is straightforward.
+This section employs the presented particle approximation framework to discretise differential operators appearing in the governing equations of fluid dynamics. Even though we have, up to this point, assumed only scalar fields, the generalization to vector and tensor fields is straightforward.
 
 \subsubsection{Gradient of a scalar field}
 \label{sec:GRADIENT}
@@ -201,56 +201,56 @@ The discrete divergence of a continuously differentiable vector field $\vb{F}\le
 						     &= \sum_{j=1}^N \vb{F}\left(t, \vb{x}_j\right) \cdot \grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right) V_j = \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij} V_j.
 \end{equations}
 
-\subsubsection{Improved discretization}
+\subsubsection{Improved discretisation}
 \label{sec:IMPROVED-DIFF-OPS}
 
-In summary, the straightforward way of discretizing the $\gradop$ and $\div$ operators give
+In summary, the straightforward way of discretising the $\gradop$ and $\div$ operators give
 
 \begin{equations}[columns,!,numberline=all]
 \grad \Phi\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j,\label{eq:NAIVE-GRAD} \\
 \grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j. \label{eq:NAIVE-DIV}
 \end{equations}
 
-However, this is not a unique way to discretize the differential operators --- and particularly not a good one either. To demonstrate, take the constant fields $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
+However, this is not a unique way to discretise the differential operators --- and particularly \emph{not a good one} either. To demonstrate, take the constant fields $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
 
 \begin{equations}[columns,*]
 	\grad_i \Phi\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j = \sum_{j=1}^N \grad_i w_{ij}V_j, \\
 	\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) = 0 &\neq \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \vb{e}_x \cdot \grad_i w_{ij}V_j.
 \end{equations}
 
-The naive discretization \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To account for constant fields, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
+The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to approximate constant fields. To account for constant fields, we draw inspiration \autocite[p.~10]{monaghanSmoothedParticleHydrodynamics2005} from the identities
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:IDENTITIES}
-\grad \Phi &= \frac{1}{\rho} \grad\left(\rho \Phi\right) - \frac{\Phi}{\rho}\grad \rho, \\
-\divergence{\vb{F}} &= \frac{1}{\rho}\divergence{\left(\rho \vb{F}\right)} - \frac{1}{\rho}\vb{F} \cdot \grad \rho,
+\grad \Phi &= \frac{1}{\phi} \grad\left(\phi \Phi\right) - \frac{\Phi}{\phi}\grad \phi, \\
+\divergence{\vb{F}} &= \frac{1}{\phi}\divergence{\left(\phi \vb{F}\right)} - \frac{1}{\phi}\vb{F} \cdot \grad \phi,
 \end{equations}
 
-valid for a nonzero continuously differentiable function $\rho$.\sidenote{The notation is suggestive --- in what follows, $\rho$ will indeed be the density.} We can improve our approximation by discretizing in the following manner
+valid for a nonzero continuously differentiable function $\phi$.\sidenote{In what follows, $\phi$ will be the density $\rho$.} We can improve our approximation by discretising in the following manner
 
 % HACK: is this correct?
 
 \begin{equations}[columns,*]
-\grad_i \Phi_i &= \frac{1}{\rho_i} \grad_i \left(\rho_i \Phi_i\right) - \frac{\Phi_i}{\rho_i} \grad_i\left(\rho_i\right) \approx \\ 
-	       &\approx \frac{1}{\rho_i} \sum_{j=1}^N \rho_j \Phi_j \grad_i w_{ij} V_j - \frac{\Phi_i}{\rho_i} \sum_{j=1}^N \rho_j \grad_i w_{ij} V_j =\\
-	       &= \frac{1}{\rho_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right)\rho_j \grad_i w_{ij}V_j,
+\grad_i \Phi_i &= \frac{1}{\phi_i} \grad_i \left(\phi_i \Phi_i\right) - \frac{\Phi_i}{\phi_i} \grad_i\left(\phi_i\right) \approx \\ 
+	       &\approx \frac{1}{\phi_i} \sum_{j=1}^N \phi_j \Phi_j \grad_i w_{ij} V_j - \frac{\Phi_i}{\phi_i} \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
+	       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right)\phi_j \grad_i w_{ij}V_j,
 \end{equations}
 
 and 
 
 \begin{equations}[columns,*]
-\grad_i \cdot \vb{F}_i &= \frac{1}{\rho_i} \grad_i \cdot \left(\rho_i \vb{F}_i\right) - \frac{1}{\rho_i} \vb{F}_i \cdot \grad_i \rho_i \approx \\
-                       &\approx \frac{1}{\rho_i} \sum_{j=1}^N \rho_j \vb{F}_j \cdot \grad_i w_{ij} V_j - \frac{1}{\rho_i} \vb{F}_i \cdot \sum_{j=1}^N \rho_j \grad_i w_{ij} V_j =\\
-		       &= \frac{1}{\rho_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right) \rho_j  \cdot \grad_i w_{ij} V_j.
+\grad_i \cdot \vb{F}_i &= \frac{1}{\phi_i} \grad_i \cdot \left(\phi_i \vb{F}_i\right) - \frac{1}{\phi_i} \vb{F}_i \cdot \grad_i \phi_i \approx \\
+                       &\approx \frac{1}{\phi_i} \sum_{j=1}^N \phi_j \vb{F}_j \cdot \grad_i w_{ij} V_j - \frac{1}{\phi_i} \vb{F}_i \cdot \sum_{j=1}^N \phi_j \grad_i w_{ij} V_j =\\
+		       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right) \phi_j  \cdot \grad_i w_{ij} V_j.
 \end{equations}
 
-Evidently, thanks to the $\Phi_j - \Phi_i$ and $\vb{F}_j - \vb{F}_i$ terms respectively, this discretization correctly vanishes for constant fields. 
+Evidently, thanks to the $\Phi_j - \Phi_i$ and $\vb{F}_j - \vb{F}_i$ terms respectively, this discretisation correctly vanishes for constant fields. 
 
-All in all, the discretization
+All in all, the discretisation
 
 \begin{equations}[columns,!,numberline=all]
-\grad \Phi\left(t, \vb{x}_i\right) &\approx \frac{1}{\rho_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right) \rho_j \grad_i w_{ij} V_j ,\label{eq:IMPROVED-GRAD} \\
-\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\rho_1}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right)\rho_j \cdot \grad_i w_{ij}V_j, \label{eq:IMPROVED-DIV}
+\grad \Phi\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i} \sum_{j=1}^N \left(\Phi_j - \Phi_i\right) \phi_j \grad_i w_{ij} V_j ,\label{eq:IMPROVED-GRAD} \\
+\grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right)\phi_j \cdot \grad_i w_{ij}V_j, \label{eq:IMPROVED-DIV}
 \end{equations}
 
 will be preferred in the section \Cref{sec:WCSPH}.
@@ -258,8 +258,37 @@ will be preferred in the section \Cref{sec:WCSPH}.
 \section{SPH formulations}
 \label{sec:FORMULATIONS}
 
+One of the pillars of SPH's success lies in its flexibility. Not only can SPH be used to discretise a broad range of PDEs, but the \emph{same} system can often be discretised in several different ways, giving the freedom to choose a problem-specific formulation.\sidenote{Typically, one devises \emph{conservative} formulations for problems with conserved quantities.}
+
+In this section, we will focus on different possibilities of discretising the Euler system \Cref{eq:GOVERNING-SYSTEM}.
+
 \subsection{Classical SPH}
 \label{sec:WCSPH}
+
+Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} and divergence operators \Cref{eq:IMPROVED-DIV} and choose the auxillary field $\varphi$ as the density $\rho$.  the balance of momentum and the continuity equation
+
+\begin{equations}[columns,*]
+	\tdot{\rho} &= - \rho\left(\divergence{\vb{v}}\right),\\
+	\tdot{\vb{v}} &= - \frac{1}{\rho}\grad p + \vb{g}, 
+\end{equations}
+
+can be recast to the form
+
+\begin{equations}[columns,*]
+	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right)\rho_j \cdot \grad_i w_{ij}V_j = \sum_{j=1}^N \left(\vb{v}_i - \vb{v}_j\right)m_j \cdot \grad_i w_{ij},\\
+	\dv{\vb{v_i}}{t} &= -\frac{1}{\rho_i^{2}}\sum_{j=1}^N\left(p_j - p_i\right) \grad_i w_{ij V_j} + \vb{g} = \sum_{j=1}^N \left(\frac{p_i}{\rho_i} - \frac{p_j}{\rho_i}\right)m_i + \vb{g},
+\end{equations}
+
+where we have used the fact $\rho_i = \frac{m_i}{V_i}$. Since $\rho_i = \rho_i(t)$ is a function of the time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_i(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_i\right)$ at a fixed \emph{material} point $\vb{x}_i$.}
+To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. In consistency with our application in atmospheric dynamics, we deploy the thermal equation of an \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:CLASSICAL-SPH}
+\dv{\rho_i}{t} &= \sum_{j=1}^N \left(\vb{v}_i - \vb{v}_j\right) m_j \cdot \grad_i w_{ij},\\
+\dv{\vb{v}_i}{t} &= \sum_{j=1}^N\left(\frac{p_i}{\rho_i} - \frac{p_j}{\rho_i}\right)m_i + \vb{g}, \\
+p_i\left(\rho_i, T_i\right) &= R \rho_i T_i, \\
+\theta_i &= \, \text{const}.
+\end{equations}
 
 \subsection{Hamiltonian formulation}
 \label{sec:HAMILTON}
