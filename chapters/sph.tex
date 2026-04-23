@@ -314,14 +314,14 @@ and we have recovered \emph{Newton's third law} at the \emph{discrete level.} In
 and so
 \begin{equations}[columns,*]
 	\dv{t} \sum_{i=1}^N m_i \vb{v}_i &= \sum_{i=1}^N m_i \dv{\vb{v}_i}{t} =\\ 
-	&=\sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i} =  \sum_{j=1}^N \sum_{i=1}^N \vb{F}_{i \to j} =\\
+	&=\sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i} =  \sum_{j=1}^N \sum_{i=1}^N \vb{F}_{i \to j}\\
 	&=- \sum_{i=1}^N \sum_{j=1}^N \vb{F}_{j \to i},
 \end{equations}
 where we used Newton's second law in the absence of external forces. In total, we thus see it must hold
 \begin{equations}[single,*]
 	\dv{t} \sum_{i=1}^N m_i \vb{v}_i \equiv \vb{0},
 \end{equations}
-therefore, the total momentum is conserved.}
+therefore, the total momentum is conserved.} This conservation property would \emph{not hold} had we used the naive discrete gradient \Cref{eq:NAIVE-GRAD} instead of the improved form \Cref{eq:IMPROVED-GRAD}.
 
 To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
 
