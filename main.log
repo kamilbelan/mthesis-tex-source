@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  23 APR 2026 18:50
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  23 APR 2026 21:15
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2085,7 +2085,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsans'
 \symsflettersbold=\mathgroup11
 \symstmry=\mathgroup12
 ) (./preamble/math/macros.tex
-LaTeX Font Info:    Redeclaring math symbol \setminus on input line 245.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 255.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/ytableau/ytableau.sty
 Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
@@ -2844,43 +2844,64 @@ Overfull \hbox (21.08592pt too wide) in paragraph at lines 221--222
 [30]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 256.
-
-
-Overfull \hbox (23.43893pt too wide) in paragraph at lines 268--269
-[][][][][] \TU/lmr/m/n/12 and di-ver-gence op-er-a-tors [][][][][]|
- []
+(zref-clever)                type 'sidenote' on line 257.
 
 
 
 [31]
+Overfull \hbox (23.43893pt too wide) in paragraph at lines 269--270
+[][][][][] \TU/lmr/m/n/12 and di-ver-gence op-er-a-tors [][][][][]|
+ []
+
+
+Overfull \hbox (22.51028pt too wide) detected at line 281
+[]|
+ []
+
+
 
 [32]
+Overfull \hbox (27.22913pt too wide) detected at line 303
+[]$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 
+m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/m
+/it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OM
+S/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$ |
+ []
+
+
+Overfull \hbox (34.85468pt too wide) detected at line 324
+[]|
+ []
+
+
 
 [33]
-Overfull \hbox (3.4041pt too wide) detected at line 368
+
+[34]
+Overfull \hbox (3.4041pt too wide) detected at line 411
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 34 undefined on input line 406.
-
-
-
-[34]) (./chapters/experiments.tex
 
 [35]
+
+LaTeX Warning: Reference `eq:f_PE' on page 36 undefined on input line 449.
+
+) (./chapters/experiments.tex
+
+[36]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[36
+[37
 
 ]
 Chapter 5.
 )
 
-[37
+[38
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2918,18 +2939,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[38
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [39
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -2937,19 +2949,28 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[40]
+[40
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [41]
 
 [42]
+
+[43]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[43]
-runsystem(latexminted cleantemp  --timestamp 20260423185054Z FAD58DE7366495DB465
+[44]
+runsystem(latexminted cleantemp  --timestamp 20260423211513Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2966,15 +2987,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67513 strings out of 475512
+ 67516 strings out of 475512
  244385,2848258 words of node,token memory allocated
- 92943 words of node memory still in use:
-   768 hlist, 85 vlist, 16 rule, 608 disc, 49 local_par, 167 math, 1891 glue, 47
-9 kern, 227 penalty, 203 margin_kern, 6528 glyph, 2398 attribute, 115 glue_spec,
- 2398 attribute_list, 12 write, 1006 pdf_literal, 12 pdf_start_link, 12 pdf_end_
-link, 3 pdf_dest, 14 pdf_action, 152 pdf_colorstack nodes
-   avail lists: 1:15,2:6956,3:4778,4:589,5:592,6:171,7:7418,8:109,9:1694,10:32,1
-1:412,12:6
+ 93964 words of node memory still in use:
+   870 hlist, 100 vlist, 28 rule, 589 disc, 52 local_par, 185 math, 1957 glue, 5
+37 kern, 236 penalty, 199 margin_kern, 6458 glyph, 2379 attribute, 115 glue_spec
+, 2379 attribute_list, 12 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_
+link, 3 pdf_dest, 13 pdf_action, 144 pdf_colorstack nodes
+   avail lists: 1:14,2:6956,3:4778,4:589,5:606,6:169,7:7418,8:109,9:1694,10:32,1
+1:424,12:6
  88207 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3017,10 +3038,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (50 pages, 10717992 bytes).
+Output written on main.pdf (51 pages, 10724413 bytes).
 
-PDF statistics: 1391 PDF objects out of 1440 (max. 8388607)
- 840 compressed objects within 9 object streams
- 300 named destinations out of 1000 (max. 131072)
+PDF statistics: 1400 PDF objects out of 1440 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 303 named destinations out of 1000 (max. 131072)
  574 words of extra memory for PDF output out of 10000 (max. 100000000)
 
