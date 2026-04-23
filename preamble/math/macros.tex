@@ -110,6 +110,10 @@
 \NewDocumentCommand{\Lie}{}{\mathcal{L}}
 \DeclarePairedDelimiterX{\Liebracket}[2]{\dblbracketleft}{\dblbracketright}{#1,#2}
 % \DeclarePairedDelimiterX{\Liebracket}[2]{\lbrack}{\rbrack}{#1,#2}
+\makeatletter
+\DeclarePairedDelimiterX{\pbr@inner}[2]{\lbrace}{\rbrace}{#1,#2}
+\RenewDocumentCommand{\pbr}{O{} m m}{\pbr@inner*{#2}{#3}^{\mkern-2mu\text{(#1)}}}
+\makeatother
 
 \DeclareMathOperator{\Tor}{\mathsf{Tor}}
 \NewDocumentCommand{\Riem}{O{}}{\IfBlankTF{#1}{\bm{R}}{\tens{\bm{R}}{#1}}}
@@ -184,6 +188,19 @@
         \frac{\partial #2}{\partial #3}%
     }{%
         \frac{\partial^{#1} #2}{\partial #3^{#1}}%
+    }%
+}
+
+%% Functional derivative
+%% Usage:
+%% \fdv{F}{u}    -> δF/δu
+%% \fdv{}{u}     -> δ/δu  (operator form)
+%% \fdv[2]{F}{u} -> δ²F/δu²  (higher order)
+\NewDocumentCommand{\fdv}{O{} m m}{%
+    \IfBlankTF{#1}{%
+        \frac{\delta #2}{\delta #3}%
+    }{%
+        \frac{\delta^{#1} #2}{\delta #3^{#1}}%
     }%
 }
 
