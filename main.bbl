@@ -1068,8 +1068,8 @@
         {{hash=441fe88aa55fb5b33be74d8641d0d091}{%
            family={Monaghan},
            familyi={M\bibinitperiod},
-           given={J.J.},
-           giveni={J\bibinitperiod}}}%
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \strng{namehash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{fullhash}{441fe88aa55fb5b33be74d8641d0d091}
@@ -1084,9 +1084,10 @@
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{00219991}
+      \field{abstract}{The SPH (smoothed particle hydrodynamics) method is extended to deal with free surface incompressible flows. The method is easy to use, and examples will be given of its application to a breaking dam, a bore, the simulation of a wave maker, and the propagation of waves towards a beach. Arbitrary moving boundaries can be included by modelling the boundaries by particles which repel the fluid particles. The method is explicit, and the time steps are therefore much shorter than required by other less flexible methods, but it is robust and easy to program.}
+      \field{day}{1}
+      \field{issn}{0021-9991}
       \field{journaltitle}{Journal of Computational Physics}
-      \field{langid}{english}
       \field{month}{2}
       \field{shortjournal}{Journal of Computational Physics}
       \field{title}{Simulating {{Free Surface Flows}} with {{SPH}}}
@@ -1098,6 +1099,9 @@
       \field{urldateera}{ce}
       \verb{doi}
       \verb 10.1006/jcph.1994.1034
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Monaghan - 1994 - Simulating Free Surface Flows with SPH.pdf;/home/moschehaus/Zotero/storage/CZKCELHV/S0021999184710345.html
       \endverb
     \endentry
     \entry{liberskySmoothParticleHydrodynamics1991}{inproceedings}{}{}
@@ -1305,6 +1309,9 @@
            given={Frazer},
            giveni={F\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
       \strng{namehash}{6310651d925c6f9bd6334da82082fecd}
       \strng{fullhash}{a6bd75edb22f04c08a839ca6a2a51be7}
       \strng{fullhashraw}{a6bd75edb22f04c08a839ca6a2a51be7}
@@ -1317,11 +1324,11 @@
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0028-0836, 1476-4687}
+      \field{abstract}{The cold dark matter model has become the leading theoretical picture for the formation of structure in the Universe. This model, together with the theory of cosmic inflation, makes a clear prediction for the initial conditions for structure formation and predicts that structures grow hierarchically through gravitational instability. Testing this model requires that the precise measurements delivered by galaxy surveys can be compared to robust and equally precise theoretical calculations. Here we present a simulation of the growth of dark matter structure using 2,1603 particles, following them from redshift z = 127 to the present in a cube-shaped region 2.230 billion lightyears on a side. In postprocessing, we also follow the formation and evolution of the galaxies and quasars. We show that baryon-induced features in the initial conditions of the Universe are reflected in distorted form in the low-redshift galaxy distribution, an effect that can be used to constrain the nature of dark energy with future generations of observational surveys of galaxies.}
+      \field{issn}{1476-4687}
       \field{journaltitle}{Nature}
       \field{langid}{english}
       \field{month}{6}
-      \field{shortjournal}{Nature}
       \field{title}{Simulations of the Formation, Evolution and Clustering of Galaxies and Quasars}
       \field{urlday}{21}
       \field{urlmonth}{4}
@@ -1333,8 +1340,9 @@
       \verb 10.1038/nature03597
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel et al. - 2005 - Simulations of the formation, evolution and clustering of galaxies and quasars.pdf
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel et al. - 2005 - Simulations of the formation, evolution and clustering of galaxies and quasars 1.pdf
       \endverb
+      \keyw{Humanities and Social Sciences,multidisciplinary,Science}
     \endentry
     \entry{koshizukaMovingParticleSemiImplicitMethod1996}{article}{}{}
       \name{author}{2}{}{%
@@ -1825,6 +1833,57 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Quinlan et al. - 2006 - Truncation error in mesh-free particle methods.pdf;/home/moschehaus/Zotero/storage/PF6MDIY3/nme.html
       \endverb
       \keyw{error analysis,meshfree methods,meshless methods,particle methods,smoothed particle hydrodynamics}
+    \endentry
+    \entry{pavelkaHamiltonianContinuumMechanics2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=57d97cbb8a2b20f0f0097cede33ad946}{%
+           family={Peshkov},
+           familyi={P\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=57619fa212cae84cfd5146d66eecffe4}{%
+           family={Klika},
+           familyi={K\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbbff671e8c011d04707c43250703473}
+      \strng{fullhash}{cbbff671e8c011d04707c43250703473}
+      \strng{fullhashraw}{cbbff671e8c011d04707c43250703473}
+      \strng{bibnamehash}{cbbff671e8c011d04707c43250703473}
+      \strng{authorbibnamehash}{cbbff671e8c011d04707c43250703473}
+      \strng{authornamehash}{cbbff671e8c011d04707c43250703473}
+      \strng{authorfullhash}{cbbff671e8c011d04707c43250703473}
+      \strng{authorfullhashraw}{cbbff671e8c011d04707c43250703473}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Continuum mechanics can be formulated in the Lagrangian frame (addressing motion of individual continuum particles) or in the Eulerian frame (addressing evolution of fields in an inertial frame). There is a canonical Hamiltonian structure in the Lagrangian frame. By transformation to the Eulerian frame we find the Poisson bracket for Eulerian continuum mechanics with deformation gradient (or the related distortion matrix). Both Lagrangian and Eulerian Hamiltonian structures are then discussed from the perspective of space--time variational formulation and by means of semidirect products and Lie algebras. Finally, we discuss the importance of the Jacobi identity in continuum mechanics and approaches to prove hyperbolicity of the evolution equations and their gauge invariance.}
+      \field{day}{1}
+      \field{issn}{0167-2789}
+      \field{journaltitle}{Physica D: Nonlinear Phenomena}
+      \field{month}{7}
+      \field{shortjournal}{Physica D: Nonlinear Phenomena}
+      \field{title}{On {{Hamiltonian}} Continuum Mechanics}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.physd.2020.132510
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2020 - On Hamiltonian continuum mechanics.pdf;/home/moschehaus/Zotero/storage/YSK33TI7/S0167278919304518.html
+      \endverb
+      \keyw{Continuum mechanics,Hamiltonian mechanics,Hyperbolicity,Poisson bracket,Variational principle}
     \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%

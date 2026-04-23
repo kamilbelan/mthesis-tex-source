@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  23 APR 2026 21:35
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  23 APR 2026 23:57
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2085,7 +2085,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsans'
 \symsflettersbold=\mathgroup11
 \symstmry=\mathgroup12
 ) (./preamble/math/macros.tex
-LaTeX Font Info:    Redeclaring math symbol \setminus on input line 255.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 272.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/ytableau/ytableau.sty
 Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
@@ -2878,30 +2878,32 @@ Overfull \hbox (22.38239pt too wide) detected at line 324
 [33]
 
 [34]
-Overfull \hbox (3.4041pt too wide) detected at line 411
+
+[35]
+Overfull \hbox (3.4041pt too wide) detected at line 448
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
 
-[35]
+[36]
 
-LaTeX Warning: Reference `eq:f_PE' on page 36 undefined on input line 449.
+LaTeX Warning: Reference `eq:f_PE' on page 37 undefined on input line 486.
 
 ) (./chapters/experiments.tex
 
-[36]
+[37]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[37
+[38
 
 ]
 Chapter 5.
 )
 
-[38
+[39
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2939,18 +2941,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[39
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [40
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -2958,19 +2951,28 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[41]
+[41
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [42]
 
 [43]
+
+[44]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[44]
-runsystem(latexminted cleantemp  --timestamp 20260423213529Z FAD58DE7366495DB465
+[45]
+runsystem(latexminted cleantemp  --timestamp 20260423235705Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -2987,16 +2989,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67518 strings out of 475512
- 244385,2848258 words of node,token memory allocated
- 93946 words of node memory still in use:
-   870 hlist, 100 vlist, 28 rule, 589 disc, 52 local_par, 185 math, 1956 glue, 5
-37 kern, 236 penalty, 199 margin_kern, 6457 glyph, 2378 attribute, 115 glue_spec
-, 2378 attribute_list, 12 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_
-link, 3 pdf_dest, 13 pdf_action, 144 pdf_colorstack nodes
-   avail lists: 1:14,2:6956,3:4778,4:589,5:627,6:169,7:7418,8:109,9:1694,10:32,1
-1:424,12:6
- 88209 multiletter control sequences out of 65536+600000
+ 67567 strings out of 475512
+ 244386,2848258 words of node,token memory allocated
+ 91020 words of node memory still in use:
+   845 hlist, 102 vlist, 28 rule, 572 disc, 53 local_par, 189 math, 1890 glue, 5
+21 kern, 234 penalty, 198 margin_kern, 6272 glyph, 2267 attribute, 115 glue_spec
+, 2267 attribute_list, 11 write, 858 pdf_literal, 10 pdf_start_link, 10 pdf_end_
+link, 3 pdf_dest, 12 pdf_action, 136 pdf_colorstack nodes
+   avail lists: 1:14,2:6958,3:4778,4:589,5:688,6:171,7:7420,8:109,9:1694,10:32,1
+1:443,12:6
+ 88252 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3038,10 +3040,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (51 pages, 10724891 bytes).
+Output written on main.pdf (52 pages, 10734187 bytes).
 
-PDF statistics: 1402 PDF objects out of 1440 (max. 8388607)
- 849 compressed objects within 9 object streams
- 303 named destinations out of 1000 (max. 131072)
+PDF statistics: 1416 PDF objects out of 1440 (max. 8388607)
+ 859 compressed objects within 9 object streams
+ 309 named destinations out of 1000 (max. 131072)
  574 words of extra memory for PDF output out of 10000 (max. 100000000)
 
