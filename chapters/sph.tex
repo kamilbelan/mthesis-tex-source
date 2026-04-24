@@ -350,6 +350,7 @@ The conservation property we discovered in the previous section aligns with our 
 Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
 The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{x}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$ and of sufficient regularity, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
+% TODO: STATE WHAT ARE OUR STATE VARIABLES
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
 \pbr[L]{F}{G} \coloneq \int\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
@@ -413,7 +414,38 @@ The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Ha
 Let us summarize briefly and hence provide a map of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} Obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. 
 
 \subsection{SPH discretisation}
-\label{sec:label_name}
+\label{sec:SPH-discretisation}
+
+Let $\Omega \subset \R^d, d = 2, 3$ be the region occupied by the continuum. Denote $\{\Omega_i\}_{i=1}^N, N \in \N$ a pairwise disojint \textcolor{gray}{finite} partiton of $\Omega$, \ie $\Omega = \bigcup_{i=1}^N \Omega_j$, $\Omega_i \cap \Omega_j = \emptyset$ for $i \neq j$. The sets $\Omega_i$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_i$, 
+
+\begin{equations}[single,*]
+\chi_i\left(\vb{X}\right) = \begin{cases}
+  \frac{1}{V_i}, &\vb{X} \in \Omega_i,\\
+  0,  \vb{X} &\notin \Omega_i
+\end{cases}.
+\end{equations}
+we can define the \emph{SPH position} $\vb{x}_i\left(t\right)$ as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-position}
+\vb{x}_i(t) = \int_{\Omega}\vb{x}\left(t, \vb{X}\right) \chi_i\left(\vb{X}\right)\dd{\vb{X}},
+\end{equations}
+
+and the \emph{SPH momentum} $\vb{M}_i\left(t, \vb{X}\right)$ as
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-momentum}
+\vb{M}_i\left(t\right) = \int_{\Omega}\vb{M}\left(t, \vb{X}\right)\chi_i\left(\vb{X}\right)\dd{\vb{X}}.
+\end{equations}
+
+Naturally, the SPH positions and momenta $\left(\vb{x}_i, \vb{M}_i\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
+
+Let $F\left(\vb{x}_i, \vb{M}_i\right), G\left(\vb{x}_i, \vb{M}_i\right)$ be two arbitrary \textcolor{gray}{sufficiently regular} functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as 
+
+\begin{equations}[lines,*]
+\pbr[L]{F}{G} = \int\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{a,b}\int\left(\left(\pdv{F}{x_a^j} \fdv{x^j_a}{x^i} + \pdv{F}{M_{b,j}}\fdv{M_{b,j}}{x^i}\right)\left(\pdv{G}{M_{b,j}}\fdv{M_{b,j}}{M_i} + \pdv{G}{x^j_a}\fdv{x^j_a}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{a,b} \int\left(\left(\pdv{F}{M_{b,j}} \fdv{M_{b,j}}{M_i} + \pdv{F}{x_a^j} \fdv{x_a^j}{M_i}\right)\left(\pdv{G}{x^j_a} \fdv{x_a^j}{x^i} + \pdv{G}{M_{b,j}} \fdv{M_{b, j}}{x_i}\right)\right)\dd{\vb{X}}.
+\end{equations}
+
 
 
 % NOTE: ENERGY
@@ -425,7 +457,7 @@ Let us summarize briefly and hence provide a map of what follows. We have notice
 \eL\left(\vb{X}\right) =  e\left(\rhoL\left(\vb{X}\right)\right) = e\left(J\left(\vb{X}\right) \rho\left(\vb{x}\left(\vb{X}\right)\right)\right) = J\left(\vb{X}\right) e\left(\rho\left(\vb{x}\left(\vb{X}\right)\right)\right),
 \end{equations}
 
-where $J = \det \grad \pmb{\chi}$ and the notational shortuct $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$. 
+where $J = \det \grad \pmb{\chi}$ and the notational shortuct $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$.\sidenote{Recall that for brevity we are not explicitly writing the time dependence of the considered quantities.} 
 
 \subsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
