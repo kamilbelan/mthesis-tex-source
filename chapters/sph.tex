@@ -201,10 +201,20 @@ The discrete divergence of a continuously differentiable vector field $\vb{F}\le
 						     &= \sum_{j=1}^N \vb{F}\left(t, \vb{x}_j\right) \cdot \grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right) V_j = \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij} V_j.
 \end{equations}
 
-\subsubsection{Improved discretisation}
+\section{SPH formulations}
+\label{sec:FORMULATIONS}
+
+One of the pillars of SPH's success lies in its flexibility. Not only can SPH be used to discretise a broad range of PDEs, but the \emph{same} system can often be discretised in several different ways, giving the freedom to choose a problem-specific formulation.\sidenote{Typically, one devises \emph{conservative} formulations for problems with conserved quantities.}
+
+In this section, we will focus on different possibilities of discretising the Euler system \Cref{eq:GOVERNING-SYSTEM}.
+
+\section{Classical SPH}
+\label{sec:WCSPH}
+
+\subsection{Improved discretisation}
 \label{sec:IMPROVED-DIFF-OPS}
 
-In summary, the straightforward way of discretising the $\gradop$ and $\div$ operators give
+In the previous, we have derived discrete versions of the $\gradop$ and $\div$ operators 
 
 \begin{equations}[columns,!,numberline=all]
 \grad \Phi\left(t, \vb{x}_i\right) &\approx \sum_{j=1}^N \Phi_j \grad_i w_{ij}V_j,\label{eq:NAIVE-GRAD} \\
@@ -256,15 +266,11 @@ All in all, the discretisation
 
 will be preferred in the section \Cref{sec:WCSPH}.
 
-\section{SPH formulations}
-\label{sec:FORMULATIONS}
+\subsubsection{Discrete balance of linear momentum}
+\label{sec:MOMENTUM}
 
-One of the pillars of SPH's success lies in its flexibility. Not only can SPH be used to discretise a broad range of PDEs, but the \emph{same} system can often be discretised in several different ways, giving the freedom to choose a problem-specific formulation.\sidenote{Typically, one devises \emph{conservative} formulations for problems with conserved quantities.}
-
-In this section, we will focus on different possibilities of discretising the Euler system \Cref{eq:GOVERNING-SYSTEM}.
-
-\subsection{Classical SPH}
-\label{sec:WCSPH}
+\subsubsection{Discrete balance of mass}
+\label{sec:MASS}
 
 Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} and divergence operators \Cref{eq:IMPROVED-DIV} and choose the auxiliary field $\varphi$ as the density $\rho$. Then the balance of momentum and the continuity equation
 
@@ -333,12 +339,12 @@ p_i\left(\rho_i, T_i\right) &= R \rho_i T_i, \\
 \theta_i &= \, \text{const}.
 \end{equations}
 
-\subsection{Hamiltonian formulation}
+\section{Hamiltonian formulation}
 \label{sec:HAMILTON}
 
 The conservation property we discovered in the previous section aligns with our intuition about the correspondence between SPH and the classical mechanics of point particles. Classical mechanics can be elegantly reframed in the language of \emph{Hamiltonian mechanics}, and we now develop the Hamiltonian formulation of SPH. This reformulation naturally motivates the use of a \emph{symplectic integrator} in the numerical solution of the system of ODEs obtained by the SPH discretization.
 
-\subsubsection{Poisson brackets}
+\subsection{Poisson brackets}
 \label{sec:BRACKETS}
 
 Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
@@ -406,7 +412,7 @@ The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Ha
 
 Let us summarize briefly and hence provide a map of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} Obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. 
 
-\subsubsection{SPH discretisation}
+\subsection{SPH discretisation}
 \label{sec:label_name}
 
 
@@ -421,13 +427,13 @@ Let us summarize briefly and hence provide a map of what follows. We have notice
 
 where $J = \det \grad \pmb{\chi}$ and the notational shortuct $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$. 
 
-\subsubsection{Classical SPH as a Hamiltonian system}
+\subsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
 
-\subsubsection{Symplectic integrators}
+\subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
 
-\subsection{Density-free formulations}
+\section{Density-free formulations}
 \label{sec:HOPKINS}
 
 \subsubsection{Pressure-entropy}
