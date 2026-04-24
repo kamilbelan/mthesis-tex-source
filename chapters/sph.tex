@@ -341,19 +341,33 @@ The conservation property we discovered in the previous section aligns with our 
 \subsubsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $\Cone{}$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
+Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
 The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{x}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$ and of sufficient regularity, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
-\pbr[L]{F}{G} \coloneq \left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right).
+\pbr[L]{F}{G} \coloneq \int\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, which can be interpreted as distributions representing the Frechet differential.\sidenote{}
+The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, which can be interpreted as distributions representing the Frechet differential.\sidenote{} For further reading on functional derivatives, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
 
 % TODO: GIVE EXAMPLE
 
-In what follows, we will for brevity of notation omit the dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is in fact a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.
+In what follows, we will for brevity of notation omit the dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is in fact a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
+
+	\begin{equations}[single,*]
+		\pbr[L]{F}{G} = - \pbr[L]{G}{F},
+	\end{equations}
+	Jacobi identity the property
+	\begin{equations}[single,*]
+		\pbr[L]{F}{\pbr[L]{G}{H}} + \pbr[L]{G}{\pbr[L]{H}{F}} + \pbr[L]{H}{\pbr[L]{F}{G}} = 0
+	\end{equations}
+
+	and Leibniz rule holds when 
+	\begin{equations}[single,*]
+		\pbr[L]{FG,H} = F\pbr[L]{G}{H} + \pbr[L]{F}{H}G,
+	\end{equations}
+}
 
 % TODO: INCLUDE SIDENOTES PRESENTING THESE PROPERTIES
 
@@ -361,17 +375,57 @@ Given an functional $F = F\left(t, \vb{x}, \vb{M}\right),$ its evolution in time
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:TIME-EVOL}
-\tdot{F} = \partial_t F + \pbr[L]{F}{E},
+\tdot{F} = \partial_t F + \pbr[L]{F}{\totenL},
 \end{equations}
 
-where $E$ is the total energy functional.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.}
+where $\totenL$ is the functional of total energy in the Lagrangian frame.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particualr, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
+
+\begin{equations}[single,*]
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \int\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
+\end{equations}
+
+on the other hand \Cref{eq:TIME-EVOL} dictates
+
+\begin{equations}[single,*]
+	\tdot{F}\left(\vb{x}, \vb{M}\right) = \int\left(\fdv{F}{x^i} \fdv{\totenL}{M_i} - \fdv{F}{M_i} \fdv{\totenL}{x^i}\right)\dd{\vb{X}},
+\end{equations}
+
+since $F$ were arbitrary, we conclude that it must hold
+
+\begin{equations}[columns,!,numberline=all]
+\partial_t x^i\left(t, \vb{X}\right) &= \fdv{\totenL}{M_i\left(t, \vb{X}\right)},\label{eq:HAMILTON-POSITION}\\
+\partial_t M_i\left(t, \vb{X}\right) &= -\fdv{\totenL}{x^i\left(t, \vb{X}\right)}\label{eq:HAMILTON-MOMENTA}.
+\end{equations}
+
+The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum in the Lagrangiam frame. In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rhoL$ and the internal energy $\eL$, \ie so on a general level we can write
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:LAGRANGIAN-ENERGY}
+\totenL = \int\left(\frac{\abs{M}^{2}}{2\rhoL} + \eL\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\end{equations}
+
+Let us summarize briefly and hence provide a map of what follows. We have noticed that for the description of the evolution of a functional of the Lagrangian state variables, we require \begin{inparaenum} \item the Poisson bracket \Cref{eq:LAGR-BRACKET}, \item the total energy functional \Cref{eq:LAGRANGIAN-ENERGY}. \end{inparaenum} Obtain the time evolution of a functional of the \emph{SPH state variables}, we require \begin{inparaenum} \item a SPH Poisson bracket, \item the SPH energy \end{inparaenum}. 
+
+\subsubsection{SPH discretisation}
+\label{sec:label_name}
 
 
-\subsubsection{SPH energy}
-\label{sec:SPH-ENERGY}
+% NOTE: ENERGY
+
+ For brevity of notation, in the following we will explicitely write only $\eL = \eL(\rhoL)$, even though the energy can depend on other quantites, such as entropy. Using the transformation of density and the extensivity of the internal energy, we see that
+
+
+\begin{equations}[single,*]
+\eL\left(\vb{X}\right) =  e\left(\rhoL\left(\vb{X}\right)\right) = e\left(J\left(\vb{X}\right) \rho\left(\vb{x}\left(\vb{X}\right)\right)\right) = J\left(\vb{X}\right) e\left(\rho\left(\vb{x}\left(\vb{X}\right)\right)\right),
+\end{equations}
+
+where $J = \det \grad \pmb{\chi}$ and the notational shortuct $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$. 
 
 \subsubsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
+
+\subsubsection{Symplectic integrators}
+\label{sec:INTEGRATORS}
 
 \subsection{Density-free formulations}
 \label{sec:HOPKINS}
