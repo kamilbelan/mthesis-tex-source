@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  24 APR 2026 10:01
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  24 APR 2026 21:47
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2868,12 +2868,12 @@ Overfull \hbox (22.38239pt too wide) detected at line 330
 
 
 [33]
-Overfull \hbox (119.98482pt too wide) detected at line 376
+Overfull \hbox (119.98482pt too wide) detected at line 377
 []$[][][] \OT1/lmr/m/n/12 + [][][] + [][][] = 0$ |
  []
 
 
-Overfull \hbox (18.57204pt too wide) detected at line 376
+Overfull \hbox (18.57204pt too wide) detected at line 377
 []$[][][]\OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\OML/lmm/m/it/12 G;$ 
 |
  []
@@ -2895,34 +2895,46 @@ i.2'
 
 
 [35]
+Overfull \hbox (39.37775pt too wide) detected at line 447
+[]$\OT1/lmr/m/n/12 = [] [][][] [] +$ |
+ []
+
+
+Overfull \hbox (32.36363pt too wide) detected at line 447
+[]$\OMS/lmsy/m/n/12 ^^@ [] [][][] [] \OML/lmm/m/it/12 :$ |
+ []
+
+
 
 [36]
-Overfull \hbox (3.4041pt too wide) detected at line 508
+
+[37]
+Overfull \hbox (3.4041pt too wide) detected at line 540
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
 
-[37]
+[38]
 
-LaTeX Warning: Reference `eq:f_PE' on page 38 undefined on input line 546.
+LaTeX Warning: Reference `eq:f_PE' on page 39 undefined on input line 578.
 
-
-
-[38]) (./chapters/experiments.tex
+) (./chapters/experiments.tex
 
 [39]
+
+[40]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[40
+[41
 
 ]
 Chapter 5.
 )
 
-[41
+[42
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2960,18 +2972,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[42
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [43
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -2979,19 +2982,28 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[44]
+[44
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [45]
 
 [46]
+
+[47]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[47]
-runsystem(latexminted cleantemp  --timestamp 20260424100123Z FAD58DE7366495DB465
+[48]
+runsystem(latexminted cleantemp  --timestamp 20260424214707Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3008,16 +3020,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67625 strings out of 475512
- 244318,2848258 words of node,token memory allocated
- 93746 words of node memory still in use:
-   968 hlist, 102 vlist, 33 rule, 567 disc, 55 local_par, 195 math, 1939 glue, 5
-59 kern, 241 penalty, 197 margin_kern, 6347 glyph, 2392 attribute, 115 glue_spec
-, 2392 attribute_list, 11 write, 858 pdf_literal, 10 pdf_start_link, 10 pdf_end_
+ 67638 strings out of 475512
+ 244321,2848258 words of node,token memory allocated
+ 90153 words of node memory still in use:
+   943 hlist, 101 vlist, 31 rule, 543 disc, 54 local_par, 183 math, 1856 glue, 5
+31 kern, 230 penalty, 193 margin_kern, 6048 glyph, 2361 attribute, 115 glue_spec
+, 2361 attribute_list, 11 write, 858 pdf_literal, 10 pdf_start_link, 10 pdf_end_
 link, 3 pdf_dest, 12 pdf_action, 136 pdf_colorstack nodes
-   avail lists: 1:16,2:6960,3:4778,4:589,5:603,6:184,7:7422,8:109,9:1694,10:32,1
-1:448,12:6
- 88293 multiletter control sequences out of 65536+600000
+   avail lists: 1:17,2:6961,3:4778,4:589,5:630,6:184,7:7422,8:109,9:1694,10:32,1
+1:472,12:6
+ 88302 multiletter control sequences out of 65536+600000
  146 fonts using 11432223 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3059,10 +3071,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (54 pages, 10749723 bytes).
+Output written on main.pdf (55 pages, 10756419 bytes).
 
-PDF statistics: 1492 PDF objects out of 1728 (max. 8388607)
- 900 compressed objects within 9 object streams
- 326 named destinations out of 1000 (max. 131072)
+PDF statistics: 1504 PDF objects out of 1728 (max. 8388607)
+ 910 compressed objects within 10 object streams
+ 330 named destinations out of 1000 (max. 131072)
  630 words of extra memory for PDF output out of 10000 (max. 100000000)
 

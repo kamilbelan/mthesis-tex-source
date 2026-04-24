@@ -39,22 +39,22 @@
 \contentsline {section}{\numberline {3.5}Hamiltonian formulation}{34}{section*.43}%
 \contentsline {subsection}{Poisson brackets}{34}{subsection*.44}%
 \contentsline {subsection}{SPH discretisation}{36}{subsection*.45}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{36}{subsection*.46}%
-\contentsline {subsection}{Symplectic integrators}{36}{subsection*.47}%
-\contentsline {section}{\numberline {3.6}Density-free formulations}{36}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{36}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{37}{equation.3.31}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{37}{subsection*.46}%
+\contentsline {subsection}{Symplectic integrators}{37}{subsection*.47}%
+\contentsline {section}{\numberline {3.6}Density-free formulations}{37}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{37}{section*.48}%
+\contentsline {subsubsection}{Pressure-potential temperature}{38}{equation.3.33}%
 \contentsline {section}{\numberline {3.7}Implementation specifics}{39}{section*.49}%
 \contentsline {subsection}{Extrapolating boundary conditions}{39}{subsection*.50}%
 \contentsline {subsubsection}{Inflow \& Outflow}{39}{subsection*.50}%
 \contentsline {subsubsection}{Free-slip}{39}{subsection*.50}%
 \contentsline {subsection}{Adaptive smoothing length}{39}{subsection*.51}%
-\contentsline {subsection}{Particle placement}{39}{subsection*.52}%
-\contentsline {chapter}{\numberline {4}Experiments}{40}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{40}{section*.53}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{40}{section*.54}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{40}{section*.55}%
-\contentsline {chapter}{\numberline {5}Voronoi}{41}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{42}{chapter*.56}%
-\contentsline {chapter}{References}{43}{appendix*.57}%
+\contentsline {subsection}{Particle placement}{40}{subsection*.52}%
+\contentsline {chapter}{\numberline {4}Experiments}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{41}{section*.53}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{41}{section*.54}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{41}{section*.55}%
+\contentsline {chapter}{\numberline {5}Voronoi}{42}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{43}{chapter*.56}%
+\contentsline {chapter}{References}{44}{appendix*.57}%
 \contentsfinish 
