@@ -1885,6 +1885,60 @@
       \endverb
       \keyw{Continuum mechanics,Hamiltonian mechanics,Hyperbolicity,Poisson bracket,Variational principle}
     \endentry
+    \entry{pavelkaMultiscaleThermoDynamicsIntroduction2018}{incollection}{}{}
+      \name{author}{3}{}{%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=57619fa212cae84cfd5146d66eecffe4}{%
+           family={Klika},
+           familyi={K\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=5a73e96108d18ccf8e7bb2808a79820a}{%
+           family={Grmela},
+           familyi={G\bibinitperiod},
+           given={Miroslav},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter}%
+      }
+      \strng{namehash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{fullhash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{fullhashraw}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{bibnamehash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{authorbibnamehash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{authornamehash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{authorfullhash}{1963a9a9a629ea30b277f7b68a131a2e}
+      \strng{authorfullhashraw}{1963a9a9a629ea30b277f7b68a131a2e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{Multiscale {{Thermo-Dynamics}}: {{Introduction}} to {{GENERIC}}}
+      \field{day}{6}
+      \field{isbn}{978-3-11-035095-1}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{shorttitle}{Multiscale {{Thermo-Dynamics}}}
+      \field{title}{Multiscale {{Thermo-Dynamics}}: {{Introduction}} to {{GENERIC}}}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1515/9783110350951
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2018 - Multiscale Thermo-Dynamics Introduction to GENERIC.pdf
+      \endverb
+      \keyw{Nichtgleichgewichtsthermodynamik}
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
