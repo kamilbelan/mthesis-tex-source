@@ -220,6 +220,9 @@
     \IfValueT{#1}{^{\mspace{-0mu}#1}} % (do not) shift possible superscript little bit to the left
 }
 
+%% Scaled-up integral sign (matches tall \left/\right delimiters)
+\NewDocumentCommand{\bigint}{}{\mathop{\scalemath{1.2}[1.6]{\int}}\!\!}
+
 %% Exchange \epsilon and \varepsilon
 \NewCommandCopy{\oldepsilon}{\epsilon}
 \NewCommandCopy{\oldvarepsilon}{\varepsilon}

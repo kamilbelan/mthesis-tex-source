@@ -201,15 +201,13 @@ The discrete divergence of a continuously differentiable vector field $\vb{F}\le
 						     &= \sum_{j=1}^N \vb{F}\left(t, \vb{x}_j\right) \cdot \grad_i w_h\left(\abs{\vb{x}_i - \vb{x}_j}\right) V_j = \sum_{j=1}^N \vb{F}_j \cdot \grad_i w_{ij} V_j.
 \end{equations}
 
-\section{SPH formulations}
-\label{sec:FORMULATIONS}
+\section{Classical SPH}
+\label{sec:WCSPH}
 
 One of the pillars of SPH's success lies in its flexibility. Not only can SPH be used to discretise a broad range of PDEs, but the \emph{same} system can often be discretised in several different ways, giving the freedom to choose a problem-specific formulation.\sidenote{Typically, one devises \emph{conservative} formulations for problems with conserved quantities.}
 
-In this section, we will focus on different possibilities of discretising the Euler system \Cref{eq:GOVERNING-SYSTEM}.
+In this and the following sections, we will focus on different ways to discretise the Euler system \Cref{eq:GOVERNING-SYSTEM}.
 
-\section{Classical SPH}
-\label{sec:WCSPH}
 
 \subsection{Improved discretisation}
 \label{sec:IMPROVED-DIFF-OPS}
@@ -237,8 +235,6 @@ The naive discretisation \Cref{eq:NAIVE-GRAD}, \Cref{eq:NAIVE-DIV} fails to appr
 \end{equations}
 
 valid for a nonzero continuously differentiable function $\phi$.\sidenote{In what follows, $\phi$ will be the density $\rho$.} We can improve our approximation by discretising in the following manner
-
-% HACK: is this correct?
 
 \begin{equations}[columns,*]
 	\grad_i \Phi_i &= \phi_i \grad_i \left(\frac{\Phi_i}{\phi_i}\right) + \frac{\Phi_i}{\phi_i} \grad_i\left(\phi_i\right) \approx \\ 
@@ -387,50 +383,38 @@ In the above equations, the index $i \in \{1, \dots, N\}$ runs over all particle
 \section{Hamiltonian formulation}
 \label{sec:HAMILTON}
 
-The conservation property we discovered in the previous section aligns with our intuition about the correspondence between SPH and the classical mechanics of point particles. Classical mechanics can be elegantly reframed in the language of \emph{Hamiltonian mechanics}, and we now develop the Hamiltonian formulation of SPH. This reformulation naturally motivates the use of a \emph{symplectic integrator} in the numerical solution of the system of ODEs obtained by the SPH discretization.
+The conservation property we discovered in the previous section aligns with our intuition about the correspondence between SPH and the classical mechanics of point particles. Classical mechanics can be elegantly reframed in the language of \emph{Hamiltonian mechanics}, and we now develop the Hamiltonian formulation of SPH. This reformulation naturally motivates the use of a \emph{symplectic integrator} in the numerical solution of the system of ODEs obtained by the SPH discretisation.
 
 \subsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Lagrangian \textcolor{gray}{volume} momentum density. 
-The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{x}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$ and of sufficient regularity, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
+Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X}$ the elements of the Lagrangian, \ie reference, configuration manifold and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.. The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
 
-% TODO: STATE WHAT ARE OUR STATE VARIABLES
+The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary Fréchet differentiable functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
+
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
-\pbr[L]{F}{G} \coloneq \int\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\pbr[L]{F}{G} \coloneq \bigint\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, which can be interpreted as distributions representing the Frechet differential.\sidenote{} For further reading on functional derivatives, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
-
-% TODO: GIVE EXAMPLE
+The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
 
 In what follows, we will for brevity of notation omit the dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is in fact a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
-
-	\begin{equations}[single,*]
-		\pbr[L]{F}{G} = - \pbr[L]{G}{F},
-	\end{equations}
+	$\pbr[L]{F}{G} = - \pbr[L]{G}{F}$,
 	Jacobi identity the property
-	\begin{equations}[single,*]
-		\pbr[L]{F}{\pbr[L]{G}{H}} + \pbr[L]{G}{\pbr[L]{H}{F}} + \pbr[L]{H}{\pbr[L]{F}{G}} = 0
-	\end{equations}
-
-	and Leibniz rule holds when 
-	\begin{equations}[single,*]
-		\pbr[L]{FG,H} = F\pbr[L]{G}{H} + \pbr[L]{F}{H}G,
-	\end{equations}
+	$\pbr[L]{F}{\pbr[L]{G}{H}} + \textrm{cycl.} = 0$,
+	and Leibniz rule holds when
+	$\pbr[L]{FG,H} = F\pbr[L]{G}{H} + \pbr[L]{F}{H}G$.
 }
 
-% TODO: INCLUDE SIDENOTES PRESENTING THESE PROPERTIES
-
-Given an functional $F = F\left(t, \vb{x}, \vb{M}\right),$ its evolution in time is given by \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020} 
+Given an Fréchet differentiable functional $F = F\left(t, \vb{x}, \vb{M}\right)$, its evolution in time is given by \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:TIME-EVOL}
 \tdot{F} = \partial_t F + \pbr[L]{F}{\totenL},
 \end{equations}
 
-where $\totenL$ is the functional of total energy in the Lagrangian frame.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particualr, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
+where $\totenL$ is the functional of total energy expressed using the Lagrangian state variables $\vb{x}\left(\vb{X}\right), \vb{M}\left(\vb{x}\right)$.\sidenote{To be precise, $E$ is the Hamilton's functional, \ie the Hamiltonian.} In particualr, for a functional $F\left(\vb{x}, \vb{M}\right)$ that explicitly does not depend on time, we can calculate using the chain rule
 
 \begin{equations}[single,*]
 	\tdot{F}\left(\vb{x}, \vb{M}\right) = \int\left(\fdv{F}{x^i} \partial_t x^i + \fdv{F}{M_i}\partial_t M_i\right)\dd{\vb{X}},
