@@ -1834,6 +1834,52 @@
       \endverb
       \keyw{error analysis,meshfree methods,meshless methods,particle methods,smoothed particle hydrodynamics}
     \endentry
+    \entry{kinclGloballyTimereversibleFluid2023a}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b5e237e94cd37f13858f40a5fb688d57}{%
+           family={Kincl},
+           familyi={K\bibinitperiod},
+           given={Ondřej},
+           giveni={O\bibinitperiod}}}%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{fullhash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{fullhashraw}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{bibnamehash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{authorbibnamehash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{authornamehash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{authorfullhash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \strng{authorfullhashraw}{8bb53c71e848be1a1f57ce0b65d4a4e0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes an energy-preserving and globally time-reversible code for weakly compressible smoothed particle hydrodynamics (SPH). We do not add any additional dynamics to the Monaghan's original SPH scheme at the level of ordinary differential equation, but we show how to discretize the equations by using a corrected expression for density and by invoking a symplectic integrator. Moreover, to achieve the global-in-time reversibility, we have to correct the initial state, implement a conservative fluid-wall interaction, and use the fixed-point arithmetic. Although the numerical scheme is reversible globally in time (solvable backwards in time while recovering the initial conditions), we observe thermalization of the particle velocities and growth of the Boltzmann entropy. In other words, when we do not see all the possible details, as in the Boltzmann entropy, which depends only on the one-particle distribution function, we observe the emergence of the second law of thermodynamics (irreversible behavior) from purely reversible dynamics.}
+      \field{day}{1}
+      \field{issn}{0010-4655}
+      \field{journaltitle}{Computer Physics Communications}
+      \field{month}{3}
+      \field{shortjournal}{Computer Physics Communications}
+      \field{title}{Globally Time-Reversible Fluid Simulations with Smoothed Particle Hydrodynamics}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.cpc.2022.108593
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Kincl and Pavelka - 2023 - Globally time-reversible fluid simulations with smoothed particle hydrodynamics.pdf;/home/moschehaus/Zotero/storage/CQQWB5FR/S0010465522003125.html
+      \endverb
+      \keyw{Entropy,Reversibility,SPH,Stability,Symplectic integrator}
+    \endentry
     \entry{pavelkaHamiltonianContinuumMechanics2020}{article}{}{}
       \name{author}{3}{}{%
         {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
