@@ -2498,7 +2498,8 @@
     <bcf:citekey order="66" intorder="1">pavelkaHamiltonianContinuumMechanics2020</bcf:citekey>
     <bcf:citekey order="67" intorder="1">pavelkaMultiscaleThermoDynamicsIntroduction2018</bcf:citekey>
     <bcf:citekey order="68" intorder="1">pavelkaHamiltonianContinuumMechanics2020</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">pavelkaHamiltonianContinuumMechanics2020</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
