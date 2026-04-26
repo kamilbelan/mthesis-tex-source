@@ -255,7 +255,7 @@ and
 		       &= \frac{1}{\phi_i} \sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i\right)  \cdot \grad_i w_{ij} \phi_j V_j.
 \end{equations}
 
-Thanks to the $\vb{F}_j - \vb{F}_i$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however it possesses a symmetric property in the summands, which will be prove useful in the following section.
+Thanks to the $\vb{F}_j - \vb{F}_i$ term in the approximate divergence operator, we see that the discretised divergence operator correctly vanishes for constant fields. The alternate discretised gradient operator does \emph{not vanish} for constant fields, however, it possesses a symmetric property in the summands, which will prove useful in what follows.
 
 All in all, the discretisation
 
@@ -264,25 +264,54 @@ All in all, the discretisation
 \grad_i \cdot \vb{F}\left(t, \vb{x}_i\right) &\approx \frac{1}{\phi_i}\sum_{j=1}^N \left(\vb{F}_j - \vb{F}_i \right) \cdot \grad_i w_{ij} \phi_j V_j, \label{eq:IMPROVED-DIV}
 \end{equations}
 
-will be preferred in the section \Cref{sec:WCSPH}.
+will be preferred.
+
+\subsection{Discrete balance of mass}
+\label{sec:MASS}
+Using the improved divergence operators \Cref{eq:IMPROVED-DIV} with the auxiliary field $\phi$ taken as the density $\rho$ the balance of mass
+
+\begin{equations}[single,*]
+	\tdot{\rho} = - \rho\left(\divergence{\vb{v}}\right),
+\end{equations}
+
+can be rewritten as
+
+\begin{equations}[columns,*]
+	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right) \cdot \grad_i w_{ij} \rho_j V_j = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij},
+\end{equations}
+
+where we have used \emph{a possible definition} of the particle's density $\rho_i = \frac{m_i}{V_i}$. The discrete balance of mass
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DISCR-MASS}
+\dv{\rho_i}{t} = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij}, 
+\end{equations}
+
+is thus a system of $N$ ordinary differential equations, whose solution yields the densities $\rho_i$. 
+
+This is not the only way we can obtain the densities. An \emph{alternative} formulation defines the density directly as a kernel sum: notice that the properties of the interpolation kernel $w_h$ \Cref{tab:kernel-properties} allow us to interpret the sum
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-density-sum}
+\rho_i = \sum_{j=1}^N m_j w_{ij},
+\end{equations}
+
+as a \emph{weighted average} of the particle masses.\sidenote{The closer the particles are to the particle $\vb{x}_i$, the larger the weight.} With this approach, we replace the need to \textcolor{gray}{numerically} solve the ODEs \Cref{eq:DISCR-MASS} by a summation procedure.\sidenote{Recall again that in practice, sums including an interpolation kernel \emph{do not} have $N$ nonzero summands, as $w_h$ is compactly supported.} This approach becomes particularly useful in formulations where the density field is not the primary quantity of interest; for diagnostic purposes, one can recover the densities at an arbitrary integration step with a single sum rather than solving for the densities all along. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable integrator, numerical simulations of isentropic flows in this formulation are \emph{time-reversible}.
+
+Note that the two presented formulations are \emph{not equivalent} --- in general, they result in different densities.
 
 \subsection{Discrete balance of linear momentum}
 \label{sec:MOMENTUM}
 
-\subsection{Discrete balance of mass}
-\label{sec:MASS}
+Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} operator  and choose again the auxiliary field $\phi$ as the density $\rho$. Then the balance of momentum
 
-Let us consider the \emph{improved} discrete versions of the gradient \Cref{eq:IMPROVED-GRAD} and divergence operators \Cref{eq:IMPROVED-DIV} and choose the auxiliary field $\varphi$ as the density $\rho$. Then the balance of momentum and the continuity equation
-
-\begin{equations}[columns,*]
-	\tdot{\rho} &= - \rho\left(\divergence{\vb{v}}\right),\\
-	\tdot{\vb{v}} &= - \frac{1}{\rho}\grad p + \vb{g}, 
+\begin{equations}[single,*]
+	\tdot{\vb{v}} = - \frac{1}{\rho}\grad p + \vb{g}, 
 \end{equations}
 
 can be recast to the form
 
 \begin{equations}[columns,*]
-	\dv{\rho_i}{t} &= - \frac{\rho_i}{\rho_i} \sum_{j=1}^N \left(\vb{v}_j - \vb{v}_i\right) \cdot \grad_i w_{ij} \rho_j V_j = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right)\cdot \grad_i w_{ij},\\
 	\dv{\vb{v_i}}{t} &= -\frac{1}{\rho_i} \rho_i \sum_{j=1}^N\left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_j}^{2}\right)\rho_j V_j \grad_i w_{ij} = \sum_{j=1}^N m_j\left(\frac{p_i}{\rho_i}^{2} + \frac{p_j}{\rho_j}^{2}\right)\grad_i w_{ij},
 \end{equations}
 
@@ -329,15 +358,31 @@ where we used Newton's second law in the absence of external forces. In total, w
 \end{equations}
 therefore, the total momentum is conserved.} This conservation property would \emph{not hold} had we used the naive discrete gradient \Cref{eq:NAIVE-GRAD} instead of the improved form \Cref{eq:IMPROVED-GRAD}.
 
+\subsection{Complete system}
+\label{sec:CLASSIC-COMPLETE}
+
 To close the discretised equations, we require an equation of state for the pressure $p = p\left(\rho, T\right)$. Consistent with our application in atmospheric dynamics, we deploy the thermal equation of a \textcolor{gray}{calorically} ideal gas \Cref{eq:THERMAL}. Also, since we are interested in \emph{isentropic} flows, we add the equation $\tdot{\theta_i} = 0$ for the evolution of the potential temperature. Our complete system hence reads as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:CLASSICAL-SPH}
-\dv{\rho_i}{t} &= \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right) \cdot \grad_i w_{ij},\\
 \dv{\vb{v}_i}{t} &= - \sum_{j=1}^N m_j \left(\frac{p_i}{\rho_i^{2}} + \frac{p_j}{\rho_i^{2}}\right) + \vb{g}, \\
 p_i\left(\rho_i, T_i\right) &= R \rho_i T_i, \\
-\theta_i &= \, \text{const}.
+\theta_i &= \, \text{const},
 \end{equations}
+
+together with an equation for density \Cref{eq:DISCR-MASS}
+
+\begin{equations}[single,*]
+\dv{\rho_i}{t} = \sum_{j=1}^N m_j \left(\vb{v}_i - \vb{v}_j\right) \cdot \grad_i w_{ij},
+\end{equations}
+
+or \Cref{eq:SPH-density-sum}
+
+\begin{equations}[single,*]
+\rho_i = \sum_{j=1}^N m_j w_{ij}.
+\end{equations}
+
+In the above equations, the index $i \in \{1, \dots, N\}$ runs over all particles.
 
 \section{Hamiltonian formulation}
 \label{sec:HAMILTON}
