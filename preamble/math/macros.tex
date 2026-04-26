@@ -73,6 +73,7 @@
 \NewDocumentCommand{\Cone}{g}{\IfValueTF{#1}{C^{1}(#1)}{C^{1}}}
 \NewDocumentCommand{\Ctwo}{g}{\IfValueTF{#1}{C^{2}(#1)}{C^{2}}}
 \NewDocumentCommand{\Cinf}{g}{\IfValueTF{#1}{C^{\infty}(#1)}{C^{\infty}}}
+\NewDocumentCommand{\Ccinf}{g}{\IfValueTF{#1}{C^{\infty}_0(#1)}{C^{\infty}_0}}
 
 %%% SPH operators
 \newcommand*{\sphc}[1]{[#1]_{c}}
@@ -181,13 +182,17 @@
 %% Partial derivative
 %% Usage:
 %% \pdv{f}{x}    -> ∂f/∂x
-%% \pdv{}{x}     -> ∂/∂x  (operator form)
+%% \pdv{x}       -> ∂/∂x  (operator form)
 %% \pdv[2]{f}{x} -> ∂²f/∂x²  (higher order)
-\NewDocumentCommand{\pdv}{O{} m m}{%
-    \IfBlankTF{#1}{%
-        \frac{\partial #2}{\partial #3}%
+\NewDocumentCommand{\pdv}{O{} m g}{%
+    \IfValueTF{#3}{%
+        \IfBlankTF{#1}{%
+            \frac{\partial #2}{\partial #3}%
+        }{%
+            \frac{\partial^{#1} #2}{\partial #3^{#1}}%
+        }%
     }{%
-        \frac{\partial^{#1} #2}{\partial #3^{#1}}%
+        \frac{\partial}{\partial #2}%
     }%
 }
 

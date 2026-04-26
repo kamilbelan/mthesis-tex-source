@@ -441,7 +441,7 @@ since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuu
 
 The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
 
-In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$ and the internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to Lagrangian variables using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
+In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$ and the internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGRANGIAN-ENERGY}
@@ -454,7 +454,7 @@ We briefly summarize the structure of what follows. We have noticed that for the
 \subsection{SPH discretisation}
 \label{sec:SPH-discretisation}
 
-Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of the reference manifold $\Omega_0$, \ie $\Omega_0 = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,
+Denote $\{\Omega_{\alpha}\}_{\alpha=1}^N, N \in \N$ a pairwise disjoint \textcolor{gray}{finite} partition of the reference manifold $\Omega_0$, \ie $\Omega_0 = \bigcup_{\alpha=1}^N \Omega_{\beta}$, $\Omega_{\alpha} \cap \Omega_{\beta} = \emptyset$ for $\alpha \neq \beta$. The sets $\Omega_{\alpha}$ will represent the \emph{SPH particles.} Moreover, with the aid of the normalized characteristic function of $\Omega_{\alpha}$,\autocite[p.~5]{pavelkaApproachesConservativeSmoothed2025}
 
 \begin{equations}[single,*]
 \chi_{\alpha}\left(\vb{X}\right) = \begin{cases}
@@ -473,7 +473,7 @@ and the \emph{SPH momentum} $\vb{M}_{\alpha}\left(t, \vb{X}\right)$ as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-momentum}
-\vb{M}_{\alpha}\left(t\right) = \int_{\Omega_0}\vb{M}\left(t, \vb{X}\right)\chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
+\vb{M}_{\alpha}\left(t\right) = \int_{\Omega_0}\vb{M}\left(t, \vb{X}\right)\chi_{\alpha}\left(\vb{X}\right)V_{\alpha}\dd{\vb{X}}.
 \end{equations}
 
 Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ will replace the state variables $\left(\vb{x}, \vb{M}\right)$ of the continuum mechanics, and so we will refer to them as the SPH state variables.
@@ -483,14 +483,31 @@ Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}
 
 Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position}, \Cref{eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics ---hence we are allowed to plug them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads as
 
-\begin{equations}[lines]
-\label{eq:TERM}
-\pbr[L]{F}{G} = \int\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{\alpha,\beta}\int\left(\left(\pdv{F}{x_{\alpha}^j} \fdv{x^j_{\alpha}}{x^i} + \pdv{F}{M_{\beta,j}}\fdv{M_{\beta,j}}{x^i}\right)\left(\pdv{G}{M_{\beta,j}}\fdv{M_{\beta,j}}{M_i} + \pdv{G}{x^j_{\alpha}}\fdv{x^j_{\alpha}}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{\alpha,\beta} \int\left(\left(\pdv{F}{M_{\beta,j}} \fdv{M_{\beta,j}}{M_i} + \pdv{F}{x_{\alpha}^j} \fdv{x_{\alpha}^j}{M_i}\right)\left(\pdv{G}{x^j_{\alpha}} \fdv{x_{\alpha}^j}{x^i} + \pdv{G}{M_{\beta,j}} \fdv{M_{\beta, j}}{x_i}\right)\right)\dd{\vb{X}}.
+\begin{equations}[lines,!,numberline=all]
+	\label{eq:TERM}
+	\pbr[L]{F}{G} = \bigint_{\Omega_0}\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{\alpha,\beta}\bigint_{\Omega_0}\left(\left(\pdv{F}{x_{\alpha}^j} \fdv{x^j_{\alpha}}{x^i} + \pdv{F}{M_{\beta,j}}\fdv{M_{\beta,j}}{x^i}\right)\left(\pdv{G}{M_{\beta,j}}\fdv{M_{\beta,j}}{M_i} + \pdv{G}{x^j_{\alpha}}\fdv{x^j_{\alpha}}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{\alpha,\beta} \bigint_{\Omega_0}\left(\left(\pdv{F}{M_{\beta,j}} \fdv{M_{\beta,j}}{M_i} + \pdv{F}{x_{\alpha}^j} \fdv{x_{\alpha}^j}{M_i}\right)\left(\pdv{G}{x^j_{\alpha}} \fdv{x_{\alpha}^j}{x^i} + \pdv{G}{M_{\beta,j}} \fdv{M_{\beta, j}}{x_i}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$, which is a straightforward computation using the definitions \Cref{eq:SPH-momentum}, \Cref{eq:SPH-position}, but rather a lengthy one and such it will be skipped. It can however be found in 
+Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$. From the definition \Cref{eq:SPH-momentum}, we obtain for any $\varphi \in \Ccinf{\Omega_0}$
 
-The expression \Cref{eq:TERM} can be rewritten to obtain
+\begin{equations}[columns,*]
+	\left\langle \fdv{x^j_{\alpha}}{x^i\left(\vb{X}\right)}, \varphi \right\rangle	&= \bigint_{\Omega_0} \fdv{x_{\alpha}^j}{x^i} \varphi \dd{\vb{X}} = \eval{\dv{s}x^j_{\alpha}(x^i + s \varphi)}_{s=0} =\\ 
+											&=\dv{s}\eval{\int_{\Omega_0}\delta^j_i(x^i + s \varphi)\chi_{\alpha}\dd{\vb{X}}}_{s=0} = \int_{\Omega_0}\delta^j_i \chi_{\alpha} \varphi\dd{\vb{X}}, 
+\end{equations}
+
+and so 
+
+\begin{equations}[single,*]
+	\fdv{x^j_{\alpha}}{x^i} = \delta^j_i \chi_{\alpha}.
+\end{equations}
+
+In the same manner we obtain
+
+\begin{equations}[single,*]
+\fdv{M_{\beta,j}}{M_{i}} = \delta^{j}_i \chi_{\beta} V_{\beta},
+\end{equations}
+
+and the cross terms $\fdv{x^j_{\alpha}}{M_i}, \fdv{M_{\beta,j}}{x^i}$ are zero, as the definition of the SPH position \Cref{eq:SPH-position} and SPH momentum \Cref{eq:SPH-momentum} include only the continuous position $\vb{x}$ and continuous momentum $\vb{M}$ respectively. Using these results and the normalisation of the characteristic functions the expression \Cref{eq:TERM} can be rewritten to obtain
 
 \begin{equations}[single,*]
 	\pbr[L]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} = \sum_{\alpha}\left(\pdv{F}{x^{i}_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right).
@@ -505,36 +522,73 @@ It is hence natural to define the \emph{SPH bracket} for any two functionals $F\
 
 \subsubsection{SPH energy functional}
 \label{sec:SPH-functional}
-% NOTE: ENERGY
 
-Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state variables. We begin with the definition of the Lagrangian density of the particle 
-
+Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state variables. The kinetic energy counterpart evidently is $\abs{\vb{M}_{\alpha}}^{2}/2 m_{\alpha}$, with 
 
 \begin{equations}[single,!,numberline=all]
-\label{eq:SPH-lagrangian-density}
-\rhoL_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}},
+\label{eq:SPH-particle-mass}
+m_{\alpha} = \int_{\Omega_{0}}\rho_0\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
 \end{equations}
 
-where
-
-\begin{equations}[single,!,numberline=all]
-\label{eq:SPH-mass}
-m_{\alpha} = \int_{\Omega}\rhoL\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
-\end{equations}
-
-Assume the density can be expressed\sidenote{\todo{IMPROVE} This assumption is basic in continuum thermodynamics.} as a function of density $\rhoL$, and entropy $\entropyL$. $\eL = \eL(\rhoL, \entropyL)$. Using the transformation of density and the extensively of the internal energy, we see that
-
+To recover the internal energy, we need to introduce the density of the particle in the \emph{Eulerian} frame $\rho_{\alpha}$. This can be done in a familiar way using \autocite[p.~7]{pavelkaApproachesConservativeSmoothed2025} 
 
 \begin{equations}[single,*]
-\eL\left(\vb{X}\right) =  e\left(\rhoL\left(\vb{X}\right)\right) = e\left(J\left(\vb{X}\right) \rho\left(\vb{x}\left(\vb{X}\right)\right)\right) = J\left(\vb{X}\right) e\left(\rho\left(\vb{x}\left(\vb{X}\right)\right)\right),
+\rho_{\alpha} = \sum_{\beta=1}^N m_{\beta} w_{\alpha \beta},
 \end{equations}
 
-where $J = \det \grad \pmb{\chi}$ and the notational shortcut $\vb{x}\left(\vb{X}\right)$ as usual means $ \vb{x}\left(\vb{X}\right)= \pmb{\chi}\left(t, \vb{X}\right)$.\sidenote{Recall that for brevity we are not explicitly writing the time dependence of the considered quantities.} 
+Since the transformation of density yields
+
+\begin{equations}[single,*]
+\rho = \frac{\rho_0}{J}, \, \text{\textit{i.e.}} \, J = \frac{\rho_0}{\rho},
+\end{equations}
+
+we see that
+
+\begin{equations}[single,*]
+	J e\left(\rho, \eta\right) = \frac{\rho_0}{\rho} e,
+\end{equations}
+
+and so in total the direct counterpart to \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH variables is
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-energy}
+\totenSPH = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}}^{2}}{2 m_{\alpha}} + \frac{m_{\alpha}}{V_{\alpha} \rho_a}\right)V_a = \sum_{\alpha=1}^N\left(\frac{\abs{\vb{M}_{\alpha}^{2}}}{2 m_{\alpha}} + \frac{m_{\alpha}}{\rho_a}\right).
+\end{equations}
 
 \subsection{Classical SPH as a Hamiltonian system}
 \label{sec:HAMILTONIAN-SYSTEM}
 
-%TODO: WHAT SYSTEM DO WE USE? NO INVOLVEMENT OF DENSITY
+We are in position to write down the evolution equation of an arbitrary functional $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ of the SPH variables: if $F$ does not explicitly depend on time we have
+
+\begin{equations}[single,*]
+\tdot{F} = \pbr[SPH]{F}{\totenSPH} = \sum_{\alpha=1}^N\left(\pdv{F}{x_{\alpha}^i} \pdv{G}{M_{\alpha, i}}- \pdv{F}{M_{\alpha, i}} \pdv{G}{x_{\alpha}^i}\right).
+\end{equations}
+
+The partial derivative of \Cref{eq:SPH-energy} with respect to the momentum reads as
+
+\begin{equations}[single,*]
+	\pdv{E}{M_{\beta,j}} = \pdv{M_{\beta, j}} \sum_{\gamma=1}^N \left(\frac{\abs{\vb{M}_{\gamma}}^{2}}{2 m_{\gamma}} + \frac{m_{\gamma}}{\rho_{\gamma}}\right) = \sum_{\gamma=1}^N\sum_{k=1}^d \frac{1}{2 m_{\gamma}} 2 M_{\gamma, k}\delta_{jk} \delta_{\beta \gamma} = \frac{M_{\beta,j}}{m_{\beta}}.
+\end{equations}
+
+The derivative with respect to the position leads to a rather lengthy, but straightforward computation. We only state the resulting form, details can be found in \autocite[p.~8]{pavelkaApproachesConservativeSmoothed2025}:
+
+\begin{equations}[columns,*]
+	\grad_{\alpha}E &= \sum_{\beta=1}^N\left(m_{\beta} \frac{m_{\alpha}}{\rho_{\alpha}^{2}}\left(- e +  \rho_{\alpha}\pdv{e}{\rho_{\alpha}} + \eta_{\alpha}\pdv{e}{\eta_{\alpha}}\right)\right) \grad_{\alpha} w_{\alpha \beta} + \\
+			&+ \sum_{\beta=1}^N \left(m_{\alpha} \frac{m_{\beta}}{\rho_{\beta}^{2}}\left(- e + \rho_{\beta} \pdv{e}{\rho_{\beta}} + \eta_{\alpha} \pdv{e}{\eta_{\alpha}}\right) \right)\grad_{\alpha} w_{\alpha \beta}.
+\end{equations}
+
+Using the Euler relation \autocite[p.~61]{callenThermodynamicsIntroductionThermostatistics1985}\autocite[p.~42]{pavelkaApproachesConservativeSmoothed2025} 
+
+\begin{equations}[single,*]
+p = -e + \eta \pdv{e}{\eta} + \rho \pdv{e}{\rho},
+\end{equations}
+
+yields
+
+\begin{equations}[single,*]
+\grad_{\alpha}E = \sum_{\beta=1}^N m_{\alpha} m_\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right).
+\end{equations}
+
 
 \subsection{Symplectic integrators}
 \label{sec:INTEGRATORS}
