@@ -43,20 +43,20 @@
 \contentsline {subsubsection}{SPH energy functional}{40}{equation.3.35}%
 \contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.46}%
 \contentsline {subsection}{Symplectic integrators}{43}{subsection*.47}%
-\contentsline {section}{\numberline {3.5}Density-free formulations}{43}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{43}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{44}{equation.3.46}%
-\contentsline {section}{\numberline {3.6}Implementation specifics}{45}{section*.49}%
-\contentsline {subsection}{Extrapolating boundary conditions}{45}{subsection*.50}%
-\contentsline {subsubsection}{Inflow \& Outflow}{45}{subsection*.50}%
-\contentsline {subsubsection}{Free-slip}{45}{subsection*.50}%
-\contentsline {subsection}{Adaptive smoothing length}{45}{subsection*.51}%
-\contentsline {subsection}{Particle placement}{45}{subsection*.52}%
-\contentsline {chapter}{\numberline {4}Experiments}{46}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{46}{section*.53}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{46}{section*.54}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{46}{section*.55}%
-\contentsline {chapter}{\numberline {5}Voronoi}{47}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{48}{chapter*.56}%
-\contentsline {chapter}{References}{49}{appendix*.57}%
+\contentsline {section}{\numberline {3.5}Density-free formulations}{44}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{44}{section*.48}%
+\contentsline {subsubsection}{Pressure-potential temperature}{45}{equation.3.49}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{46}{section*.49}%
+\contentsline {subsection}{Extrapolating boundary conditions}{46}{subsection*.50}%
+\contentsline {subsubsection}{Inflow \& Outflow}{46}{subsection*.50}%
+\contentsline {subsubsection}{Free-slip}{46}{subsection*.50}%
+\contentsline {subsection}{Adaptive smoothing length}{46}{subsection*.51}%
+\contentsline {subsection}{Particle placement}{46}{subsection*.52}%
+\contentsline {chapter}{\numberline {4}Experiments}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{47}{section*.53}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{47}{section*.54}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{47}{section*.55}%
+\contentsline {chapter}{\numberline {5}Voronoi}{48}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{49}{chapter*.56}%
+\contentsline {chapter}{References}{50}{appendix*.57}%
 \contentsfinish 

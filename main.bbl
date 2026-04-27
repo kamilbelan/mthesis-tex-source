@@ -2102,6 +2102,133 @@
       \endverb
       \keyw{Statistical mechanics,Thermodynamics}
     \endentry
+    \entry{hairerGeometricNumericalIntegration2006}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+        {{hash=6715424cc951a02c09b3082a661642ab}{%
+           family={Wanner},
+           familyi={W\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9a61cdcbc8a5b325ba3aa8e80f7d1900}{%
+           family={Lubich},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{fullhash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{fullhashraw}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{bibnamehash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{authorbibnamehash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{authornamehash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{authorfullhash}{96286d9986c6991f8f485305cfe4fd53}
+      \strng{authorfullhashraw}{96286d9986c6991f8f485305cfe4fd53}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-540-30663-4}
+      \field{langid}{english}
+      \field{title}{Geometric {{Numerical Integration}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/3-540-30666-8
+      \endverb
+      \keyw{algorithms,calculus,differential equations on manifolds,geometric numerical integration,Hamiltonian and reversible systems,Numerical integration,symplectic and symmetric methods}
+    \endentry
+    \entry{leimkuhlerSimulatingHamiltonianDynamics2004}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=499d33927d4ee2f34886cebcd896199c}{%
+           family={Leimkuhler},
+           familyi={L\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=21a4c00eea337f7cb6fc92ea50a4a408}{%
+           family={Reich},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{fullhash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{fullhashraw}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{bibnamehash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{authorbibnamehash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{authornamehash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{authorfullhash}{a9587eaad914acca50a9dbe89bf419bc}
+      \strng{authorfullhashraw}{a9587eaad914acca50a9dbe89bf419bc}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Geometric integrators are time-stepping methods, designed such that they exactly satisfy conservation laws, symmetries or symplectic properties of a system of differential equations. In this book the authors outline the principles of geometric integration and demonstrate how they can be applied to provide efficient numerical methods for simulating conservative models. Beginning from basic principles and continuing with discussions regarding the advantageous properties of such schemes, the book introduces methods for the N-body problem, systems with holonomic constraints, and rigid bodies. More advanced topics treated include high-order and variable stepsize methods, schemes for treating problems involving multiple time-scales, and applications to molecular dynamics and partial differential equations. The emphasis is on providing a unified theoretical framework as well as a practical guide for users. The inclusion of examples, background material and exercises enhance the usefulness of the book for self-instruction or as a text for a graduate course on the subject.}
+      \field{isbn}{978-0-521-77290-7}
+      \field{langid}{english}
+      \field{pagetotal}{464}
+      \field{title}{Simulating {{Hamiltonian Dynamics}}}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \keyw{Mathematics / Differential Equations / General,Mathematics / Geometry / General,Mathematics / Mathematical Analysis,Mathematics / Numerical Analysis,Science / Chemistry / Physical & Theoretical,Science / Mechanics / General,Technology & Engineering / Materials Science / General}
+    \endentry
+    \entry{Hairer_2003}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9a61cdcbc8a5b325ba3aa8e80f7d1900}{%
+           family={Lubich},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6715424cc951a02c09b3082a661642ab}{%
+           family={Wanner},
+           familyi={W\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press (CUP)}%
+      }
+      \strng{namehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{fullhash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{fullhashraw}{6b65ffa33296e7c8499bc72738749672}
+      \strng{bibnamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorbibnamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1474-0508}
+      \field{journaltitle}{Acta Numerica}
+      \field{month}{5}
+      \field{title}{Geometric Numerical Integration Illustrated by the {{Störmer}}--{{Verlet}} Method}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1017/S0962492902000144
+      \endverb
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
