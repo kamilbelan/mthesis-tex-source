@@ -143,6 +143,7 @@ Having introduced the \emph{discrete} interpolation, we deploy it to approximate
 
 and one would immediately be interested in the quality of the approximation. A rigorous analysis of the discrete approximation error is a complicated \emph{open} problem \autocite[p.~3]{vacondioGrandChallengesSmoothed2021a}\autocite{quinlanTruncationErrorMeshfree2006}. The main difficulty lies in the fact that the error analysis depends on the particle positions \textcolor{gray}{that change in time}. 
 If one considers particles evenly arranged in a Cartesian grid (which is a substantial simplification), it can be shown\sidenote{Deploying techniques from Fourier analysis and the Euler-MacLaurin formula.} that for the Wendland quintic kernel it holds
+% WARNING: MISSING CITATION
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DIS-ERROR}
@@ -196,7 +197,7 @@ since $\Phi\left(t, \vb{x}_{\beta}\right)$ is independent of $\vb{x}_{\alpha}$.
 The discrete divergence of a continuously differentiable vector field $\vb{F}\left(t, \vb{x}\right)$ at a particle $\vb{x}_{\alpha}$ is defined as
 
 \begin{equations}[columns,*]
-	\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \sphd{\grad_{\alpha} \cdot \vb{F}}\left(t, \vb{x}_{\alpha}\right) = \sum_{\beta=1}^N\left(\grad_{\alpha} \Big(\vb{F}\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)\Big)V_{\beta}\right) = \\
+	\grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \sphd{\grad_{\alpha} \cdot \vb{F}}\left(t, \vb{x}_{\alpha}\right) = \sum_{\beta=1}^N\left(\grad_{\alpha} \cdot \Big(\vb{F}\left(t, \vb{x}_{\beta}\right)w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right)\Big)V_{\beta}\right) = \\
 						     &= \sum_{\beta=1}^N \vb{F}\left(t, \vb{x}_{\beta}\right) \cdot \grad_{\alpha} w_h\left(\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}\right) V_{\beta} = \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta} V_{\beta}.
 \end{equations}
 
@@ -218,7 +219,7 @@ Previously, we have derived discrete versions of the $\gradop$ and $\div$ operat
 \grad_{\alpha} \cdot \vb{F}\left(t, \vb{x}_{\alpha}\right) &\approx \sum_{\beta=1}^N \vb{F}_{\beta} \cdot \grad_{\alpha} w_{\alpha\beta}V_{\beta}. \label{eq:NAIVE-DIV}
 \end{equations}
 
-However, this is not a unique way to discretise the differential operators --- and particularly \emph{not a good one} either. To demonstrate, take the constant fields $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
+However, this is not a unique way to discretise the differential operators --- and particularly \emph{not a good one} either. To demonstrate, take constant fields, for instance $\Phi\left(t, \vb{x}\right) = 1, \vb{F}\left(t, \vb{x}\right) = \vb{e}_x,$ then
 
 \begin{equations}[columns,*]
 	\grad_{\alpha} \Phi\left(t, \vb{x}_{\alpha}\right) = 0 &\neq \sum_{\beta=1}^N \Phi_{\beta} \grad_{\alpha} w_{\alpha\beta}V_{\beta} = \sum_{\beta=1}^N \grad_{\alpha} w_{\alpha\beta}V_{\beta}, \\
@@ -275,7 +276,7 @@ can be rewritten as
 	\dv{\rho_{\alpha}}{t} &= - \frac{\rho_{\alpha}}{\rho_{\alpha}} \sum_{\beta=1}^N \left(\vb{v}_{\beta} - \vb{v}_{\alpha}\right) \cdot \grad_{\alpha} w_{\alpha\beta} \rho_{\beta} V_{\beta} = \sum_{\beta=1}^N m_{\beta} \left(\vb{v}_{\alpha} - \vb{v}_{\beta}\right)\cdot \grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
-where we have used \emph{a possible definition} of the particle's density $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. The discrete balance of mass
+where we have used \emph{a possible definition} of the particle's density $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Since $\rho_{\alpha} = \rho_{\alpha}(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_{\alpha}(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_{\alpha}\right)$ at a fixed \emph{material} point $\vb{x}_{\alpha}$.} The discrete balance of mass
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DISCR-MASS}
@@ -308,12 +309,10 @@ can be recast to the form
 
 \begin{equations}[columns,*]
 	\dv{\vb{v_{\alpha}}}{t} &= -\frac{1}{\rho_{\alpha}} \rho_{\alpha} \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\rho_{\beta} V_{\beta} \grad_{\alpha} w_{\alpha\beta} =\\
-				&= \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta},
+				&= -\sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta},
 \end{equations}
 
-where we have used the fact $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Since $\rho_{\alpha} = \rho_{\alpha}(t)$ is a function of time only, the material time derivative in fact becomes an \emph{ordinary} time derivative.\sidenote{This is a direct consequence of the Lagrangian nature of SPH. The time evolution of a particle's quantity $\Phi_{\alpha}(t)$ is essentially the time evolution of the quantity $\Phi\left(t, \vb{x}_{\alpha}\right)$ at a fixed \emph{material} point $\vb{x}_{\alpha}$.}
-
-Notice the structure of the discretised balance of linear momentum. If we denote
+where we have used the fact $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Notice the structure of the discretised balance of linear momentum. If we denote
 
 \begin{equations}[columns,*]
 	\vb{F}_{\beta \to \alpha} &\coloneq - m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta}, \\
@@ -388,22 +387,22 @@ The conservation property we discovered in the previous section aligns with our 
 \subsection{Poisson brackets}
 \label{sec:BRACKETS}
 
-Let us begin with a general description of continuum mechanics in the framework of Hamiltonian mechanics. We denote by $\vb{X} \in \Omega_0$ the elements of the Lagrangian, \ie reference, configuration manifold $\Omega_0$ and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.. The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
+To set up the Hamiltonian formulation of SPH, we first review the Hamiltonian framework for continuum mechanics in the Lagrangian frame, which we will then discretise. We denote by $\vb{X} \in \Omega_0$ the elements of the Lagrangian, \ie reference, configuration manifold $\Omega_0$ and by $\vb{x}$ the elements of the Eulerian, \ie current, configuration manifold. As usual, the deformation (motion) of the continuum is given as a $C^1$ diffeomorphism\sidenote{Technically, $\forall t \in \Rplusnought$ the map $\pmb{\chi}\left(t, \cdot\right): \Omega_0 \to \Omega(t)$ is a $C^1$ diffeomorphism. The set $\Omega(t)$ is the current configuration at time $t$.} $\pmb{\chi}: \left(t, \vb{X}\right) \mapsto \vb{x}$, \ie $\vb{x} = \pmb{\chi}\left(t, \vb{X}\right)$ from the Lagrangian to the Eulerian configuration. Denote further by $\vb{M}\left(t, \vb{X}\right)$ the Eulerian momentum density per Lagrangian volume.\sidenote{The mentioned momentum is a mixed object: it is the Eulerian momentum expressed using Lagrangian variables per unit Lagrangiam volume. It holds $\vb{M}\left(t, \vb{X}\right) = \rho_0\left(\vb{X}\right)\vb{v}\left(t, \pmb{\chi}\left(t, \vb{X}\right)\right)$, with $\rho_0$ being the reference density.} The mappings $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ will be called the \emph{Lagrangian state variables}.
 
-The continuum counterpart to the canonical Poisson bracket of Hamiltonian mechanics of points is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary Fréchet differentiable functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
+The continuum analogue to the canonical Poisson bracket of point-particle Hamiltonian mechanics is the \emph{canonical} Poisson bracket in the Lagrangian frame; given two arbitrary Fréchet differentiable functionals $F\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$, $G\left(t, \vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)\right)$ of the Lagrangian state variables $\vb{x}, \vb{M}$, we define \autocite[p.~2]{pavelkaHamiltonianContinuumMechanics2020}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGR-BRACKET}
-\pbr[L]{F}{G} \coloneq \bigint_{\Omega_0}\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i}\left(\vb{X}\right)\right)\dd{\vb{X}}.
+\pbr[L]{F}{G} \coloneq \bigint_{\Omega_0}\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i\left(\vb{X}\right)}\right)\dd{\vb{X}}.
 \end{equations}
 
-The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.
+The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}.Following standard convention in continuum mechanics on manifolds, position components are written with upper indices and momentum components with lower indices.
 
-In what follows, we will for brevity of notation omit the dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is in fact a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
+In what follows, we will for brevity of notation omit the explicit dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is a Poisson bracket: a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
 	\begin{equations}[single,*]
 	\pbr[L]{F}{G} = - \pbr[L]{G}{F},
 	\end{equations}
-	Jacobi identity is the property
+	Jacobi identity reads
 	\begin{equations}[single,*]
 	\pbr[L]{F}{\pbr[L]{G}{H}} + \textrm{cycl.} = 0,
 	\end{equations}
@@ -441,7 +440,7 @@ since $F$ were arbitrary, we conclude \autocite[p.~3]{pavelkaHamiltonianContinuu
 
 The equations \Cref{eq:HAMILTON-POSITION}, \Cref{eq:HAMILTON-MOMENTA} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require the knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
 
-In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$ and the \emph{volumetric density} of internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
+In general, the energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$, $\rho_0$ being the reference density, and the \emph{volumetric density} of internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the Lagrangian energy functional, we transform to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det \grad \pmb{\chi}\left(\vb{X}\right)$
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:LAGRANGIAN-ENERGY}
