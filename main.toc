@@ -21,42 +21,45 @@
 \contentsline {section}{\numberline {2.1}Initial and boundary conditions}{23}{section*.26}%
 \contentsline {subsection}{Radiation condition}{23}{subsection*.27}%
 \contentsline {subsection}{Terrain-following coordinates}{23}{subsection*.28}%
-\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.29}%
+\contentsline {subsection}{Inflow and outflow boundaries}{23}{subsection*.29}%
+\contentsline {section}{\numberline {2.2}Well-balancing}{23}{section*.30}%
+\contentsline {subsection}{Inexact hydrostatic balance}{23}{subsection*.31}%
 \contentsline {chapter}{\numberline {3}Smoothed Particle Hydrodynamics}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Method overview}{24}{section*.30}%
-\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.31}%
-\contentsline {subsection}{Kernel interpolation}{25}{subsection*.32}%
-\contentsline {subsection}{Particle approximation}{27}{subsection*.35}%
-\contentsline {subsection}{Accuracy of SPH}{28}{subsection*.36}%
-\contentsline {subsection}{Differential operators}{29}{subsection*.37}%
-\contentsline {subsubsection}{Gradient of a scalar field}{29}{subsection*.37}%
+\contentsline {section}{\numberline {3.1}Method overview}{24}{section*.32}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{24}{section*.33}%
+\contentsline {subsection}{Kernel interpolation}{25}{subsection*.34}%
+\contentsline {subsection}{Particle approximation}{27}{subsection*.37}%
+\contentsline {subsection}{Accuracy of SPH}{28}{subsection*.38}%
+\contentsline {subsection}{Differential operators}{29}{subsection*.39}%
+\contentsline {subsubsection}{Gradient of a scalar field}{29}{subsection*.39}%
 \contentsline {subsubsection}{Divergence of a vector field}{30}{equation.3.13}%
-\contentsline {section}{\numberline {3.3}Classical SPH}{30}{section*.38}%
-\contentsline {subsection}{Improved discretisation}{30}{subsection*.39}%
-\contentsline {subsection}{Discrete balance of mass}{32}{subsection*.40}%
-\contentsline {subsection}{Discrete balance of linear momentum}{33}{subsection*.41}%
-\contentsline {subsection}{Complete system}{34}{subsection*.42}%
-\contentsline {section}{\numberline {3.4}Hamiltonian formulation}{35}{section*.43}%
-\contentsline {subsection}{Poisson brackets}{35}{subsection*.44}%
-\contentsline {subsection}{SPH discretisation}{38}{subsection*.45}%
+\contentsline {section}{\numberline {3.3}Classical SPH}{30}{section*.40}%
+\contentsline {subsection}{Improved discretisation}{30}{subsection*.41}%
+\contentsline {subsection}{Discrete balance of mass}{32}{subsection*.42}%
+\contentsline {subsection}{Discrete balance of linear momentum}{33}{subsection*.43}%
+\contentsline {subsection}{Complete system}{34}{subsection*.44}%
+\contentsline {section}{\numberline {3.4}Hamiltonian formulation}{35}{section*.45}%
+\contentsline {subsection}{Poisson brackets}{35}{subsection*.46}%
+\contentsline {subsection}{SPH discretisation}{38}{subsection*.47}%
 \contentsline {subsubsection}{SPH bracket}{38}{equation.3.31}%
 \contentsline {subsubsection}{SPH energy functional}{40}{equation.3.35}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.46}%
-\contentsline {subsection}{Symplectic integrators}{43}{subsection*.47}%
-\contentsline {section}{\numberline {3.5}Density-free formulations}{44}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{44}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{45}{equation.3.49}%
-\contentsline {section}{\numberline {3.6}Implementation specifics}{46}{section*.49}%
-\contentsline {subsection}{Extrapolating boundary conditions}{46}{subsection*.50}%
-\contentsline {subsubsection}{Inflow \& Outflow}{46}{subsection*.50}%
-\contentsline {subsubsection}{Free-slip}{46}{subsection*.50}%
-\contentsline {subsection}{Adaptive smoothing length}{46}{subsection*.51}%
-\contentsline {subsection}{Particle placement}{46}{subsection*.52}%
-\contentsline {chapter}{\numberline {4}Experiments}{47}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{47}{section*.53}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{47}{section*.54}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{47}{section*.55}%
-\contentsline {chapter}{\numberline {5}Voronoi}{48}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{49}{chapter*.56}%
-\contentsline {chapter}{References}{50}{appendix*.57}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.48}%
+\contentsline {subsection}{Symplectic integrators}{43}{subsection*.49}%
+\contentsline {section}{\numberline {3.5}Density-independent formulations}{44}{section*.50}%
+\contentsline {subsubsection}{Pressure-entropy}{45}{section*.50}%
+\contentsline {subsubsection}{Pressure-potential temperature}{46}{equation.3.49}%
+\contentsline {subsection}{Well-balanced SPH}{47}{subsection*.51}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{48}{section*.52}%
+\contentsline {subsection}{Extrapolating boundary conditions}{48}{subsection*.53}%
+\contentsline {subsubsection}{Inflow \& Outflow}{48}{subsection*.53}%
+\contentsline {subsubsection}{Free-slip}{48}{subsection*.53}%
+\contentsline {subsection}{Adaptive smoothing length}{48}{subsection*.54}%
+\contentsline {subsection}{Particle placement}{48}{subsection*.55}%
+\contentsline {chapter}{\numberline {4}Experiments}{49}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{49}{section*.56}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{49}{section*.57}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{49}{section*.58}%
+\contentsline {chapter}{\numberline {5}Voronoi}{50}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{51}{chapter*.59}%
+\contentsline {chapter}{References}{52}{appendix*.60}%
 \contentsfinish 

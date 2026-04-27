@@ -51,7 +51,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Nappo - 2013 - An introduction to atmospheric gravity waves.pdf
       \endverb
-      \keyw{Atmospheric waves,Gravity waves}
+      \keyw{Atmospheric waves,Gravity waves,orographic flows}
     \endentry
     \entry{joiseyshowaaLenticularCloudsIceland2018}{artwork}{}{}
       \name{author}{1}{}{%
@@ -125,6 +125,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Sutherland - 2010 - Internal gravity waves.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{clarkCriticalLevelReflection1984}{article}{}{}
       \name{author}{2}{}{%
@@ -174,6 +175,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark and Peltier - 1984 - Critical Level Reflection and the Resonant Growth of Nonlinear Mountain Waves.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{durranAnotherLookDownslope1986}{article}{}{}
       \name{author}{1}{}{%
@@ -211,6 +213,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Durran - 1986 - Another Look at Downslope Windstorms. Part I The Development of Analogs to Supercritical Flow in an.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{clarkEvolutionStabilityFiniteAmplitude1977}{article}{}{}
       \name{author}{2}{}{%
@@ -252,6 +255,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark and Peltier - 1977 - On the Evolution and Stability of Finite-Amplitude Mountain Waves.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{varelaEfectoFoehnFohn2013}{artwork}{}{}
       \name{author}{1}{}{%
@@ -291,6 +295,7 @@
       \verb{url}
       \verb https://www.flickr.com/photos/artberri/9404934478/
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{frittsGravityWaveDynamics2003}{article}{}{}
       \name{author}{2}{}{%
@@ -336,6 +341,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Fritts and Alexander - 2003 - Gravity wave dynamics and effects in the middle atmosphere.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{teixeiraPhysicsOrographicGravity2014}{article}{}{}
       \name{author}{1}{}{%
@@ -380,7 +386,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Teixeira - 2014 - The physics of orographic gravity wave drag.pdf
       \endverb
-      \keyw{Coriolis Force,drag,momentum flux,mountain waves,Nonhydrostatic effects,nonlinearity,stratification,Wind shear}
+      \keyw{Coriolis Force,drag,momentum flux,mountain waves,Nonhydrostatic effects,nonlinearity,orographic flows,stratification,Wind shear}
     \endentry
     \entry{smithInfluenceMountainsAtmosphere1979}{incollection}{}{}
       \name{author}{1}{}{%
@@ -421,6 +427,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/1979 - The Influence of Mountains on the Atmosphere.pdf;/home/moschehaus/Zotero/storage/CXP9M8M6/S0065268708602629.html
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{doyleIntercomparisonTREXMountainwave2011}{article}{}{}
       \name{author}{15}{}{%
@@ -525,6 +532,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Doyle et al. - 2011 - An intercomparison of t-REX mountain-wave simulations and implications for mesoscale predictability.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{smagorinskyGENERALCIRCULATIONEXPERIMENTS1963}{article}{}{}
       \name{author}{1}{}{%
@@ -556,7 +564,7 @@
       \field{langid}{english}
       \field{month}{3}
       \field{shorttitle}{{{GENERAL CIRCULATION EXPERIMENTS WITH THE PRIMITIVE EQUATIONS}}}
-      \field{title}{{{GENERAL CIRCULATION EXPERIMENTS WITH THE PRIMITIVE EQUATIONS}}: {{I}}. {{THE BASIC EXPERIMENT}}}
+      \field{title}{General Circulation Experiments with the Primitive Equations: {{I}}. the Basic Experiment}
       \field{urlday}{16}
       \field{urlmonth}{4}
       \field{urlyear}{2026}
@@ -569,6 +577,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Smagorinsky - 1963 - GENERAL CIRCULATION EXPERIMENTS WITH THE PRIMITIVE EQUATIONS I. THE BASIC EXPERIMENT.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{popeTurbulentFlows2000}{book}{}{}
       \name{author}{1}{}{%
@@ -602,7 +611,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Pope - 2000 - Turbulent flows.pdf
       \endverb
-      \keyw{Turbulence}
+      \keyw{orographic flows,Turbulence}
     \endentry
     \entry{vallisAtmosphericOceanicFluid2017}{book}{}{}
       \name{author}{1}{}{%
@@ -644,6 +653,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Vallis - 2017 - Atmospheric and Oceanic Fluid Dynamics Fundamentals and Large-Scale Circulation.pdf;/home/moschehaus/Zotero/storage/M45VRBN2/41379BDDC4257CBE11143C466F6428A4.html
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{holtonIntroductionDynamicMeteorology2013}{book}{}{}
       \name{author}{2}{}{%
@@ -682,7 +692,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/An Introduction to Dynamic Meteorology.pdf;/home/moschehaus/Zotero/storage/LCQDP2W7/an-introduction-to-dynamic-meteorology.html
       \endverb
-      \keyw{Dynamic meteorology}
+      \keyw{Dynamic meteorology,orographic flows}
     \endentry
     \entry{durranNumericalMethodsFluid2010}{book}{}{}
       \name{author}{1}{}{%
@@ -722,7 +732,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Durran - 2010 - Numerical Methods for Fluid Dynamics.pdf
       \endverb
-      \keyw{concrete,design,finite element method,fluid dynamics,geophysics,mechanics,numerical analysis,numerical methods}
+      \keyw{concrete,design,finite element method,fluid dynamics,geophysics,mechanics,numerical analysis,numerical methods,orographic flows}
     \endentry
     \entry{spiegelBoussinesqApproximationCompressible1960}{article}{}{}
       \name{author}{2}{}{%
@@ -767,6 +777,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/nph-iarticle_query.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{klempUpperBoundaryCondition1983}{article}{}{}
       \name{author}{2}{}{%
@@ -815,6 +826,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Klemp and Durran - 1983 - An Upper Boundary Condition Permitting Internal Gravity Wave Radiation in Numerical Mesoscale Models.pdf
       \endverb
+      \keyw{orographic flows}
     \endentry
     \entry{kappeliWellbalancedFiniteVolume2016a}{article}{}{}
       \name{author}{2}{}{%
@@ -859,6 +871,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli and Mishra - 2016 - A well-balanced finite volume scheme for the Euler equations with gravitation The exact preservatio.pdf
       \endverb
+      \keyw{well-balanced}
     \endentry
     \entry{kappeliWellbalancedMethodsComputational2022}{article}{}{}
       \name{author}{1}{}{%
@@ -900,7 +913,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli - 2022 - Well-balanced methods for computational astrophysics.pdf
       \endverb
-      \keyw{Hydrodynamics,Numerical methods,Source terms,Well-balanced schemes}
+      \keyw{Hydrodynamics,Numerical methods,Source terms,well-balanced,Well-balanced schemes}
     \endentry
     \entry{artianoStructurePreservingHighOrderMethods2025}{online}{}{}
       \name{author}{4}{}{%
@@ -960,7 +973,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Artiano et al. - 2025 - Structure-Preserving High-Order Methods for the Compressible Euler Equations in Potential Temperatur.pdf;/home/moschehaus/Zotero/storage/K2M2C6N9/2509.html
       \endverb
-      \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics}
+      \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
     \endentry
     \entry{chertockWellbalancedNumericalMethod2023}{article}{}{}
       \name{author}{4}{}{%
@@ -1016,6 +1029,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Chertock et al. - 2023 - Well-balanced numerical method for atmospheric flow equations with gravity.pdf
       \endverb
+      \keyw{well-balanced}
     \endentry
     \entry{gingoldSmoothedParticleHydrodynamics1977}{article}{}{}
       \name{author}{2}{}{%
@@ -1062,6 +1076,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Gingold and Monaghan - 1977 - Smoothed particle hydrodynamics theory and application to non-spherical stars.pdf;/home/moschehaus/Zotero/storage/NGEQVXTU/181.3.html
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{monaghanSimulatingFreeSurface1994a}{article}{}{}
       \name{author}{1}{}{%
@@ -1103,6 +1118,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Monaghan - 1994 - Simulating Free Surface Flows with SPH.pdf;/home/moschehaus/Zotero/storage/CZKCELHV/S0021999184710345.html
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{liberskySmoothParticleHydrodynamics1991}{inproceedings}{}{}
       \name{author}{2}{}{%
@@ -1165,7 +1181,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Libersky and Petschek - 1991 - Smooth particle hydrodynamics with strength of materials.pdf
       \endverb
-      \keyw{Artificial Viscosity,Smooth Particle Hydrodynamic,Smoothing Function,Strain Rate Tensor,Strength Model}
+      \keyw{Artificial Viscosity,Smooth Particle Hydrodynamic,smoothed particle hydrodynamics,Smoothing Function,Strain Rate Tensor,Strength Model}
     \endentry
     \entry{buiLagrangianMeshfreeParticles2008}{article}{}{}
       \name{author}{4}{}{%
@@ -1219,130 +1235,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Bui et al. - 2008 - Lagrangian meshfree particles method (SPH) for large deformation and failure flows of geomaterial us.pdf;/home/moschehaus/Zotero/storage/MYZG6KL3/nag.html
       \endverb
-      \keyw{elastic-plastic model,failure flows,smoothed particle hydrodynamics (SPH),tensile instability,tension cracking}
-    \endentry
-    \entry{springelSimulationsFormationEvolution2005}{article}{}{}
-      \name{author}{17}{}{%
-        {{hash=d673f4b06bc18145fb87123390b4948f}{%
-           family={Springel},
-           familyi={S\bibinitperiod},
-           given={Volker},
-           giveni={V\bibinitperiod}}}%
-        {{hash=04393094616177a4b8448cc28119da88}{%
-           family={White},
-           familyi={W\bibinitperiod},
-           given={Simon\bibnamedelimb D.\bibnamedelimi M.},
-           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=7b8cbec7a93ab16a62ad241b44e8f43b}{%
-           family={Jenkins},
-           familyi={J\bibinitperiod},
-           given={Adrian},
-           giveni={A\bibinitperiod}}}%
-        {{hash=f4776d513b928b621a13d84daa52cd5b}{%
-           family={Frenk},
-           familyi={F\bibinitperiod},
-           given={Carlos\bibnamedelima S.},
-           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=90a298f99b1c4d1edcac9c29e9c542b0}{%
-           family={Yoshida},
-           familyi={Y\bibinitperiod},
-           given={Naoki},
-           giveni={N\bibinitperiod}}}%
-        {{hash=a8eab9075a7e8567d259e822a8ff36e6}{%
-           family={Gao},
-           familyi={G\bibinitperiod},
-           given={Liang},
-           giveni={L\bibinitperiod}}}%
-        {{hash=563c7e78fd833a07a3cd582a35253c08}{%
-           family={Navarro},
-           familyi={N\bibinitperiod},
-           given={Julio},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d92806406008a0dd21ce8685620f556d}{%
-           family={Thacker},
-           familyi={T\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-        {{hash=bf60b458b55a6101474d4d1bb8df952f}{%
-           family={Croton},
-           familyi={C\bibinitperiod},
-           given={Darren},
-           giveni={D\bibinitperiod}}}%
-        {{hash=43271fd1052fe858f8711800f3f68537}{%
-           family={Helly},
-           familyi={H\bibinitperiod},
-           given={John},
-           giveni={J\bibinitperiod}}}%
-        {{hash=f533a1ec276c4dfadd557bc79ca41271}{%
-           family={Peacock},
-           familyi={P\bibinitperiod},
-           given={John\bibnamedelima A.},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=66300718cc49492069c4af9657fdcba0}{%
-           family={Cole},
-           familyi={C\bibinitperiod},
-           given={Shaun},
-           giveni={S\bibinitperiod}}}%
-        {{hash=12fb15e612a60d43340729211759d176}{%
-           family={Thomas},
-           familyi={T\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod}}}%
-        {{hash=ed2e2141cc4b65c639092da943ae6b56}{%
-           family={Couchman},
-           familyi={C\bibinitperiod},
-           given={Hugh},
-           giveni={H\bibinitperiod}}}%
-        {{hash=217f7497c7f8f7db388dda761468703c}{%
-           family={Evrard},
-           familyi={E\bibinitperiod},
-           given={August},
-           giveni={A\bibinitperiod}}}%
-        {{hash=22eecfe8fac052d2a626ec31b0916ceb}{%
-           family={Colberg},
-           familyi={C\bibinitperiod},
-           given={Jörg},
-           giveni={J\bibinitperiod}}}%
-        {{hash=360d028020f0000a8cbaf4e3741b7f36}{%
-           family={Pearce},
-           familyi={P\bibinitperiod},
-           given={Frazer},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Nature Publishing Group}%
-      }
-      \strng{namehash}{6310651d925c6f9bd6334da82082fecd}
-      \strng{fullhash}{a6bd75edb22f04c08a839ca6a2a51be7}
-      \strng{fullhashraw}{a6bd75edb22f04c08a839ca6a2a51be7}
-      \strng{bibnamehash}{6310651d925c6f9bd6334da82082fecd}
-      \strng{authorbibnamehash}{6310651d925c6f9bd6334da82082fecd}
-      \strng{authornamehash}{6310651d925c6f9bd6334da82082fecd}
-      \strng{authorfullhash}{a6bd75edb22f04c08a839ca6a2a51be7}
-      \strng{authorfullhashraw}{a6bd75edb22f04c08a839ca6a2a51be7}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The cold dark matter model has become the leading theoretical picture for the formation of structure in the Universe. This model, together with the theory of cosmic inflation, makes a clear prediction for the initial conditions for structure formation and predicts that structures grow hierarchically through gravitational instability. Testing this model requires that the precise measurements delivered by galaxy surveys can be compared to robust and equally precise theoretical calculations. Here we present a simulation of the growth of dark matter structure using 2,1603 particles, following them from redshift z = 127 to the present in a cube-shaped region 2.230 billion lightyears on a side. In postprocessing, we also follow the formation and evolution of the galaxies and quasars. We show that baryon-induced features in the initial conditions of the Universe are reflected in distorted form in the low-redshift galaxy distribution, an effect that can be used to constrain the nature of dark energy with future generations of observational surveys of galaxies.}
-      \field{issn}{1476-4687}
-      \field{journaltitle}{Nature}
-      \field{langid}{english}
-      \field{month}{6}
-      \field{title}{Simulations of the Formation, Evolution and Clustering of Galaxies and Quasars}
-      \field{urlday}{21}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{2005}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1038/nature03597
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel et al. - 2005 - Simulations of the formation, evolution and clustering of galaxies and quasars 1.pdf
-      \endverb
-      \keyw{Humanities and Social Sciences,multidisciplinary,Science}
+      \keyw{elastic-plastic model,failure flows,smoothed particle hydrodynamics,smoothed particle hydrodynamics (SPH),tensile instability,tension cracking}
     \endentry
     \entry{koshizukaMovingParticleSemiImplicitMethod1996}{article}{}{}
       \name{author}{2}{}{%
@@ -1474,6 +1367,7 @@
       \verb{file}
       \verb /home/moschehaus/Documents/Zotero_Library/Violeau - 2015 - Fluid mechanics and the SPH method theory and applications.pdf
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{liuSmoothedParticleHydrodynamics2004}{article}{}{}
       \name{author}{3}{}{%
@@ -1524,7 +1418,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Liu et al. - 2004 - “Smoothed particle hydrodynamics — a meshfree method”.pdf;/home/moschehaus/Portable/Documents/Zotero Library/Smoothed particle hydrodynamics a meshfree particle method -- Liu, G_ R_, Liu, M_ B_, Liu, GUI-.pdf
       \endverb
-      \keyw{Meshfree Method,Smooth Particle Hydrodynamic}
+      \keyw{Meshfree Method,Smooth Particle Hydrodynamic,smoothed particle hydrodynamics}
     \endentry
     \entry{monaghanSmoothedParticleHydrodynamics2005}{article}{}{}
       \name{author}{1}{}{%
@@ -1566,6 +1460,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Monaghan - 2005 - Smoothed particle hydrodynamics.pdf
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{monaghanExtrapolatingSplinesInterpolation1985}{article}{}{}
       \name{author}{1}{}{%
@@ -1607,6 +1502,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Monaghan - 1985 - Extrapolating B splines for interpolation.pdf;/home/moschehaus/Zotero/storage/976ZSY3E/0021999185900063.html
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{wendlandPiecewisePolynomialPositive1995}{article}{}{}
       \name{author}{1}{}{%
@@ -1648,7 +1544,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Wendland - 1995 - Piecewise polynomial, positive definite and compactly supported radial functions of minimal degree.pdf
       \endverb
-      \keyw{41A05,41A15,41A30,41A63,65D07,65D10,B-splines,multivariate interpolation,positive definite functions}
+      \keyw{41A05,41A15,41A30,41A63,65D07,65D10,B-splines,multivariate interpolation,positive definite functions,smoothed particle hydrodynamics}
     \endentry
     \entry{dehnenNewKernelsSPH2012}{online}{}{}
       \name{author}{2}{}{%
@@ -1698,6 +1594,7 @@
       \verb{url}
       \verb https://arxiv.org/abs/1204.2471v1
       \endverb
+      \keyw{smoothed particle hydrodynamics}
     \endentry
     \entry{vacondioGrandChallengesSmoothed2021a}{article}{}{}
       \name{author}{10}{}{%
@@ -1783,7 +1680,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Vacondio et al. - 2021 - Grand challenges for Smoothed Particle Hydrodynamics numerical schemes 1.pdf;/home/moschehaus/Zotero/storage/MXYY429N/S2196438625000658.html
       \endverb
-      \keyw{Grand challenges,Lagrangian,Meshless,Navier-Stokes equations,Smoothed Particle Hydrodynamics,SPH}
+      \keyw{Grand challenges,Lagrangian,Meshless,Navier-Stokes equations,smoothed particle hydrodynamics,Smoothed Particle Hydrodynamics,SPH}
     \endentry
     \entry{quinlanTruncationErrorMeshfree2006}{article}{}{}
       \name{author}{3}{}{%
@@ -1878,7 +1775,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Kincl and Pavelka - 2023 - Globally time-reversible fluid simulations with smoothed particle hydrodynamics.pdf;/home/moschehaus/Zotero/storage/CQQWB5FR/S0010465522003125.html
       \endverb
-      \keyw{Entropy,Reversibility,SPH,Stability,Symplectic integrator}
+      \keyw{Entropy,hamiltonian SPH,Reversibility,SPH,Stability,Symplectic integrator}
     \endentry
     \entry{pavelkaHamiltonianContinuumMechanics2020}{article}{}{}
       \name{author}{3}{}{%
@@ -1929,7 +1826,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2020 - On Hamiltonian continuum mechanics.pdf;/home/moschehaus/Zotero/storage/YSK33TI7/S0167278919304518.html
       \endverb
-      \keyw{Continuum mechanics,Hamiltonian mechanics,Hyperbolicity,Poisson bracket,Variational principle}
+      \keyw{Continuum mechanics,Hamiltonian mechanics,hamiltonian SPH,Hyperbolicity,Poisson bracket,Variational principle}
     \endentry
     \entry{pavelkaMultiscaleThermoDynamicsIntroduction2018}{incollection}{}{}
       \name{author}{3}{}{%
@@ -1983,7 +1880,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2018 - Multiscale Thermo-Dynamics Introduction to GENERIC.pdf
       \endverb
-      \keyw{Nichtgleichgewichtsthermodynamik}
+      \keyw{hamiltonian SPH,Nichtgleichgewichtsthermodynamik}
     \endentry
     \entry{pavelkaApproachesConservativeSmoothed2025}{incollection}{}{}
       \name{author}{3}{}{%
@@ -2061,6 +1958,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2025 - Approaches to Conservative Smoothed Particle Hydrodynamics with Entropy.pdf
       \endverb
+      \keyw{hamiltonian SPH}
     \endentry
     \entry{callenThermodynamicsIntroductionThermostatistics1985}{book}{}{}
       \name{author}{2}{}{%
@@ -2100,7 +1998,7 @@
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Exchange - Herbert B. Callen Thermodynamics and an Introduction to Thermostatistics.pdf
       \endverb
-      \keyw{Statistical mechanics,Thermodynamics}
+      \keyw{hamiltonian SPH,Statistical mechanics,Thermodynamics}
     \endentry
     \entry{hairerGeometricNumericalIntegration2006}{book}{}{}
       \name{author}{3}{}{%
@@ -2147,7 +2045,7 @@
       \verb{doi}
       \verb 10.1007/3-540-30666-8
       \endverb
-      \keyw{algorithms,calculus,differential equations on manifolds,geometric numerical integration,Hamiltonian and reversible systems,Numerical integration,symplectic and symmetric methods}
+      \keyw{algorithms,calculus,differential equations on manifolds,geometric numerical integration,Hamiltonian and reversible systems,hamiltonian SPH,Numerical integration,symplectic and symmetric methods}
     \endentry
     \entry{leimkuhlerSimulatingHamiltonianDynamics2004}{book}{}{}
       \name{author}{2}{}{%
@@ -2184,7 +2082,7 @@
       \field{title}{Simulating {{Hamiltonian Dynamics}}}
       \field{year}{2004}
       \field{dateera}{ce}
-      \keyw{Mathematics / Differential Equations / General,Mathematics / Geometry / General,Mathematics / Mathematical Analysis,Mathematics / Numerical Analysis,Science / Chemistry / Physical & Theoretical,Science / Mechanics / General,Technology & Engineering / Materials Science / General}
+      \keyw{hamiltonian SPH,Mathematics / Differential Equations / General,Mathematics / Geometry / General,Mathematics / Mathematical Analysis,Mathematics / Numerical Analysis,Science / Chemistry / Physical & Theoretical,Science / Mechanics / General,Technology & Engineering / Materials Science / General}
     \endentry
     \entry{Hairer_2003}{article}{}{}
       \name{author}{3}{}{%
@@ -2228,8 +2126,197 @@
       \verb{doi}
       \verb 10.1017/S0962492902000144
       \endverb
+      \keyw{hamiltonian SPH}
     \endentry
-    \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
+    \entry{hernquistCautionaryRemarksSmoothed1993}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ea49fbd6c94c7c89f99c3f989cc8b15f}{%
+           family={Hernquist},
+           familyi={H\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP}%
+      }
+      \strng{namehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{fullhash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{fullhashraw}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{bibnamehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{authorbibnamehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{authornamehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{authorfullhash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \strng{authorfullhashraw}{ea49fbd6c94c7c89f99c3f989cc8b15f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Potential difficulties with smoothed particle hydrodynamics are discussed. In particular, empirical tests are used to demonstrate that the errors resulting from the use of variable smoothing can be much larger than commonly believed. Fortunately, however, these errors, which are normally small, do not appear to promote instability on small scales, such as fragmentation in self-gravitating fluids. Still, while SPH remains a useful tool for many problems of astrophysical interest, a rigorous formulation of it, which is adaptive but still satisfies conservation properties, is clearly wanting.}
+      \field{annotation}{ADS Bibcode: 1993ApJ...404..717H}
+      \field{day}{1}
+      \field{issn}{0004-637X}
+      \field{journaltitle}{The Astrophysical Journal}
+      \field{month}{2}
+      \field{title}{Some {{Cautionary Remarks}} about {{Smoothed Particle Hydrodynamics}}}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1086/172325
+      \endverb
+      \keyw{Astronomical Models,Astrophysics,Compressible Fluids,Computational Fluid Dynamics,density free,Equations Of Motion,Hydrodynamics,HYDRODYNAMICS,METHODS: NUMERICAL,Particle Interactions,Particle Motion,Smoothing}
+    \endentry
+    \entry{nelsonVariableSmoothingLengths1994}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e72e1a16456d8abfdd85d98057d398f0}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Richard\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=13c5ce79470aba204d337c083584d0a7}{%
+           family={Papaloizou},
+           familyi={P\bibinitperiod},
+           given={John\bibnamedelimb C.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{fullhash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{fullhashraw}{fe1e28d7695be15e1464de783fe77571}
+      \strng{bibnamehash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{authorbibnamehash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{authornamehash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{authorfullhash}{fe1e28d7695be15e1464de783fe77571}
+      \strng{authorfullhashraw}{fe1e28d7695be15e1464de783fe77571}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a new formulation of the equations of motion used in smoothed particle hydrodynamics (SPH). The spatial resolution in SPH is determined by the smoothing length, h, and it has become common practice for each particle to be given its own adaptive smoothing length, hi. This has the advantage that the dynamic range that may be spatially resolved is greatly increased, but also has the drawback that additional terms which account for the variability of the smoothing lengths should be included in the particle equations of motion in order to satisfy conservation requirements. We refer to these additional terms as ∇h terms. The difference between our approach and that of previous implementations is that these ∇h terms have now been included in the equations of motion, whereas they had previously been neglected. This is achieved by defining a functional form for the his that depends on interparticle distances only, and then deriving the equations of motion using a Hamiltonian formalism.A number of test calculations, designed to compare the effects of including and ignoring these ∇h terms, are presented. We find that the inclusion of the ∇h terms has no detrimental effects on the ability of SPH to model known problems such as one dimensional shock-tubes or the adiabatic collapse of cold gas spheres, with reasonable accuracy, and may in some cases lead to improvements in their qualitative outcome. For problems on which SPH has been shown to perform rather badly, because of poor energy conservation, we find that inclusion of the ∇h terms results in a dramatic improvement. In particular, non-conservation of energy during a head-on collision between identical polytropes can occur at the level of {$\Delta$}E {$\approx$} 10 per cent when the ∇h terms are neglected. When the ∇h terms are included, however, this error reduces to {$\Delta$}E {$\approx$} 0.8 per cent.}
+      \field{day}{1}
+      \field{issn}{0035-8711}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{month}{9}
+      \field{shortjournal}{Mon Not R Astron Soc}
+      \field{title}{Variable Smoothing Lengths and Energy Conservation in Smoothed Particle Hydrodynamics}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/mnras/270.1.1
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Nelson and Papaloizou - 1994 - Variable smoothing lengths and energy conservation in smoothed particle hydrodynamics.pdf;/home/moschehaus/Zotero/storage/JY9BPJST/270.1.html
+      \endverb
+      \keyw{density free}
+    \endentry
+    \entry{nelsonThreedimensionalHydrodynamicSimulations1993}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e682ea01b2fadcefdd6659dce3c6aa0a}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={R.\bibnamedelimi P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ab245224ec25665b99c602a34c1c86ee}{%
+           family={Papaloizou},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi C.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{fullhash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{fullhashraw}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{bibnamehash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{authorbibnamehash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{authornamehash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{authorfullhash}{d3751ea36f0a364b55feb8996b49deac}
+      \strng{authorfullhashraw}{d3751ea36f0a364b55feb8996b49deac}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present the results of collapse calculations for elongated clouds performed using the numerical method of smoothed particle hydrodynamics (SPH). The clouds considered are isothermal, prolate spheroids with different axial ratios (a/b). Results are obtained for different values of ajb and mL, the mean mass per unit length. It is found that initially uniform clouds undergo fragmentation when the collapse is preferentially down on to the major axis, due to the intrinsic instability of a linear configuration. This occurs when the value of mL is sufficiently large. A criterion for elongated clouds to undergo linear collapse is derived using the tensor virial theorem, and it is found that the numerically obtained value of mL for which fragmentation occurs corresponds closely to that expected from analytical considerations. The addition of small density perturbations simply results in clouds that fragment more easily, particularly for cases in which a ¡bis close to unity.}
+      \field{day}{15}
+      \field{issn}{0035-8711, 1365-2966}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{shortjournal}{Monthly Notices of the Royal Astronomical Society}
+      \field{title}{Three-Dimensional Hydrodynamic Simulations of Collapsing Prolate Clouds}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/mnras/265.4.905
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Nelson and Papaloizou - 1993 - Three-dimensional hydrodynamic simulations of collapsing prolate clouds.pdf
+      \endverb
+      \keyw{density free}
+    \endentry
+    \entry{springelCosmologicalSPHSimulations2002}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d673f4b06bc18145fb87123390b4948f}{%
+           family={Springel},
+           familyi={S\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod}}}%
+        {{hash=ea49fbd6c94c7c89f99c3f989cc8b15f}{%
+           family={Hernquist},
+           familyi={H\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{fullhash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{fullhashraw}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{bibnamehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{authorbibnamehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{authornamehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{authorfullhash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \strng{authorfullhashraw}{cc67b663dfa2dc44aa87e5bd1b2e250f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We discuss differences in simulation results that arise between the use of either the thermal energy or the entropy as an independent variable in smoothed particle hydrodynamics (SPH). In this context, we derive a new version of SPH that manifestly conserves both energy and entropy if smoothing lengths are allowed to adapt freely to the local mass resolution. To test various formu- lations of SPH, we consider point-like energy injection and find that powerful explosions are well represented by SPH even when the energy is deposited into a single particle, provided that the entropy equation is integrated. If the thermal energy is instead used as an independent variable, unphysical solutions can be obtained for this problem. We also examine the radiative cooling of gas spheres that collapse and virialize in isolation and of halos that form in cosmological simulations of structure formation. When applied to these problems, the thermal energy version of SPH leads to substantial overcooling in halos that are resolved with up to a few thousand particles, while the entropy formulation is biased only moderately low for these halos. For objects resolved with much larger particle numbers, the two approaches yield consistent results. We trace the origin of the differences to systematic resolution effects in the outer parts of cooling flows. The cumulative effect of this overcooling can be significant. In cosmological simulations of moderate size, we find that the fraction of baryons which cool and condense can be reduced by up to a factor \textasciitilde 2 if the entropy equation is employed rather than the thermal energy equation. We also demonstrate that the entropy method leads to a greatly reduced scatter in the density-temperature relation of the low-density Ly-alpha forest relative to the thermal energy approach, in accord with theoretical expectations.(abridged)}
+      \field{day}{1}
+      \field{eprinttype}{arXiv}
+      \field{issn}{0035-8711, 1365-2966}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{month}{7}
+      \field{note}{Comment: 18 pages, 12 figures, accepted by MNRAS, replaced to match published version (Figures 8 and 10 added)}
+      \field{shortjournal}{Monthly Notices of the Royal Astronomical Society}
+      \field{shorttitle}{Cosmological {{SPH}} Simulations}
+      \field{title}{Cosmological {{SPH}} Simulations: {{The}} Entropy Equation}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1046/j.1365-8711.2002.05445.x
+      \endverb
+      \verb{eprint}
+      \verb astro-ph/0111016
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Springel and Hernquist - 2002 - Cosmological SPH simulations The entropy equation.pdf;/home/moschehaus/Zotero/storage/6ALLYRCU/0111016.html
+      \endverb
+      \keyw{Astrophysics,density free}
+    \endentry
+    \entry{hopkinsGeneralClassLagrangian2013a}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%
            family={Hopkins},
@@ -2249,18 +2336,17 @@
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate what is arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian -- guaranteeing manifest conservation -- in a manner which tremendously improves treatment of these instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the ``standard'' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the ``∇h'' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle ``weights'') and method of determining smoothing lengths. We then specify this to a ``pressure-entropy formulation'' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& ``blob'' tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different ``flavors'' of SPH.}
+      \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian (guaranteeing manifest conservation) in a manner which tremendously improves treatment of instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the 'standard' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the 'Grad-h' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle 'weights') and method of determining smoothing lengths. We then specify this to a 'pressure-entropy formulation' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& blob tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different 'flavors' of SPH.}
       \field{day}{1}
       \field{eprintclass}{astro-ph}
       \field{eprinttype}{arXiv}
       \field{issn}{0035-8711, 1365-2966}
       \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
-      \field{langid}{english}
       \field{month}{2}
       \field{note}{Comment: 16 pages, 16 figures, MNRAS. Matches accepted version (tests added, typo fixed). A version of the public GADGET-2 modified to use the 'pressure-entropy' formulation proposed here can be downloaded at http://ascl.net/1305.006}
       \field{title}{A {{General Class}} of {{Lagrangian Smoothed Particle Hydrodynamics Methods}} and {{Implications}} for {{Fluid Mixing Problems}}}
-      \field{urlday}{8}
-      \field{urlmonth}{1}
+      \field{urlday}{27}
+      \field{urlmonth}{4}
       \field{urlyear}{2026}
       \field{year}{2013}
       \field{dateera}{ce}
@@ -2272,11 +2358,15 @@
       \verb 1206.5006
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Documents/Zotero_Library/Hopkins - 2013 - A General Class of Lagrangian Smoothed Particle Hydrodynamics Methods and Implications for Fluid Mix.pdf
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Hopkins - 2013 - A General Class of Lagrangian Smoothed Particle Hydrodynamics Methods and Implications for Fluid Mix 1.pdf;/home/moschehaus/Zotero/storage/PSY8JDHE/1206.html
       \endverb
-      \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,Physics - Computational Physics,Physics - Fluid Dynamics}
+      \keyw{Astrophysics - Cosmology and Nongalactic Astrophysics,Astrophysics - Instrumentation and Methods for Astrophysics,density free,Physics - Computational Physics,Physics - Fluid Dynamics}
     \endentry
   \enddatalist
+  \missing{hopkinsGeneralClass2013}
+  \missing{hopkinsGeneralClassLagrangian2013}
+  \missing{saitohDensityindependentFormulation2013}
+  \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
 \endinput
 

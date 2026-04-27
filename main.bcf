@@ -2510,7 +2510,15 @@
     <bcf:citekey order="77" intorder="2">leimkuhlerSimulatingHamiltonianDynamics2004</bcf:citekey>
     <bcf:citekey order="78" intorder="1">kinclGloballyTimereversibleFluid2023a</bcf:citekey>
     <bcf:citekey order="79" intorder="1">Hairer_2003</bcf:citekey>
-    <bcf:citekey order="80" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">hernquistCautionaryRemarksSmoothed1993</bcf:citekey>
+    <bcf:citekey order="80" intorder="2">nelsonVariableSmoothingLengths1994</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">nelsonThreedimensionalHydrodynamicSimulations1993</bcf:citekey>
+    <bcf:citekey order="81" intorder="2">nelsonVariableSmoothingLengths1994</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">springelCosmologicalSPHSimulations2002</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">hopkinsGeneralClassLagrangian2013a</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">saitohDensityindependentFormulation2013</bcf:citekey>
+    <bcf:citekey order="84" intorder="2">hopkinsGeneralClass2013</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
