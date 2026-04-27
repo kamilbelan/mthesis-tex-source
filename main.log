@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  26 APR 2026 21:00
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  27 APR 2026 00:45
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2085,7 +2085,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldsans'
 \symsflettersbold=\mathgroup11
 \symstmry=\mathgroup12
 ) (./preamble/math/macros.tex
-LaTeX Font Info:    Redeclaring math symbol \setminus on input line 275.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 280.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/ytableau/ytableau.sty
 Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
@@ -2861,19 +2861,19 @@ Overfull \hbox (25.60927pt too wide) detected at line 277
 
 
 [32]
-Overfull \hbox (55.95251pt too wide) detected at line 312
-[]|
- []
+
+Package zref-clever Warning: Reference format option 'Name-sg' undefined for
+(zref-clever)                type 'sidenote' on line 295.
 
 
 
 [33]
-Overfull \hbox (7.49pt too wide) detected at line 328
+Overfull \hbox (7.49pt too wide) detected at line 329
 []|
  []
 
 
-Overfull \hbox (58.44078pt too wide) detected at line 334
+Overfull \hbox (58.44078pt too wide) detected at line 335
 []$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 
 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/m
 /it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OM
@@ -2881,7 +2881,7 @@ S/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$ |
  []
 
 
-Overfull \hbox (43.39954pt too wide) detected at line 355
+Overfull \hbox (43.39954pt too wide) detected at line 356
 []|
  []
 
@@ -2890,7 +2890,7 @@ Overfull \hbox (43.39954pt too wide) detected at line 355
 [34]
 
 [35]
-Overfull \hbox (20.62755pt too wide) detected at line 414
+Overfull \hbox (20.62755pt too wide) detected at line 415
 []$[][][] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\O
 ML/lmm/m/it/12 G:$ |
  []
@@ -2912,67 +2912,90 @@ i.2'
 
 
 [37]
-Overfull \hbox (30.38855pt too wide) in paragraph at lines 484--485
+Overfull \hbox (30.38855pt too wide) in paragraph at lines 485--486
 \TU/lmr/m/n/12 of the SPH state vari-ables [][][][][], [][][][][]|
  []
 
 
-Overfull \hbox (48.38885pt too wide) detected at line 489
-[]$\OT1/lmr/m/n/12 = [] [][][] [] +$ |
+Overfull \hbox (57.19455pt too wide) detected at line 490
+[]$\OT1/lmr/m/n/12 = [] [][]  [][] [] +$ |
  []
 
 
-Overfull \hbox (41.37474pt too wide) detected at line 489
-[]$\OMS/lmsy/m/n/12 ^^@ [] [][][] [] \OML/lmm/m/it/12 :$ |
+Overfull \hbox (50.18044pt too wide) detected at line 490
+[]$\OMS/lmsy/m/n/12 ^^@ [] [][]  [][] [] \OML/lmm/m/it/12 :$ |
  []
 
 
 
 [38]
-Overfull \hbox (9.24593pt too wide) detected at line 504
+Overfull \hbox (9.24593pt too wide) detected at line 522
 []$[][][] [][]\OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 ;$ |
  []
 
 
 
 [39]
-Overfull \hbox (17.23523pt too wide) detected at line 581
-[]$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
+Overfull \hbox (51.3496pt too wide) detected at line 558
+[]$\OML/lmm/m/it/12 E[] \OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 V[] \OT1/lmr/m
+/n/12 = [][][]\OML/lmm/m/it/12 :$ |
+ []
+
+
+Overfull \hbox (56.37674pt too wide) detected at line 573
+[]$[] \OT1/lmr/m/n/12 = [] [][][] = [] [] [] 2\OML/lmm/m/it/12 M[][][] \OT1/l
+mr/m/n/12 = [] \OML/lmm/m/it/12 :$ |
  []
 
 
 
 [40]
-Overfull \hbox (3.4041pt too wide) detected at line 614
+
+[41]
+Overfull \hbox (12.31589pt too wide) detected at line 633
+[]|
+ []
+
+
+
+[42]
+Overfull \hbox (17.23523pt too wide) detected at line 688
+[]$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
+ []
+
+
+
+[43]
+Overfull \hbox (3.4041pt too wide) detected at line 721
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
-Overfull \hbox (0.63048pt too wide) detected at line 650
+Overfull \hbox (0.63048pt too wide) detected at line 757
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
 
-[41]
+[44]
 
-LaTeX Warning: Reference `eq:f_PE' on page 42 undefined on input line 652.
+LaTeX Warning: Reference `eq:f_PE' on page 45 undefined on input line 759.
 
 ) (./chapters/experiments.tex
 
-[42]
+[45]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[43
+[46
 
 ]
 Chapter 5.
 )
 
-[44
+[47
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -3010,7 +3033,7 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[45
+[48
 
 
 ]
@@ -3020,7 +3043,7 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[46
+[49
 
 ]
 
@@ -3029,19 +3052,21 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[47]
+[50]
 
-[48]
+[51]
 
-[49]
+[52]
+
+[53]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[50]
-runsystem(latexminted cleantemp  --timestamp 20260426210059Z FAD58DE7366495DB465
+[54]
+runsystem(latexminted cleantemp  --timestamp 20260427004536Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3058,17 +3083,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67694 strings out of 475512
- 244318,2848258 words of node,token memory allocated
- 87160 words of node memory still in use:
-   869 hlist, 101 vlist, 30 rule, 530 disc, 51 local_par, 179 math, 1786 glue, 5
-15 kern, 216 penalty, 193 margin_kern, 5959 glyph, 2208 attribute, 115 glue_spec
-, 2208 attribute_list, 11 write, 784 pdf_literal, 9 pdf_start_link, 9 pdf_end_li
-nk, 3 pdf_dest, 12 pdf_action, 124 pdf_colorstack nodes
-   avail lists: 1:15,2:6962,3:4778,4:591,5:614,6:188,7:7424,8:109,9:1694,10:34,1
-1:487,12:6
- 88347 multiletter control sequences out of 65536+600000
- 146 fonts using 11432223 bytes
+ 67755 strings out of 475512
+ 244315,2848258 words of node,token memory allocated
+ 89579 words of node memory still in use:
+   882 hlist, 101 vlist, 30 rule, 552 disc, 54 local_par, 185 math, 1838 glue, 5
+26 kern, 232 penalty, 198 margin_kern, 6106 glyph, 2325 attribute, 115 glue_spec
+, 2325 attribute_list, 11 write, 784 pdf_literal, 9 pdf_start_link, 9 pdf_end_li
+nk, 3 pdf_dest, 12 pdf_action, 128 pdf_colorstack nodes
+   avail lists: 1:15,2:6967,3:4778,4:587,5:593,6:187,7:7426,8:110,9:1698,10:34,1
+1:465,12:10
+ 88397 multiletter control sequences out of 65536+600000
+ 148 fonts using 11695599 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf>{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/opt/texlive/te
@@ -3109,10 +3134,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (57 pages, 10769696 bytes).
+Output written on main.pdf (61 pages, 10789814 bytes).
 
-PDF statistics: 1538 PDF objects out of 1728 (max. 8388607)
- 939 compressed objects within 10 object streams
- 341 named destinations out of 1000 (max. 131072)
+PDF statistics: 1586 PDF objects out of 1728 (max. 8388607)
+ 1001 compressed objects within 11 object streams
+ 352 named destinations out of 1000 (max. 131072)
  630 words of extra memory for PDF output out of 10000 (max. 100000000)
 

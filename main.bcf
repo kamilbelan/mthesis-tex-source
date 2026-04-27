@@ -2499,7 +2499,12 @@
     <bcf:citekey order="67" intorder="1">pavelkaMultiscaleThermoDynamicsIntroduction2018</bcf:citekey>
     <bcf:citekey order="68" intorder="1">pavelkaHamiltonianContinuumMechanics2020</bcf:citekey>
     <bcf:citekey order="69" intorder="1">pavelkaHamiltonianContinuumMechanics2020</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">callenThermodynamicsIntroductionThermostatistics1985</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">pavelkaApproachesConservativeSmoothed2025</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">hopkinsGeneralClassLagrangian2013</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

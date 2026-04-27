@@ -1985,6 +1985,123 @@
       \endverb
       \keyw{Nichtgleichgewichtsthermodynamik}
     \endentry
+    \entry{pavelkaApproachesConservativeSmoothed2025}{incollection}{}{}
+      \name{author}{3}{}{%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=57619fa212cae84cfd5146d66eecffe4}{%
+           family={Klika},
+           familyi={K\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b5e237e94cd37f13858f40a5fb688d57}{%
+           family={Kincl},
+           familyi={K\bibinitperiod},
+           given={Ondřej},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=7a87111548e18275981a07a415a9962a}{%
+           family={Fuhrmann},
+           familyi={F\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8aeb98a8f98a6580285eb3433d33b73c}{%
+           family={Hömberg},
+           familyi={H\bibinitperiod},
+           given={Dietmar},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9e3f51d1147ff43bae8fc94b3ce8b9b2}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Wolfgang\bibnamedelima H.},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=1bc15a7eb9817ce2d2a25f06ff3c4e2d}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={Wolf},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Switzerland}%
+      }
+      \strng{namehash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{fullhash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{fullhashraw}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{bibnamehash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{authorbibnamehash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{authornamehash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{authorfullhash}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{authorfullhashraw}{2e44a7e3a9bcafcbf8d8d31d97dae783}
+      \strng{editorbibnamehash}{9e8deb1fc737b0d05e010dfa3750732d}
+      \strng{editornamehash}{9e8deb1fc737b0d05e010dfa3750732d}
+      \strng{editorfullhash}{9e8deb1fc737b0d05e010dfa3750732d}
+      \strng{editorfullhashraw}{9e8deb1fc737b0d05e010dfa3750732d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Smoothed particle hydrodynamics (SPH) is typically used for barotropic fluids, where the pressure depends only on the local mass density. Here, we show how to incorporate the entropy into the SPH, so that the pressure can also depend on the temperature, while keeping the growth of the total entropy, conservation of the total energy, and symplecticity of the reversible part of the SPH equations. The SPH system of ordinary differential equations with entropy is derived by means of the Poisson reduction and the Lagrange \$\$\textbackslash rightarrow \$\${$\rightarrow$}Euler transformation. We present several approaches toward SPH with entropy, which are then illustrated on systems with discontinuities, on the expansion of ideal gas, and on the Rayleigh-Bénard convection without the Boussinesq approximation. Finally, we show how to model hyperbolic heat conduction within the SPH, extending the SPH variables not only with entropy but also with a heat-flux-related vector field.}
+      \field{booktitle}{Advances in {{Continuum Physics}}: {{In Memoriam Wolfgang Dreyer}}}
+      \field{isbn}{978-3-031-93918-1}
+      \field{langid}{english}
+      \field{title}{Approaches to {{Conservative Smoothed Particle Hydrodynamics}} with {{Entropy}}}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-031-93918-1_24
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Pavelka et al. - 2025 - Approaches to Conservative Smoothed Particle Hydrodynamics with Entropy.pdf
+      \endverb
+    \endentry
+    \entry{callenThermodynamicsIntroductionThermostatistics1985}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=fcbca29015ee1b510dd48a7df9eef49d}{%
+           family={Callen},
+           familyi={C\bibinitperiod},
+           given={Herbert\bibnamedelima B.},
+           giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=fcbca29015ee1b510dd48a7df9eef49d}{%
+           family={Callen},
+           familyi={C\bibinitperiod},
+           given={Herbert\bibnamedelima B.},
+           giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{fullhash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{fullhashraw}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{bibnamehash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{authorbibnamehash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{authornamehash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{authorfullhash}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \strng{authorfullhashraw}{9bc8dc70dbd7f183cf411f1864686c1f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd ed}
+      \field{isbn}{978-0-471-86256-7}
+      \field{note}{Rev. ed. of: Thermodynamics. 1960 Includes index}
+      \field{pagetotal}{493}
+      \field{title}{Thermodynamics and an Introduction to Thermostatistics}
+      \field{year}{1985}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Exchange - Herbert B. Callen Thermodynamics and an Introduction to Thermostatistics.pdf
+      \endverb
+      \keyw{Statistical mechanics,Thermodynamics}
+    \endentry
     \entry{hopkinsGeneralClassLagrangian2013}{article}{}{}
       \name{author}{1}{}{%
         {{hash=9251bd9f553e5b7cc3385d67595804fe}{%

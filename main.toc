@@ -40,23 +40,23 @@
 \contentsline {subsection}{Poisson brackets}{35}{subsection*.44}%
 \contentsline {subsection}{SPH discretisation}{37}{subsection*.45}%
 \contentsline {subsubsection}{SPH bracket}{38}{equation.3.31}%
-\contentsline {subsubsection}{SPH energy functional}{39}{equation.3.35}%
+\contentsline {subsubsection}{SPH energy functional}{40}{equation.3.35}%
 \contentsline {subsection}{Classical SPH as a Hamiltonian system}{40}{subsection*.46}%
-\contentsline {subsection}{Symplectic integrators}{40}{subsection*.47}%
-\contentsline {section}{\numberline {3.5}Density-free formulations}{40}{section*.48}%
-\contentsline {subsubsection}{Pressure-entropy}{40}{section*.48}%
-\contentsline {subsubsection}{Pressure-potential temperature}{41}{equation.3.40}%
-\contentsline {section}{\numberline {3.6}Implementation specifics}{42}{section*.49}%
-\contentsline {subsection}{Extrapolating boundary conditions}{42}{subsection*.50}%
-\contentsline {subsubsection}{Inflow \& Outflow}{42}{subsection*.50}%
-\contentsline {subsubsection}{Free-slip}{42}{subsection*.50}%
-\contentsline {subsection}{Adaptive smoothing length}{42}{subsection*.51}%
-\contentsline {subsection}{Particle placement}{42}{subsection*.52}%
-\contentsline {chapter}{\numberline {4}Experiments}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stationary problems}{43}{section*.53}%
-\contentsline {section}{\numberline {4.2}Evolutionary problems}{43}{section*.54}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{43}{section*.55}%
-\contentsline {chapter}{\numberline {5}Voronoi}{44}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{45}{chapter*.56}%
-\contentsline {chapter}{References}{46}{appendix*.57}%
+\contentsline {subsection}{Symplectic integrators}{43}{subsection*.47}%
+\contentsline {section}{\numberline {3.5}Density-free formulations}{43}{section*.48}%
+\contentsline {subsubsection}{Pressure-entropy}{43}{section*.48}%
+\contentsline {subsubsection}{Pressure-potential temperature}{44}{equation.3.46}%
+\contentsline {section}{\numberline {3.6}Implementation specifics}{45}{section*.49}%
+\contentsline {subsection}{Extrapolating boundary conditions}{45}{subsection*.50}%
+\contentsline {subsubsection}{Inflow \& Outflow}{45}{subsection*.50}%
+\contentsline {subsubsection}{Free-slip}{45}{subsection*.50}%
+\contentsline {subsection}{Adaptive smoothing length}{45}{subsection*.51}%
+\contentsline {subsection}{Particle placement}{45}{subsection*.52}%
+\contentsline {chapter}{\numberline {4}Experiments}{46}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stationary problems}{46}{section*.53}%
+\contentsline {section}{\numberline {4.2}Evolutionary problems}{46}{section*.54}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{46}{section*.55}%
+\contentsline {chapter}{\numberline {5}Voronoi}{47}{chapter.5}%
+\contentsline {chapter}{Summary and Outlook}{48}{chapter*.56}%
+\contentsline {chapter}{References}{49}{appendix*.57}%
 \contentsfinish 
