@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  27 APR 2026 02:11
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  27 APR 2026 13:17
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2820,7 +2820,7 @@ i.2'
 
 
 [28]
-Overfull \hbox (13.86569pt too wide) detected at line 189
+Overfull \hbox (13.86569pt too wide) detected at line 190
 []|
  []
 
@@ -2830,31 +2830,31 @@ Underfull \vbox (badness 6625) has occurred while \output is active []
 
 
 [29]
-Overfull \hbox (49.50482pt too wide) detected at line 201
+Overfull \hbox (58.17142pt too wide) detected at line 202
 []|
  []
 
 
-Overfull \hbox (33.91505pt too wide) detected at line 201
+Overfull \hbox (33.91505pt too wide) detected at line 202
 []|
  []
 
 
 
 [30]
-Overfull \hbox (43.33105pt too wide) in paragraph at lines 228--229
+Overfull \hbox (43.33105pt too wide) in paragraph at lines 229--230
 []\TU/lmr/m/n/12 The naive dis-creti-sa-tions [][][][][] and [][][][][]|
  []
 
 
-Overfull \hbox (0.1925pt too wide) detected at line 251
+Overfull \hbox (0.1925pt too wide) detected at line 252
 []|
  []
 
 
 
 [31]
-Overfull \hbox (25.60927pt too wide) detected at line 276
+Overfull \hbox (25.60927pt too wide) detected at line 277
 []|
  []
 
@@ -2863,10 +2863,10 @@ Overfull \hbox (25.60927pt too wide) detected at line 276
 [32]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 294.
+(zref-clever)                type 'sidenote' on line 295.
 
 
-Overfull \hbox (3.711pt too wide) in paragraph at lines 301--302
+Overfull \hbox (3.711pt too wide) in paragraph at lines 302--303
 \TU/lmr/m/n/12 Let us ap-ply the \TU/lmr/m/sl/12 im-proved \TU/lmr/m/n/12 dis-cr
 ete gra-di-ent [][][][][]|
  []
@@ -2874,12 +2874,12 @@ ete gra-di-ent [][][][][]|
 
 
 [33]
-Overfull \hbox (7.49pt too wide) detected at line 328
+Overfull \hbox (7.49pt too wide) detected at line 327
 []|
  []
 
 
-Overfull \hbox (58.44078pt too wide) detected at line 334
+Overfull \hbox (58.44078pt too wide) detected at line 333
 []$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 
 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/m
 /it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OM
@@ -2887,16 +2887,37 @@ S/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$ |
  []
 
 
-Overfull \hbox (43.39954pt too wide) detected at line 355
+Overfull \hbox (43.39954pt too wide) detected at line 354
 []|
  []
 
 
 
 [34]
+Underfull \hbox (badness 1371) in paragraph at lines 390--390
+\TU/lmr/m/n/12 a mixed ob-ject: it is the Eu-
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 390--390
+\TU/lmr/m/n/12 le-rian mo-men-tum ex-pressed us-
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 390--390
+\TU/lmr/m/n/12 La-grangiam vol-ume. It holds
+ []
+
+
+Overfull \hbox (19.37398pt too wide) in paragraph at lines 392--393
+\TU/lmr/m/n/12 fer-en-tiable func-tion-als $\OML/lmm/m/it/12 F[][]$\TU/lmr/m/n/
+12 , $\OML/lmm/m/it/12 G[][]$|
+ []
+
+
 
 [35]
-Overfull \hbox (20.62755pt too wide) detected at line 414
+Overfull \hbox (20.62755pt too wide) detected at line 413
 []$[][][] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\O
 ML/lmm/m/it/12 G:$ |
  []
@@ -2918,37 +2939,37 @@ i.2'
 
 
 [37]
-Overfull \hbox (30.38855pt too wide) in paragraph at lines 484--485
+Overfull \hbox (30.38855pt too wide) in paragraph at lines 483--484
 \TU/lmr/m/n/12 of the SPH state vari-ables [][][][][], [][][][][]|
  []
 
 
-Overfull \hbox (57.19455pt too wide) detected at line 489
+Overfull \hbox (57.19455pt too wide) detected at line 488
 []$\OT1/lmr/m/n/12 = [] [][]  [][] [] +$ |
  []
 
 
-Overfull \hbox (50.18044pt too wide) detected at line 489
+Overfull \hbox (50.18044pt too wide) detected at line 488
 []$\OMS/lmsy/m/n/12 ^^@ [] [][]  [][] [] \OML/lmm/m/it/12 :$ |
  []
 
 
 
 [38]
-Overfull \hbox (9.24593pt too wide) detected at line 521
+Overfull \hbox (9.24593pt too wide) detected at line 520
 []$[][][] [][]\OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 ;$ |
  []
 
 
 
 [39]
-Overfull \hbox (51.3496pt too wide) detected at line 557
+Overfull \hbox (51.3496pt too wide) detected at line 556
 []$\OML/lmm/m/it/12 E[] \OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 V[] \OT1/lmr/m
 /n/12 = [][][]\OML/lmm/m/it/12 :$ |
  []
 
 
-Overfull \hbox (56.37674pt too wide) detected at line 572
+Overfull \hbox (56.37674pt too wide) detected at line 571
 []$[] \OT1/lmr/m/n/12 = [] [][][] = [] [] [] 2\OML/lmm/m/it/12 M[][][] \OT1/l
 mr/m/n/12 = [] \OML/lmm/m/it/12 :$ |
  []
@@ -2958,46 +2979,47 @@ mr/m/n/12 = [] \OML/lmm/m/it/12 :$ |
 [40]
 
 [41]
-Overfull \hbox (12.31589pt too wide) detected at line 632
+Overfull \hbox (12.31589pt too wide) detected at line 631
 []|
  []
 
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 642.
+(zref-clever)                type 'sidenote' on line 641.
 
 
 
 [42]
-Overfull \hbox (84.45595pt too wide) detected at line 647
+Overfull \hbox (84.45595pt too wide) detected at line 646
 []|
  []
 
 
 
 [43]
-Overfull \hbox (17.23523pt too wide) detected at line 716
+Overfull \hbox (17.23523pt too wide) detected at line 715
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
  []
 
 
 
 [44]
-Overfull \hbox (3.4041pt too wide) detected at line 749
+Overfull \hbox (3.4041pt too wide) detected at line 748
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
-
-[45]
-Overfull \hbox (0.63048pt too wide) detected at line 785
+Overfull \hbox (0.63048pt too wide) detected at line 784
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 46 undefined on input line 787.
+
+[45]
+
+LaTeX Warning: Reference `eq:f_PE' on page 46 undefined on input line 786.
 
 ) (./chapters/experiments.tex
 
@@ -3082,7 +3104,7 @@ See the caption package documentation for explanation.
 
 
 [55]
-runsystem(latexminted cleantemp  --timestamp 20260427021132Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260427131707Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3099,15 +3121,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67809 strings out of 475512
+ 67811 strings out of 475512
  244359,2848258 words of node,token memory allocated
- 88338 words of node memory still in use:
-   879 hlist, 101 vlist, 30 rule, 540 disc, 54 local_par, 187 math, 1813 glue, 5
-14 kern, 232 penalty, 191 margin_kern, 5983 glyph, 2332 attribute, 115 glue_spec
-, 2332 attribute_list, 11 write, 784 pdf_literal, 9 pdf_start_link, 9 pdf_end_li
-nk, 3 pdf_dest, 12 pdf_action, 128 pdf_colorstack nodes
-   avail lists: 1:15,2:6971,3:4778,4:587,5:590,6:189,7:7430,8:109,9:1706,10:34,1
-1:417,12:12
+ 87145 words of node memory still in use:
+   883 hlist, 102 vlist, 30 rule, 528 disc, 51 local_par, 200 math, 1765 glue, 5
+20 kern, 222 penalty, 189 margin_kern, 5966 glyph, 2227 attribute, 115 glue_spec
+, 2227 attribute_list, 11 write, 710 pdf_literal, 8 pdf_start_link, 8 pdf_end_li
+nk, 3 pdf_dest, 11 pdf_action, 114 pdf_colorstack nodes
+   avail lists: 1:15,2:6971,3:4778,4:587,5:594,6:193,7:7430,8:109,9:1718,10:34,1
+1:429,12:12
  88445 multiletter control sequences out of 65536+600000
  148 fonts using 11695599 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3150,10 +3172,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (62 pages, 10800866 bytes).
+Output written on main.pdf (62 pages, 10801822 bytes).
 
-PDF statistics: 1615 PDF objects out of 1728 (max. 8388607)
- 1024 compressed objects within 11 object streams
- 358 named destinations out of 1000 (max. 131072)
+PDF statistics: 1618 PDF objects out of 1728 (max. 8388607)
+ 1027 compressed objects within 11 object streams
+ 360 named destinations out of 1000 (max. 131072)
  630 words of extra memory for PDF output out of 10000 (max. 100000000)
 
