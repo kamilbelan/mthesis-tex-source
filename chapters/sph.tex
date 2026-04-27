@@ -658,7 +658,12 @@ e^i_{\alpha \beta} = \frac{x^i_{\alpha} - x^i_{\beta}}{\abs{\vb{x}_{\alpha} - \v
 
 Symplectic systems are of interest because they admit specialised  numerical methods --- \emph{symplectic integrators} --- with favourable long-term conservation properties. In particular, the energy error of a symplectic integrator of order $p$ remains bounded by $O(h^p)$ over exponentially long simulation times \autocite{hairerGeometricNumericalIntegration2006, leimkuhlerSimulatingHamiltonianDynamics2004}. Moreover, \autocite{kinclGloballyTimereversibleFluid2023a} has shown that, with a suitable symplectic integrator and a correction to the initial conditions, the resulting numerical simulation is \emph{time-reversible}.
 
-In our simulations, we use the \emph{Störmer--Verlet} method. The Störmer--Verlet method approximates the solution of the system $\dot{\vb{q}} = \vb{v}, \dot{\vb{v}} = \vb{f}(\vb{q})$ by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n+1})$  defined as
+In our simulations, we use the \emph{Störmer--Verlet} method. The Störmer--Verlet method approximates the solution of the system 
+\begin{equations}[columns,*]
+	\dot{\vb{q}} &= \vb{v}, \\
+	\dot{\vb{v}} &= \vb{f}(\vb{q}),
+\end{equations}
+by the one-step procedure $(\vb{q}_n, \vb{v}_n) \mapsto (\vb{q}_{n+1}, \vb{v}_{n+1})$  defined as
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:STORMER-VERLET}
