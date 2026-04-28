@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 14:42
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 15:28
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3152,30 +3152,65 @@ Overfull \hbox (4.29684pt too wide) detected at line 1019
 
 
 [53]
-Overfull \hbox (17.23523pt too wide) detected at line 1046
-[]$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
+
+LaTeX Warning: Hyper reference `eq:V-ALPHA-1' on page 54 undefined on input lin
+e 1067.
+
+
+LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
+.
+
+
+LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
+.
+
+
+LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
+.
+
+
+Overfull \hbox (54.86786pt too wide) in paragraph at lines 1074--1075
+[]\TU/lmr/m/n/12 With these choices, the sys-tem of gov-ern-ing equa-tions [][]
+[][][],|
  []
 
 
-Overfull \hbox (3.4041pt too wide) detected at line 1078
+Overfull \hbox (13.88245pt too wide) detected at line 1081
+[]|
+ []
+
+
+Overfull \hbox (35.02145pt too wide) detected at line 1081
+[]|
+ []
+
+
+
+[54]
+Overfull \hbox (3.4041pt too wide) detected at line 1113
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
 
-[54]
-Overfull \hbox (0.63048pt too wide) detected at line 1114
+[55]
+
+LaTeX Warning: Reference `eq:P_PE' on page 56 undefined on input line 1137.
+
+
+LaTeX Warning: Reference `eq:v_PE' on page 56 undefined on input line 1144.
+
+
+Overfull \hbox (0.63048pt too wide) detected at line 1149
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 55 undefined on input line 1116.
+LaTeX Warning: Reference `eq:f_PE' on page 56 undefined on input line 1151.
 
-
-
-[55]) (./chapters/experiments.tex
+) (./chapters/experiments.tex
 
 [56]
 Chapter 4.
@@ -3258,7 +3293,7 @@ See the caption package documentation for explanation.
 
 
 [65]
-runsystem(latexminted cleantemp  --timestamp 20260428144232Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260428152838Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3275,7 +3310,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68103 strings out of 475512
+ 68119 strings out of 475512
  244445,3417909 words of node,token memory allocated
  85394 words of node memory still in use:
    1045 hlist, 128 vlist, 46 rule, 455 disc, 47 local_par, 242 math, 1651 glue, 
@@ -3283,9 +3318,9 @@ Here is how much of LuaTeX's memory you used:
 c, 2719 attribute_list, 11 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_l
 ink, 3 pdf_dest, 13 pdf_action, 94 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 
 1 pdf_restore nodes
-   avail lists: 1:15,2:7665,3:5014,4:612,5:813,6:212,7:7842,8:114,9:2624,10:46,1
+   avail lists: 1:16,2:7665,3:5014,4:612,5:813,6:212,7:7842,8:114,9:2624,10:46,1
 1:518,12:12
- 88680 multiletter control sequences out of 65536+600000
+ 88693 multiletter control sequences out of 65536+600000
  151 fonts using 11687431 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3327,10 +3362,10 @@ dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/
 qzcmi.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb
 >
-Output written on main.pdf (72 pages, 10884371 bytes).
+Output written on main.pdf (72 pages, 10888783 bytes).
 
-PDF statistics: 1844 PDF objects out of 2073 (max. 8388607)
- 1188 compressed objects within 12 object streams
- 415 named destinations out of 1000 (max. 131072)
+PDF statistics: 1851 PDF objects out of 2073 (max. 8388607)
+ 1194 compressed objects within 12 object streams
+ 418 named destinations out of 1000 (max. 131072)
  694 words of extra memory for PDF output out of 10000 (max. 100000000)
 

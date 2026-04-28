@@ -51,8 +51,8 @@
 \contentsline {subsection}{Kernel-sum volume estimators}{50}{subsection*.53}%
 \contentsline {subsection}{Density-entropy}{52}{subsection*.54}%
 \contentsline {subsection}{Pressure-entropy}{53}{subsection*.55}%
-\contentsline {subsection}{Pressure-potential temperature}{54}{subsection*.56}%
-\contentsline {subsection}{Well-balanced SPH}{55}{subsection*.57}%
+\contentsline {subsection}{Pressure-potential temperature}{55}{subsection*.56}%
+\contentsline {subsection}{Well-balanced SPH}{56}{subsection*.57}%
 \contentsline {section}{\numberline {3.6}Implementation specifics}{56}{section*.58}%
 \contentsline {subsection}{Extrapolating boundary conditions}{56}{subsection*.59}%
 \contentsline {subsubsection}{Inflow \& Outflow}{56}{subsection*.59}%
