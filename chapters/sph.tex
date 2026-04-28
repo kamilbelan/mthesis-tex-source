@@ -30,6 +30,8 @@ In this section, we outline the standard approach to SPH discretisation.
 \subsection{Kernel interpolation}
 \label{sec:INTERPOLATION}
 
+% TODO: DROP the _H totally
+
 Let $\Omega \subset \R^d, d = 2, 3$ be the continuous medium and $\Phi: \Rplusnought \times \Omega \to \R$ an arbitrary scalar valued field, \eg density. Suppose further that $\forall t \in \Rplusnought$ the mapping $\vb{x} \mapsto \Phi(t, \vb{x})$ is in $\Loneloc{\Omega}$, then
 
 \begin{equations}[single,!,numberline=all]
@@ -816,31 +818,33 @@ and
 
 \begin{equations}[columns,*]
 	- \pdv{L}{x^i_{\alpha}} &= - \pdv{x^i_{\alpha}} \left(\sum_{\beta=1}^N \left( \frac{1}{2} m_{\beta}\abs{\vb{v}_{\beta}}^{2} - m_{\beta} e_{\beta}\right) \right) = \\
-				&= + \sum_{\beta=1}^N m_{\beta} \pdv{e_{\beta}}{x^i_{\alpha}} = - p_{\alpha} \pdv{V_{\alpha}}{x^{i}_{\alpha}},
+				&= + \sum_{\beta=1}^N m_{\beta} \pdv{e_{\beta}}{x^i_{\alpha}} = - \sum_{\beta=1}^N p_\beta \pdv{V_{\beta}}{x^{i}_{\alpha}},
 \end{equations}
 
 using \Cref{eq:E-X-DERIVATIVE}. In total, the left-hand side reads
 
 \begin{equations}[single,*]
-	\dv{t} \pdv{L}{\tdot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} = m_{\alpha} \dv{v_{\alpha}^i}{t} - p_{\alpha} \pdv{V_{\alpha}}{x^i_{\alpha}},
+	\dv{t} \pdv{L}{\tdot{x}^i_{\alpha}} - \pdv{L}{x^i_{\alpha}} = m_{\alpha} \dv{v_{\alpha}^i}{t} - \sum_{\beta=1}^N p_\beta \pdv{V_{\beta}}{x^{i}_{\alpha}}, 
 \end{equations}
 
 whereas the right-hand side is
 
 \begin{equations}[columns,*]
 	\sum_{\beta=1}^N \lambda_{\beta} \pdv{\Phi_{\beta}}{x^i_{\alpha}} &= \sum_{\beta=1}^N \lambda_{\beta}\pdv{x^i_{\alpha}}\left(\frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}} - N_{\, \text{ngb} \,}\right) = \\
-									  &= \sum_{\beta=1}\lambda_{\beta}\left(- \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}}\pdv{\tilde{V}_{\beta}}{x^i_{\alpha}} \right) = - \lambda_{\alpha}\frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}}\pdv{\tilde{V}_{\alpha}}{x^i_{\alpha}}.
+									  &= \sum_{\beta=1}-\lambda_{\beta} \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}}\pdv{\tilde{V}_{\beta}}{x^i_{\alpha}}. 
 \end{equations}
 
+Unlike the derivative with respect to $h_\alpha$ the derivative $\pdv{L}{x^i_\alpha}$ does not reduce to a single term, because $V_\beta$ depends on $\vb{x}_\alpha$ for all particles $\beta$ whose kernel support contains the particle $\alpha$.
 Thus the first set of the Lagrange equations \Cref{eq:LAGRANGE-EQUATIONS} yields
 
 \begin{equations}[single,*]
-m_{\alpha} \dv{v_{\alpha}^i}{t} - p_{\alpha}\pdv{V_{\alpha}}{x^i_{\alpha}} = - \lambda_{\alpha} \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}}\pdv{\tilde{V}_{\alpha}}{x^i_{\alpha}},
+m_{\alpha} \dv{v_{\alpha}^i}{t} - \sum_{\beta=1}^N p_{\beta}\pdv{V_{\beta}}{x^i_{\alpha}} = - \sum_{\beta=1}^N\lambda_{\beta} \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}}\pdv{\tilde{V}_{\beta}}{x^i_{\alpha}},
 \end{equations}
+
 so upon rearranging we arrive at
 
 \begin{equations}[columns,*]
-	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= p_{\alpha} \grad_{\alpha} V_{\alpha} - \lambda_{\alpha} \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \grad_{\alpha} \tilde{V}_{\alpha}, \\
+	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= \sum_{\beta=1}^N p_{\beta} \grad_{\alpha} V_{\beta} - \sum_{\beta=1}^N\lambda_{\beta} \frac{\abs{B\left(R_{\beta}\right)}}{\tilde{V}_{\beta}^{2}} \grad_{\alpha} \tilde{V}_{\beta}, \\
 	\lambda_{\alpha} &=  - p_{\alpha} \pdv{V_{\alpha}}{h_{\alpha}}\left(\frac{\kappa}{\tilde{V}_{\alpha}} \eval{\pdv{\abs{B(R)}}{h_{\alpha}}}_{R = R_{\alpha}} - \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right)^{-1}.
 \end{equations}
 
@@ -848,15 +852,14 @@ We now eliminate $\lambda_\alpha$ from the momentum equation. Define the $\grad 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:GRAD-H-FACTOR}
-f_\alpha \coloneq \frac{\kappa \tilde V_\alpha}{\abs{B(R_\alpha)}}\,
-\eval{\pdv{\abs{B(R)}}{R}}_{R = R_\alpha} - \pdv{\tilde V_\alpha}{h_\alpha},
+f_\alpha \coloneq \frac{\kappa \tilde V_\alpha}{\abs{B(R_\alpha)}}\,\eval{\pdv{\abs{B(R)}}{R}}_{R = R_\alpha} - \pdv{\tilde V_\alpha}{h_\alpha},
 \end{equations}
 
-which captures the response of the constraint to a change in $h_\alpha$. Substituting $\lambda_\alpha$ from \Cref{eq:MULTIPLIER} into the momentum equation and simplifying, the factors of $\abs{B(R_\alpha)} / \tilde V_\alpha^2$ cancel, and the momentum equation reduces to
+which captures the response of the constraint to a change in $h_\alpha$. Substituting $\lambda_\beta$ from \Cref{eq:MULTIPLIER} into the momentum equation and simplifying, the factors of $\abs{B(R_\beta)} / \tilde V_\beta^2$ cancel within each summand, and the momentum equation reduces to
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DI-MOMENTUM}
-m_\alpha \dv{\vb{v}_\alpha}{t} = p_\alpha \grad_\alpha V_\alpha + \frac{p_\alpha}{f_\alpha} \pdv{V_\alpha}{h_\alpha} \grad_\alpha \tilde V_\alpha.
+m_\alpha \dv{\vb{v}_\alpha}{t} = \sum_{\beta=1}^N p_\beta \grad_\alpha V_\beta + \sum_{\beta=1}^N\frac{p_\beta}{f_\beta} \pdv{V_\beta}{h_\beta} \grad_\alpha \tilde V_\beta.
 \end{equations}
 
 The first term on the right-hand side is the standard pressure force; the second is the $\grad h$ \emph{correction} that restores conservation in the presence of variable smoothing lengths.
@@ -876,21 +879,95 @@ The grad-h factor \Cref{eq:GRAD-H-FACTOR} simplifies to
 f_\alpha = \frac{2 \tilde V_\alpha}{h_\alpha} - \pdv{\tilde V_\alpha}{h_\alpha} = \frac{\tilde V_\alpha}{h_\alpha}\left(2 - \frac{h_\alpha}{\tilde V_\alpha}\pdv{\tilde V_\alpha}{h_\alpha}\right).
 \end{equations}
 
-Since in the following we always work in a two-dimensional settings with the Wendland quintic kernel, let us state the equations explicitly. The momentum equation \Cref{eq:DI-MOMENTUM} with $f_\alpha$ given by \Cref{eq:GRAD-H-2D} reads
+Since in the following we always work in a two-dimensional setting with the Wendland quintic kernel, let us state the equations explicitly. The momentum equation \Cref{eq:DI-MOMENTUM} with $f_\alpha$ given by \Cref{eq:GRAD-H-2D} reads
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:DI-2D}
-m_\alpha \dv{\vb{v}_\alpha}{t} &= p_\alpha \grad_\alpha V_\alpha + \frac{p_\alpha}{f_\alpha} \pdv{V_\alpha}{h_\alpha} \grad_\alpha \tilde V_\alpha, \\
+m_\alpha \dv{\vb{v}_\alpha}{t} &= \sum_{\beta=1}^N p_\beta \grad_\alpha V_\beta + \sum_{\beta=1}^N\frac{p_\beta}{f_\beta} \pdv{V_\beta}{h_\beta} \grad_\alpha \tilde V_\beta, \\
 f_{\alpha} &= \frac{\tilde{V}_{\alpha}}{h_{\alpha}}\left(2 - \frac{h_{\alpha}}{\tilde{V}_{\alpha}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right).
 \end{equations}
 
-\subsection{Kernel sum volume estimators}
+\subsection{Kernel-sum volume estimators}
 \label{sec:KERNEL-SUM-VOLUMES}
 
+The general Lagrangian formulation of SPH \Cref{eq:DI-MOMENTUM}, \Cref{eq:GRAD-H-FACTOR} needs the volume estimators $V_{\alpha}, \tilde{V}_{\alpha}$. Note that there are numerous ways to choose the estimators;\sidenote{The simplest approaches include $V_{\alpha} = \tilde{V}_{\alpha} \propto h_{\alpha}^d$ or even $V_{\alpha} = \tilde{V}_{\alpha} = m_{\alpha} / \rho_{0}$, $\rho_0$ being a fixed reference value.} in this section, we consider a class of volume estimators based on kernel sums \autocite{hopkinsGeneralClassLagrangian2013a}: given a scalar quantity $x$ carried by the particles, the $x_{\alpha}$-weighted average is the quantity $y_{\alpha}$ obtained as
 
+\begin{equations}[single,!,numberline=all]
+\label{eq:KERNEL-SUM}
+y_{\alpha} = \sum_{\beta=1}^N x_{\beta} w_{\alpha \beta}\left(h_{\alpha}\right),
+\end{equations}
 
+with the notation $w_{\alpha \beta}\left(h_{\alpha}\right) = w\left(\frac{\abs{\vb{x}_{\alpha} - \vb{x}_{\beta}}}{h_{\alpha}}\right)$. The volume estimator corresponding to the $x_{\alpha}$-weighted sum is then \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a} 
 
+\begin{equations}[single,!,numberline=all]
+\label{eq:KERNEL-SUM-VOLUME}
+V_{\alpha} = \frac{x_{\alpha}}{y_{\alpha}}.
+\end{equations}
 
+For $x_{\alpha} = m_{\alpha}$ we obtain exactly the summation density \Cref{eq:SPH-density-sum}, \ie $y_{\alpha} = \rho_{\alpha}$ and $V_{\alpha} = m_{\alpha} / \rho_{\alpha}$.
+
+The derivatives of \Cref{eq:KERNEL-SUM-VOLUME} can be computed directly. Since $x_{\alpha}$ is independent of $h_{\alpha}$\sidenote{Realize that $x_{\alpha}$ is a particle property.}
+
+\begin{equations}[single,*]
+	\pdv{V_{\alpha}}{h_{\alpha}} = - \frac{x_{\alpha}}{y_{\alpha}^{2}} \pdv{y_{\alpha}}{h_{\alpha}},
+\end{equations}
+
+To express the derivative of $y_\alpha$ we require the derivative of the kernel with respect to its smoothing length. With
+
+\begin{equations}[single,*]
+	w_{\alpha\beta}(h_\alpha) = \frac{1}{h_\alpha^{d}} \tilde{w}\left(\frac{\abs{\vb{x}_\alpha - \vb{x}_\beta}}{h_\alpha}\right),
+\end{equations}
+
+where $\tilde w$ denotes the kernel shape, a direct computation using the chain rule yields
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:KERNEL-H-DERIVATIVE}
+\pdv{w_{\alpha\beta}(h_\alpha)}{h_\alpha} = -\frac{1}{h_\alpha}\left(d\, w_{\alpha\beta}(h_\alpha) + q_{\alpha\beta} \pdv{w_{\alpha\beta}(h_\alpha)}{q_{\alpha\beta}}\right),
+\end{equations}
+
+where $q_{\alpha\beta} = \abs{\vb{x}_\alpha - \vb{x}_\beta} / h_\alpha$. 
+
+Therefore,
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:Y-H-DERIVATIVE}
+\pdv{y_\alpha}{h_\alpha} = -\frac{1}{h_\alpha}\sum_{\beta=1}^N x_\beta \left(d\, w_{\alpha\beta}(h_\alpha) + q_{\alpha\beta} \pdv{w_{\alpha\beta}(h_\alpha)}{q_{\alpha\beta}}\right).
+\end{equations}
+
+The spatial derivative of $V_{\alpha}$ reads similarly
+
+\begin{equations}[single,*]
+\grad_\alpha V_\beta = -\frac{x_\alpha}{y_\beta^2}\grad_\alpha y_\beta,
+\end{equations}
+
+with
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:Y-X-DERIVATIVE}
+\grad_\alpha y_\beta = x_{\alpha} \grad_{\alpha} w_{\alpha \beta}\left(h_{\alpha}\right) + \delta_{\alpha \beta} \sum_{\gamma=1}^N x_{\gamma} \grad_{\alpha}w_{\alpha \gamma}\left(h_{\alpha}\right).
+\end{equations}
+
+We stress that the kernel gradient is taken \emph{at fixed} $h_\alpha$, so the above equation reduces to the standard SPH gradient interpolation.\sidenote{The relation $\grad_\alpha w_{\alpha\beta} = -\grad_\beta w_{\alpha\beta}$ holds 
+\emph{only at the same smoothing length}; with adaptive $h$ it is generally not valid. This is the reason why adaptive-$h$ schemes require the $\grad h$ correction terms.}
+
+In the same manner, we can proceed for $\tilde{V}_{\alpha}$: choose the particle carried scalar $\tilde{x}_{\alpha}$, compute the $\tilde{x}_{\alpha}$-weighted kernel sum $\tilde{y}_{\alpha}$ and set
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:KERNEL-SUM-TILDE-VOLUME}
+\tilde{V}_{\alpha} = \frac{\tilde{x}_{\alpha}}{\tilde{y}_{\alpha}}.
+\end{equations}
+
+The derivatives $\pdv{\tilde{V}_{\alpha}}{h_{\alpha}}, \grad_{\alpha} \tilde{V}_{\beta}$ have the exact same form as $\pdv{V_{\alpha}}{h_{\alpha}}, \grad_{\alpha} V_{\beta}$. 
+
+The above results can then be substituted into \Cref{eq:DI-2D} and after a lengthy algebraic manipulation one arrives at \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a} 
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:KERNEL-SUM-MOMENTUM}
+m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= -\sum_{\beta=1}^N x_\alpha x_\beta \left[\frac{p_\alpha}{y_\alpha^2} f_{\alpha\beta}\,\grad_\alpha w_{\alpha\beta}(h_\alpha) + \frac{p_\beta}{y_\beta^2}f_{\beta\alpha}\grad_\alpha w_{\alpha\beta}(h_\beta)\right], \\
+f_{\alpha\beta} &\coloneq 1 - \frac{\tilde x_\beta}{x_\beta}\left(\frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{y_\alpha}{h_\alpha}\right)\left[1 + \frac{h_\alpha}{2\, \tilde y_\alpha}\pdv{\tilde y_\alpha}{h_\alpha}\right]^{-1}.
+\end{equations}
+
+The factor $2$ in $f_{\alpha\beta}$ replaces the $3$ that appears in Hopkins's three-dimensional formulation, reflecting our two-dimensional setting. The system \Cref{eq:KERNEL-SUM-MOMENTUM} is the starting point for the following subsections, where we make specific choices of the weighting variables $x_\alpha, \tilde x_\alpha$.
 
 
 
