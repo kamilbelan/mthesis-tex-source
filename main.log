@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 15:30
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 16:26
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3139,55 +3139,33 @@ sum weights in [][][][][],|
 
 
 [52]
-Overfull \hbox (35.597pt too wide) detected at line 1008
+Overfull \hbox (35.597pt too wide) detected at line 1009
 []$\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = 1 \OMS/lmsy/m/n/12 ^^@ [] [][][][][] 
 \OT1/lmr/m/n/12 = [][][] \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 f[]$ |
  []
 
 
-Overfull \hbox (4.29684pt too wide) detected at line 1019
+Overfull \hbox (4.29684pt too wide) detected at line 1020
 []|
  []
 
 
 
 [53]
-
-LaTeX Warning: Hyper reference `eq:V-ALPHA-1' on page 54 undefined on input lin
-e 1067.
-
-
-LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
-.
-
-
-LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
-.
-
-
-LaTeX Warning: Reference `eq:V-ALPHA-1' on page 54 undefined on input line 1067
-.
-
-
-Overfull \hbox (54.86786pt too wide) in paragraph at lines 1074--1075
+Overfull \hbox (54.86786pt too wide) in paragraph at lines 1075--1076
 []\TU/lmr/m/n/12 With these choices, the sys-tem of gov-ern-ing equa-tions [][]
 [][][],|
  []
 
 
-Overfull \hbox (13.88245pt too wide) detected at line 1081
-[]|
- []
-
-
-Overfull \hbox (35.02145pt too wide) detected at line 1081
+Overfull \hbox (20.53197pt too wide) detected at line 1083
 []|
  []
 
 
 
 [54]
-Overfull \hbox (3.4041pt too wide) detected at line 1113
+Overfull \hbox (3.4041pt too wide) detected at line 1109
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
@@ -3196,33 +3174,35 @@ Overfull \hbox (3.4041pt too wide) detected at line 1113
 
 [55]
 
-LaTeX Warning: Reference `eq:P_PE' on page 56 undefined on input line 1137.
+LaTeX Warning: Reference `eq:P_PE' on page 56 undefined on input line 1133.
 
 
-LaTeX Warning: Reference `eq:v_PE' on page 56 undefined on input line 1144.
+LaTeX Warning: Reference `eq:v_PE' on page 56 undefined on input line 1140.
 
 
-Overfull \hbox (0.63048pt too wide) detected at line 1149
+Overfull \hbox (0.63048pt too wide) detected at line 1145
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 56 undefined on input line 1151.
+LaTeX Warning: Reference `eq:f_PE' on page 56 undefined on input line 1147.
 
 ) (./chapters/experiments.tex
 
 [56]
+
+[57]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[57
+[58
 
 ]
 Chapter 5.
 )
 
-[58
+[59
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -3260,18 +3240,9 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[59
-
-
-]
-
-Package biblatex Warning: No driver for 'artwork'.
-(biblatex)                Using fallback driver on input line 51.
-
-
-
 [60
 
+
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
@@ -3279,7 +3250,14 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[61]
+[61
+
+]
+
+Package biblatex Warning: No driver for 'artwork'.
+(biblatex)                Using fallback driver on input line 51.
+
+
 
 [62]
 
@@ -3287,13 +3265,15 @@ Package biblatex Warning: No driver for 'artwork'.
 
 [64]
 
+[65]
+
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[65]
-runsystem(latexminted cleantemp  --timestamp 20260428153010Z FAD58DE7366495DB465
+[66]
+runsystem(latexminted cleantemp  --timestamp 20260428162643Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3310,7 +3290,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68119 strings out of 475512
+ 68129 strings out of 475512
  244445,3417909 words of node,token memory allocated
  85394 words of node memory still in use:
    1045 hlist, 128 vlist, 46 rule, 455 disc, 47 local_par, 242 math, 1651 glue, 
@@ -3318,9 +3298,9 @@ Here is how much of LuaTeX's memory you used:
 c, 2719 attribute_list, 11 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_l
 ink, 3 pdf_dest, 13 pdf_action, 94 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 
 1 pdf_restore nodes
-   avail lists: 1:16,2:7665,3:5014,4:612,5:813,6:212,7:7842,8:114,9:2624,10:46,1
+   avail lists: 1:18,2:7665,3:5014,4:612,5:813,6:212,7:7842,8:114,9:2624,10:46,1
 1:518,12:12
- 88693 multiletter control sequences out of 65536+600000
+ 88698 multiletter control sequences out of 65536+600000
  151 fonts using 11687431 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3362,10 +3342,10 @@ dist/fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
 /symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/
 qzcmi.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb
 >
-Output written on main.pdf (72 pages, 10888783 bytes).
+Output written on main.pdf (73 pages, 10890969 bytes).
 
-PDF statistics: 1851 PDF objects out of 2073 (max. 8388607)
- 1194 compressed objects within 12 object streams
- 418 named destinations out of 1000 (max. 131072)
+PDF statistics: 1863 PDF objects out of 2073 (max. 8388607)
+ 1204 compressed objects within 13 object streams
+ 423 named destinations out of 1000 (max. 131072)
  694 words of extra memory for PDF output out of 10000 (max. 100000000)
 
