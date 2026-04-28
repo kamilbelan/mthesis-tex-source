@@ -1023,26 +1023,61 @@ The system \Cref{eq:DENSITY-ENTROPY-TOTAL} is a \emph{generalization} of the \em
 \subsection{Pressure-entropy}
 \label{sec:DI-pressure-entropy}
 
+Let us now choose $\tilde{x}_{\alpha} = 1$, yielding 
 
+\begin{equations}[single,!,numberline=all]
+	\label{eq:PE-Y-TILDE}
+\tilde{y}_{\alpha} = \tilde{n}_{\alpha} \coloneq \sum_{\beta=1}^N w_{\alpha \beta}\left(h_{\alpha}\right).
+\end{equations}
 
+The physical interpretation of this quantity is \emph{particle number density}, and as such it will be denoted $\tilde{n}_{\alpha}$.
+We aim to formulate the governing equations using $A$ as the thermodynamic variable with also avoiding the density. If we take the equation for pressure \Cref{eq:DENSITY-ENTROPY-PRESSURE}
 
-The choice
+\begin{equations}[single,*]
+p_{\alpha} = A_{\alpha} \rho_{\alpha}^\gamma,
+\end{equations}
+
+and formally substitute $\rho_{\alpha} = m_{\alpha} / V_{\alpha}$, we obtain
+
+\begin{equations}[single,*]
+	\label{eq:V-ALPHA1}
+	p_{\alpha} = A_{\alpha} \left(\frac{m_{\alpha}}{V_{\alpha}}\right)^{\gamma} = \left(\frac{m_{\alpha} A_{\alpha}^{1/\gamma}}{V_{\alpha}}\right)^{\gamma}, \, \text{ie} \, V_{\alpha}^{\gamma} = \frac{m_{\alpha}A_{\alpha}^{1/\gamma}}{p_{\alpha}},
+\end{equations}
+
+and so we see that if we choose the weights $x_{\alpha}$ as
 
 \begin{equations}[single,!,numberline=all]
 	\label{eq:x_PE}
 	x_{\alpha} = m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}},
 \end{equations}
-gives the pressure $P_{\alpha}$ as
 
-\begin{equations}[single,!,numberline=all]
-	\label{eq:P_PE}
-	P_{\alpha} = \left(\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}} w_{\alpha\beta}(h_{\alpha})\right)^{\gamma}
+we obtain 
+
+\begin{equations}[single,*]
+y_{\alpha} = \sum_{\beta=1}^N m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}},
 \end{equations}
-and the evolution equations as
+
+and so 
 
 \begin{equations}[single,!,numberline=all]
-	\label{eq:v_PE}
-	\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{\frac{1}{\gamma}}\left(\frac{f_{\alpha}P_{\alpha}}{P_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}P_{\beta}}{P^{\frac{2}{\gamma}}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right),
+	\label{eq:V-ALPHA-2}
+V_{\alpha} = \frac{x_{\alpha}}{y_{\alpha}} = \frac{m A_{\alpha}^{1/\gamma}}{\sum_{\beta=1}^N m_{\alpha} A_{\alpha}^{\frac{1}{\gamma}}}.
+\end{equations}
+
+Comparing \Cref{eq:V-ALPHA-1} and \Cref{eq:V-ALPHA-2} we conclude
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:PRESSURE-ENTROPY-PRESSURE}
+	P_{\alpha} = \left(\sum_{\beta=1}^N m_{\beta} A_{\beta}^{\frac{1}{\gamma}} w_{\alpha\beta}(h_{\alpha})\right)^{\gamma}.
+\end{equations}
+
+With these choices, the system of governing equations \Cref{eq:KERNEL-SUM-MOMENTUM}, \Cref{eq:KERNEL-SUM-CORRECTION} reads as
+
+\begin{equations}[columns,!,numberline=all]
+	\label{eq:PRESSURE-ENTROPY-TOTAL}
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{\frac{1}{\gamma}}\left(\frac{f_{\alpha}p_{\alpha}}{p_{\alpha}^{\frac{2}{\gamma}}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta}p_{\beta}}{p^{\frac{2}{\gamma}}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right), \\
+	f_{\alpha \beta} &=
+	p_{\alpha} &= 
 \end{equations}
 with
 
