@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 00:38
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.1)  28 APR 2026 02:18
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2780,54 +2780,54 @@ warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.3'
 
 ]
-Overfull \hbox (12.13925pt too wide) in paragraph at lines 55--56
+Overfull \hbox (12.13925pt too wide) in paragraph at lines 57--58
 []\TU/lmr/m/n/12 To ob-tain a good ap-prox-i-ma-tion, the ker-nel must sat-isfy [][][][][][]|
  []
 
 
-Overfull \hbox (142.61266pt too wide) in paragraph at lines 61--74
+Overfull \hbox (142.61266pt too wide) in paragraph at lines 63--76
  [][] |
  []
 
 
 
 [25]
-Underfull \hbox (badness 1005) in paragraph at lines 86--86
+Underfull \hbox (badness 1005) in paragraph at lines 88--88
 []$[][]$ \TU/lmr/m/n/12 In the class of pos-i-tive def-i-
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 86--86
+Underfull \hbox (badness 1748) in paragraph at lines 88--88
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
 <./figures/sph/kernel.pdf, id=803, 1053.9375pt x 451.6875pt>
 File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 <use ./figures/sph/kernel.pdf>
-Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 98.
+Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 100.
 (luatex.def)             Requested size: 320.0pt x 137.14073pt.
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 110.
+(zref-clever)                type 'sidenote' on line 112.
 
 
 
 [26<./figures/sph/kernel.pdf>]
 
 LaTeX Warning: Hyper reference `sec:HOPKINS' on page 27 undefined on input line
- 123.
+ 125.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 123.
+LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 125.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 123.
+LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 125.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 123.
+LaTeX Warning: Reference `sec:HOPKINS' on page 27 undefined on input line 125.
 
 
-Overfull \hbox (44.1207pt too wide) detected at line 128
+Overfull \hbox (44.1207pt too wide) detected at line 130
 []$\OT1/lmr/m/n/12 [][][][] = [][] [][]\OML/lmm/m/it/12 w[][][] [] \OMS/lmsy/
 m/n/12  [] \OT1/lmr/m/n/12 [][]\OML/lmm/m/it/12 w[][][]V[];$ |
  []
@@ -2835,12 +2835,12 @@ m/n/12  [] \OT1/lmr/m/n/12 [][]\OML/lmm/m/it/12 w[][][]V[];$ |
 
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
 []$[][]$ \TU/lmr/m/n/12 De-ploy-ing tech-niques from
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 146--146
+Underfull \hbox (badness 1590) in paragraph at lines 148--148
 \TU/lmr/m/n/12 Fourier anal-y-sis and the Euler-
  []
 
@@ -2853,7 +2853,7 @@ i.2'
 
 
 [28]
-Overfull \hbox (13.86569pt too wide) detected at line 191
+Overfull \hbox (13.86569pt too wide) detected at line 193
 []|
  []
 
@@ -2863,31 +2863,31 @@ Underfull \vbox (badness 6625) has occurred while \output is active []
 
 
 [29]
-Overfull \hbox (58.17142pt too wide) detected at line 203
+Overfull \hbox (58.17142pt too wide) detected at line 205
 []|
  []
 
 
-Overfull \hbox (33.91505pt too wide) detected at line 203
+Overfull \hbox (33.91505pt too wide) detected at line 205
 []|
  []
 
 
 
 [30]
-Overfull \hbox (43.33105pt too wide) in paragraph at lines 230--231
+Overfull \hbox (43.33105pt too wide) in paragraph at lines 232--233
 []\TU/lmr/m/n/12 The naive dis-creti-sa-tions [][][][][] and [][][][][]|
  []
 
 
-Overfull \hbox (0.1925pt too wide) detected at line 253
+Overfull \hbox (0.1925pt too wide) detected at line 255
 []|
  []
 
 
 
 [31]
-Overfull \hbox (25.60927pt too wide) detected at line 278
+Overfull \hbox (25.60927pt too wide) detected at line 280
 []|
  []
 
@@ -2896,10 +2896,10 @@ Overfull \hbox (25.60927pt too wide) detected at line 278
 [32]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 296.
+(zref-clever)                type 'sidenote' on line 298.
 
 
-Overfull \hbox (3.711pt too wide) in paragraph at lines 303--304
+Overfull \hbox (3.711pt too wide) in paragraph at lines 305--306
 \TU/lmr/m/n/12 Let us ap-ply the \TU/lmr/m/sl/12 im-proved \TU/lmr/m/n/12 dis-cr
 ete gra-di-ent [][][][][]|
  []
@@ -2907,12 +2907,12 @@ ete gra-di-ent [][][][][]|
 
 
 [33]
-Overfull \hbox (7.49pt too wide) detected at line 328
+Overfull \hbox (7.49pt too wide) detected at line 330
 []|
  []
 
 
-Overfull \hbox (58.44078pt too wide) detected at line 334
+Overfull \hbox (58.44078pt too wide) detected at line 336
 []$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 
 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/m
 /it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OM
@@ -2920,43 +2920,43 @@ S/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$ |
  []
 
 
-Overfull \hbox (43.39954pt too wide) detected at line 355
+Overfull \hbox (43.39954pt too wide) detected at line 357
 []|
  []
 
 
 
 [34]
-Underfull \hbox (badness 1371) in paragraph at lines 392--392
+Underfull \hbox (badness 1371) in paragraph at lines 394--394
 \TU/lmr/m/n/12 a mixed ob-ject: it is the Eu-
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 392--392
+Underfull \hbox (badness 2368) in paragraph at lines 394--394
 \TU/lmr/m/n/12 le-rian mo-men-tum ex-pressed us-
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 392--392
+Underfull \hbox (badness 2310) in paragraph at lines 394--394
 \TU/lmr/m/n/12 La-grangiam vol-ume. It holds
  []
 
 
 
 [35]
-Overfull \hbox (19.37398pt too wide) in paragraph at lines 394--395
+Overfull \hbox (19.37398pt too wide) in paragraph at lines 396--397
 \TU/lmr/m/n/12 fer-en-tiable func-tion-als $\OML/lmm/m/it/12 F[][]$\TU/lmr/m/n/
 12 , $\OML/lmm/m/it/12 G[][]$|
  []
 
 
-Overfull \hbox (20.62755pt too wide) detected at line 415
+Overfull \hbox (20.62755pt too wide) detected at line 417
 []$[][][] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\O
 ML/lmm/m/it/12 G:$ |
  []
 
 
-Overfull \hbox (13.30432pt too wide) detected at line 428
+Overfull \hbox (13.30432pt too wide) detected at line 430
 []$[][] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 @[]E[] \OT1/lmr/m/n/12 + [][][] = \O
 ML/lmm/m/it/12 @[]E[];$ |
  []
@@ -2978,36 +2978,36 @@ i.2'
 
 
 [37]
-Overfull \hbox (30.38855pt too wide) in paragraph at lines 489--490
+Overfull \hbox (30.38855pt too wide) in paragraph at lines 491--492
 \TU/lmr/m/n/12 of the SPH state vari-ables [][][][][], [][][][][]|
  []
 
 
-Overfull \hbox (46.38889pt too wide) detected at line 494
+Overfull \hbox (46.38889pt too wide) detected at line 496
 []$\OT1/lmr/m/n/12 = [] []  [][] [] +$ |
  []
 
 
-Overfull \hbox (39.37477pt too wide) detected at line 494
+Overfull \hbox (39.37477pt too wide) detected at line 496
 []$\OMS/lmsy/m/n/12 ^^@ [] []  [][] [] \OML/lmm/m/it/12 :$ |
  []
 
 
 
 [38]
-Overfull \hbox (9.24593pt too wide) detected at line 526
+Overfull \hbox (9.24593pt too wide) detected at line 528
 []$[][][] [][]\OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 ;$ |
  []
 
 
 
 [39]
-Overfull \hbox (53.23851pt too wide) detected at line 566
+Overfull \hbox (53.23851pt too wide) detected at line 568
 []$\OML/lmm/m/it/12 E[] \OT1/lmr/m/n/12 = [][][] = [][][]\OML/lmm/m/it/12 :$ |
  []
 
 
-Overfull \hbox (56.37674pt too wide) detected at line 581
+Overfull \hbox (56.37674pt too wide) detected at line 583
 []$[] \OT1/lmr/m/n/12 = [] [][][] = [] [] [] 2\OML/lmm/m/it/12 M[][][] \OT1/l
 mr/m/n/12 = [] \OML/lmm/m/it/12 :$ |
  []
@@ -3019,26 +3019,26 @@ mr/m/n/12 = [] \OML/lmm/m/it/12 :$ |
 [41]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 636.
+(zref-clever)                type 'sidenote' on line 638.
 
 
-Overfull \hbox (12.31589pt too wide) detected at line 642
+Overfull \hbox (12.31589pt too wide) detected at line 644
 []|
  []
 
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 652.
+(zref-clever)                type 'sidenote' on line 654.
 
 
 
 [42]
-Overfull \hbox (12.16333pt too wide) in paragraph at lines 654--655
+Overfull \hbox (12.16333pt too wide) in paragraph at lines 656--657
 [][][][][]\TU/lmr/m/n/12 , as the Pois-son bracket [][][][][]|
  []
 
 
-Overfull \hbox (93.34831pt too wide) detected at line 659
+Overfull \hbox (93.34831pt too wide) detected at line 661
 []|
  []
 
@@ -3047,107 +3047,138 @@ Overfull \hbox (93.34831pt too wide) detected at line 659
 [43]
 
 Package zref-clever Warning: Reference format option 'Name-sg' undefined for
-(zref-clever)                type 'sidenote' on line 695.
+(zref-clever)                type 'sidenote' on line 697.
 
 
 LaTeX Warning: Hyper reference `sec:ADAPTIVE-NEED' on page 44 undefined on inpu
-t line 697.
+t line 699.
 
 
 LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 44 undefined on input line
- 697.
+ 699.
 
 
 LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 44 undefined on input line
- 697.
+ 699.
 
 
 LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 44 undefined on input line
- 697.
+ 699.
 
 
 
 [44]
 
 [45]
-Overfull \hbox (16.77641pt too wide) detected at line 729
+Overfull \hbox (16.77641pt too wide) detected at line 731
 []$\OT1/lmr/m/n/12 [][][] [][]= [] \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 N[] \
 OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 ;  \OMS/lmsy/m/n/12 2 f\OT1/lmr/m/n/12 1\OM
 L/lmm/m/it/12 ; [] ; N\OMS/lmsy/m/n/12 g\OML/lmm/m/it/12 ;$ |
  []
 
 
-Overfull \hbox (13.99551pt too wide) in paragraph at lines 741--742
+Overfull \hbox (13.99551pt too wide) in paragraph at lines 743--744
 []\TU/lmr/m/n/12 To com-pute the deriva-tives of the La-grangian [][][][][],|
  []
 
 
 
 [46]
-Overfull \hbox (15.04729pt too wide) detected at line 799
+Overfull \hbox (15.04729pt too wide) detected at line 801
 []|
  []
 
 
 
 [47]
-Overfull \hbox (2.48358pt too wide) in paragraph at lines 835--836
-[]\TU/lmr/m/n/12 Thus the first set of the La-grange equa-tions [][][][][]|
- []
-
-
 
 [48]
 
 [49]
+Overfull \hbox (6.74751pt too wide) in paragraph at lines 893--894
+\TU/lmr/m/n/12 The gen-eral La-grangian for-mu-la-tion of SPH [][][][][],|
+ []
 
-LaTeX Warning: Citation 'hopkinsGeneralClassLagrangian2013' on page 50 undefine
-d on input line 910.
 
-
-Overfull \hbox (160.30472pt too wide) in paragraph at lines 909--911
-\TU/lmr/m/n/12 and $\OML/lmm/m/it/12  \OT1/lmr/m/n/12 =  [] \OML/lmm/m/it/12 :$ \TU/lmr/m/n/12 We see that the quan-tity $\OML/lmm/m/it/12 A$ \TU/lmr/m/n/12 de-fined as [] |
+Overfull \hbox (59.66277pt too wide) in paragraph at lines 907--908
+[]\TU/lmr/m/n/12 For $\OML/lmm/m/it/12 x[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 m[]$ \TU/lmr/m/n/12 we ob-tain ex-actly the sum-ma-tion den-sity [][][][][],|
  []
 
 
 
 [50]
-Overfull \hbox (17.23523pt too wide) detected at line 939
+Overfull \hbox (7.93001pt too wide) in paragraph at lines 960--961
+[]\TU/lmr/m/n/12 The deriva-tives $[] \OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 r[][]
+\OML/lmm/m/it/12 V[]$ \TU/lmr/m/n/12 have the ex-act same form as $[] \OML/lmm/
+m/it/12 ; \OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 V[]$\TU/lmr/m/n/12 . |
+ []
+
+
+
+[51]
+Overfull \hbox (16.70146pt too wide) in paragraph at lines 962--963
+[]\TU/lmr/m/n/12 The above re-sults can then be sub-sti-tuted into [][][][][]|
+ []
+
+
+Overfull \hbox (9.19646pt too wide) in paragraph at lines 962--963
+\TU/lmr/m/n/12 and af-ter a lengthy al-ge-braic ma-nip-u-la-tion one ar-rives at
+ [][][][][][] |
+ []
+
+
+Overfull \hbox (2.36586pt too wide) detected at line 968
+[]|
+ []
+
+
+LaTeX Warning: Citation 'hopkinsGeneralClassLagrangian2013' on page 52 undefine
+d on input line 987.
+
+
+Overfull \hbox (160.30472pt too wide) in paragraph at lines 986--988
+\TU/lmr/m/n/12 and $\OML/lmm/m/it/12  \OT1/lmr/m/n/12 =  [] \OML/lmm/m/it/12 :$ \TU/lmr/m/n/12 We see that the quan-tity $\OML/lmm/m/it/12 A$ \TU/lmr/m/n/12 de-fined as [] |
+ []
+
+
+
+[52]
+Overfull \hbox (17.23523pt too wide) detected at line 1016
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[][][][][][];$ |
  []
 
 
-Overfull \hbox (3.4041pt too wide) detected at line 972
+Overfull \hbox (3.4041pt too wide) detected at line 1049
 []$\OML/lmm/m/it/12  \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 P[]P[] \OT1/lmr/m/n
 /12 = [] [][] = [] [][][] = [] \OML/lmm/m/it/12 A[];$ |
  []
 
 
 
-[51]
-Overfull \hbox (0.63048pt too wide) detected at line 1008
+[53]
+Overfull \hbox (0.63048pt too wide) detected at line 1085
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] \OML/lmm/m/it/12 m[] [] [][];$ 
 |
  []
 
 
-LaTeX Warning: Reference `eq:f_PE' on page 52 undefined on input line 1010.
+LaTeX Warning: Reference `eq:f_PE' on page 54 undefined on input line 1087.
 
 
 
-[52]) (./chapters/experiments.tex
+[54]) (./chapters/experiments.tex
 
-[53]
+[55]
 Chapter 4.
 ) (./chapters/voronoi.tex
 
-[54
+[56
 
 ]
 Chapter 5.
 )
 
-[55
+[57
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -3185,7 +3216,7 @@ Chapter 5.
 
  (./chapters/summary.tex) (./chapters/appendix.tex)
 
-[56
+[58
 
 
 ]
@@ -3195,7 +3226,7 @@ Package biblatex Warning: No driver for 'artwork'.
 
 
 
-[57
+[59
 
 ]
 
@@ -3203,22 +3234,22 @@ Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 51.
 
 
-
-[58]
-
-[59]
 
 [60]
 
 [61]
+
+[62]
+
+[63]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 
 
-[62]
-runsystem(latexminted cleantemp  --timestamp 20260428003838Z FAD58DE7366495DB465
+[64]
+runsystem(latexminted cleantemp  --timestamp 20260428021807Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3235,17 +3266,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67973 strings out of 475512
+ 68014 strings out of 475512
  244360,3417909 words of node,token memory allocated
- 88003 words of node memory still in use:
-   987 hlist, 116 vlist, 42 rule, 488 disc, 50 local_par, 220 math, 1749 glue, 5
-35 kern, 213 penalty, 175 margin_kern, 5673 glyph, 2767 attribute, 115 glue_spec
-, 2767 attribute_list, 11 write, 710 pdf_literal, 8 pdf_start_link, 8 pdf_end_li
-nk, 3 pdf_dest, 13 pdf_action, 110 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 
-1 pdf_restore nodes
-   avail lists: 1:19,2:7665,3:5014,4:612,5:818,6:206,7:7501,8:114,9:2781,10:40,1
-1:485,12:12
- 88574 multiletter control sequences out of 65536+600000
+ 81728 words of node memory still in use:
+   938 hlist, 119 vlist, 42 rule, 448 disc, 46 local_par, 226 math, 1588 glue, 5
+24 kern, 193 penalty, 161 margin_kern, 5300 glyph, 2530 attribute, 115 glue_spec
+, 2530 attribute_list, 9 write, 562 pdf_literal, 6 pdf_start_link, 6 pdf_end_lin
+k, 3 pdf_dest, 11 pdf_action, 86 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 
+pdf_restore nodes
+   avail lists: 1:20,2:7665,3:5014,4:612,5:838,6:211,7:8029,8:114,9:2745,10:43,1
+1:525,12:12
+ 88602 multiletter control sequences out of 65536+600000
  147 fonts using 11563911 bytes
  109i,21n,121p,4410b,3700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -3287,10 +3318,10 @@ fonts/type1/public/lm/lmsy6.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/tex-gyre/qzcmi
 .pfb>
-Output written on main.pdf (69 pages, 10854066 bytes).
+Output written on main.pdf (71 pages, 10868655 bytes).
 
-PDF statistics: 1763 PDF objects out of 2073 (max. 8388607)
- 1126 compressed objects within 12 object streams
- 393 named destinations out of 1000 (max. 131072)
+PDF statistics: 1796 PDF objects out of 2073 (max. 8388607)
+ 1154 compressed objects within 12 object streams
+ 406 named destinations out of 1000 (max. 131072)
  670 words of extra memory for PDF output out of 10000 (max. 100000000)
 
