@@ -21,17 +21,62 @@
 \subsection{Inflow and outflow boundaries}
 \label{sec:INFLOW-OUTFLOW}
 
-\section{Well-balancing}
-\label{sec:WELL_BALANCING}
+\section{Well-balanced methods}
+\label{sec:WELL-BALANCED}
 
-\subsection{Inexact hydrostatic balance}
+This section provides an introduction into specialized numerical methods for the compressible Euler equations. The motivation for the deployment of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. Results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
+
+\subsection{Preservation of the hydrostatic balance}
 \label{sec:INEXACT}
+
+Internal gravity waves can be considered perturbations of the background atmospheric state. It is standard to take the background atmospheric state as \emph{hydrostatic}\sidenote{As we did in the section \Cref{sec:MTN-WVS}.}: $\vb{v} = 0$ and the pressure $p$ and density $\rho$ solve the equation \Cref{eq:HYDROSTATIC-P}
+
+\begin{equations}[single,*]
+\grad p = \rho \vb{g}.
+\end{equations}
+
+In \Cref{sec:HYDROSTATICS} we have shown that for an \emph{isothermal} atmosphere, the resulting pressure and density read \Cref{eq:HYDROSTATIC}
+
+\begin{equations}[columns,*]
+	\rho(z) &= \rho_0\exp\left(- \frac{z}{H_s}\right), \\
+	p\left(z\right) &= p_0\exp\left(- \frac{z}{H_s}\right). 
+\end{equations}
+
+Suppose now we wish to \emph{numerically} solve the \emph{non-stationary} isentropic compressible Euler system with the initial condition given as the hydrostatic balance, \ie solve\sidenote{We are using a formulation of the Euler equations that is more common in numerical mathematics.}
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:NONSTAT-EULER}
+\partial_t \rho + \div\left(\rho \vb{v}\right) &= 0, \\
+\partial_t\left(\rho \vb{v}\right) + \div\left(\rho \vb{v}\right) &= - \grad p + \rho \vb{g}, \\
+\partial_t \theta + \div\left(\theta \vb{v}\right) &= 0,
+\vb{v}\left(0, \vb{x}\right) = \vb{0}, \theta\left(0, \vb{v}\right) &= \theta_0\left(\vb{x}\right), \rho\left(0, \vb{x}\right) = \rho_0\exp\left(- \frac{z}{H_s}\right),
+\end{equations}
+together with $p = p\left(\theta, \rho\right)$ given and some boundary conditions.\sidenote{A rigorous numerical treatment of the boundary conditions is complicated, see \eg \autocite[p.~59]{levequeFiniteVolumeMethods2002}.} \emph{Mathematically} speaking, since at time $t=0$ the system is in hydrostatic equilibrium, the right-hand side of the momentum equation as well as the convective term vanish and the system \emph{remains} in the hydrostatic equilibrium. Yet, in a numerical simulation, generally the hydrostatic equilibrium is \emph{not preserved},
+
+\begin{equations}[single,*]
+\grad p_{i} - \rho_i \vb{g} \neq 0,
+\end{equations}
+
+where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$}.
+
+\subsection{Residual forces \& Waves}
+\label{sec:WB-WAVES}
+
+\subsection{Well-balanced schemes}
+\label{sec:WB-SCHEMES}
+
+FOUNDATION:\autocite{greenbergWellBalancedSchemeNumerical1996} for shallow water equations and the Godunov scheme\autocite[p.~227]{levequeFiniteVolumeMethods2002}.
 
 \begin{compactitem}
 	\item foundational through\autocite{kappeliWellbalancedFiniteVolume2016a} 
 	\item FVM example \autocite{kappeliWellbalancedMethodsComputational2022}\autocite{kappeliWellbalancedFiniteVolume2016a} 
 	\item $\theta$ use \autocite{artianoStructurePreservingHighOrderMethods2025} \autocite{chertockWellbalancedNumericalMethod2023} 
 \end{compactitem}
+
+HYDROSTATIC ATMOSPHERE: \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} 
+WAVES: \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} 
+- isenetropic
+- for small amplitudes, WB is superiour, for large, it doesnt really matter
 
 
 
