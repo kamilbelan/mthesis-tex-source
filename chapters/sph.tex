@@ -844,6 +844,48 @@ so upon rearranging we arrive at
 	\lambda_{\alpha} &=  - p_{\alpha} \pdv{V_{\alpha}}{h_{\alpha}}\left(\frac{\kappa}{\tilde{V}_{\alpha}} \eval{\pdv{\abs{B(R)}}{h_{\alpha}}}_{R = R_{\alpha}} - \frac{\abs{B\left(R_{\alpha}\right)}}{\tilde{V}_{\alpha}^{2}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right)^{-1}.
 \end{equations}
 
+We now eliminate $\lambda_\alpha$ from the momentum equation. Define the $\grad h$ \emph{factor}
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:GRAD-H-FACTOR}
+f_\alpha \coloneq \frac{\kappa \tilde V_\alpha}{\abs{B(R_\alpha)}}\,
+\eval{\pdv{\abs{B(R)}}{R}}_{R = R_\alpha} - \pdv{\tilde V_\alpha}{h_\alpha},
+\end{equations}
+
+which captures the response of the constraint to a change in $h_\alpha$. Substituting $\lambda_\alpha$ from \Cref{eq:MULTIPLIER} into the momentum equation and simplifying, the factors of $\abs{B(R_\alpha)} / \tilde V_\alpha^2$ cancel, and the momentum equation reduces to
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DI-MOMENTUM}
+m_\alpha \dv{\vb{v}_\alpha}{t} = p_\alpha \grad_\alpha V_\alpha + \frac{p_\alpha}{f_\alpha} \pdv{V_\alpha}{h_\alpha} \grad_\alpha \tilde V_\alpha.
+\end{equations}
+
+The first term on the right-hand side is the standard pressure force; the second is the $\grad h$ \emph{correction} that restores conservation in the presence of variable smoothing lengths.
+
+\paragraph{Specialisation to two dimensions and the Wendland quintic kernel.}
+For our applications we work in $d = 2$ with the Wendland quintic kernel of \Cref{eq:WENDLAND-KERNEL}, for which $\kappa = 2$ and so $R_\alpha = 2 h_\alpha$. The volume of the kernel ball is $|B(R)| = \pi R^2$, giving
+
+\begin{equations}[columns,*]
+	\abs{B(R_\alpha)} &= 4\pi h_\alpha^2, \\
+	\eval{\pdv{\abs{B(R)}}{R}}_{R = R_\alpha} &= 4\pi h_\alpha.
+\end{equations}
+
+The grad-h factor \Cref{eq:GRAD-H-FACTOR} simplifies to
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:GRAD-H-2D}
+f_\alpha = \frac{2 \tilde V_\alpha}{h_\alpha} - \pdv{\tilde V_\alpha}{h_\alpha} = \frac{\tilde V_\alpha}{h_\alpha}\left(2 - \frac{h_\alpha}{\tilde V_\alpha}\pdv{\tilde V_\alpha}{h_\alpha}\right).
+\end{equations}
+
+Since in the following we always work in a two-dimensional settings with the Wendland quintic kernel, let us state the equations explicitly. The momentum equation \Cref{eq:DI-MOMENTUM} with $f_\alpha$ given by \Cref{eq:GRAD-H-2D} reads
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:DI-2D}
+m_\alpha \dv{\vb{v}_\alpha}{t} &= p_\alpha \grad_\alpha V_\alpha + \frac{p_\alpha}{f_\alpha} \pdv{V_\alpha}{h_\alpha} \grad_\alpha \tilde V_\alpha, \\
+f_{\alpha} &= \frac{\tilde{V}_{\alpha}}{h_{\alpha}}\left(2 - \frac{h_{\alpha}}{\tilde{V}_{\alpha}} \pdv{\tilde{V}_{\alpha}}{h_{\alpha}}\right).
+\end{equations}
+
+\subsection{Kernel sum volume estimators}
+\label{sec:KERNEL-SUM-VOLUMES}
 
 
 
