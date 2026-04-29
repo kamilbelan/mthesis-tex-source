@@ -2551,6 +2551,8 @@
     <bcf:citekey order="105" intorder="3">phillipsNumericalMethodThreedimensional1985</bcf:citekey>
     <bcf:citekey order="105" intorder="4">sunDeltaALESPHModelImproved2017</bcf:citekey>
     <bcf:citekey order="105" intorder="5">priceSmoothedParticleHydrodynamics2012a</bcf:citekey>
+    <bcf:citekey order="106" intorder="1">morrisStudyStabilityProperties1996</bcf:citekey>
+    <bcf:citekey order="107" intorder="1">sunDeltaALESPHModelImproved2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
