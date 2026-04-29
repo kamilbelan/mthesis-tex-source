@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 19:46
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 19:58
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3699,10 +3699,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75<./figures/experiments/crash_SPH_0062.pdf><./figures/experiments/crash_SPH_0
-064.pdf>]) (./chapters/voronoi.tex [76<./figures/experiments/crash_PTH_0057.pdf>
-<./figures/experiments/crash_PTH_0060.pdf>]
+064.pdf>]
+[76<./figures/experiments/crash_PTH_0057.pdf><./figures/experiments/crash_PTH_00
+60.pdf>]) (./chapters/voronoi.tex [77]
 Chapter 5.
-) [77
+) [78
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -3738,7 +3739,7 @@ Chapter 5.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./chapters/summary.tex) (./chapters/appendix.tex) [78
+ (./chapters/summary.tex) (./chapters/appendix.tex) [79
 
 
 ]
@@ -3746,20 +3747,20 @@ Chapter 5.
 Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 51.
 
-[79
+[80
 
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 51.
 
-[80] [81] [82] [83] [84]
+[81] [82] [83] [84] [85]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
-[85]
-runsystem(latexminted cleantemp  --timestamp 20260429194645Z FAD58DE7366495DB465
+[86]
+runsystem(latexminted cleantemp  --timestamp 20260429195851Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3776,7 +3777,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 76152 strings out of 475900
+ 76154 strings out of 475900
  244458,3417909 words of node,token memory allocated
  88570 words of node memory still in use:
    1106 hlist, 126 vlist, 48 rule, 449 disc, 49 local_par, 245 math, 1783 glue, 
@@ -3786,7 +3787,7 @@ link, 3 pdf_dest, 11 pdf_action, 124 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save
 , 1 pdf_restore nodes
    avail lists: 1:29,2:8165,3:5368,4:605,5:846,6:196,7:8247,8:92,9:2549,10:50,11
 :566,12:15
- 95332 multiletter control sequences out of 65536+600000
+ 95333 multiletter control sequences out of 65536+600000
  152 fonts using 11819183 bytes
  113i,20n,121p,4410b,3757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regul
@@ -3826,10 +3827,10 @@ m/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 /texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb></usr/local/te
 xlive/2026/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb>
-Output written on main.pdf (92 pages, 13103842 bytes).
+Output written on main.pdf (93 pages, 13105534 bytes).
 
-PDF statistics: 2542 PDF objects out of 2984 (max. 8388607)
- 2132 compressed objects within 22 object streams
- 601 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2547 PDF objects out of 2984 (max. 8388607)
+ 2136 compressed objects within 22 object streams
+ 602 named destinations out of 1000 (max. 1048576)
  760 words of extra memory for PDF output out of 10000 (max. 100000000)
 
