@@ -27,50 +27,43 @@
 \contentsline {subsection}{Implications for wave simulations}{24}{subsection*.76}%
 \contentsline {subsection}{Well-balanced schemes}{24}{subsection*.77}%
 \contentsline {chapter}{\numberline {3}Smoothed Particle Hydrodynamics}{26}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Method overview}{26}{section*.81}%
-\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{26}{section*.82}%
-\contentsline {subsection}{Kernel interpolation}{27}{subsection*.83}%
-\contentsline {subsection}{Particle approximation}{29}{subsection*.86}%
-\contentsline {subsection}{Accuracy of SPH}{30}{subsection*.87}%
-\contentsline {subsection}{Differential operators}{31}{subsection*.88}%
-\contentsline {subsubsection}{Gradient of a scalar field}{31}{subsubsection*.89}%
-\contentsline {subsubsection}{Divergence of a vector field}{32}{subsubsection*.90}%
-\contentsline {section}{\numberline {3.3}Classical SPH}{32}{section*.91}%
-\contentsline {subsection}{Improved discretisation}{32}{subsection*.92}%
-\contentsline {subsection}{Discrete balance of mass}{34}{subsection*.93}%
-\contentsline {subsection}{Discrete balance of linear momentum}{35}{subsection*.94}%
-\contentsline {subsection}{Complete system}{36}{subsection*.95}%
-\contentsline {section}{\numberline {3.4}Hamiltonian formulation}{37}{section*.96}%
-\contentsline {subsection}{Poisson brackets}{37}{subsection*.97}%
-\contentsline {subsection}{SPH discretisation}{39}{subsection*.98}%
-\contentsline {subsubsection}{SPH bracket}{40}{subsubsection*.99}%
-\contentsline {subsubsection}{SPH energy functional}{42}{subsubsection*.100}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{42}{subsection*.101}%
-\contentsline {subsection}{Symplectic integrators}{45}{subsection*.102}%
-\contentsline {section}{\numberline {3.5}Density-independent formulations}{46}{section*.103}%
-\contentsline {subsection}{A general class of Lagrangian SPH methods}{47}{subsection*.104}%
-\contentsline {paragraph}{Specialisation to two dimensions and the Wendland quintic kernel.}{51}{paragraph*.105}%
-\contentsline {subsection}{Kernel-sum volume estimators}{52}{subsection*.106}%
-\contentsline {subsection}{Density-entropy}{54}{subsection*.107}%
-\contentsline {subsection}{Pressure-entropy}{55}{subsection*.108}%
-\contentsline {subsection}{Pressure-potential temperature}{57}{subsection*.109}%
-\contentsline {subsection}{Exner-potential temperature}{59}{subsection*.110}%
-\contentsline {section}{\numberline {3.6}Well-balanced SPH}{60}{section*.111}%
-\contentsline {subsection}{Failure of hydrostatic balance}{61}{subsection*.112}%
-\contentsline {subsection}{Perturbation formulation of the classical SPH}{62}{subsection*.113}%
-\contentsline {subsection}{Well-balanced pressure-entropy formulation}{63}{subsection*.114}%
-\contentsline {subsection}{Well-balanced pressure-potential temperature formulation}{65}{subsection*.115}%
-\contentsline {section}{\numberline {3.7}Implementation specifics}{66}{section*.116}%
-\contentsline {subsection}{Extrapolating boundary conditions}{66}{subsection*.117}%
-\contentsline {subsubsection}{Inflow \& Outflow}{66}{subsubsection*.118}%
-\contentsline {subsubsection}{Free-slip}{66}{subsubsection*.119}%
-\contentsline {subsection}{Adaptive smoothing length}{66}{subsection*.120}%
-\contentsline {subsection}{Particle placement}{67}{subsection*.121}%
-\contentsline {chapter}{\numberline {4}Numerical experiments}{68}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Preservation of hydrostatic balance (stationary case)}{68}{section*.122}%
-\contentsline {section}{\numberline {4.2}Mountain waves (evolutionary case)}{72}{section*.126}%
-\contentsline {section}{\numberline {4.3}Tensile instability}{74}{section*.129}%
-\contentsline {chapter}{\numberline {5}Voronoi}{78}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{79}{chapter*.132}%
-\contentsline {chapter}{References}{80}{chapter*.133}%
+\contentsline {section}{\numberline {3.1}Method overview}{26}{section*.78}%
+\contentsline {section}{\numberline {3.2}Cornerstones of SPH}{26}{section*.79}%
+\contentsline {subsection}{Kernel interpolation}{26}{subsection*.80}%
+\contentsline {subsection}{Particle approximation}{29}{subsection*.83}%
+\contentsline {subsection}{Accuracy of SPH}{30}{subsection*.84}%
+\contentsline {subsection}{Differential operators}{31}{subsection*.85}%
+\contentsline {subsubsection}{Gradient of a scalar field}{31}{subsubsection*.86}%
+\contentsline {subsubsection}{Divergence of a vector field}{32}{subsubsection*.87}%
+\contentsline {section}{\numberline {3.3}Classical SPH}{32}{section*.88}%
+\contentsline {subsection}{Improved discretisation}{32}{subsection*.89}%
+\contentsline {subsection}{Discrete balance of mass}{34}{subsection*.90}%
+\contentsline {subsection}{Discrete balance of linear momentum}{35}{subsection*.91}%
+\contentsline {subsection}{Complete system}{36}{subsection*.92}%
+\contentsline {section}{\numberline {3.4}Hamiltonian formulation}{37}{section*.93}%
+\contentsline {subsection}{Poisson brackets}{37}{subsection*.94}%
+\contentsline {subsection}{SPH discretisation}{39}{subsection*.95}%
+\contentsline {subsubsection}{SPH bracket}{40}{subsubsection*.96}%
+\contentsline {subsubsection}{SPH energy functional}{42}{subsubsection*.97}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{42}{subsection*.98}%
+\contentsline {subsection}{Symplectic integrators}{45}{subsection*.99}%
+\contentsline {section}{\numberline {3.5}Density-independent formulations}{46}{section*.100}%
+\contentsline {subsection}{A general class of Lagrangian SPH methods}{47}{subsection*.101}%
+\contentsline {paragraph}{Specialisation to two dimensions and the Wendland quintic kernel.}{51}{paragraph*.102}%
+\contentsline {subsection}{Kernel-sum volume estimators}{52}{subsection*.103}%
+\contentsline {subsection}{Density-entropy}{54}{subsection*.104}%
+\contentsline {subsection}{Pressure-entropy}{55}{subsection*.105}%
+\contentsline {subsection}{Pressure-potential temperature}{57}{subsection*.106}%
+\contentsline {subsection}{Exner-potential temperature}{59}{subsection*.107}%
+\contentsline {section}{\numberline {3.6}Well-balanced SPH}{60}{section*.108}%
+\contentsline {subsection}{Failure of hydrostatic balance}{61}{subsection*.109}%
+\contentsline {subsection}{Perturbation formulation of the classical SPH}{62}{subsection*.110}%
+\contentsline {subsection}{Well-balanced pressure-entropy formulation}{63}{subsection*.111}%
+\contentsline {subsection}{Well-balanced pressure-potential temperature formulation}{65}{subsection*.112}%
+\contentsline {chapter}{\numberline {4}Numerical experiments}{67}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Preservation of hydrostatic balance (stationary case)}{67}{section*.117}%
+\contentsline {section}{\numberline {4.2}Mountain waves (evolutionary case)}{71}{section*.121}%
+\contentsline {section}{\numberline {4.3}Tensile instability}{73}{section*.124}%
+\contentsline {chapter}{Conclusion}{77}{chapter*.127}%
+\contentsline {chapter}{References}{78}{chapter*.128}%
 \contentsfinish 

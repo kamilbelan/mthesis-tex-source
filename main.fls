@@ -549,8 +549,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /usr/local/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmsans12-regular.luc
-INPUT /usr/local/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-regular.luc
-INPUT /usr/local/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc
 INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./frontmatter/declaration.tex
 INPUT ./frontmatter/declaration.tex
@@ -561,6 +559,7 @@ INPUT ./frontmatter/dedication.tex
 INPUT ./frontmatter/dedication.tex
 INPUT ./frontmatter/information.tex
 INPUT ./frontmatter/information.tex
+INPUT /usr/local/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmsans10-regular.luc
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/tex-gyre/ec-qzcmi.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/tex-gyre/ec-qzcmi.tfm
@@ -683,10 +682,9 @@ INPUT ./figures/experiments/crash_PTH_0057.pdf
 INPUT ./figures/experiments/crash_PTH_0060.pdf
 INPUT ./figures/experiments/crash_PTH_0060.pdf
 INPUT ./figures/experiments/crash_PTH_0060.pdf
-INPUT ./chapters/voronoi.tex
-INPUT ./chapters/voronoi.tex
 INPUT ./chapters/summary.tex
 INPUT ./chapters/summary.tex
+INPUT /usr/local/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
