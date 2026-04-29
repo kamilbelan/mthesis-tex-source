@@ -1215,6 +1215,8 @@ f_{\alpha\beta} &= 1 - \frac{1}{m_{\beta} \theta_{\beta}}\left(\frac{h_{\alpha}}
 \section{Well-balanced SPH}
 \label{sec:WELL-BALANCED-SPH}
 
+% TODO: FIRST ONE IS NOT WELL BALANCED!!!!
+
 The concept of well-balanced numerical methods was introduced in \Cref{sec:WELL-BALANCED}. In this section, we develop well-balanced formulations for the three SPH variants presented earlier: classical SPH \Cref{sec:CLASSIC-COMPLETE}, the density-independent pressure-entropy formulation \Cref{sec:DI-pressure-entropy}, and the pressure-potential-temperature formulation \Cref{sec:DI-pressure-theta}. To our knowledge, no well-balanced SPH scheme has been previously developed for any of these formulations in the context of stratified atmospheric flow; the constructions presented here are the central methodological contribution of this thesis.
 
 \subsection{Failure of hydrostatic balance}
@@ -1245,22 +1247,27 @@ During initial force evaluation at $t = 0$, the pressure entering \Cref{eq:MOMEN
 
 This artificial residual acceleration $\vb{E}_{\alpha}$ immediately induces spurious velocities, displacing particles from their equilibrium positions. Once the particles shift, the system is \emph{no longer} in \emph{analytical} hydrostatic balance---hence the gradient of pressure evaluated at these new, incorrect altitudes fundamentally \emph{cannot balance gravity}. This creates a destructive feedback loop: the initial truncation error causes particle disorder, which in turn amplifies the gradient errors. Within a few integration steps, this fundamental instability completely destroys the stratified hydrostatic background.
 
-\subsection{Well-balanced classical SPH}
-\label{sec:WB-CLASSICAL-SPH}
+\subsection{Perturbation formulation of the classical SPH}
+\label{sec:PERTURBATION-CLASSICAL-SPH}
 
 As established in \Cref{sec:CLASSIC-COMPLETE}, the classical SPH discretisation of the balance of linear momentum for an inviscid fluid in gravitational field
 
-\begin{equations}[single,*]
+\begin{equations}[single,!,numberline=all]
+	\label{eq:MOMENTUM-ANALYTICAL}
 	\tdot{\vb{v}} = - \frac{1}{\rho} \grad p + \vb{g},
 \end{equations}
 
 reads 
 
 \begin{equations}[columns,*]
-	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) + \vb{g}. \\
+	\label{eq:SPH-MOMENTUM}
+	\dv{\vb{v}_{\alpha}}{t} &= - \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha \beta} + \vb{g}. \\
 \end{equations}
 
-Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In the chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with a lower index also, we switch to the bar and apostrophe notation.}
+Evidently, the kernel sum on the right-hand side approximates the $-\frac{1}{\rho} \grad p$ term, while the gravitational acceleration \enquote{approximates} $\vb{g}$ is a global source term. As discussed in \Cref{sec:SPH-FAILURE}, this discretisation does not preserve hydrostatic balance.
+
+A common approach in the literature to resolve the truncation error is to subtract the background state \emph{before discretisation}. We stress that this procedure is \emph{not well-balancing} as discussed in \Cref{sec:WELL-BALANCED}---here the hydrostatic balance is preserved by a manipulation on the \emph{analytical level} and the discretisation is emph{standard}, whereas a well-balanced scheme solves the \emph{original system} but employs a \emph{special} discretisation.
+Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In the chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with lower indices also, we switch to the bar $\overline{\rho}$ and prime $\rho'$ notation.}
 
 \begin{equations}[columns,!,numberline=all]
 \label{eq:WB-SPH-SPLIT}
@@ -1268,17 +1275,29 @@ Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressu
 p\left(t, \vb{x}\right) &= \overline{p}(z) + p'\left(t, \vb{x}\right), \\
 \end{equations}
 
-where $\overline{\rho}(z), \overline{p}(z)$ are background density and pressure that \emph{solve the hydrostatic balance} $\grad \overline{p} = \overline{\rho} \vb{g}$. Then the balance of linear momentum becomes
+where $\overline{\rho}(z), \overline{p}(z)$ are background density and pressure that \emph{solve the hydrostatic balance},\ie $\grad \overline{p} = \overline{\rho} \vb{g}$. Then the balance of linear momentum becomes
 
 \begin{equations}[single,*]
-	\left(\overline{\rho} + \rho'\left)\tdot{\vb{v}} = - \grad \overline{p} - \grad p' + \overline{\rho} \vb{g} + \rho' \vb{g} = - \grad p' + \rho' \vb{g},
+	\left(\overline{\rho} + \rho'\right)\tdot{\vb{v}} = - \grad \overline{p} - \grad p' + \overline{\rho} \vb{g} + \rho' \vb{g} = - \grad p' + \rho' \vb{g},
 \end{equations}
 
 and so 
 
+\begin{equations}[single,!,numberline=all]
+\label{eq:WB-MOMENTUM-ANALYTICAL}
+\tdot{\vb{v}} = - \frac{1}{\rho} \grad p' + \frac{\rho'}{\rho}\vb{g}.
+\end{equations}
 
+Comparing \Cref{eq:WB-MOMENTUM-ANALYTICAL} and \Cref{eq:MOMENTUM-ANALYTICAL}, we are inspired to write the approximation \Cref{eq:SPH-MOMENTUM} as
 
+\begin{equations}[single,!,numberline=all]
+\label{eq:SPH-PERTURBATION}
+\dv{\vb{v}_{\alpha}}{t} = - \sum_{\beta=1}^N m_{\beta} \left(\frac{p'_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p'_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha \beta} + \frac{\rho'_{\alpha}}{\rho_{\alpha}} \vb{g},
+\end{equations}
 
+in which again the first term approximates $ - 1/\rho \grad p'$ and the second approximates $\rho'/\rho \vb{g}$ from \Cref{eq:WB-MOMENTUM-ANALYTICAL}. Since the forcing is proportional to the pressure perturbation $p'$, we will refer to the system \Cref{eq:SPH-PERTURBATION} as the \emph{perturbation SPH}.
+
+Notice that at $t = 0$, the system is in hydrostatic balance, so the perturbations vanish $\rho' = 0, p' = 0$, therefore the whole right-hand side of \Cref{eq:SPH-PERTURBATION} vanishes---there is \emph{no residual velocity.}
 
 \subsection{Well-balanced pressure-entropy formulation}
 \label{sec:WB-DI-PA}
