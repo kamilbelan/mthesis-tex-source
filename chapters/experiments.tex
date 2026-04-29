@@ -257,12 +257,12 @@ As seen in \Cref{fig:PTH-CRASH}, the onset of the instability in the well-balanc
 		\caption{Well-balanced pressure-potential temperature formulation, $t = \qty{725}{\second}$. }
 		\label{fig:PTH-CRASH-725}
 	\end{subfigure}
-	\caption{Snapshots of the tensile instability in the well-balanced PTH formulation. Unlike the perturbation SPH case, the instability is triggered locally near the mountain by the physical perturbations in pressure and density caused by the propagating mountain wave. The oscillatory movements distort the particle distribution and lead to a rapid explosion-like divergence.}
+	\caption{Snapshots of the tensile instability in the well-balanced pressure-potential temperature formulation. Unlike the perturbation SPH case, the instability is triggered locally near the mountain by physical perturbations in pressure and density caused by the propagating mountain wave. The oscillatory movements distort the particle distribution and lead to a rapid explosion-like divergence.}
 	\label{fig:PTH-CRASH}
 \end{figure}
 
 To suppress this instability, a standard remedy is the $\delta$-SPH formulation \autocite{sunDeltaALESPHModelImproved2017}. The core of $\delta$-SPH lies in introducing an \emph{artificial diffusion} term in the evolution equations that acts against the forming of clumps, \ie acts repulsively. This procedure regularizes the density distribution, improves the particle distribution and helps in preventing the breakdown.
 
-
+However, it is not immediately evident how to combine the \emph{well-balanced} philosophy with the $\delta-$SPH framework. As discussed in \Cref{sec:WELL-BALANCED-SPH}, the fundamental issue with the standard SPH formulation is its inability to capture the nonlinear pressure (or potential temperature) profile of the initial hydrostatic state. This leads to inaccurate force estimation, which subsequently causes spurious particle movement. Because $\delta$-SPH introduces its own artificial diffusion that alters the density field, a well-balanced $\delta$-SPH scheme would require constructing a diffusion term that strictly \emph{respects} the nonlinear background profile.
 
 \end{document}
