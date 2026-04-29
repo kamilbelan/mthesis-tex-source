@@ -15,26 +15,29 @@ on:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    # 1. Run natively inside the official Debian-based TeX Live container
+    container:
+      image: texlive/texlive:latest
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       
+      # 2. Install Pygments (required by your minted package)
+      - name: Install Pygments
+        run: apt-get update && apt-get install -y python3-pygments
+      
+      # 3. Run latexmk directly instead of using a third-party action
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          texlive_version: 2024
-          compiler: latexmk
-          args: -lualatex -shell-escape
-          working_directory: .
+        run: latexmk -lualatex -shell-escape main.tex
       
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: build/*.pdf
-      
+          
+      # Keep your existing index.html and Deploy/Release steps exactly as they were below this!     
       - name: Copy index.html to build directory
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: |

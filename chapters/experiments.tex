@@ -8,13 +8,13 @@ This chapter consists of numerical experiments using the methods described in th
 \section{Preservation of hydrostatic balance (stationary case)}
 \label{sec:STATIONARY}
 
-As established in \Cref{sec:WB-WAVES}, the preservation of the hydrostatic balance on \emph{the discrete level} is essential in simulations of internal gravity waves. In this section, we compare the ability of the used formulations to preserve the initial hydrostatic state.
+As established in \Cref{sec:WB-WAVES}, preservation of the hydrostatic balance on \emph{the discrete level} is essential in simulations of internal gravity waves. In this section, we compare the ability of the used formulations to preserve the initial hydrostatic state.
 
 To describe the velocity field quantitatively, we plot the \emph{maximum particle velocity magnitude}, that is
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:L_infty}
-\abs{\vb{v}}_{\infty} \coloneq \max_{\alpha=1}^N \abs{\vb{v}_{\alpha}},
+\abs{\vb{v}}_{\infty} \coloneq \max_{\alpha\in \{1, \dots, N\}} \abs{\vb{v}_{\alpha}},
 \end{equations}
 
 and also the \emph{root-mean-square velocity} 
@@ -24,11 +24,11 @@ and also the \emph{root-mean-square velocity}
 \abs{\vb{v}}_2 \coloneq \frac{1}{N}\sum_{\alpha=1}^N \abs{\vb{v}_{\alpha}}^{2}.
 \end{equations}
 
-The measures $\vb{v}_{\infty}, \vb{v}_{2}$ clearly are discrete counterparts of the $L_{\infty}$ and $L_{2}$ norms.
+The measures $\abs{\vb{v}}_{\infty}, \abs{\vb{v}}_{2}$ are discrete counterparts of the $L_{\infty}$ and $L_{2}$ norms.
 
-Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity field of an atmosphere initialised from hydrostatic balance. They depict the \emph{failure} of the standard formulations to \emph{preserve the hydrostatic balance}. On the contrary, the perturbation/well-balanced variants retain the hydrostatic balance at $\varepsilon_{\text{mach}}$ level. Qualitatively, figures \Cref{fig:STATIONARY-NORMS} show that both the standard SPH and the potential-temperature formulations are not well-balanced, however the standard SPH performs considerably worse than the pressure-potential temperature formulation. For standard SPH, the magnitude of the spurious velocity reaches $\approx \qty{1e20}{\metre\per\second}$, whereas with the pressure-potential temperature formulations the magnitudes are not greater than $\approx \qty{1e2}{\metre\per\second}$.
+Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity field of an atmosphere initialised from hydrostatic balance. They show the \emph{failure} of the standard formulations to \emph{preserve the hydrostatic balance}. On the contrary, the perturbation/well-balanced variants retain the hydrostatic balance at $\epsilon_{\text{mach}}$ level. Qualitatively, figures \Cref{fig:STATIONARY-NORMS} show that both the standard SPH and the potential-temperature formulations are not well-balanced, however the standard SPH performs considerably worse than the pressure-potential temperature formulation. For standard SPH, the magnitude of the spurious velocity reaches $\approx \qty{e20}{\metre\per\second}$, whereas with the pressure-potential temperature formulation, the magnitudes are not greater than $\approx \qty{e2}{\metre\per\second}$.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{\linewidth}
 		\centering
@@ -45,7 +45,8 @@ Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity fi
 		\caption{Pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-NORMS-PTH}
 	\end{subfigure}
-	\caption{Time evolution of the spurious velocity field for the stationary hydrostatic balance using the standard SPH formulation, vertical axis is logarithmic. The maximum and root-mean-square velocities exhibit serious growth, sitting at approximately $\qty{10}{\metre\per\second} - \qty{15}{\metre\per\second}$ at $t < \qty{50}{\second}$ and diverging rapidly at $t \approx \qty{50}{\second}$. In contrast, the corresponding well-balanced (WB) variant maintains these norms at machine epsilon throughout the simulation.}
+	\caption{Time evolution of the spurious velocity field for the stationary hydrostatic balance using the standard SPH formulation, vertical axis is logarithmic. For standard SPH, the maximum and root-mean-square velocities exhibit serious growth, sitting at approximately $\qty{10}{\metre\per\second} - \qty{15}{\metre\per\second}$ at $t < \qty{50}{\second}$ and diverging rapidly at $t \approx \qty{50}{\second}$. For 
+	In contrast, the corresponding well-balanced (WB) variant maintains these norms at machine epsilon throughout the simulation.}
 	\label{fig:STATIONARY-NORMS}
 \end{figure}
 
@@ -53,7 +54,7 @@ The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the 
 
 From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and the well-balanced pressure-potential temperature formulations \emph{preserve the hydrostatic balance exactly.} No spurious velocity field is present.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{\linewidth}
 		\centering
@@ -75,7 +76,7 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 \end{figure}
 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{\linewidth}
 		\centering
@@ -92,13 +93,16 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 		\caption{Well-balanced pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-STILNESS-PTH}
 	\end{subfigure}
-	\caption{The atmosphere remains statici, \ie hydrostatic balance is exactly preserved.}
+	\caption{The atmosphere remains static, \ie hydrostatic balance is exactly preserved.}
 	\label{fig:STATIONARY-STILNESS}
 \end{figure}
 
+% TODO: ADD PARAMETERS!
 
 \section{Mountain waves (evolutionary case)}
 \label{sec:EVOLUTIONARY}
+
+We have shown in the previous section that both the standard SPH and the pressure-potential temperature formulations fail to preserve hydrostatic balance, whereas the perturbation/well-balanced variants succeed. As we initialise the non-stationary simulations from the hydrostatic balance and wish to capture internal gravity waves, only the \emph{perturbation SPH} and the \emph{well-balanced pressure-potential temperature} formulations have been used in the non-stationary cases.
 
 \section{Tensile instability}
 \label{sec:INSTABILITY}
