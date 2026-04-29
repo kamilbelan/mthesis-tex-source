@@ -51,6 +51,7 @@ Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity fi
 \end{figure}
 
 The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
+Notice the velocity field at the top part of the computational domain. During the development of the simulation code, an issue with the top boundary condition has been faced---if the top of the domain was chosen as open, in the very first instants of the simulation the whole system abruptly collapsed. The reason is that with an open lid, the particles near the boundary have \emph{vacancies in their kernel support}---they are influenced by an \emph{artificial vacuum}. This issue is common in SPH and the standard countermeasure is to add layers of \emph{ghost particles} \autocite{zhangBoundaryConditionsWeaklycompressible2025,adamiGeneralizedWallBoundary2012}. The result of introducing ghost particles, however, is the \emph{reflection} at the top boundary, which is clearly visible in the flow field.
 
 From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and the well-balanced pressure-potential temperature formulations \emph{preserve the hydrostatic balance exactly.} No spurious velocity field is present.
 
@@ -71,7 +72,7 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 		\caption{Standard pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-BLOWUP-PTH}
 	\end{subfigure}
-	\caption{The flow field blowup at $t \approx \qty{13}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown.}
+	\caption{The flow field blowup at $t \approx \qty{13}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown. Both figures also capture a reflection of the spurious wave at the top boundary.}
 	\label{fig:STATIONARY-BLOWUPS}
 \end{figure}
 
@@ -93,7 +94,7 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 		\caption{Well-balanced pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-STILNESS-PTH}
 	\end{subfigure}
-	\caption{The atmosphere remains static, \ie hydrostatic balance is exactly preserved.}
+	\caption{In both the perturbation/well-balanced formulations, the atmosphere remains static. The hydrostatic balance is exactly preserved.}
 	\label{fig:STATIONARY-STILNESS}
 \end{figure}
 
@@ -104,7 +105,116 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 
 We have shown in the previous section that both the standard SPH and the pressure-potential temperature formulations fail to preserve hydrostatic balance, whereas the perturbation/well-balanced variants succeed. As we initialise the non-stationary simulations from the hydrostatic balance and wish to capture internal gravity waves, only the \emph{perturbation SPH} and the \emph{well-balanced pressure-potential temperature} formulations have been used in the non-stationary cases.
 
+The panels in \Cref{fig:WAVE-EMERGENCE-PTH} illustrate the emergence and early upward propagation of mountain waves using the well-balanced pressure-potential temperature formulation. As noted in \Cref{sec:FLOW-CORRUGATION}, stationary mountain waves take time to fully develop. Unfortunately, we cannot observe the propagation of these waves further, as the simulation is ultimately disrupted by \emph{tensile instability}, with its onset visible in \subref{fig:pth-wave-60}. The final section is dedicated to discussing this tensile instability in more detail.
+
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0035.pdf}
+        \caption{$t = \qty{420}{\second}$}
+        \label{fig:pth-wave-35}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0040.pdf}
+        \caption{$t = \qty{480}{\second}$}
+        \label{fig:pth-wave-40}
+    \end{subfigure}
+
+    \vspace{0.4cm} 
+
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0045.pdf}
+        \caption{$t = \qty{540}{\second}$}
+        \label{fig:pth-wave-45}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0050.pdf}
+        \caption{$t = \qty{600}{\second}$}
+        \label{fig:pth-wave-50}
+    \end{subfigure}
+
+    \vspace{0.4cm}
+
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0055.pdf}
+        \caption{$t = \qty{660}{\second}$}
+        \label{fig:pth-wave-55}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_PTH_0060.pdf}
+        \caption{$t = \qty{720}{\second}$}
+        \label{fig:pth-wave-60}
+    \end{subfigure}
+
+    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate \emph{upward propagations} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:pth-wave-60} the simulation is ruined due the onset of \emph{tensile instability}.}
+    \label{fig:WAVE-EMERGENCE-PTH}
+\end{figure}
+
+As shown in \Cref{fig:WAVE-EMERGENCE-SPH}, in our experiments, the perturbation SPH method fails to capture the mountain wave dynamics. While the well-balanced pressure-potential temperature formulation successfully propagated the wave upward, the perturbation method yields a noisy unstructured flow field. 
+
+We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, as described in \Cref{sec:ADAPTIVE-SMOOTHING}, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---in particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}, on contrary, the standard derivation presented in \Cref{sec:CORNERSTONES}  does \emph{not account} for variable $h$ at all.}
+
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0030.pdf}
+        \caption{$t = \qty{360}{\second}$}
+        \label{fig:wave-30}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0035.pdf}
+        \caption{$t = \qty{420}{\second}$}
+        \label{fig:wave-35}
+    \end{subfigure}
+
+    \vspace{0.4cm} 
+
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0040.pdf}
+        \caption{$t = \qty{480}{\second}$}
+        \label{fig:wave-40}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0045.pdf}
+        \caption{$t = \qty{540}{\second}$}
+        \label{fig:wave-45}
+    \end{subfigure}
+
+    \vspace{0.4cm}
+
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0050.pdf}
+        \caption{$t = \qty{600}{\second}$}
+        \label{fig:sph-wave-50}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.50\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{wave_SPH_0055.pdf}
+        \caption{$t = \qty{660}{\second}$}
+        \label{fig:sph-wave-55}
+    \end{subfigure}
+
+    \caption{Time evolution of the flow field computed using the perturbation SPH method. The panels display the vertical velocity component $w$ and lines of constant potential temperature. In contrast to the well-balanced pressure-potential temperature, no emergence or upward propagation of mountain waves is observed.}
+    \label{fig:WAVE-EMERGENCE-SPH}
+\end{figure}
+
+
 \section{Tensile instability}
 \label{sec:INSTABILITY}
+
+The phenomenon observed in our simulation of mountain waves that lead to a complete numerical breakdown is well-known in the SPH community and is referred to as \emph{tensile instability}.
 
 \end{document}
