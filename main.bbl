@@ -828,6 +828,48 @@
       \endverb
       \keyw{orographic flows}
     \endentry
+    \entry{levequeFiniteVolumeMethods2002}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=c5fc096f540a44e56f892cc83176f0fb}{%
+           family={LeVeque},
+           familyi={L\bibinitperiod},
+           given={Randall\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{fullhash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{fullhashraw}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{bibnamehash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{authorbibnamehash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{authornamehash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{authorfullhash}{c5fc096f540a44e56f892cc83176f0fb}
+      \strng{authorfullhashraw}{c5fc096f540a44e56f892cc83176f0fb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{26}
+      \field{edition}{1}
+      \field{isbn}{978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3}
+      \field{month}{8}
+      \field{title}{Finite {{Volume Methods}} for {{Hyperbolic Problems}}}
+      \field{urlday}{28}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/CBO9780511791253
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/LeVeque - 2002 - Finite Volume Methods for Hyperbolic Problems.pdf
+      \endverb
+      \keyw{well-balanced}
+    \endentry
     \entry{kappeliWellbalancedFiniteVolume2016a}{article}{}{}
       \name{author}{2}{}{%
         {{hash=308a40102a1effe50504bf1d3e20e8a7}{%
@@ -873,107 +915,77 @@
       \endverb
       \keyw{well-balanced}
     \endentry
-    \entry{kappeliWellbalancedMethodsComputational2022}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=15ab4e94eeaa8f9f83365d86ace1a6b9}{%
-           family={Käppeli},
-           familyi={K\bibinitperiod},
-           given={Roger},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{fullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{fullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{bibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{authorbibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{authornamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{authorfullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \strng{authorfullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{We review well-balanced methods for the faithful approximation of solutions of systems of hyperbolic balance laws that are of interest to computational astrophysics. Well-balanced methods are specialized numerical techniques that guarantee the accurate resolution of non-trivial steady-state solutions, that balance laws prominently feature, and perturbations thereof. We discuss versatile frameworks and techniques for generic systems of balance laws for finite volume and finite difference methods. The principal emphasis of the presentation is on the algorithms and their implementation. Subsequently, we specialize in hydrodynamics' Euler equations to exemplify the techniques and give an overview of the available well-balanced methods in the literature, including the classic hydrostatic equilibrium and steady adiabatic flows. The performance of the schemes is evaluated on a selection of test problems.}
-      \field{day}{19}
-      \field{issn}{2365-0524}
-      \field{journaltitle}{Living Reviews in Computational Astrophysics}
-      \field{langid}{english}
-      \field{month}{10}
-      \field{shortjournal}{Living Rev Comput Astrophys}
-      \field{title}{Well-Balanced Methods for Computational Astrophysics}
-      \field{urlday}{21}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1007/s41115-022-00014-6
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli - 2022 - Well-balanced methods for computational astrophysics.pdf
-      \endverb
-      \keyw{Hydrodynamics,Numerical methods,Source terms,well-balanced,Well-balanced schemes}
-    \endentry
-    \entry{artianoStructurePreservingHighOrderMethods2025}{online}{}{}
-      \name{author}{4}{}{%
-        {{hash=0edc7b2b85f05dc2f5fab55444be947f}{%
-           family={Artiano},
-           familyi={A\bibinitperiod},
-           given={Marco},
-           giveni={M\bibinitperiod}}}%
-        {{hash=a8365f92fb149f7322b195b9babc0f76}{%
-           family={Knoth},
-           familyi={K\bibinitperiod},
-           given={Oswald},
-           giveni={O\bibinitperiod}}}%
-        {{hash=44c4157669522571c221c38ae6eb5616}{%
-           family={Spichtinger},
-           familyi={S\bibinitperiod},
-           given={Peter},
+    \entry{cargoSchemaEquilibreAdapte1994}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cfc2f932f9ba9e6dba983d1308054e7d}{%
+           family={Cargo},
+           familyi={C\bibinitperiod},
+           given={P},
            giveni={P\bibinitperiod}}}%
-        {{hash=1e8c6e67fa2863e4f390eeef9dd633e7}{%
-           family={Ranocha},
-           familyi={R\bibinitperiod},
-           given={Hendrik},
-           giveni={H\bibinitperiod}}}%
+        {{hash=5707b7c082e5c73d8b0e1136d8c20f13}{%
+           family={Leroux},
+           familyi={L\bibinitperiod},
+           given={A.\bibnamedelimi Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
       }
-      \strng{namehash}{3757e43e19224817d902ae6f751837fb}
-      \strng{fullhash}{3757e43e19224817d902ae6f751837fb}
-      \strng{fullhashraw}{3757e43e19224817d902ae6f751837fb}
-      \strng{bibnamehash}{3757e43e19224817d902ae6f751837fb}
-      \strng{authorbibnamehash}{3757e43e19224817d902ae6f751837fb}
-      \strng{authornamehash}{3757e43e19224817d902ae6f751837fb}
-      \strng{authorfullhash}{3757e43e19224817d902ae6f751837fb}
-      \strng{authorfullhashraw}{3757e43e19224817d902ae6f751837fb}
+      \strng{namehash}{ca6836e0d59e737273877126fce0060e}
+      \strng{fullhash}{ca6836e0d59e737273877126fce0060e}
+      \strng{fullhashraw}{ca6836e0d59e737273877126fce0060e}
+      \strng{bibnamehash}{ca6836e0d59e737273877126fce0060e}
+      \strng{authorbibnamehash}{ca6836e0d59e737273877126fce0060e}
+      \strng{authornamehash}{ca6836e0d59e737273877126fce0060e}
+      \strng{authorfullhash}{ca6836e0d59e737273877126fce0060e}
+      \strng{authorfullhashraw}{ca6836e0d59e737273877126fce0060e}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We develop structure-preserving numerical methods for the compressible Euler equations, employing potential temperature as a prognostic variable. We construct three numerical fluxes designed to ensure the conservation of entropy and total energy within the discontinuous Galerkin framework on general curvilinear meshes. Furthermore, we introduce a generalization for the kinetic energy preservation property and total energy conservation in the presence of a gravitational potential term. To this end, we adopt a flux-differencing approach for the discretization of the source term, treated as non-conservative product. We present well-balanced schemes for different constant background states for both formulations (total energy and potential temperature) on curvilinear meshes. Finally, we validate the methods by comparing the potential temperature formulation with the traditional Euler equations formulation across a range of classical atmospheric scenarios.}
-      \field{day}{21}
-      \field{eprintclass}{math}
-      \field{eprinttype}{arXiv}
-      \field{month}{9}
-      \field{note}{Comment: Reproducibility repository: https://github.com/MarcoArtiano/2025\_structure\_potential\_temperature}
-      \field{pubstate}{prepublished}
-      \field{title}{Structure-{{Preserving High-Order Methods}} for the {{Compressible Euler Equations}} in {{Potential Temperature Formulation}} for {{Atmospheric Flows}}}
-      \field{urlday}{21}
+      \field{journaltitle}{C.R. Acad. Sc. Paris Série I}
+      \field{title}{Un Schéma Équilibre Adapté Au Modèle d'atmosphère Avec Termes de Gravité}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \keyw{well-balanced}
+    \endentry
+    \entry{greenbergWellBalancedSchemeNumerical1996}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e2e1458b76781861a2958bfe7020cf0a}{%
+           family={Greenberg},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5707b7c082e5c73d8b0e1136d8c20f13}{%
+           family={Leroux},
+           familyi={L\bibinitperiod},
+           given={A.\bibnamedelimi Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{fullhash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{fullhashraw}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{bibnamehash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{authorbibnamehash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{authornamehash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{authorfullhash}{98906f037083aa2ca3e1d0f52c23e034}
+      \strng{authorfullhashraw}{98906f037083aa2ca3e1d0f52c23e034}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal on Numerical Analysis}
+      \field{title}{A {{Well-Balanced Scheme}} for the {{Numerical Processing}} of {{Source Terms}} in {{Hyperbolic Equations}}}
+      \field{urlday}{28}
       \field{urlmonth}{4}
       \field{urlyear}{2026}
-      \field{year}{2025}
+      \field{year}{1996}
       \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{doi}
-      \verb 10.48550/arXiv.2509.10311
-      \endverb
-      \verb{eprint}
-      \verb 2509.10311
+      \verb 10.1137/0733001
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Artiano et al. - 2025 - Structure-Preserving High-Order Methods for the Compressible Euler Equations in Potential Temperatur.pdf;/home/moschehaus/Zotero/storage/K2M2C6N9/2509.html
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Greenberg and Leroux - 1996 - A Well-Balanced Scheme for the Numerical Processing of Source Terms in Hyperbolic Equations.pdf
       \endverb
-      \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
+      \keyw{well-balanced}
     \endentry
     \entry{chertockWellbalancedNumericalMethod2023}{article}{}{}
       \name{author}{4}{}{%
@@ -1030,6 +1042,105 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Chertock et al. - 2023 - Well-balanced numerical method for atmospheric flow equations with gravity.pdf
       \endverb
       \keyw{well-balanced}
+    \endentry
+    \entry{berthonFullyWellbalancedEntropystable2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=f69617431585c9724b3e4998aadd597c}{%
+           family={Berthon},
+           familyi={B\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+        {{hash=56a8786fb8c65ffcb5c53ee1462f28a3}{%
+           family={Michel-Dansac},
+           familyi={M\bibinithyphendelim D\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod}}}%
+        {{hash=55ef5151ab05b5810854d60a4bf65fe4}{%
+           family={Thomann},
+           familyi={T\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{fullhash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{fullhashraw}{4b7af37b1014a263696e0aa76a249887}
+      \strng{bibnamehash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{authorbibnamehash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{authornamehash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{authorfullhash}{4b7af37b1014a263696e0aa76a249887}
+      \strng{authorfullhashraw}{4b7af37b1014a263696e0aa76a249887}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The present work concerns the derivation of a numerical scheme to approximate weak solutions of the Euler equations with a gravitational source term. The designed scheme is proved to be fully well-balanced since it is able to exactly preserve all moving equilibrium solutions, as well as the corresponding steady solutions at rest obtained when the velocity vanishes. Moreover, the proposed scheme is entropy-preserving since it satisfies all fully discrete entropy inequalities. In addition, in order to satisfy the required admissibility of the approximate solutions, the positivity of both approximate density and pressure is established. Several numerical experiments attest the relevance of the developed numerical method. An extension to two-dimensional problems is given, applying the one-dimensional framework direction by direction on Cartesian grids.}
+      \field{day}{17}
+      \field{eprintclass}{math}
+      \field{eprinttype}{arXiv}
+      \field{issn}{1088-6842, 0025-5718}
+      \field{journaltitle}{Mathematics of Computation}
+      \field{month}{4}
+      \field{shortjournal}{Math. Comp.}
+      \field{shorttitle}{Towards a Fully Well-Balanced and Entropy-Stable Scheme for the {{Euler}} Equations with Gravity}
+      \field{title}{Towards a Fully Well-Balanced and Entropy-Stable Scheme for the {{Euler}} Equations with Gravity: Preserving Isentropic Steady Solutions}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1090/mcom/4088
+      \endverb
+      \verb{eprint}
+      \verb 2406.15051
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Berthon et al. - 2025 - Towards a fully well-balanced and entropy-stable scheme for the Euler equations with gravity preser.pdf;/home/moschehaus/Zotero/storage/75HRGUPU/2406.html
+      \endverb
+      \keyw{Mathematics - Numerical Analysis,well-balanced}
+    \endentry
+    \entry{kappeliWellbalancedMethodsComputational2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=15ab4e94eeaa8f9f83365d86ace1a6b9}{%
+           family={Käppeli},
+           familyi={K\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{fullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{fullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{bibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorbibnamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authornamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorfullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \strng{authorfullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We review well-balanced methods for the faithful approximation of solutions of systems of hyperbolic balance laws that are of interest to computational astrophysics. Well-balanced methods are specialized numerical techniques that guarantee the accurate resolution of non-trivial steady-state solutions, that balance laws prominently feature, and perturbations thereof. We discuss versatile frameworks and techniques for generic systems of balance laws for finite volume and finite difference methods. The principal emphasis of the presentation is on the algorithms and their implementation. Subsequently, we specialize in hydrodynamics' Euler equations to exemplify the techniques and give an overview of the available well-balanced methods in the literature, including the classic hydrostatic equilibrium and steady adiabatic flows. The performance of the schemes is evaluated on a selection of test problems.}
+      \field{day}{19}
+      \field{issn}{2365-0524}
+      \field{journaltitle}{Living Reviews in Computational Astrophysics}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shortjournal}{Living Rev Comput Astrophys}
+      \field{title}{Well-Balanced Methods for Computational Astrophysics}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/s41115-022-00014-6
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Käppeli - 2022 - Well-balanced methods for computational astrophysics.pdf
+      \endverb
+      \keyw{Hydrodynamics,Numerical methods,Source terms,well-balanced,Well-balanced schemes}
     \endentry
     \entry{gingoldSmoothedParticleHydrodynamics1977}{article}{}{}
       \name{author}{2}{}{%
@@ -1261,8 +1372,8 @@
       \strng{authornamehash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhashraw}{ec0143d3504dc74e1926cee085087276}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A moving-particle semi-implicit (MPS) method for simulating fragmentation of incompressible fluids is presented. The motion of each particle is calculated through interactions with neighboring particles covered with the kernel function. Deterministic particle interaction models representing gradient, Laplacian, and free surfaces are proposed. Fluid density is implicitly required to be constant as the incompressibility condition, while the other terms are explicitly calculated. The Poisson equation of pressure is solved by the incomplete Cholesky conjugate gradient method. Collapse of a water column is calculated using MPS. The effect of parameters in the models is investigated in test calculations. Good agreement with an experiment is obtained even if fragmentation and coalescence of the fluid take place.}
@@ -2113,8 +2224,8 @@
       \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1474-0508}
@@ -2410,6 +2521,122 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Saitoh and Makino - 2013 - A DENSITY-INDEPENDENT FORMULATION OF SMOOTHED PARTICLE HYDRODYNAMICS.pdf
       \endverb
       \keyw{density free}
+    \endentry
+    \entry{bottaWellBalancedFinite2004}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=6d09fa04b41d040d13aaadec38600e64}{%
+           family={Botta},
+           familyi={B\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=eb0e270758d0f400a56014d6cfd62118}{%
+           family={Klein},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6bba0b477cd9133375f39dbed5e36fec}{%
+           family={Langenberg},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=efe00c69e1ac5d240f889f7b11bdba84}{%
+           family={Lützenkirchen},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{fullhash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{fullhashraw}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{bibnamehash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{authorbibnamehash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{authornamehash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{authorfullhash}{da3777b13568e54698d1b517f2dc8e35}
+      \strng{authorfullhashraw}{da3777b13568e54698d1b517f2dc8e35}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In numerical approximations of nearly hydrostatic flows, a proper representation of the dominant hydrostatic balance is of crucial importance: unbalanced truncation errors can induce unacceptable spurious motions, e.g., in dynamical cores of models for numerical weather prediction (NWP) in particular near steep topography. In this paper we develop a new strategy for the construction of discretizations that are ``well-balanced'' with respect to dominant hydrostatics. The classical idea of formulating the momentum balance in terms of deviations of pressure from a balanced background distribution is realized here through local, time dependent hydrostatic reconstructions. Balanced discretizations of the pressure gradient and of the gravitation source term are achieved through a ``discrete Archimedes' buoyancy principle''. This strategy is applied to extend an explicit standard finite volume Godunov-type scheme for compressible flows with minimal modifications. The resulting method has the following features: (i) It inherits its conservation properties from the underlying base scheme. (ii) It is exactly balanced, even on curvilinear grids, for a large class of near-hydrostatic flows. (iii) It solves the full compressible flow equations without reference to a background state that is defined for an entire vertical column of air. (iv) It is robust with respect to details of the implementation, such as the choice of slope limiting functions, or the particularities of boundary condition discretizations.}
+      \field{day}{20}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{5}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Well Balanced Finite Volume Methods for Nearly Hydrostatic Flows}
+      \field{urlday}{29}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2003.11.008
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Botta et al. - 2004 - Well balanced finite volume methods for nearly hydrostatic flows.pdf;/home/moschehaus/Zotero/storage/X3DCV2QB/S0021999103006077.html
+      \endverb
+      \keyw{Conservation form,Conservation laws,Hydrostatic balance,well-balanced}
+    \endentry
+    \entry{artianoStructurePreservingHighOrderMethods2025}{online}{}{}
+      \name{author}{4}{}{%
+        {{hash=0edc7b2b85f05dc2f5fab55444be947f}{%
+           family={Artiano},
+           familyi={A\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a8365f92fb149f7322b195b9babc0f76}{%
+           family={Knoth},
+           familyi={K\bibinitperiod},
+           given={Oswald},
+           giveni={O\bibinitperiod}}}%
+        {{hash=44c4157669522571c221c38ae6eb5616}{%
+           family={Spichtinger},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1e8c6e67fa2863e4f390eeef9dd633e7}{%
+           family={Ranocha},
+           familyi={R\bibinitperiod},
+           given={Hendrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{fullhash}{3757e43e19224817d902ae6f751837fb}
+      \strng{fullhashraw}{3757e43e19224817d902ae6f751837fb}
+      \strng{bibnamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorbibnamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authornamehash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorfullhash}{3757e43e19224817d902ae6f751837fb}
+      \strng{authorfullhashraw}{3757e43e19224817d902ae6f751837fb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We develop structure-preserving numerical methods for the compressible Euler equations, employing potential temperature as a prognostic variable. We construct three numerical fluxes designed to ensure the conservation of entropy and total energy within the discontinuous Galerkin framework on general curvilinear meshes. Furthermore, we introduce a generalization for the kinetic energy preservation property and total energy conservation in the presence of a gravitational potential term. To this end, we adopt a flux-differencing approach for the discretization of the source term, treated as non-conservative product. We present well-balanced schemes for different constant background states for both formulations (total energy and potential temperature) on curvilinear meshes. Finally, we validate the methods by comparing the potential temperature formulation with the traditional Euler equations formulation across a range of classical atmospheric scenarios.}
+      \field{day}{21}
+      \field{eprintclass}{math}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{note}{Comment: Reproducibility repository: https://github.com/MarcoArtiano/2025\_structure\_potential\_temperature}
+      \field{pubstate}{prepublished}
+      \field{title}{Structure-{{Preserving High-Order Methods}} for the {{Compressible Euler Equations}} in {{Potential Temperature Formulation}} for {{Atmospheric Flows}}}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2509.10311
+      \endverb
+      \verb{eprint}
+      \verb 2509.10311
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Artiano et al. - 2025 - Structure-Preserving High-Order Methods for the Compressible Euler Equations in Potential Temperatur.pdf;/home/moschehaus/Zotero/storage/K2M2C6N9/2509.html
+      \endverb
+      \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
     \endentry
   \enddatalist
   \missing{springelSimulationsFormationEvolution2005}
