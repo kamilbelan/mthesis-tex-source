@@ -11,12 +11,12 @@
 }
 
 %% Author of the thesis
-\newcommand*{\ThesisAuthor}{\textcolor{red}{Bc. Kamil Belán}}
+\newcommand*{\ThesisAuthor}{Bc. Kamil Belán}
 %% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisAuthor)
 \newcommand*{\ThesisAuthorPlaintext}{Bc. Kamil Belán }
 
 %% Year when the thesis is submitted
-\newcommand*{\YearSubmitted}{2025}
+\newcommand*{\YearSubmitted}{2026}
 %% Year of the last revision, uncomment if it is different from \YearSubmitted
 % \newcommand*{\YearRevision}{2025}
 
@@ -26,37 +26,36 @@
 %% Name of the department or institute, where the work was officially assigned
 %% (according to the Organizational Structure of MFF UK in English,
 %% or a full name of a department outside MFF)
-\newcommand*{\Department}{\textcolor{red}{Mathematical Institute}}
+\newcommand*{\Department}{Mathematical Institute}
 
 %% Is it a Department (katedra), or an Institute (ústav)?
 \newcommand*{\DeptType}{Institute}
 
 %% Thesis supervisor: name, surname and titles
-\newcommand*{\Supervisor}{\textcolor{red}{doc. RNDr. Michal Pavelka, Ph.D.}}
+\newcommand*{\Supervisor}{doc. RNDr. Michal Pavelka, Ph.D.}
 %% Thesis co-supervisor: name, surname and titles (uncomment if applicable)
 % \newcommand*{\CoSupervisor}{Name, Surname, and Titles}
 
 %% Supervisor's department/institute (again according to Organizational structure of MFF)
-\newcommand*{\SupervisorsDepartment}{\textcolor{red}{Mathematical Institute}}
+\newcommand*{\SupervisorsDepartment}{Mathematical Institute}
 
 %% Study programme and specialization
-\newcommand*{\StudyProgramme}{\textcolor{red}{Mathematical and Computational Modelling in Physics}}
+\newcommand*{\StudyProgramme}{{\small Mathematical and Computational Modelling in Physics}}
 
 %% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
 \newcommand*{\Abstract}{%
-  We adapt the density-independent SPH formulation to use potential temperature, and combine it with a novel well-balanced discretisation that preserves hydrostatic equilibrium at the discrete level. 
-}
+Numerical simulations of atmospheric orographic flows, and phenomena like internal gravity waves in particular, requires numerical methods capable of exactly preserving the stratified hydrostatic background on the discrete level. Standard Smoothed Particle Hydrodynamics (SPH) formulations struggle with this requirement, generating spurious velocities that destroy the small-amplitude wave dynamics of internal gravity waves. To address this, we adapt the density-independent SPH framework and utilize potential temperature as the primary thermodynamic variable, aligning the method with standard atmospheric science conventions. Furthermore, we develop a novel well-balanced discretisation for this formulation that preserves the hydrostatic equilibrium at the discrete level to machine precision. Numerical experiments demonstrate that the proposed scheme successfully maintains a stationary background state and is able to capture the emergence and initial upward propagation of mountain waves. Finally, we document the eventual numerical breakdown of these simulations caused by tensile instability, concluding that future work must focus on integrating regularizing techniques, such as $\delta$-SPH, into the well-balanced framework.}
 
 %% Subject (short description for PDF metadata)
 \newcommand*{\Subject}{%
-    Write subject here.
+    Master's thesis investigating density-independent, well-balanced Smoothed Particle Hydrodynamics (SPH) formulations for simulating atmospheric orographic flows and internal gravity waves.
 }
 
 %% Keywords (about 3-7)
 \newcommand*{\Keywords}{%
-    \textcolor{red}{Manual, Demo, Draft, WIP}
+    Smoothed Particle Hydrodynamics, Well-balanced methods, Orographic flows, Internal gravity waves, Atmospheric dynamics, Tensile instability
 }
-%% Plaintext version for PDF metadata, uncomment if needed (defauls to \Keywords)
+%% Plaintext version for PDF metadata, uncomment if needed (defaults to \Keywords)
 \newcommand*{\KeywordsPlaintext}{%
-	Manual, Demo, Draft, WIP
+    Smoothed Particle Hydrodynamics, Well-balanced methods, Orographic flows, Internal gravity waves, Atmospheric dynamics, Tensile instability
 }

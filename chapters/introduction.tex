@@ -4,16 +4,21 @@
 \chapternotnumbered{Introduction}
 \label{chap:Introduction}
 
-The goal of this thesis is to investigate the use of certain numerical methods in simulating atmospheric flows around topography, the so-called \emph{orographic flows}. The text is structured as follows:
+The goal of this thesis is to investigate the use of certain numerical methods in simulating atmospheric flows around topography, commonly referred to as \emph{orographic flows}. The text is structured as follows:
 
 \begin{compactenum}
-	\item chapter \Cref{chap:FLOWS} provides an introduction to the physics of \emph{orographic flows};
-	\item chapter \Cref{chap:SPH} summarizes the main numerical method used, that is the \emph{Smoothed Particles (SPH)};
-	\item chapter \Cref{chap:VORONOI} introduces a different numerical method: \emph{Semi-Implicit Lagrangian Voronoi Approximation (SILVA)};
-	\item chapter \Cref{chap:EXPERIMENTS} presents these numerical methods through numerical experiments and discusses the obtained results.
+    \item \Cref{chap:FLOWS} provides an introduction to the physical foundations and mathematical descriptions of orographic flows.
+    \item \Cref{chap:MODELLING} outlines the governing equations, boundary conditions, and the concept of well-balanced numerical schemes.
+    \item \Cref{chap:SPH} summarizes the main numerical method used: Smoothed Particle Hydrodynamics (SPH). 
+    \item \Cref{chap:EXPERIMENTS} presents numerical experiments obtained by the proposed methods.
 \end{compactenum}
 
-% TODO: add "my novelties"
+\section*{Main contributions}
+While SPH has found its use in continuum mechanics and astrophysics, its application to stratified atmospheric flows remains underdeveloped. The methodological contributions of this thesis are:
+\begin{compactenum}
+    \item The derivation of a density-independent SPH formulation utilizing \emph{potential temperature} as the primary thermodynamic variable, aligning the method with the standard conventions of atmospheric sciences.
+    \item The construction of a novel \emph{well-balanced} discretisation for this framework that preserves the hydrostatic background exactly at the discrete level. 
+\end{compactenum}
 
 \section*{Motivation}
 
