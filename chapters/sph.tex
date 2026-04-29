@@ -1266,7 +1266,7 @@ reads
 
 Evidently, the kernel sum on the right-hand side approximates the $-\frac{1}{\rho} \grad p$ term, while the gravitational acceleration \enquote{approximates} $\vb{g}$ is a global source term. As discussed in \Cref{sec:SPH-FAILURE}, this discretisation does not preserve hydrostatic balance.
 
-A common approach in the literature to resolve the truncation error is to subtract the background state \emph{before discretisation}. We stress that this procedure is \emph{not well-balancing} as discussed in \Cref{sec:WELL-BALANCED}---here the hydrostatic balance is preserved by a manipulation on the \emph{analytical level} and the discretisation is emph{standard}, whereas a well-balanced scheme solves the \emph{original system} but employs a \emph{special} discretisation.
+A common approach in the FVM literature \autocite{bottaWellBalancedFinite2004} to resolve the truncation error is to subtract the background state \emph{before discretisation}. We stress that this procedure is \emph{not well-balancing} as discussed in \Cref{sec:WELL-BALANCED}---here the hydrostatic balance is preserved by a manipulation on the \emph{analytical level} and the discretisation is emph{standard}, whereas a well-balanced scheme solves the \emph{original system} but employs a \emph{special} discretisation.
 Assume now, in correspondence to \Cref{sec:MTN-WVS}, that the density and pressure field have the form\sidenote{In the chapter \Cref{chap:FLOWS} we used the subscript zero and one for the background state and the perturbation respectively. Since we index particle-carried quantities with lower indices also, we switch to the bar $\overline{\rho}$ and prime $\rho'$ notation.}
 
 \begin{equations}[columns,!,numberline=all]
@@ -1302,11 +1302,109 @@ Notice that at $t = 0$, the system is in hydrostatic balance, so the perturbatio
 \subsection{Well-balanced pressure-entropy formulation}
 \label{sec:WB-DI-PA}
 
+To achieve a well-balanced formulation within the density-independent SPH framework, see \Cref{sec:DENSITY-FREE}, we will first replace the \emph{analytical} gravitational source term $\vb{g}$ with the gradient of the \emph{analytical} background density. The procedure is as follows.
+
+The momentum equation in our case reads as
+
+\begin{equations}[single,*]
+	\tdot{\vb{v}} = - \frac{1}{\rho} \grad p + \vb{g},
+\end{equations}
+
+when the background is hydrostatic, then $\grad \overline{p} = \vb{g} \overline{\rho}$ and so
+
+\begin{equations}[single,!,numberline=all]
+	\label{eq:WB-INSPIRATION}
+	\tdot{\vb{v}} = - \frac{1}{\rho} \grad p + \frac{1}{\rho} \grad \overline{p}.
+\end{equations}
+
+We have reformulated the momentum equation using the gradient of the \emph{total pressure} and the gradient of the \emph{background pressure}. Notice that we have \emph{not} introduced any perturbation splitting---we merely assumed the background is in hydrostatic balance. 
+
+The key insight is that by discretising \emph{both the gradients} using the \emph{same kernel sum} formulae, the truncation errors \emph{subtract identically}. Let us show that in more detail.
+
+Recall the entropy-like variable $A$ \Cref{eq:A-ENTROPY}
+
+\begin{equations}[single,*]
+	A = \frac{p}{\rho^{\gamma}}.
+\end{equations}
+
+Assuming again a hydrostatic \emph{isothermal} background, the background pressure and density have the form \Cref{eq:HYDROSTATIC}
+
+\begin{equations}[columns,*]
+	\overline{\rho}(z) &= \rho_0 \exp\left(- \frac{z}{H_s}\right),\\
+	\overline{p}(z) &= p_0 \exp\left(- \frac{z}{H_s} \right),\\
+\end{equations}
+
+and so the background state of $A$ reads
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:HYDROSTATIC-A}
+\overline{A}(z) = A_0 \exp\left(- \left(1 - \gamma\right) \frac{z}{H_s}\right), 
+\end{equations}
+
+where $A_0 = \frac{p_0}{\rho_0^{\gamma}}$. Denote by $\overline{A}_{\alpha} = \overline{A}(z_{\alpha})$, $z_{\alpha}$ being the $z$ coordinate of $\vb{x}_{\alpha}$, the analytical background $A$ \Cref{eq:HYDROSTATIC-A} evaluated at the current altitude of particle $\alpha$. We define the \emph{discrete background pressure} $\overline{p}_{\alpha}$ and the corresponding \emph{background correction factor} $\overline{f}_{\alpha \beta}$ by substituting this background entropy into the kernel sums from \Cref{eq:PRESSURE-ENTROPY-TOTAL}:
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:WB-BACKGROUND-STATE}
+\overline{p}_{\alpha} &= \left(\sum_{\beta=1}^N m_{\beta}\overline{A}_{\beta}^{1/\gamma}w_{\alpha \beta}\left(h_{\alpha}\right)\right)^{\gamma}, \\
+\overline{f}_{\alpha \beta} &= 1 - \left(\frac{h_{\alpha}}{2 \overline{A}_{\beta}^{1/\gamma}m_{\beta} \tilde{n}_{\alpha}}\pdv{\overline{p}_{\alpha}^{1/\gamma}}{h_{\alpha}}\right)\left(1 + \frac{h_{\alpha}}{2 \tilde{n}_{\alpha}}\pdv{\tilde{n}_{\alpha}}{h_{\alpha}}\right)^{-1}.
+\end{equations}
+
+Denote by $\vb{F}_{\alpha}$ the total SPH pressure gradient force from the pressure-entropy formulation \Cref{eq:PRESSURE-ENTROPY-TOTAL}, that is
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:WB-PA-GRADIENT}
+\vb{F}_{\alpha}\left(A_{\alpha}, p_{\alpha}\right) =  \sum_{\beta=1}^N m_{\beta} \left(A_{\alpha} A_{\beta}\right)^{1/\gamma}\left(\frac{f_{\alpha \beta}p_{\alpha}}{p_{\alpha}^{2/\gamma}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\alpha}\right) + \frac{f_{\beta \alpha}p_{\beta}}{p^{2/\gamma}_{\beta}} \nabla_{\alpha} w_{\alpha\beta}\left(h_{\beta}\right)\right). 
+\end{equations}
+
+We obtain the well-balanced momentum equation by \emph{subtracting the discrete background gradient} instead of adding analytical gravity, \ie by discretising \Cref{eq:WB-INSPIRATION} using \Cref{eq:WB-PA-GRADIENT}
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:WB-PA-MOMENTUM}
+\dv{\vb{v}_{\alpha}}{t} = \vb{F}_{\alpha}(A_{\alpha}, p_{\alpha}) - \vb{F}_{\alpha}(\overline{A}_{\alpha}, \overline{p}_{\alpha}).
+\end{equations}
+
+If the fluid is in the background hydrostatic balance, \ie $A_{\alpha} = \overline{A}_{\alpha}$ for \emph{all particles} $\alpha$ then the discrete total pressure and the correction terms perfectly matches their discrete background counterparts $p_{\alpha} = \overline{p}_{\alpha}$, $f_{\alpha \beta} = \overline{f}_{\alpha \beta}$, and so the discrete gradients \Cref{eq:WB-PA-GRADIENT} are equal  
+
+\begin{equations}[single,*]
+	\vb{F}_{\alpha}\left(A_{\alpha}, p_{\alpha}\right) = \vb{F}_{\alpha}\left(\overline{A}_{\alpha}, \overline{p}_{\alpha}\right).
+\end{equations}
+
+Consequently, the resulting acceleration in \Cref{eq:WB-PA-MOMENTUM} is \emph{exactly zero}: because the identical kernel is used with both states simultaneously, the truncation error induced by non-linear background profiles perfectly \emph{cancels itself}. This guarantees exact hydrostatic balance at machine precision while maintaining the fully compressible, non-linear thermodynamic equations required for atmospheric dynamics.
+
+
 \subsection{Well-balanced pressure-potential temperature formulation}
 \label{sec:WB-DI-PTH}
 
+Similarly as in the previous chapter, we can derive a well-balanced version of the pressure-potential temperature formulation. We have shown in \Cref{sec:DI-density-entropy} that the pressure-potential temperature formulation is mathematically equivalent to the pressure-entropy formulation, therefore, the procedure will be exactly the same as in the previous.
 
-$\theta$ use \autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023} 
+Define the background isothermal hydrostatic potential temperature profile $\overline{\theta}$ \Cref{eq:HYDROSTATIC} and the corresponding particle-carried quantities
+
+\begin{equations}[columns,!,numberline=all]
+\label{eq:WB-PTH-BACKGROUND}
+\overline{\theta}(z) &= T \exp\left(\frac{R}{c_p}\frac{z}{H_s}\right),\\
+\overline{\theta}_{\alpha} &= \overline{\theta}\left(z_{\alpha}\right).
+\end{equations}
+
+Introduce $\vb{F}_{\alpha}\left(\theta_{\alpha}, p_{\alpha}\right)$ as the pressure gradient force from \Cref{eq:PRESSURE-THETA-MOMENTUM}
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:WBTH-GRADIENT}
+\vb{F}_{\alpha}\left(\theta_{\alpha}, p_{\alpha}\right) = \frac{1}{C_{\theta A}^{2}}\sum_{\beta=1}^N m_{\beta} \theta_{\alpha} \theta_{\beta}\left(\frac{f_{\alpha \beta}p_{\alpha}}{p_{\alpha}^{2/\gamma}}\grad_{\alpha} w_{\alpha \beta}\left(h_{\alpha}\right) + \frac{f_{\beta \alpha}p_{\beta}}{p_{\beta}^{2/\gamma}}\grad_{\alpha}w_{\alpha \beta}\left(h_{\beta}\right)\right).
+\end{equations}
+
+The \emph{well-balanced} momentum equation is then obtained similarly as in \Cref{eq:WB-PA-MOMENTUM} by subtracting the background pressure-force from the total pressure-force, \ie by discretising \Cref{eq:WB-INSPIRATION} via \Cref{eq:WBTH-GRADIENT}
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:WB-PTH-MOMENTUM}
+\dv{\vb{v}_{\alpha}}{t} = \vb{F}_{\alpha}\left(\theta_{\alpha}, p_{\theta}\right) - \vb{F}_{\alpha}\left(\overline{\theta}_{\alpha}, p_{\alpha}\right).
+\end{equations}
+
+If the fluid parcel is in the stationary background state, \ie $\theta_{\alpha} = \overline{\theta}_{\alpha}, p_{\alpha} = \overline{p}_{\alpha},$ then also the discrete gradients \Cref{eq:WBTH-GRADIENT} are equal and so the resulting acceleration in \Cref{eq:WB-PTH-MOMENTUM} \emph{remains zero.}
+
+
+Note that there are well-balanced FVM formulations utilizing the conserved potential temperature $\theta $\autocite{artianoStructurePreservingHighOrderMethods2025,chertockWellbalancedNumericalMethod2023}.
+
+%TODO: ADD THAT THERE ARE NONE SPH
 
 \section{Implementation specifics}
 \label{sec:IMPLEMENTATION}
