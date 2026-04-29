@@ -2546,6 +2546,11 @@
     <bcf:citekey order="103" intorder="2">chertockWellbalancedNumericalMethod2023</bcf:citekey>
     <bcf:citekey order="104" intorder="1">zhangBoundaryConditionsWeaklycompressible2025</bcf:citekey>
     <bcf:citekey order="104" intorder="2">adamiGeneralizedWallBoundary2012</bcf:citekey>
+    <bcf:citekey order="105" intorder="1">morrisStudyStabilityProperties1996</bcf:citekey>
+    <bcf:citekey order="105" intorder="2">schuesslerCommentsSmoothedParticle1981</bcf:citekey>
+    <bcf:citekey order="105" intorder="3">phillipsNumericalMethodThreedimensional1985</bcf:citekey>
+    <bcf:citekey order="105" intorder="4">sunDeltaALESPHModelImproved2017</bcf:citekey>
+    <bcf:citekey order="105" intorder="5">priceSmoothedParticleHydrodynamics2012a</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

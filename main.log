@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 18:51
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 19:04
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3719,7 +3719,7 @@ Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
 [83]
-runsystem(latexminted cleantemp  --timestamp 20260429185127Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260429190402Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3736,7 +3736,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 75908 strings out of 475900
+ 75963 strings out of 475900
  244458,3417909 words of node,token memory allocated
  88594 words of node memory still in use:
    1106 hlist, 126 vlist, 48 rule, 449 disc, 49 local_par, 245 math, 1783 glue, 
@@ -3744,9 +3744,9 @@ Here is how much of LuaTeX's memory you used:
 c, 3219 attribute_list, 9 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_
 link, 3 pdf_dest, 11 pdf_action, 124 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save
 , 1 pdf_restore nodes
-   avail lists: 1:29,2:8155,3:5368,4:605,5:847,6:186,7:8237,8:92,9:2547,10:48,11
-:564,12:14
- 95222 multiletter control sequences out of 65536+600000
+   avail lists: 1:29,2:8165,3:5368,4:605,5:847,6:196,7:8247,8:92,9:2548,10:49,11
+:566,12:15
+ 95267 multiletter control sequences out of 65536+600000
  152 fonts using 11819183 bytes
  113i,20n,121p,4410b,3757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regul
@@ -3786,10 +3786,10 @@ m/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 /texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb></usr/local/te
 xlive/2026/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb>
-Output written on main.pdf (90 pages, 12708906 bytes).
+Output written on main.pdf (90 pages, 12712661 bytes).
 
-PDF statistics: 2379 PDF objects out of 2487 (max. 8388607)
- 2012 compressed objects within 21 object streams
- 587 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2405 PDF objects out of 2487 (max. 8388607)
+ 2038 compressed objects within 21 object streams
+ 597 named destinations out of 1000 (max. 1048576)
  760 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -2723,6 +2723,246 @@
       \endverb
       \keyw{Boundary condition,Solid walls,SPH,sph techniques}
     \endentry
+    \entry{morrisStudyStabilityProperties1996}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f8a684811c3313d9415240dc00aca4a2}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Joseph\bibnamedelima Peter},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{fullhash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{fullhashraw}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{bibnamehash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{authorbibnamehash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{authornamehash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{authorfullhash}{f8a684811c3313d9415240dc00aca4a2}
+      \strng{authorfullhashraw}{f8a684811c3313d9415240dc00aca4a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract When using a formulation of smooth particle hydrodynamics (SPH) which conserves momentum exactly the motion of the particles is observed to be unstable to negative stress. It is also found that under normal circumstances a lattice of SPH particles is potentially unstable to transverse waves. This paper is a summary of a detailed report (Morris 1994) investigating the nature of these and other instabilities in depth. Approaches which may be used to eliminate these instabilities are suggested. It is found that the stability properties of SPH in general improve as higher-order spline interpolants, approximating a Gaussian, are used as kernels.}
+      \field{issn}{1323-3580, 1448-6083}
+      \field{journaltitle}{Publications of the Astronomical Society of Australia}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shortjournal}{Publ. Astron. Soc. Aust.}
+      \field{title}{A {{Study}} of the {{Stability Properties}} of {{Smooth Particle Hydrodynamics}}}
+      \field{urlday}{29}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/S1323358000020610
+      \endverb
+      \keyw{sph techniques}
+    \endentry
+    \entry{schuesslerCommentsSmoothedParticle1981}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ef902a6deaed7e22e105553edcc224c8}{%
+           family={Schuessler},
+           familyi={S\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=c32f3ec90b1955aef56ac60a367e349c}{%
+           family={Schmitt},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {EDP}%
+      }
+      \strng{namehash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{fullhash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{fullhashraw}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{bibnamehash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{authorbibnamehash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{authornamehash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{authorfullhash}{f8cf174d60ea86bb96f4b408526eb969}
+      \strng{authorfullhashraw}{f8cf174d60ea86bb96f4b408526eb969}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Smoothed Particle Hydrodynamics (SHP) is shown to be a good method for the calculation of hydrodynamic and MHD flows in both two and three dimensions with relatively little numerical effort. It is found that while large scale flows and magnetic fields can be reproduced well, spatial resolution is limited and the description of small scale structures is not sufficient. It is also shown that unphysical effects may arise from an improper choice of the smoothing function, which will yield artificial structures. A new smoothing function is proposed which does not suffer from this defect, which is thought to have influenced results of protostellar fission studies published to date.}
+      \field{annotation}{ADS Bibcode: 1981A\&A....97..373S}
+      \field{day}{1}
+      \field{issn}{0004-6361}
+      \field{journaltitle}{Astronomy and Astrophysics}
+      \field{month}{4}
+      \field{title}{Comments on Smoothed Particle Hydrodynamics}
+      \field{urlday}{29}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1981}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Schuessler and Schmitt - 1981 - Comments on smoothed particle hydrodynamics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ui.adsabs.harvard.edu/abs/1981A&A....97..373S
+      \endverb
+      \verb{url}
+      \verb https://ui.adsabs.harvard.edu/abs/1981A&A....97..373S
+      \endverb
+      \keyw{Astrophysics,Magnetic Fields,Magnetohydrodynamic Flow,Magnetohydrodynamics,Nuclear Fission,Particle Theory,Protostars,Smoothing,Spatial Resolution,sph techniques,Stellar Evolution,Three Dimensional Flow,Two Dimensional Flow}
+    \endentry
+    \entry{phillipsNumericalMethodThreedimensional1985}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=52de4746df990b70db92b6059247fb8f}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={G.\bibnamedelimi J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=441fe88aa55fb5b33be74d8641d0d091}{%
+           family={Monaghan},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{fullhash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{fullhashraw}{263488324d4457cb51e8c8f888b2949d}
+      \strng{bibnamehash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{authorbibnamehash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{authornamehash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{authorfullhash}{263488324d4457cb51e8c8f888b2949d}
+      \strng{authorfullhashraw}{263488324d4457cb51e8c8f888b2949d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper a numerical method for the investigation of collapsing gas clouds will be described. The method is based on the particle method SPH (Smooth Particle Hydrodynamics). Different forms of the magnetic force terms are discussed and one form, that which conserves linear and angular momentum exactly, is shown to be unstable. A simple technique which removes the instability is described. The method is applied here to Alfvén waves, shock waves, magnetic polytropes and to equilibrium models of isothermal gas clouds.}
+      \field{day}{1}
+      \field{issn}{0035-8711}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{month}{10}
+      \field{shortjournal}{Mon Not R Astron Soc}
+      \field{title}{A Numerical Method for Three-Dimensional Simulations of Collapsing, Isothermal, Magnetic Gas Clouds}
+      \field{urlday}{29}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1985}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/mnras/216.4.883
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Zotero/storage/HV5MKBH8/216.4.html
+      \endverb
+      \keyw{sph techniques}
+    \endentry
+    \entry{sunDeltaALESPHModelImproved2017}{incollection}{}{}
+      \name{author}{5}{}{%
+        {{hash=53e5f3915d721a7659d78e4b9b719643}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Pn},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a42265efa21664292d666009948af572}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Am},
+           giveni={A\bibinitperiod}}}%
+        {{hash=72f6d6cdd32c1742c8e022c0422b8ce5}{%
+           family={Colagrossi},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7eea05138c86a898c791a2beeb567fef}{%
+           family={Marrone},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e120b87127fc7fefaff9d87948a57643}{%
+           family={Antuono},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6dbaefac694506bacece42cec5f5c87e}
+      \strng{fullhash}{428cf74fc27d767325bb606a0bbb977b}
+      \strng{fullhashraw}{428cf74fc27d767325bb606a0bbb977b}
+      \strng{bibnamehash}{428cf74fc27d767325bb606a0bbb977b}
+      \strng{authorbibnamehash}{428cf74fc27d767325bb606a0bbb977b}
+      \strng{authornamehash}{6dbaefac694506bacece42cec5f5c87e}
+      \strng{authorfullhash}{428cf74fc27d767325bb606a0bbb977b}
+      \strng{authorfullhashraw}{428cf74fc27d767325bb606a0bbb977b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In the present work we derive a novel model, named Delta-ALE-SPH scheme, by merging the Delta-pluse- SPH scheme and the Arbitrary Lagrangian Eulerian (ALE) formulation. Differently from the Delta-plus-SPH scheme, the use of the ALE framework allows for an inclusion of the Particle Shifting Technique (PST) for recovering the consistency of particles' masses, volumes and positions. In the proposed scheme, a diffusive term is included in the density equation to ensure a regular pressure field. Furthermore, different constraints on the mass flux equation are investigated. Indeed we discovered that the accuracy of the solution as well as the properties of the scheme strongly depend on how this equation is numerically handled. Suitable algorithms for the numerical treatment near the free surface and on the solid wall boundary are implemented. These treatments improve the particle distribution and the pressure evaluation close to the fluid boundary. Finally, the Delta-ALE-SPH scheme is tested against several challenging benchmark test cases, proving to be more robust and accurate than the other SPH schemes.}
+      \field{annotation}{Accepted: 2024-02-20T19:10:59Z}
+      \field{isbn}{978-1-946018-02-1}
+      \field{langid}{english}
+      \field{shorttitle}{The {{Delta-ALE-SPH}} Model}
+      \field{title}{The {{Delta-ALE-SPH}} Model: An Improved {{Delta-SPH}} Scheme Containing Particle Shifting and {{ALE}} Formulation}
+      \field{urlday}{29}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/moschehaus/Zotero/storage/AURYNB6Y/330883.html
+      \endverb
+      \verb{urlraw}
+      \verb https://iris.cnr.it/handle/20.500.14243/330883
+      \endverb
+      \verb{url}
+      \verb https://iris.cnr.it/handle/20.500.14243/330883
+      \endverb
+      \keyw{sph techniques}
+    \endentry
+    \entry{priceSmoothedParticleHydrodynamics2012a}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=340cb81de3083cb72b2a4659af3a734f}{%
+           family={Price},
+           familyi={P\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{fullhash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{fullhashraw}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{bibnamehash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{authorbibnamehash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{authornamehash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{authorfullhash}{340cb81de3083cb72b2a4659af3a734f}
+      \strng{authorfullhashraw}{340cb81de3083cb72b2a4659af3a734f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents an overview and introduction to smoothed particle hydrodynamics and magnetohydrodynamics in theory and in practice. Firstly, we give a basic grounding in the fundamentals of SPH, showing how the equations of motion and energy can be self-consistently derived from the density estimate. We then show how to interpret these equations using the basic SPH interpolation formulae and highlight the subtle difference in approach between SPH and other particle methods. In doing so, we also critique several `urban myths' regarding SPH, in particular the idea that one can simply increase the `neighbour number' more slowly than the total number of particles in order to obtain convergence. We also discuss the origin of numerical instabilities such as the pairing and tensile instabilities. Finally, we give practical advice on how to resolve three of the main issues with SPMHD: removing the tensile instability, formulating dissipative terms for MHD shocks and enforcing the divergence constraint on the particles, and we give the current status of developments in this area. Accompanying the paper is the first public release of the NDSPMHD SPH code, a 1, 2 and 3 dimensional code designed as a testbed for SPH/ SPMHD algorithms that can be used to test many of the ideas and used to run all of the numerical examples contained in the paper.}
+      \field{issn}{00219991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Smoothed Particle Hydrodynamics and Magnetohydrodynamics}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2010.12.011
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Price - 2012 - Smoothed particle hydrodynamics and magnetohydrodynamics.pdf
+      \endverb
+      \keyw{smoothed particle hydrodynamics}
+    \endentry
   \enddatalist
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
