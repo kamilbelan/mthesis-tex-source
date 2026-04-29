@@ -10,8 +10,23 @@ This chapter consists of numerical experiments using the methods described in th
 
 As established in \Cref{sec:WB-WAVES}, the preservation of the hydrostatic balance on \emph{the discrete level} is essential in simulations of internal gravity waves. In this section, we compare the ability of the used formulations to preserve the initial hydrostatic state.
 
-\subsection{Classical SPH}
-\label{sec:EXP-STAT-CLASSICAL}
+To describe the velocity field quantitatively, we plot the \emph{maximum particle velocity magnitude}, that is
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:L_infty}
+\abs{\vb{v}}_{\infty} \coloneq \max_{\alpha=1}^N \abs{\vb{v}_{\alpha}},
+\end{equations}
+
+and also the \emph{root-mean-square velocity} 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:L_2}
+\abs{\vb{v}}_2 \coloneq \frac{1}{N}\sum_{\alpha=1}^N \abs{\vb{v}_{\alpha}}^{2}.
+\end{equations}
+
+The measures $\vb{v}_{\infty}, \vb{v}_{2}$ clearly are discrete counterparts of the $L_{\infty}$ and $L_{2}$ norms.
+
+Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity field of an atmosphere initialised from hydrostatic balance. They depict the \emph{failure} of the standard formulations to \emph{preserve the hydrostatic balance}. On the contrary, the perturbation/well-balanced variants retain the hydrostatic balance at $\varepsilon_{\text{mach}}$ level. Qualitatively, figures \Cref{fig:STATIONARY-NORMS} show that both the standard SPH and the potential-temperature formulations are not well-balanced, however the standard SPH performs considerably worse than the pressure-potential temperature formulation. For standard SPH, the magnitude of the spurious velocity reaches $\approx \qty{1e20}{\metre\per\second}$, whereas with the pressure-potential temperature formulations the magnitudes are not greater than $\approx \qty{1e2}{\metre\per\second}$.
 
 \begin{figure}[htbp]
 	\centering
@@ -34,7 +49,9 @@ As established in \Cref{sec:WB-WAVES}, the preservation of the hydrostatic balan
 	\label{fig:STATIONARY-NORMS}
 \end{figure}
 
-The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\text{M }\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
+The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
+
+From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and the well-balanced pressure-potential temperature formulations \emph{preserve the hydrostatic balance exactly.} No spurious velocity field is present.
 
 \begin{figure}[htbp]
 	\centering
@@ -56,6 +73,7 @@ The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the 
 	\caption{The flow field blowup at $t \approx \qty{13}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown.}
 	\label{fig:STATIONARY-BLOWUPS}
 \end{figure}
+
 
 \begin{figure}[htbp]
 	\centering
