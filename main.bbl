@@ -2638,6 +2638,88 @@
       \endverb
       \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
     \endentry
+    \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=21dc4df3a642184f817f4d2ca145314c}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Terry\bibnamedelima L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{bibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorbibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authornamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes a three-dimensional finite-difference model of air flow over an irregular lower surface. The model is nonhydrostatic and the anelastic approximation has been used to filter sound waves. Second-order difference equations are employed which provide excellent momentum and energy budgets. An outflow radiation boundary condition using a generalized Kreiss extrapolation scheme has been designed and implemented. Some two-dimensional applications of the model to air flow over a ``Witch of Agnesi'' mountain barrier are described. Comparison with the linear theory of Queney indicates, for the cases treated, that the nonlinearity of the boundary condition has a first-order effect on the resulting flow.}
+      \field{day}{1}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{6}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{A Small-Scale Dynamic Model Using a Terrain-Following Coordinate Transformation}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(77)90057-2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark - 1977 - A small-scale dynamic model using a terrain-following coordinate transformation.pdf;/home/moschehaus/Zotero/storage/JZ2HLKVC/0021999177900572.html
+      \endverb
+      \keyw{orographic flows,terrain-following}
+    \endentry
+    \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b1c97781781c53eaf0aab95c09718781}{%
+           family={Gal-Chen},
+           familyi={G\bibinithyphendelim C\bibinitperiod},
+           given={Tzvi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1e362815f15d30d0bf12876d501e8112}{%
+           family={Somerville},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelimb C.\bibnamedelimi J.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{fullhash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{fullhashraw}{f452063f00cdfb0c8c2f409298673720}
+      \strng{bibnamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorbibnamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{On the Use of a Coordinate Transformation for the Solution of the {{Navier-Stokes}} Equations}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{1975}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(75)90037-6
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Gal-Chen and Somerville - 1975 - On the use of a coordinate transformation for the solution of the Navier-Stokes equations.pdf
+      \endverb
+      \keyw{sph techniques,terrain-following}
+    \endentry
     \entry{zhangBoundaryConditionsWeaklycompressible2025}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=5c295c652b6151abcbf7c27c9cc82b72}{%
@@ -2964,7 +3046,6 @@
       \keyw{smoothed particle hydrodynamics}
     \endentry
   \enddatalist
-  \missing{clarkSmallscaleDynamicModel1977gal-chenUseCoordinateTransformation1975}
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
 \endinput

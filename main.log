@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 21:47
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.26)  29 APR 2026 23:15
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2765,14 +2765,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                clarkSmallscaleDynamicModel1977gal-chenUseCoordinateT
-ransformation1975
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                springelSimulationsFormationEvolution2005
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -2878,30 +2870,30 @@ Underfull \hbox (badness 1874) in paragraph at lines 35--35
 
 ) [8] (./chapters/oro_flows.tex
 Chapter 1.
-<./figures/oro_flows/clouds.pdf, id=131, 1110.0672pt x 832.5504pt>
+<./figures/oro_flows/clouds.pdf, id=131, 614.295pt x 794.97pt>
 File: ./figures/oro_flows/clouds.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/clouds.pdf>
 Package luatex.def Info: ./figures/oro_flows/clouds.pdf  used on input line 26.
 
-(luatex.def)             Requested size: 320.0pt x 239.99791pt.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 [1
 
 
-]
-<./figures/oro_flows/fohn.pdf, id=162, 3886.52pt x 2601.72pt>
+] [2<./figures/oro_flows/clouds.pdf>]
+<./figures/oro_flows/fohn.pdf, id=171, 614.295pt x 794.97pt>
 File: ./figures/oro_flows/fohn.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/fohn.pdf>
 Package luatex.def Info: ./figures/oro_flows/fohn.pdf  used on input line 46.
-(luatex.def)             Requested size: 320.0pt x 214.1761pt.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 
 Underfull \hbox (badness 1888) in paragraph at lines 55--55
 []$[][]$ \TU/lmr/m/n/12 Our model does not in-clude
  []
 
-[2<./figures/oro_flows/clouds.pdf>]
+[3<./figures/oro_flows/fohn.pdf>]
 LaTeX Font Info:    Font shape `U/BOONDOX-ds/m/n' will be
 (Font)              scaled to size 12.0pt on input line 77.
- [3<./figures/oro_flows/fohn.pdf>]
+ [4]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
 
@@ -2913,18 +2905,18 @@ i.1'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.2'
-[4] [5]
+[5] [6]
 Overfull \hbox (20.97786pt too wide) in paragraph at lines 167--168
 []\TU/lmr/m/n/12 where we have used the ther-mal equa-tion of state [][][][][]
  []
 
-[6]
+[7]
 Overfull \hbox (27.31322pt too wide) in paragraph at lines 220--221
 []\TU/lmr/m/n/12 Let us look for \TU/lmr/m/sl/12 sta-tion-ary so-lu-tions of \T
 U/lmr/m/n/12 the sys-tem [][][][][]
  []
 
-[7]
+[8]
 Overfull \hbox (5.02425pt too wide) in paragraph at lines 249--250
 \TU/lmr/m/n/12 spec-i-fied. Us-ing the ther-mal equa-tion of state [][][][][]
  []
@@ -2935,7 +2927,7 @@ Overfull \hbox (17.807pt too wide) in paragraph at lines 249--250
 [],
  []
 
-[8] [9]
+[9] [10]
 Overfull \hbox (2.84831pt too wide) in paragraph at lines 311--312
 []\TU/lmr/m/n/12 Now we in-tro-duce an ap-prox-i-ma-tion based on \TU/lmr/m/sl/
 12 order-of-magnitude
@@ -2951,110 +2943,89 @@ Underfull \hbox (badness 2343) in paragraph at lines 317--317
 \TU/lmr/m/n/12 Rayleigh fa-mously used Boussi-
  []
 
-[10]
+[11]
 Overfull \hbox (30.31953pt too wide) in paragraph at lines 341--342
 []\TU/lmr/m/n/12 Us-ing these scal-ing re-la-tions, the bal-ance of mass [][][]
 [][]
  []
 
-[11]
+
 Overfull \hbox (32.2133pt too wide) in paragraph at lines 367--368
 \TU/lmr/m/n/12 nesq ap-prox-i-ma-tion for the po-ten-tial tem-per-a-ture [][][]
 [][].
  []
 
-
+[12]
 Underfull \hbox (badness 5175) in paragraph at lines 411--411
 \TU/lmr/m/n/12 of the lim-i-ta-tions of the lin-
  []
 
-[12]
-
-LaTeX Warning: Hyper reference `sec:EXTRA' on page 13 undefined on input line 4
-20.
-
-
-LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
-
-
-LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
-
-
-LaTeX Warning: Reference `sec:EXTRA' on page 13 undefined on input line 420.
-
-
-Overfull \hbox (58.46544pt too wide) in paragraph at lines 425--426
-\TU/lmr/m/n/12 Look-ing at the re-la-tions de-scrib-ing hy-dro-static bal-ance 
-[][][][][],
- []
-
-[13]
+[13] [14] [15]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.2'
-[14]
 Missing character: There is no − (U+2212) in font rm-lmr12!
-[15] [16]
-Overfull \hbox (47.75508pt too wide) detected at line 607
+[16] [17]
+Overfull \hbox (47.75508pt too wide) detected at line 605
 []$\OML/lmm/m/it/12 w[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x; z\OT1/lmr/m/n/12
  ) = [] [][] [][] []\OML/lmm/m/it/12 w\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z\OT1/l
 mr/m/n/12 ; \OML/lmm/m/it/12 !; k\OT1/lmr/m/n/12 ) [][][] [][][] [] [] \OML/lmm
 /m/it/12 :$ 
  []
 
-[17]
-Underfull \hbox (badness 2600) in paragraph at lines 611--611
+[18]
+Underfull \hbox (badness 2600) in paragraph at lines 609--609
 []$[][]$ \TU/lmr/m/n/12 If $\OML/lmm/m/it/12 m$ \TU/lmr/m/n/12 has a nonzero ima
 g-i-
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 611--611
+Underfull \hbox (badness 1275) in paragraph at lines 609--609
 \TU/lmr/m/n/12 nary part, then $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = [] \OML/lm
 m/m/it/12 m \OT1/lmr/m/n/12 +
  []
 
 
-Underfull \hbox (badness 4048) in paragraph at lines 611--611
+Underfull \hbox (badness 4048) in paragraph at lines 609--609
 []\OML/lmm/m/it/12 { [] m$\TU/lmr/m/n/12 , and so $[]\OT1/lmr/m/n/12 (\OMS/lmsy
 /m/n/12 []\OML/lmm/m/it/12 {mz\OT1/lmr/m/n/12 ) =
  []
 
-[18] [19] [20]
-Overfull \hbox (59.49289pt too wide) detected at line 724
+[19] [20] [21]
+Overfull \hbox (59.49289pt too wide) detected at line 722
  []$[][][][] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@[]\OML/lmm/m/it/12 {k[]Hu[] 
 [][] [][][] [] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 2\OML/lmm/
 m/it/12 []{k[]Hu[][][];$
  []
 
 
-Overfull \hbox (9.21616pt too wide) detected at line 739
+Overfull \hbox (9.21616pt too wide) detected at line 737
 []
  []
 
 
-Overfull \hbox (31.29565pt too wide) detected at line 739
+Overfull \hbox (31.29565pt too wide) detected at line 737
 []
  []
 
-[21]
-<./figures/oro_flows/wave.pdf, id=509, 677.53125pt x 376.40625pt>
+[22]
+<./figures/oro_flows/wave.pdf, id=507, 614.295pt x 794.97pt>
 File: ./figures/oro_flows/wave.pdf Graphic file (type pdf)
 <use ./figures/oro_flows/wave.pdf>
-Package luatex.def Info: ./figures/oro_flows/wave.pdf  used on input line 757.
-(luatex.def)             Requested size: 320.0pt x 177.78397pt.
-) (./chapters/modelling.tex [22<./figures/oro_flows/wave.pdf>]
+Package luatex.def Info: ./figures/oro_flows/wave.pdf  used on input line 755.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+) (./chapters/modelling.tex [23<./figures/oro_flows/wave.pdf>]
 Chapter 2.
 
-Underfull \hbox (badness 4279) in paragraph at lines 32--32
+Underfull \hbox (badness 4279) in paragraph at lines 12--12
 []$[][]$ \TU/lmr/m/n/12 As we did in the sec-tion
  []
 
-[23
+[24
 
-] [24]) (./chapters/sph.tex [25]
+]) (./chapters/sph.tex [25]
 Chapter 3.
 
 Underfull \hbox (badness 1371) in paragraph at lines 12--12
@@ -3101,24 +3072,24 @@ Underfull \hbox (badness 1748) in paragraph at lines 82--82
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
-<./figures/sph/kernel.pdf, id=665, 1053.9375pt x 451.6875pt>
+<./figures/sph/kernel.pdf, id=617, 614.295pt x 794.97pt>
 File: ./figures/sph/kernel.pdf Graphic file (type pdf)
 <use ./figures/sph/kernel.pdf>
 Package luatex.def Info: ./figures/sph/kernel.pdf  used on input line 94.
-(luatex.def)             Requested size: 320.0pt x 137.14073pt.
-[28<./figures/sph/kernel.pdf>]
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+[28] [29<./figures/sph/kernel.pdf>]
 
-LaTeX Warning: Hyper reference `sec:HOPKINS' on page 29 undefined on input line
+LaTeX Warning: Hyper reference `sec:HOPKINS' on page 30 undefined on input line
  119.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 29 undefined on input line 119.
+LaTeX Warning: Reference `sec:HOPKINS' on page 30 undefined on input line 119.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 29 undefined on input line 119.
+LaTeX Warning: Reference `sec:HOPKINS' on page 30 undefined on input line 119.
 
 
-LaTeX Warning: Reference `sec:HOPKINS' on page 29 undefined on input line 119.
+LaTeX Warning: Reference `sec:HOPKINS' on page 30 undefined on input line 119.
 
 
 Overfull \hbox (44.1207pt too wide) detected at line 124
@@ -3126,7 +3097,7 @@ Overfull \hbox (44.1207pt too wide) detected at line 124
 /m/n/12  [] \OT1/lmr/m/n/12 [][]\OML/lmm/m/it/12 w[][][]V[];$
  []
 
-[29]
+
 Underfull \hbox (badness 10000) in paragraph at lines 142--142
 []$[][]$ \TU/lmr/m/n/12 De-ploy-ing tech-niques from
  []
@@ -3136,13 +3107,13 @@ Underfull \hbox (badness 1590) in paragraph at lines 142--142
 \TU/lmr/m/n/12 Fourier anal-y-sis and the Euler-
  []
 
-
+[30]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.2'
-[30]
+[31]
 
 Package eqnlines Warning: Unused equation \label: label 'eq:GRAD' will be lost 
 on input line 187.
@@ -3152,7 +3123,7 @@ Overfull \hbox (13.86569pt too wide) detected at line 187
 []
  []
 
-[31]
+
 Overfull \hbox (58.17142pt too wide) detected at line 199
 []
  []
@@ -3167,17 +3138,17 @@ Overfull \hbox (43.33105pt too wide) in paragraph at lines 226--227
 []\TU/lmr/m/n/12 The naive dis-creti-sa-tions [][][][][] and [][][][][]
  []
 
-
+[33]
 Overfull \hbox (0.1925pt too wide) detected at line 249
 []
  []
 
-[33]
+[34]
 Overfull \hbox (25.60927pt too wide) detected at line 274
 []
  []
 
-[34]
+[35]
 Overfull \hbox (3.711pt too wide) in paragraph at lines 299--300
 \TU/lmr/m/n/12 Let us ap-ply the \TU/lmr/m/sl/12 im-proved \TU/lmr/m/n/12 dis-cr
 ete gra-di-ent [][][][][]
@@ -3188,7 +3159,7 @@ Overfull \hbox (7.49pt too wide) detected at line 324
 []
  []
 
-[35]
+
 Overfull \hbox (58.44078pt too wide) detected at line 330
  []$\OT1/lmr/bx/n/12 F[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12
  m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \OML/lmm/
@@ -3196,12 +3167,12 @@ m/it/12 m[]m[][][]\OMS/lmsy/m/n/12 r[]\OML/lmm/m/it/12 w[] \OT1/lmr/m/n/12 = \O
 MS/lmsy/m/n/12 ^^@\OT1/lmr/bx/n/12 F[]\OML/lmm/m/it/12 ;$
  []
 
-
+[36]
 Overfull \hbox (43.39954pt too wide) detected at line 351
 []
  []
 
-[36]
+[37]
 Underfull \hbox (badness 1371) in paragraph at lines 388--388
 \TU/lmr/m/n/12 a mixed ob-ject: it is the Eu-
  []
@@ -3222,7 +3193,7 @@ Overfull \hbox (19.37398pt too wide) in paragraph at lines 390--391
 12 , $\OML/lmm/m/it/12 G[][]$
  []
 
-[37]
+[38]
 Overfull \hbox (20.62755pt too wide) detected at line 411
  []$[][][] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F[][][] \OT1/lmr/m/n/12 + [][][]\
 OML/lmm/m/it/12 G:$
@@ -3234,19 +3205,19 @@ Overfull \hbox (13.30432pt too wide) detected at line 424
 OML/lmm/m/it/12 @[]E[];$
  []
 
-[38]
-warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
-i.1'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
-i.2'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
-i.1'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
-i.2'
 [39]
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.2'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
+i.2'
+[40]
 Overfull \hbox (30.38855pt too wide) in paragraph at lines 485--486
 \TU/lmr/m/n/12 of the SPH state vari-ables [][][][][], [][][][][]
  []
@@ -3261,12 +3232,12 @@ Overfull \hbox (39.37477pt too wide) detected at line 490
 []$\OMS/lmsy/m/n/12 ^^@ [] []  [][] [] \OML/lmm/m/it/12 :$ 
  []
 
-[40]
+[41]
 Overfull \hbox (9.24593pt too wide) detected at line 522
 []$[][][] [][]\OT1/lmr/m/n/12 = [][][]\OML/lmm/m/it/12 ;$ 
  []
 
-[41]
+[42]
 Overfull \hbox (53.23851pt too wide) detected at line 562
 []$\OML/lmm/m/it/12 E[] \OT1/lmr/m/n/12 = [][][] = [][][]\OML/lmm/m/it/12 :$ 
  []
@@ -3277,12 +3248,12 @@ Overfull \hbox (56.37674pt too wide) detected at line 577
 lmr/m/n/12 = [] \OML/lmm/m/it/12 :$
  []
 
-[42] [43]
+[43] [44]
 Overfull \hbox (12.31589pt too wide) detected at line 638
 []
  []
 
-[44]
+[45]
 Overfull \hbox (12.16333pt too wide) in paragraph at lines 650--651
 [][][][][]\TU/lmr/m/n/12 , as the Pois-son bracket [][][][][]
  []
@@ -3292,7 +3263,7 @@ Overfull \hbox (93.34831pt too wide) detected at line 655
 []
  []
 
-[45]
+[46]
 Overfull \hbox (7.06734pt too wide) in paragraph at lines 691--692
 \TU/lmr/m/n/12 We have in-tro-duced the clas-si-cal SPH for-mu-la-tion [][][][]
 []
@@ -3304,22 +3275,22 @@ Overfull \hbox (17.26671pt too wide) in paragraph at lines 691--692
  []
 
 
-LaTeX Warning: Hyper reference `sec:ADAPTIVE-NEED' on page 46 undefined on inpu
+LaTeX Warning: Hyper reference `sec:ADAPTIVE-NEED' on page 47 undefined on inpu
 t line 693.
 
 
-LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 46 undefined on input line
+LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 47 undefined on input line
  693.
 
 
-LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 46 undefined on input line
+LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 47 undefined on input line
  693.
 
 
-LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 46 undefined on input line
+LaTeX Warning: Reference `sec:ADAPTIVE-NEED' on page 47 undefined on input line
  693.
 
-[46] [47]
+[47] [48]
 Overfull \hbox (16.77641pt too wide) detected at line 725
 []$\OT1/lmr/m/n/12 [][][] [][]= [] \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 N[] \
 OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 ;  \OMS/lmsy/m/n/12 2 f\OT1/lmr/m/n/12 1\OM
@@ -3331,22 +3302,22 @@ Overfull \hbox (13.99551pt too wide) in paragraph at lines 737--738
 []\TU/lmr/m/n/12 To com-pute the deriva-tives of the La-grangian [][][][][],
  []
 
-[48]
+[49]
 Overfull \hbox (15.04729pt too wide) detected at line 795
 []
  []
 
-[49] [50] [51]
+[50] [51] [52]
 Overfull \hbox (6.74751pt too wide) in paragraph at lines 889--890
 \TU/lmr/m/n/12 The gen-eral La-grangian for-mu-la-tion of SPH [][][][][],
  []
 
-[52]
+[53]
 Overfull \hbox (59.66277pt too wide) in paragraph at lines 903--904
 []\TU/lmr/m/n/12 For $\OML/lmm/m/it/12 x[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 m[]$ \TU/lmr/m/n/12 we ob-tain ex-actly the sum-ma-tion den-sity [][][][][],
  []
 
-[53]
+[54]
 Overfull \hbox (7.93001pt too wide) in paragraph at lines 953--954
 []\TU/lmr/m/n/12 The deriva-tives $[] \OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 r[][]
 \OML/lmm/m/it/12 V[]$ \TU/lmr/m/n/12 have the ex-act same form as $[] \OML/lmm/
@@ -3369,7 +3340,7 @@ Overfull \hbox (6.53252pt too wide) detected at line 960
 []
  []
 
-[54]
+[55]
 Overfull \hbox (53.9541pt too wide) in paragraph at lines 992--993
 []\TU/lmr/m/n/12 Choos-ing $\OML/lmm/m/it/12 x[] \OT1/lmr/m/n/12 = []\OML/lmm/m
 /it/12 x[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 m[]$ \TU/lmr/m/n/12 as the kernel-
@@ -3393,7 +3364,7 @@ Overfull \hbox (4.29684pt too wide) detected at line 1014
 []
  []
 
-[55]
+[56]
 Overfull \hbox (54.86786pt too wide) in paragraph at lines 1071--1072
 []\TU/lmr/m/n/12 With these choices, the sys-tem of gov-ern-ing equa-tions [][]
 [][][],
@@ -3404,17 +3375,17 @@ Overfull \hbox (31.1719pt too wide) detected at line 1079
 []
  []
 
-[56]
+[57]
 Overfull \hbox (12.27065pt too wide) in paragraph at lines 1084--1085
 \TU/lmr/m/n/12 The pressure-entropy for-mu-la-tion [][][][][] uses the entropy-
  []
 
-[57]
+[58]
 Overfull \hbox (38.3664pt too wide) in paragraph at lines 1126--1127
 []\TU/lmr/m/n/12 Rewrit-ing the weights [][][][][] us-ing [][][][][],
  []
 
-[58]
+[59]
 Overfull \hbox (25.3923pt too wide) detected at line 1152
 []$[] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@ [] [] \OML/lmm/m/it/12 m[][][][]
 []:$ 
@@ -3422,11 +3393,11 @@ Overfull \hbox (25.3923pt too wide) detected at line 1152
 
 
 LaTeX Warning: Hyper reference `eq:PRESSURE-THETA-PRESSURE,eq:PRESSURE-THETA-CO
-RRECTION,eq:PRESSURE-THETA-MOMENTUM' on page 59 undefined on input line 1154.
+RRECTION,eq:PRESSURE-THETA-MOMENTUM' on page 60 undefined on input line 1154.
 
 
 LaTeX Warning: Reference `eq:PRESSURE-THETA-PRESSURE,eq:PRESSURE-THETA-CORRECTI
-ON,eq:PRESSURE-THETA-MOMENTUM' on page 59 undefined on input line 1154.
+ON,eq:PRESSURE-THETA-MOMENTUM' on page 60 undefined on input line 1154.
 
 
 Overfull \hbox (24.0054pt too wide) in paragraph at lines 1154--1155
@@ -3438,7 +3409,7 @@ Overfull \hbox (20.72163pt too wide) in paragraph at lines 1175--1176
 []\TU/lmr/m/n/12 Sub-sti-tut-ing this into the mo-men-tum equa-tion [][][][][],
  []
 
-[59]
+[60]
 Overfull \hbox (15.25742pt too wide) in paragraph at lines 1195--1196
 \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 p[]=R\OT1/lmr/m/n/12 )[]$ \TU/lmr/m/n/12 into
  the mo-men-tum equa-tion [][][][][]
@@ -3449,7 +3420,7 @@ Overfull \hbox (41.73042pt too wide) detected at line 1204
 []
  []
 
-[60] [61]
+[61] [62]
 
 Package eqnlines Warning: Unused equation \label: label 'eq:SPH-MOMENTUM' will 
 be lost on input line 1256.
@@ -3460,36 +3431,36 @@ Overfull \hbox (5.14653pt too wide) in paragraph at lines 1258--1259
 term. As dis-cussed in [][][][][],
  []
 
-[62]
+[63]
 
-LaTeX Warning: Hyper reference `eq:SPH-MOMENTUM' on page 63 undefined on input 
+LaTeX Warning: Hyper reference `eq:SPH-MOMENTUM' on page 64 undefined on input 
 line 1282.
 
 
-LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 63 undefined on input line 1
+LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 64 undefined on input line 1
 282.
 
 
-LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 63 undefined on input line 1
+LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 64 undefined on input line 1
 282.
 
 
-LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 63 undefined on input line 1
+LaTeX Warning: Reference `eq:SPH-MOMENTUM' on page 64 undefined on input line 1
 282.
 
-[63]
+[64]
 Overfull \hbox (53.29816pt too wide) detected at line 1348
 []$\OT1/lmr/bx/n/12 F[][][] \OT1/lmr/m/n/12 = [] \OML/lmm/m/it/12 m[][][][][][]
 :$ 
  []
 
-[64]
+[65]
 Overfull \hbox (5.03835pt too wide) in paragraph at lines 1363--1364
 []\TU/lmr/m/n/12 Con-se-quently, the re-sult-ing ac-cel-er-a-tion in [][][][][]
 
  []
 
-[65]
+[66]
 Overfull \hbox (64.55162pt too wide) in paragraph at lines 1379--1380
 []\TU/lmr/m/n/12 In-tro-duce $\OT1/lmr/bx/n/12 F[][][]$ \TU/lmr/m/n/12 as the pr
 es-sure gra-di-ent force from [][][][][] 
@@ -3502,9 +3473,9 @@ Overfull \hbox (44.18594pt too wide) detected at line 1384
  []
 
 
-Overfull \hbox (10.49586pt too wide) in paragraph at lines 1393--1394
-[][]\OML/lmm/m/it/12 ; p[] \OT1/lmr/m/n/12 = [][]\OML/lmm/m/it/12 ;$ \TU/lmr/m/
-n/12 then also the dis-crete gra-di-ents [][][][][]
+Overfull \hbox (10.69154pt too wide) in paragraph at lines 1393--1394
+[][]\OML/lmm/m/it/12 ; p[] \OT1/lmr/m/n/12 = [][]$\TU/lmr/m/n/12 , then also the
+ dis-crete gra-di-ents [][][][][]
  []
 
 
@@ -3512,204 +3483,247 @@ Overfull \hbox (13.62997pt too wide) in paragraph at lines 1393--1394
 \TU/lmr/m/n/12 are equal and so the re-sult-ing ac-cel-er-a-tion in [][][][][]
  []
 
-) (./chapters/experiments.tex [66]
+) (./chapters/experiments.tex [67]
 Chapter 4.
 
-LaTeX Warning: Citation 'clarkSmallscaleDynamicModel1977gal-chenUseCoordinateTr
-ansformation1975' on page 67 undefined on input line 12.
-
-
-Overfull \hbox (400.69716pt too wide) in paragraph at lines 12--13
-[]\TU/lmr/m/n/12 the terrain-following co-or-di-nate trans-for-ma-tion []; 
- []
-
-
-Overfull \hbox (62.33525pt too wide) in paragraph at lines 44--45
+Overfull \hbox (39.91922pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-[67
+[68
 
 ]
-<./figures/experiments/stationary_norms_SPH.pdf, id=1319, 677.53125pt x 376.406
-25pt>
+<./figures/experiments/stationary_norms_SPH.pdf, id=1246, 614.295pt x 794.97pt>
+
 File: ./figures/experiments/stationary_norms_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/stationary_norms_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/stationary_norms_SPH.pdf  used o
 n input line 74.
-(luatex.def)             Requested size: 320.0pt x 177.78397pt.
-<./figures/experiments/stationary_norms_PTH.pdf, id=1320, 677.53125pt x 376.406
-25pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+<./figures/experiments/stationary_norms_PTH.pdf, id=1247, 614.295pt x 794.97pt>
+
 File: ./figures/experiments/stationary_norms_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/stationary_norms_PTH.pdf>
 Package luatex.def Info: ./figures/experiments/stationary_norms_PTH.pdf  used o
 n input line 83.
-(luatex.def)             Requested size: 320.0pt x 177.78397pt.
- [68] [69<./figures/experiments/stationary_norms_SPH.pdf><./figures/experiments/
-stationary_norms_PTH.pdf>]
-<./figures/experiments/standard_SPH.pdf, id=1390, 752.8125pt x 262.9825pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+ [69]
+Overfull \vbox (353.92386pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (353.92386pt too high) has occurred while \output is active []
+
+
+[70<./figures/experiments/stationary_norms_SPH.pdf><./figures/experiments/statio
+nary_norms_PTH.pdf>]
+<./figures/experiments/standard_SPH.pdf, id=1264, 614.295pt x 794.97pt>
 File: ./figures/experiments/standard_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/standard_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/standard_SPH.pdf  used on input 
 line 101.
-(luatex.def)             Requested size: 320.0pt x 111.78815pt.
-<./figures/experiments/standard_PTH.pdf, id=1391, 752.8125pt x 262.9825pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+<./figures/experiments/standard_PTH.pdf, id=1265, 614.295pt x 794.97pt>
 File: ./figures/experiments/standard_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/standard_PTH.pdf>
 Package luatex.def Info: ./figures/experiments/standard_PTH.pdf  used on input 
 line 110.
-(luatex.def)             Requested size: 320.0pt x 111.78815pt.
-<./figures/experiments/well_balanced_SPH.pdf, id=1392, 752.8125pt x 262.9825pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71]
+Overfull \vbox (323.46178pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (323.46178pt too high) has occurred while \output is active []
+
+
+[72<./figures/experiments/standard_SPH.pdf><./figures/experiments/standard_PTH.p
+df>]
+<./figures/experiments/well_balanced_SPH.pdf, id=1279, 614.295pt x 794.97pt>
 File: ./figures/experiments/well_balanced_SPH.pdf Graphic file (type pdf)
 <use ./figures/experiments/well_balanced_SPH.pdf>
 Package luatex.def Info: ./figures/experiments/well_balanced_SPH.pdf  used on i
 nput line 123.
-(luatex.def)             Requested size: 320.0pt x 111.78815pt.
-<./figures/experiments/well_balanced_PTH.pdf, id=1393, 752.8125pt x 262.9825pt>
-
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+<./figures/experiments/well_balanced_PTH.pdf, id=1280, 614.295pt x 794.97pt>
 File: ./figures/experiments/well_balanced_PTH.pdf Graphic file (type pdf)
 <use ./figures/experiments/well_balanced_PTH.pdf>
 Package luatex.def Info: ./figures/experiments/well_balanced_PTH.pdf  used on i
 nput line 132.
-(luatex.def)             Requested size: 320.0pt x 111.78815pt.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (278.33867pt too high) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (278.33867pt too high) has occurred while \output is active []
 
- [70<./figures/experiments/standard_SPH.pdf><./figures/experiments/standard_PTH.
-pdf>]
-<./figures/experiments/wave_PTH_0035.pdf, id=1435, 752.8125pt x 339.2675pt>
+
+[73<./figures/experiments/well_balanced_SPH.pdf><./figures/experiments/well_bala
+nced_PTH.pdf>]
+<./figures/experiments/wave_PTH_0035.pdf, id=1289, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0035.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0035.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0035.pdf  used on input
  line 152.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0040.pdf, id=1436, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_PTH_0040.pdf, id=1290, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0040.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0040.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0040.pdf  used on input
  line 158.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0045.pdf, id=1437, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_PTH_0045.pdf, id=1291, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0045.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0045.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0045.pdf  used on input
  line 167.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0050.pdf, id=1438, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_PTH_0050.pdf, id=1292, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0050.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0050.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0050.pdf  used on input
  line 173.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0055.pdf, id=1439, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_PTH_0055.pdf, id=1293, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0055.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0055.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0055.pdf  used on input
  line 182.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_PTH_0060.pdf, id=1440, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_PTH_0060.pdf, id=1294, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_PTH_0060.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_PTH_0060.pdf>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0060.pdf  used on input
  line 188.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
 
-[71<./figures/experiments/well_balanced_SPH.pdf><./figures/experiments/well_bala
-nced_PTH.pdf>]
-<./figures/experiments/wave_SPH_0030.pdf, id=1499, 752.8125pt x 339.2675pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74]
+Overfull \vbox (142.29427pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (142.29427pt too high) has occurred while \output is active []
+
+
+[75<./figures/experiments/wave_PTH_0035.pdf><./figures/experiments/wave_PTH_0040
+.pdf><./figures/experiments/wave_PTH_0045.pdf><./figures/experiments/wave_PTH_00
+50.pdf><./figures/experiments/wave_PTH_0055.pdf><./figures/experiments/wave_PTH_
+0060.pdf>]
+<./figures/experiments/wave_SPH_0030.pdf, id=1314, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0030.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0030.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0030.pdf  used on input
  line 206.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0035.pdf, id=1500, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_SPH_0035.pdf, id=1315, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0035.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0035.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0035.pdf  used on input
  line 212.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0040.pdf, id=1501, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_SPH_0040.pdf, id=1316, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0040.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0040.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0040.pdf  used on input
  line 221.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0045.pdf, id=1502, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_SPH_0045.pdf, id=1317, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0045.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0045.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0045.pdf  used on input
  line 227.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0050.pdf, id=1503, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_SPH_0050.pdf, id=1318, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0050.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0050.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0050.pdf  used on input
  line 236.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
-<./figures/experiments/wave_SPH_0055.pdf, id=1504, 752.8125pt x 339.2675pt>
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
+<./figures/experiments/wave_SPH_0055.pdf, id=1319, 614.295pt x 794.97pt>
 File: ./figures/experiments/wave_SPH_0055.pdf Graphic file (type pdf)
 <use ./figures/experiments/wave_SPH_0055.pdf>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0055.pdf  used on input
  line 242.
-(luatex.def)             Requested size: 160.0pt x 72.10762pt.
+(luatex.def)             Requested size: 160.0pt x 207.05122pt.
 
-Underfull \vbox (badness 1596) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1596) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72<./figures/experiments/wave_PTH_0035.pdf><./figures/experiments/wave_PTH_004
-0.pdf><./figures/experiments/wave_PTH_0045.pdf><./figures/experiments/wave_PTH_0
-050.pdf><./figures/experiments/wave_PTH_0055.pdf><./figures/experiments/wave_PTH
-_0060.pdf>]
-<./figures/experiments/crash_SPH_0062.pdf, id=1621, 903.375pt x 376.40625pt>
+ [76]
+Overfull \vbox (140.08626pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (140.08626pt too high) has occurred while \output is active []
+
+
+[77<./figures/experiments/wave_SPH_0030.pdf><./figures/experiments/wave_SPH_0035
+.pdf><./figures/experiments/wave_SPH_0040.pdf><./figures/experiments/wave_SPH_00
+45.pdf><./figures/experiments/wave_SPH_0050.pdf><./figures/experiments/wave_SPH_
+0055.pdf>]
+<./figures/experiments/crash_SPH_0062.pdf, id=1337, 614.295pt x 794.97pt>
 File: ./figures/experiments/crash_SPH_0062.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_SPH_0062.pdf>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0062.pdf  used on inpu
 t line 261.
-(luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_SPH_0064.pdf, id=1622, 903.375pt x 376.40625pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+<./figures/experiments/crash_SPH_0064.pdf, id=1338, 614.295pt x 794.97pt>
 File: ./figures/experiments/crash_SPH_0064.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_SPH_0064.pdf>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0064.pdf  used on inpu
 t line 270.
-(luatex.def)             Requested size: 320.0pt x 133.3351pt.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73<./figures/experiments/wave_SPH_0030.pdf><./figures/experiments/wave_SPH_003
-5.pdf><./figures/experiments/wave_SPH_0040.pdf><./figures/experiments/wave_SPH_0
-045.pdf><./figures/experiments/wave_SPH_0050.pdf><./figures/experiments/wave_SPH
-_0055.pdf>]
-<./figures/experiments/crash_PTH_0057.pdf, id=1741, 903.375pt x 376.40625pt>
+ [78]
+Overfull \vbox (339.25081pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (339.25081pt too high) has occurred while \output is active []
+
+
+[79<./figures/experiments/crash_SPH_0062.pdf><./figures/experiments/crash_SPH_00
+64.pdf>]
+<./figures/experiments/crash_PTH_0057.pdf, id=1358, 614.295pt x 794.97pt>
 File: ./figures/experiments/crash_PTH_0057.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_PTH_0057.pdf>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0057.pdf  used on inpu
 t line 284.
-(luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_PTH_0060.pdf, id=1742, 903.375pt x 376.40625pt>
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
+<./figures/experiments/crash_PTH_0060.pdf, id=1359, 614.295pt x 794.97pt>
 File: ./figures/experiments/crash_PTH_0060.pdf Graphic file (type pdf)
 <use ./figures/experiments/crash_PTH_0060.pdf>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0060.pdf  used on inpu
 t line 293.
-(luatex.def)             Requested size: 320.0pt x 133.3351pt.
+(luatex.def)             Requested size: 320.0pt x 414.1146pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74<./figures/experiments/crash_SPH_0062.pdf><./figures/experiments/crash_SPH_0
-064.pdf>]
-[75<./figures/experiments/crash_PTH_0057.pdf><./figures/experiments/crash_PTH_00
-60.pdf>]) [76]
+ [80]
+Overfull \vbox (338.69882pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (338.69882pt too high) has occurred while \output is active []
+
+
+[81<./figures/experiments/crash_PTH_0057.pdf><./figures/experiments/crash_PTH_00
+60.pdf>]) [82]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: luatex
 * paper: custom
@@ -3743,7 +3757,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./chapters/summary.tex) [77
+ (./chapters/summary.tex) [83
 
 
 ]
@@ -3751,20 +3765,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 47.
 
-[78
+[84
 
 ]
 
 Package biblatex Warning: No driver for 'artwork'.
 (biblatex)                Using fallback driver on input line 47.
 
-[79] [80] [81] [82] [83]
+[85] [86] [87] [88] [89] [90]
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 116.
 See the caption package documentation for explanation.
 
-[84]
-runsystem(latexminted cleantemp  --timestamp 20260429214759Z FAD58DE7366495DB465
+[91]
+runsystem(latexminted cleantemp  --timestamp 20260429231541Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3781,23 +3795,23 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 76466 strings out of 475900
- 244464,3417909 words of node,token memory allocated
- 85898 words of node memory still in use:
-   1096 hlist, 124 vlist, 45 rule, 422 disc, 48 local_par, 239 math, 1734 glue, 
-476 kern, 218 penalty, 146 margin_kern, 5025 glyph, 3205 attribute, 108 glue_spe
+ 76464 strings out of 475900
+ 244463,3417909 words of node,token memory allocated
+ 85870 words of node memory still in use:
+   1096 hlist, 124 vlist, 45 rule, 422 disc, 48 local_par, 239 math, 1733 glue, 
+476 kern, 218 penalty, 146 margin_kern, 5022 glyph, 3205 attribute, 108 glue_spe
 c, 3205 attribute_list, 9 write, 932 pdf_literal, 11 pdf_start_link, 11 pdf_end_
 link, 3 pdf_dest, 11 pdf_action, 124 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save
 , 1 pdf_restore nodes
-   avail lists: 1:27,2:8155,3:5366,4:601,5:865,6:221,7:8189,8:92,9:2553,10:62,11
-:593,12:15
- 95667 multiletter control sequences out of 65536+600000
+   avail lists: 1:27,2:8159,3:5366,4:601,5:864,6:225,7:8193,8:92,9:2554,10:62,11
+:608,12:15
+ 95660 multiletter control sequences out of 65536+600000
  151 fonts using 11693031 bytes
  113i,20n,129p,4410b,3757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
 f></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmromancaps10-reg
-ular.otf>{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/
-local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman6-bold.otf></usr/l
+ular.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman6-b
+old.otf>{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/l
 ocal/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf>{/usr
 /local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texl
 ive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/te
@@ -3831,10 +3845,10 @@ m/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 /texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb></usr/local/te
 xlive/2026/texmf-dist/fonts/type1/public/boondox/zxxrl8a.pfb>
-Output written on main.pdf (92 pages, 13107313 bytes).
+Output written on main.pdf (99 pages, 957486 bytes).
 
-PDF statistics: 2535 PDF objects out of 2984 (max. 8388607)
- 2125 compressed objects within 22 object streams
- 598 named destinations out of 1000 (max. 1048576)
- 720 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2031 PDF objects out of 2073 (max. 8388607)
+ 1791 compressed objects within 18 object streams
+ 603 named destinations out of 1000 (max. 1048576)
+ 680 words of extra memory for PDF output out of 10000 (max. 100000000)
 
