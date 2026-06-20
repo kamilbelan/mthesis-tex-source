@@ -1,12 +1,27 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{Well-balanced methods}
-\label{chap:MODELLING}
+% TODO: resolve chapter and section names
+
+\section{Initial and boundary conditions}
+\label{sec:IBCs}
+
+% TODO: add initial conditons
+% TODO discuss BCs for Euler
+% TODO discuss used BCs 
+% TODO discuss radiative BC
+
+\section{Terrain-following coordinates}
+\label{sec:terrain-coords}
+
+% TODO: add figures
+
+\section{Well-balanced methods}
+\label{section:MODELLING}
 
 This chapter provides an introduction to specialized numerical methods for the compressible Euler equations. The motivation for the use of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. Results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
 
-\section{Preservation of the hydrostatic balance}
+\subsection{Preservation of the hydrostatic balance}
 \label{sec:INEXACT}
 
 Internal gravity waves can be considered perturbations of the background atmospheric state. It is standard to take the background atmospheric state as \emph{hydrostatic}\sidenote{As we did in the section \Cref{sec:MTN-WVS}.}: $\vb{v} = 0$ and the pressure $p$ and density $\rho$ solve the equation \Cref{eq:HYDROSTATIC-P}
@@ -32,7 +47,7 @@ together with given $p = p\left(\theta, \rho\right)$ and some boundary condition
 
 where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$} obtained by the numerical method and $\grad_{h}$ is some discrete gradient operator. Since the right-hand side of the momentum balance \Cref{eq:NONSTAT-EULER} does not vanish on the \emph{discrete level}, a spurious non-physical force is introduced and the gas moves with \emph{nonzero velocity.}
 
-\section{Implications for wave simulations}
+\subsection{Implications for wave simulations}
 \label{sec:WB-WAVES}
 
 The failure to preserve hydrostatic balance is particularly damaging for simulations of internal gravity waves. As established earlier, internal gravity waves are small perturbations of the \emph{background state.} When the hydrostatic balance is inexact, the spurious forces influence the simulation and affect the flow field. 
@@ -44,7 +59,7 @@ with A = \num{e-8}.}
 spurious forces dominate the wave field. By contrast, well-balanced schemes give qualitatively correct wave dynamics. For large-amplitude flows, in \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} it is shown that the effect is not critical. 
 For small-amplitude wave dynamics---relevant to internal gravity waves---exact discrete hydrostatic balance is therefore essential.
 
-\section{Well-balanced schemes}
+\subsection{Well-balanced schemes}
 \label{sec:WB-SCHEMES}
 
 Numerical methods that preserve the \emph{analytic} steady solutions on the \emph{discrete} level are called \emph{well-balanced} \autocite{cargoSchemaEquilibreAdapte1994,greenbergWellBalancedSchemeNumerical1996}. The methods had been first used for shallow water equations \autocite{greenbergWellBalancedSchemeNumerical1996} and are nowadays standard in many areas where a numerical solution of \emph{hyperbolic} PDEs is required, \eg atmospheric flows \autocite{kappeliWellbalancedFiniteVolume2016a,chertockWellbalancedNumericalMethod2023,berthonFullyWellbalancedEntropystable2025} and astrophysics \autocite{kappeliWellbalancedMethodsComputational2022}. 
