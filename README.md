@@ -11,12 +11,12 @@
 - [x] monitorovani energie a obecne vylepseni diagnostiky
 - [x] prepis *multi-mass distribution* na *single-mass distribution*
 - [x] prechod k exponencialnimu pocatecnimu rozdeleni
-- [ ] implementace okrajovych podminek:
-    - [ ] zkvalitneni hranice
-    - [ ] dolni podminka: *noslip* ci *freeslip*?
-    - [ ] vtok: 
-    - [ ] vytok: periodicke?
-    - [ ] horni podminka: Rayleigh?
+- [x] implementace okrajovych podminek:
+    - [x] zkvalitneni hranice
+    - [x] dolni podminka: *noslip* ci *freeslip*?
+    - [x] vtok: 
+    - [x] vytok: periodicke?
+    - [x] horni podminka: Rayleigh?
 
 ### Formulace
 - **klasicke WCPSH**: plna formulace, diskretizace rovnice kontinuity
@@ -27,19 +27,7 @@
 - **WCSPH Hopkins**?: advekce entropie, ale interakce dle WCSPH
 - **θ-Hopknis**?: Hopkinsova entropy-like variable $A$ by melo byt mozne vyjadrit pomoci potencialove teploty θ, ktera se ma taky zachovovat
 
-## Trixi
-**veskery kod v tomto repozitari** [sph-mountain-waves](https://github.com/moschehaus/trixi-mountain-waves)
-
 ## Lagrangian Voronoi
-
-# Konzultace s P.S.
-- existuji i *nehydrostaticke modely* - **co to je?**
-- simulace IGW neni jedine, co by mohlo byt zajimave:
-    - drag (ci obecne silove pusobeni) na prekazku
-    - rychlostni pole na zavetrne strane kopce
-    - (*nejaka*) hustota toku hybnosti
-- vysledky se zpracovavaji vzhledem k nejakemu nondim cislu - inverzni Froudovo
-- *umi dodat mnoho dat pro srovnani*
 
 # AI acknowledgment
 
