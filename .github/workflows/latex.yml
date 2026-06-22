@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     # 1. Run natively inside the official Debian-based TeX Live container
     container:
-      image: texlive/texlive:TL2026-2026-06-15   
+      image: texlive/texlive:latest
     
     steps:
       - name: Checkout repository
