@@ -828,61 +828,49 @@
       \endverb
       \keyw{orographic flows}
     \endentry
-    \entry{mahdizadehExtrapolationBoundaryConditions2025}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=066349c0cdded832fb7c02040421a62b}{%
-           family={Mahdizadeh},
-           familyi={M\bibinitperiod},
-           given={Hossein},
-           giveni={H\bibinitperiod}}}%
-        {{hash=03b40b7b3cf6d273875a028b37385961}{%
-           family={Rennie},
-           familyi={R\bibinitperiod},
-           given={Colin\bibnamedelima D.},
-           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=40eeca794fdba5558b0d815a74535f56}{%
-           family={Rogers},
-           familyi={R\bibinitperiod},
-           given={Benedict\bibnamedelima D.},
-           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=d40e61de3a41995654d5b7ac66832ddf}{%
-           family={Pilechi},
-           familyi={P\bibinitperiod},
-           given={Abolghasem},
+    \entry{oligerTheoreticalPracticalAspects1978}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f6909ad190c6609ec1d6859c6f8058c8}{%
+           family={Oliger},
+           familyi={O\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=02cc9bffc83e81af7b167a15b229efe5}{%
+           family={Sundström},
+           familyi={S\bibinitperiod},
+           given={Arne},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{fullhash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{fullhashraw}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{bibnamehash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{authorbibnamehash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{authornamehash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{authorfullhash}{1ab3c781493f4370e56583a8f53cca2e}
-      \strng{authorfullhashraw}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{namehash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{fullhash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{fullhashraw}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{bibnamehash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{authorbibnamehash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{authornamehash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{authorfullhash}{67e93c742e6e9c93c526820e2fb7827d}
+      \strng{authorfullhashraw}{67e93c742e6e9c93c526820e2fb7827d}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{ABSTRACT This paper presents a new robust treatment for smoothed particle hydrodynamics (SPH) open (inflow/outflow) and solid boundary conditions, avoiding the unphysical fluctuations and numerical noise present in existing techniques. By novel use of concepts from finite volume methods, the fluid properties from sequential dynamic particles with different normal distances to the boundaries are extrapolated to ghost particles. No so-called mirror points are required, making the method computationally efficient and easy to implement. The new methodology is validated through a series of progressively challenging test cases. The effectiveness of the wall and inflow-outflow boundaries is evaluated for 2-D Poiseuille laminar flow. The performance of the wall boundary for complex geometries is demonstrated using a hydrostatic tank with a triangular wedge, followed by a conventional 2-D dam-break problem to capture impact pressures. A range of challenging vertical inflows rarely explored using SPH, with varying efflux velocities, demonstrate highly accurate performance of the boundary treatment, with results compared to STAR-CCM+. Finally, the robust performance is demonstrated for flow past circular and square cylinders over a range of Reynolds numbers, showing excellent results compared to reference results.}
-      \field{issn}{0271-2091, 1097-0363}
-      \field{journaltitle}{International Journal for Numerical Methods in Fluids}
+      \field{issn}{0036-1399, 1095-712X}
+      \field{journaltitle}{SIAM Journal on Applied Mathematics}
       \field{langid}{english}
-      \field{month}{9}
-      \field{shortjournal}{Numerical Methods in Fluids}
-      \field{title}{Extrapolation {{Boundary Conditions}} for 2-{{D Smoothed Particle Hydrodynamics}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
+      \field{month}{11}
+      \field{shortjournal}{SIAM J. Appl. Math.}
+      \field{title}{Theoretical and {{Practical Aspects}} of {{Some Initial Boundary Value Problems}} in {{Fluid Dynamics}}}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
       \field{urlyear}{2026}
-      \field{year}{2025}
+      \field{year}{1978}
       \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{doi}
-      \verb 10.1002/fld.5397
+      \verb 10.1137/0135035
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Numerical Methods in Fluids - 2025 - Mahdizadeh - Extrapolation Boundary Conditions for 2‐D Smoothed Particle Hydrodynamics.pdf
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Oliger and Sundström - 1978 - Theoretical and Practical Aspects of Some Initial Boundary Value Problems in Fluid Dynamics.pdf
       \endverb
-      \keyw{sph techniques}
     \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
       \name{author}{2}{}{%
@@ -905,8 +893,8 @@
       \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computational Physics}
@@ -1687,8 +1675,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A limit form of Richardson extrapolation is used to obtain interpolation formulae with accuracy of a higher degree than that obtained with the variation diminishing spline approximation.}
@@ -2594,8 +2582,8 @@
       \strng{authornamehash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhashraw}{67129baf070b08b8c208f6af2e3ff0c8}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The standard formulation of the smoothed particle hydrodynamics (SPH) assumes that the local density distribution is differentiable. This assumption is used to derive the spatial derivatives of other quantities. However, this assumption breaks down at the contact discontinuity. At the contact discontinuity, the density of the low-density side is overestimated while that of the high-density side is underestimated. As a result, the pressure of the low-density (high-density) side is overestimated (underestimated). Thus, unphysical repulsive force appears at the contact discontinuity, resulting in the effective surface tension. This tension suppresses fluid instabilities. In this paper, we present a new formulation of SPH, which does not require the differentiability of density. Instead of the mass density, we adopt the internal energy density (pressure) and its arbitrary function, which are smoothed quantities at the contact discontinuity, as the volume element used for the kernel integration. We call this new formulation density-independent SPH (DISPH). It handles the contact discontinuity without numerical problems. The results of standard tests such as the shock tube, Kelvin--Helmholtz and Rayleigh--Taylor instabilities, point-like explosion, and blob tests are all very favorable to DISPH. We conclude that DISPH solved most of the known difficulties of the standard SPH, without introducing additional numerical diffusion or breaking the exact force symmetry or energy conservation. Our new SPH includes the formulation proposed by Ritchie \& Thomas as a special case. Our formulation can be extended to handle a non-ideal gas easily.}
@@ -2734,6 +2722,62 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Artiano et al. - 2025 - Structure-Preserving High-Order Methods for the Compressible Euler Equations in Potential Temperatur.pdf;/home/moschehaus/Zotero/storage/K2M2C6N9/2509.html
       \endverb
       \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
+    \endentry
+    \entry{mahdizadehExtrapolationBoundaryConditions2025}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=066349c0cdded832fb7c02040421a62b}{%
+           family={Mahdizadeh},
+           familyi={M\bibinitperiod},
+           given={Hossein},
+           giveni={H\bibinitperiod}}}%
+        {{hash=03b40b7b3cf6d273875a028b37385961}{%
+           family={Rennie},
+           familyi={R\bibinitperiod},
+           given={Colin\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=40eeca794fdba5558b0d815a74535f56}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={Benedict\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d40e61de3a41995654d5b7ac66832ddf}{%
+           family={Pilechi},
+           familyi={P\bibinitperiod},
+           given={Abolghasem},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{fullhash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{fullhashraw}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{bibnamehash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{authorbibnamehash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{authornamehash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{authorfullhash}{1ab3c781493f4370e56583a8f53cca2e}
+      \strng{authorfullhashraw}{1ab3c781493f4370e56583a8f53cca2e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTRACT This paper presents a new robust treatment for smoothed particle hydrodynamics (SPH) open (inflow/outflow) and solid boundary conditions, avoiding the unphysical fluctuations and numerical noise present in existing techniques. By novel use of concepts from finite volume methods, the fluid properties from sequential dynamic particles with different normal distances to the boundaries are extrapolated to ghost particles. No so-called mirror points are required, making the method computationally efficient and easy to implement. The new methodology is validated through a series of progressively challenging test cases. The effectiveness of the wall and inflow-outflow boundaries is evaluated for 2-D Poiseuille laminar flow. The performance of the wall boundary for complex geometries is demonstrated using a hydrostatic tank with a triangular wedge, followed by a conventional 2-D dam-break problem to capture impact pressures. A range of challenging vertical inflows rarely explored using SPH, with varying efflux velocities, demonstrate highly accurate performance of the boundary treatment, with results compared to STAR-CCM+. Finally, the robust performance is demonstrated for flow past circular and square cylinders over a range of Reynolds numbers, showing excellent results compared to reference results.}
+      \field{issn}{0271-2091, 1097-0363}
+      \field{journaltitle}{International Journal for Numerical Methods in Fluids}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{shortjournal}{Numerical Methods in Fluids}
+      \field{title}{Extrapolation {{Boundary Conditions}} for 2-{{D Smoothed Particle Hydrodynamics}}}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/fld.5397
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Numerical Methods in Fluids - 2025 - Mahdizadeh - Extrapolation Boundary Conditions for 2‐D Smoothed Particle Hydrodynamics.pdf
+      \endverb
+      \keyw{sph techniques}
     \endentry
     \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
       \name{author}{1}{}{%
@@ -2993,7 +3037,7 @@
       \verb 10.1093/mnras/216.4.883
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Zotero/storage/HV5MKBH8/216.4.html
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Phillips and Monaghan - 1985 - A numerical method for three-dimensional simulations of collapsing, isothermal, magnetic gas clouds.pdf;/home/moschehaus/Zotero/storage/HV5MKBH8/216.4.html
       \endverb
       \keyw{sph techniques}
     \endentry

@@ -649,10 +649,10 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbrmi10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmromanslant10-regular.luc
+INPUT ./figures/modelling/terrain_following.png
+INPUT ./figures/modelling/terrain_following.png
+INPUT ./figures/modelling/terrain_following.png
 INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc
-INPUT ./figures/modelling/terrain_following.png
-INPUT ./figures/modelling/terrain_following.png
-INPUT ./figures/modelling/terrain_following.png
 INPUT ./chapters/sph.tex
 INPUT ./chapters/sph.tex
 INPUT ./figures/sph/kernel.png
