@@ -3,5 +3,97 @@
 \chapter{Implementation of the used methods}
 \label{chap:IMPLEMENTATION}
 
+\begin{figure}
+\begin{subfigure}{\linewidth}
+	\centering
+	\begin{tikzpicture}[
+		>=Stealth, font=\footnotesize,
+		fluid/.style={circle, fill=cyan!60!black, inner sep=1.5pt},
+		ghost/.style={circle, draw=gray!70, fill=gray!15, inner sep=1.4pt},
+		pick/.style={draw=orange, line width=0.8pt},
+		]
+		\fill[cyan!4] (0,0) rectangle (3.0,2.7);
+		\fill[gray!6] (-1.4,0) rectangle (0,2.7);
+		\draw[thick] (0,-0.05) -- (0,2.75);
+		\node[anchor=south, gray!60!black] at (-0.7,2.78) {ghosts};
+		\node[anchor=south, cyan!60!black] at (1.6,2.78) {fluid};
+
+		\foreach \x in {-1.0,-0.4}
+		\foreach \y in {0.5,1.1,1.7,2.3}
+		\node[ghost] at (\x,\y) {};
+		\foreach \y in {0.5,1.7} \foreach \x in {0.4,1.2,2.0} \node[fluid] at (\x,\y) {};
+		\foreach \y in {1.1,2.3} \foreach \x in {0.8,1.6,2.4} \node[fluid] at (\x,\y) {};
+
+		\node[ghost, pick] (g) at (-0.4,1.7) {};
+		\node[fluid, pick] (q) at (2.0,1.7) {};
+		\node[anchor=east, inner sep=2pt] at (g.west) {$g$};
+		\node[anchor=north west, inner sep=1pt] at (q.south east) {$q$};
+
+		\draw[->, densely dashed] (g) to[bend left=18] (q);
+		\node[fill=white, inner sep=1.5pt] at (1.15,1.42) {$+3$ columns};
+
+		\draw[->, gray!60!black] (q) -- (2.55,2.12)
+		node[anchor=west, inner sep=1.5pt] {$\grad\phi_q$};
+
+		\node[anchor=north, align=center, text width=8.4cm] at (1.5,-0.18) {%
+			$\displaystyle \phi_g = \phi_q + (\vb{x}_g - \vb{x}_q)\cdot\grad\phi_q$\\[2pt]
+		each field $\phi$ (velocity, density or entropy perturbation) is set from the matched~$q$};
+	\end{tikzpicture}
+	\caption{Open boundary. A ghost $g$ is matched to the fluid particle $q$ nearest a target three columns inside the domain, then each ghost field is set by a first-order Taylor step from $q$.}
+	\label{fig:EBC-OPEN}
+\end{subfigure}
+\vspace{0.6cm}
+
+\begin{subfigure}{\linewidth}
+	\centering
+	\begin{tikzpicture}[
+		>=Stealth, font=\footnotesize,
+		fluid/.style={circle, fill=cyan!60!black, inner sep=1.5pt},
+		wall/.style={circle, fill=gray!55, inner sep=1.5pt},
+		pick/.style={draw=orange, line width=0.8pt},
+		]
+		\fill[gray!18] plot[domain=-2.5:2.5, samples=80] (\x,{1.2/(\x*\x+1)})
+		-- (2.5,0) -- (-2.5,0) -- cycle;
+		\draw[gray!55!black, thick] plot[domain=-2.5:2.5, samples=80] (\x,{1.2/(\x*\x+1)});
+
+		\node[fluid] at (-1.7,0.796) {};
+		\node[fluid] at (-1.0,1.10) {};
+		\node[fluid] at (-0.35,1.614) {};
+		\node[fluid] at (0.3,1.951) {};
+		\node[fluid] at (1.7,0.708) {};
+		\foreach \x in {-1.2,-0.4,0.4,1.2} \node[wall] at (\x,{1.2/(\x*\x+1)-0.16}) {};
+
+		\node[wall, pick] (p) at (0.7,0.685) {};
+		\node[fluid, pick] (q) at (1.0,0.95) {};
+		\node[anchor=north west, inner sep=1.5pt] at (q.east) {$q$};
+		\node[anchor=north east, inner sep=1.5pt] at (p.south) {$p$};
+
+		\draw[densely dotted, gray] (p) -- (q);
+		\draw[densely dashed, gray!60] (0.341,0.957) -- (1.059,0.413);
+
+		\draw[->, gray!60!black] (q) -- (0.655,1.239)
+		% WARN: should there be grad or no grad?
+		node[anchor=east, inner sep=1.5pt] {$\vb v_q$};
+		\draw[->, gray!40!black] (p) -- (1.122,1.243)
+		node[anchor=west, inner sep=1.5pt] {$\vb n$};
+		\draw[->, cyan!55!black, line width=1pt] (p) -- (0.887,1.565)
+		node[anchor=south, inner sep=2pt] {$\vb v_e$};
+		\draw[->, orange!85!black, line width=1pt] (p) -- (-0.097,0.265)
+		node[anchor=north east, inner sep=1.5pt] {$\vb v$};
+
+		\node[anchor=north, align=center, text width=8.8cm] at (0.0,-0.22) {%
+			$\vb v_e = \vb v_q + (\vb x_p - \vb x_q)\cdot\grad\vb v_q,\quad
+			\vb v = \vb v_e - 2(\vb v_e\cdot\vb n)\,\vb n$\\[2pt]
+		reflecting the normal component enforces free slip, $\vb v\cdot\vb n=0$, at the wall};
+	\end{tikzpicture}
+	\caption{Solid mountain boundary. The wall particle $p$ takes the extrapolated velocity $\vb v_e$ of the nearest fluid $q$; reflecting its normal component about the surface gives the free-slip velocity $\vb v$.}
+	\label{fig:EBC-MOUNTAIN}
+\end{subfigure}	\caption[Extrapolation boundary conditions]{%
+	The extrapolation boundary conditions (EBC) \autocite{mahdizadehExtrapolationBoundaryConditions2025}: \subref{fig:EBC-OPEN} the open inflow and outflow boundaries, and \subref{fig:EBC-MOUNTAIN} the solid mountain with free slip. In both, the matched fluid particle $q$ supplies a reliable SPH gradient that a first-order Taylor step carries to the boundary particle.
+}
+\label{fig:EBC}
+\end{figure}
+
+
 \end{document}
 

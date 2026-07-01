@@ -4,8 +4,20 @@
 % TODO: resolve chapter and section names
 
 \chapter{Mathematical modelling of orographic flows}
+
+In the previous chapter \Cref{chap:FLOWS} the underlying physical laws governing atmospheric flows have been described. In this chapter we describe further \emph{modelling choices} used to obtain numerical solution to our problem.
+
 \section{Initial and boundary conditions}
 \label{sec:IBCs}
+
+Let $T>0$ and denote $\Omega \subset \R^2$ to be the set
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:OMEGA}
+\Omega = \left\{\left(x, y\right) \in \R^2 \middle| x \in \left(-L, L\right), h(x) < y < H \right\},
+\end{equations}
+
+where $L > 0$ is the \textcolor{gray}{half-}width of the domain, $H$ is the height of the domain and $h(x)$ is the \emph{mountain profile}. In our simulations, the \emph{Witch of Agnesi} mountain profile \Cref{fig:WITCH-OF-AGNESI} of height $h_m$ and half-width $a$ has been used.
 
 \begin{figure}[htbp]
 	\centering
@@ -44,109 +56,55 @@
 		\end{axis}
 	\end{tikzpicture}
 	\caption[The Witch of Agnesi mountain profile]{%
-		The \emph{Witch of Agnesi} profile $h(x) = h_m a^2/(x^2 + a^2)$ used as the mountain barrier, drawn in normalised coordinates. The peak height $h_m$ is attained at $x = 0$, while the half-width $a$ fixes the full width at half maximum $2a$. The profile decays slowly, as $h_m\,(a/x)^2$, so that $a$ sets the spread of horizontal wavenumbers excited at the lower boundary.
+		The \emph{Witch of Agnesi} profile $h(x) = h_m a^2/(x^2 + a^2)$ used as the mountain barrier. The maximal height $h_m$ is attained at $x = 0$, while the half-width $a$ fixes the full width at half maximum $2a$. 
 	}
 	\label{fig:WITCH-OF-AGNESI}
 \end{figure}
 
-\begin{figure}
-\begin{subfigure}{\linewidth}
-	\centering
-	\begin{tikzpicture}[
-		>=Stealth, font=\footnotesize,
-		fluid/.style={circle, fill=cyan!60!black, inner sep=1.5pt},
-		ghost/.style={circle, draw=gray!70, fill=gray!15, inner sep=1.4pt},
-		pick/.style={draw=orange, line width=0.8pt},
-		]
-		\fill[cyan!4] (0,0) rectangle (3.0,2.7);
-		\fill[gray!6] (-1.4,0) rectangle (0,2.7);
-		\draw[thick] (0,-0.05) -- (0,2.75);
-		\node[anchor=south, gray!60!black] at (-0.7,2.78) {ghosts};
-		\node[anchor=south, cyan!60!black] at (1.6,2.78) {fluid};
+Denote further
 
-		\foreach \x in {-1.0,-0.4}
-		\foreach \y in {0.5,1.1,1.7,2.3}
-		\node[ghost] at (\x,\y) {};
-		\foreach \y in {0.5,1.7} \foreach \x in {0.4,1.2,2.0} \node[fluid] at (\x,\y) {};
-		\foreach \y in {1.1,2.3} \foreach \x in {0.8,1.6,2.4} \node[fluid] at (\x,\y) {};
+\begin{equations}[columns,!,numberline=all]
+\label{eq:BOUNDARY}
+\partial \Omega &= \Gamma_L \cup \Gamma_R \cup \Gamma_B \cup \Gamma_T, \\
+\Gamma_L &= \left\{-L\right\} \times \left(h(-L), H\right), \\
+\Gamma_R &= \left\{L\right\} \times \left(h(L), H\right), \\
+\Gamma_B &= \left(-L, L\right) \times \left\{h(x) \right\}, \\
+\Gamma_T &= \left(-L, L\right) \times \left\{H \right\}, 
+\end{equations}
 
-		\node[ghost, pick] (g) at (-0.4,1.7) {};
-		\node[fluid, pick] (q) at (2.0,1.7) {};
-		\node[anchor=east, inner sep=2pt] at (g.west) {$g$};
-		\node[anchor=north west, inner sep=1pt] at (q.south east) {$q$};
+to be the left, right, bottom and top boundaries. 
 
-		\draw[->, densely dashed] (g) to[bend left=18] (q);
-		\node[fill=white, inner sep=1.5pt] at (1.15,1.42) {$+3$ columns};
+We are interested in numerical solutions to the initial-boundary value problem for the Euler system written in the form\sidenote{This form is common in mathematical literature, as the order of the equation and the convective \emph{nonlinearity} is clearly visible.}
 
-		\draw[->, gray!60!black] (q) -- (2.55,2.12)
-		node[anchor=west, inner sep=1.5pt] {$\grad\phi_q$};
+\begin{equations}[columns,*]
+\partial_t\left(\rho \vb{v}\right) + \div\left(\rho \vb{v} \otimes \vb{v}\right) &= - \grad p + \rho \vb{g}, \, \text{in} \, \left(0,T\right) \times \Omega, \\
+\partial_t \rho + \div\left(\rho \vb{v}\right)&= 0, \, \text{in} \, \left(0,T\right) \times \Omega, \\
+p &= R \rho T, \\
+\vb{v} &= \vb{v}_0, \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
+\vb{v} &= V \vb{e}_x, \, \text{on} \, \left(0,T\right) \times \Gamma_L,\\
+\vb{v} \cdot \vb{n} &= 0, \, \text{on} \, \left(0,T\right) \times \Gamma_B,\\
+p &= \overline{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
+&\text{\enquote{radiation condition, on $\left(0,T\right) \times \Gamma_T$}}
+\end{equations}
 
-		\node[anchor=north, align=center, text width=8.4cm] at (1.5,-0.18) {%
-			$\displaystyle \phi_g = \phi_q + (\vb{x}_g - \vb{x}_q)\cdot\grad\phi_q$\\[2pt]
-		each field $\phi$ (velocity, density or entropy perturbation) is set from the matched~$q$};
-	\end{tikzpicture}
-	\caption{Open boundary. A ghost $g$ is matched to the fluid particle $q$ nearest a target three columns inside the domain, then each ghost field is set by a first-order Taylor step from $q$.}
-	\label{fig:EBC-OPEN}
-\end{subfigure}
-\vspace{0.6cm}
-
-\begin{subfigure}{\linewidth}
-	\centering
-	\begin{tikzpicture}[
-		>=Stealth, font=\footnotesize,
-		fluid/.style={circle, fill=cyan!60!black, inner sep=1.5pt},
-		wall/.style={circle, fill=gray!55, inner sep=1.5pt},
-		pick/.style={draw=orange, line width=0.8pt},
-		]
-		\fill[gray!18] plot[domain=-2.5:2.5, samples=80] (\x,{1.2/(\x*\x+1)})
-		-- (2.5,0) -- (-2.5,0) -- cycle;
-		\draw[gray!55!black, thick] plot[domain=-2.5:2.5, samples=80] (\x,{1.2/(\x*\x+1)});
-
-		\node[fluid] at (-1.7,0.796) {};
-		\node[fluid] at (-1.0,1.10) {};
-		\node[fluid] at (-0.35,1.614) {};
-		\node[fluid] at (0.3,1.951) {};
-		\node[fluid] at (1.7,0.708) {};
-		\foreach \x in {-1.2,-0.4,0.4,1.2} \node[wall] at (\x,{1.2/(\x*\x+1)-0.16}) {};
-
-		\node[wall, pick] (p) at (0.7,0.685) {};
-		\node[fluid, pick] (q) at (1.0,0.95) {};
-		\node[anchor=north west, inner sep=1.5pt] at (q.east) {$q$};
-		\node[anchor=north east, inner sep=1.5pt] at (p.south) {$p$};
-
-		\draw[densely dotted, gray] (p) -- (q);
-		\draw[densely dashed, gray!60] (0.341,0.957) -- (1.059,0.413);
-
-		\draw[->, gray!60!black] (q) -- (0.655,1.239)
-		% WARN: should there be grad or no grad?
-		node[anchor=east, inner sep=1.5pt] {$\vb v_q$};
-		\draw[->, gray!40!black] (p) -- (1.122,1.243)
-		node[anchor=west, inner sep=1.5pt] {$\vb n$};
-		\draw[->, cyan!55!black, line width=1pt] (p) -- (0.887,1.565)
-		node[anchor=south, inner sep=2pt] {$\vb v_e$};
-		\draw[->, orange!85!black, line width=1pt] (p) -- (-0.097,0.265)
-		node[anchor=north east, inner sep=1.5pt] {$\vb v$};
-
-		\node[anchor=north, align=center, text width=8.8cm] at (0.0,-0.22) {%
-			$\vb v_e = \vb v_q + (\vb x_p - \vb x_q)\cdot\grad\vb v_q,\quad
-			\vb v = \vb v_e - 2(\vb v_e\cdot\vb n)\,\vb n$\\[2pt]
-		reflecting the normal component enforces free slip, $\vb v\cdot\vb n=0$, at the wall};
-	\end{tikzpicture}
-	\caption{Solid mountain boundary. The wall particle $p$ takes the extrapolated velocity $\vb v_e$ of the nearest fluid $q$; reflecting its normal component about the surface gives the free-slip velocity $\vb v$.}
-	\label{fig:EBC-MOUNTAIN}
-\end{subfigure}	\caption[Extrapolation boundary conditions]{%
-	The extrapolation boundary conditions (EBC) \autocite{mahdizadehExtrapolationBoundaryConditions2025}: \subref{fig:EBC-OPEN} the open inflow and outflow boundaries, and \subref{fig:EBC-MOUNTAIN} the solid mountain with free slip. In both, the matched fluid particle $q$ supplies a reliable SPH gradient that a first-order Taylor step carries to the boundary particle.
-}
-\label{fig:EBC}
-\end{figure}
+with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\overline{p}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude.
 
 % TODO: add initial conditons
 % TODO discuss BCs for Euler
 % TODO discuss used BCs 
 % TODO discuss radiative BC
 
-\section{Terrain-following coordinates}
-\label{sec:terrain-coords}
+\subsection{Boundary conditions for the Euler system}
+\label{sec:EULER_BC}
+
+
+\autocite[p.~7-8]{oligerTheoreticalPracticalAspects1978}
+
+\subsection{Radiation boundary condition}
+\label{sec:RADIATION}
+
+\subsection{Terrain-following coordinates}
+\label{sec:TERRAIN-CORDS}
 
 % TODO: add figures
 
