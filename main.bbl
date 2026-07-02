@@ -872,6 +872,39 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Oliger and Sundström - 1978 - Theoretical and Practical Aspects of Some Initial Boundary Value Problems in Fluid Dynamics.pdf
       \endverb
     \endentry
+    \entry{evansPartialDifferentialEquations2022}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0d72932a7775f85a51622d3af75ae26e}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Lawrence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{fullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{fullhashraw}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{bibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorbibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authornamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorfullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorfullhashraw}{0d72932a7775f85a51622d3af75ae26e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{"This is the second edition of the now definitive text on partial differential equations (PDE). It offers a comprehensive survey of modern techniques in the theoretical study of PDE with particular emphasis on nonlinear equations. Its wide scope and clear exposition make it a great text for a graduate course in PDE. For this edition, the author has made numerous changes, including: a new chapter on nonlinear wave equations, more than 80 new exercises, several new sections, and a significantly expanded bibliography."--Publisher's description}
+      \field{edition}{Second edition}
+      \field{isbn}{978-1-4704-6942-9}
+      \field{langid}{english}
+      \field{note}{Part I. Prepresentation formulas for solutions: Four important linear partial differential equations -- Nonlinear first-order PDE -- Other ways to represent solutions -- Part II. Theory for linear partial differential equations: Sobolev spaces -- Second-order elliptic equations -- Linear evolution equations -- Part III. Theory for nonlinear partial differential equations: The calculus of variations -- Nonvariational techniques -- Hamilton-Jacobi equations -- Systems of conservation laws -- Nonlinear wave equations \par Rückseite der Titelseite: "Reprinted with corrections 2015. Reprinted by the American Mathematical Society, 2022." Unter dem Vorwort zur 2. Auflage: "This third printing of the second edition corrects all known mistakes, as of February, 2022." Hier auch später erschienene, unveränderte Nachdrucke Literaturverzeichnis: Seite 689-701}
+      \field{pagetotal}{712}
+      \field{title}{Partial Differential Equations}
+      \field{year}{2022}
+      \field{dateera}{ce}
+    \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
       \name{author}{2}{}{%
         {{hash=b1c97781781c53eaf0aab95c09718781}{%
@@ -893,8 +926,8 @@
       \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computational Physics}
@@ -1201,8 +1234,8 @@
       \strng{authornamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
       \strng{authorfullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
       \strng{authorfullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We review well-balanced methods for the faithful approximation of solutions of systems of hyperbolic balance laws that are of interest to computational astrophysics. Well-balanced methods are specialized numerical techniques that guarantee the accurate resolution of non-trivial steady-state solutions, that balance laws prominently feature, and perturbations thereof. We discuss versatile frameworks and techniques for generic systems of balance laws for finite volume and finite difference methods. The principal emphasis of the presentation is on the algorithms and their implementation. Subsequently, we specialize in hydrodynamics' Euler equations to exemplify the techniques and give an overview of the available well-balanced methods in the literature, including the classic hydrostatic equilibrium and steady adiabatic flows. The performance of the schemes is evaluated on a selection of test problems.}
@@ -1248,8 +1281,8 @@
       \strng{authornamehash}{44d73f60ae2252d9ae9c531ec4faaceb}
       \strng{authorfullhash}{44d73f60ae2252d9ae9c531ec4faaceb}
       \strng{authorfullhashraw}{44d73f60ae2252d9ae9c531ec4faaceb}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{A new hydrodynamic code applicable to a space of an arbitrary number of dimensions is discussed and applied to a variety of polytropic stellar models. The principal feature of the method is the use of statistical techniques to recover analytical expressions for the physical variables from a known distribution of fluid elements. The equations of motion take the form of Newtonian equations for particles. Starting with a non-axisymmetric distribution of approximately 80 particles in three dimensions, the method is found to reproduce the structure of uniformly rotating and magnetic polytropes to within a few per cent. The method may be easily extended to deal with more complicated physical models.}
@@ -1591,8 +1624,8 @@
       \strng{authornamehash}{a0a8c2cb10c667930488d823cb7f9c70}
       \strng{authorfullhash}{a0a8c2cb10c667930488d823cb7f9c70}
       \strng{authorfullhashraw}{a0a8c2cb10c667930488d823cb7f9c70}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{1}
@@ -1633,8 +1666,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this review the theory and application of Smoothed particle hydrodynamics (SPH) since its inception in 1977 are discussed. Emphasis is placed on the strengths and weaknesses, the analogy with particle dynamics and the numerous areas where SPH has been successfully applied.}
@@ -1675,8 +1708,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A limit form of Richardson extrapolation is used to obtain interpolation formulae with accuracy of a higher degree than that obtained with the variation diminishing spline approximation.}
@@ -2180,8 +2213,8 @@
       \strng{authornamehash}{9bc8dc70dbd7f183cf411f1864686c1f}
       \strng{authorfullhash}{9bc8dc70dbd7f183cf411f1864686c1f}
       \strng{authorfullhashraw}{9bc8dc70dbd7f183cf411f1864686c1f}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2nd ed}
@@ -2481,8 +2514,8 @@
       \strng{authornamehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
       \strng{authorfullhash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
       \strng{authorfullhashraw}{cc67b663dfa2dc44aa87e5bd1b2e250f}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We discuss differences in simulation results that arise between the use of either the thermal energy or the entropy as an independent variable in smoothed particle hydrodynamics (SPH). In this context, we derive a new version of SPH that manifestly conserves both energy and entropy if smoothing lengths are allowed to adapt freely to the local mass resolution. To test various formu- lations of SPH, we consider point-like energy injection and find that powerful explosions are well represented by SPH even when the energy is deposited into a single particle, provided that the entropy equation is integrated. If the thermal energy is instead used as an independent variable, unphysical solutions can be obtained for this problem. We also examine the radiative cooling of gas spheres that collapse and virialize in isolation and of halos that form in cosmological simulations of structure formation. When applied to these problems, the thermal energy version of SPH leads to substantial overcooling in halos that are resolved with up to a few thousand particles, while the entropy formulation is biased only moderately low for these halos. For objects resolved with much larger particle numbers, the two approaches yield consistent results. We trace the origin of the differences to systematic resolution effects in the outer parts of cooling flows. The cumulative effect of this overcooling can be significant. In cosmological simulations of moderate size, we find that the fraction of baryons which cool and condense can be reduced by up to a factor \textasciitilde 2 if the entropy equation is employed rather than the thermal energy equation. We also demonstrate that the entropy method leads to a greatly reduced scatter in the density-temperature relation of the low-density Ly-alpha forest relative to the thermal energy approach, in accord with theoretical expectations.(abridged)}
@@ -2528,8 +2561,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian (guaranteeing manifest conservation) in a manner which tremendously improves treatment of instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the 'standard' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the 'Grad-h' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle 'weights') and method of determining smoothing lengths. We then specify this to a 'pressure-entropy formulation' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& blob tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different 'flavors' of SPH.}
@@ -2582,8 +2615,8 @@
       \strng{authornamehash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhashraw}{67129baf070b08b8c208f6af2e3ff0c8}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The standard formulation of the smoothed particle hydrodynamics (SPH) assumes that the local density distribution is differentiable. This assumption is used to derive the spatial derivatives of other quantities. However, this assumption breaks down at the contact discontinuity. At the contact discontinuity, the density of the low-density side is overestimated while that of the high-density side is underestimated. As a result, the pressure of the low-density (high-density) side is overestimated (underestimated). Thus, unphysical repulsive force appears at the contact discontinuity, resulting in the effective surface tension. This tension suppresses fluid instabilities. In this paper, we present a new formulation of SPH, which does not require the differentiability of density. Instead of the mass density, we adopt the internal energy density (pressure) and its arbitrary function, which are smoothed quantities at the contact discontinuity, as the volume element used for the kernel integration. We call this new formulation density-independent SPH (DISPH). It handles the contact discontinuity without numerical problems. The results of standard tests such as the shock tube, Kelvin--Helmholtz and Rayleigh--Taylor instabilities, point-like explosion, and blob tests are all very favorable to DISPH. We conclude that DISPH solved most of the known difficulties of the standard SPH, without introducing additional numerical diffusion or breaking the exact force symmetry or energy conservation. Our new SPH includes the formulation proposed by Ritchie \& Thomas as a special case. Our formulation can be extended to handle a non-ideal gas easily.}
