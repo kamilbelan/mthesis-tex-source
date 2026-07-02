@@ -5,7 +5,7 @@
 
 \chapter{Mathematical modelling of orographic flows}
 
-In the previous chapter \Cref{chap:FLOWS} the underlying physical laws governing atmospheric flows have been described. In this chapter we describe further \emph{modelling choices} used to obtain numerical solution to our problem.
+In the previous chapter \Cref{chap:FLOWS}, the underlying physical laws governing atmospheric flows have been described. In this chapter we describe further \emph{modelling choices} used to obtain numerical solution to our problem.
 
 \section{Initial and boundary conditions}
 \label{sec:IBCs}
@@ -50,9 +50,6 @@ where $L > 0$ is the \textcolor{gray}{half-}width of the domain, $H$ is the heig
 			(axis cs:-1,0.5) -- node[fill=white, inner sep=1.5pt, font=\footnotesize] {$2a$} (axis cs:1,0.5);
 
 			\addplot[only marks, mark=*, mark size=1.3pt, cyan!60!black] coordinates {(0,1)};
-
-			\node[font=\footnotesize, anchor=west, gray!55!black] at (axis cs:2.8,0.46) {$h \sim h_m\,(a/x)^2$};
-			\draw[->, >=Stealth, gray] (axis cs:3.6,0.34) to[bend right=12] (axis cs:4.3,0.05);
 		\end{axis}
 	\end{tikzpicture}
 	\caption[The Witch of Agnesi mountain profile]{%
@@ -72,7 +69,7 @@ Denote further
 \Gamma_T &= \left(-L, L\right) \times \left\{H \right\}, 
 \end{equations}
 
-to be the left, right, bottom and top boundaries. 
+to be the left, right, bottom, and top boundaries. 
 
 We are interested in numerical solutions to the initial-boundary value problem for the Euler system written in the form\sidenote{This form is common in mathematical literature, as the order of the equation and the convective \emph{nonlinearity} is clearly visible.}
 
@@ -87,15 +84,97 @@ p &= \overline{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
 &\text{\enquote{radiation condition, on $\left(0,T\right) \times \Gamma_T$}}
 \end{equations}
 
-with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\overline{p}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude.
+with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\overline{p}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. The boundary conditions deserve comments:
+\begin{compactitem}
+	\item the inflow velocity field is constant and subsonic
+	\item the bottom boundary condition is the \emph{no-penetration condition}
+	\item the outflow boundary condition is \enquote{free outflow}: the fluid exits the domain with hydrostatic pressure
+\item the top boundary condition is artificial: the radiation condition is prescribed \enquote{at infinity}, and hence is not easily specified \emph{at the continuous level}.
+\end{compactitem}
 
-% TODO: add initial conditons
+In the forthcoming sections, we briefly discuss the specifics of our boundary conditions in more detail.
+
 % TODO discuss BCs for Euler
 % TODO discuss used BCs 
 % TODO discuss radiative BC
 
 \subsection{Boundary conditions for the Euler system}
 \label{sec:EULER_BC}
+
+It is well known that the Euler system is a \emph{hyperbolic system of conservation laws} \autocite{oligerTheoreticalPracticalAspects1978,evansPartialDifferentialEquations2022}. The topic of suitable boundary conditions\sidenote{\enquote{Suitable boundary conditions} here are boundary conditions that lead to a well-posed problem.} for these systems is more involved than in the case of parabolic (or elliptic) equations.
+
+The Euler system \textcolor{gray}{in $\R^d$} can be written in the form
+
+\begin{equations}[columns,*]
+\partial_t \rho + \div\left(\rho \vb{v}\right) &= 0, \\
+\partial_t\left(\rho \vb{v}\right) + \div\left(\rho \vb{v} \otimes \vb{v} + p \identityM\right) &= \vb{0}, \\
+\partial_t\left(\rho E\right) + \div\left(\left(\rho E + p\right) \vb{v}\right) &= 0,
+\end{equations}
+
+with $E = \frac{1}{2}\abs{\vb{v}}^{2} + e, e = c_V T$. Upon denoting 
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:conservative_variables}
+\vb{u} = \begin{bmatrix}
+	\rho \\
+\rho \vb{v} \\
+\rho E
+\end{bmatrix} \in \R^{d+2}, 
+\tensorq{F} = \begin{bmatrix}
+\left(\rho \vb{v}\right)^{\transpose}\\
+\rho \vb{v} \otimes \vb{v} + p \identityM\\
+\left(\left(\rho E + p\right)\vb{v}\right)^{\transpose}
+\end{bmatrix} \in \R^{d+2 \times d},
+\end{equations}
+
+the Euler system reads simply
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:EULER_CONSERVATIVE}
+\partial_t \vb{u} + \div_x \tensorq{F}\left(\vb{u}\right) = \vb{0}.
+\end{equations}
+
+The vector $\vb{u}$ is called the \emph{state vector} and the vector $\div_x \tensorq{F}\left(\vb{u}\right) = \sum_{m=1}^{d}\pdv{\vb{f}_m}{x_m}\left(\vb{u}\right), \tensorq{F} = \Big[\vb{f}_1\left(\vb{u}\right) \Big| \dots \Big| \vb{f}_{d}\left(\vb{u}\right)\Big]$ is the \emph{flux vector}. Notice \Cref{eq:EULER_CONSERVATIVE} is a \emph{1st order} system. Assume now \emph{further} that $\vb{u} \mapsto \tensorq{F}\left(\vb{u}\right)$ is continuously differentiable, than the chain rule yields
+
+\begin{equations}[single,*]
+\div_x \tensorq{F}\left(\vb{u}\right) = \sum_{m=1}^{d} \pdv{\vb{f}_m}{x_m}\left(\vb{u}\right) = \sum_{m=1}^{d} \grad_{\vb{u}} \vb{f}_m  \pdv{\vb{u}}{x_m},
+\end{equations}
+
+and so we see that under the differentiability assumption, the Euler system can be recast to the form of a \emph{1st order quasilinear system}
+
+\begin{equations}[single,*]
+\partial_t \vb{u} + \sum_{m=1}^d \grad_{\vb{u}}\vb{f}_m \pdv{\vb{u}}{x_m} = 0.
+\end{equations}
+
+For $\vb{n} \in \R^d, \abs{\vb{n}} = 1$ the quantity $\vb{P}\left(\vb{u}, \vb{n}\right) = \vb{F}\left(\vb{u}\right) \vb{n} = \sum_{m=1}^d \vb{f}_m\left(\vb{u}\right)n_m$ is the \emph{physical flux} of $\vb{u}$ in the direction $\vb{n}$. Of central importance in the analysis of hyperbolic conservation laws is the Jacobi matrix of $\vb{P}$, \textit{i.e.} the function
+
+\begin{equations}[single,*]
+\tensorq{P}\left(\vb{u}, \vb{n}\right) = \grad_{\vb{u}}\vb{P}\left(\vb{u}, \vb{n}\right) = \sum_{m=1}^d \grad_{\vb{u}} \vb{f}_m n_m \in \R^{d+2 \times d+2}.
+\end{equations}
+
+It can be shown \autocite[p.~578]{evansPartialDifferentialEquations2022} that the eigenvalues $\lambda_1, \dots, \lambda_{d+2}$ of $\tensorq{P}\left(\vb{u}, \vb{n}\right)$ are real and have the form $\lambda_1 = \vb{v} \cdot \vb{n} - c, \lambda_2 = \dots = \lambda_{d+1} = \vb{v} \cdot \vb{n}, \lambda_{d+2} = \vb{v} \cdot \vb{n} + c$, with $c$ being the \textcolor{gray}{local} speed of sound. The sign of the eigenvalues (at a given point) correspond to the orientation of the \emph{characteristics} of the equation\autocite[p.~7]{oligerTheoreticalPracticalAspects1978}:
+\begin{compactitem}
+	\item negative eigenvalues correspond to characteristic flowing \emph{into} the point: boundary conditions have to be \emph{prescribed} there, otherwise the system would be underdetermined
+	\item positive eigenvalues correspond to characteristic flowing \emph{out of} the point: boundary conditions \emph{cannot be prescribed} there, otherwise the system would be overdetermined.
+\end{compactitem}
+
+A subsonic inflow is characterized by $\vb{v} \cdot \vb{n} > 0, \abs{\vb{v}} < c$, so 
+
+\begin{equations}[single,*]
+\vb{v} \cdot \vb{n} - c \leq \abs{\vb{v}} - c < 0, \vb{v} \cdot \vb{n} < 0, \vb{v} \cdot \vb{n} + c > 0,
+\end{equations}
+
+so \emph{two} \textcolor{gray}{scalar} \emph{boundary conditions} have to be prescribed at the inflow.
+
+A subsonic outflow is characterized by $\vb{v} \cdot \vb{n} < 0, \abs{\vb{v}} < c$, so 
+
+\begin{equations}[single,*]
+\vb{v} \cdot \vb{n} - c \leq < 0, \vb{v} \cdot \vb{n} = < 0, \vb{v} \cdot \vb{n} + c \geq c - \abs{\vb{v}}  > 0,
+\end{equations}
+
+meaning only \emph{one} \textcolor{gray}{scalar} boundary condition has to be prescribed.
+
+
 
 
 \autocite[p.~7-8]{oligerTheoreticalPracticalAspects1978}
@@ -140,7 +219,7 @@ Suppose now we wish to \emph{numerically} solve the \emph{non-stationary} isentr
 	\vb{v}\left(0, \vb{x}\right) = \vb{0}, \theta\left(0, \vb{x}\right) &= \theta_0\left(\vb{x}\right), \rho\left(0, \vb{x}\right) = \rho_0\exp\left(- \frac{z}{H_s}\right),
 \end{equations}
 
-together with given $p = p\left(\theta, \rho\right)$ and some boundary conditions.\sidenote{A rigorous numerical treatment of the boundary conditions is complicated, see \eg \autocite[p.~59]{levequeFiniteVolumeMethods2002}.} \emph{Mathematically} speaking, since at time $t=0$ the system is in hydrostatic equilibrium, the right-hand side of the momentum equation as well as the convective term vanish and the system \emph{remains} in the hydrostatic equilibrium. Yet, in a numerical simulation, generally the hydrostatic equilibrium is \emph{not preserved},
+together with given $p = p\left(T, \rho\right)$ and some boundary conditions.\sidenote{A rigorous numerical treatment of the boundary conditions is complicated, see \eg \autocite[p.~59]{levequeFiniteVolumeMethods2002}.} \emph{Mathematically} speaking, since at time $t=0$ the system is in hydrostatic equilibrium, the right-hand side of the momentum equation as well as the convective term vanish and the system \emph{remains} in the hydrostatic equilibrium. Yet, in a numerical simulation, generally the hydrostatic equilibrium is \emph{not preserved},
 
 \begin{equations}[single,*]
 	\grad_h p_{i} - \rho_i \vb{g} \neq 0,
