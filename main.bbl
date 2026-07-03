@@ -950,6 +950,55 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Bardos et al. - 1979 - First order quasilinear equations with boundary conditions.pdf
       \endverb
     \endentry
+    \entry{spinoloInformalAccountRecent2024}{online}{}{}
+      \name{author}{3}{}{%
+        {{hash=41a32b0858448d47fd54cbe6dcb50cd6}{%
+           family={Spinolo},
+           familyi={S\bibinitperiod},
+           given={Laura\bibnamedelima V.},
+           giveni={L\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=fa7bda11d0ddd4af60c867411b138858}{%
+           family={Ancona},
+           familyi={A\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=35d1dbc44de130e77ee2e50489b1d7b0}{%
+           family={Marson},
+           familyi={M\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{fullhash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{fullhashraw}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{bibnamehash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{authorbibnamehash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{authornamehash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{authorfullhash}{936aff12bef9c58b0e7b54b929da648a}
+      \strng{authorfullhashraw}{936aff12bef9c58b0e7b54b929da648a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This note aims at providing a rather informal and hopefully accessible overview of the fairly long and technical work [4]. In that paper, the authors established new global-in-time existence results for admissible solutions of nonlinear systems of conservation laws defined in domains with boundaries. The main novelty in [4] is that the solution is constructed by taking into account the underlying viscous mechanism, which is relevant because, in the case of initial-boundary value problems, different viscous approximations yield in general different limits. This note will frame the analysis of [4] in the relevant context, compare the main result with the previous existing literature, and touch upon the most innnovative technical points of the proof.}
+      \field{note}{\subsection{Other} Dedicated to Professor Gui-Qiang Chen on the occasion of his 60th birthday}
+      \field{pubstate}{prepublished}
+      \field{title}{An Informal Account of Recent Results on Initial-Boundary Value Problems for Systems of Conservation Laws}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{version}{1}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/ARXIV.2405.02096
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/2405.pdf
+      \endverb
+      \keyw{35L65 35B30,Analysis of PDEs (math.AP),FOS: Mathematics}
+    \endentry
     \entry{hedstromNonreflectingBoundaryConditions1979}{article}{}{}
       \name{author}{1}{}{%
         {{hash=020ba874b0f20c45b06d9dc5fcc8a9e1}{%
@@ -1027,6 +1076,45 @@
       \endverb
       \verb{file}
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Roe - 1989 - Remote boundary conditions for unsteady multidimensional aerodynamic computations.pdf;/home/moschehaus/Zotero/storage/Y9ERDHH6/0045793089900182.html
+      \endverb
+    \endentry
+    \entry{nordstromOpenBoundaryConditions2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a7f7d7699c06d305e907fe13c6253f5}{%
+           family={Nordström},
+           familyi={N\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{fullhash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{fullhashraw}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{bibnamehash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{authorbibnamehash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{authornamehash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{authorfullhash}{9a7f7d7699c06d305e907fe13c6253f5}
+      \strng{authorfullhashraw}{9a7f7d7699c06d305e907fe13c6253f5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00219991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Open Boundary Conditions for Nonlinear Initial Boundary Value Problems}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2025.113909
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Nordström - 2025 - Open boundary conditions for nonlinear initial boundary value problems.pdf
       \endverb
     \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
@@ -3303,8 +3391,6 @@
       \keyw{smoothed particle hydrodynamics}
     \endentry
   \enddatalist
-  \missing{anconaInformalAccountRecent2024}
-  \missing{nordstromOpenBoundaryConditions2025}
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
 \endinput
