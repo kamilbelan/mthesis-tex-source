@@ -1117,6 +1117,51 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Nordström - 2025 - Open boundary conditions for nonlinear initial boundary value problems.pdf
       \endverb
     \endentry
+    \entry{baylissRadiationBoundaryConditions1980}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=403bb0f77999b10a8f985bf956b308e2}{%
+           family={Bayliss},
+           familyi={B\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bd5cf2a5faf96e2baa5f1fb11f38c7e0}{%
+           family={Turkel},
+           familyi={T\bibinitperiod},
+           given={Eli},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{fullhash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{fullhashraw}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{bibnamehash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{authorbibnamehash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{authornamehash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{authorfullhash}{69cd0a0584651a878e952d8dd2f9693a}
+      \strng{authorfullhashraw}{69cd0a0584651a878e952d8dd2f9693a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract In the numerical computation of hyperbolic equations it is not practical to use infinite domains. Instead, one truncates the domain with an artificial boundary. In this study we construct a sequence of radiating boundary conditions for wave-like equations. We prove that as the artificial boundary is moved to infinity the solution approaches the solution of the infinite domain as O( r -m-1/2 ) for the m -th boundary condition. Numerical experiments with problems in jet acoustics verify the practical nature and utility of the boundary conditions.}
+      \field{issn}{0010-3640, 1097-0312}
+      \field{journaltitle}{Communications on Pure and Applied Mathematics}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{shortjournal}{Comm Pure Appl Math}
+      \field{title}{Radiation Boundary Conditions for Wave-like Equations}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1980}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/cpa.3160330603
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Bayliss and Turkel - 1980 - Radiation boundary conditions for wave‐like equations.pdf
+      \endverb
+    \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
       \name{author}{2}{}{%
         {{hash=b1c97781781c53eaf0aab95c09718781}{%

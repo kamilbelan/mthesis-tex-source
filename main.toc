@@ -22,8 +22,8 @@
 \contentsline {subsection}{Boundary conditions for the Euler system}{24}{subsection*.30}%
 \contentsline {subsection}{Radiation boundary condition}{27}{subsection*.31}%
 \contentsline {subsection}{Terrain-following coordinates}{27}{subsection*.32}%
-\contentsline {section}{\numberline {2.2}Well-balanced methods}{28}{section*.34}%
-\contentsline {subsection}{Preservation of the hydrostatic balance}{28}{subsection*.35}%
+\contentsline {section}{\numberline {2.2}Well-balanced methods}{27}{section*.34}%
+\contentsline {subsection}{Preservation of the hydrostatic balance}{27}{subsection*.35}%
 \contentsline {subsection}{Implications for wave simulations}{29}{subsection*.36}%
 \contentsline {subsection}{Well-balanced schemes}{29}{subsection*.37}%
 \contentsline {chapter}{\numberline {3}Smoothed Particle Hydrodynamics}{30}{chapter.3}%
