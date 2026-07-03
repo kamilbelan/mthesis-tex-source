@@ -73,18 +73,21 @@ to be the left, right, bottom, and top boundaries.
 
 We are interested in numerical solutions to the initial-boundary value problem for the Euler system written in the form\sidenote{This form is common in mathematical literature, as the order of the equation and the convective \emph{nonlinearity} is clearly visible.}
 
-\begin{equations}[columns,*]
+\begin{equations}[columns,!,numberline=all]
+\label{eq:EULER_BC}
 \partial_t\left(\rho \vb{v}\right) + \div\left(\rho \vb{v} \otimes \vb{v}\right) &= - \grad p + \rho \vb{g}, \, \text{in} \, \left(0,T\right) \times \Omega, \\
 \partial_t \rho + \div\left(\rho \vb{v}\right)&= 0, \, \text{in} \, \left(0,T\right) \times \Omega, \\
+\partial_t\left(\rho \theta\right) + \div\left(\rho \theta \vb{v}\right) = 0, \, \text{in} \, \left(0,T\right) \times \Omega,
 p &= R \rho T, \\
 \vb{v} &= \vb{v}_0, \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
 \vb{v} &= V \vb{e}_x, \, \text{on} \, \left(0,T\right) \times \Gamma_L,\\
 \vb{v} \cdot \vb{n} &= 0, \, \text{on} \, \left(0,T\right) \times \Gamma_B,\\
-p &= \overline{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
+p &= \bar{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
+\theta = \bar{\theta}(y), \, \text{on} \, \left(0,T\right) \times \Gamma_L,
 &\text{\enquote{radiation condition, on $\left(0,T\right) \times \Gamma_T$}}
 \end{equations}
 
-with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\overline{p}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. The boundary conditions deserve comments:
+with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\bar{p}, \bar{\theta}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. The boundary conditions deserve comments:
 \begin{compactitem}
 	\item the inflow velocity field is constant and subsonic
 	\item the bottom boundary condition is the \emph{no-penetration condition}
@@ -93,10 +96,6 @@ with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\overline{p}$ t
 \end{compactitem}
 
 In the forthcoming sections, we briefly discuss the specifics of our boundary conditions in more detail.
-
-% TODO discuss BCs for Euler
-% TODO discuss used BCs 
-% TODO discuss radiative BC
 
 \subsection{Boundary conditions for the Euler system}
 \label{sec:EULER_BC}
@@ -152,35 +151,38 @@ For $\vb{n} \in \R^d, \abs{\vb{n}} = 1$ the quantity $\vb{P}\left(\vb{u}, \vb{n}
 \tensorq{P}\left(\vb{u}, \vb{n}\right) = \grad_{\vb{u}}\vb{P}\left(\vb{u}, \vb{n}\right) = \sum_{m=1}^d \grad_{\vb{u}} \vb{f}_m n_m \in \R^{d+2 \times d+2}.
 \end{equations}
 
-It can be shown \autocite[p.~578]{evansPartialDifferentialEquations2022} that the eigenvalues $\lambda_1, \dots, \lambda_{d+2}$ of $\tensorq{P}\left(\vb{u}, \vb{n}\right)$ are real and have the form $\lambda_1 = \vb{v} \cdot \vb{n} - c, \lambda_2 = \dots = \lambda_{d+1} = \vb{v} \cdot \vb{n}, \lambda_{d+2} = \vb{v} \cdot \vb{n} + c$, with $c$ being the \textcolor{gray}{local} speed of sound. The sign of the eigenvalues (at a given point) correspond to the orientation of the \emph{characteristics} of the equation\autocite[p.~7]{oligerTheoreticalPracticalAspects1978}:
+It can be shown \autocite[p.~578]{evansPartialDifferentialEquations2022} that the eigenvalues $\lambda_1, \dots, \lambda_{d+2}$ of $\tensorq{P}\left(\vb{u}, \vb{n}\right)$ are real and have the form
+\begin{equations}[single,*]
+\lambda_1 = \vb{v} \cdot \vb{n} - c, \quad \lambda_2 = \dots = \lambda_{d+1} = \vb{v} \cdot \vb{n}, \quad \lambda_{d+2} = \vb{v} \cdot \vb{n} + c \eqcomma
+\end{equations}
+with $c$ the \textcolor{gray}{local} speed of sound. 
+
+Let $\vb{n}$ denote the \emph{outward} unit normal at a boundary point. The sign of an eigenvalue then gives the orientation of the associated \emph{characteristic} relative to $\Omega$ \autocite[p.~7]{oligerTheoreticalPracticalAspects1978}:
 \begin{compactitem}
-	\item negative eigenvalues correspond to characteristic flowing \emph{into} the point: boundary conditions have to be \emph{prescribed} there, otherwise the system would be underdetermined
-	\item positive eigenvalues correspond to characteristic flowing \emph{out of} the point: boundary conditions \emph{cannot be prescribed} there, otherwise the system would be overdetermined.
+	\item a \emph{negative} eigenvalue corresponds to a characteristic entering $\Omega$, so a boundary condition \emph{must} be prescribed there, otherwise the problem is underdetermined;
+	\item a \emph{positive} eigenvalue corresponds to a characteristic leaving $\Omega$, so a boundary condition \emph{cannot} be prescribed there, otherwise the problem is overdetermined.
 \end{compactitem}
 
-A subsonic inflow is characterized by $\vb{v} \cdot \vb{n} > 0, \abs{\vb{v}} < c$, so 
+In a system of conservation laws, the state vector $\vb{u}$ is conserved - once it is specified how $\vb{u}$ enters $\Omega$, the system is determined and \enquote{no information is lost}. Subsequently, on $\partial \Omega$ we only can specify how the state vectors $\vb{u}$ flows into $\Omega$ - and its evolution inside $\Omega$ is then fully described by the equation itself.
 
+A subsonic inflow is characterised by $\vb{v} \cdot \vb{n} < 0$ and $\abs{\vb{v}} < c$, whence
 \begin{equations}[single,*]
-\vb{v} \cdot \vb{n} - c \leq \abs{\vb{v}} - c < 0, \vb{v} \cdot \vb{n} < 0, \vb{v} \cdot \vb{n} + c > 0,
+\vb{v} \cdot \vb{n} - c < 0, \quad \vb{v} \cdot \vb{n} < 0, \quad \vb{v} \cdot \vb{n} + c \geq c - \abs{\vb{v}} > 0 \eqcomma
 \end{equations}
-
-so \emph{two} \textcolor{gray}{scalar} \emph{boundary conditions} have to be prescribed at the inflow.
-
-A subsonic outflow is characterized by $\vb{v} \cdot \vb{n} < 0, \abs{\vb{v}} < c$, so 
-
+so \emph{two} \textcolor{gray}{scalar} boundary conditions must be prescribed at a subsonic inflow. A subsonic outflow is characterised by $\vb{v} \cdot \vb{n} > 0$ and $\abs{\vb{v}} < c$, whence
 \begin{equations}[single,*]
-\vb{v} \cdot \vb{n} - c \leq < 0, \vb{v} \cdot \vb{n} = < 0, \vb{v} \cdot \vb{n} + c \geq c - \abs{\vb{v}}  > 0,
+\vb{v} \cdot \vb{n} - c \leq \abs{\vb{v}} - c < 0, \quad \vb{v} \cdot \vb{n} > 0, \quad \vb{v} \cdot \vb{n} + c > 0 \eqcomma
 \end{equations}
+so only \emph{one} \textcolor{gray}{scalar} boundary condition must be prescribed.
 
-meaning only \emph{one} \textcolor{gray}{scalar} boundary condition has to be prescribed.
+Since in our case the inflow is deeply subsonic (the air enters $\Omega$ at about $\sim \SI{20}{m/s}$, see \Cref{chap:EXPERIMENTS} for details) and inside $\Omega$ the air only flows around a obstacle (without any additional interaction mechanism), we assume also that the outflow is subsonic. Consequently, we specify 2 scalar BCs at the inflow $\Gamma_L$ and one scalar BC at the outflow $\Gamma_R$ and hence the boundary conditions \Cref{eq:EULER_BC} are sensible.
 
-
-
-
-\autocite[p.~7-8]{oligerTheoreticalPracticalAspects1978}
+Let us conclude with some remarks and further references. The choice of suitable boundary conditions for the Euler system, and for nonlinear systems of hyperbolic conservation laws in general, remains an active field of research in both the analysis of partial differential equations and in numerical analysis. On the analytical side, well-posedness of the initial-boundary value problem for scalar conservation laws has been pioneered by \autocite{bardosFirstOrderQuasilinear1979}, and the theory for systems continues to develop \autocite{anconaInformalAccountRecent2024}. On the numerical side, the construction of various boundary conditions (non-reflecting, far-field, open) has a long history \autocite{hedstromNonreflectingBoundaryConditions1979,roeRemoteBoundaryConditions1989}, and the design of provably well-posed boundary treatments is still actively pursued \autocite{nordstromOpenBoundaryConditions2025}.
 
 \subsection{Radiation boundary condition}
 \label{sec:RADIATION}
+
+% TODO: discuss radiative BC
 
 \subsection{Terrain-following coordinates}
 \label{sec:TERRAIN-CORDS}
