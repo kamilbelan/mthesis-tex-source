@@ -905,6 +905,130 @@
       \field{year}{2022}
       \field{dateera}{ce}
     \endentry
+    \entry{bardosFirstOrderQuasilinear1979}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=9f35487ba5e1f4dc6d67da2534fe7136}{%
+           family={Bardos},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5707b7c082e5c73d8b0e1136d8c20f13}{%
+           family={Leroux},
+           familyi={L\bibinitperiod},
+           given={A.\bibnamedelimi Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=d2d06e5706bd5e14fc070df88043d97c}{%
+           family={Nedelec},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{fullhash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{fullhashraw}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{bibnamehash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{authorbibnamehash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{authornamehash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{authorfullhash}{7340b4c83d65f1d41eafc8f545282970}
+      \strng{authorfullhashraw}{7340b4c83d65f1d41eafc8f545282970}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications in Partial Differential Equations}
+      \field{title}{First Order Quasilinear Equations with Boundary Conditions}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1080/03605307908820117
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Bardos et al. - 1979 - First order quasilinear equations with boundary conditions.pdf
+      \endverb
+    \endentry
+    \entry{hedstromNonreflectingBoundaryConditions1979}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=020ba874b0f20c45b06d9dc5fcc8a9e1}{%
+           family={Hedstrom},
+           familyi={H\bibinitperiod},
+           given={G.W},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{fullhash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{fullhashraw}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{bibnamehash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{authorbibnamehash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{authornamehash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{authorfullhash}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \strng{authorfullhashraw}{020ba874b0f20c45b06d9dc5fcc8a9e1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00219991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Nonreflecting Boundary Conditions for Nonlinear Hyperbolic Systems}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(79)90100-1
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Hedstrom - 1979 - Nonreflecting boundary conditions for nonlinear hyperbolic systems.pdf
+      \endverb
+    \endentry
+    \entry{roeRemoteBoundaryConditions1989}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=20f1943f36d55f41e8f6a88fb5da270a}{%
+           family={Roe},
+           familyi={R\bibinitperiod},
+           given={P.\bibnamedelimi L.},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{fullhash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{fullhashraw}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{bibnamehash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{authorbibnamehash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{authornamehash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{authorfullhash}{20f1943f36d55f41e8f6a88fb5da270a}
+      \strng{authorfullhashraw}{20f1943f36d55f41e8f6a88fb5da270a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We discuss the behavior of gas dynamic flows which are perturbations of a uniform stream in terms of information transfer across artificial (computational) boundaries remote from the source of disturbance. A set of boundary conditions are derived involving vorticity, entropy, and pressure-velocity relationship derived from bicharacteristic equations.}
+      \field{day}{1}
+      \field{issn}{0045-7930}
+      \field{journaltitle}{Computers \& Fluids}
+      \field{month}{1}
+      \field{shortjournal}{Computers \& Fluids}
+      \field{title}{Remote Boundary Conditions for Unsteady Multidimensional Aerodynamic Computations}
+      \field{urlday}{3}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0045-7930(89)90018-2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Roe - 1989 - Remote boundary conditions for unsteady multidimensional aerodynamic computations.pdf;/home/moschehaus/Zotero/storage/Y9ERDHH6/0045793089900182.html
+      \endverb
+    \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
       \name{author}{2}{}{%
         {{hash=b1c97781781c53eaf0aab95c09718781}{%
@@ -1054,8 +1178,8 @@
       \strng{authornamehash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhashraw}{ca6836e0d59e737273877126fce0060e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{C.R. Acad. Sc. Paris Série I}
@@ -1085,8 +1209,8 @@
       \strng{authornamehash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhashraw}{98906f037083aa2ca3e1d0f52c23e034}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{SIAM Journal on Numerical Analysis}
@@ -1136,8 +1260,8 @@
       \strng{authornamehash}{f0baf5dea238f529bafc2bb62ca4dd00}
       \strng{authorfullhash}{f0baf5dea238f529bafc2bb62ca4dd00}
       \strng{authorfullhashraw}{f0baf5dea238f529bafc2bb62ca4dd00}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We are interested in simulating gravitationally stratified atmospheric flows governed by the compressible Euler equations in irregular domains. In such simulations, one of the challenges arises when the computations are conducted on a Cartesian grid. The use of regular rectangular grids that intersect with the irregular boundaries leads to the generation of arbitrarily small and highly distorted computational cells adjacent to the boundaries of the domain. The appearance of such cells may affect both the stability and efficiency of the numerical method and therefore require special attention. In order to overcome this difficulty, we introduce a structured quadrilateral mesh, which is designed for the irregular domain at hand, and solve the studied atmospheric flow equations using a second-order central-upwind scheme. In addition, the resulting numerical method is developed to provide a well-balanced discretization of the underlying system. The latter is achieved by rewriting the governing equations in terms of equilibrium variables representing perturbations of the physically relevant equilibrium. The proposed method is tested in a number of numerical experiments, including the buoyant bubble rising and interacting with an (zeppelin) obstacle and the Lee wave generation due to topography. The obtained numerical results demonstrate high resolution and robustness of the proposed computational approach.}
@@ -1187,8 +1311,8 @@
       \strng{authornamehash}{4b7af37b1014a263696e0aa76a249887}
       \strng{authorfullhash}{4b7af37b1014a263696e0aa76a249887}
       \strng{authorfullhashraw}{4b7af37b1014a263696e0aa76a249887}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The present work concerns the derivation of a numerical scheme to approximate weak solutions of the Euler equations with a gravitational source term. The designed scheme is proved to be fully well-balanced since it is able to exactly preserve all moving equilibrium solutions, as well as the corresponding steady solutions at rest obtained when the velocity vanishes. Moreover, the proposed scheme is entropy-preserving since it satisfies all fully discrete entropy inequalities. In addition, in order to satisfy the required admissibility of the approximate solutions, the positivity of both approximate density and pressure is established. Several numerical experiments attest the relevance of the developed numerical method. An extension to two-dimensional problems is given, applying the one-dimensional framework direction by direction on Cartesian grids.}
@@ -1490,8 +1614,8 @@
       \strng{authornamehash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhashraw}{ec0143d3504dc74e1926cee085087276}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A moving-particle semi-implicit (MPS) method for simulating fragmentation of incompressible fluids is presented. The motion of each particle is calculated through interactions with neighboring particles covered with the kernel function. Deterministic particle interaction models representing gradient, Laplacian, and free surfaces are proposed. Fluid density is implicitly required to be constant as the incompressibility condition, while the other terms are explicitly calculated. The Poisson equation of pressure is solved by the incomplete Cholesky conjugate gradient method. Collapse of a water column is calculated using MPS. The effect of parameters in the models is investigated in test calculations. Good agreement with an experiment is obtained even if fragmentation and coalescence of the fluid take place.}
@@ -1531,8 +1655,8 @@
       \strng{authornamehash}{73855f562a2563f3f8363722e3e092f9}
       \strng{authorfullhash}{73855f562a2563f3f8363722e3e092f9}
       \strng{authorfullhashraw}{73855f562a2563f3f8363722e3e092f9}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a novel method for simulating hydrodynamic phenomena. This particle-based method combines features from molecular dynamics and lattice-gas automata. It is shown theoretically as well as in simulations that a quantitative description of isothermal Navier-Stokes flow is obtained with relatively few particles. Computationally, the method is much faster than molecular dynamics, and the at same time it is much more flexible than lattice-gas automata schemes.}
@@ -1574,8 +1698,8 @@
       \strng{authornamehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
       \strng{authorfullhash}{acc9950dd59f9e560b3dbd0ae83e2af1}
       \strng{authorfullhashraw}{acc9950dd59f9e560b3dbd0ae83e2af1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This book aims at presenting the SPH method for fluid modelling from a theoretical and applied viewpoint. It comprises two parts that refer to each other. The first, dealing with the fundamentals of Hydraulics, is based on the elementary principles of Lagrangian and Hamiltonian mechanics. The specific laws governing a system of macroscopic particles are built, then the large systems involving dissipative processes are explained. The continua are then discussed; lastly, a fairly exhaustive account of turbulence is given. The second part discloses the bases of the SPH Lagrangian numerical method from the continuous equations, as well as from discrete variational principles, setting out the method's specific properties of conservativity and invariance. Various numerical schemes are compared, permanently referring to physics as dealt with in the first part. Applications to schematic instances are then discussed; ultimately, practical applications to the dimensioning of coastal and fluvial structures are considered. Despite the rapid growth in the SPH field, this book is the first to present this method in a comprehensive way for fluids. It should serve as a rigorous introduction to SPH and a reference for fundamental mathematical fluid dynamics.}
@@ -1886,8 +2010,8 @@
       \strng{authornamehash}{81c164ee3d2d9ec3e93e519bd01b7ec2}
       \strng{authorfullhash}{5599530d0863f967ebfc15b67916c18d}
       \strng{authorfullhashraw}{5599530d0863f967ebfc15b67916c18d}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents a brief review of grand challenges of Smoothed Particle Hydrodynamics (SPH) method. As a meshless method, SPH can simulate a large range of applications from astrophysics to free-surface flows, to complex mixing problems in industry and has had notable successes. As a young computational method, the SPH method still requires development to address important elements which prevent more widespread use. This effort has been led by members of the SPH rEsearch and engineeRing International Community (SPHERIC) who have identified SPH Grand Challenges. The SPHERIC SPH Grand Challenges (GCs) have been grouped into 5 categories: (GC1) convergence, consistency and stability, (GC2) boundary conditions, (GC3) adaptivity, (GC4) coupling to other models, and (GC5) applicability to industry. The SPH Grand Challenges have been formulated to focus the attention and activities of researchers, developers, and users around the world. The status of each SPH Grand Challenge is presented in this paper with a discussion on the areas for future development.}
@@ -1937,8 +2061,8 @@
       \strng{authornamehash}{1e640468c2b25609a97e4131a91a7709}
       \strng{authorfullhash}{1e640468c2b25609a97e4131a91a7709}
       \strng{authorfullhashraw}{1e640468c2b25609a97e4131a91a7709}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A truncation error analysis has been developed for the approximation of spatial derivatives in smoothed particle hydrodynamics (SPH) and related first-order consistent methods such as the first-order form of the reproducing kernel particle method. Error is shown to depend on both the smoothing length h and the ratio of particle spacing to smoothing length, {$\Delta$}x/h. For uniformly spaced particles in one dimension, analysis shows that as h is reduced while maintaining constant {$\Delta$}x/h, error decays as h2 until a limiting discretization error is reached, which is independent of h. If {$\Delta$}x/h is reduced while maintaining constant h (i.e. if the number of neighbours per particle is increased), error decreases at a rate which depends on the kernel function's smoothness. When particles are distributed non-uniformly, error can grow as h is reduced with constant {$\Delta$}x/h. First-order consistent methods are shown to remove this divergent behaviour. Numerical experiments confirm the theoretical analysis for one dimension, and indicate that the main results are also true in three dimensions. This investigation highlights the complexity of error behaviour in SPH, and shows that the roles of both h and {$\Delta$}x/h must be considered when choosing particle distributions and smoothing lengths. Copyright ©{} 2005 John Wiley \& Sons, Ltd.}
@@ -2166,8 +2290,8 @@
       \strng{editornamehash}{9e8deb1fc737b0d05e010dfa3750732d}
       \strng{editorfullhash}{9e8deb1fc737b0d05e010dfa3750732d}
       \strng{editorfullhashraw}{9e8deb1fc737b0d05e010dfa3750732d}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Smoothed particle hydrodynamics (SPH) is typically used for barotropic fluids, where the pressure depends only on the local mass density. Here, we show how to incorporate the entropy into the SPH, so that the pressure can also depend on the temperature, while keeping the growth of the total entropy, conservation of the total energy, and symplecticity of the reversible part of the SPH equations. The SPH system of ordinary differential equations with entropy is derived by means of the Poisson reduction and the Lagrange \$\$\textbackslash rightarrow \$\${$\rightarrow$}Euler transformation. We present several approaches toward SPH with entropy, which are then illustrated on systems with discontinuities, on the expansion of ideal gas, and on the Rayleigh-Bénard convection without the Boussinesq approximation. Finally, we show how to model hyperbolic heat conduction within the SPH, extending the SPH variables not only with entropy but also with a heat-flux-related vector field.}
@@ -2342,8 +2466,8 @@
       \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1474-0508}
@@ -2376,8 +2500,8 @@
       \strng{authornamehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
       \strng{authorfullhash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
       \strng{authorfullhashraw}{ea49fbd6c94c7c89f99c3f989cc8b15f}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Potential difficulties with smoothed particle hydrodynamics are discussed. In particular, empirical tests are used to demonstrate that the errors resulting from the use of variable smoothing can be much larger than commonly believed. Fortunately, however, these errors, which are normally small, do not appear to promote instability on small scales, such as fragmentation in self-gravitating fluids. Still, while SPH remains a useful tool for many problems of astrophysical interest, a rigorous formulation of it, which is adaptive but still satisfies conservation properties, is clearly wanting.}
@@ -2420,8 +2544,8 @@
       \strng{authorfullhash}{fe1e28d7695be15e1464de783fe77571}
       \strng{authorfullhashraw}{fe1e28d7695be15e1464de783fe77571}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a new formulation of the equations of motion used in smoothed particle hydrodynamics (SPH). The spatial resolution in SPH is determined by the smoothing length, h, and it has become common practice for each particle to be given its own adaptive smoothing length, hi. This has the advantage that the dynamic range that may be spatially resolved is greatly increased, but also has the drawback that additional terms which account for the variability of the smoothing lengths should be included in the particle equations of motion in order to satisfy conservation requirements. We refer to these additional terms as ∇h terms. The difference between our approach and that of previous implementations is that these ∇h terms have now been included in the equations of motion, whereas they had previously been neglected. This is achieved by defining a functional form for the his that depends on interparticle distances only, and then deriving the equations of motion using a Hamiltonian formalism.A number of test calculations, designed to compare the effects of including and ignoring these ∇h terms, are presented. We find that the inclusion of the ∇h terms has no detrimental effects on the ability of SPH to model known problems such as one dimensional shock-tubes or the adiabatic collapse of cold gas spheres, with reasonable accuracy, and may in some cases lead to improvements in their qualitative outcome. For problems on which SPH has been shown to perform rather badly, because of poor energy conservation, we find that inclusion of the ∇h terms results in a dramatic improvement. In particular, non-conservation of energy during a head-on collision between identical polytropes can occur at the level of {$\Delta$}E {$\approx$} 10 per cent when the ∇h terms are neglected. When the ∇h terms are included, however, this error reduces to {$\Delta$}E {$\approx$} 0.8 per cent.}
@@ -2467,8 +2591,8 @@
       \strng{authorfullhash}{d3751ea36f0a364b55feb8996b49deac}
       \strng{authorfullhashraw}{d3751ea36f0a364b55feb8996b49deac}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present the results of collapse calculations for elongated clouds performed using the numerical method of smoothed particle hydrodynamics (SPH). The clouds considered are isothermal, prolate spheroids with different axial ratios (a/b). Results are obtained for different values of ajb and mL, the mean mass per unit length. It is found that initially uniform clouds undergo fragmentation when the collapse is preferentially down on to the major axis, due to the intrinsic instability of a linear configuration. This occurs when the value of mL is sufficiently large. A criterion for elongated clouds to undergo linear collapse is derived using the tensor virial theorem, and it is found that the numerically obtained value of mL for which fragmentation occurs corresponds closely to that expected from analytical considerations. The addition of small density perturbations simply results in clouds that fragment more easily, particularly for cases in which a ¡bis close to unity.}
@@ -3179,6 +3303,8 @@
       \keyw{smoothed particle hydrodynamics}
     \endentry
   \enddatalist
+  \missing{anconaInformalAccountRecent2024}
+  \missing{nordstromOpenBoundaryConditions2025}
   \missing{springelSimulationsFormationEvolution2005}
 \endrefsection
 \endinput

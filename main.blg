@@ -1,21 +1,23 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'build/main.blg'
-[50] biber:340> INFO - === Thu Jul  2, 2026, 16:01:10
-[63] Biber.pm:420> INFO - Reading 'build/main.bcf'
-[138] Biber.pm:994> INFO - Found 68 citekeys in bib section 0
-[148] Biber.pm:4463> INFO - Processing section 0
-[156] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
-[169] bibtex.pm:1713> INFO - LaTeX decoding ...
-[304] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
-[739] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[739] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[739] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[739] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[772] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
-[798] bbl.pm:779> INFO - Output to build/main.bbl
-[798] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
-[798] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
-[798] Biber.pm:131> WARN - ISBN '978-1-4419-6411-3 978-1-4419-6412-0' in entry 'durranNumericalMethodsFluid2010' is invalid - run biber with '--validate_datamodel' for details.
-[798] Biber.pm:131> WARN - ISBN '978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3' in entry 'levequeFiniteVolumeMethods2002' is invalid - run biber with '--validate_datamodel' for details.
-[798] Biber.pm:131> WARN - I didn't find a database entry for 'springelSimulationsFormationEvolution2005' (section 0)
-[798] Biber.pm:133> INFO - WARNINGS: 5
+[56] biber:340> INFO - === Fri Jul  3, 2026, 09:58:11
+[70] Biber.pm:420> INFO - Reading 'build/main.bcf'
+[143] Biber.pm:994> INFO - Found 73 citekeys in bib section 0
+[154] Biber.pm:4463> INFO - Processing section 0
+[163] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
+[178] bibtex.pm:1713> INFO - LaTeX decoding ...
+[328] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
+[793] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[793] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[793] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[793] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[830] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[859] bbl.pm:779> INFO - Output to build/main.bbl
+[859] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
+[859] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
+[859] Biber.pm:131> WARN - ISBN '978-1-4419-6411-3 978-1-4419-6412-0' in entry 'durranNumericalMethodsFluid2010' is invalid - run biber with '--validate_datamodel' for details.
+[859] Biber.pm:131> WARN - ISBN '978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3' in entry 'levequeFiniteVolumeMethods2002' is invalid - run biber with '--validate_datamodel' for details.
+[859] Biber.pm:131> WARN - I didn't find a database entry for 'anconaInformalAccountRecent2024' (section 0)
+[859] Biber.pm:131> WARN - I didn't find a database entry for 'nordstromOpenBoundaryConditions2025' (section 0)
+[859] Biber.pm:131> WARN - I didn't find a database entry for 'springelSimulationsFormationEvolution2005' (section 0)
+[859] Biber.pm:133> INFO - WARNINGS: 7
