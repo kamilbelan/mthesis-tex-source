@@ -77,7 +77,7 @@ We are interested in numerical solutions to the initial-boundary value problem f
 \label{eq:EULER_BC}
 \partial_t\left(\rho \vb{v}\right) + \div\left(\rho \vb{v} \otimes \vb{v}\right) &= - \grad p + \rho \vb{g}, \, \text{in} \, \left(0,T\right) \times \Omega, \\
 \partial_t \rho + \div\left(\rho \vb{v}\right)&= 0, \, \text{in} \, \left(0,T\right) \times \Omega, \\
-\partial_t\left(\rho \theta\right) + \div\left(\rho \theta \vb{v}\right) = 0, \, \text{in} \, \left(0,T\right) \times \Omega, \\
+\partial_t\left(\rho \theta\right) + \div\left(\rho \theta \vb{v}\right) &= 0, \, \text{in} \, \left(0,T\right) \times \Omega, \\
 p &= R \rho T, \\
 \vb{v} &= \vb{v}_0, \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
 \vb{v} &= V \vb{e}_x, \, \text{on} \, \left(0,T\right) \times \Gamma_L,\\
@@ -182,7 +182,10 @@ Let us conclude with some remarks and further references. The choice of suitable
 \subsection{Radiation boundary condition}
 \label{sec:RADIATION}
 
-We are left to resolve the boundary condition at the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}:
+We are left to resolve the boundary condition at the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}: impose that no energy arrives from infinity. This boundary condition however cannot be imposed on $\Gamma_{T}$ - the domain is bounded.
+
+For the wave-equation (under some symmetry assumptions), the solution can be written as an infinite sum of certain functions of the spherical coordinates $\left(r, \theta, \varphi\right)$. An approach studied in \autocite{baylissRadiationBoundaryConditions1980} consists of constructing operators that anihilate the leading terms in the solution's expansion as $r \to \infty$.
+
 % TODO: discuss radiative BC
 
 \subsection{Terrain-following coordinates}
