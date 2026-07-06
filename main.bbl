@@ -1305,88 +1305,6 @@
       \endverb
       \keyw{orographic flows}
     \endentry
-    \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=21dc4df3a642184f817f4d2ca145314c}{%
-           family={Clark},
-           familyi={C\bibinitperiod},
-           given={Terry\bibnamedelima L.},
-           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \strng{namehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{fullhash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{fullhashraw}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{bibnamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorbibnamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authornamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorfullhash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorfullhashraw}{21dc4df3a642184f817f4d2ca145314c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This paper describes a three-dimensional finite-difference model of air flow over an irregular lower surface. The model is nonhydrostatic and the anelastic approximation has been used to filter sound waves. Second-order difference equations are employed which provide excellent momentum and energy budgets. An outflow radiation boundary condition using a generalized Kreiss extrapolation scheme has been designed and implemented. Some two-dimensional applications of the model to air flow over a ``Witch of Agnesi'' mountain barrier are described. Comparison with the linear theory of Queney indicates, for the cases treated, that the nonlinearity of the boundary condition has a first-order effect on the resulting flow.}
-      \field{day}{1}
-      \field{issn}{0021-9991}
-      \field{journaltitle}{Journal of Computational Physics}
-      \field{month}{6}
-      \field{shortjournal}{Journal of Computational Physics}
-      \field{title}{A Small-Scale Dynamic Model Using a Terrain-Following Coordinate Transformation}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{1977}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1016/0021-9991(77)90057-2
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark - 1977 - A small-scale dynamic model using a terrain-following coordinate transformation.pdf;/home/moschehaus/Zotero/storage/JZ2HLKVC/0021999177900572.html
-      \endverb
-      \keyw{orographic flows,terrain-following}
-    \endentry
-    \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=b1c97781781c53eaf0aab95c09718781}{%
-           family={Gal-Chen},
-           familyi={G\bibinithyphendelim C\bibinitperiod},
-           given={Tzvi},
-           giveni={T\bibinitperiod}}}%
-        {{hash=1e362815f15d30d0bf12876d501e8112}{%
-           family={Somerville},
-           familyi={S\bibinitperiod},
-           given={Richard\bibnamedelimb C.\bibnamedelimi J.},
-           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{fullhash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{fullhashraw}{f452063f00cdfb0c8c2f409298673720}
-      \strng{bibnamehash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{authorbibnamehash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
-      \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Computational Physics}
-      \field{title}{On the Use of a Coordinate Transformation for the Solution of the {{Navier-Stokes}} Equations}
-      \field{urlday}{18}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
-      \field{year}{1975}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1016/0021-9991(75)90037-6
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Gal-Chen and Somerville - 1975 - On the use of a coordinate transformation for the solution of the Navier-Stokes equations.pdf
-      \endverb
-      \keyw{sph techniques,terrain-following}
-    \endentry
     \entry{phillipsCOORDINATESYSTEMHAVING1957}{article}{}{}
       \name{author}{1}{}{%
         {{hash=1b98c304de460a2c3cdd3665935fa533}{%
@@ -1430,6 +1348,88 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/1979 - The Influence of Mountains on the Atmosphere.pdf
       \endverb
       \keyw{sph techniques,terrain-following}
+    \endentry
+    \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b1c97781781c53eaf0aab95c09718781}{%
+           family={Gal-Chen},
+           familyi={G\bibinithyphendelim C\bibinitperiod},
+           given={Tzvi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1e362815f15d30d0bf12876d501e8112}{%
+           family={Somerville},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelimb C.\bibnamedelimi J.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{fullhash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{fullhashraw}{f452063f00cdfb0c8c2f409298673720}
+      \strng{bibnamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorbibnamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
+      \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{On the Use of a Coordinate Transformation for the Solution of the {{Navier-Stokes}} Equations}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{1975}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(75)90037-6
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Gal-Chen and Somerville - 1975 - On the use of a coordinate transformation for the solution of the Navier-Stokes equations.pdf
+      \endverb
+      \keyw{sph techniques,terrain-following}
+    \endentry
+    \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=21dc4df3a642184f817f4d2ca145314c}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Terry\bibnamedelima L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{bibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorbibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authornamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes a three-dimensional finite-difference model of air flow over an irregular lower surface. The model is nonhydrostatic and the anelastic approximation has been used to filter sound waves. Second-order difference equations are employed which provide excellent momentum and energy budgets. An outflow radiation boundary condition using a generalized Kreiss extrapolation scheme has been designed and implemented. Some two-dimensional applications of the model to air flow over a ``Witch of Agnesi'' mountain barrier are described. Comparison with the linear theory of Queney indicates, for the cases treated, that the nonlinearity of the boundary condition has a first-order effect on the resulting flow.}
+      \field{day}{1}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{6}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{A Small-Scale Dynamic Model Using a Terrain-Following Coordinate Transformation}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(77)90057-2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark - 1977 - A small-scale dynamic model using a terrain-following coordinate transformation.pdf;/home/moschehaus/Zotero/storage/JZ2HLKVC/0021999177900572.html
+      \endverb
+      \keyw{orographic flows,terrain-following}
     \endentry
     \entry{levequeFiniteVolumeMethods2002}{book}{}{}
       \name{author}{1}{}{%
@@ -1539,8 +1539,8 @@
       \strng{authornamehash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhashraw}{ca6836e0d59e737273877126fce0060e}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{C.R. Acad. Sc. Paris Série I}
@@ -1570,8 +1570,8 @@
       \strng{authornamehash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhashraw}{98906f037083aa2ca3e1d0f52c23e034}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{SIAM Journal on Numerical Analysis}
@@ -1975,8 +1975,8 @@
       \strng{authornamehash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhashraw}{ec0143d3504dc74e1926cee085087276}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A moving-particle semi-implicit (MPS) method for simulating fragmentation of incompressible fluids is presented. The motion of each particle is calculated through interactions with neighboring particles covered with the kernel function. Deterministic particle interaction models representing gradient, Laplacian, and free surfaces are proposed. Fluid density is implicitly required to be constant as the incompressibility condition, while the other terms are explicitly calculated. The Poisson equation of pressure is solved by the incomplete Cholesky conjugate gradient method. Collapse of a water column is calculated using MPS. The effect of parameters in the models is investigated in test calculations. Good agreement with an experiment is obtained even if fragmentation and coalescence of the fluid take place.}
@@ -2016,8 +2016,8 @@
       \strng{authornamehash}{73855f562a2563f3f8363722e3e092f9}
       \strng{authorfullhash}{73855f562a2563f3f8363722e3e092f9}
       \strng{authorfullhashraw}{73855f562a2563f3f8363722e3e092f9}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a novel method for simulating hydrodynamic phenomena. This particle-based method combines features from molecular dynamics and lattice-gas automata. It is shown theoretically as well as in simulations that a quantitative description of isothermal Navier-Stokes flow is obtained with relatively few particles. Computationally, the method is much faster than molecular dynamics, and the at same time it is much more flexible than lattice-gas automata schemes.}
@@ -2371,8 +2371,8 @@
       \strng{authornamehash}{81c164ee3d2d9ec3e93e519bd01b7ec2}
       \strng{authorfullhash}{5599530d0863f967ebfc15b67916c18d}
       \strng{authorfullhashraw}{5599530d0863f967ebfc15b67916c18d}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents a brief review of grand challenges of Smoothed Particle Hydrodynamics (SPH) method. As a meshless method, SPH can simulate a large range of applications from astrophysics to free-surface flows, to complex mixing problems in industry and has had notable successes. As a young computational method, the SPH method still requires development to address important elements which prevent more widespread use. This effort has been led by members of the SPH rEsearch and engineeRing International Community (SPHERIC) who have identified SPH Grand Challenges. The SPHERIC SPH Grand Challenges (GCs) have been grouped into 5 categories: (GC1) convergence, consistency and stability, (GC2) boundary conditions, (GC3) adaptivity, (GC4) coupling to other models, and (GC5) applicability to industry. The SPH Grand Challenges have been formulated to focus the attention and activities of researchers, developers, and users around the world. The status of each SPH Grand Challenge is presented in this paper with a discussion on the areas for future development.}
@@ -2651,8 +2651,8 @@
       \strng{editornamehash}{9e8deb1fc737b0d05e010dfa3750732d}
       \strng{editorfullhash}{9e8deb1fc737b0d05e010dfa3750732d}
       \strng{editorfullhashraw}{9e8deb1fc737b0d05e010dfa3750732d}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Smoothed particle hydrodynamics (SPH) is typically used for barotropic fluids, where the pressure depends only on the local mass density. Here, we show how to incorporate the entropy into the SPH, so that the pressure can also depend on the temperature, while keeping the growth of the total entropy, conservation of the total energy, and symplecticity of the reversible part of the SPH equations. The SPH system of ordinary differential equations with entropy is derived by means of the Poisson reduction and the Lagrange \$\$\textbackslash rightarrow \$\${$\rightarrow$}Euler transformation. We present several approaches toward SPH with entropy, which are then illustrated on systems with discontinuities, on the expansion of ideal gas, and on the Rayleigh-Bénard convection without the Boussinesq approximation. Finally, we show how to model hyperbolic heat conduction within the SPH, extending the SPH variables not only with entropy but also with a heat-flux-related vector field.}
@@ -2827,8 +2827,8 @@
       \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1474-0508}
@@ -2861,8 +2861,8 @@
       \strng{authornamehash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
       \strng{authorfullhash}{ea49fbd6c94c7c89f99c3f989cc8b15f}
       \strng{authorfullhashraw}{ea49fbd6c94c7c89f99c3f989cc8b15f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Potential difficulties with smoothed particle hydrodynamics are discussed. In particular, empirical tests are used to demonstrate that the errors resulting from the use of variable smoothing can be much larger than commonly believed. Fortunately, however, these errors, which are normally small, do not appear to promote instability on small scales, such as fragmentation in self-gravitating fluids. Still, while SPH remains a useful tool for many problems of astrophysical interest, a rigorous formulation of it, which is adaptive but still satisfies conservation properties, is clearly wanting.}
@@ -2905,8 +2905,8 @@
       \strng{authorfullhash}{fe1e28d7695be15e1464de783fe77571}
       \strng{authorfullhashraw}{fe1e28d7695be15e1464de783fe77571}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a new formulation of the equations of motion used in smoothed particle hydrodynamics (SPH). The spatial resolution in SPH is determined by the smoothing length, h, and it has become common practice for each particle to be given its own adaptive smoothing length, hi. This has the advantage that the dynamic range that may be spatially resolved is greatly increased, but also has the drawback that additional terms which account for the variability of the smoothing lengths should be included in the particle equations of motion in order to satisfy conservation requirements. We refer to these additional terms as ∇h terms. The difference between our approach and that of previous implementations is that these ∇h terms have now been included in the equations of motion, whereas they had previously been neglected. This is achieved by defining a functional form for the his that depends on interparticle distances only, and then deriving the equations of motion using a Hamiltonian formalism.A number of test calculations, designed to compare the effects of including and ignoring these ∇h terms, are presented. We find that the inclusion of the ∇h terms has no detrimental effects on the ability of SPH to model known problems such as one dimensional shock-tubes or the adiabatic collapse of cold gas spheres, with reasonable accuracy, and may in some cases lead to improvements in their qualitative outcome. For problems on which SPH has been shown to perform rather badly, because of poor energy conservation, we find that inclusion of the ∇h terms results in a dramatic improvement. In particular, non-conservation of energy during a head-on collision between identical polytropes can occur at the level of {$\Delta$}E {$\approx$} 10 per cent when the ∇h terms are neglected. When the ∇h terms are included, however, this error reduces to {$\Delta$}E {$\approx$} 0.8 per cent.}
