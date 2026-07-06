@@ -1,7 +1,30 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\chapter{Implementation of the used methods}
+\chapter{Implementation details of SPH}
 \label{chap:IMPLEMENTATION}
+
+The purpose of this chapter is to mention some implementation specifics of the SPH method.
+
+\section{Solution procedure}
+\label{sec:PROCEDURE}
+
+\subsection{Initialization}
+\label{sec:INITIALIZATION}
+
+\subsection{Verlet time stepping}
+\label{sec:VERLET}
+
+\subsection{Adaptive smoothing length}
+\label{sec:H_ADAPTIVITY}
+
+\section{Boundary conditions}
+\label{sec:BCs}
+
+\subsection{Extrapolating boundary conditions}
+\label{sec:EBCs}
+
+\subsection{Radiation boundary conditions}
+\label{sec:radiation_BC}
 
 \begin{figure}
 \begin{subfigure}{\linewidth}
@@ -30,7 +53,6 @@
 		\node[anchor=north west, inner sep=1pt] at (q.south east) {$q$};
 
 		\draw[->, densely dashed] (g) to[bend left=18] (q);
-		\node[fill=white, inner sep=1.5pt] at (1.15,1.42) {$+3$ columns};
 
 		\draw[->, gray!60!black] (q) -- (2.55,2.12)
 		node[anchor=west, inner sep=1.5pt] {$\grad\phi_q$};
@@ -94,6 +116,12 @@
 \label{fig:EBC}
 \end{figure}
 
+\section{Reproducibility}
+\label{sec:REPRODUCIBILITY}
+
+The simulations are organised using \href{https://juliadynamics.github.io/DrWatson.jl/dev/}{\texttt{DrWatson.jl}} \autocite{datserisDrWatsonPerfectSidekick2020}, which provides the project layout and connects every run to its configuration. Each simulation run produces \texttt{metadata.jld2} - a metadata file containing the complete parameter set (together with the Git commit), so that any result can be traced to the exact code version and parameters that produced it. The particle fields, \textit{i.e.} the simulation frames, are written as HDF5 frames with an accompanying XDMF descriptor file for post-processing. The complete source, including the parameter files for every simulation reported in \Cref{chap:EXPERIMENTS}, is archived at ZENODO
+
+% TODO: add ZENODO DOI
 
 \end{document}
 

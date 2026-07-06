@@ -199,9 +199,7 @@ Nonetheless, in our simulations, a simpler boundary condition inspired by the ex
 
 where $\nu$ is the artificial viscosity, $\nu_t$ is the viscosity at the top boundary of the damping layer, $y_b,y_t$ are the vertical coordinates of the bottom and top boundaries of the damping layer.
 
-The implementation of the damping layer and viscosity is described in \Cref{sec:}.
-
-% TODO: add reference
+The implementation of the damping layer and viscosity is described in \Cref{sec:radiation_BC}.
 
 \subsection{Terrain-following coordinates}
 \label{sec:TERRAIN-FOLLOWING}
@@ -219,13 +217,13 @@ In a grid-based method the mesh is built in the computational coordinates $(x, \
 
 The situation is fundamentally different for a meshless Lagrangian method.\sidenote{See \Cref{sec:SPH_OVERVIEW} for overview of Lagrangian methods.} In the SPH method to be introduced in \Cref{chap:SPH} the particles carry the fields and follow physical trajectories in the Cartesian frame, and the kernel interpolation uses physical particle distances. There is therefore no mesh to match the terrain and \emph{no need to transform} the governing equations, which are solved in their Cartesian form throughout.
 
-In our simulations, we use the transformation \Cref{eq:TERRAIN-FOLLOWING} \emph{only} to initialise the particle configuration: the particles are created on a terrain-following lattice whose rows lie on the mountain near the ground and flatten towards the top boundary, as seen in \Cref{fig:TERRAIN-FOLLOWING}. Once the flow evolves the fluid particles advect freely and the latice structure is \emph{not forcibly preserved}, whereas the wall particles representing $\Gamma_B$ remain on the mountain surface (their position is not updated). The initialisation is described in \Cref{chap:IMPLEMENTATION}.
+In our simulations, we use the transformation \Cref{eq:TERRAIN-FOLLOWING} \emph{only} to initialise the particle configuration: the particles are created on a terrain-following lattice whose rows lie on the mountain near the ground and flatten towards the top boundary, as seen in \Cref{fig:TERRAIN-FOLLOWING}. Once the flow evolves the fluid particles advect freely and the latice structure is \emph{not preserved}, whereas the wall particles representing $\Gamma_B$ remain on the mountain surface (their position is not updated). The initialisation is described in \Cref{chap:IMPLEMENTATION}.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.85\linewidth]{terrain_following}
 	\caption[Terrain-following particle lattice]{%
-		Seeding of the particle lattice in terrain-following coordinates \autocite{gal-chenUseCoordinateTransformation1975}, with schematic parameters. The reference lattice (a) is mapped by $y^{*} = y + h(x)\,(H - y)/H$ to the terrain-following lattice (b), whose bottom row lies on the mountain surface $h(x)$ and whose coordinate surfaces relax to horizontal at the domain top $H$. The vertical spacing grows as $\exp(Ky/2)$, coarsening the resolution with altitude.
+Initial configuration of the particles in terrain-following coordinates \autocite{gal-chenUseCoordinateTransformation1975} (with schematic parameters). The reference particle placement (a) is mapped by $\bar{y} = H \left(y - h(x)\right)/\left(H- h(x)\right)$ to the terrain-following placement (b), whose bottom row lies on the mountain surface $h(x)$. The coordinate lines relax to horizontal lines at the domain top $H$. 
 	}
 	\label{fig:TERRAIN-FOLLOWING}
 \end{figure}
