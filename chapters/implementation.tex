@@ -3,13 +3,22 @@
 \chapter{Implementation details of SPH}
 \label{chap:IMPLEMENTATION}
 
-The purpose of this chapter is to mention some implementation specifics of the SPH method.
+This chapter describes some implementation choices of the numerical method of \Cref{chap:SPH}. We first describe the software base, then the procedure that initialises and advances the particle system (\Cref{sec:PROCEDURE}), then the treatment of the domain boundaries (\Cref{sec:BCs}), and finally how the simulations can be reproduced (\Cref{sec:REPRODUCIBILITY}).
+
+The code is written in the \href{https://julialang.org/}{Julia programming language}, a language designed for scientific computing. Julia is a high-level, \emph{dynamically typed} programming language \textcolor{gray}{(like Python)} with performance close to statically compiled languages \textcolor{gray}{(like Fortran and C++)}; this ability is achieved through just-in-time compilation. Its \emph{multiple dispatch} feature is an excellent fit for particle methods, where the same interaction is evaluated over many pairs of particles of various types.
+
+We build on \href{https://github.com/OndrejKincl/SmoothedParticles.jl}{\texttt{SmoothedParticles.jl}}\autocite{kinclGloballyTimereversibleFluid2023a,kinclSimulationSuperfluidFountain2023a,kinclUnifiedDescriptionFluids2023a}, a minimal general-purpose SPH framework for Julia. The package supplies the basic infrastructure common to any SPH code, \textit{i.e.} an implementation of a particle-system data structure, cell-list neighbour search, various smoothing kernels, geometric tools for particle initialisation, and output routines. It is \emph{not specialised} to modelling of atmospheric flows.
+The formulations of the density-free and well-balanced variants of SPH \Cref{sec:WELL-BALANCED-SPH}, the terrain-following initialisation, the boundary treatment, and the diagnostics developed for the presented problem are our own, built on top of \texttt{SmoothedParticles.jl}. The complete source is publicly available at the author's \href{https://github.com/kamilbelan/sph-mountain-waves}{Github repository}.
+
+In \emph{SmoothedParticles.jl}, an SPH particle is represented by  a mutable data structure, a subtype of \texttt{AbstractParticle}, that carries its own physical fields, such as position,velocity, and whatever quantities a given formulation requires, \textit{e.g.} entropy, potential temperature. The particles are organized in a \texttt{ParticleSystem} together with a cell list that gives convenient access to near neighbours.
+Physics (interaction of the particles) is expressed using the \texttt{apply!} operator, which comes in two forms\sidenote{This is one of the places where Julia's multiple dispatch becomes useful}. A unary form evaluates a function at every particle (\textit{e.g.} an evaluation of the hydrostatic profile at the particle's altitude), and a binary form evaluates a pairwise function over all pairs within the kernel support (\textit{e.g.} mutual force acting between particles). An SPH sum is therefore implemented as a binary form of \texttt{apply!} that accumulates contributions of all neighbours. 
 
 \section{Solution procedure}
 \label{sec:PROCEDURE}
 
 \subsection{Initialization}
 \label{sec:INITIALIZATION}
+Particles are distributed at initialization by the \texttt{generate\_particles!} subroutine. The initial configuration is typically described using a geometric shape and a grid of that shape: when \texttt{generate_particles!} is called, the geometric shape is filled with particles created at every grid point. Note that the grid is used really for \emph{convenient initialization only} - SPH is a mesh-free method. 
 
 \subsection{Verlet time stepping}
 \label{sec:VERLET}
