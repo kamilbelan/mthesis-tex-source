@@ -182,16 +182,31 @@ Let us conclude with some remarks and further references. The choice of suitable
 \subsection{Radiation boundary condition}
 \label{sec:RADIATION}
 
-We are left to resolve the boundary condition at the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}: impose that no energy arrives from infinity. This boundary condition however cannot be imposed on $\Gamma_{T}$ - the domain is bounded.
+We are left to resolve the boundary condition at the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}: impose that no energy arrives from infinity and consequently there are no reflections at the \enquote{top boundary}. The radiation boundary condition is realistic on \emph{unbounded} domains. However, in our simulations, we are dealing with bounded domains - so the radiation boundary condition \emph{cannot} be imposed on $\Gamma_{T}$. 
+To be able to numerically simulate the problem, one has to work with bounded domains. Note that in this sense $\Gamma_T$ is in fact an artificial boundary, introduced only to tackle the numerical computation. The question is whether it is possible to prescribe an \emph{artificial} boundary condition on $\Gamma_T$ that would simulate the radiation boundary condition on an unbounded domain. 
+Unfortunately, it can be shown \autocite{gustafssonBoundaryConditionsTime1979,baylissRadiationBoundaryConditions1980} that in a general case without any a priori knowledge of the solution's behaviour at infinity, nonreflecting boundary conditions \emph{cannot be constructed} on $\Gamma_T$. Hence in practical cases, the radiation (and nonreflecting) BCs have to be approximated.
 
-For the wave-equation (under some symmetry assumptions), the solution can be written as an infinite sum of certain functions of the spherical coordinates $\left(r, \theta, \varphi\right)$. An approach studied in \autocite{baylissRadiationBoundaryConditions1980} consists of constructing operators that anihilate the leading terms in the solution's expansion as $r \to \infty$.
+For the wave-equation (under some symmetry assumptions), the solution can be asymptotically expanded into an infinite sum of certain functions of the spherical coordinates $\left(r, \theta, \varphi\right)$. An approach studied in \autocite{baylissRadiationBoundaryConditions1980} consists of constructing operators that annihilate the leading terms in the solution's expansion as $r \to \infty$.
 
-% TODO: discuss radiative BC
+Klemp and Durran in \autocite{klempUpperBoundaryCondition1983} have devised a top boundary condition permitting internal gravity waves radiation without any reflection based on information provided by the Fourier transform of the velocity field at the top boundary. In \autocite{chiniAnalysisKlempDurran2003}\autocite[p.~429]{durranNumericalMethodsFluid2010} it is shown that this boundary condition is efficient.
+
+Nonetheless, in our simulations, a simpler boundary condition inspired by the experiments in \autocite{klempNumericalSimulationHydrostatic1978} has been used. The implementation lies in introducing an artificial viscous layer near the top boundary, in which the vertically propagating internal gravity waves are damped. Klemp and Lilly in \autocite[p.~80]{klempNumericalSimulationHydrostatic1978} have used a viscosity profile in the form
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:DAMPING}
+\nu(y) = \nu_t \sin^{2}\left(\frac{\pi}{2} \frac{y - y_b}{y_t - y_b}\right),
+\end{equations}
+
+where $\nu$ is the artificial viscosity, $\nu_t$ is the viscosity at the top boundary of the damping layer, $y_b,y_t$ are the vertical coordinates of the bottom and top boundaries of the damping layer.
+
+The implementation of the damping layer and viscosity is described in \Cref{sec:}.
+
+% TODO: add reference
 
 \subsection{Terrain-following coordinates}
 \label{sec:TERRAIN-CORDS}
 
-% TODO: add figures
+\autocite{clarkSmallscaleDynamicModel1977,gal-chenUseCoordinateTransformation1975,phillipsCOORDINATESYSTEMHAVING1957}
 
 \begin{figure}[htbp]
 	\centering
