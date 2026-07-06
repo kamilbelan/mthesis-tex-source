@@ -1,21 +1,21 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'build/main.blg'
-[50] biber:340> INFO - === Mon Jul  6, 2026, 21:50:09
-[63] Biber.pm:420> INFO - Reading 'build/main.bcf'
-[136] Biber.pm:994> INFO - Found 79 citekeys in bib section 0
-[146] Biber.pm:4463> INFO - Processing section 0
-[153] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
-[168] bibtex.pm:1713> INFO - LaTeX decoding ...
-[315] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
-[794] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[795] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[795] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[795] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[831] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
-[861] bbl.pm:779> INFO - Output to build/main.bbl
-[861] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
-[861] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
-[861] Biber.pm:131> WARN - ISBN '978-1-4419-6411-3 978-1-4419-6412-0' in entry 'durranNumericalMethodsFluid2010' is invalid - run biber with '--validate_datamodel' for details.
-[861] Biber.pm:131> WARN - ISBN '978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3' in entry 'levequeFiniteVolumeMethods2002' is invalid - run biber with '--validate_datamodel' for details.
-[861] Biber.pm:131> WARN - I didn't find a database entry for 'springelSimulationsFormationEvolution2005' (section 0)
-[861] Biber.pm:133> INFO - WARNINGS: 5
+[51] biber:340> INFO - === Mon Jul  6, 2026, 22:43:06
+[64] Biber.pm:420> INFO - Reading 'build/main.bcf'
+[138] Biber.pm:994> INFO - Found 81 citekeys in bib section 0
+[149] Biber.pm:4463> INFO - Processing section 0
+[156] Biber.pm:4654> INFO - Looking for bibtex file 'preamble/bibliography.bib' for section 0
+[171] bibtex.pm:1713> INFO - LaTeX decoding ...
+[323] bibtex.pm:1519> INFO - Found BibTeX data source 'preamble/bibliography.bib'
+[820] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[820] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[820] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[820] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[858] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[888] bbl.pm:779> INFO - Output to build/main.bbl
+[888] Biber.pm:131> WARN - ISBN '978-0-511-78031-8 978-1-316-18472-1' in entry 'sutherlandInternalGravityWaves2010' is invalid - run biber with '--validate_datamodel' for details.
+[888] Biber.pm:131> WARN - ISBN '978-0-521-59125-6 978-0-521-59886-6' in entry 'popeTurbulentFlows2000' is invalid - run biber with '--validate_datamodel' for details.
+[888] Biber.pm:131> WARN - ISBN '978-1-4419-6411-3 978-1-4419-6412-0' in entry 'durranNumericalMethodsFluid2010' is invalid - run biber with '--validate_datamodel' for details.
+[889] Biber.pm:131> WARN - ISBN '978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3' in entry 'levequeFiniteVolumeMethods2002' is invalid - run biber with '--validate_datamodel' for details.
+[889] Biber.pm:131> WARN - I didn't find a database entry for 'springelSimulationsFormationEvolution2005' (section 0)
+[889] Biber.pm:133> INFO - WARNINGS: 5

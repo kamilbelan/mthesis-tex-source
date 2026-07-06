@@ -2565,21 +2565,24 @@
     <bcf:citekey order="121" intorder="1">bottaWellBalancedFinite2004</bcf:citekey>
     <bcf:citekey order="122" intorder="1">artianoStructurePreservingHighOrderMethods2025</bcf:citekey>
     <bcf:citekey order="122" intorder="2">chertockWellbalancedNumericalMethod2023</bcf:citekey>
-    <bcf:citekey order="123" intorder="1">mahdizadehExtrapolationBoundaryConditions2025</bcf:citekey>
+    <bcf:citekey order="123" intorder="1">kinclGloballyTimereversibleFluid2023a</bcf:citekey>
+    <bcf:citekey order="123" intorder="2">kinclSimulationSuperfluidFountain2023a</bcf:citekey>
+    <bcf:citekey order="123" intorder="3">kinclUnifiedDescriptionFluids2023a</bcf:citekey>
     <bcf:citekey order="124" intorder="1">mahdizadehExtrapolationBoundaryConditions2025</bcf:citekey>
-    <bcf:citekey order="125" intorder="1">datserisDrWatsonPerfectSidekick2020</bcf:citekey>
-    <bcf:citekey order="126" intorder="1">clarkSmallscaleDynamicModel1977</bcf:citekey>
-    <bcf:citekey order="126" intorder="2">gal-chenUseCoordinateTransformation1975</bcf:citekey>
-    <bcf:citekey order="127" intorder="1">vacondioGrandChallengesSmoothed2021a</bcf:citekey>
-    <bcf:citekey order="128" intorder="1">zhangBoundaryConditionsWeaklycompressible2025</bcf:citekey>
-    <bcf:citekey order="128" intorder="2">adamiGeneralizedWallBoundary2012</bcf:citekey>
-    <bcf:citekey order="129" intorder="1">morrisStudyStabilityProperties1996</bcf:citekey>
-    <bcf:citekey order="129" intorder="2">schuesslerCommentsSmoothedParticle1981</bcf:citekey>
-    <bcf:citekey order="129" intorder="3">phillipsNumericalMethodThreedimensional1985</bcf:citekey>
-    <bcf:citekey order="129" intorder="4">sunDeltaALESPHModelImproved2017</bcf:citekey>
-    <bcf:citekey order="129" intorder="5">priceSmoothedParticleHydrodynamics2012a</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">mahdizadehExtrapolationBoundaryConditions2025</bcf:citekey>
+    <bcf:citekey order="126" intorder="1">datserisDrWatsonPerfectSidekick2020</bcf:citekey>
+    <bcf:citekey order="127" intorder="1">clarkSmallscaleDynamicModel1977</bcf:citekey>
+    <bcf:citekey order="127" intorder="2">gal-chenUseCoordinateTransformation1975</bcf:citekey>
+    <bcf:citekey order="128" intorder="1">vacondioGrandChallengesSmoothed2021a</bcf:citekey>
+    <bcf:citekey order="129" intorder="1">zhangBoundaryConditionsWeaklycompressible2025</bcf:citekey>
+    <bcf:citekey order="129" intorder="2">adamiGeneralizedWallBoundary2012</bcf:citekey>
     <bcf:citekey order="130" intorder="1">morrisStudyStabilityProperties1996</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">sunDeltaALESPHModelImproved2017</bcf:citekey>
+    <bcf:citekey order="130" intorder="2">schuesslerCommentsSmoothedParticle1981</bcf:citekey>
+    <bcf:citekey order="130" intorder="3">phillipsNumericalMethodThreedimensional1985</bcf:citekey>
+    <bcf:citekey order="130" intorder="4">sunDeltaALESPHModelImproved2017</bcf:citekey>
+    <bcf:citekey order="130" intorder="5">priceSmoothedParticleHydrodynamics2012a</bcf:citekey>
+    <bcf:citekey order="131" intorder="1">morrisStudyStabilityProperties1996</bcf:citekey>
+    <bcf:citekey order="132" intorder="1">sunDeltaALESPHModelImproved2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

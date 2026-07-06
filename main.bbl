@@ -3241,6 +3241,106 @@
       \endverb
       \keyw{Mathematics - Numerical Analysis,Physics - Atmospheric and Oceanic Physics,Physics - Computational Physics,well-balanced}
     \endentry
+    \entry{kinclSimulationSuperfluidFountain2023a}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b5e237e94cd37f13858f40a5fb688d57}{%
+           family={Kincl},
+           familyi={K\bibinitperiod},
+           given={Ondřej},
+           giveni={O\bibinitperiod}}}%
+        {{hash=0b513c66c0151ad25cb7ab54c63d5f36}{%
+           family={Schmoranzer},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{fullhash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{fullhashraw}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{bibnamehash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{authorbibnamehash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{authornamehash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{authorfullhash}{50f1ac117e53fe9903a044cf1448412e}
+      \strng{authorfullhashraw}{50f1ac117e53fe9903a044cf1448412e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates the applicability of smoothed particle hydrodynamics in simulations of superfluid helium-4. We devise a new approach based on Hamiltonian mechanics suitable for simulating thermally driven and weakly compressible flows with free surfaces. The method is then tested in three cases, including a simulation of the fountain effect. We obtain remarkable agreement with referential and theoretical results. The simulations provide new physical insight, such as the pressure and temperature fields in a vessel experiencing the fountain effect.}
+      \field{day}{1}
+      \field{issn}{1070-6631, 1089-7666}
+      \field{journaltitle}{Physics of Fluids}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{title}{Simulation of Superfluid Fountain Effect Using Smoothed Particle Hydrodynamics}
+      \field{urlday}{6}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1063/5.0145864
+      \endverb
+      \keyw{well-balanced}
+    \endentry
+    \entry{kinclUnifiedDescriptionFluids2023a}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b5e237e94cd37f13858f40a5fb688d57}{%
+           family={Kincl},
+           familyi={K\bibinitperiod},
+           given={Ondřej},
+           giveni={O\bibinitperiod}}}%
+        {{hash=57d97cbb8a2b20f0f0097cede33ad946}{%
+           family={Peshkov},
+           familyi={P\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=8e46647d0b7c7a8eb5d11e8d2bf5283b}{%
+           family={Pavelka},
+           familyi={P\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=57619fa212cae84cfd5146d66eecffe4}{%
+           family={Klika},
+           familyi={K\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{fullhash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{fullhashraw}{60652ad1756da5998ce29a757facc8e0}
+      \strng{bibnamehash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{authorbibnamehash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{authornamehash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{authorfullhash}{60652ad1756da5998ce29a757facc8e0}
+      \strng{authorfullhashraw}{60652ad1756da5998ce29a757facc8e0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00963003}
+      \field{journaltitle}{Applied Mathematics and Computation}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Applied Mathematics and Computation}
+      \field{title}{Unified Description of Fluids and Solids in {{Smoothed Particle Hydrodynamics}}}
+      \field{urlday}{6}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.amc.2022.127579
+      \endverb
+      \keyw{sph techniques}
+    \endentry
     \entry{mahdizadehExtrapolationBoundaryConditions2025}{article}{}{}
       \name{author}{4}{}{%
         {{hash=066349c0cdded832fb7c02040421a62b}{%
