@@ -61,12 +61,20 @@
 \contentsline {subsection}{Well-balanced pressure-entropy formulation}{69}{subsection*.71}%
 \contentsline {subsection}{Well-balanced pressure-potential temperature formulation}{71}{subsection*.72}%
 \contentsline {chapter}{\numberline {4}The SILVA method}{73}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Implementation of the used methods}{74}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Implementation details of SPH}{74}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Solution procedure}{74}{section*.73}%
+\contentsline {subsection}{Initialization}{74}{subsection*.74}%
+\contentsline {subsection}{Verlet time stepping}{74}{subsection*.75}%
+\contentsline {subsection}{Adaptive smoothing length}{74}{subsection*.76}%
+\contentsline {section}{\numberline {5.2}Boundary conditions}{74}{section*.77}%
+\contentsline {subsection}{Extrapolating boundary conditions}{74}{subsection*.78}%
+\contentsline {subsection}{Radiation boundary conditions}{74}{subsection*.79}%
+\contentsline {section}{\numberline {5.3}Reproducibility}{74}{section*.81}%
 \contentsline {chapter}{\numberline {6}Numerical experiments}{76}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{76}{section*.75}%
-\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{80}{section*.79}%
-\contentsline {section}{\numberline {6.3}Tensile instability}{82}{section*.82}%
-\contentsline {chapter}{Conclusion}{86}{chapter*.85}%
-\contentsline {chapter}{References}{87}{chapter*.86}%
-\contentsline {subsection}{Other}{89}{subsection*.87}%
+\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{76}{section*.83}%
+\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{81}{section*.87}%
+\contentsline {section}{\numberline {6.3}Tensile instability}{83}{section*.90}%
+\contentsline {chapter}{Conclusion}{87}{chapter*.93}%
+\contentsline {chapter}{References}{88}{chapter*.94}%
+\contentsline {subsection}{Other}{90}{subsection*.95}%
 \contentsfinish 

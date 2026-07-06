@@ -3297,6 +3297,62 @@
       \endverb
       \keyw{sph techniques}
     \endentry
+    \entry{datserisDrWatsonPerfectSidekick2020}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f36f0d509faa43138177962b5b30d8de}{%
+           family={Datseris},
+           familyi={D\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c2b48a93bc99e012641e9bbffa81ed1e}{%
+           family={Isensee},
+           familyi={I\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6b937fc2676447c27d0e2f0701a1e865}{%
+           family={Pech},
+           familyi={P\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c5f25cb457cbfe0ea78b2dcdcd1a3a2c}{%
+           family={Gál},
+           familyi={G\bibinitperiod},
+           given={Tamás},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{fullhash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{fullhashraw}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{bibnamehash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{authorbibnamehash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{authornamehash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{authorfullhash}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \strng{authorfullhashraw}{97fd0a0270fd393067c89e3d8cb7f4d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{29}
+      \field{issn}{2475-9066}
+      \field{journaltitle}{Journal of Open Source Software}
+      \field{month}{10}
+      \field{shortjournal}{JOSS}
+      \field{shorttitle}{{{DrWatson}}}
+      \field{title}{{{DrWatson}}: The Perfect Sidekick for Your Scientific Inquiries}
+      \field{urlday}{6}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.21105/joss.02673
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Datseris et al. - 2020 - DrWatson the perfect sidekick for your scientific inquiries.pdf
+      \endverb
+      \keyw{well-balanced}
+    \endentry
     \entry{zhangBoundaryConditionsWeaklycompressible2025}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=5c295c652b6151abcbf7c27c9cc82b72}{%
