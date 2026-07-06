@@ -204,9 +204,22 @@ The implementation of the damping layer and viscosity is described in \Cref{sec:
 % TODO: add reference
 
 \subsection{Terrain-following coordinates}
-\label{sec:TERRAIN-CORDS}
+\label{sec:TERRAIN-FOLLOWING}
 
-\autocite{clarkSmallscaleDynamicModel1977,gal-chenUseCoordinateTransformation1975,phillipsCOORDINATESYSTEMHAVING1957}
+The domain \Cref{eq:OMEGA} has a non-flat lower boundary $\Gamma_B$ given by the mountain profile $h(x)$, which generally does not coincide with a Cartesian coordinate line $y=0$. It is computationally more complicated to impose a boundary condition on a non-flat $\Gamma_B$\sidenote{Recall we are imposing a no-permeability (free slip) condition $\vb{v} \cdot \vb{n}$ on $\Gamma_B$, so we \textit{e.g.} need to compute $\vb{n}$ on $y = h(\vb{x})$.}, hence we make use of the \emph{terrain-following coordinate transformation}. This transformation resolves the complication of a non-flat boundary by stretching the vertical coordinate so that the ground becomes a coordinate surface, the stretching equalling the terrain at the bottom and decreasing to the identity at the top. The horizontal coordinate is left untouched. Schematically, the transformation is shown in \Cref{fig:TERRAIN-FOLLOWING}.
+
+The original construction, introduced by Phillips in \autocite{phillipsCOORDINATESYSTEMHAVING1957}, utilizes a pressure-based transformation. We follow instead the height-based transformation of Gal-Chen and Somerville \autocite{gal-chenUseCoordinateTransformation1975},
+\begin{equations}[single,!,numberline=all]
+\label{eq:TERRAIN-FOLLOWING}
+\bar y = H\, \frac{y - h(x)}{H - h(x)} \eqcomma
+\end{equations}
+which maps the \textcolor{gray}{physical} ground $y = h(x)$ to $\bar y = 0$ and the top boundary $y = H$ to $\bar y = H$, and reduces to the identity where the terrain is flat. This transformation has later been adopted by Clark \autocite{clarkSmallscaleDynamicModel1977} for mountain-wave simulations.
+
+In a grid-based method the mesh is built in the computational coordinates $(x, \bar y)$, so the non-flat ground becomes a flat coordinate line and the condition $\vb{v} \cdot \vb{n} = 0$ on $\Gamma_B$ reduces simply to a condition on that line. The price is that the governing equations must be rewritten in the new coordinate system. Every spatial derivative obtains extra chain-rule (metric) terms and the density and fluxes need to weighted by the Jacobian of \Cref{eq:TERRAIN-FOLLOWING}; this transformed form of the equations is then solved numerically.
+
+The situation is fundamentally different for a meshless Lagrangian method.\sidenote{See \Cref{sec:SPH_OVERVIEW} for overview of Lagrangian methods.} In the SPH method to be introduced in \Cref{chap:SPH} the particles carry the fields and follow physical trajectories in the Cartesian frame, and the kernel interpolation uses physical particle distances. There is therefore no mesh to match the terrain and \emph{no need to transform} the governing equations, which are solved in their Cartesian form throughout.
+
+In our simulations, we use the transformation \Cref{eq:TERRAIN-FOLLOWING} \emph{only} to initialise the particle configuration: the particles are created on a terrain-following lattice whose rows lie on the mountain near the ground and flatten towards the top boundary, as seen in \Cref{fig:TERRAIN-FOLLOWING}. Once the flow evolves the fluid particles advect freely and the latice structure is \emph{not forcibly preserved}, whereas the wall particles representing $\Gamma_B$ remain on the mountain surface (their position is not updated). The initialisation is described in \Cref{chap:IMPLEMENTATION}.
 
 \begin{figure}[htbp]
 	\centering
