@@ -1117,6 +1117,51 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Nordström - 2025 - Open boundary conditions for nonlinear initial boundary value problems.pdf
       \endverb
     \endentry
+    \entry{gustafssonBoundaryConditionsTime1979}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1cf09065e3fc1c64f1de2526b4154c0a}{%
+           family={Gustafsson},
+           familyi={G\bibinitperiod},
+           given={Bertil},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d9510bbdf3384c9c006c8554b4c0843a}{%
+           family={Kreiss},
+           familyi={K\bibinitperiod},
+           given={Heinz-Otto},
+           giveni={H\bibinithyphendelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{823937e3235a2c8676adcd694972195d}
+      \strng{fullhash}{823937e3235a2c8676adcd694972195d}
+      \strng{fullhashraw}{823937e3235a2c8676adcd694972195d}
+      \strng{bibnamehash}{823937e3235a2c8676adcd694972195d}
+      \strng{authorbibnamehash}{823937e3235a2c8676adcd694972195d}
+      \strng{authornamehash}{823937e3235a2c8676adcd694972195d}
+      \strng{authorfullhash}{823937e3235a2c8676adcd694972195d}
+      \strng{authorfullhashraw}{823937e3235a2c8676adcd694972195d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper different procedures for treating artificial boundaries are analyzed, and it is shown that many commonly used methods give bad results. A new procedure is developed for the case where the asymptotic behaviour of the coefficient matrices is known.}
+      \field{day}{1}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{3}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{Boundary Conditions for Time Dependent Problems with an Artificial Boundary}
+      \field{urlday}{6}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(79)90119-0
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Gustafsson and Kreiss - 1979 - Boundary conditions for time dependent problems with an artificial boundary.pdf;/home/moschehaus/Zotero/storage/8D5SVRXH/0021999179901190.html
+      \endverb
+    \endentry
     \entry{baylissRadiationBoundaryConditions1980}{article}{}{}
       \name{author}{2}{}{%
         {{hash=403bb0f77999b10a8f985bf956b308e2}{%
@@ -1162,6 +1207,145 @@
       \verb /home/moschehaus/Portable/Documents/Zotero Library/Bayliss and Turkel - 1980 - Radiation boundary conditions for wave‐like equations.pdf
       \endverb
     \endentry
+    \entry{chiniAnalysisKlempDurran2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9d9b643307335f6aac5c7f62ed771a4b}{%
+           family={Chini},
+           familyi={C\bibinitperiod},
+           given={Gregory\bibnamedelima P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=dbf5b5707eec1042bb966b90434e330c}{%
+           family={Leibovich},
+           familyi={L\bibinitperiod},
+           given={Sidney},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{fullhash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{fullhashraw}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{bibnamehash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{authorbibnamehash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{authornamehash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{authorfullhash}{582334cfc259ff24fcc679b8992fdaf5}
+      \strng{authorfullhashraw}{582334cfc259ff24fcc679b8992fdaf5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Numerical simulations of the oceanic (atmospheric) boundary layer are complicated by the need to specify appropriate ``outflow'' or ``radiation'' boundary conditions at the artificial lower (upper) boundary of the computational domain. If the boundary layer is stratified, particular care is necessary to insure that internal-gravity-wave disturbances generated within the domain are not artificially reflected by the computational boundary. A major advance was made almost 20 years ago by Klemp and Durran; their radiation condition relates the Fourier transformed pressure fluctuation to the Fourier transformed vertical-velocity perturbation along the artificial boundary. Because it is local in time, the Klemp and Durran (KD) condition is easily incorporated into a wide variety of numerical models for only a minor computational expense. Indeed, it has been widely used in the atmospheric and oceanic sciences communities. For simulations of dissipative systems, however, perturbation-flux conditions must also be specified at the artificial boundary---these are in addition to the KD condition (or some other constraint) on the normal velocity component at that boundary. This article considers the performance of the KD condition in conjunction with zero perturbation stress and zero perturbation buoyancy-flux conditions (``KDZ'' conditions, collectively), because the latter are generally assumed to be appropriate for simulations of boundary layer phenomena. Analysis of the response of a weakly dissipative, uniformly stratified fluid to forcing concentrated at a given depth reveals two potentially serious drawbacks of the KDZ conditions. First, nonhydrostatic dynamics are not adequately treated by the KD condition, itself. Moreover, the imposition of zero perturbation-flux conditions causes artificial boundary layers to form along the outflow boundary. Although these boundary layers are passive, they are unlikely to be resolved in numerical simulations; thus, discretization of the KDZ conditions may cause further errors in the simulated internal-wave dynamics. A consistent set of boundary conditions for simulations of dissipative, stratified fluids is proposed.}
+      \field{day}{1}
+      \field{issn}{0022-3670, 1520-0485}
+      \field{journaltitle}{Journal of Physical Oceanography}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{An {{Analysis}} of the {{Klemp}} and {{Durran Radiation Boundary Condition}} as {{Applied}} to {{Dissipative Internal Waves}}}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0485(2003)033<2394:AAOTKA>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Chini and Leibovich - 2003 - An Analysis of the Klemp and Durran Radiation Boundary Condition as Applied to Dissipative Internal.pdf
+      \endverb
+      \keyw{orographic flows}
+    \endentry
+    \entry{klempNumericalSimulationHydrostatic1978}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=652c7046b077f2a90a113f3a7430ddf7}{%
+           family={Klemp},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=b15403a45dcc07368da939c8275bd07d}{%
+           family={Lilly},
+           familyi={L\bibinitperiod},
+           given={D.\bibnamedelimi K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{fullhash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{fullhashraw}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{bibnamehash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{authorbibnamehash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{authornamehash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{authorfullhash}{3fe1add6f58fb678811164f1ce9daad6}
+      \strng{authorfullhashraw}{3fe1add6f58fb678811164f1ce9daad6}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A numerical model is developed for simulating the flow of stably stratified nonrotating air over finite-amplitude, two-dimensional mountain ranges. Special attention is paid to accurate treatment of internal dissipation and to formulation of an upper boundary region and lateral boundary conditions which allow upward and lateral propagation of wave energy out of the model. The model is hydrostatic and uses potential temperature for the vertical coordinate. A local adjustment procedure is derived to parameterize low Richardson number instability. The model behavior is tested against analytic theory and then applied to a variety of idealized and real flow situations, leading to some new insights and new questions on the nature of large-amplitude mountain waves. The model proves to be effective in simulating the structure of two observed cases of strong mountain waves with very different characteristics.}
+      \field{day}{1}
+      \field{issn}{0022-4928, 1520-0469}
+      \field{journaltitle}{Journal of the Atmospheric Sciences}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Numerical {{Simulation}} of {{Hydrostatic Mountain Waves}}}
+      \field{urlday}{6}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{1978}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0469(1978)035<0078:NSOHMW>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Klemp and Lilly - 1978 - Numerical Simulation of Hydrostatic Mountain Waves.pdf
+      \endverb
+      \keyw{orographic flows}
+    \endentry
+    \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=21dc4df3a642184f817f4d2ca145314c}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Terry\bibnamedelima L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{fullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{bibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorbibnamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authornamehash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhash}{21dc4df3a642184f817f4d2ca145314c}
+      \strng{authorfullhashraw}{21dc4df3a642184f817f4d2ca145314c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes a three-dimensional finite-difference model of air flow over an irregular lower surface. The model is nonhydrostatic and the anelastic approximation has been used to filter sound waves. Second-order difference equations are employed which provide excellent momentum and energy budgets. An outflow radiation boundary condition using a generalized Kreiss extrapolation scheme has been designed and implemented. Some two-dimensional applications of the model to air flow over a ``Witch of Agnesi'' mountain barrier are described. Comparison with the linear theory of Queney indicates, for the cases treated, that the nonlinearity of the boundary condition has a first-order effect on the resulting flow.}
+      \field{day}{1}
+      \field{issn}{0021-9991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{6}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{title}{A Small-Scale Dynamic Model Using a Terrain-Following Coordinate Transformation}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/0021-9991(77)90057-2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark - 1977 - A small-scale dynamic model using a terrain-following coordinate transformation.pdf;/home/moschehaus/Zotero/storage/JZ2HLKVC/0021999177900572.html
+      \endverb
+      \keyw{orographic flows,terrain-following}
+    \endentry
     \entry{gal-chenUseCoordinateTransformation1975}{article}{}{}
       \name{author}{2}{}{%
         {{hash=b1c97781781c53eaf0aab95c09718781}{%
@@ -1183,8 +1367,8 @@
       \strng{authornamehash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhash}{f452063f00cdfb0c8c2f409298673720}
       \strng{authorfullhashraw}{f452063f00cdfb0c8c2f409298673720}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computational Physics}
@@ -1199,7 +1383,51 @@
       \verb 10.1016/0021-9991(75)90037-6
       \endverb
       \verb{file}
-      \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Gal-Chen and Somerville - 1975 - On the use of a coordinate transformation for the solution of the Navier-Stokes equations.pdf
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Gal-Chen and Somerville - 1975 - On the use of a coordinate transformation for the solution of the Navier-Stokes equations.pdf
+      \endverb
+      \keyw{sph techniques,terrain-following}
+    \endentry
+    \entry{phillipsCOORDINATESYSTEMHAVING1957}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b98c304de460a2c3cdd3665935fa533}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={N.\bibnamedelimi A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{fullhash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{fullhashraw}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{bibnamehash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{authorbibnamehash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{authornamehash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{authorfullhash}{1b98c304de460a2c3cdd3665935fa533}
+      \strng{authorfullhashraw}{1b98c304de460a2c3cdd3665935fa533}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{No Abstract Available.}
+      \field{day}{1}
+      \field{issn}{1520-0469}
+      \field{journaltitle}{Journal of the Atmospheric Sciences}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{title}{A {{COORDINATE SYSTEM HAVING SOME SPECIAL ADVANTAGES FOR NUMERICAL FORECASTING}}}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{1957}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0469(1957)014<0184:ACSHSS>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/1979 - The Influence of Mountains on the Atmosphere.pdf
       \endverb
       \keyw{sph techniques,terrain-following}
     \endentry
@@ -1222,8 +1450,8 @@
       \strng{authornamehash}{c5fc096f540a44e56f892cc83176f0fb}
       \strng{authorfullhash}{c5fc096f540a44e56f892cc83176f0fb}
       \strng{authorfullhashraw}{c5fc096f540a44e56f892cc83176f0fb}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{26}
@@ -1266,8 +1494,8 @@
       \strng{authornamehash}{dc9b273458976597148f480df882fcd3}
       \strng{authorfullhash}{dc9b273458976597148f480df882fcd3}
       \strng{authorfullhashraw}{dc9b273458976597148f480df882fcd3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{0004-6361, 1432-0746}
@@ -1393,8 +1621,8 @@
       \strng{authornamehash}{f0baf5dea238f529bafc2bb62ca4dd00}
       \strng{authorfullhash}{f0baf5dea238f529bafc2bb62ca4dd00}
       \strng{authorfullhashraw}{f0baf5dea238f529bafc2bb62ca4dd00}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We are interested in simulating gravitationally stratified atmospheric flows governed by the compressible Euler equations in irregular domains. In such simulations, one of the challenges arises when the computations are conducted on a Cartesian grid. The use of regular rectangular grids that intersect with the irregular boundaries leads to the generation of arbitrarily small and highly distorted computational cells adjacent to the boundaries of the domain. The appearance of such cells may affect both the stability and efficiency of the numerical method and therefore require special attention. In order to overcome this difficulty, we introduce a structured quadrilateral mesh, which is designed for the irregular domain at hand, and solve the studied atmospheric flow equations using a second-order central-upwind scheme. In addition, the resulting numerical method is developed to provide a well-balanced discretization of the underlying system. The latter is achieved by rewriting the governing equations in terms of equilibrium variables representing perturbations of the physically relevant equilibrium. The proposed method is tested in a number of numerical experiments, including the buoyant bubble rising and interacting with an (zeppelin) obstacle and the Lee wave generation due to topography. The obtained numerical results demonstrate high resolution and robustness of the proposed computational approach.}
@@ -1444,8 +1672,8 @@
       \strng{authornamehash}{4b7af37b1014a263696e0aa76a249887}
       \strng{authorfullhash}{4b7af37b1014a263696e0aa76a249887}
       \strng{authorfullhashraw}{4b7af37b1014a263696e0aa76a249887}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The present work concerns the derivation of a numerical scheme to approximate weak solutions of the Euler equations with a gravitational source term. The designed scheme is proved to be fully well-balanced since it is able to exactly preserve all moving equilibrium solutions, as well as the corresponding steady solutions at rest obtained when the velocity vanishes. Moreover, the proposed scheme is entropy-preserving since it satisfies all fully discrete entropy inequalities. In addition, in order to satisfy the required admissibility of the approximate solutions, the positivity of both approximate density and pressure is established. Several numerical experiments attest the relevance of the developed numerical method. An extension to two-dimensional problems is given, applying the one-dimensional framework direction by direction on Cartesian grids.}
@@ -1491,8 +1719,8 @@
       \strng{authornamehash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
       \strng{authorfullhash}{15ab4e94eeaa8f9f83365d86ace1a6b9}
       \strng{authorfullhashraw}{15ab4e94eeaa8f9f83365d86ace1a6b9}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We review well-balanced methods for the faithful approximation of solutions of systems of hyperbolic balance laws that are of interest to computational astrophysics. Well-balanced methods are specialized numerical techniques that guarantee the accurate resolution of non-trivial steady-state solutions, that balance laws prominently feature, and perturbations thereof. We discuss versatile frameworks and techniques for generic systems of balance laws for finite volume and finite difference methods. The principal emphasis of the presentation is on the algorithms and their implementation. Subsequently, we specialize in hydrodynamics' Euler equations to exemplify the techniques and give an overview of the available well-balanced methods in the literature, including the classic hydrostatic equilibrium and steady adiabatic flows. The performance of the schemes is evaluated on a selection of test problems.}
@@ -1538,8 +1766,8 @@
       \strng{authornamehash}{44d73f60ae2252d9ae9c531ec4faaceb}
       \strng{authorfullhash}{44d73f60ae2252d9ae9c531ec4faaceb}
       \strng{authorfullhashraw}{44d73f60ae2252d9ae9c531ec4faaceb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{A new hydrodynamic code applicable to a space of an arbitrary number of dimensions is discussed and applied to a variety of polytropic stellar models. The principal feature of the method is the use of statistical techniques to recover analytical expressions for the physical variables from a known distribution of fluid elements. The equations of motion take the form of Newtonian equations for particles. Starting with a non-axisymmetric distribution of approximately 80 particles in three dimensions, the method is found to reproduce the structure of uniformly rotating and magnetic polytropes to within a few per cent. The method may be easily extended to deal with more complicated physical models.}
@@ -1581,8 +1809,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The SPH (smoothed particle hydrodynamics) method is extended to deal with free surface incompressible flows. The method is easy to use, and examples will be given of its application to a breaking dam, a bore, the simulation of a wave maker, and the propagation of waves towards a beach. Arbitrary moving boundaries can be included by modelling the boundaries by particles which repel the fluid particles. The method is explicit, and the time steps are therefore much shorter than required by other less flexible methods, but it is robust and easy to program.}
@@ -1651,8 +1879,8 @@
       \strng{editornamehash}{83c42d4028513946fd524feb1252e2c8}
       \strng{editorfullhash}{83c42d4028513946fd524feb1252e2c8}
       \strng{editorfullhashraw}{83c42d4028513946fd524feb1252e2c8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in the {{Free-Lagrange Method Including Contributions}} on {{Adaptive Gridding}} and the {{Smooth Particle Hydrodynamics Method}}}
@@ -1700,8 +1928,8 @@
       \strng{authornamehash}{0d6027a35da2c28a9a42f429717c56b3}
       \strng{authorfullhash}{0d6027a35da2c28a9a42f429717c56b3}
       \strng{authorfullhashraw}{0d6027a35da2c28a9a42f429717c56b3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Simulation of large deformation and post-failure of geomaterial in the framework of smoothed particle hydrodynamics (SPH) are presented in this study. The Drucker--Prager model with associated and non-associated plastic flow rules is implemented into the SPH code to describe elastic--plastic soil behavior. In contrast to previous work on SPH for solids, where the hydrostatic pressure is often estimated from density by an equation of state, this study proposes to calculate the hydrostatic pressure of soil directly from constitutive models. Results obtained in this paper show that the original SPH method, which has been successfully applied to a vast range of problems, is unable to directly solve elastic--plastic flows of soil because of the so-called SPH tensile instability. This numerical instability may result in unrealistic fracture and particles clustering in SPH simulation. For non-cohesive soil, the instability is not serious and can be completely removed by using a tension cracking treatment from soil constitutive model and thereby give realistic soil behavior. However, the serious tensile instability that is found in SPH application for cohesive soil requires a special treatment to overcome this problem. In this paper, an artificial stress method is applied to remove the SPH numerical instability in cohesive soil. A number of numerical tests are carried out to check the capability of SPH in the current application. Numerical results are then compared with experimental and finite element method solutions. The good agreement obtained from these comparisons suggests that SPH can be extended to general geotechnical problems. Copyright ©{} 2008 John Wiley \& Sons, Ltd.}
@@ -1831,8 +2059,8 @@
       \strng{authornamehash}{acc9950dd59f9e560b3dbd0ae83e2af1}
       \strng{authorfullhash}{acc9950dd59f9e560b3dbd0ae83e2af1}
       \strng{authorfullhashraw}{acc9950dd59f9e560b3dbd0ae83e2af1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This book aims at presenting the SPH method for fluid modelling from a theoretical and applied viewpoint. It comprises two parts that refer to each other. The first, dealing with the fundamentals of Hydraulics, is based on the elementary principles of Lagrangian and Hamiltonian mechanics. The specific laws governing a system of macroscopic particles are built, then the large systems involving dissipative processes are explained. The continua are then discussed; lastly, a fairly exhaustive account of turbulence is given. The second part discloses the bases of the SPH Lagrangian numerical method from the continuous equations, as well as from discrete variational principles, setting out the method's specific properties of conservativity and invariance. Various numerical schemes are compared, permanently referring to physics as dealt with in the first part. Applications to schematic instances are then discussed; ultimately, practical applications to the dimensioning of coastal and fluvial structures are considered. Despite the rapid growth in the SPH field, this book is the first to present this method in a comprehensive way for fluids. It should serve as a rigorous introduction to SPH and a reference for fundamental mathematical fluid dynamics.}
@@ -1881,8 +2109,8 @@
       \strng{authornamehash}{a0a8c2cb10c667930488d823cb7f9c70}
       \strng{authorfullhash}{a0a8c2cb10c667930488d823cb7f9c70}
       \strng{authorfullhashraw}{a0a8c2cb10c667930488d823cb7f9c70}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{1}
@@ -1923,8 +2151,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this review the theory and application of Smoothed particle hydrodynamics (SPH) since its inception in 1977 are discussed. Emphasis is placed on the strengths and weaknesses, the analogy with particle dynamics and the numerous areas where SPH has been successfully applied.}
@@ -1965,8 +2193,8 @@
       \strng{authorfullhash}{441fe88aa55fb5b33be74d8641d0d091}
       \strng{authorfullhashraw}{441fe88aa55fb5b33be74d8641d0d091}
       \field{extraname}{3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A limit form of Richardson extrapolation is used to obtain interpolation formulae with accuracy of a higher degree than that obtained with the variation diminishing spline approximation.}
@@ -2006,8 +2234,8 @@
       \strng{authornamehash}{5cbff5af280276723c72cc464a4a5ea5}
       \strng{authorfullhash}{5cbff5af280276723c72cc464a4a5ea5}
       \strng{authorfullhashraw}{5cbff5af280276723c72cc464a4a5ea5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We construct a new class of positive definite and compactly supported radial functions which consist of a univariate polynomial within their support. For given smoothness and space dimension it is proved that they are of minimal degree and unique up to a constant factor. Finally, we establish connections between already known functions of this kind.}
@@ -2056,8 +2284,8 @@
       \strng{authornamehash}{6504575825ed1af4278d7c5eb95578e7}
       \strng{authorfullhash}{6504575825ed1af4278d7c5eb95578e7}
       \strng{authorfullhashraw}{6504575825ed1af4278d7c5eb95578e7}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We investigate the suitability of the Wendland functions as smoothing kernels for smoothed particle hydrodynamics (SPH) and compare them with the traditional B-splines. Linear stability analysis in three dimensions and test simulations demonstrate that the Wendland kernels avoid the clumping (or pairing) instability for all neighbour numbers NH, despite having vanishing derivative at the origin. This disproves traditional ideas about the origin of this instability. Instead, we give an explanation based on the kernel Fourier transform, but also an interpretation in terms of the SPH density estimator. The Wendland kernels are computationally more convenient than the higher-order B-splines and thus allow large NH, which we show are required to obtain decent numerical accuracy for strongly shearing flows (note that computational costs rise sub-linear with NH). At low NH the quartic B-spline kernel with NH = 60 obtains much better convergence then the standard cubic B-spline with NH{$<$}=57.}
@@ -2194,8 +2422,8 @@
       \strng{authornamehash}{1e640468c2b25609a97e4131a91a7709}
       \strng{authorfullhash}{1e640468c2b25609a97e4131a91a7709}
       \strng{authorfullhashraw}{1e640468c2b25609a97e4131a91a7709}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A truncation error analysis has been developed for the approximation of spatial derivatives in smoothed particle hydrodynamics (SPH) and related first-order consistent methods such as the first-order form of the reproducing kernel particle method. Error is shown to depend on both the smoothing length h and the ratio of particle spacing to smoothing length, {$\Delta$}x/h. For uniformly spaced particles in one dimension, analysis shows that as h is reduced while maintaining constant {$\Delta$}x/h, error decays as h2 until a limiting discretization error is reached, which is independent of h. If {$\Delta$}x/h is reduced while maintaining constant h (i.e. if the number of neighbours per particle is increased), error decreases at a rate which depends on the kernel function's smoothness. When particles are distributed non-uniformly, error can grow as h is reduced with constant {$\Delta$}x/h. First-order consistent methods are shown to remove this divergent behaviour. Numerical experiments confirm the theoretical analysis for one dimension, and indicate that the main results are also true in three dimensions. This investigation highlights the complexity of error behaviour in SPH, and shows that the roles of both h and {$\Delta$}x/h must be considered when choosing particle distributions and smoothing lengths. Copyright ©{} 2005 John Wiley \& Sons, Ltd.}
@@ -2238,8 +2466,8 @@
       \strng{authornamehash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
       \strng{authorfullhash}{8bb53c71e848be1a1f57ce0b65d4a4e0}
       \strng{authorfullhashraw}{8bb53c71e848be1a1f57ce0b65d4a4e0}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper describes an energy-preserving and globally time-reversible code for weakly compressible smoothed particle hydrodynamics (SPH). We do not add any additional dynamics to the Monaghan's original SPH scheme at the level of ordinary differential equation, but we show how to discretize the equations by using a corrected expression for density and by invoking a symplectic integrator. Moreover, to achieve the global-in-time reversibility, we have to correct the initial state, implement a conservative fluid-wall interaction, and use the fixed-point arithmetic. Although the numerical scheme is reversible globally in time (solvable backwards in time while recovering the initial conditions), we observe thermalization of the particle velocities and growth of the Boltzmann entropy. In other words, when we do not see all the possible details, as in the Boltzmann entropy, which depends only on the one-particle distribution function, we observe the emergence of the second law of thermodynamics (irreversible behavior) from purely reversible dynamics.}
@@ -2289,8 +2517,8 @@
       \strng{authornamehash}{cbbff671e8c011d04707c43250703473}
       \strng{authorfullhash}{cbbff671e8c011d04707c43250703473}
       \strng{authorfullhashraw}{cbbff671e8c011d04707c43250703473}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Continuum mechanics can be formulated in the Lagrangian frame (addressing motion of individual continuum particles) or in the Eulerian frame (addressing evolution of fields in an inertial frame). There is a canonical Hamiltonian structure in the Lagrangian frame. By transformation to the Eulerian frame we find the Poisson bracket for Eulerian continuum mechanics with deformation gradient (or the related distortion matrix). Both Lagrangian and Eulerian Hamiltonian structures are then discussed from the perspective of space--time variational formulation and by means of semidirect products and Lie algebras. Finally, we discuss the importance of the Jacobi identity in continuum mechanics and approaches to prove hyperbolicity of the evolution equations and their gauge invariance.}
@@ -2343,8 +2571,8 @@
       \strng{authornamehash}{1963a9a9a629ea30b277f7b68a131a2e}
       \strng{authorfullhash}{1963a9a9a629ea30b277f7b68a131a2e}
       \strng{authorfullhashraw}{1963a9a9a629ea30b277f7b68a131a2e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{booktitle}{Multiscale {{Thermo-Dynamics}}: {{Introduction}} to {{GENERIC}}}
@@ -2470,8 +2698,8 @@
       \strng{authornamehash}{9bc8dc70dbd7f183cf411f1864686c1f}
       \strng{authorfullhash}{9bc8dc70dbd7f183cf411f1864686c1f}
       \strng{authorfullhashraw}{9bc8dc70dbd7f183cf411f1864686c1f}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2nd ed}
@@ -2515,8 +2743,8 @@
       \strng{authornamehash}{96286d9986c6991f8f485305cfe4fd53}
       \strng{authorfullhash}{96286d9986c6991f8f485305cfe4fd53}
       \strng{authorfullhashraw}{96286d9986c6991f8f485305cfe4fd53}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-3-540-30663-4}
@@ -2557,8 +2785,8 @@
       \strng{authornamehash}{a9587eaad914acca50a9dbe89bf419bc}
       \strng{authorfullhash}{a9587eaad914acca50a9dbe89bf419bc}
       \strng{authorfullhashraw}{a9587eaad914acca50a9dbe89bf419bc}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Geometric integrators are time-stepping methods, designed such that they exactly satisfy conservation laws, symmetries or symplectic properties of a system of differential equations. In this book the authors outline the principles of geometric integration and demonstrate how they can be applied to provide efficient numerical methods for simulating conservative models. Beginning from basic principles and continuing with discussions regarding the advantageous properties of such schemes, the book introduces methods for the N-body problem, systems with holonomic constraints, and rigid bodies. More advanced topics treated include high-order and variable stepsize methods, schemes for treating problems involving multiple time-scales, and applications to molecular dynamics and partial differential equations. The emphasis is on providing a unified theoretical framework as well as a practical guide for users. The inclusion of examples, background material and exercises enhance the usefulness of the book for self-instruction or as a text for a graduate course on the subject.}
@@ -2724,8 +2952,8 @@
       \strng{authorfullhash}{d3751ea36f0a364b55feb8996b49deac}
       \strng{authorfullhashraw}{d3751ea36f0a364b55feb8996b49deac}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present the results of collapse calculations for elongated clouds performed using the numerical method of smoothed particle hydrodynamics (SPH). The clouds considered are isothermal, prolate spheroids with different axial ratios (a/b). Results are obtained for different values of ajb and mL, the mean mass per unit length. It is found that initially uniform clouds undergo fragmentation when the collapse is preferentially down on to the major axis, due to the intrinsic instability of a linear configuration. This occurs when the value of mL is sufficiently large. A criterion for elongated clouds to undergo linear collapse is derived using the tensor virial theorem, and it is found that the numerically obtained value of mL for which fragmentation occurs corresponds closely to that expected from analytical considerations. The addition of small density perturbations simply results in clouds that fragment more easily, particularly for cases in which a ¡bis close to unity.}
@@ -2771,8 +2999,8 @@
       \strng{authornamehash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
       \strng{authorfullhash}{cc67b663dfa2dc44aa87e5bd1b2e250f}
       \strng{authorfullhashraw}{cc67b663dfa2dc44aa87e5bd1b2e250f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We discuss differences in simulation results that arise between the use of either the thermal energy or the entropy as an independent variable in smoothed particle hydrodynamics (SPH). In this context, we derive a new version of SPH that manifestly conserves both energy and entropy if smoothing lengths are allowed to adapt freely to the local mass resolution. To test various formu- lations of SPH, we consider point-like energy injection and find that powerful explosions are well represented by SPH even when the energy is deposited into a single particle, provided that the entropy equation is integrated. If the thermal energy is instead used as an independent variable, unphysical solutions can be obtained for this problem. We also examine the radiative cooling of gas spheres that collapse and virialize in isolation and of halos that form in cosmological simulations of structure formation. When applied to these problems, the thermal energy version of SPH leads to substantial overcooling in halos that are resolved with up to a few thousand particles, while the entropy formulation is biased only moderately low for these halos. For objects resolved with much larger particle numbers, the two approaches yield consistent results. We trace the origin of the differences to systematic resolution effects in the outer parts of cooling flows. The cumulative effect of this overcooling can be significant. In cosmological simulations of moderate size, we find that the fraction of baryons which cool and condense can be reduced by up to a factor \textasciitilde 2 if the entropy equation is employed rather than the thermal energy equation. We also demonstrate that the entropy method leads to a greatly reduced scatter in the density-temperature relation of the low-density Ly-alpha forest relative to the thermal energy approach, in accord with theoretical expectations.(abridged)}
@@ -2818,8 +3046,8 @@
       \strng{authornamehash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhash}{9251bd9f553e5b7cc3385d67595804fe}
       \strng{authorfullhashraw}{9251bd9f553e5b7cc3385d67595804fe}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various formulations of smooth-particle hydrodynamics (SPH) have been proposed, intended to resolve certain difficulties in the treatment of fluid mixing instabilities. Most have involved changes to the algorithm which either introduce artificial correction terms or violate arguably the greatest advantage of SPH over other methods: manifest conservation of energy, entropy, momentum, and angular momentum. Here, we show how a class of alternative SPH equations of motion (EOM) can be derived self-consistently from a discrete particle Lagrangian (guaranteeing manifest conservation) in a manner which tremendously improves treatment of instabilities and contact discontinuities. Saitoh \& Makino recently noted that the volume element used to discretize the EOM does not need to explicitly invoke the mass density (as in the 'standard' approach); we show how this insight, and the resulting degree of freedom, can be incorporated into the rigorous Lagrangian formulation that retains ideal conservation properties and includes the 'Grad-h' terms that account for variable smoothing lengths. We derive a general EOM for any choice of volume element (particle 'weights') and method of determining smoothing lengths. We then specify this to a 'pressure-entropy formulation' which resolves problems in the traditional treatment of fluid interfaces. Implementing this in a new version of the GADGET code, we show it leads to good performance in mixing experiments (e.g. Kelvin-Helmholtz \& blob tests). And conservation is maintained even in strong shock/blastwave tests, where formulations without manifest conservation produce large errors. This also improves the treatment of sub-sonic turbulence, and lessens the need for large kernel particle numbers. The code changes are trivial and entail no additional numerical expense. This provides a general framework for self-consistent derivation of different 'flavors' of SPH.}
@@ -2872,8 +3100,8 @@
       \strng{authornamehash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhash}{67129baf070b08b8c208f6af2e3ff0c8}
       \strng{authorfullhashraw}{67129baf070b08b8c208f6af2e3ff0c8}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The standard formulation of the smoothed particle hydrodynamics (SPH) assumes that the local density distribution is differentiable. This assumption is used to derive the spatial derivatives of other quantities. However, this assumption breaks down at the contact discontinuity. At the contact discontinuity, the density of the low-density side is overestimated while that of the high-density side is underestimated. As a result, the pressure of the low-density (high-density) side is overestimated (underestimated). Thus, unphysical repulsive force appears at the contact discontinuity, resulting in the effective surface tension. This tension suppresses fluid instabilities. In this paper, we present a new formulation of SPH, which does not require the differentiability of density. Instead of the mass density, we adopt the internal energy density (pressure) and its arbitrary function, which are smoothed quantities at the contact discontinuity, as the volume element used for the kernel integration. We call this new formulation density-independent SPH (DISPH). It handles the contact discontinuity without numerical problems. The results of standard tests such as the shock tube, Kelvin--Helmholtz and Rayleigh--Taylor instabilities, point-like explosion, and blob tests are all very favorable to DISPH. We conclude that DISPH solved most of the known difficulties of the standard SPH, without introducing additional numerical diffusion or breaking the exact force symmetry or energy conservation. Our new SPH includes the formulation proposed by Ritchie \& Thomas as a special case. Our formulation can be extended to handle a non-ideal gas easily.}
@@ -3068,47 +3296,6 @@
       \verb /home/moschehaus/Documents/Zotero_Library/Scientific Library/Numerical Methods in Fluids - 2025 - Mahdizadeh - Extrapolation Boundary Conditions for 2‐D Smoothed Particle Hydrodynamics.pdf
       \endverb
       \keyw{sph techniques}
-    \endentry
-    \entry{clarkSmallscaleDynamicModel1977}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=21dc4df3a642184f817f4d2ca145314c}{%
-           family={Clark},
-           familyi={C\bibinitperiod},
-           given={Terry\bibnamedelima L.},
-           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \strng{namehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{fullhash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{fullhashraw}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{bibnamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorbibnamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authornamehash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorfullhash}{21dc4df3a642184f817f4d2ca145314c}
-      \strng{authorfullhashraw}{21dc4df3a642184f817f4d2ca145314c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This paper describes a three-dimensional finite-difference model of air flow over an irregular lower surface. The model is nonhydrostatic and the anelastic approximation has been used to filter sound waves. Second-order difference equations are employed which provide excellent momentum and energy budgets. An outflow radiation boundary condition using a generalized Kreiss extrapolation scheme has been designed and implemented. Some two-dimensional applications of the model to air flow over a ``Witch of Agnesi'' mountain barrier are described. Comparison with the linear theory of Queney indicates, for the cases treated, that the nonlinearity of the boundary condition has a first-order effect on the resulting flow.}
-      \field{day}{1}
-      \field{issn}{0021-9991}
-      \field{journaltitle}{Journal of Computational Physics}
-      \field{month}{6}
-      \field{shortjournal}{Journal of Computational Physics}
-      \field{title}{A Small-Scale Dynamic Model Using a Terrain-Following Coordinate Transformation}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{1977}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1016/0021-9991(77)90057-2
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/Clark - 1977 - A small-scale dynamic model using a terrain-following coordinate transformation.pdf;/home/moschehaus/Zotero/storage/JZ2HLKVC/0021999177900572.html
-      \endverb
-      \keyw{orographic flows,terrain-following}
     \endentry
     \entry{zhangBoundaryConditionsWeaklycompressible2025}{thesis}{}{}
       \name{author}{1}{}{%
