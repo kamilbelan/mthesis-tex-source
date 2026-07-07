@@ -155,7 +155,7 @@ Consider a fluid in a thermodynamic state $(T, p)$ described by temperature $T$ 
 and so
 
 \begin{equations}[single,*]
-\frac{T}{\rho^{\gamma-1}} = \frac{\theta}{\rho_0^{\gamma-1}}.
+\frac{T}{\rho^{\gamma-1}} = \frac{\theta}{\rho^{\gamma-1}}.
 \end{equations}
 
 Expressing now $\theta$ with the aid of the definition of the Poisson ratio $\gamma = \frac{c_p}{c_V}$, with $c_p$ being the specific heat at constant pressure per unit mass, and the Mayer relation $c_p - c_V = R$ we get
@@ -386,7 +386,7 @@ Since it holds
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SOUND-SPEED}
-\frac{c_V}{c_p} \frac{\rho_0}{p_0} = \gamma \frac{\rho_0}{p_0} = \frac{1}{c^{2}},
+\frac{c_V}{c_p} \frac{\rho_0}{p_0} = \frac{1}{\gamma} \frac{\rho_0}{p_0} = \frac{1}{c^{2}},
 \end{equations}
 
 where $c$ is the \emph{speed of sound} in the fluid, we can write
@@ -730,7 +730,7 @@ thanks to the fact that inverse Fourier transform of $1$ is the Dirac's delta di
 We have thus obtained $C_- = - 2 \pi \I k_s H u_0 \delta\left(k + k_s\right),$ and so the velocity has the form \Cref{eq:W-1-SOLUTION}
 
 \begin{equations}[columns,*]
-	w_1\left(t, x, z\right) &= \Re\left(\frac{1}{2 \pi} \int_{-\infty}^{\infty}C_{-}\exp\left(-\I mz\right) \exp\left(\I kx\right) \delta\left(k + k_s\right)\dd{k}\right) = \\
+	w_1\left(t, x, z\right) &= \Re\left(\frac{1}{2 \pi} \int_{-\infty}^{\infty}C_{-}\exp\left(-\I mz\right) \exp\left(\I kx\right) \dd{k}\right) = \\
 				&= \Re\left(\frac{-\I}{2 \pi} 2\pi k_s H u_0 \int_{-\infty}^{\infty}\exp\left(-\I \left(mz - kx\right)\right) \delta\left(k + k_s\right)\dd{k}\right) = \\
 				&= -\Re\left(\I k_s H u_0\exp\left(-\I\left(m_s z + k_s x\right)\right)\right) \\
 				&= - u_0 k_s H \sin\left(m_s z + k_s x\right),

@@ -319,8 +319,8 @@ where we have used the fact $\rho_{\alpha} = \frac{m_{\alpha}}{V_{\alpha}}$. Not
 then we can write
 
 \begin{equations}[columns,*]
-	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= - m_{\alpha} \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta} + \vb{g} = \\
-			     &= - \sum_{\beta=1}^N m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) \grad_{\alpha} w_{\alpha\beta} + \vb{g} = \sum_{\beta=1}^N \vb{F}_{\beta \to \alpha} + \vb{F}_{\alpha}.
+	m_{\alpha} \dv{\vb{v}_{\alpha}}{t} &= - m_{\alpha} \sum_{\beta=1}^N m_{\beta}\left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right)\grad_{\alpha} w_{\alpha\beta} + m_{\alpha} \vb{g} = \\
+			     &= - \sum_{\beta=1}^N m_{\alpha} m_{\beta} \left(\frac{p_{\alpha}}{\rho_{\alpha}^{2}} + \frac{p_{\beta}}{\rho_{\beta}^{2}}\right) \grad_{\alpha} w_{\alpha\beta} + m_{\alpha}\vb{g} = \sum_{\beta=1}^N \vb{F}_{\beta \to \alpha} + \vb{F}_{\alpha}.
 \end{equations}
 
 We see that $\vb{F}_{\beta \to \alpha}$ is the \emph{internal} pressure force through which the particle $\beta$ acts on the particle $\alpha$ and $\vb{F}_{\alpha}$ is the gravity force acting on the particle $\alpha$, \ie an \emph{external} force acting on the particle $\alpha$. Moreover, observe that it holds
@@ -528,11 +528,11 @@ The SPH bracket is the restriction of the \emph{continuum bracket} to the subspa
 \subsubsection{SPH energy functional}
 \label{sec:SPH-functional}
 
-Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state variables. The kinetic energy counterpart evidently is $\abs{\vb{M}_{\alpha}}^{2}/2 m_{\alpha}$, with 
+Now we aim to rewrite \Cref{eq:LAGRANGIAN-ENERGY} in terms of the SPH state variables. The kinetic energy counterpart evidently is $\abs{\vb{M}_{\alpha}}^{2}/2 m_{\alpha}$, with\sidenote{Recall that $\chi_{\alpha}$ is the normalized characteristic function, hence the weight $V_{\alpha}$ is required in the integral.}
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:SPH-particle-mass}
-m_{\alpha} = \int_{\Omega_{0}}\rho_0\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)\dd{\vb{X}}.
+m_{\alpha} = \int_{\Omega_{0}}\rho_0\left(\vb{X}\right) \chi_{\alpha}\left(\vb{X}\right)V_{\alpha}\dd{\vb{X}}.
 \end{equations}
 
 To recover the internal energy, we need to introduce the density of the particle in the \emph{Eulerian} frame $\rho_{\alpha}$. This can be done in a familiar way \Cref{eq:SPH-density-sum} using \autocite[p.~7]{pavelkaApproachesConservativeSmoothed2025} 

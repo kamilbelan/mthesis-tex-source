@@ -46,6 +46,8 @@
 \newcommand*{\Abstract}{%
 Numerical simulations of atmospheric orographic flows, and phenomena like internal gravity waves in particular, requires numerical methods capable of exactly preserving the stratified hydrostatic background on the discrete level. Standard Smoothed Particle Hydrodynamics (SPH) formulations struggle with this requirement, generating spurious velocities that destroy the small-amplitude wave dynamics of internal gravity waves. To address this, we adapt the density-independent SPH framework and utilize potential temperature as the primary thermodynamic variable, aligning the method with standard atmospheric science conventions. Furthermore, we develop a novel well-balanced discretisation for this formulation that preserves the hydrostatic equilibrium at the discrete level to machine precision. Numerical experiments demonstrate that the proposed scheme successfully maintains a stationary background state and is able to capture the emergence and initial upward propagation of mountain waves. Finally, we document the eventual numerical breakdown of these simulations caused by tensile instability, concluding that future work must focus on integrating regularizing techniques, such as $\delta$-SPH, into the well-balanced framework.}
 
+% TODO: CHECK THIS
+
 %% Subject (short description for PDF metadata)
 \newcommand*{\Subject}{%
     Master's thesis investigating density-independent, well-balanced Smoothed Particle Hydrodynamics (SPH) formulations for simulating atmospheric orographic flows and internal gravity waves.
