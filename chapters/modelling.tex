@@ -89,7 +89,7 @@ p &= \bar{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
 &\text{\enquote{radiation condition, on $\left(0,T\right) \times \Gamma_T$}}
 \end{equations}
 
-with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\bar{p}, \bar{\theta}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. We take $\vb{v}_0 = V \vb{e_x}$, \textit{i.e.} we assume the flow is developed at the initialization.
+with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\bar{p}, \bar{\theta}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. We take $\vb{v}_0 = V \vb{e_x}$, \ie we assume the flow is developed at the initialization.
 The boundary conditions deserve comments:
 \begin{compactitem}
 	\item the inflow velocity field is constant and subsonic
@@ -148,7 +148,7 @@ and so we see that under the differentiability assumption, the Euler system can 
 \partial_t \vb{u} + \sum_{m=1}^d \grad_{\vb{u}}\vb{f}_m \pdv{\vb{u}}{x_m} = 0.
 \end{equations}
 
-For $\vb{n} \in \R^d, \abs{\vb{n}} = 1$ the quantity $\vb{P}\left(\vb{u}, \vb{n}\right) = \vb{F}\left(\vb{u}\right) \vb{n} = \sum_{m=1}^d \vb{f}_m\left(\vb{u}\right)n_m$ is the \emph{physical flux} of $\vb{u}$ in the direction $\vb{n}$. Of central importance in the analysis of hyperbolic conservation laws is the Jacobi matrix of $\vb{P}$, \textit{i.e.} the function
+For $\vb{n} \in \R^d, \abs{\vb{n}} = 1$ the quantity $\vb{P}\left(\vb{u}, \vb{n}\right) = \vb{F}\left(\vb{u}\right) \vb{n} = \sum_{m=1}^d \vb{f}_m\left(\vb{u}\right)n_m$ is the \emph{physical flux} of $\vb{u}$ in the direction $\vb{n}$. Of central importance in the analysis of hyperbolic conservation laws is the Jacobi matrix of $\vb{P}$, \ie the function
 
 \begin{equations}[single,*]
 \tensorq{P}\left(\vb{u}, \vb{n}\right) = \grad_{\vb{u}}\vb{P}\left(\vb{u}, \vb{n}\right) = \sum_{m=1}^d \grad_{\vb{u}} \vb{f}_m n_m \in \R^{d+2 \times d+2}.
@@ -207,7 +207,7 @@ The implementation of the damping layer and viscosity is described in \Cref{sec:
 \subsection{Terrain-following coordinates}
 \label{sec:TERRAIN-FOLLOWING}
 
-The domain \Cref{eq:OMEGA} has a non-flat lower boundary $\Gamma_B$ given by the mountain profile $h(x)$, which generally does not coincide with a Cartesian coordinate line $y=0$. It is computationally more complicated to impose a boundary condition on a non-flat $\Gamma_B$\sidenote{Recall we are imposing a no-permeability (free slip) condition $\vb{v} \cdot \vb{n}$ on $\Gamma_B$, so we \textit{e.g.} need to compute $\vb{n}$ on $y = h(\vb{x})$.}, hence we make use of the \emph{terrain-following coordinate transformation}. This transformation resolves the complication of a non-flat boundary by stretching the vertical coordinate so that the ground becomes a coordinate surface, the stretching equalling the terrain at the bottom and decreasing to the identity at the top. The horizontal coordinate is left untouched. Schematically, the transformation is shown in \Cref{fig:TERRAIN-FOLLOWING}.
+The domain \Cref{eq:OMEGA} has a non-flat lower boundary $\Gamma_B$ given by the mountain profile $h(x)$, which generally does not coincide with a Cartesian coordinate line $y=0$. It is computationally more complicated to impose a boundary condition on a non-flat $\Gamma_B$\sidenote{Recall we are imposing a no-permeability (free slip) condition $\vb{v} \cdot \vb{n}$ on $\Gamma_B$, so we \eg need to compute $\vb{n}$ on $y = h(\vb{x})$.}, hence we make use of the \emph{terrain-following coordinate transformation}. This transformation resolves the complication of a non-flat boundary by stretching the vertical coordinate so that the ground becomes a coordinate surface, the stretching equalling the terrain at the bottom and decreasing to the identity at the top. The horizontal coordinate is left untouched. Schematically, the transformation is shown in \Cref{fig:TERRAIN-FOLLOWING}.
 
 The original construction, introduced by Phillips in \autocite{phillipsCOORDINATESYSTEMHAVING1957}, utilizes a pressure-based transformation. We follow instead the height-based transformation of Gal-Chen and Somerville \autocite{gal-chenUseCoordinateTransformation1975},
 \begin{equations}[single,!,numberline=all]
