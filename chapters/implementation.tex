@@ -92,6 +92,9 @@ We solve \Cref{eq:H-CONSTRAINT-2D} by Newton iteration at the start of each acce
 \section{Boundary conditions}
 \label{sec:BCs}
 
+\subsection{Extrapolation boundary conditions}
+\label{sec:EBC}
+
 The inflow, outflow and mountain boundaries are all treated with \emph{extrapolation boundary conditions} (EBC), which we adapt from the scheme of \autocite{mahdizadehExtrapolationBoundaryConditions2025}\sidenote{The authors carried the techniques used in EBC from finite-volume conservation laws to SPH.}. 
 
 A rigorous and robust treatment of boundary conditions in SPH is complicated. For instance, the open boundary conditions cannot be imposed primitively by only removing the particles leaving the computational domain: with every SPH formulation, the particle's acceleration is computed using the discretised balance of momentum, which involves a \emph{SPH sum} - a sum over all neighbours in the particle's interpolation kernel's support. Within this naive implementation however, a particle near an open boundary would have a very low number of neighbours, resulting in \emph{artificial vacuum} being created at the open boundary. The artificial vacuum leads to a tumultuous unphysical outflow, ruining the simulation.
@@ -113,11 +116,11 @@ A single EBC pass, summarised in \Cref{alg:EBC}, begins by evaluating the SPH gr
 				\State $\vb{x}_t \gets \vb{x}_g + \vb{s}_g$ \Comment{target three columns inside the domain}
 				\State $q \gets$ fluid particle nearest $\vb{x}_t$
 				\State $\phi_g \gets \phi_q + (\vb{x}_g - \vb{x}_q)\cdot\grad\phi_q$ \Comment{velocity and perturbation, first-order Taylor}
-				\State $\rho_g \gets \rho_{\text{bg}}(z_g) + \delta\rho_g$ \Comment{reconstruct from the analytic background}
+\State $\rho_g \gets \bar{\rho}(z_g) + \delta\rho_g$ \Comment{reconstruct from the analytic background}
 			\EndFor
 			\For{each mountain wall particle $p$} \Comment{free slip, \Cref{fig:EBC-MOUNTAIN}}
 				\State $q \gets$ fluid particle nearest $\vb{x}_p$
-				\State $\delta\rho_p \gets \delta\rho_q + (\vb{x}_p - \vb{x}_q)\cdot\grad\delta\rho_q$;\quad $\rho_p \gets \rho_{\text{bg}}(z_p) + \delta\rho_p$
+\State $\delta\rho_p \gets \delta\rho_q + (\vb{x}_p - \vb{x}_q)\cdot\grad\delta\rho_q$;\quad $\rho_p \gets \bar{\rho}(z_p) + \delta\rho_p$
 				\State $\vb{v}_e \gets \vb{v}_q + (\vb{x}_p - \vb{x}_q)\cdot\grad\vb{v}_q$ \Comment{extrapolated velocity}
 				\State $\vb{n} \gets$ outward normal of the mountain surface at $\vb{x}_p$
 				\State $\vb{v}_p \gets \vb{v}_e - 2(\vb{v}_e\cdot\vb{n})\,\vb{n}$ \Comment{reflect normal component}
@@ -129,14 +132,11 @@ A single EBC pass, summarised in \Cref{alg:EBC}, begins by evaluating the SPH gr
 
 Three modifications are made to adapt EBC to a stratified, terrain-following atmosphere.
 
-First, to ensure consistency with the hydrostatic background at the inflow and outflow, which is essential for well-balancedness, we extrapolate only the \emph{perturbation} about the analytic hydrostatic reference rather than the full field. The full quantity is reconstructed at the boundary particle's own altitude, \textit{e.g.} $\rho_g = \bar{\rho}(z_g) + \delta\rho_g$ with $\rho_{\text{bg}}$ the hydrostatic background \Cref{eq:HYDROSTATIC}. The transported perturbation is $\delta\rho$, $\delta\theta$ or $\delta A$ according to the formulation of \Cref{sec:DENSITY-FREE}.
+First, to ensure consistency with the hydrostatic background at the inflow and outflow, which is essential for well-balancedness, we extrapolate only the \emph{perturbation} about the analytic hydrostatic reference rather than the full field. The full quantity is reconstructed at the boundary particle's own altitude, \textit{e.g.} $\rho_g = \bar{\rho}(z_g) + \delta\rho_g$ with $\bar{\rho}$ the hydrostatic background \Cref{eq:HYDROSTATIC}. The transported perturbation is $\delta\rho$, $\delta\theta$ or $\delta A$ according to the formulation of \Cref{sec:DENSITY-FREE}.
 
 Second, the \emph{free-slip} boundary condition is imposed on the mountain surface rather than a no-slip condition assumed by the authors in \autocite{mahdizadehExtrapolationBoundaryConditions2025}. The mountain velocity is given as the extrapolated fluid velocity $\vb{v}_e$ with its normal component reflected about the analytic outward normal $\vb{n}$ of the Witch of Agnesi surface, $\vb{v}_p = \vb{v}_e - 2(\vb{v}_e\cdot\vb{n})\vb{n}$, so that the normal velocity vanishes at the surface on average (\Cref{fig:EBC-MOUNTAIN}).
 
 Third, a fluid particle leaving through the outflow is \emph{not deleted} but recycled to the inflow at its original altitude, keeping the particle number fixed, sustaining a steady inflow stream and making the simulation cheaper.\sidenote{Removing the particles leaving the domain from the particle system and then adding new ones at the inflow is an extra memory allocation cost.}
-
-\subsection{Radiation boundary conditions}
-\label{sec:radiation_BC}
 
 \begin{figure}
 \begin{subfigure}{\linewidth}
@@ -227,6 +227,19 @@ Third, a fluid particle leaving through the outflow is \emph{not deleted} but re
 }
 \label{fig:EBC}
 \end{figure}
+
+\subsection{Radiation boundary condition}
+\label{sec:radiation_BC}
+In contrast to the inflow, outflow and bottom boundary conditions, the implementation of the \emph{radiation boundary condition} is straightforward. The upward-propagating internal gravity waves are suppressed in a \emph{damping layer} beneath the top boundary \autocite{durranCompressibleModelSimulation1983}, which adds an artificial friction term \Cref{eq:DAMPING} to the momentum balance \Cref{eq:MOMENTUM-BALANCE},
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:RAYLEIGH-DAMPING}
+\vb{a}_{\text{damp}} = - \gamma_r \sin^2\!\left(\frac{\pi}{2}\frac{z - z_b}{z_t - z_b}\right)\vb{v} \eqcomma
+\end{equations}
+
+where $z_b, z_t$ are the altitudes of the bottom and top boundaries of the damping layer, and the damping coefficient $\gamma_r$ is given as $\gamma_r = \gamma_{r,\text{rel}}\,N$ where $N$ is the Brunt--V\"ais\"al\"a frequency and $\gamma_{r,\text{rel}}$ is a fixed parameter.
+
+Crucially, in practice this condition played no role in our experiments, since the simulations lost stability before the internal gravity waves reached the damping layer (see \Cref{sec:INSTABILITY}), and $\gamma_{r,\text{rel}}$ was therefore left untuned.
 
 \section{Reproducibility}
 \label{sec:REPRODUCIBILITY}

@@ -193,14 +193,14 @@ For the wave-equation (under some symmetry assumptions), the solution can be asy
 
 Klemp and Durran in \autocite{klempUpperBoundaryCondition1983} have devised a top boundary condition permitting internal gravity waves radiation without any reflection based on information provided by the Fourier transform of the velocity field at the top boundary. In \autocite{chiniAnalysisKlempDurran2003}\autocite[p.~429]{durranNumericalMethodsFluid2010} it is shown that this boundary condition is efficient.
 
-Nonetheless, in our simulations, a simpler boundary condition inspired by the experiments in \autocite{klempNumericalSimulationHydrostatic1978} has been used. The implementation lies in introducing an artificial viscous layer near the top boundary, in which the vertically propagating internal gravity waves are damped. Klemp and Lilly in \autocite[p.~80]{klempNumericalSimulationHydrostatic1978} have used a viscosity profile in the form
+Nonetheless, in our simulations, a simpler boundary condition inspired by the experiments in \autocite{klempNumericalSimulationHydrostatic1978} has been used. The implementation lies in introducing an artificial damping layer near the top boundary, in which the vertically propagating internal gravity waves are damped. Klemp and Lilly in \autocite[p.~80]{klempNumericalSimulationHydrostatic1978} used a friction damping profile $\nu\left(z\right)$ with the structure
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:DAMPING}
-\nu(y) = \nu_t \sin^{2}\left(\frac{\pi}{2} \frac{y - y_b}{y_t - y_b}\right),
+\nu(z) = \nu_t \sin^{2}\left(\frac{\pi}{2} \frac{z - z_b}{z_t - z_b}\right),
 \end{equations}
 
-where $\nu$ is the artificial viscosity, $\nu_t$ is the viscosity at the top boundary of the damping layer, $y_b,y_t$ are the vertical coordinates of the bottom and top boundaries of the damping layer.
+where $\nu_t$ is a friction parameter, $z_b,z_t$ are the vertical coordinates of the bottom and top boundaries of the damping layer.
 
 The implementation of the damping layer and viscosity is described in \Cref{sec:radiation_BC}.
 
