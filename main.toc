@@ -67,13 +67,14 @@
 \contentsline {subsection}{Verlet time stepping}{76}{subsection*.75}%
 \contentsline {subsection}{Adaptive smoothing length}{78}{subsection*.77}%
 \contentsline {section}{\numberline {5.2}Boundary conditions}{79}{section*.79}%
-\contentsline {subsection}{Radiation boundary conditions}{81}{subsection*.81}%
-\contentsline {section}{\numberline {5.3}Reproducibility}{81}{section*.83}%
+\contentsline {subsection}{Extrapolation boundary conditions}{79}{subsection*.80}%
+\contentsline {subsection}{Radiation boundary condition}{82}{subsection*.83}%
+\contentsline {section}{\numberline {5.3}Reproducibility}{82}{section*.84}%
 \contentsline {chapter}{\numberline {6}Numerical experiments}{83}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{83}{section*.85}%
-\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{88}{section*.89}%
-\contentsline {section}{\numberline {6.3}Tensile instability}{90}{section*.92}%
-\contentsline {chapter}{Conclusion}{94}{chapter*.95}%
-\contentsline {chapter}{References}{95}{chapter*.96}%
-\contentsline {subsection}{Other}{97}{subsection*.97}%
+\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{83}{section*.86}%
+\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{88}{section*.90}%
+\contentsline {section}{\numberline {6.3}Tensile instability}{90}{section*.93}%
+\contentsline {chapter}{Conclusion}{94}{chapter*.96}%
+\contentsline {chapter}{References}{95}{chapter*.97}%
+\contentsline {subsection}{Other}{97}{subsection*.98}%
 \contentsfinish 

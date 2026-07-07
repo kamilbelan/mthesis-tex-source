@@ -3449,6 +3449,55 @@
       \endverb
       \keyw{sph techniques}
     \endentry
+    \entry{durranCompressibleModelSimulation1983}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cbd3f98db952dd6b2aa064dd3ac2c5a1}{%
+           family={Durran},
+           familyi={D\bibinitperiod},
+           given={Dale\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=f461c400485a98e460321cb5215b7a59}{%
+           family={Klemp},
+           familyi={K\bibinitperiod},
+           given={Joseph\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Meteorological Society}%
+      }
+      \strng{namehash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{fullhash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{fullhashraw}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{bibnamehash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{authorbibnamehash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{authornamehash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{authorfullhash}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \strng{authorfullhashraw}{d6d1b2bf33652771f7bf85447ccfaf63}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A two-dimensional, nonlinear, nonhydrostatic model is described which allows the calculation of moist airflow in mountainous terrain. The model is compressible, uses a terrain-following coordinate system, and employs lateral and upper boundary conditions which minimize wave reflections. The model's accuracy and sensitivity are examined. These tests suggest that in numerical simulations of vertically propagating, highly nonlinear mountain waves, a wave absorbing layer does not accurately mimic the effects of wave breakdown and dissipation at high levels in the atmosphere. In order to obtain a correct simulation, the region in which the waves are physically absorbed must generally be included in the computational domain (a nonreflective upper boundary condition should be used as well). The utility of the model is demonstrated in two examples (linear waves in a uniform atmosphere and the 11 January 1972 Boulder windstorm) which illustrate how the presence of moisture can influence propagating waves. In both cases, the addition of moisture to the upstream flow greatly reduces the wave response.}
+      \field{day}{1}
+      \field{issn}{1520-0493, 0027-0644}
+      \field{journaltitle}{Monthly Weather Review}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{title}{A {{Compressible Model}} for the {{Simulation}} of {{Moist Mountain Waves}}}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{1983}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1175/1520-0493(1983)111<2341:ACMFTS>2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Durran and Klemp - 1983 - A Compressible Model for the Simulation of Moist Mountain Waves.pdf
+      \endverb
+      \keyw{orographic flows,terrain-following}
+    \endentry
     \entry{datserisDrWatsonPerfectSidekick2020}{article}{}{}
       \name{author}{4}{}{%
         {{hash=f36f0d509faa43138177962b5b30d8de}{%
