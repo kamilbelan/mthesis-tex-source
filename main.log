@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 19:40
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 20:59
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2686,6 +2686,11 @@ LaTeX Font Info:    Font shape `U/BOONDOX-ds/m/n' will be
 (Font)              scaled to size 12.0pt on input line 77.
 
 
+LaTeX Warning: Hyper reference `eq:MASS-BALANCE,eq:MOMENTUM-BALANCE' on page 3 
+undefined on input line 81.
+
+
+
 [3<./figures/oro_flows/fohn.png>]
 warning  (pdf backend): ignoring duplicate destination with the name 'inparaenum
 i.1'
@@ -2703,14 +2708,14 @@ i.2'
 [4]
 
 [5]
-Overfull \hbox (20.97786pt too wide) in paragraph at lines 167--168
+Overfull \hbox (20.97786pt too wide) in paragraph at lines 166--167
 []\TU/lmr/m/n/12 where we have used the ther-mal equa-tion of state [][][][][]
  []
 
 
 
 [6]
-Overfull \hbox (27.31322pt too wide) in paragraph at lines 220--221
+Overfull \hbox (7.96626pt too wide) in paragraph at lines 219--220
 []\TU/lmr/m/n/12 Let us look for \TU/lmr/m/sl/12 sta-tion-ary so-lu-tions of \T
 U/lmr/m/n/12 the sys-tem [][][][][]
  []
@@ -2718,12 +2723,12 @@ U/lmr/m/n/12 the sys-tem [][][][][]
 
 
 [7]
-Overfull \hbox (5.02425pt too wide) in paragraph at lines 249--250
+Overfull \hbox (5.02425pt too wide) in paragraph at lines 248--249
 \TU/lmr/m/n/12 spec-i-fied. Us-ing the ther-mal equa-tion of state [][][][][]
  []
 
 
-Overfull \hbox (17.807pt too wide) in paragraph at lines 249--250
+Overfull \hbox (17.807pt too wide) in paragraph at lines 248--249
 \TU/lmr/m/n/12 and the def-i-ni-tion of the po-ten-tial tem-per-a-ture [][][][]
 [],
  []
@@ -2733,25 +2738,25 @@ Overfull \hbox (17.807pt too wide) in paragraph at lines 249--250
 [8]
 
 [9]
-Overfull \hbox (2.84831pt too wide) in paragraph at lines 311--312
+Overfull \hbox (2.84831pt too wide) in paragraph at lines 310--311
 []\TU/lmr/m/n/12 Now we in-tro-duce an ap-prox-i-ma-tion based on \TU/lmr/m/sl/
 12 order-of-magnitude
  []
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 317--317
+Underfull \hbox (badness 3240) in paragraph at lines 316--316
 \TU/lmr/m/n/12 buoy-ancy driven flows. Lord
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 317--317
+Underfull \hbox (badness 2343) in paragraph at lines 316--316
 \TU/lmr/m/n/12 Rayleigh fa-mously used Boussi-
  []
 
 
 
 [10]
-Overfull \hbox (30.31953pt too wide) in paragraph at lines 341--342
+Overfull \hbox (30.31953pt too wide) in paragraph at lines 340--341
 []\TU/lmr/m/n/12 Us-ing these scal-ing re-la-tions, the bal-ance of mass [][][]
 [][]
  []
@@ -2759,13 +2764,13 @@ Overfull \hbox (30.31953pt too wide) in paragraph at lines 341--342
 
 
 [11]
-Overfull \hbox (32.2133pt too wide) in paragraph at lines 367--368
+Overfull \hbox (32.2133pt too wide) in paragraph at lines 365--366
 \TU/lmr/m/n/12 nesq ap-prox-i-ma-tion for the po-ten-tial tem-per-a-ture [][][]
 [][].
  []
 
 
-Underfull \hbox (badness 5175) in paragraph at lines 411--411
+Underfull \hbox (badness 5175) in paragraph at lines 409--409
 \TU/lmr/m/n/12 of the lim-i-ta-tions of the lin-
  []
 
@@ -2787,29 +2792,21 @@ Missing character: There is no − (U+2212) in font rm-lmr12!
 [15]
 
 [16]
-Overfull \hbox (47.34712pt too wide) detected at line 605
-[]$\OML/lmm/m/it/12 w[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t; x; z\OT1/lmr/m/n/12
- ) = [] [][] [][] []\OML/lmm/m/it/12 w\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 z\OT1/l
-mr/m/n/12 ; \OML/lmm/m/it/12 !; k\OT1/lmr/m/n/12 ) [][][] [][][] [] [] \OML/lmm
-/m/it/12 :$ 
- []
-
-
 
 [17]
-Underfull \hbox (badness 2600) in paragraph at lines 609--609
+Underfull \hbox (badness 2600) in paragraph at lines 608--608
 []$[][]$ \TU/lmr/m/n/12 If $\OML/lmm/m/it/12 m$ \TU/lmr/m/n/12 has a nonzero ima
 g-i-
  []
 
 
-Underfull \hbox (badness 1308) in paragraph at lines 609--609
+Underfull \hbox (badness 1308) in paragraph at lines 608--608
 \TU/lmr/m/n/12 nary part, then $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = [] \OML/lm
 m/m/it/12 m \OT1/lmr/m/n/12 +
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 609--609
+Underfull \hbox (badness 4120) in paragraph at lines 608--608
 []\OML/lmm/m/it/12 { [] m$\TU/lmr/m/n/12 , and so $[]\OT1/lmr/m/n/12 (\OMS/lmsy
 /m/n/12 []\OML/lmm/m/it/12 {mz\OT1/lmr/m/n/12 ) =
  []
@@ -2821,24 +2818,17 @@ Underfull \hbox (badness 4120) in paragraph at lines 609--609
 [19]
 
 [20]
-Overfull \hbox (59.28891pt too wide) detected at line 722
-[]$[][][][] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@[]\OML/lmm/m/it/12 {k[]Hu[] [
-][] [][][] [] \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 2\OML/lmm/m
-/it/12 []{k[]Hu[][][];$ 
- []
-
-
-Overfull \hbox (30.80154pt too wide) detected at line 737
+Overfull \hbox (30.80154pt too wide) detected at line 740
 []
  []
 
 
 
 [21]
-<./figures/oro_flows/wave.png, id=765, 677.53125pt x 376.40625pt>
+<./figures/oro_flows/wave.png, id=757, 677.53125pt x 376.40625pt>
 File: ./figures/oro_flows/wave.png Graphic file (type png)
 <use ./figures/oro_flows/wave.png>
-Package luatex.def Info: ./figures/oro_flows/wave.png  used on input line 755.
+Package luatex.def Info: ./figures/oro_flows/wave.png  used on input line 758.
 (luatex.def)             Requested size: 320.0pt x 177.78397pt.
 ) (./chapters/modelling.tex
 
@@ -2874,7 +2864,7 @@ Overfull \hbox (12.86267pt too wide) in paragraph at lines 224--225
 
  []
 
-<./figures/modelling/terrain_following.png, id=885, 421.575pt x 316.18124pt>
+<./figures/modelling/terrain_following.png, id=876, 421.575pt x 316.18124pt>
 File: ./figures/modelling/terrain_following.png Graphic file (type png)
 <use ./figures/modelling/terrain_following.png>
 Package luatex.def Info: ./figures/modelling/terrain_following.png  used on inp
@@ -2944,7 +2934,7 @@ Underfull \hbox (badness 1748) in paragraph at lines 82--82
 \TU/lmr/m/n/12 smooth-ness and di-men-sion, the
  []
 
-<./figures/sph/kernel.png, id=996, 1053.9375pt x 451.6875pt>
+<./figures/sph/kernel.png, id=988, 1053.9375pt x 451.6875pt>
 File: ./figures/sph/kernel.png Graphic file (type png)
 <use ./figures/sph/kernel.png>
 Package luatex.def Info: ./figures/sph/kernel.png  used on input line 94.
@@ -3579,14 +3569,14 @@ Overfull \hbox (39.91922pt too wide) in paragraph at lines 48--49
 ]
 
 [84]
-<./figures/experiments/stationary_norms_SPH.png, id=1736, 677.53125pt x 376.406
+<./figures/experiments/stationary_norms_SPH.png, id=1728, 677.53125pt x 376.406
 25pt>
 File: ./figures/experiments/stationary_norms_SPH.png Graphic file (type png)
 <use ./figures/experiments/stationary_norms_SPH.png>
 Package luatex.def Info: ./figures/experiments/stationary_norms_SPH.png  used o
 n input line 78.
 (luatex.def)             Requested size: 320.0pt x 177.78397pt.
-<./figures/experiments/stationary_norms_PTH.png, id=1737, 677.53125pt x 376.406
+<./figures/experiments/stationary_norms_PTH.png, id=1729, 677.53125pt x 376.406
 25pt>
 File: ./figures/experiments/stationary_norms_PTH.png Graphic file (type png)
 <use ./figures/experiments/stationary_norms_PTH.png>
@@ -3597,13 +3587,13 @@ n input line 87.
 
 [85<./figures/experiments/stationary_norms_SPH.png><./figures/experiments/statio
 nary_norms_PTH.png>]
-<./figures/experiments/standard_SPH.png, id=1750, 752.8125pt x 263.48438pt>
+<./figures/experiments/standard_SPH.png, id=1742, 752.8125pt x 263.48438pt>
 File: ./figures/experiments/standard_SPH.png Graphic file (type png)
 <use ./figures/experiments/standard_SPH.png>
 Package luatex.def Info: ./figures/experiments/standard_SPH.png  used on input 
 line 105.
 (luatex.def)             Requested size: 320.0pt x 112.00148pt.
-<./figures/experiments/standard_PTH.png, id=1751, 752.8125pt x 263.48438pt>
+<./figures/experiments/standard_PTH.png, id=1743, 752.8125pt x 263.48438pt>
 File: ./figures/experiments/standard_PTH.png Graphic file (type png)
 <use ./figures/experiments/standard_PTH.png>
 Package luatex.def Info: ./figures/experiments/standard_PTH.png  used on input 
@@ -3615,14 +3605,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [86]
-<./figures/experiments/well_balanced_SPH.png, id=1760, 752.8125pt x 263.48438pt
+<./figures/experiments/well_balanced_SPH.png, id=1752, 752.8125pt x 263.48438pt
 >
 File: ./figures/experiments/well_balanced_SPH.png Graphic file (type png)
 <use ./figures/experiments/well_balanced_SPH.png>
 Package luatex.def Info: ./figures/experiments/well_balanced_SPH.png  used on i
 nput line 127.
 (luatex.def)             Requested size: 320.0pt x 112.00148pt.
-<./figures/experiments/well_balanced_PTH.png, id=1761, 752.8125pt x 263.48438pt
+<./figures/experiments/well_balanced_PTH.png, id=1753, 752.8125pt x 263.48438pt
 >
 File: ./figures/experiments/well_balanced_PTH.png Graphic file (type png)
 <use ./figures/experiments/well_balanced_PTH.png>
@@ -3636,37 +3626,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [87<./figures/experiments/standard_SPH.png><./figures/experiments/standard_PTH.p
 ng>]
-<./figures/experiments/wave_PTH_0035.png, id=1771, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0035.png, id=1763, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0035.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0035.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0035.png  used on input
  line 156.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_PTH_0040.png, id=1772, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0040.png, id=1764, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0040.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0040.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0040.png  used on input
  line 162.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_PTH_0045.png, id=1773, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0045.png, id=1765, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0045.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0045.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0045.png  used on input
  line 171.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_PTH_0050.png, id=1774, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0050.png, id=1766, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0050.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0050.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0050.png  used on input
  line 177.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_PTH_0055.png, id=1775, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0055.png, id=1767, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0055.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0055.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0055.png  used on input
  line 186.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_PTH_0060.png, id=1776, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_PTH_0060.png, id=1768, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_PTH_0060.png Graphic file (type png)
 <use ./figures/experiments/wave_PTH_0060.png>
 Package luatex.def Info: ./figures/experiments/wave_PTH_0060.png  used on input
@@ -3679,37 +3669,37 @@ Underfull \vbox (badness 5189) has occurred while \output is active []
 
 [88<./figures/experiments/well_balanced_SPH.png><./figures/experiments/well_bala
 nced_PTH.png>]
-<./figures/experiments/wave_SPH_0030.png, id=1793, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0030.png, id=1784, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0030.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0030.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0030.png  used on input
  line 210.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_SPH_0035.png, id=1794, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0035.png, id=1785, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0035.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0035.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0035.png  used on input
  line 216.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_SPH_0040.png, id=1795, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0040.png, id=1786, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0040.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0040.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0040.png  used on input
  line 225.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_SPH_0045.png, id=1796, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0045.png, id=1787, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0045.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0045.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0045.png  used on input
  line 231.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_SPH_0050.png, id=1797, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0050.png, id=1788, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0050.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0050.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0050.png  used on input
  line 240.
 (luatex.def)             Requested size: 160.0pt x 72.00095pt.
-<./figures/experiments/wave_SPH_0055.png, id=1798, 752.8125pt x 338.76563pt>
+<./figures/experiments/wave_SPH_0055.png, id=1789, 752.8125pt x 338.76563pt>
 File: ./figures/experiments/wave_SPH_0055.png Graphic file (type png)
 <use ./figures/experiments/wave_SPH_0055.png>
 Package luatex.def Info: ./figures/experiments/wave_SPH_0055.png  used on input
@@ -3724,13 +3714,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png><./figures/experiments/wave_PTH_0045.png><./figures/experiments/wave_PTH_00
 50.png><./figures/experiments/wave_PTH_0055.png><./figures/experiments/wave_PTH_
 0060.png>]
-<./figures/experiments/crash_SPH_0062.png, id=1818, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_SPH_0062.png, id=1810, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_SPH_0062.png Graphic file (type png)
 <use ./figures/experiments/crash_SPH_0062.png>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0062.png  used on inpu
 t line 265.
 (luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_SPH_0064.png, id=1819, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_SPH_0064.png, id=1811, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_SPH_0064.png Graphic file (type png)
 <use ./figures/experiments/crash_SPH_0064.png>
 Package luatex.def Info: ./figures/experiments/crash_SPH_0064.png  used on inpu
@@ -3745,13 +3735,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png><./figures/experiments/wave_SPH_0040.png><./figures/experiments/wave_SPH_00
 45.png><./figures/experiments/wave_SPH_0050.png><./figures/experiments/wave_SPH_
 0055.png>]
-<./figures/experiments/crash_PTH_0057.png, id=1839, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_PTH_0057.png, id=1831, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_PTH_0057.png Graphic file (type png)
 <use ./figures/experiments/crash_PTH_0057.png>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0057.png  used on inpu
 t line 288.
 (luatex.def)             Requested size: 320.0pt x 133.3351pt.
-<./figures/experiments/crash_PTH_0060.png, id=1840, 903.375pt x 376.40625pt>
+<./figures/experiments/crash_PTH_0060.png, id=1832, 903.375pt x 376.40625pt>
 File: ./figures/experiments/crash_PTH_0060.png Graphic file (type png)
 <use ./figures/experiments/crash_PTH_0060.png>
 Package luatex.def Info: ./figures/experiments/crash_PTH_0060.png  used on inpu
@@ -3840,7 +3830,7 @@ Package biblatex Warning: No driver for 'artwork'.
 [103]
 
 [104]
-runsystem(latexminted cleantemp  --timestamp 20260707194050Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260707205922Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3857,17 +3847,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 82734 strings out of 475512
- 244337,4101490 words of node,token memory allocated
- 75604 words of node memory still in use:
+ 82725 strings out of 475512
+ 244336,4101490 words of node,token memory allocated
+ 75636 words of node memory still in use:
    979 hlist, 121 vlist, 45 rule, 377 disc, 45 local_par, 247 math, 1460 glue, 4
-34 kern, 168 penalty, 112 margin_kern, 4529 glyph, 2744 attribute, 116 glue_spec
-, 2744 attribute_list, 7 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_lin
+34 kern, 168 penalty, 112 margin_kern, 4529 glyph, 2752 attribute, 116 glue_spec
+, 2752 attribute_list, 7 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_lin
 k, 16 pdf_action, 92 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore 
 nodes
-   avail lists: 1:24,2:8379,3:5387,4:649,5:848,6:275,7:8953,8:117,9:2626,10:70,1
-1:671,12:15
- 101287 multiletter control sequences out of 65536+600000
+   avail lists: 1:17,2:8379,3:5387,4:649,5:849,6:275,7:8953,8:117,9:2653,10:70,1
+1:675,12:15
+ 101290 multiletter control sequences out of 65536+600000
  180 fonts using 13990295 bytes
  109i,21n,128p,4410b,3714s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/tex
@@ -3915,10 +3905,10 @@ public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/te
 x-gyre/qzcmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/boondox/
 zxxrl8a.pfb>
-Output written on main.pdf (112 pages, 54552684 bytes).
+Output written on main.pdf (112 pages, 54554415 bytes).
 
-PDF statistics: 2592 PDF objects out of 2984 (max. 8388607)
- 1778 compressed objects within 18 object streams
- 605 named destinations out of 1000 (max. 131072)
+PDF statistics: 2584 PDF objects out of 2984 (max. 8388607)
+ 1770 compressed objects within 18 object streams
+ 593 named destinations out of 1000 (max. 131072)
  806 words of extra memory for PDF output out of 10000 (max. 100000000)
 
