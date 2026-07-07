@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 17:16
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 17:58
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3906,7 +3906,7 @@ Package biblatex Warning: No driver for 'artwork'.
 [103]
 
 [104]
-runsystem(latexminted cleantemp  --timestamp 20260707171616Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260707175843Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3931,7 +3931,7 @@ Here is how much of LuaTeX's memory you used:
 c, 2855 attribute_list, 8 write, 710 pdf_literal, 8 pdf_start_link, 8 pdf_end_li
 nk, 17 pdf_action, 100 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restor
 e nodes
-   avail lists: 1:24,2:8379,3:5387,4:649,5:858,6:272,7:8863,8:116,9:2609,10:69,1
+   avail lists: 1:23,2:8379,3:5387,4:649,5:857,6:273,7:8866,8:117,9:2609,10:70,1
 1:670,12:15
  101284 multiletter control sequences out of 65536+600000
  180 fonts using 13990295 bytes
@@ -3981,7 +3981,7 @@ public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/te
 x-gyre/qzcmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/boondox/
 zxxrl8a.pfb>
-Output written on main.pdf (112 pages, 54552357 bytes).
+Output written on main.pdf (112 pages, 54552169 bytes).
 
 PDF statistics: 2583 PDF objects out of 2984 (max. 8388607)
  1769 compressed objects within 18 object streams
