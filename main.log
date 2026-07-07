@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 20:59
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 21:25
  system commands enabled.
 **main.tex
 (./main.tex
@@ -2728,12 +2728,6 @@ Overfull \hbox (5.02425pt too wide) in paragraph at lines 248--249
  []
 
 
-Overfull \hbox (17.807pt too wide) in paragraph at lines 248--249
-\TU/lmr/m/n/12 and the def-i-ni-tion of the po-ten-tial tem-per-a-ture [][][][]
-[],
- []
-
-
 
 [8]
 
@@ -2790,6 +2784,11 @@ Missing character: There is no − (U+2212) in font rm-lmr12!
 
 
 [15]
+Overfull \hbox (44.3844pt too wide) in paragraph at lines 534--535
+\TU/lmr/m/n/12 pres-sion [][][][][]. In to-tal, the sys-tem [][][][][]
+ []
+
+
 
 [16]
 
@@ -3830,7 +3829,7 @@ Package biblatex Warning: No driver for 'artwork'.
 [103]
 
 [104]
-runsystem(latexminted cleantemp  --timestamp 20260707205922Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260707212502Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3855,7 +3854,7 @@ Here is how much of LuaTeX's memory you used:
 , 2752 attribute_list, 7 write, 636 pdf_literal, 7 pdf_start_link, 7 pdf_end_lin
 k, 16 pdf_action, 92 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore 
 nodes
-   avail lists: 1:17,2:8379,3:5387,4:649,5:849,6:275,7:8953,8:117,9:2653,10:70,1
+   avail lists: 1:21,2:8379,3:5387,4:649,5:849,6:271,7:8953,8:117,9:2653,10:70,1
 1:675,12:15
  101290 multiletter control sequences out of 65536+600000
  180 fonts using 13990295 bytes
@@ -3905,7 +3904,7 @@ public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/te
 x-gyre/qzcmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/boondox/
 zxxrl8a.pfb>
-Output written on main.pdf (112 pages, 54554415 bytes).
+Output written on main.pdf (112 pages, 54554554 bytes).
 
 PDF statistics: 2584 PDF objects out of 2984 (max. 8388607)
  1770 compressed objects within 18 object streams
