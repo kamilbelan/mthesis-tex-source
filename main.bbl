@@ -2827,6 +2827,7 @@
       \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
+      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -3340,6 +3341,57 @@
       \verb 10.1016/j.amc.2022.127579
       \endverb
       \keyw{sph techniques}
+    \endentry
+    \entry{hairerGeometricNumericalIntegration2003}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9a61cdcbc8a5b325ba3aa8e80f7d1900}{%
+           family={Lubich},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6715424cc951a02c09b3082a661642ab}{%
+           family={Wanner},
+           familyi={W\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{fullhash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{fullhashraw}{6b65ffa33296e7c8499bc72738749672}
+      \strng{bibnamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorbibnamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authornamehash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
+      \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The subject of geometric numerical integration deals with numerical integrators that preserve geometric properties of the flow of a differential equation, and it explains how structure preservation leads to improved long-time behaviour. This article illustrates concepts and results of geometric numerical integration on the important example of the Störmer--Verlet method. It thus presents a cross-section of the recent monograph by the authors, enriched by some additional material.After an introduction to the Newton--Störmer--Verlet--leapfrog method and its various interpretations, there follows a discussion of geometric properties: reversibility, symplecticity, volume preservation, and conservation of first integrals. The extension to Hamiltonian systems on manifolds is also described. The theoretical foundation relies on a backward error analysis, which translates the geometric properties of the method into the structure of a modified differential equation, whose flow is nearly identical to the numerical method. Combined with results from perturbation theory, this explains the excellent long-time behaviour of the method: long-time energy conservation, linear error growth and preservation of invariant tori in near-integrable systems, a discrete virial theorem, and preservation of adiabatic invariants.}
+      \field{issn}{1474-0508, 0962-4929}
+      \field{journaltitle}{Acta Numerica}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Geometric Numerical Integration Illustrated by the {{Störmer}}--{{Verlet}} Method}
+      \field{urlday}{21}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/S0962492902000144
+      \endverb
+      \verb{file}
+      \verb /home/moschehaus/Portable/Documents/Zotero Library/Hairer et al. - 2003 - Geometric numerical integration illustrated by the Störmer–Verlet method.pdf
+      \endverb
+      \keyw{hamiltonian SPH}
     \endentry
     \entry{mahdizadehExtrapolationBoundaryConditions2025}{article}{}{}
       \name{author}{4}{}{%
