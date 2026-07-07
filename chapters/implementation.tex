@@ -3,9 +3,9 @@
 \chapter{Implementation details of SPH}
 \label{chap:IMPLEMENTATION}
 
-This chapter describes some implementation choices of the numerical method of SPH \Cref{chap:SPH}. We first describe the software base, then the procedure that initializes and advances the particle system (\Cref{sec:PROCEDURE}), then the treatment of the domain boundaries (\Cref{sec:BCs}), and finally how the simulations can be reproduced (\Cref{sec:REPRODUCIBILITY}).
+This chapter describes some implementation choices of the numerical method of SPH (\Cref{chap:SPH}). We first describe the software base, then the procedure that initializes and advances the particle system (\Cref{sec:PROCEDURE}), then the treatment of the domain boundaries (\Cref{sec:BCs}), and finally how the simulations can be reproduced (\Cref{sec:REPRODUCIBILITY}).
 
-The code is written in the \href{https://julialang.org/}{Julia programming language}, a language designed for scientific computing. Julia is a high-level, \emph{dynamically typed} programming language \textcolor{gray}{(like Python)} with performance close to statically compiled languages \textcolor{gray}{(like Fortran and C++)}; this ability is achieved through just-in-time compilation. Its \emph{multiple dispatch} feature is an excellent fit for particle methods, where the same function is evaluated over many pairs of particles of various types.
+The code is written in the \href{https://julialang.org/}{Julia programming language}, a language designed for scientific computing. Julia is high-level, \emph{dynamically typed} \textcolor{gray}{(like Python)} with performance close to statically compiled languages \textcolor{gray}{(like Fortran and C++)}; this ability is achieved through just-in-time compilation. Its \emph{multiple dispatch} feature is an excellent fit for particle methods, where the same function is evaluated over many pairs of particles of various types.
 
 We build on \href{https://github.com/OndrejKincl/SmoothedParticles.jl}{\texttt{SmoothedParticles.jl}}\autocite{kinclGloballyTimereversibleFluid2023a,kinclSimulationSuperfluidFountain2023a,kinclUnifiedDescriptionFluids2023a}, a minimal general-purpose SPH framework for Julia. The package supplies the basic infrastructure common to any SPH code, \textit{i.e.} an implementation of a particle-system data structure, cell-list neighbour search, various smoothing kernels, geometric tools for particle initialization, and output routines. It is \emph{not specialised} to modelling of atmospheric flows.
 The formulations of the density-free and well-balanced variants of SPH \Cref{sec:WELL-BALANCED-SPH}, the terrain-following initialization, the boundary treatment, and the diagnostics developed for the presented problem are our own, built on top of \texttt{SmoothedParticles.jl}. The complete source is publicly available at the author's \href{https://github.com/kamilbelan/sph-mountain-waves}{Github repository}.
@@ -20,21 +20,120 @@ Physics (interaction of the particles) is expressed using the \texttt{apply!} op
 \label{sec:INITIALIZATION}
 Particles are distributed at initialization by the \texttt{generate\_particles!} subroutine. The initial configuration is typically described using a \emph{geometric shape} and a \emph{grid} of that shape: when \texttt{generate\_particles!} is called, the geometric shape is filled with particles created at every grid point. Note that the grid is used really for \emph{convenient initialization only} - SPH is a mesh-free method. 
 
-The initial atmospheric state is an exponentially stratified isothermal atmosphere above a mountain profile. To initialize the simulation in this state, the geometric shape is chosen to be a rectangle with the bottom base having the mountain profile $h(x)$ through the terrain-following coordinate transform described in \Cref{sec:TERRAIN-FOLLOWING}. The grid is chosen such that the particle spacing decreases exponentially with correspondence to the hydrostatic profile \Cref{eq:HYDROSTATIC}.
-
+The initial atmospheric state is an exponentially stratified isothermal atmosphere above a mountain profile. To initialize the simulation in this state, the geometric shape is chosen to be a rectangle with the bottom base having the mountain profile $h(x)$ with the aid of the terrain-following coordinate transform described in \Cref{sec:TERRAIN-FOLLOWING}. The grid is chosen such that the particle spacing decreases exponentially with correspondence to the hydrostatic profile \Cref{eq:HYDROSTATIC}.
 The physical fields carried by the particles are initialized in accordance with the initial conditions prescribed in \Cref{eq:EULER_BC}.
 
 \subsection{Verlet time stepping}
 \label{sec:VERLET}
 
+The particle system is advanced in time using the Störmer--Verlet scheme \textcolor{gray}{in its velocity form}, that is the symplectic integrator introduced in \Cref{sec:INTEGRATORS}. A single Verlet time step consists of a \enquote{kick--move--kick} sequence: there are two half-updates of the velocity around a full update of the position. This arrangement makes the scheme second-order accurate and symplectic\sidenote{Symplectic for the \emph{conservative} part of the dynamics in fact. As we are using artificial viscosity, energy is in fact not conserved.} \autocite{hairerGeometricNumericalIntegration2003}. This is the key property that justifies its use for the long time integrations required here.
+
+\begin{algorithm}
+	\caption{One Störmer--Verlet kick--move--kick step advancing the particle system by a time increment $\Delta t$.}
+	\label{alg:VERLET}
+	\begin{algobox}
+	\begin{algorithmic}[1]
+		\Procedure{VerletStep}{$\Delta t$}
+			\For{each fluid particle $p$}
+				\State $\vb{v}_p \gets \vb{v}_p + \tfrac{1}{2}\Delta t\, \vb{a}_p$ \Comment{half-kick with the acceleration of the previous step}
+			\EndFor
+			\For{each fluid particle $p$}
+				\State $\vb{x}_p \gets \vb{x}_p + \Delta t\, \vb{v}_p$ \Comment{move to the new positions}
+			\EndFor
+			\State \textsc{ComputeAccelerations} \Comment{SPH sums and boundary conditions, \Cref{sec:H_ADAPTIVITY,sec:BCs}}
+			\For{each fluid particle $p$}
+				\State $\vb{v}_p \gets \vb{v}_p + \tfrac{1}{2}\Delta t\, \vb{a}_p$ \Comment{half-kick with the updated acceleration}
+			\EndFor
+		\EndProcedure
+	\end{algorithmic}
+	\end{algobox}
+\end{algorithm}
+
+A single step is summarised in \Cref{alg:VERLET}. The velocity is first updated by half a step with the acceleration carried over from the previous step, the positions are drifted over the full step, and only then are the accelerations recomputed at the \emph{new configuration}. This recomputation, written compactly as \textsc{ComputeAccelerations}, is the most expensive part of the step and consists of essentially all of the SPH machinery: namely the neighbour search, the density and pressure interpolation sums (or other sums needed for the method formulation), the adaptive smoothing length (\Cref{sec:H_ADAPTIVITY}), and the boundary treatment (\Cref{sec:BCs}). After recomputation, the momentum balance finally yields the acceleration $\vb{a}_p$. The velocity is then updated with a second half-kick.
+Note that only the fluid particles are kicked and drifted; the boundary particles, \textit{i.e.} the wall and mountain particles, are held fixed and handled as described in \Cref{sec:BCs}.
+
+The timestep size is chosen as $\Delta t = C\, h_0 / c$, with $c$ the speed of sound, $h_0$ the reference smoothing length, and $C < 1$ a safety factor, typically $C = 0.8$. This choice ensures the CFL condition is met.
+
 \subsection{Adaptive smoothing length}
 \label{sec:H_ADAPTIVITY}
+
+In the density-free formulations of \Cref{sec:DENSITY-FREE} the smoothing length is not a free parameter but is tied to the local particle distribution through the neighbour-number constraint \Cref{eq:CONSTRAINT} \autocite{hopkinsGeneralClassLagrangian2013a}. Requiring every kernel support to contain a fixed effective neighbour number yields, in two dimensions, to
+
+\begin{equations}[single,!,numberline=all]
+\label{eq:H-CONSTRAINT-2D}
+h_\alpha = \frac{\eta}{\sqrt{n_\alpha\left(h_{\alpha}\right)}} \eqcomma
+\end{equations}
+
+where $n_\alpha$ is the particle number density \Cref{eq:PE-Y-TILDE} and the prefactor $\eta$ sets the effective neighbour count. Note that since $n_\alpha\left(h_{\alpha}\right)$ is \emph{itself a kernel sum}, \Cref{eq:H-CONSTRAINT-2D} is a \emph{nonlinear} equation for $h_\alpha$, relating the smoothing length of each particle to those of its neighbours.
+
+\begin{algorithm}
+	\caption{Adaptive smoothing length. A fixed number of Newton iterations of the nonlinear neighbour-number constraint, performed once per each time step.}
+	\label{alg:H-ADAPT}
+	\begin{algobox}
+	\begin{algorithmic}[1]
+		\Procedure{UpdateSmoothingLength}{}
+			\For{$k = 1, \ldots, n_{\text{iter}}$} \Comment{$n_{\text{iter}} = 3$ in practice}
+				\State compute $n_p$ and $\Omega_p$ for every fluid particle \Comment{contains a SPH sum, \Cref{eq:PE-Y-TILDE}}
+				\If{$k < n_{\text{iter}}$}
+					\For{each fluid particle $p$}
+						\State $h_{\text{new}} \gets h_p - (h_p - \eta/\sqrt{n_p})\,/\,\Omega_p$ \Comment{Newton iteration towards \Cref{eq:H-CONSTRAINT-2D}}
+						\State $h_p \gets \min\!\big(\operatorname{clamp}(h_{\text{new}},\, 0.8\,h_p,\, 1.2\,h_p),\; h_{\text{top}}\big)$ \Comment{limit the step, cap at $h_{\text{top}}$}
+					\EndFor
+					\State rebuild the neighbour structure
+				\EndIf
+			\EndFor
+		\EndProcedure
+	\end{algorithmic}
+	\end{algobox}
+\end{algorithm}
+
+We solve \Cref{eq:H-CONSTRAINT-2D} by Newton iteration at the start of each acceleration evaluation (\Cref{alg:VERLET}), as summarised in \Cref{alg:H-ADAPT}\sidenote{A single Newton step corrects $h_\alpha$ by the residual $h_\alpha - \eta/\sqrt{n_\alpha}$ divided by the $\grad h$ correction factor $\Omega_\alpha$. The quantity $\Omega_{\alpha}$ is  already computed for the density-free momentum balance \Cref{eq:DENSITY-ENTROPY-TOTAL}, so it is available at no additional computational cost.}. Rather than iterating to convergence we perform fixed three Newton iterations each time step, which suffices because the previous step supplies an accurate initial guess and also $h_\alpha$ changes slowly. This is done to make the computation cheaper. For robustness, when the local neighbour count is \textcolor{gray}{momentarily} low, near the open boundaries for instance, each $h$ update is limited to a twenty per cent change and capped at the largest \textcolor{gray}{fixed} admissible smoothing length $h_{\text{top}}$, given through the coarsest spacing at the top of the stratified domain (\Cref{sec:INITIALIZATION}).
 
 \section{Boundary conditions}
 \label{sec:BCs}
 
-\subsection{Extrapolating boundary conditions}
-\label{sec:EBCs}
+The inflow, outflow and mountain boundaries are all treated with \emph{extrapolation boundary conditions} (EBC), which we adapt from the scheme of \autocite{mahdizadehExtrapolationBoundaryConditions2025}\sidenote{The authors carried the techniques used in EBC from finite-volume conservation laws to SPH.}. 
+
+A rigorous and robust treatment of boundary conditions in SPH is complicated. For instance, the open boundary conditions cannot be imposed primitively by only removing the particles leaving the computational domain: with every SPH formulation, the particle's acceleration is computed using the discretised balance of momentum, which involves a \emph{SPH sum} - a sum over all neighbours in the particle's interpolation kernel's support. Within this naive implementation however, a particle near an open boundary would have a very low number of neighbours, resulting in \emph{artificial vacuum} being created at the open boundary. The artificial vacuum leads to a tumultuous unphysical outflow, ruining the simulation.
+
+To resolve this issue, EBC represents each boundary by fixed layers of \emph{auxiliary particles:} \emph{ghost} particles (open boundaries) and \emph{wall} particles (mountain surface) that have no dynamics of their own. At every step the \emph{auxiliary particles} are assigned field values by a first-order Taylor \emph{extrapolation} from a \emph{nearby interior fluid particle}. Owing to the presence of the auxiliary particles, the kernel support of any fluid particle is complete and therefore its SPH gradient is reliable, and the extrapolation is sensible.
+
+Following the original construction in \autocite{mahdizadehExtrapolationBoundaryConditions2025}, the inflow consists of three layers of ghost particles and two layers of incoming particles, and the outflow of three layers of ghost particles (\Cref{fig:EBC-OPEN}); for the open boundaries this allows the particles to flow out of the domain without unphysical gradients.
+
+A single EBC pass, summarised in \Cref{alg:EBC}, begins by evaluating the SPH gradient $\grad \phi_a$ of each transported field $\phi$ on every fluid particle $a$. Each boundary particle is then matched to one interior fluid particle, and that particle's values are carried across by the Taylor step of \Cref{fig:EBC}.
+
+\begin{algorithm}
+	\caption{One extrapolation boundary condition pass, applied each time step.}
+	\label{alg:EBC}
+	\begin{algobox}
+	\begin{algorithmic}[1]
+		\Procedure{ApplyEBC}{}
+			\State compute the gradients $\grad\phi_a$ for every fluid particle and transported field $\phi$
+			\For{each open-boundary ghost $g$} \Comment{inflow and outflow, \Cref{fig:EBC-OPEN}}
+				\State $\vb{x}_t \gets \vb{x}_g + \vb{s}_g$ \Comment{target three columns inside the domain}
+				\State $q \gets$ fluid particle nearest $\vb{x}_t$
+				\State $\phi_g \gets \phi_q + (\vb{x}_g - \vb{x}_q)\cdot\grad\phi_q$ \Comment{velocity and perturbation, first-order Taylor}
+				\State $\rho_g \gets \rho_{\text{bg}}(z_g) + \delta\rho_g$ \Comment{reconstruct from the analytic background}
+			\EndFor
+			\For{each mountain wall particle $p$} \Comment{free slip, \Cref{fig:EBC-MOUNTAIN}}
+				\State $q \gets$ fluid particle nearest $\vb{x}_p$
+				\State $\delta\rho_p \gets \delta\rho_q + (\vb{x}_p - \vb{x}_q)\cdot\grad\delta\rho_q$;\quad $\rho_p \gets \rho_{\text{bg}}(z_p) + \delta\rho_p$
+				\State $\vb{v}_e \gets \vb{v}_q + (\vb{x}_p - \vb{x}_q)\cdot\grad\vb{v}_q$ \Comment{extrapolated velocity}
+				\State $\vb{n} \gets$ outward normal of the mountain surface at $\vb{x}_p$
+				\State $\vb{v}_p \gets \vb{v}_e - 2(\vb{v}_e\cdot\vb{n})\,\vb{n}$ \Comment{reflect normal component}
+			\EndFor
+		\EndProcedure
+	\end{algorithmic}
+	\end{algobox}
+\end{algorithm}
+
+Three modifications are made to adapt EBC to a stratified, terrain-following atmosphere.
+
+First, to ensure consistency with the hydrostatic background at the inflow and outflow, which is essential for well-balancedness, we extrapolate only the \emph{perturbation} about the analytic hydrostatic reference rather than the full field. The full quantity is reconstructed at the boundary particle's own altitude, \textit{e.g.} $\rho_g = \bar{\rho}(z_g) + \delta\rho_g$ with $\rho_{\text{bg}}$ the hydrostatic background \Cref{eq:HYDROSTATIC}. The transported perturbation is $\delta\rho$, $\delta\theta$ or $\delta A$ according to the formulation of \Cref{sec:DENSITY-FREE}.
+
+Second, the \emph{free-slip} boundary condition is imposed on the mountain surface rather than a no-slip condition assumed by the authors in \autocite{mahdizadehExtrapolationBoundaryConditions2025}. The mountain velocity is given as the extrapolated fluid velocity $\vb{v}_e$ with its normal component reflected about the analytic outward normal $\vb{n}$ of the Witch of Agnesi surface, $\vb{v}_p = \vb{v}_e - 2(\vb{v}_e\cdot\vb{n})\vb{n}$, so that the normal velocity vanishes at the surface on average (\Cref{fig:EBC-MOUNTAIN}).
+
+Third, a fluid particle leaving through the outflow is \emph{not deleted} but recycled to the inflow at its original altitude, keeping the particle number fixed, sustaining a steady inflow stream and making the simulation cheaper.\sidenote{Removing the particles leaving the domain from the particle system and then adding new ones at the inflow is an extra memory allocation cost.}
 
 \subsection{Radiation boundary conditions}
 \label{sec:radiation_BC}
@@ -74,7 +173,7 @@ The physical fields carried by the particles are initialized in accordance with 
 			$\displaystyle \phi_g = \phi_q + (\vb{x}_g - \vb{x}_q)\cdot\grad\phi_q$\\[2pt]
 		each field $\phi$ (velocity, density or entropy perturbation) is set from the matched~$q$};
 	\end{tikzpicture}
-	\caption{Open boundary. A ghost $g$ is matched to the fluid particle $q$ nearest a target three columns inside the domain, then each ghost field is set by a first-order Taylor step from $q$.}
+	\caption{Open boundary. A ghost particle $g$ is matched to the fluid particle $q$ nearest a target three columns inside the domain, then each field of ghost $g$ is set by a first-order Taylor extrapolation from $q$.}
 	\label{fig:EBC-OPEN}
 \end{subfigure}
 \vspace{0.6cm}
@@ -121,10 +220,10 @@ The physical fields carried by the particles are initialized in accordance with 
 			\vb v = \vb v_e - 2(\vb v_e\cdot\vb n)\,\vb n$\\[2pt]
 		reflecting the normal component enforces free slip, $\vb v\cdot\vb n=0$, at the wall};
 	\end{tikzpicture}
-	\caption{Solid mountain boundary. The wall particle $p$ takes the extrapolated velocity $\vb v_e$ of the nearest fluid $q$; reflecting its normal component about the surface gives the free-slip velocity $\vb v$.}
+	\caption{Solid mountain boundary. The wall particle $p$ is assigned the extrapolated velocity $\vb v_e$ of the nearest fluid $q$; reflecting its normal component about the surface yields the free-slip velocity $\vb v$.}
 	\label{fig:EBC-MOUNTAIN}
 \end{subfigure}	\caption[Extrapolation boundary conditions]{%
-	The extrapolation boundary conditions (EBC) \autocite{mahdizadehExtrapolationBoundaryConditions2025}: \subref{fig:EBC-OPEN} the open inflow and outflow boundaries, and \subref{fig:EBC-MOUNTAIN} the solid mountain with free slip. In both, the matched fluid particle $q$ supplies a reliable SPH gradient that a first-order Taylor step carries to the boundary particle.
+	The extrapolation boundary conditions (EBC) \autocite{mahdizadehExtrapolationBoundaryConditions2025}: \subref{fig:EBC-OPEN} the open inflow and outflow boundaries, and \subref{fig:EBC-MOUNTAIN} the solid mountain with free slip. In both, the fields of the matched fluid particle $q$ are carried to the boundary particle by a first-order Taylor extrapolation.
 }
 \label{fig:EBC}
 \end{figure}
