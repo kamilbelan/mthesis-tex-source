@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 19:28
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  7 JUL 2026 19:40
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3840,7 +3840,7 @@ Package biblatex Warning: No driver for 'artwork'.
 [103]
 
 [104]
-runsystem(latexminted cleantemp  --timestamp 20260707192846Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260707194050Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...executed.
  (./build/main.aux)
  ***********
@@ -3915,7 +3915,7 @@ public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/te
 x-gyre/qzcmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/boondox/
 zxxrl8a.pfb>
-Output written on main.pdf (112 pages, 54552637 bytes).
+Output written on main.pdf (112 pages, 54552684 bytes).
 
 PDF statistics: 2592 PDF objects out of 2984 (max. 8388607)
  1778 compressed objects within 18 object streams
