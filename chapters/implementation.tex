@@ -244,9 +244,7 @@ Crucially, in practice this condition played no role in our experiments, since t
 \section{Reproducibility}
 \label{sec:REPRODUCIBILITY}
 
-The simulations are organised using \href{https://juliadynamics.github.io/DrWatson.jl/dev/}{\texttt{DrWatson.jl}} \autocite{datserisDrWatsonPerfectSidekick2020}, which provides the project layout and connects every run to its configuration. Each simulation run produces \texttt{metadata.jld2} - a metadata file containing the complete parameter set (together with the Git commit), so that any result can be traced to the exact code version and parameters that produced it. The particle fields, \textit{i.e.} the simulation frames, are written as HDF5 frames with an accompanying XDMF descriptor file for post-processing. The complete source, including the parameter files for every simulation reported in \Cref{chap:EXPERIMENTS}, is archived at ZENODO
-
-% TODO: add ZENODO DOI
+The simulations are organised using \href{https://juliadynamics.github.io/DrWatson.jl/dev/}{\texttt{DrWatson.jl}} \autocite{datserisDrWatsonPerfectSidekick2020}, which provides the project layout and connects every run to its configuration. Each simulation run produces \texttt{metadata.jld2} - a metadata file containing the complete parameter set (together with the Git commit), so that any result can be traced to the exact code version and parameters that produced it. The particle fields, \textit{i.e.} the simulation frames, are written as HDF5 frames with an accompanying XDMF descriptor file for post-processing. The complete source, including the parameter files for every simulation reported in \Cref{chap:EXPERIMENTS}, is archived at Zenodo \autocite{belanSPHSmoothedParticle2026}.
 
 \end{document}
 
