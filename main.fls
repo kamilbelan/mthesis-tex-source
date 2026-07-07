@@ -599,8 +599,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbrmi8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
-INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
-INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./chapters/oro_flows.tex
 INPUT ./chapters/oro_flows.tex
 INPUT ./figures/oro_flows/clouds.png
@@ -622,6 +620,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/boondox/zxxrl7z.tfm
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc
 INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-ds.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-ds.vf
@@ -658,6 +657,7 @@ INPUT ./chapters/sph.tex
 INPUT ./figures/sph/kernel.png
 INPUT ./figures/sph/kernel.png
 INPUT ./figures/sph/kernel.png
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./chapters/silva.tex
 INPUT ./chapters/silva.tex
 INPUT ./chapters/implementation.tex
