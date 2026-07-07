@@ -1431,48 +1431,6 @@
       \endverb
       \keyw{orographic flows,terrain-following}
     \endentry
-    \entry{levequeFiniteVolumeMethods2002}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=c5fc096f540a44e56f892cc83176f0fb}{%
-           family={LeVeque},
-           familyi={L\bibinitperiod},
-           given={Randall\bibnamedelima J.},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{fullhash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{fullhashraw}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{bibnamehash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{authorbibnamehash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{authornamehash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{authorfullhash}{c5fc096f540a44e56f892cc83176f0fb}
-      \strng{authorfullhashraw}{c5fc096f540a44e56f892cc83176f0fb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{26}
-      \field{edition}{1}
-      \field{isbn}{978-0-521-81087-6 978-0-521-00924-9 978-0-511-79125-3}
-      \field{month}{8}
-      \field{title}{Finite {{Volume Methods}} for {{Hyperbolic Problems}}}
-      \field{urlday}{28}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{year}{2002}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1017/CBO9780511791253
-      \endverb
-      \verb{file}
-      \verb /home/moschehaus/Portable/Documents/Zotero Library/LeVeque - 2002 - Finite Volume Methods for Hyperbolic Problems.pdf
-      \endverb
-      \keyw{well-balanced}
-    \endentry
     \entry{kappeliWellbalancedFiniteVolume2016a}{article}{}{}
       \name{author}{2}{}{%
         {{hash=308a40102a1effe50504bf1d3e20e8a7}{%
@@ -1539,8 +1497,8 @@
       \strng{authornamehash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhash}{ca6836e0d59e737273877126fce0060e}
       \strng{authorfullhashraw}{ca6836e0d59e737273877126fce0060e}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{C.R. Acad. Sc. Paris Série I}
@@ -1570,8 +1528,8 @@
       \strng{authornamehash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhash}{98906f037083aa2ca3e1d0f52c23e034}
       \strng{authorfullhashraw}{98906f037083aa2ca3e1d0f52c23e034}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{SIAM Journal on Numerical Analysis}
@@ -1975,8 +1933,8 @@
       \strng{authornamehash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhash}{ec0143d3504dc74e1926cee085087276}
       \strng{authorfullhashraw}{ec0143d3504dc74e1926cee085087276}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A moving-particle semi-implicit (MPS) method for simulating fragmentation of incompressible fluids is presented. The motion of each particle is calculated through interactions with neighboring particles covered with the kernel function. Deterministic particle interaction models representing gradient, Laplacian, and free surfaces are proposed. Fluid density is implicitly required to be constant as the incompressibility condition, while the other terms are explicitly calculated. The Poisson equation of pressure is solved by the incomplete Cholesky conjugate gradient method. Collapse of a water column is calculated using MPS. The effect of parameters in the models is investigated in test calculations. Good agreement with an experiment is obtained even if fragmentation and coalescence of the fluid take place.}
@@ -2828,8 +2786,8 @@
       \strng{authorfullhash}{6b65ffa33296e7c8499bc72738749672}
       \strng{authorfullhashraw}{6b65ffa33296e7c8499bc72738749672}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1474-0508}
