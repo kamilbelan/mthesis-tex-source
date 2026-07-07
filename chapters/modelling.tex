@@ -83,14 +83,14 @@ p &= R \rho T, \\
 \vb{v} &= \vb{v}_0, \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
 \rho &= \bar{\rho}(y), \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
 \theta &= \bar{\theta}(y), \, \text{on} \, \left\{ 0 \right\} \times \Omega,\\
-\vb{v} &= V \vb{e}_x, \, \text{on} \, \left(0,T\right) \times \Gamma_L,\\
+\vb{v} &= u_0 \vb{e}_x, \, \text{on} \, \left(0,T\right) \times \Gamma_L,\\
 \theta = \bar{\theta}(y), \, \text{on} \, \left(0,T\right) \times \Gamma_L, \\
 p &= \bar{p}, \, \text{on} \, \left(0,T\right) \times \Gamma_R,\\
 \vb{v} \cdot \vb{n} &= 0, \, \text{on} \, \left(0,T\right) \times \Gamma_B,\\
 &\text{\enquote{radiation condition, on $\left(0,T\right) \times \Gamma_T$}}
 \end{equations}
 
-with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\bar{p}, \bar{\theta}$ the hydrostatic profile and $0 < V < c$ the constant \emph{subsonic} inflow velocity magnitude. We take $\vb{v}_0 = V \vb{e_x}$, \ie we assume the flow is developed at the initialization.
+with $\vb{v}_0, \rho_0$ being the initial velocity and density, $\bar{p}, \bar{\theta}$ the hydrostatic profile and $0 < u_0 < c$ the constant \emph{subsonic} inflow velocity magnitude. We take $\vb{v}_0 = u_0 \vb{e_x}$, \ie we assume the flow is developed at the initialization.
 The boundary conditions deserve comments:
 \begin{compactitem}
 	\item the inflow velocity field is constant and subsonic
@@ -179,7 +179,7 @@ where the eigenvalue $\vb{v} \cdot \vb{n}$ has multiplicity $d$. There are there
 \end{equations}
 where now the multiple eigenvalue $\vb{v} \cdot \vb{n}$ is positive, leaving $\vb{v} \cdot \vb{n} - c$ as the only negative eigenvalue, so a single \textcolor{gray}{scalar} boundary condition must be prescribed.
 
-Since in our case the inflow is deeply subsonic (the air enters $\Omega$ at about $\sim \SI{20}{m/s}$, see \Cref{chap:EXPERIMENTS} for details) and inside $\Omega$ the air only flows around an obstacle (without any additional interaction mechanism), we assume also that the outflow is subsonic. Consequently, we prescribe three scalar conditions at the inflow $\Gamma_L$, the two components of $\vb{v} = V \vb{e}_x$ together with the thermodynamic condition $\theta = \bar{\theta}(y)$, and one scalar condition at the outflow $\Gamma_R$, the pressure $p = \bar{p}$. The boundary conditions \Cref{eq:EULER_BC} are thus sensible.
+Since in our case the inflow is deeply subsonic (the air enters $\Omega$ at about $\sim \SI{20}{m/s}$, see \Cref{chap:EXPERIMENTS} for details) and inside $\Omega$ the air only flows around an obstacle (without any additional interaction mechanism), we assume also that the outflow is subsonic. Consequently, we prescribe three scalar conditions at the inflow $\Gamma_L$, the two components of $\vb{v} = u_0 \vb{e}_x$ together with the thermodynamic condition $\theta = \bar{\theta}(y)$, and one scalar condition at the outflow $\Gamma_R$, the pressure $p = \bar{p}$. The boundary conditions \Cref{eq:EULER_BC} are thus sensible.
 
 Let us conclude with some remarks and further references. The choice of suitable boundary conditions for the Euler system, and for nonlinear systems of hyperbolic conservation laws in general, remains an active field of research in both the analysis of partial differential equations and in numerical analysis. On the analytical side, well-posedness of the initial-boundary value problem for scalar conservation laws has been pioneered by \autocite{bardosFirstOrderQuasilinear1979}, and the theory for systems continues to develop \autocite{spinoloInformalAccountRecent2024}. On the numerical side, the construction of various boundary conditions (non-reflecting, far-field, open) has a long history \autocite{hedstromNonreflectingBoundaryConditions1979,roeRemoteBoundaryConditions1989}, and the design of provably well-posed boundary treatments is still actively pursued \autocite{nordstromOpenBoundaryConditions2025}.
 
