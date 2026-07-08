@@ -695,6 +695,8 @@ INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-
 INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-italic.luc
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/experiments.tex
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc
 INPUT ./figures/experiments/stationary_norms_SPH.png
 INPUT ./figures/experiments/stationary_norms_SPH.png
 INPUT ./figures/experiments/stationary_norms_SPH.png

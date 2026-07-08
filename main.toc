@@ -36,13 +36,13 @@
 \contentsline {subsubsection}{Gradient of a scalar field}{37}{subsubsection*.46}%
 \contentsline {subsubsection}{Divergence of a vector field}{38}{subsubsection*.47}%
 \contentsline {section}{\numberline {3.3}Classical SPH}{38}{section*.48}%
-\contentsline {subsection}{Improved operator discretisation}{38}{subsection*.49}%
+\contentsline {subsection}{Improved operator discretization}{38}{subsection*.49}%
 \contentsline {subsection}{Discrete balance of mass}{40}{subsection*.50}%
 \contentsline {subsection}{Discrete balance of linear momentum}{41}{subsection*.51}%
 \contentsline {subsection}{Complete system}{42}{subsection*.52}%
 \contentsline {section}{\numberline {3.4}Hamiltonian formulation}{43}{section*.53}%
 \contentsline {subsection}{Poisson brackets}{43}{subsection*.54}%
-\contentsline {subsection}{SPH discretisation}{46}{subsection*.55}%
+\contentsline {subsection}{SPH discretization}{46}{subsection*.55}%
 \contentsline {subsubsection}{SPH bracket}{46}{subsubsection*.56}%
 \contentsline {subsubsection}{SPH energy functional}{48}{subsubsection*.57}%
 \contentsline {subsection}{Classical SPH as a Hamiltonian system}{49}{subsection*.58}%
