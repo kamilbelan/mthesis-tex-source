@@ -3,14 +3,14 @@
 \chapter{The SILVA method}
 \label{chap:SILVA}
 
-The Smoothed Particle Hydrodynamics method of \Cref{chap:SPH} belongs to the wider group of Lagrangian particle methods, in which the fluid is represented by moving material points. A close relative within this family is the \emph{Semi-Implicit Lagrangian Voronoi Approximation} (SILVA) introduced in \autocite{kinclSemiimplicitLagrangianVoronoi2025}, in which the particles additionally serve as seeds for \emph{a Voronoi tessellation} that is used to construct discrete differential operators. The two methods are closely related: the authors note the significant analogies between SILVA and \emph{incompressible} SPH, \eg that both involve repeated neighbour-searches, and rely on the Helmholtz decomposition\sidenote{In our presentation in \Cref{chap:SPH} only the compressible SPH has been discussed. For the SPH discretisation of equations that govern flows of \emph{incompressible fluids}, see \textit{e.g.} \autocite{cumminsSPHProjectionMethod1999}.} to deal with incompressibility \autocite[p.90]{kinclSemiimplicitLagrangianVoronoi2025}. Moreover, the similarity allows for common parts of software implementation. This close relation is what makes SILVA the natural comparison candidate for SPH.
+The Smoothed Particle Hydrodynamics method of \Cref{chap:SPH} belongs to the wider group of Lagrangian particle methods, in which the fluid is represented by moving material points. A close relative within this family is the \emph{Semi-Implicit Lagrangian Voronoi Approximation} (SILVA) introduced in \autocite{kinclSemiimplicitLagrangianVoronoi2025}, in which the particles additionally serve as seeds for \emph{a Voronoi tessellation} that is used to construct discrete differential operators. The two methods are closely related: the authors note the significant analogies between SILVA and \emph{incompressible} SPH, \eg that both involve repeated neighbor-searches, and rely on the Helmholtz decomposition\sidenote{In our presentation in \Cref{chap:SPH} only the compressible SPH has been discussed. For the SPH discretization of equations that govern flows of \emph{incompressible fluids}, see \eg\autocite{cumminsSPHProjectionMethod1999}.} to deal with incompressibility \autocite[p.~90]{kinclSemiimplicitLagrangianVoronoi2025}. Moreover, the similarity means that parts of the software implementation can be shared. This close relation is what makes SILVA the natural point of comparison for SPH.
 
-We stress an essential fact at the beginning of this chapter. At the current state of development, SILVA numerically solves equations governing the flow of \emph{an incompressible fluid}. This treatment is \emph{fundamentally incompatible} with the \emph{compressible}, stratified atmosphere considered throughout this thesis. We therefore keep the presentation of SILVA deliberately brief, referring repeatedly to \autocite{kinclSemiimplicitLagrangianVoronoi2025} for every derivation and detail. We present only structural facts to showcase the incompatibility.
+One essential fact must be stressed before we begin: in the current state of development, SILVA numerically solves equations governing the flow of \emph{an incompressible fluid}. This treatment is \emph{fundamentally incompatible} with the \emph{compressible}, stratified atmosphere considered throughout this thesis. We therefore keep the presentation of SILVA deliberately brief, referring repeatedly to \autocite{kinclSemiimplicitLagrangianVoronoi2025} for every derivation and detail. We present only structural facts to illustrate the incompatibility.
 
 \section{Governing equations}
 \label{sec:silva_governing}
 
-SILVA numerically solves the incompressible Euler\sidenote{The authors also show how SILVA can be used to numerically solve the incompressible Navier--Stokes equations.} equations. Writing $\vb{v}$ for the velocity, $p$ for the pressure, $\rho$ for the density the model reads
+SILVA numerically solves the incompressible Euler\sidenote{The authors also show how SILVA can be used to numerically solve the incompressible Navier--Stokes equations.} equations. Writing $\vb{v}$ for the velocity, $p$ for the pressure, $\rho$ for the density, the model reads
 
 \begin{equations}[columns,!,numberline=m]
 \label{eq:INCOMPRESSIBLE_EULER}
@@ -19,27 +19,27 @@ SILVA numerically solves the incompressible Euler\sidenote{The authors also show
 \tdot{\vb{x}} &= \vb{v}.
 \end{equations}
 
-The last equation is the \emph{trajectory equation} and is needed to evolve the sample points, which will be introduced in the following. Notice that the continuity equation $\tdot{\rho} + \rho \div \vb{v} = 0$ with the solenoidal constraint $\div \vb{v} = 0$ reads $\tdot{\rho} = 0$, \textit{i.e.} density is constant along \emph{characteristics} - but not \emph{spatially constant} in general. Also, with this form of the continuity equation, the system \Cref{eq:INCOMPRESSIBLE_EULER} is no longer a \emph{hyperbolic system of conservation laws}, as the divergence constraint is only an elliptic equation. What is more, the pressure $p$ is \emph{an unknown} that has to be solved for\sidenote{In fact, it is, in some sense, the Lagrange multiplier for the divergence constraint.} in \Cref{eq:INCOMPRESSIBLE_EULER} - there is \emph{no thermodynamic equation of state} relating $p$ and \textit{e.g.} $\rho, T, \theta$.
+The last equation is the \emph{trajectory equation} and is needed to evolve the sample points, which will be introduced in the following. Notice that the continuity equation $\tdot{\rho} + \rho \div \vb{v} = 0$ with the solenoidal constraint $\div \vb{v} = 0$ reads $\tdot{\rho} = 0$, \ie density is constant along \emph{characteristics} --- but not \emph{spatially constant} in general. Also, with this form of the continuity equation, the system \Cref{eq:INCOMPRESSIBLE_EULER} is no longer a \emph{hyperbolic system of conservation laws}, as the divergence constraint is only an elliptic equation. What is more, the pressure $p$ is \emph{an unknown} that has to be solved for\sidenote{In fact, it is, in some sense, the Lagrange multiplier for the divergence constraint.} in \Cref{eq:INCOMPRESSIBLE_EULER} --- there is \emph{no thermodynamic equation of state} relating $p$ and \eg $\rho, T, \theta$.
 
 Finally, we note that in \Cref{eq:INCOMPRESSIBLE_EULER} there is no body force. In problems including gravity, it enters as an external acceleration, as in the multi-phase Rayleigh--Taylor test of \autocite{kinclSemiimplicitLagrangianVoronoi2025}.
 
-\section{Moving Voronoi discretisation}
+\section{Moving Voronoi discretization}
 \label{sec:silva_voronoi}
 
-Given $\Omega \subset \R^d$ an open bounded \emph{convex} polygonal domain and $N \in \N$ distinct sample points $\left\{\vb{x}_i\right\}_{i=1}^N$, we define a Voronoi cell $\omega_i$ corresponding to the point $\vb{x}_i$ as all points $\vb{x} \in \Omega$ that are closer to $\vb{x}_i$ than to any other $\vb{x}_j, j \neq i$, that is \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025} 
+Given $\Omega \subset \R^d$, an open bounded \emph{convex} polygonal domain, and $N \in \N$ distinct sample points $\left\{\vb{x}_i\right\}_{i=1}^N$, we define a Voronoi cell $\omega_i$ corresponding to the point $\vb{x}_i$ as all points $\vb{x} \in \Omega$ that are closer to $\vb{x}_i$ than to any other $\vb{x}_j, j \neq i$, that is \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025} 
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:CELL}
 \omega_i = \bigcap_{j \neq i}\left\{ \vb{x} \in \Omega \middle| \abs{\vb{x} - \vb{x}_i} < \abs{\vb{x} - \vb{x}_j}\right\}.
 \end{equations}
 
-The points $\vb{x}_i, i = 1, \dots, N$ are also called \emph{seeds} of the cells $\omega_i$. An advantegous property of SILVA is that the \emph{mesh} created by the tesselation Voronoi cells is easily constructed just from the seeds. In total, the seeds both represent the discrete solution and carry the mesh. Notice that as $\left\{\vb{x}_i\right\}$ are \emph{material points}, the Voronoi cells $\left\{\omega_i\right\}$ are \emph{material volumes}.
+The points $\vb{x}_i, i = 1, \dots, N$ are also called \emph{seeds} of the cells $\omega_i$. An advantageous property of SILVA is that the \emph{mesh} created by the tessellation of Voronoi cells is easily constructed just from the seeds. In effect, the seeds both represent the discrete solution and define the mesh. Notice that as $\left\{\vb{x}_i\right\}$ are \emph{material points}, the Voronoi cells $\left\{\omega_i\right\}$ are \emph{material volumes}.
 
 The crucial geometric property of Voronoi tessellations is that each facet $\Gamma_{ij} = \left\{ \vb{x} \in \partial \omega_i \middle| \abs{\vb{x} - \vb{x}_i} = \abs{\vb{x} - \vb{x}_j}\right\}$ is perpendicular to the segment $\vb{x}_i - \vb{x}_j$ joining the two seeds it separates \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025}. This is the property that renders the discrete differential operators simple (not shown here). 
 
-Because the seeds move with the fluid, the tessellation is reconstructed at every step. The generation algorithm utilizes a neighbour-search list and runs at $\bigO{N}$ cost and is straightforward to parallelise \autocite{kinclSemiimplicitLagrangianVoronoi2025}. 
+Because the seeds move with the fluid, the tessellation is reconstructed at every step. The generation algorithm utilizes a neighbor-search list, runs at $\bigO{N}$ cost, and is straightforward to parallelize \autocite{kinclSemiimplicitLagrangianVoronoi2025}. 
 
-Crucially, in its present form this construction -- an essential ingredience of SILVA discretization -- requires a \emph{convex} domain, a restriction the authors identify as a limitation to be addressed in future work \autocite[p.~93]{kinclSemiimplicitLagrangianVoronoi2025}. In particular, the mountain profile used in our simulations makes $\Omega$ in our case \emph{non-convex}, see \Cref{sec:IBCs,fig:WITCH-OF-AGNESI}.
+Crucially, in its present form this construction --- an essential ingredient of the SILVA discretization --- requires a \emph{convex} domain, a restriction the authors identify as a limitation to be addressed in future work \autocite[p.~93]{kinclSemiimplicitLagrangianVoronoi2025}. In particular, the mountain profile used in our simulations makes $\Omega$ in our case \emph{non-convex}, see \Cref{sec:IBCs,fig:WITCH-OF-AGNESI}.
 
 \section{Discrete scheme and time integration}
 \label{sec:silva_scheme}
@@ -48,14 +48,14 @@ We summarize the main steps of the SILVA solution procedure.
 
 The pressure gradient in \Cref{eq:INCOMPRESSIBLE_EULER} is approximated by a discrete gradient operator assembled from the facet lengths, seed distances and facet midpoints of the Voronoi tessellation. The discrete gradient operator is exact for polynomials up to first degree \autocite[p.~95]{kinclSemiimplicitLagrangianVoronoi2025}. 
 
-The semi-discretized system is advanced in time using a semi-implicit time stepping. The seeds $\vb{x}_i, i = 1, \dots, N$ are first advected explicitly by the velocity field and the Voronoi mesh is recomputed. Although this update does not alter the velocity field, it spoils the discrete-divergence-free property of $\vb{v}$, which is then restored by an implicit pressure update, in which the velocity is projected onto the space of divergence-free fields \sidenote{This is the use of the Helmholtz decomposition mentioned in the introduction to \Cref{chap:SILVA}.} This procedure yields a \enquote{discrete Poisson equation}, that is solved with a Krylov method such as conjugate gradients or MINRES \autocite[p.~97-100]{kinclSemiimplicitLagrangianVoronoi2025}.
+The semi-discretized system is advanced in time using a semi-implicit time stepping. The seeds $\vb{x}_i, i = 1, \dots, N$ are first advected explicitly by the velocity field and the Voronoi mesh is recomputed. Although this update does not alter the velocity field, it spoils the discrete-divergence-free property of $\vb{v}$, which is then restored by an implicit pressure update, in which the velocity is projected onto the space of divergence-free fields.\sidenote{This is the use of the Helmholtz decomposition mentioned in the introduction to \Cref{chap:SILVA}.} This procedure yields a \enquote{discrete Poisson equation}, that is solved with a Krylov method such as conjugate gradients or MINRES \autocite[p.~97--100]{kinclSemiimplicitLagrangianVoronoi2025}.
 
 \section{Incompressibility limitation}
 \label{sec:LIMITATION}
 
-Let us discuss in more detail the main \emph{present} limitation of SILVA for modelling atmospheric flows, that is its \emph{incompressibility} requirement.
+Let us discuss in more detail the main \emph{present} limitation of SILVA for modeling atmospheric flows, that is, its \emph{incompressibility} requirement.
 
-Each cell $\omega_i$ is a material volume of fixed mass $M_i$ \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025}. For any material volume $\Sigma(t)$ the Reynolds transport theorem gives
+Each cell $\omega_i$ is a material volume of fixed mass $M_i$ \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025}. For any material volume $\Sigma(t)$, the Reynolds transport theorem gives
 
 \begin{equations}[single,*]
 \btdot{\abs{\Sigma\left(t\right)}} = \int_{\Sigma(t)} \div \vb{v} \dd{\vb{x}} \eqcomma
@@ -63,59 +63,66 @@ Each cell $\omega_i$ is a material volume of fixed mass $M_i$ \autocite[p.~91]{k
 
 so the incompressibility constraint $\div \vb{v} = 0$ implies $\btdot{\abs{\Sigma(t)}} = 0$. In particular, we have $\btdot{\abs{\omega_i}} = 0$ \autocite[p.~97]{kinclSemiimplicitLagrangianVoronoi2025}, and since the mass $M_i$ is fixed, the parcel density is \emph{constant along its trajectory}, recovering in fact the mentioned $\tdot{\rho} = 0$.
 
-Here the incompatibility becomes evident. An air parcel (represented by a Voronoi cell) whose volume is constant along its trajectory can \emph{neither expand nor compress}. However, a rising air parcel does \emph{exactly that}: as it moves adiabatically into lower ambient pressure (upward), it adiabatically \emph{expands}. This expansion is why the air parcel feels buoyancy - a crucial mechanism for the emergence of internal gravity waves. What is more, the equation of state \textcolor{gray}{of an ideal gas} together with \textcolor{gray}{isothermal} hydrostatic balance is what creates the exponentially stratified background itself. As SILVA at the current state solves only incompressible problems in which no equation of state is present, SILVA reproduces neither the expansion/compression nor the governing thermodynamics beneath it.
+Here the incompatibility becomes evident. An air parcel (represented by a Voronoi cell) whose volume is constant along its trajectory can \emph{neither expand nor compress}. However, a rising air parcel does \emph{exactly that}: as it moves adiabatically into lower ambient pressure (upward), it adiabatically \emph{expands}. This expansion is why the air parcel feels buoyancy --- a crucial mechanism for the emergence of internal gravity waves. What is more, the equation of state \textcolor{gray}{of an ideal gas} together with \textcolor{gray}{isothermal} hydrostatic balance is what creates the exponentially stratified background itself. As SILVA, in its current state, solves only incompressible problems in which no equation of state is present, SILVA reproduces neither the expansion/compression nor the underlying thermodynamics that drives it.
 
-A treatment of compressible flows appears among the method's stated future development directions \autocite[p.~109]{kinclSemiimplicitLagrangianVoronoi2025} and has since been added to the reference code \autocite{Kincl_LagrangianVoronoi_jl} available at \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl}{Github}. Nevertheless, it lies outside the published material examined here.
+A treatment of compressible flows appears among the method's stated future development directions \autocite[p.~109]{kinclSemiimplicitLagrangianVoronoi2025} and has since been added to the reference code \autocite{Kincl_LagrangianVoronoi_jl} available at \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl}{GitHub}. Nevertheless, it lies outside the published material examined here.
 
-As this thesis explores numerical methods suitable for \emph{compressible flows}, we make a choice to not purse SILVA any further. Instead, the effort was dedicated to extensions of SPH (\Cref{chap:SPH}), which is more suitable for compressible flows. In the final section \Cref{sec:SILVA_FAILURE} we shortly demonstrate the expected failure of SILVA to preserve exact hydrostatic balance.
+As this thesis explores numerical methods suitable for \emph{compressible flows}, we choose not to pursue SILVA any further. Instead, the effort was dedicated to extensions of SPH (\Cref{chap:SPH}), which is more suitable for compressible flows. In the final section \Cref{sec:SILVA_FAILURE} we shortly demonstrate the expected failure of SILVA to preserve exact hydrostatic balance.
 
 \section{Failure to preserve hydrostatic balance}
 \label{sec:SILVA_FAILURE}
 
-To showcase the failure of SILVA to preserve hydrostatic balance on the discrete level, a \emph{minimal} numerical experiment was conducted. The simulation code is publicly available at the authors \href{https://github.com/kamilbelan/silva-mountain-waves}{Github repository} and is build entirely on the software \autocite{Kincl_LagrangianVoronoi_jl,kinclSemiimplicitLagrangianVoronoi2025}.
+To illustrate the failure of SILVA to preserve hydrostatic balance on the discrete level, a \emph{minimal} numerical experiment was conducted. The simulation code is publicly available at the author's \href{https://github.com/kamilbelan/silva-mountain-waves}{GitHub repository} and is built entirely on the software \autocite{Kincl_LagrangianVoronoi_jl,kinclSemiimplicitLagrangianVoronoi2025}.
 
-The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow and no outflow} is present. \sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
-Since even though the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} mentions also compressible flows, the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} only covers incompressible flows, the simulation was written in inspiration by Kincl's \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{implementation} of benchmark and example problems.
+\subsection{Numerical evidence}
+\label{sec:NUMERICAL_EVIDENCE}
 
-To make direct comparison with SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step and simulation resolution; exact values can be found in \Cref{tab:SIM-PARAMS}.
+The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow and no outflow} is present.\sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
+Although the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} does mention compressible flows, the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} covers only the incompressible case; the simulation was therefore written following Kincl's \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{implementation} of the benchmark and example problems.
 
-In figure \Cref{fig:stationary_norms_silva} the maximum velocity magnitude $\abs{\vb{v}}_{\infty}$\sidenote{As expected, \begin{equations}[single,*]
+To make a direct comparison with the SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step and simulation resolution; exact values can be found in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
+
+
+In \Cref{fig:stationary_norms_silva}, the maximum velocity magnitude $\abs{\vb{v}}_{\infty}$\sidenote{As expected, \begin{equations}[single,*]
 \abs{\vb{v}}_{\infty} = \max_{i = 1, \dots, N}\abs{\vb{v}_i} \eqend
 \end{equations} $\vb{v}_i$ being the velocity of seed $\vb{x}_i$.} and the root-mean-square velocity magnitude $\abs{\vb{v}}_2$\sidenote{Root-mean-square velocity is given as \begin{equations}[single,*]
 \abs{\vb{v}}_2 = \frac{1}{N} \sum_{i=1}^N \abs{\vb{v}_i}^{2}.
-\end{equations}} are plotted. Since the hydrostatic balance is an \emph{stationary solution} to the Euler system, the velocity field should remain zero. Figure \Cref{fig:stationary_norms_silva} however clearly shows that the \emph{velocity field is not zero} - the hydrostatic balance \emph{is not preserved}.
+\end{equations}} are plotted. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{stationary_norms_silva.png}
 	\caption{CAPTION}
 	\label{fig:stationary_norms_silva}
 \end{figure}
 
+Since the hydrostatic balance is a \emph{stationary solution} to the Euler system, the velocity field should remain zero. \Cref{fig:stationary_norms_silva}, however, clearly shows that the \emph{velocity field is not zero} --- the hydrostatic balance \emph{is not preserved}.
+
 To gain further insight into the failure, in \Cref{fig:residual_field_silva} we plot the nonzero residual field $\abs{\grad p/\rho + \vb{g}}$. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_field_silva.png}
 	\caption{CAPTION}
 	\label{fig:residual_field_silva}
 \end{figure}
 
-From figure \Cref{fig:residual_field_silva} it seems that the residual is highest near the boundary, therefore we furthermore plot the horizontal mean residual in \Cref{fig:residual_profile_silva}. The horizontal mean residual is computed as follows: \begin{inparaenum} \item the residual $\abs{\grad p/ \rho + \vb{g}}$ is computed\sidenotemark for each Voronoi cell at $t = 0$\item the rectangular domain is divided into vertical columns containing cells \item for each column, the cell's residuals are summed and divided by their count in the column. \end{inparaenum} \sidenotetext{After the net acceleration is computed, naturally.}
+From \Cref{fig:residual_field_silva} it seems that the residual is highest near the boundary; therefore, we also plot the horizontal mean residual in \Cref{fig:residual_profile_silva}. The horizontal mean residual is computed as follows: \begin{inparaenum} \item the residual $\abs{\grad p/ \rho + \vb{g}}$ is computed\sidenotemark for each Voronoi cell at $t = 0$; \item the rectangular domain is divided into vertical columns containing cells; \item for each column, the cell's residuals are summed and divided by their count in the column. \end{inparaenum} \sidenotetext{After the net acceleration is computed, naturally.}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_profile_silva.png}
 	\caption{CAPTION}
 	\label{fig:residual_profile_silva}
 \end{figure}
 
-Figure \Cref{fig:residual_profile_silva} indicates that in fact the residual near the top and bottom boundaries is much higher than in the interior of the rectangle, where, however, still stays nonzero.
+\Cref{fig:residual_profile_silva} indicates that, in fact, the residual near the top and bottom boundaries is much higher than in the interior of the rectangle, where it nonetheless remains nonzero.
 Finally, to further confirm that the failure is \emph{not caused by insufficient resolution}, in \Cref{fig:residual_convergence_silva} we plot the total residual for various vertical resolutions $N_z$ given as $N_z = H_{\text{dom}}/\text{dr}$, where $H_{\text{dom}} = \SI{26}{\kilo\meter}$ is the height of the domain and $\text{dr} = \SIlist{260;346;520;1040}{\meter}$ is the \enquote{particle size} analogue introduced to provide a fair comparison with the SPH method, see \Cref{chap:EXPERIMENTS,tab:SIM-PARAMS}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_convergence_silva.png}
 	\caption{CAPTION}
 	\label{fig:residual_convergence_silva}
 \end{figure}
 
-Based on \Cref{fig:residual_convergence_silva}, three observations can be made: \begin{inparaenum} \item the total residual \emph{does not vanish} even for finer meshes \item the total residual is dominated by the boundary residual, which is moreover almost unaffected by the resolution increase \item the interior residual \emph{decreases quadratically} as the resolution increases. \end{inparaenum}
+Based on \Cref{fig:residual_convergence_silva}, three observations can be made: \begin{inparaenum} \item the total residual \emph{does not vanish} even for finer meshes; \item the total residual is dominated by the boundary residual, which is moreover almost unaffected by the resolution increase; \item the interior residual \emph{decreases quadratically} as the resolution increases. \end{inparaenum}
 
+Further investigation of the observed behavior would present an attractive area of research, but will not be pursued here. For the purposes of this thesis, it suffices to note that SILVA, in its current stage of development, cannot preserve exact hydrostatic balance. 
 \end{document}

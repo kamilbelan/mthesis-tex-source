@@ -5,12 +5,77 @@
 \label{chap:EXPERIMENTS}
 This chapter consists of numerical experiments using the methods described in the previous chapters.\sidenote{The numerical experiments showcasing the failure of SILVA to preserve hydrostatic balance are presented in \Cref{sec:SILVA_FAILURE} and not here, the reason being that we wish to present \textcolor{gray}{at least partially} successful results in this chapter.} Namely, we compare the classical SPH method \Cref{sec:CLASSIC-COMPLETE} and the pressure-potential temperature density-free formulation \Cref{sec:DI-pressure-theta} with their perturbation/well-balanced variants \Cref{sec:PERTURBATION-CLASSICAL-SPH} and \Cref{sec:WB-DI-PTH} respectively.
 
-All numerical experiments presented in this work were conducted using the code described in the chapter \Cref{chap:IMPLEMENTATION}. Every simulation in this chapter is fully specified by its parameter files and can be regenerated from the archived code, see \Cref{sec:REPRODUCIBILITY}. The parameters are collected in \Cref{tab:SIM-PARAMS}.
+All numerical experiments presented in this work were conducted using the code described in the chapter \Cref{chap:IMPLEMENTATION}. Every simulation in this chapter is fully specified by its parameter files and can be regenerated from the archived code, see \Cref{sec:REPRODUCIBILITY}. The parameters are collected in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
 
 \begin{table}[htbp]
     \centering
-    \caption{Simulation parameters for the stationary and evolutionary numerical experiments.}
-    \label{tab:SIM-PARAMS}
+    \caption{Physical constants of the reference atmosphere.}
+    \label{tab:PARAMS-PHYSICS}
+    \begin{tblr}{
+        colspec = {lc},
+        row{1} = {guard, font=\bfseries\sffamily},
+    }
+        \toprule
+        Parameter & Value \\
+        \midrule
+        Gravitational acceleration $g$ [\qty{}{\metre\per\second\squared}] & 9.81 \\
+        Specific gas constant, dry air $R$ [\qty{}{\joule\per\kilogram\per\kelvin}] & 287.05 \\
+        Ratio of specific heats $\gamma$ & 1.4 \\
+        Reference temperature $T_{bg}$ [\qty{}{\kelvin}] & 250.0 \\
+        Reference density $\rho_0$ [\qty{}{\kilogram\per\cubic\metre}] & 1.393 \\
+        Brunt--V\"ais\"al\"a frequency $N$ [\qty{}{\per\second}] & 0.14 \\
+        Background horizontal wind $U_0$ [\qty{}{\metre\per\second}] & 20.0 \\
+        \midrule
+        Scale height (derived) $H = R\,T_{bg}/g$ [\qty{}{\metre}] & 7315.2 \\
+        \bottomrule
+    \end{tblr}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Domain and mountain geometry.}
+    \label{tab:PARAMS-GEOM}
+    \begin{tblr}{
+        colspec = {lc},
+        row{1} = {guard, font=\bfseries\sffamily},
+    }
+        \toprule
+        Parameter & Value \\
+        \midrule
+        Domain length $L_x$ [\qty{}{\metre}] & 400000.0 \\
+        Domain height / top boundary $z_t$ [\qty{}{\metre}] & 26000.0 \\
+        Witch of Agnesi half-width $a$ [\qty{}{\metre}] & 10000.0 \\
+        Mountain height $h_m$ [\qty{}{\metre}] & 100.0 \\
+        \bottomrule
+    \end{tblr}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{SPH discretization parameters. Kernel: quintic Wendland (2D), compact support radius $h$.}
+    \label{tab:PARAMS-SPH}
+    \begin{tblr}{
+        colspec = {lc},
+        row{1} = {guard, font=\bfseries\sffamily},
+    }
+        \toprule
+        Parameter & Value \\
+        \midrule
+        Particle spacing $\Delta r$ [\qty{}{\metre}] & 520.0 \\
+        Smoothing length coefficient $\eta$ & 1.8 \\
+        Artificial viscosity $\alpha$ & 0.15 \\
+        Artificial viscosity $\beta$ & 0.3 \\
+        XSPH velocity-smoothing coefficient $\epsilon$ & 0.01 \\
+        \midrule
+        Smoothing length (derived) $h_0 = \eta\,\Delta r$ [\qty{}{\metre}] & 936.0 \\
+        \bottomrule
+    \end{tblr}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Time-integration and damping parameters for the stationary and evolutionary experiments.}
+    \label{tab:PARAMS-NUM}
     \begin{tblr}{
         colspec = {lcc},
         row{1} = {guard, font=\bfseries\sffamily},
@@ -18,19 +83,16 @@ All numerical experiments presented in this work were conducted using the code d
         \toprule
         Parameter & Stationary Case & Evolutionary Case \\
         \midrule
-        Spatial resolution $\Delta r$ [\qty{}{\metre}] & 520.0 & 520.0 \\
         Relative time step $\Delta t_{rel}$ & 0.1 & 0.1 \\
         End time $t_{end}$ [\qty{}{\second}] & 100.0 & 1200.0 \\
-        Initial velocity $v_{initial}$ [\qty{}{\metre\per\second}] & 20.0 & 20.0 \\
-        Mountain height $h_m$ [\qty{}{\metre}] & 100.0 & 100.0 \\
-        Sponge layer height $z_\beta$ [\qty{}{\metre}] & 3000.0 & 3000.0 \\
-        Relative damping $\gamma_{r,rel}$ & 0.2 & 0.0 \\
-        Artificial viscosity $\alpha$ & 0.15 & 0.15 \\
-        Artificial viscosity $\beta$ & 0.3 & 0.3 \\
-        Smoothing length coeff. $\eta$ & 1.8 & 1.8 \\
-        XSPH coefficient $\epsilon$ & 0.01 & 0.01 \\
-        Density floor $\rho_{floor}$ & $10^{-6}$ & $10^{-6}$ \\
-        Pressure floor $P_{floor}$ & $10^{-10}$ & $10^{-10}$ \\
+        Relative Rayleigh damping $\gamma_{r,rel}$ & 0.2 & 0.0 \\
+        Sponge layer thickness $z_\beta$ [\qty{}{\metre}] & 3000.0 & 3000.0 \\
+        \midrule
+        Reference sound speed (for $\Delta t$ only) $c_{ref}=\sqrt{\gamma P_{ref}/\rho_0}$, $P_{ref}=\qty{65}{\kilo\pascal}$ [\qty{}{\metre\per\second}] & 255.6 & 255.6 \\
+        Time step (derived) $\Delta t = \Delta t_{rel}\,h_0/c_{ref}$ [\qty{}{\second}] & 0.366 & 0.366 \\
+        Number of time steps (derived) $t_{end}/\Delta t$ & $\approx 273$ & $\approx 3278$ \\
+        Rayleigh damping rate (derived) $\gamma_r = \gamma_{r,rel}\,N$ [\qty{}{\per\second}] & 0.028 & 0.0 (inactive) \\
+        Damping layer lower bound (derived) $z_t - z_\beta$ [\qty{}{\metre}] & 23000.0 & --- \\
         \bottomrule
     \end{tblr}
 \end{table}
@@ -81,7 +143,7 @@ Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity fi
 \end{figure}
 
 The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
-Notice the velocity field at the top part of the computational domain. During the development of the simulation code, an issue with the top boundary condition has been faced---if the top of the domain was chosen as open, in the very first instants of the simulation the whole system abruptly collapsed. The reason is that with an open lid, the particles near the boundary have \emph{vacancies in their kernel support}---they are influenced by an \emph{artificial vacuum}. This issue is common in SPH and the standard countermeasure is to add layers of \emph{ghost particles} \autocite{zhangBoundaryConditionsWeaklycompressible2025,adamiGeneralizedWallBoundary2012}. The result of introducing ghost particles, however, is the \emph{reflection} at the top boundary, which is clearly visible in the flow field.
+Notice the velocity field at the top part of the computational domain. During the development of the simulation code, an issue with the top boundary condition has been faced---if the top of the domain was chosen as open, in the very first instants of the simulation the whole system abruptly collapsed. The reason is that with an open lid, the particles near the boundary have \emph{vacancies in their kernel support}---they are influenced by an \emph{artificial vacuum}. This issue is common in SPH and the standard practice is to add layers of \emph{ghost particles} \autocite{zhangBoundaryConditionsWeaklycompressible2025,adamiGeneralizedWallBoundary2012}. The result of introducing ghost particles, however, is the \emph{reflection} at the top boundary, which is clearly visible in the flow field.
 
 From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and the well-balanced pressure-potential temperature formulations \emph{preserve the hydrostatic balance exactly.} No spurious velocity field is present.
 
