@@ -75,9 +75,15 @@ As this thesis explores numerical methods suitable for \emph{compressible flows}
 To showcase the failure of SILVA to preserve hydrostatic balance on the discrete level, a \emph{minimal} numerical experiment was conducted. The simulation code is publicly available at the authors \href{https://github.com/kamilbelan/silva-mountain-waves}{Github repository} and is build entirely on the software \autocite{Kincl_LagrangianVoronoi_jl,kinclSemiimplicitLagrangianVoronoi2025}.
 
 The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow and no outflow} is present. \sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
-Since the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} only covers incompressible flows, even though the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} mentions also compressible flows, the simulation was written in inspiration by Kincl's implementation of \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{benchmark and example problems}.
+Since even though the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} mentions also compressible flows, the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} only covers incompressible flows, the simulation was written in inspiration by Kincl's \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{implementation} of benchmark and example problems.
 
 To make direct comparison with SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step and simulation resolution; exact values can be found in \Cref{tab:SIM-PARAMS}.
+
+In figure \Cref{fig:stationary_norms_silva} the maximum velocity magnitude $\abs{\vb{v}}_{\infty}$\sidenote{As expected, \begin{equations}[single,*]
+\abs{\vb{v}}_{\infty} = \max_{i = 1, \dots, N}\abs{\vb{v}_i} \eqend
+\end{equations} $\vb{v}_i$ being the velocity of seed $\vb{x}_i$.} and the root-mean-square velocity magnitude $\abs{\vb{v}}_2$\sidenote{Root-mean-square velocity is given as \begin{equations}[single,*]
+\abs{\vb{v}}_2 = \frac{1}{N} \sum_{i=1}^N \abs{\vb{v}_i}^{2}.
+\end{equations}} are plotted. Since the hydrostatic balance is an \emph{stationary solution} to the Euler system, the velocity field should remain zero. Figure \Cref{fig:stationary_norms_silva} however clearly shows that the \emph{velocity field is not zero} - the hydrostatic balance \emph{is not preserved}.
 
 \begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{stationary_norms_silva.png}
@@ -85,11 +91,15 @@ To make direct comparison with SPH experiments presented in \Cref{chap:EXPERIMEN
 	\label{fig:stationary_norms_silva}
 \end{figure}
 
+To gain further insight into the failure, in \Cref{fig:residual_field_silva} we plot the nonzero residual field $\abs{\grad p/\rho + \vb{g}}$. 
+
 \begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{residual_field_silva.png}
 	\caption{CAPTION}
 	\label{fig:residual_field_silva}
 \end{figure}
+
+From figure \Cref{fig:residual_field_silva} it seems that the residual is highest near the boundary, therefore we furthermore plot the horizontal mean residual in \Cref{fig:residual_profile_silva}. The horizontal mean residual is computed as follows: \begin{inparaenum} \item the residual $\abs{\grad p/ \rho + \vb{g}}$ is computed\sidenotemark for each Voronoi cell at $t = 0$\item the rectangular domain is divided into vertical columns containing cells \item for each column, the cell's residuals are summed and divided by their count in the column. \end{inparaenum} \sidenotetext{After the net acceleration is computed, naturally.}
 
 \begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{residual_profile_silva.png}
@@ -97,10 +107,15 @@ To make direct comparison with SPH experiments presented in \Cref{chap:EXPERIMEN
 	\label{fig:residual_profile_silva}
 \end{figure}
 
+Figure \Cref{fig:residual_profile_silva} indicates that in fact the residual near the top and bottom boundaries is much higher than in the interior of the rectangle, where, however, still stays nonzero.
+Finally, to further confirm that the failure is \emph{not caused by insufficient resolution}, in \Cref{fig:residual_convergence_silva} we plot the total residual for various vertical resolutions $N_z$ given as $N_z = H_{\text{dom}}/\text{dr}$, where $H_{\text{dom}} = \SI{26}{\kilo\meter}$ is the height of the domain and $\text{dr} = \SIlist{260;346;520;1040}{\meter}$ is the \enquote{particle size} analogue introduced to provide a fair comparison with the SPH method, see \Cref{chap:EXPERIMENTS,tab:SIM-PARAMS}.
+
 \begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{residual_convergence_silva.png}
 	\caption{CAPTION}
 	\label{fig:residual_convergence_silva}
 \end{figure}
+
+Based on \Cref{fig:residual_convergence_silva}, three observations can be made: \begin{inparaenum} \item the total residual \emph{does not vanish} even for finer meshes \item the total residual is dominated by the boundary residual, which is moreover almost unaffected by the resolution increase \item the interior residual \emph{decreases quadratically} as the resolution increases. \end{inparaenum}
 
 \end{document}
