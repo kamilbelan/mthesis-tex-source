@@ -91,7 +91,7 @@ In \Cref{fig:stationary_norms_silva}, the maximum velocity magnitude $\abs{\vb{v
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{stationary_norms_silva.png}
-	\caption{Time evolution of the velocity norms $\abs{\vb{v}}_{\infty}$ and $\abs{\vb{v}}_2$ computed by SILVA; the vertical axis is logarithmic. Both norms stay far above machine epsilon, so the hydrostatic balance is \emph{not preserved}.}
+	\caption[Velocity norms for the SILVA stationary test]{Time evolution of the velocity norms $\abs{\vb{v}}_{\infty}$ and $\abs{\vb{v}}_2$ computed by SILVA; the vertical axis is logarithmic. Both norms stay far above machine epsilon, so the hydrostatic balance is \emph{not preserved}.}
 	\label{fig:stationary_norms_silva}
 \end{figure}
 
@@ -101,7 +101,7 @@ To gain further insight into the failure, in \Cref{fig:residual_field_silva} we 
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_field_silva.png}
-	\caption{The residual field $\abs{\grad p/\rho + \vb{g}}$ at $t = 0$, with arrows showing the (upward) net acceleration. The residual is localized in a thin layer at the top boundary.}
+	\caption[SILVA hydrostatic residual field]{The residual field $\abs{\grad p/\rho + \vb{g}}$ at $t = 0$, with arrows showing the (upward) net acceleration. The residual is localized in a thin layer at the top boundary.}
 	\label{fig:residual_field_silva}
 \end{figure}
 
@@ -109,7 +109,7 @@ From \Cref{fig:residual_field_silva} it seems that the residual is highest near 
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_profile_silva.png}
-	\caption{Horizontally averaged residual $\abs{\grad p/\rho + \vb{g}}$ against altitude at $t = 0$; the horizontal axis is logarithmic. The residual peaks at the top and bottom boundaries and stays nonzero in the interior; $g$ is shown for scale.}
+	\caption[SILVA horizontal-mean residual profile]{Horizontally averaged residual $\abs{\grad p/\rho + \vb{g}}$ against altitude at $t = 0$; the horizontal axis is logarithmic. The residual peaks at the top and bottom boundaries and stays nonzero in the interior; $g$ is shown for scale.}
 	\label{fig:residual_profile_silva}
 \end{figure}
 
@@ -119,7 +119,7 @@ Finally, to further confirm that the failure is \emph{not caused by insufficient
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_convergence_silva.png}
-	\caption{Hydrostatic residual against vertical resolution $N_z$ (log--log). The global $L^{\infty}$ residual is dominated by the boundary and hardly improves with refinement, whereas the interior $L^2$ residual decreases at second order ($\propto N_z^{-2}$).}
+	\caption[SILVA residual convergence with resolution]{Hydrostatic residual against vertical resolution $N_z$ (log--log). The global $L^{\infty}$ residual is dominated by the boundary and hardly improves with refinement, whereas the interior $L^2$ residual decreases at second order ($\propto N_z^{-2}$).}
 	\label{fig:residual_convergence_silva}
 \end{figure}
 
