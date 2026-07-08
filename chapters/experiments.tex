@@ -9,7 +9,7 @@ All numerical experiments presented in this work were conducted using the code d
 
 \begin{table}[htbp]
     \centering
-    \caption{Physical constants of the reference atmosphere.}
+    \caption{Physical constants.}
     \label{tab:PARAMS-PHYSICS}
     \begin{tblr}{
         colspec = {lc},
@@ -20,11 +20,11 @@ All numerical experiments presented in this work were conducted using the code d
         \midrule
         Gravitational acceleration $g$ [\qty{}{\metre\per\second\squared}] & 9.81 \\
         Specific gas constant, dry air $R$ [\qty{}{\joule\per\kilogram\per\kelvin}] & 287.05 \\
-        Ratio of specific heats $\gamma$ & 1.4 \\
+        Adiabatic index $\gamma$ & 1.4 \\
         Reference temperature $T_{bg}$ [\qty{}{\kelvin}] & 250.0 \\
         Reference density $\rho_0$ [\qty{}{\kilogram\per\cubic\metre}] & 1.393 \\
         Brunt--V\"ais\"al\"a frequency $N$ [\qty{}{\per\second}] & 0.14 \\
-        Background horizontal wind $U_0$ [\qty{}{\metre\per\second}] & 20.0 \\
+        Initial (background) horizontal wind $U_0$ [\qty{}{\metre\per\second}] & 20.0 \\
         \midrule
         Scale height (derived) $H = R\,T_{bg}/g$ [\qty{}{\metre}] & 7315.2 \\
         \bottomrule
@@ -52,7 +52,7 @@ All numerical experiments presented in this work were conducted using the code d
 
 \begin{table}[htbp]
     \centering
-    \caption{SPH discretization parameters. Kernel: quintic Wendland (2D), compact support radius $h$.}
+    \caption{SPH discretization parameters, parameters of the quintic Wendland (2D).}
     \label{tab:PARAMS-SPH}
     \begin{tblr}{
         colspec = {lc},
@@ -74,7 +74,7 @@ All numerical experiments presented in this work were conducted using the code d
 
 \begin{table}[htbp]
     \centering
-    \caption{Time-integration and damping parameters for the stationary and evolutionary experiments.}
+    \caption{Time-integration and damping parameters.}
     \label{tab:PARAMS-NUM}
     \begin{tblr}{
         colspec = {lcc},
@@ -83,18 +83,20 @@ All numerical experiments presented in this work were conducted using the code d
         \toprule
         Parameter & Stationary Case & Evolutionary Case \\
         \midrule
-        Relative time step $\Delta t_{rel}$ & 0.1 & 0.1 \\
+Relative time step $\Delta t_{\text{rel}}$ & 0.1 & 0.1 \\
         End time $t_{end}$ [\qty{}{\second}] & 100.0 & 1200.0 \\
-        Relative Rayleigh damping $\gamma_{r,rel}$ & 0.2 & 0.0 \\
-        Sponge layer thickness $z_\beta$ [\qty{}{\metre}] & 3000.0 & 3000.0 \\
+	Relative Rayleigh damping $\gamma_{r,\text{rel}}$ & 0.2 & 0.2 \\
+        Damping layer thickness $z_\beta$ [\qty{}{\metre}] & 3000.0 & 3000.0 \\
         \midrule
-        Reference sound speed (for $\Delta t$ only) $c_{ref}=\sqrt{\gamma P_{ref}/\rho_0}$, $P_{ref}=\qty{65}{\kilo\pascal}$ [\qty{}{\metre\per\second}] & 255.6 & 255.6 \\
-        Time step (derived) $\Delta t = \Delta t_{rel}\,h_0/c_{ref}$ [\qty{}{\second}] & 0.366 & 0.366 \\
-        Number of time steps (derived) $t_{end}/\Delta t$ & $\approx 273$ & $\approx 3278$ \\
-        Rayleigh damping rate (derived) $\gamma_r = \gamma_{r,rel}\,N$ [\qty{}{\per\second}] & 0.028 & 0.0 (inactive) \\
-        Damping layer lower bound (derived) $z_t - z_\beta$ [\qty{}{\metre}] & 23000.0 & --- \\
+        Reference sound speed $c_{ref}$ [\qty{}{\metre\per\second}] & 255.6 & 255.6 \\
+        Time step $\Delta t$ [\qty{}{\second}] & 0.366 & 0.366 \\
+        Number of time steps $t_{end}/\Delta t$ & $\approx 273$ & $\approx 3278$ \\
+        Rayleigh damping rate $\gamma_r$ [\qty{}{\per\second}] & 0.028 & 0.0 \\
+        Damping layer lower bound $z_t - z_\beta$ [\qty{}{\metre}] & 23000.0 & --- \\
         \bottomrule
     \end{tblr}
+    \vspace{2pt}
+    {\footnotesize Derived quantities (lower half): $c_{ref} = \sqrt{\gamma P_{ref}/\rho_0}$ with fixed reference pressure $P_{ref} = \qty{65}{\kilo\pascal}$; $\Delta t = \Delta t_{rel}\,h_0/c_{ref}$; $\gamma_r = \gamma_{r,rel}\,N$; the sponge layer occupies $z \in [z_t - z_\beta,\, z_t]$.}
 \end{table}
 
 \section{Preservation of hydrostatic balance (stationary case)}
