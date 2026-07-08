@@ -67,6 +67,40 @@ Here the incompatibility becomes evident. An air parcel (represented by a Vorono
 
 A treatment of compressible flows appears among the method's stated future development directions \autocite[p.~109]{kinclSemiimplicitLagrangianVoronoi2025} and has since been added to the reference code \autocite{Kincl_LagrangianVoronoi_jl} available at \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl}{Github}. Nevertheless, it lies outside the published material examined here.
 
-As this thesis explores numerical methods suitable for \emph{compressible flows}, we make a choice to not purse SILVA any further. Instead, the effort was dedicated to extensions of SPH (\Cref{chap:SPH}), which is more suitable for compressible flows. In \todo{ADD REFERENCE} we shortly demonstrate the expected failure of SILVA to preserve exact hydrostatic balance.
+As this thesis explores numerical methods suitable for \emph{compressible flows}, we make a choice to not purse SILVA any further. Instead, the effort was dedicated to extensions of SPH (\Cref{chap:SPH}), which is more suitable for compressible flows. In the final section \Cref{sec:SILVA_FAILURE} we shortly demonstrate the expected failure of SILVA to preserve exact hydrostatic balance.
+
+\section{Failure to preserve hydrostatic balance}
+\label{sec:SILVA_FAILURE}
+
+To showcase the failure of SILVA to preserve hydrostatic balance on the discrete level, a \emph{minimal} numerical experiment was conducted. The simulation code is publicly available at the authors \href{https://github.com/kamilbelan/silva-mountain-waves}{Github repository} and is build entirely on the software \autocite{Kincl_LagrangianVoronoi_jl,kinclSemiimplicitLagrangianVoronoi2025}.
+
+The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow and no outflow} is present. \sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
+Since the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} only covers incompressible flows, even though the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} mentions also compressible flows, the simulation was written in inspiration by Kincl's implementation of \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{benchmark and example problems}.
+
+To make direct comparison with SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step and simulation resolution; exact values can be found in \Cref{tab:SIM-PARAMS}.
+
+\begin{figure}[htbp]
+	\includegraphics[width=\linewidth]{stationary_norms_silva.png}
+	\caption{CAPTION}
+	\label{fig:stationary_norms_silva}
+\end{figure}
+
+\begin{figure}[htbp]
+	\includegraphics[width=\linewidth]{residual_field_silva.png}
+	\caption{CAPTION}
+	\label{fig:residual_field_silva}
+\end{figure}
+
+\begin{figure}[htbp]
+	\includegraphics[width=\linewidth]{residual_profile_silva.png}
+	\caption{CAPTION}
+	\label{fig:residual_profile_silva}
+\end{figure}
+
+\begin{figure}[htbp]
+	\includegraphics[width=\linewidth]{residual_convergence_silva.png}
+	\caption{CAPTION}
+	\label{fig:residual_convergence_silva}
+\end{figure}
 
 \end{document}
