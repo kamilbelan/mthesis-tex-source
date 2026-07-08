@@ -66,21 +66,21 @@
 \contentsline {section}{\numberline {4.3}Discrete scheme and time integration}{76}{section*.75}%
 \contentsline {section}{\numberline {4.4}Incompressibility limitation}{76}{section*.76}%
 \contentsline {section}{\numberline {4.5}Failure to preserve hydrostatic balance}{77}{section*.77}%
-\contentsline {chapter}{\numberline {5}Implementation details of SPH}{80}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Solution procedure}{81}{section*.82}%
-\contentsline {subsection}{Initialization}{81}{subsection*.83}%
-\contentsline {subsection}{Verlet time stepping}{81}{subsection*.84}%
-\contentsline {subsection}{Adaptive smoothing length}{83}{subsection*.86}%
-\contentsline {section}{\numberline {5.2}Boundary conditions}{84}{section*.88}%
-\contentsline {subsection}{Extrapolation boundary conditions}{84}{subsection*.89}%
-\contentsline {subsection}{Radiation boundary condition}{87}{subsection*.92}%
-\contentsline {section}{\numberline {5.3}Reproducibility}{87}{section*.93}%
-\contentsline {chapter}{\numberline {6}Numerical experiments}{88}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{89}{section*.95}%
-\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{92}{section*.99}%
-\contentsline {section}{\numberline {6.3}Tensile instability}{94}{section*.102}%
-\contentsline {chapter}{Conclusion}{98}{chapter*.105}%
-\contentsline {chapter}{References}{99}{chapter*.106}%
-\contentsline {subsection}{Other}{101}{subsection*.107}%
-\contentsline {subsection}{Other}{108}{subsection*.108}%
+\contentsline {chapter}{\numberline {5}Implementation details of SPH}{81}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Solution procedure}{82}{section*.82}%
+\contentsline {subsection}{Initialization}{82}{subsection*.83}%
+\contentsline {subsection}{Verlet time stepping}{82}{subsection*.84}%
+\contentsline {subsection}{Adaptive smoothing length}{84}{subsection*.86}%
+\contentsline {section}{\numberline {5.2}Boundary conditions}{85}{section*.88}%
+\contentsline {subsection}{Extrapolation boundary conditions}{85}{subsection*.89}%
+\contentsline {subsection}{Radiation boundary condition}{88}{subsection*.92}%
+\contentsline {section}{\numberline {5.3}Reproducibility}{88}{section*.93}%
+\contentsline {chapter}{\numberline {6}Numerical experiments}{89}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{90}{section*.95}%
+\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{93}{section*.99}%
+\contentsline {section}{\numberline {6.3}Tensile instability}{95}{section*.102}%
+\contentsline {chapter}{Conclusion}{99}{chapter*.105}%
+\contentsline {chapter}{References}{100}{chapter*.106}%
+\contentsline {subsection}{Other}{102}{subsection*.107}%
+\contentsline {subsection}{Other}{109}{subsection*.108}%
 \contentsfinish 
