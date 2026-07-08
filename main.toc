@@ -36,7 +36,7 @@
 \contentsline {subsubsection}{Gradient of a scalar field}{37}{subsubsection*.46}%
 \contentsline {subsubsection}{Divergence of a vector field}{38}{subsubsection*.47}%
 \contentsline {section}{\numberline {3.3}Classical SPH}{38}{section*.48}%
-\contentsline {subsection}{Improved discretisation}{38}{subsection*.49}%
+\contentsline {subsection}{Improved operator discretisation}{38}{subsection*.49}%
 \contentsline {subsection}{Discrete balance of mass}{40}{subsection*.50}%
 \contentsline {subsection}{Discrete balance of linear momentum}{41}{subsection*.51}%
 \contentsline {subsection}{Complete system}{42}{subsection*.52}%
@@ -45,37 +45,41 @@
 \contentsline {subsection}{SPH discretisation}{46}{subsection*.55}%
 \contentsline {subsubsection}{SPH bracket}{46}{subsubsection*.56}%
 \contentsline {subsubsection}{SPH energy functional}{48}{subsubsection*.57}%
-\contentsline {subsection}{Classical SPH as a Hamiltonian system}{48}{subsection*.58}%
-\contentsline {subsection}{Symplectic integrators}{51}{subsection*.59}%
-\contentsline {section}{\numberline {3.5}Density-independent formulations}{52}{section*.60}%
-\contentsline {subsection}{A general class of Lagrangian SPH methods}{53}{subsection*.61}%
-\contentsline {paragraph}{Specialisation to two dimensions and the Wendland quintic kernel.}{57}{paragraph*.62}%
-\contentsline {subsection}{Kernel-sum volume estimators}{58}{subsection*.63}%
-\contentsline {subsection}{Density-entropy}{60}{subsection*.64}%
+\contentsline {subsection}{Classical SPH as a Hamiltonian system}{49}{subsection*.58}%
+\contentsline {subsection}{Symplectic integrators}{52}{subsection*.59}%
+\contentsline {section}{\numberline {3.5}Density-independent formulations}{53}{section*.60}%
+\contentsline {subsection}{A general class of Lagrangian SPH methods}{54}{subsection*.61}%
+\contentsline {paragraph}{Specialisation to two dimensions and the Wendland quintic kernel.}{58}{paragraph*.62}%
+\contentsline {subsection}{Kernel-sum volume estimators}{59}{subsection*.63}%
+\contentsline {subsection}{Density-entropy}{61}{subsection*.64}%
 \contentsline {subsection}{Pressure-entropy}{62}{subsection*.65}%
 \contentsline {subsection}{Pressure-potential temperature}{63}{subsection*.66}%
 \contentsline {subsection}{Exner-potential temperature}{65}{subsection*.67}%
-\contentsline {section}{\numberline {3.6}Well-balanced SPH}{66}{section*.68}%
+\contentsline {section}{\numberline {3.6}Well-balanced SPH}{67}{section*.68}%
 \contentsline {subsection}{Failure of hydrostatic balance}{67}{subsection*.69}%
 \contentsline {subsection}{Perturbation formulation of the classical SPH}{68}{subsection*.70}%
-\contentsline {subsection}{Well-balanced pressure-entropy formulation}{69}{subsection*.71}%
-\contentsline {subsection}{Well-balanced pressure-potential temperature formulation}{71}{subsection*.72}%
-\contentsline {chapter}{\numberline {4}The SILVA method}{73}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Implementation details of SPH}{74}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Solution procedure}{75}{section*.73}%
-\contentsline {subsection}{Initialization}{75}{subsection*.74}%
-\contentsline {subsection}{Verlet time stepping}{75}{subsection*.75}%
-\contentsline {subsection}{Adaptive smoothing length}{77}{subsection*.77}%
-\contentsline {section}{\numberline {5.2}Boundary conditions}{78}{section*.79}%
-\contentsline {subsection}{Extrapolation boundary conditions}{78}{subsection*.80}%
-\contentsline {subsection}{Radiation boundary condition}{81}{subsection*.83}%
-\contentsline {section}{\numberline {5.3}Reproducibility}{81}{section*.84}%
-\contentsline {chapter}{\numberline {6}Numerical experiments}{82}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{82}{section*.86}%
-\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{87}{section*.90}%
-\contentsline {section}{\numberline {6.3}Tensile instability}{89}{section*.93}%
-\contentsline {chapter}{Conclusion}{93}{chapter*.96}%
-\contentsline {chapter}{References}{94}{chapter*.97}%
-\contentsline {subsection}{Other}{96}{subsection*.98}%
-\contentsline {subsection}{Other}{102}{subsection*.99}%
+\contentsline {subsection}{Well-balanced pressure-entropy formulation}{70}{subsection*.71}%
+\contentsline {subsection}{Well-balanced pressure-potential temperature formulation}{72}{subsection*.72}%
+\contentsline {chapter}{\numberline {4}The SILVA method}{74}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Governing equations}{74}{section*.73}%
+\contentsline {section}{\numberline {4.2}Moving Voronoi discretisation}{75}{section*.74}%
+\contentsline {section}{\numberline {4.3}Discrete scheme and time integration}{76}{section*.75}%
+\contentsline {section}{\numberline {4.4}Incompressibility limitation}{76}{section*.76}%
+\contentsline {chapter}{\numberline {5}Implementation details of SPH}{78}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Solution procedure}{79}{section*.77}%
+\contentsline {subsection}{Initialization}{79}{subsection*.78}%
+\contentsline {subsection}{Verlet time stepping}{79}{subsection*.79}%
+\contentsline {subsection}{Adaptive smoothing length}{81}{subsection*.81}%
+\contentsline {section}{\numberline {5.2}Boundary conditions}{82}{section*.83}%
+\contentsline {subsection}{Extrapolation boundary conditions}{82}{subsection*.84}%
+\contentsline {subsection}{Radiation boundary condition}{85}{subsection*.87}%
+\contentsline {section}{\numberline {5.3}Reproducibility}{85}{section*.88}%
+\contentsline {chapter}{\numberline {6}Numerical experiments}{86}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Preservation of hydrostatic balance (stationary case)}{86}{section*.90}%
+\contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{91}{section*.94}%
+\contentsline {section}{\numberline {6.3}Tensile instability}{93}{section*.97}%
+\contentsline {chapter}{Conclusion}{97}{chapter*.100}%
+\contentsline {chapter}{References}{98}{chapter*.101}%
+\contentsline {subsection}{Other}{100}{subsection*.102}%
+\contentsline {subsection}{Other}{107}{subsection*.103}%
 \contentsfinish 

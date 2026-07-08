@@ -168,9 +168,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-titleref.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-base.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref-clever/zref-clever.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-user.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/oberdiek/ifdraft.sty
 INPUT ./preamble/misc/macros.tex
 INPUT ./preamble/misc/packages-macros.tex
@@ -657,7 +657,6 @@ INPUT ./chapters/sph.tex
 INPUT ./figures/sph/kernel.png
 INPUT ./figures/sph/kernel.png
 INPUT ./figures/sph/kernel.png
-INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./chapters/silva.tex
 INPUT ./chapters/silva.tex
 INPUT ./chapters/implementation.tex
@@ -683,6 +682,7 @@ INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-
 INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-italic.luc
 INPUT ./chapters/experiments.tex
 INPUT ./chapters/experiments.tex
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./figures/experiments/stationary_norms_SPH.png
 INPUT ./figures/experiments/stationary_norms_SPH.png
 INPUT ./figures/experiments/stationary_norms_SPH.png
