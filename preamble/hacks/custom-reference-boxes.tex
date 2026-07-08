@@ -40,27 +40,72 @@
 \RenewDocumentCommand{\href}{O{} m m}{\hrefold{#2}{\hrefbox[#1]{#3}}}        % remote links (DOI, arXiv, etc.)
 \RenewDocumentCommand{\url}{O{} m}{\href[#1]{#2}{\nolinkurl{#2}}}            % URLs (using the new \href command)
 
-%% Clever reference with reference type name and page number in a superscript, all wrapped in a box
-%% TODO: maybe automatically omit the page number if the reference is on the same page?
+%% Clever reference with reference type name and page number in a superscript, all wrapped in a box.
+%% The page superscript is shown *only* when the target is not on the same page as the reference
+%% itself. Same-page detection compares absolute page numbers via zref (needs `zref-abspage`,
+%% loaded in `preamble/general/hyperref.tex`); it converges after the usual extra compile, exactly
+%% like varioref. Do not use \Cref/\Nref in moving arguments (titles, captions going to lists) --
+%% use the starred \Cref*/\Nref* there, which skip the page logic entirely.
 %% TODO: maybe (optionally) append name of theorem/remark/...?
+\ExplSyntaxOn
+\int_new:N \g__belan_pageref_int
+\bool_new:N \l__belan_pageref_hide_bool
+%% Drop a page label at the citation point, then decide whether *every* referenced target sits on
+%% that same page (in which case \belanPagerefEmit later omits the page superscript).
+\cs_new_protected:Npn \__belan_pageref_setup:n #1
+  {
+    \int_gincr:N \g__belan_pageref_int
+    \use:c { zref@labelbyprops }
+      { belanCrefPg \int_use:N \g__belan_pageref_int } { abspage }
+    \tl_set:Ne \l_tmpa_tl
+      {
+        \use:c { zref@extractdefault }
+          { belanCrefPg \int_use:N \g__belan_pageref_int } { abspage } { -1 }
+      }
+    \int_compare:nNnTF { \l_tmpa_tl } < { 0 }
+      { \bool_set_false:N \l__belan_pageref_hide_bool } % citation page not known yet -> show
+      {
+        \bool_set_true:N \l__belan_pageref_hide_bool
+        \clist_map_inline:nn {#1}
+          {
+            \int_compare:nNnF
+              { \use:c { zref@extractdefault } {##1} { abspage } { -2 } }
+              = { \l_tmpa_tl }
+              { \bool_set_false:N \l__belan_pageref_hide_bool } % a target is elsewhere -> show
+          }
+      }
+  }
+\NewDocumentCommand \belanPagerefSetup { m } { \__belan_pageref_setup:n {#1} }
+\NewDocumentCommand \belanPagerefEmit { m }
+  {
+    \bool_if:NF \l__belan_pageref_hide_bool
+      { \textsuperscript { \ttfamily \tiny \( \, \to \, \) p.\zcpageref* [ noname ] {#1} } }
+  }
+%% \hyperref[<list>] would build a dead anchor for multi-label references; expose the first label of
+%% the list (\belanfirstlabel) so the whole box can link to a valid target.
+\cs_new_protected:Npn \__belan_set_firstlabel:n #1
+  { \cs_set:Npe \belanfirstlabel { \clist_item:nn {#1} {1} } }
+\NewDocumentCommand \belanSetFirstLabel { m } { \__belan_set_firstlabel:n {#1} }
+\ExplSyntaxOff
+
 \DeclareDocumentCommand{\Cref}{s m}{%
-    \hyperref[#2]{%                                        link around the whole reference box
+    \belanSetFirstLabel{#2}%                              first label of the list (anchor for the box link)
+    \IfBooleanF{#1}{\belanPagerefSetup{#2}}%              set citation page label + decide (outside the box)
+    \hyperref[\belanfirstlabel]{%                         link around the whole reference box
         \refbox[right={\IfBooleanTF{#1}{0.15em}{0.1em}}]{% box around the reference (tweak right padding)
             \zcref*[noref]{#2}~\zcref*[noname]{#2}%        reference type name and label (number)
-            \IfBooleanF{#1}{%                              if not starred, add page number to the superscript
-                \textsuperscript{\ttfamily\tiny\(\,\to\,\)p.\zpageref{#2}}%
-            }%
+            \IfBooleanF{#1}{\belanPagerefEmit{#2}}%        page superscript, omitted if on the same page
         }%
     }%
 }
 %% Like \Cref, but use reference title
 \DeclareDocumentCommand{\Nref}{s m}{%
-    \hyperref[#2]{%                                        link around the whole reference box
+    \belanSetFirstLabel{#2}%                              first label of the list (anchor for the box link)
+    \IfBooleanF{#1}{\belanPagerefSetup{#2}}%              set citation page label + decide (outside the box)
+    \hyperref[\belanfirstlabel]{%                         link around the whole reference box
         \refbox[right={\IfBooleanTF{#1}{0.15em}{0.1em}}]{% box around the reference (tweak right padding)
             \ztitleref{#2}%                                reference title
-            \IfBooleanF{#1}{%                              if not starred, add page number to the superscript
-                \textsuperscript{\ttfamily\tiny\(\,\to\,\)p.\zpageref{#2}}%
-            }%
+            \IfBooleanF{#1}{\belanPagerefEmit{#2}}%        page superscript, omitted if on the same page
         }%
     }%
 }

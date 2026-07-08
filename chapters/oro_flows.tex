@@ -78,7 +78,7 @@ Recall the fundamental balance laws governing fluid flows
 	\end{equations}
 \end{description}
 
-In \Cref*{eq:MASS-BALANCE,eq:MOMENTUM-BALANCE} $\vb{v}$ is the velocity field, $\rho$ is the \textcolor{gray}{mass} density, $\cstress$ is the Cauchy stress tensor, and $\vb{b}$ is the \textcolor{gray}{specific} density of the body forces. The dot operator stands for the material (convective) time derivative, that is 
+In \Cref{eq:MASS-BALANCE,eq:MOMENTUM-BALANCE} $\vb{v}$ is the velocity field, $\rho$ is the \textcolor{gray}{mass} density, $\cstress$ is the Cauchy stress tensor, and $\vb{b}$ is the \textcolor{gray}{specific} density of the body forces. The dot operator stands for the material (convective) time derivative, that is 
 
 \begin{equations}[single,*]
 	\tdot{\varphi} = \begin{cases} \partial_t \varphi & \text{in the Lagrangian frame,} \\ \partial_t \varphi + \vb{v} \cdot \grad \varphi & \text{in the Eulerian frame.} \end{cases}
@@ -100,7 +100,7 @@ While it is standard to neglect bulk and shear viscosity, \ie the \emph{molecula
 
 Finally, let us address the body forces $\vb{b}.$ In middle atmosphere dynamics, there are two main contributions: \begin{inparaenum} \item Earth's gravity $\vb{g}$ \item Coriolis force \end{inparaenum}In our work, we \emph{neglect} the Coriolis force, and thus only assume gravity; a discussion on the effects of the Coriolis force on internal gravity waves can be found in\autocite[p.~206]{sutherlandInternalGravityWaves2010}.
 
-With the form of the Cauchy stress tensor \Cref*{eq:CAUCHY} and the simplified assumption of present body forces the balance of momentum \Cref{eq:MOMENTUM-BALANCE} hence reads as
+With the form of the Cauchy stress tensor \Cref{eq:CAUCHY} and the simplified assumption of present body forces the balance of momentum \Cref{eq:MOMENTUM-BALANCE} hence reads as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:MOMENTUM_EQ}
@@ -216,7 +216,7 @@ Let us summarize the governing equations, describing \emph{solely} the flow of i
 p(\rho, T) &= R \rho T.
 \end{equations}
 
-Let us look for \emph{stationary solutions of} the system \Cref*{eq:GOVERNING-SYSTEM} when the \emph{velocity field is trivial} $\vb{v} = \vb{0}$, \ie for a static atmosphere. Choosing an inertial frame of reference $\left(\vb{e}_x, \vb{e}_z\right)$ such that $\vb{g} = - g \vb{e}_z$ the equations read as
+Let us look for \emph{stationary solutions of} the system \Cref{eq:GOVERNING-SYSTEM} when the \emph{velocity field is trivial} $\vb{v} = \vb{0}$, \ie for a static atmosphere. Choosing an inertial frame of reference $\left(\vb{e}_x, \vb{e}_z\right)$ such that $\vb{g} = - g \vb{e}_z$ the equations read as
 
 \begin{equations}[columns,*]
 	\tdot{\rho} = \partial_t \rho + \vb{v} \cdot \grad \rho = \partial_t \rho = 0, \\
@@ -256,7 +256,7 @@ T &= \, \text{const},\\
 \vb{v} &= \vb{0}.
 \end{equations}
 
-where $p_0 = R T \rho_0, H_s = \frac{RT}{g} = \frac{\rho}{\abs{\partial_{z}\rho}}$ is the scale height of an isothermal atmosphere. This static solution \Cref*{eq:HYDROSTATIC} of the Euler system \Cref{eq:GOVERNING-SYSTEM} is known as the \emph{isothermal hydrostatic balance}. In our numerical simulations, the isothermal hydrostatic balance will serve as an initial state. Note that the solution has been obtained for an \emph{isothermal} atmosphere, which of course is a considerable simplification---our Earth's atmosphere is \emph{not isothermal.} Nonetheless, simulations commonly initialize from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
+where $p_0 = R T \rho_0, H_s = \frac{RT}{g} = \frac{\rho}{\abs{\partial_{z}\rho}}$ is the scale height of an isothermal atmosphere. This static solution \Cref{eq:HYDROSTATIC} of the Euler system \Cref{eq:GOVERNING-SYSTEM} is known as the \emph{isothermal hydrostatic balance}. In our numerical simulations, the isothermal hydrostatic balance will serve as an initial state. Note that the solution has been obtained for an \emph{isothermal} atmosphere, which of course is a considerable simplification---our Earth's atmosphere is \emph{not isothermal.} Nonetheless, simulations commonly initialize from the isothermal hydrostatic assumption, take it as a \emph{background} atmospheric state, and treat deviations from it as \emph{perturbations.}
 
 \subsection{Boussinesq approximation}
 \label{sec:BOUSSINESQ}
@@ -453,7 +453,7 @@ is positive and independent of altitude. Thus, it is reasonable to define
 N^{2} = \frac{g}{\theta}\partial_{z}\theta,
 \end{equations}
 
-as the \emph{Brunt–Väisälä} frequency. The meaning of this quantity will be made clearer in \Cref{sec:TAYLOR-GOLDSTEIN}. Notice finally that due to \Cref{eq:POT-TEMP-BOUSSINESQ}, under the Boussinesq approximation the Brunt–Väisälä frequency \Cref*{eq:BRUINT} reads as
+as the \emph{Brunt–Väisälä} frequency. The meaning of this quantity will be made clearer in \Cref{sec:TAYLOR-GOLDSTEIN}. Notice finally that due to \Cref{eq:POT-TEMP-BOUSSINESQ}, under the Boussinesq approximation the Brunt–Väisälä frequency \Cref{eq:BRUINT} reads as
 
 \begin{equations}[single,!,numberline=all]
 \label{eq:BV-BOUSSINESQ}
@@ -649,7 +649,7 @@ Moreover, real life observed mountain waves are \emph{stationary} relative to th
 \hat{w}'' + \left(\frac{N^{2}}{u_0^{2}} - k^{2}\right)\hat{w} = 0.
 \end{equations}
 
-Since $N^{2}, u_0^{2}$ are constants, \Cref*{eq:T-G-surrogation} is the equation of a \emph{linear harmonic oscillator} with the vertical wavenumber\sidenote{In the case of the harmonic oscillator, the variable is usually time, so the \enquote{periodicity coefficient} is the angular frequency $\omega$. Since our variable is the coordinate $z$, we prefer to call the coefficient vertical wavenumber.}
+Since $N^{2}, u_0^{2}$ are constants, \Cref{eq:T-G-surrogation} is the equation of a \emph{linear harmonic oscillator} with the vertical wavenumber\sidenote{In the case of the harmonic oscillator, the variable is usually time, so the \enquote{periodicity coefficient} is the angular frequency $\omega$. Since our variable is the coordinate $z$, we prefer to call the coefficient vertical wavenumber.}
 
 \begin{equations}[single,*]
 m^{2} = \frac{N^{2}}{u_0^{2}} - k^{2}.

@@ -396,7 +396,7 @@ The continuum analogue to the canonical Poisson bracket of point-particle Hamilt
 \pbr[L]{F}{G} \coloneq \bigint_{\Omega_0}\left(\fdv{F}{x^i\left(\vb{X}\right)} \fdv{G}{M_i\left(\vb{X}\right)} - \fdv{F}{M_i(\vb{X})}\fdv{G}{x^i\left(\vb{X}\right)}\right)\dd{\vb{X}}.
 \end{equations}
 
-The derivatives appearing in \Cref*{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}. Following a standard convention in continuum mechanics on manifolds, position components are written with upper indices, and momentum components with lower indices.
+The derivatives appearing in \Cref{eq:LAGR-BRACKET} are functional derivatives, \ie distributions representing the Fréchet differential. For a concise introduction, see \eg the appendix of \autocite{pavelkaMultiscaleThermoDynamicsIntroduction2018}. Following a standard convention in continuum mechanics on manifolds, position components are written with upper indices, and momentum components with lower indices.
 
 In what follows, for brevity of notation we will omit the explicit dependence of $\vb{x}\left(t, \vb{X}\right), \vb{M}\left(t, \vb{X}\right)$ on $\left(t, \vb{X}\right)$ and simply write $\vb{x}, \vb{M}$. One can check that the mapping $\left(F, G\right) \mapsto \pbr[L]{F}{G}$ is a Poisson bracket: a skew-symmetric bilinear form that satisfies the Jacobi identity and Leibniz rule.\sidenote{A bilinear form is skew symmetric provided
 	\begin{equations}[single,*]
@@ -443,7 +443,7 @@ since $F$ was arbitrary, by the fundamental lemma of the calculus of variations,
 \partial_t M_i\left(t, \vb{X}\right) &= -\fdv{\totenL}{x^i\left(t, \vb{X}\right)}.
 \end{equations}
 
-Equations \Cref*{eq:HAMILTON} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
+Equations \Cref{eq:HAMILTON} are the Hamilton \emph{canonical} equations of continuum mechanics. The right-hand sides of the equations require knowledge of the total energy of the continuum expressed using the Lagrangian state variables.
 
 In general, energy has a contribution from the kinetic energy $\abs{\vb{M}}^{2}/2\rho_0$, $\rho_0$ being the reference density, and the \emph{volumetric density} of the internal energy $e$. The fundamental thermodynamic relation $e = e\left(\rho, \eta\right)$, $\eta$ being the entropy density per Eulerian volume is naturally expressed in terms of \emph{Eulerian} volume densities $\rho$ and $\eta$. To incorporate it into the \emph{Lagrangian} energy functional, we pull-back to the Lagrangian frame using the Jacobian $J\left(\vb{X}\right) = \det_{\vb{X}} \grad \pmb{\chi}\left(\vb{X}\right)$
 
@@ -484,14 +484,14 @@ Naturally, the SPH positions and momenta $\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}
 \subsubsection{SPH bracket}
 \label{sec:SPH-bracket}
 
-Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref*{eq:SPH-position,eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics---hence we are allowed to substitute them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads
+Let $F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right), G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)$ be two arbitrary Fréchet differentiable functionals of the SPH state variables. From the definition of the SPH state variables \Cref{eq:SPH-position,eq:SPH-momentum} it follows that $F, G$ in fact also depend on the state variables of the continuum mechanics---hence we are allowed to substitute them into the Lagrangian Poisson bracket \Cref{eq:LAGR-BRACKET}. The calculation reads
 
 \begin{equations}[lines,!,numberline=m]
 	\label{eq:TERM}
 	\pbr[L]{F}{G} = \bigint_{\Omega_0}\left(\fdv{F}{x^i}\fdv{G}{M_i} - \fdv{F}{M_i} \fdv{G}{x^i}\right)\dd{\vb{X}} = \\ = \sum_{\alpha,\beta}\bigint_{\Omega_0}\left(\left(\pdv{F}{x_{\alpha}^j} \fdv{x^j_{\alpha}}{x^i} + \pdv{F}{M_{\beta,j}}\fdv{M_{\beta,j}}{x^i}\right)\left(\pdv{G}{M_{\beta,j}}\fdv{M_{\beta,j}}{M_i} + \pdv{G}{x^j_{\alpha}}\fdv{x^j_{\alpha}}{M_i}\right)\right)\dd{\vb{X}} + \\ - \sum_{\alpha,\beta} \bigint_{\Omega_0}\left(\left(\pdv{F}{M_{\beta,j}} \fdv{M_{\beta,j}}{M_i} + \pdv{F}{x_{\alpha}^j} \fdv{x_{\alpha}^j}{M_i}\right)\left(\pdv{G}{x^j_{\alpha}} \fdv{x_{\alpha}^j}{x^i} + \pdv{G}{M_{\beta,j}} \fdv{M_{\beta, j}}{x_i}\right)\right)\dd{\vb{X}}.
 \end{equations}
 
-Our goal is to simplify \Cref*{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$. From the definition \Cref{eq:SPH-momentum}, we obtain for any $\varphi \in \Ccinf{\Omega_0}$
+Our goal is to simplify \Cref{eq:TERM} and obtain an expression depending only on the SPH state variables $\vb{x}_{\alpha}, \vb{M}_{\alpha}$. The procedure requires the evaluation of the functional derivatives of $x^j_{\alpha}, M_{\beta,j}$ w.r.t $M_i, x^i$. From the definition \Cref{eq:SPH-momentum}, we obtain for any $\varphi \in \Ccinf{\Omega_0}$
 
 \begin{equations}[columns,*]
 	\left\langle \fdv{x^j_{\alpha}}{x^i\left(\vb{X}\right)}, \varphi \right\rangle	&= \bigint_{\Omega_0} \fdv{x_{\alpha}^j}{x^i} \varphi \dd{\vb{X}} = \eval{\dv{s}x^j_{\alpha}(x^i + s \varphi)}_{s=0} =\\ 
@@ -510,7 +510,7 @@ In the same manner, we obtain
 \fdv{M_{\beta,j}}{M_{i}} = \delta^{j}_i \chi_{\beta} V_{\beta},
 \end{equations}
 
-and the cross terms $\fdv{x^j_{\alpha}}{M_i}, \fdv{M_{\beta,j}}{x^i}$ are zero, as the definition of the SPH position \Cref{eq:SPH-position} and the SPH momentum \Cref{eq:SPH-momentum} include only the continuous position $\vb{x}$ and the continuous momentum $\vb{M}$ respectively. Using these results and normalisation of the characteristic functions, the expression \Cref*{eq:TERM} can be rewritten to obtain
+and the cross terms $\fdv{x^j_{\alpha}}{M_i}, \fdv{M_{\beta,j}}{x^i}$ are zero, as the definition of the SPH position \Cref{eq:SPH-position} and the SPH momentum \Cref{eq:SPH-momentum} include only the continuous position $\vb{x}$ and the continuous momentum $\vb{M}$ respectively. Using these results and normalisation of the characteristic functions, the expression \Cref{eq:TERM} can be rewritten to obtain
 
 \begin{equations}[single,*]
 	\pbr[L]{F\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)}{G\left(\vb{x}_{\alpha}, \vb{M}_{\alpha}\right)} = \sum_{\alpha}\left(\pdv{F}{x^{i}_{\alpha}}\pdv{G}{M_{\alpha,i}} - \pdv{F}{M_{\alpha,i}}\pdv{G}{x^i_{\alpha}}\right).
@@ -769,7 +769,7 @@ and with respect to $h_{\alpha}$ the derivative is
 \pdv{e_{\alpha}}{h_{\alpha}} = - \frac{p_{\alpha}}{m_{\alpha}} \pdv{V_{\alpha}}{h_{\alpha}}.
 \end{equations}
 
-with $V_{\alpha}$ being \emph{some} particle volume estimator. Notice that $V_{\alpha}$ and $\tilde{V}_{\alpha}$ can generally be different from \autocite{hopkinsGeneralClassLagrangian2013a}; $V_{\alpha}$ enters the thermodynamics through \Cref*{eq:E-X-DERIVATIVE, eq:E-H-DERIVATIVE}, while $\tilde{V}_{\alpha}$ enters the constraint \Cref{eq:CONSTRAINT}. The impacts of choice $V_{\alpha} = \tilde{V}_{\alpha}$ are further discussed in \eg \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}.
+with $V_{\alpha}$ being \emph{some} particle volume estimator. Notice that $V_{\alpha}$ and $\tilde{V}_{\alpha}$ can generally be different from \autocite{hopkinsGeneralClassLagrangian2013a}; $V_{\alpha}$ enters the thermodynamics through \Cref{eq:E-X-DERIVATIVE, eq:E-H-DERIVATIVE}, while $\tilde{V}_{\alpha}$ enters the constraint \Cref{eq:CONSTRAINT}. The impacts of choice $V_{\alpha} = \tilde{V}_{\alpha}$ are further discussed in \eg \autocite[p.~3]{hopkinsGeneralClassLagrangian2013a}.
 
 First, we solve for the Lagrange multipliers $\lambda_{\alpha}$. Since the Lagrangian \Cref{eq:SPH-LAGRANGIAN} does not depend on $\tdot{h_{\alpha}}$, the second set of the Lagrange equations \Cref{eq:LAGRANGE-EQUATIONS} reads as follows
 
@@ -1190,7 +1190,7 @@ A direct computation using \Cref{eq:POTENTIAL-DENSITY} gives
 \Pi_{\alpha} = \left(\frac{R\, \hat{\rho}_{\alpha}}{p_{\text{ref}}}\right)^{\gamma-1}.
 \end{equations}
 
-By rewriting the momentum equation in terms of this Exner function \Cref*{eq:EXNER}, the terms containing $\hat{\rho}_{\alpha}$ are replaced, and the constants simplify further. Substituting $\hat{\rho}_{\alpha} = (p_{\text{ref}}/R) \Pi_{\alpha}^{1/(\gamma-1)}$ into the momentum equation \Cref{eq:PRESSURE-THETA-MOMENTUM} yields the final \emph{Exner-potential temperature} formulation:
+By rewriting the momentum equation in terms of this Exner function \Cref{eq:EXNER}, the terms containing $\hat{\rho}_{\alpha}$ are replaced, and the constants simplify further. Substituting $\hat{\rho}_{\alpha} = (p_{\text{ref}}/R) \Pi_{\alpha}^{1/(\gamma-1)}$ into the momentum equation \Cref{eq:PRESSURE-THETA-MOMENTUM} yields the final \emph{Exner-potential temperature} formulation:
 
 \begin{equations}[columns,!,numberline=m]
 \label{eq:EXNER-THETA}
