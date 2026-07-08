@@ -17,12 +17,12 @@
 \contentsline {subsection}{Buoyancy oscillations}{14}{subsection*.23}%
 \contentsline {subsection}{The Taylor-Goldstein equation}{15}{subsection*.25}%
 \contentsline {subsection}{Flow over a periodic corrugation}{18}{subsection*.26}%
-\contentsline {chapter}{\numberline {2}Mathematical modelling of orographic flows}{23}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Mathematical modeling of orographic flows}{23}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Initial and boundary conditions}{23}{section*.28}%
 \contentsline {subsection}{Boundary conditions for the Euler system}{25}{subsection*.30}%
 \contentsline {subsection}{Radiation boundary condition}{27}{subsection*.31}%
 \contentsline {subsection}{Terrain-following coordinates}{28}{subsection*.32}%
-\contentsline {section}{\numberline {2.2}Well-balanced methods}{30}{section*.34}%
+\contentsline {section}{\numberline {2.2}Well-balanced methods}{29}{section*.34}%
 \contentsline {subsection}{Preservation of the hydrostatic balance}{30}{subsection*.35}%
 \contentsline {subsection}{Implications for wave simulations}{31}{subsection*.36}%
 \contentsline {subsection}{Well-balanced schemes}{31}{subsection*.37}%
