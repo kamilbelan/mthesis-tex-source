@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{parskip}
+\pagestyle{empty}
+
+\newcommand{\ThesisTitle}{Numerical methods for the simulation of air flow past a mountain}
+\newcommand{\ThesisAuthor}{Bc.\ Kamil Belán}
+\newcommand{\Keywords}{Smoothed Particle Hydrodynamics, Semi-Implicit Lagrangian Voronoi Approximation, Well-balanced methods, Orographic flows, Internal gravity waves, Atmospheric dynamics, Tensile instability}
+
+\begin{document}
+\begin{center}
+  {\large\bfseries \ThesisTitle}\\[0.4em]
+  {\normalsize \ThesisAuthor}
+\end{center}
+
+\bigskip
+{\large\bfseries Abstract}\par\medskip
+Numerical simulations of atmospheric orographic flows, and phenomena like internal gravity waves in particular, require numerical methods capable of exactly preserving the stratified hydrostatic background on the discrete level. Both the Smoothed Particle Hydrodynamics (SPH) method and the Semi-Implicit Lagrangian Voronoi Approximation method in their standard formulations fail to meet this requirement, generating spurious velocities that destroy the small-amplitude wave dynamics of internal gravity waves. To address this, we adapt the density-independent SPH framework and utilize potential temperature as the primary thermodynamic variable, aligning the method with standard atmospheric science conventions. Furthermore, we develop a novel well-balanced discretization for this formulation that preserves the hydrostatic equilibrium at the discrete level to machine precision. Numerical experiments demonstrate that the proposed scheme successfully maintains a stationary background state and is able to capture the emergence and initial upward propagation of mountain waves. Finally, we document the eventual numerical breakdown of these simulations caused by tensile instability, concluding that future work must focus on integrating regularizing techniques, such as $\delta$-SPH, into the well-balanced framework.
+
+\bigskip
+\noindent\textbf{Keywords:} \Keywords
+\end{document}
