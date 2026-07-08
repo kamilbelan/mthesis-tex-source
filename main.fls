@@ -668,6 +668,7 @@ INPUT ./figures/silva/stationary/residual_field_silva.png
 INPUT ./figures/silva/stationary/residual_profile_silva.png
 INPUT ./figures/silva/stationary/residual_profile_silva.png
 INPUT ./figures/silva/stationary/residual_profile_silva.png
+INPUT /usr/local/texlive/2024/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc
 INPUT ./figures/silva/stationary/residual_convergence_silva.png
 INPUT ./figures/silva/stationary/residual_convergence_silva.png
 INPUT ./figures/silva/stationary/residual_convergence_silva.png
