@@ -81,7 +81,7 @@
 \contentsline {section}{\numberline {6.2}Mountain waves (evolutionary case)}{95}{section*.103}%
 \contentsline {section}{\numberline {6.3}Tensile instability}{97}{section*.106}%
 \contentsline {chapter}{Conclusion}{101}{chapter*.109}%
-\contentsline {chapter}{References}{102}{chapter*.110}%
-\contentsline {subsection}{Other}{104}{subsection*.111}%
-\contentsline {subsection}{Other}{111}{subsection*.112}%
+\contentsline {chapter}{References}{103}{chapter*.110}%
+\contentsline {subsection}{Other}{105}{subsection*.111}%
+\contentsline {subsection}{Other}{112}{subsection*.112}%
 \contentsfinish 
