@@ -3,9 +3,9 @@
 
 \chapter{Numerical experiments}
 \label{chap:EXPERIMENTS}
-This chapter consists of numerical experiments using the methods described in the previous chapters.\sidenote{The numerical experiments showcasing the failure of SILVA to preserve hydrostatic balance are presented in \Cref{sec:SILVA_FAILURE} and not here, the reason being that we wish to present \textcolor{gray}{at least partially} successful results in this chapter.} Namely, we compare the classical SPH method \Cref{sec:CLASSIC-COMPLETE} and the pressure-potential temperature density-free formulation \Cref{sec:DI-pressure-theta} with their perturbation/well-balanced variants \Cref{sec:PERTURBATION-CLASSICAL-SPH} and \Cref{sec:WB-DI-PTH} respectively.
+This chapter consists of numerical experiments using the methods described in the previous chapters.\sidenote{The numerical experiments demonstrating the failure of SILVA to preserve hydrostatic balance are presented in \Cref{sec:SILVA_FAILURE} and not here, the reason being that we wish to present \textcolor{gray}{at least partially} successful results in this chapter.} Namely, we compare the classical SPH method \Cref{sec:CLASSIC-COMPLETE} and the pressure-potential temperature density-free formulation \Cref{sec:DI-pressure-theta} with their perturbation/well-balanced variants \Cref{sec:PERTURBATION-CLASSICAL-SPH} and \Cref{sec:WB-DI-PTH} respectively.
 
-All numerical experiments presented in this work were conducted using the code described in the chapter \Cref{chap:IMPLEMENTATION}. Every simulation in this chapter is fully specified by its parameter files and can be regenerated from the archived code, see \Cref{sec:REPRODUCIBILITY}. The parameters are collected in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
+All numerical experiments presented in this work were conducted using the code described in \Cref{chap:IMPLEMENTATION}. Every simulation in this chapter is fully specified by its parameter files and can be regenerated from the archived code, see \Cref{sec:REPRODUCIBILITY}. The parameters are collected in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
 
 \begin{table}[htbp]
     \centering
@@ -120,7 +120,7 @@ and also the \emph{root-mean-square velocity}
 
 The measures $\abs{\vb{v}}_{\infty}, \abs{\vb{v}}_{2}$ are discrete counterparts of the $L_{\infty}$ and $L_{2}$ norms.
 
-Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity field of an atmosphere initialised from hydrostatic balance. They show the \emph{failure} of the standard formulations to \emph{preserve the hydrostatic balance}. On the contrary, the perturbation/well-balanced variants retain the hydrostatic balance at $\epsilon_{\text{mach}}$ level. Qualitatively, figures \Cref{fig:STATIONARY-NORMS} show that both the standard SPH and the potential-temperature formulations are not well-balanced, however the standard SPH performs considerably worse than the pressure-potential temperature formulation. For standard SPH, the magnitude of the spurious velocity reaches $\approx \qty{e20}{\metre\per\second}$, whereas with the pressure-potential temperature formulation, the magnitudes are not greater than $\approx \qty{e2}{\metre\per\second}$.
+Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity field of an atmosphere initialized from hydrostatic balance. They show the \emph{failure} of the standard formulations to \emph{preserve the hydrostatic balance}. On the contrary, the perturbation/well-balanced variants retain the hydrostatic balance at the $\epsilon_{\text{mach}}$ level. Qualitatively, figures \Cref{fig:STATIONARY-NORMS} show that both the standard SPH and the potential-temperature formulations are not well-balanced; however, the standard SPH performs considerably worse than the pressure-potential temperature formulation. For standard SPH, the magnitude of the spurious velocity reaches $\approx \qty{e20}{\metre\per\second}$, whereas with the pressure-potential temperature formulation, the magnitudes are not greater than $\approx \qty{e2}{\metre\per\second}$.
 
 \begin{figure}[H]
 	\centering
@@ -139,13 +139,13 @@ Figures \Cref{fig:STATIONARY-NORMS} depict the time evolution of the velocity fi
 		\caption{Pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-NORMS-PTH}
 	\end{subfigure}
-	\caption{Time evolution of the spurious velocity field for the stationary hydrostatic balance using the standard SPH formulation, vertical axis is logarithmic. For standard SPH, the maximum and root-mean-square velocities exhibit serious growth, sitting at approximately $\qty{10}{\metre\per\second} - \qty{15}{\metre\per\second}$ at $t < \qty{50}{\second}$ and diverging rapidly at $t \approx \qty{50}{\second}$. For 
-	In contrast, the corresponding well-balanced (WB) variant maintains these norms at machine epsilon throughout the simulation.}
+	\caption{Time evolution of the velocity-field norms $\abs{\vb{v}}_{\infty}$ and $\abs{\vb{v}}_2$ for the stationary hydrostatic balance, comparing each standard formulation with its well-balanced (WB) variant; the vertical axis is logarithmic. For standard SPH \subref{fig:STATIONARY-NORMS-SPH}, the norms sit at approximately \qtyrange{10}{15}{\metre\per\second} until $t \approx \qty{50}{\second}$ and then diverge rapidly; the standard pressure-potential temperature formulation \subref{fig:STATIONARY-NORMS-PTH} stays bounded but nonzero. 
+	In both cases, the WB variant maintains the norms at machine epsilon throughout.}
 	\label{fig:STATIONARY-NORMS}
 \end{figure}
 
 The plots \Cref{fig:STATIONARY-BLOWUPS} show the spurious velocity field at the instant the maximum particle velocity reaches about half the speed of sound (Mach number of $\approx 0.5$), which is roughly $\abs{\vb{v}} \approx \qty{120}{\meter\per\second}$. This threshold is chosen such that we can clearly make a distinction between numerical noise in the simulation and a serious breakdown of the hydrostatic equilibrium.
-Notice the velocity field at the top part of the computational domain. During the development of the simulation code, an issue with the top boundary condition has been faced---if the top of the domain was chosen as open, in the very first instants of the simulation the whole system abruptly collapsed. The reason is that with an open lid, the particles near the boundary have \emph{vacancies in their kernel support}---they are influenced by an \emph{artificial vacuum}. This issue is common in SPH and the standard practice is to add layers of \emph{ghost particles} \autocite{zhangBoundaryConditionsWeaklycompressible2025,adamiGeneralizedWallBoundary2012}. The result of introducing ghost particles, however, is the \emph{reflection} at the top boundary, which is clearly visible in the flow field.
+Notice the velocity field at the top part of the computational domain. During the development of the simulation code, an issue with the top boundary condition has been faced --- if the top of the domain was chosen as open, in the very first instants of the simulation the whole system abruptly collapsed. The reason is that with an open lid, the particles near the boundary have \emph{vacancies in their kernel support} --- they are influenced by an \emph{artificial vacuum}. This issue is common in SPH and the standard practice is to add layers of \emph{ghost particles} \autocite{zhangBoundaryConditionsWeaklycompressible2025,adamiGeneralizedWallBoundary2012}. The result of introducing ghost particles, however, is the \emph{reflection} at the top boundary, which is clearly visible in the flow field.
 
 From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and the well-balanced pressure-potential temperature formulations \emph{preserve the hydrostatic balance exactly.} No spurious velocity field is present.
 
@@ -166,7 +166,7 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 		\caption{Standard pressure-potential temperature formulation.}
 		\label{fig:STATIONARY-BLOWUP-PTH}
 	\end{subfigure}
-	\caption{The flow field blowup at $t \approx \qty{13}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown. Both figures also capture a reflection of the spurious wave at the top boundary.}
+	\caption{The flow field blowup at $t \approx \qty{50}{\second}$. The vectors show the emergence of non-physical motions caused by the failure to preserve the hydrostatic balance. The displacement of the particles further creates spurious forces, leading to breakdown. Both figures also capture a reflection of the spurious wave at the top boundary.}
 	\label{fig:STATIONARY-BLOWUPS}
 \end{figure}
 
@@ -195,7 +195,7 @@ From \Cref{fig:STATIONARY-STILNESS} it is evident that the perturbation SPH and 
 \section{Mountain waves (evolutionary case)}
 \label{sec:EVOLUTIONARY}
 
-We have shown in the previous section that both the standard SPH and the pressure-potential temperature formulations fail to preserve hydrostatic balance, whereas the perturbation/well-balanced variants succeed. As we initialise the non-stationary simulations from the hydrostatic balance and wish to capture internal gravity waves, only the \emph{perturbation SPH} and the \emph{well-balanced pressure-potential temperature} formulations have been used in the non-stationary cases.
+We have shown in the previous section that both the standard SPH and the pressure-potential temperature formulations fail to preserve hydrostatic balance, whereas the perturbation/well-balanced variants succeed. As we initialize the non-stationary simulations from the hydrostatic balance and wish to capture internal gravity waves, only the \emph{perturbation SPH} and the \emph{well-balanced pressure-potential temperature} formulations have been used in the non-stationary cases.
 
 The panels in \Cref{fig:WAVE-EMERGENCE-PTH} illustrate the emergence and early upward propagation of mountain waves using the well-balanced pressure-potential temperature formulation. As noted in \Cref{sec:FLOW-CORRUGATION}, stationary mountain waves take time to fully develop. Unfortunately, we cannot observe the propagation of these waves further, as the simulation is ultimately disrupted by \emph{tensile instability}, with its onset visible in \subref{fig:pth-wave-60}. The final section is dedicated to discussing this tensile instability in more detail.
 
@@ -245,13 +245,13 @@ The panels in \Cref{fig:WAVE-EMERGENCE-PTH} illustrate the emergence and early u
         \label{fig:pth-wave-60}
     \end{subfigure}
 
-    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate \emph{upward propagations} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:pth-wave-60} the simulation is ruined due the onset of \emph{tensile instability}.}
+    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate the \emph{upward propagation} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:pth-wave-60}, the simulation is ruined due to the onset of \emph{tensile instability}.}
     \label{fig:WAVE-EMERGENCE-PTH}
 \end{figure}
 
 As shown in \Cref{fig:WAVE-EMERGENCE-SPH}, in our experiments, the perturbation SPH method fails to capture the mountain wave dynamics. While the well-balanced pressure-potential temperature formulation successfully propagated the wave upward, the perturbation method yields a noisy unstructured flow field. 
 
-We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ to be be present in the momentum equation. In our case, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method---the particle's smoothing length at each time step is updated proportionally to the particle's density. In particular no $\grad h$ terms has been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}. However, the standard derivation presented in \Cref{sec:CORNERSTONES} does \emph{not account} for variable $h$ at all.}
+We hypothesize that the reason lies in poor conservative properties of the perturbation SPH method. As we mentioned in \Cref{sec:GENERAL-CLASS}, a consistent use of \emph{adaptive smoothing lengths} requires the $\grad h$ terms to be present in the momentum equation. In our case, a simpler approach to $h-$adaptivity has been used together with the perturbation SPH method --- the particle's smoothing length at each time step is updated proportionally to the particle's density. In particular, no $\grad h$ terms have been included in the formulation.\sidenote{It is also not straightforward how the terms could be included. Recall that they appeared naturally when deriving the SPH equations from the discrete Lagrangian in \Cref{sec:GENERAL-CLASS}. However, the standard derivation presented in \Cref{sec:CORNERSTONES} does \emph{not account} for variable $h$ at all.}
 
 \begin{figure}[H]
     \centering
@@ -306,7 +306,7 @@ We hypothesize that the reason lies in poor conservative properties of the pertu
 \section{Tensile instability}
 \label{sec:INSTABILITY}
 
-The phenomenon observed in our simulation of mountain waves that led to a complete numerical breakdown is well-known in the SPH community and is called \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}. Tensile instability is a \emph{geometric instability} that arises when the interaction between particles causes them to \emph{artificially} attract rather than repel, leading into unphysical particle clumps separated by empty void \autocite{morrisStudyStabilityProperties1996}. In our simulations, the particles lost their regular spacing, introducing yet another spurious unphysical effect that escalated into a total divergence of the velocity field. 
+The phenomenon observed in our simulation of mountain waves that led to a complete numerical breakdown is well-known in the SPH community and is called \emph{tensile instability} \autocite{morrisStudyStabilityProperties1996,schuesslerCommentsSmoothedParticle1981,phillipsNumericalMethodThreedimensional1985,sunDeltaALESPHModelImproved2017,priceSmoothedParticleHydrodynamics2012a}. Tensile instability is a \emph{geometric instability} that arises when the interaction between particles causes them to \emph{artificially} attract rather than repel, leading to unphysical particle clumps separated by empty voids \autocite{morrisStudyStabilityProperties1996}. In our simulations, the particles lost their regular spacing, introducing yet another spurious unphysical effect that escalated into a total divergence of the velocity field. 
 
 \begin{figure}[H]
 	\centering
@@ -329,7 +329,7 @@ The phenomenon observed in our simulation of mountain waves that led to a comple
 	\label{fig:SPH-CRASH}
 \end{figure}
 
-As seen in \Cref{fig:PTH-CRASH}, the onset of the instability in the well-balanced PTH formulation is \emph{fundamentally different} from standard SPH case. Here, one gets the impression that the irregular configuration of the particles is \emph{triggered} directly by the \emph{emerged mountain wave}. The \emph{physical} density and pressure gradients introduced by the upward-propagating wave distort the particle configuration in the upper atmosphere, eventually creating clumps. Conversely, in the perturbation SPH formulation, as shown in \Cref{fig:SPH-CRASH}, the instability is triggered by the accumulation of spurious background errors.
+As seen in \Cref{fig:PTH-CRASH}, the onset of the instability in the well-balanced PTH formulation is \emph{fundamentally different} from the standard SPH case. Here, one gets the impression that the irregular configuration of the particles is \emph{triggered} directly by the \emph{emerged mountain wave}. The \emph{physical} density and pressure gradients introduced by the upward-propagating wave distort the particle configuration in the upper atmosphere, eventually creating clumps. Conversely, in the perturbation SPH formulation, as shown in \Cref{fig:SPH-CRASH}, the instability is triggered by the accumulation of spurious background errors.
 
 \begin{figure}[H]
 	\centering

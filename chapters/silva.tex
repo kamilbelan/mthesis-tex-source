@@ -46,7 +46,7 @@ Crucially, in its present form this construction --- an essential ingredient of 
 
 We summarize the main steps of the SILVA solution procedure.
 
-The pressure gradient in \Cref{eq:INCOMPRESSIBLE_EULER} is approximated by a discrete gradient operator assembled from the facet lengths, seed distances and facet midpoints of the Voronoi tessellation. The discrete gradient operator is exact for polynomials up to first degree \autocite[p.~95]{kinclSemiimplicitLagrangianVoronoi2025}. 
+The pressure gradient in \Cref{eq:INCOMPRESSIBLE_EULER} is approximated by a discrete gradient operator assembled from the facet lengths, seed distances, and facet midpoints of the Voronoi tessellation. The discrete gradient operator is exact for polynomials up to first degree \autocite[p.~95]{kinclSemiimplicitLagrangianVoronoi2025}. 
 
 The semi-discretized system is advanced in time using a semi-implicit time stepping. The seeds $\vb{x}_i, i = 1, \dots, N$ are first advected explicitly by the velocity field and the Voronoi mesh is recomputed. Although this update does not alter the velocity field, it spoils the discrete-divergence-free property of $\vb{v}$, which is then restored by an implicit pressure update, in which the velocity is projected onto the space of divergence-free fields.\sidenote{This is the use of the Helmholtz decomposition mentioned in the introduction to \Cref{chap:SILVA}.} This procedure yields a \enquote{discrete Poisson equation}, that is solved with a Krylov method such as conjugate gradients or MINRES \autocite[p.~97--100]{kinclSemiimplicitLagrangianVoronoi2025}.
 
@@ -77,10 +77,10 @@ To illustrate the failure of SILVA to preserve hydrostatic balance on the discre
 \subsection{Numerical evidence}
 \label{sec:NUMERICAL_EVIDENCE}
 
-The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow and no outflow} is present.\sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
+The simulation setting is minimal: compressible ideal gas in a rectangular box is initialized in exact hydrostatic balance \Cref{eq:HYDROSTATIC} with free-slip boundary conditions prescribed on all boundaries and gravity as the only external force. \emph{No mountain, no inflow, and no outflow} is present.\sidenote{The used and referenced software \texttt{LagrangianVoronoi.jl} does not allow for inflow and outflow boundary conditions at the moment.}
 Although the \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/blob/master/README.md}{\enquote{documentation}} of \texttt{LagrangianVoronoi.jl} does mention compressible flows, the reference paper \autocite{kinclSemiimplicitLagrangianVoronoi2025} covers only the incompressible case; the simulation was therefore written following Kincl's \href{https://github.com/OndrejKincl/LagrangianVoronoi.jl/tree/master/examples}{implementation} of the benchmark and example problems.
 
-To make a direct comparison with the SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step and simulation resolution; exact values can be found in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
+To make a direct comparison with the SPH experiments presented in \Cref{chap:EXPERIMENTS}, all physical and geometrical constants are kept identical: namely the domain dimensions, time step, and simulation resolution; exact values can be found in \Cref{tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
 
 
 In \Cref{fig:stationary_norms_silva}, the maximum velocity magnitude $\abs{\vb{v}}_{\infty}$\sidenote{As expected, \begin{equations}[single,*]
@@ -91,7 +91,7 @@ In \Cref{fig:stationary_norms_silva}, the maximum velocity magnitude $\abs{\vb{v
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{stationary_norms_silva.png}
-	\caption{CAPTION}
+	\caption{Time evolution of the velocity norms $\abs{\vb{v}}_{\infty}$ and $\abs{\vb{v}}_2$ computed by SILVA; the vertical axis is logarithmic. Both norms stay far above machine epsilon, so the hydrostatic balance is \emph{not preserved}.}
 	\label{fig:stationary_norms_silva}
 \end{figure}
 
@@ -101,7 +101,7 @@ To gain further insight into the failure, in \Cref{fig:residual_field_silva} we 
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_field_silva.png}
-	\caption{CAPTION}
+	\caption{The residual field $\abs{\grad p/\rho + \vb{g}}$ at $t = 0$, with arrows showing the (upward) net acceleration. The residual is localized in a thin layer at the top boundary.}
 	\label{fig:residual_field_silva}
 \end{figure}
 
@@ -109,16 +109,17 @@ From \Cref{fig:residual_field_silva} it seems that the residual is highest near 
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_profile_silva.png}
-	\caption{CAPTION}
+	\caption{Horizontally averaged residual $\abs{\grad p/\rho + \vb{g}}$ against altitude at $t = 0$; the horizontal axis is logarithmic. The residual peaks at the top and bottom boundaries and stays nonzero in the interior; $g$ is shown for scale.}
 	\label{fig:residual_profile_silva}
 \end{figure}
 
 \Cref{fig:residual_profile_silva} indicates that, in fact, the residual near the top and bottom boundaries is much higher than in the interior of the rectangle, where it nonetheless remains nonzero.
-Finally, to further confirm that the failure is \emph{not caused by insufficient resolution}, in \Cref{fig:residual_convergence_silva} we plot the total residual for various vertical resolutions $N_z$ given as $N_z = H_{\text{dom}}/\text{dr}$, where $H_{\text{dom}} = \SI{26}{\kilo\meter}$ is the height of the domain and $\text{dr} = \SIlist{260;346;520;1040}{\meter}$ is the \enquote{particle size} analogue introduced to provide a fair comparison with the SPH method, see \Cref{chap:EXPERIMENTS,tab:SIM-PARAMS}.
+Finally, to further confirm that the failure is \emph{not caused by insufficient resolution}, in \Cref{fig:residual_convergence_silva} we plot the total residual for various vertical resolutions $N_z$ given as $N_z = H_{\text{dom}}/\text{dr}$, where $H_{\text{dom}} = \SI{26}{\kilo\meter}$ is the height of the domain and $\text{dr} = \SIlist{260;346;520;1040}{\meter}$ is the \enquote{particle size} analogue introduced to provide a fair comparison with the SPH method, see \Cref{chap:EXPERIMENTS,tab:PARAMS-PHYSICS,tab:PARAMS-GEOM,tab:PARAMS-SPH,tab:PARAMS-NUM}.
+
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{residual_convergence_silva.png}
-	\caption{CAPTION}
+	\caption{Hydrostatic residual against vertical resolution $N_z$ (log--log). The global $L^{\infty}$ residual is dominated by the boundary and hardly improves with refinement, whereas the interior $L^2$ residual decreases at second order ($\propto N_z^{-2}$).}
 	\label{fig:residual_convergence_silva}
 \end{figure}
 

@@ -1,10 +1,10 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{Mathematical modelling of orographic flows}
+\chapter{Mathematical modeling of orographic flows}
 \label{chap:MODELLING}
 
-In the previous chapter \Cref{chap:FLOWS}, the underlying physical laws that govern atmospheric flows have been described. In this chapter, we describe further \emph{modelling choices} as well as \emph{specialized methods}, so called \emph{well-balanced methods}, used to obtain numerical solution to our problem.
+In \Cref{chap:FLOWS}, the underlying physical laws that govern atmospheric flows have been described. In this chapter, we describe further \emph{modeling choices} as well as \emph{specialized methods}, so-called \emph{well-balanced methods}, used to obtain a numerical solution to our problem.
 
 \section{Initial and boundary conditions}
 \label{sec:IBCs}
@@ -165,28 +165,28 @@ Let $\vb{n}$ denote the \emph{outward} unit normal at a boundary point. The sign
 	\item a \emph{positive} eigenvalue corresponds to a characteristic leaving $\Omega$, so a boundary condition \emph{cannot} be prescribed there, otherwise the problem is overdetermined.
 \end{compactitem}
 
-In a system of conservation laws, the state vector $\vb{u}$ is conserved -- once it is specified how $\vb{u}$ enters $\Omega$, the system is determined and \enquote{no information is lost}. Subsequently, on $\partial \Omega$ we can only specify how the state vector $\vb{u}$ flows into $\Omega$ - and its evolution inside $\Omega$ is then fully described by the equation itself.
+In a system of conservation laws, the state vector $\vb{u}$ is conserved --- once it is specified how $\vb{u}$ enters $\Omega$, the system is determined and \enquote{no information is lost}. Subsequently, on $\partial \Omega$ we can only specify how the state vector $\vb{u}$ flows into $\Omega$ --- and its evolution inside $\Omega$ is then fully described by the equation itself.
 
-A subsonic inflow is characterised by $\vb{v} \cdot \vb{n} < 0$ and $\abs{\vb{v}} < c$, whence
+A subsonic inflow is characterized by $\vb{v} \cdot \vb{n} < 0$ and $\abs{\vb{v}} < c$, whence
 \begin{equations}[single,*]
 \vb{v} \cdot \vb{n} - c < 0, \quad \vb{v} \cdot \vb{n} < 0, \quad \vb{v} \cdot \vb{n} + c \geq c - \abs{\vb{v}} > 0 \eqcomma
 \end{equations}
-where the eigenvalue $\vb{v} \cdot \vb{n}$ has multiplicity $d$. Therefore, there are $d + 1$ negative eigenvalues, so $d + 1$ \textcolor{gray}{scalar} boundary conditions must be prescribed at a subsonic inflow, that is, \emph{three} in two dimensions. A subsonic outflow is characterised by $\vb{v} \cdot \vb{n} > 0$ and $\abs{\vb{v}} < c$, whence
+where the eigenvalue $\vb{v} \cdot \vb{n}$ has multiplicity $d$. Therefore, there are $d + 1$ negative eigenvalues, so $d + 1$ \textcolor{gray}{scalar} boundary conditions must be prescribed at a subsonic inflow, that is, \emph{three} in two dimensions. A subsonic outflow is characterized by $\vb{v} \cdot \vb{n} > 0$ and $\abs{\vb{v}} < c$, whence
 \begin{equations}[single,*]
 \vb{v} \cdot \vb{n} - c \leq \abs{\vb{v}} - c < 0, \quad \vb{v} \cdot \vb{n} > 0, \quad \vb{v} \cdot \vb{n} + c > 0 \eqcomma
 \end{equations}
 where now the multiple eigenvalue $\vb{v} \cdot \vb{n}$ is positive, leaving $\vb{v} \cdot \vb{n} - c$ as the only negative eigenvalue, so a single \textcolor{gray}{scalar} boundary condition must be prescribed.
 
-Since in our case the inflow is deeply subsonic (the air enters $\Omega$ at about $\sim \SI{20}{m/s}$, see \Cref{chap:EXPERIMENTS} for details) and inside $\Omega$ the air only flows around an obstacle (without any additional interaction mechanism), we also assume that the outflow is subsonic. Consequently, we prescribe three scalar conditions in the inflow $\Gamma_L$, the two components of $\vb{v} = u_0 \vb{e}_x$ together with the thermodynamic condition $\theta = \bar{\theta}(z)$, and one scalar condition in the outflow $\Gamma_R$, the pressure $p = \bar{p}(z)$. The boundary conditions in \Cref{eq:EULER_BC} are thus reasonable.
+Since in our case the inflow is deeply subsonic (the air enters $\Omega$ at about \SI{20}{\meter\per\second}, see \Cref{chap:EXPERIMENTS} for details) and inside $\Omega$ the air only flows around an obstacle (without any additional interaction mechanism), we also assume that the outflow is subsonic. Consequently, we prescribe three scalar conditions in the inflow $\Gamma_L$, the two components of $\vb{v} = u_0 \vb{e}_x$ together with the thermodynamic condition $\theta = \bar{\theta}(z)$, and one scalar condition in the outflow $\Gamma_R$, the pressure $p = \bar{p}(z)$. The boundary conditions in \Cref{eq:EULER_BC} are thus reasonable.
 
 We conclude with some remarks and further references. The choice of suitable boundary conditions for the Euler system, and for nonlinear systems of hyperbolic conservation laws in general, remains an active field of research in both the analysis of partial differential equations and in numerical analysis. On the analytical side, the well-posedness of the initial-boundary value problem for scalar conservation laws has been pioneered by \autocite{bardosFirstOrderQuasilinear1979}, and the theory for systems continues to develop \autocite{spinoloInformalAccountRecent2024}. On the numerical side, the construction of various boundary conditions (non-reflecting, far-field, open) has a long history \autocite{hedstromNonreflectingBoundaryConditions1979,roeRemoteBoundaryConditions1989}, and the design of provably well-posed boundary treatments is still actively pursued \autocite{nordstromOpenBoundaryConditions2025}.
 
 \subsection{Radiation boundary condition}
 \label{sec:RADIATION}
 
-We are left to resolve the boundary condition in the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}: impose that no energy arrives from infinity and consequently there are no reflections at the \enquote{top boundary}. The radiation boundary condition is realistic on \emph{unbounded} domains. However, in our simulations, we are dealing with bounded domains - so the radiation boundary condition \emph{cannot} be imposed on $\Gamma_{T}$. 
+We are left to resolve the boundary condition in the top part of the domain. Since we are interested in internal gravity waves, the most natural BC would be the \emph{radiation boundary condition}, as described in \Cref{sec:FLOW-CORRUGATION}: impose that no energy arrives from infinity and consequently there are no reflections at the \enquote{top boundary}. The radiation boundary condition is realistic on \emph{unbounded} domains. However, in our simulations, we are dealing with bounded domains --- so the radiation boundary condition \emph{cannot} be imposed on $\Gamma_{T}$.
 To be able to numerically simulate the problem, one has to work with bounded domains. Note that in this sense $\Gamma_T$ is in fact an artificial boundary, introduced only to tackle the numerical computation. The question is whether it is possible to prescribe an \emph{artificial} boundary condition on $\Gamma_T$ that would simulate the radiation boundary condition on an unbounded domain. 
-Unfortunately, it can be shown \autocite{gustafssonBoundaryConditionsTime1979,baylissRadiationBoundaryConditions1980} that in a general case without any a priori knowledge of the solution's behaviour at infinity, nonreflecting boundary conditions \emph{cannot be constructed} on $\Gamma_T$. Hence in practical cases, the radiation (and nonreflecting) BCs have to be approximated.
+Unfortunately, it can be shown \autocite{gustafssonBoundaryConditionsTime1979,baylissRadiationBoundaryConditions1980} that in a general case without any a priori knowledge of the solution's behavior at infinity, nonreflecting boundary conditions \emph{cannot be constructed} on $\Gamma_T$. Hence in practical cases, the radiation (and nonreflecting) BCs have to be approximated.
 
 For instance, for the wave-equation (under some symmetry assumptions), the solution can be asymptotically expanded into an infinite sum of certain functions of the spherical coordinates $\left(r, \theta, \varphi\right)$. An approach studied in \autocite{baylissRadiationBoundaryConditions1980} consists of constructing operators that annihilate the leading terms in the solution's expansion as $r \to \infty$.
 
@@ -206,7 +206,7 @@ The implementation of the damping layer and viscosity is described in \Cref{sec:
 \subsection{Terrain-following coordinates}
 \label{sec:TERRAIN-FOLLOWING}
 
-The domain \Cref{eq:OMEGA} has a non-flat lower boundary $\Gamma_B$ given by the mountain profile $h(x)$, which generally does not coincide with a Cartesian coordinate line $yz0$. It is computationally more complicated to impose a boundary condition on a non-flat $\Gamma_B$\sidenote{Recall we are imposing a no-permeability (free slip) condition $\vb{v} \cdot \vb{n}$ on $\Gamma_B$, so we, in particular, need to compute $\vb{n}$ on $z = h(x)$.}, hence we make use of the \emph{terrain-following coordinate transformation}. This transformation resolves the complication of a non-flat boundary by stretching the vertical coordinate so that the ground becomes a coordinate surface, the stretching equalling the terrain at the bottom and decreasing to the identity at the top. The horizontal coordinate is left unaltered. Schematically, the transformation is shown in \Cref{fig:TERRAIN-FOLLOWING}.
+The domain \Cref{eq:OMEGA} has a non-flat lower boundary $\Gamma_B$ given by the mountain profile $h(x)$, which generally does not coincide with a Cartesian coordinate line $z = 0$. It is computationally more complicated to impose a boundary condition on a non-flat $\Gamma_B$\sidenote{Recall we are imposing a no-permeability (free slip) condition $\vb{v} \cdot \vb{n}$ on $\Gamma_B$, so we, in particular, need to compute $\vb{n}$ on $z = h(x)$.}, hence we make use of the \emph{terrain-following coordinate transformation}. This transformation resolves the complication of a non-flat boundary by stretching the vertical coordinate so that the ground becomes a coordinate surface, the stretching equalling the terrain at the bottom and decreasing to the identity at the top. The horizontal coordinate is left unaltered. Schematically, the transformation is shown in \Cref{fig:TERRAIN-FOLLOWING}.
 
 The original construction, introduced by Phillips in \autocite{phillipsCOORDINATESYSTEMHAVING1957}, utilizes a pressure-based transformation. We instead follow the height-based transformation of Gal-Chen and Somerville \autocite{gal-chenUseCoordinateTransformation1975},
 \begin{equations}[single,!,numberline=all]
@@ -219,7 +219,7 @@ In a grid-based method the mesh is built in the computational coordinates $(x, \
 
 The situation is fundamentally different for a meshless Lagrangian method.\sidenote{See \Cref{sec:SPH_OVERVIEW} for overview of Lagrangian methods.} In the SPH method to be introduced in \Cref{chap:SPH} the particles carry the fields and follow physical trajectories in the Cartesian frame, and the kernel interpolation uses physical particle distances. There is therefore no mesh to match the terrain and \emph{no need to transform} the governing equations, which are solved in their Cartesian form throughout.
 
-In our simulations, we use the transformation \Cref{eq:TERRAIN-FOLLOWING} \emph{only} to initialise the particle configuration: the particles are created in a terrain-following lattice whose rows lie on the mountain near the ground and flatten towards the top boundary, as seen in \Cref{fig:TERRAIN-FOLLOWING}. Once the flow evolves, the fluid particles advect freely and the lattice structure is \emph{not preserved}, while the wall particles representing $\Gamma_B$ remain on the mountain surface (their position is not updated). The initialisation is described in \Cref{chap:IMPLEMENTATION}.
+In our simulations, we use the transformation \Cref{eq:TERRAIN-FOLLOWING} \emph{only} to initialize the particle configuration: the particles are created in a terrain-following lattice whose rows lie on the mountain near the ground and flatten towards the top boundary, as seen in \Cref{fig:TERRAIN-FOLLOWING}. Once the flow evolves, the fluid particles advect freely and the lattice structure is \emph{not preserved}, while the wall particles representing $\Gamma_B$ remain on the mountain surface (their position is not updated). The initialization is described in \Cref{chap:IMPLEMENTATION}.
 
 \begin{figure}[htbp]
 	\centering
@@ -233,12 +233,12 @@ Initial configuration of the particles in terrain-following coordinates \autocit
 \section{Well-balanced methods}
 \label{section:MODELLING}
 
-This section provides an introduction to specialized numerical methods for compressible Euler equations. The motivation for the use of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. The results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
+This section provides an introduction to specialized numerical methods for the compressible Euler equations. The motivation for the use of such methods is presented in the first subsection, whereas our implementation is described in \Cref{sec:WELL-BALANCED-SPH}. The results obtained with the use of these methods are then presented in \Cref{chap:EXPERIMENTS}.
 
 \subsection{Preservation of the hydrostatic balance}
 \label{sec:INEXACT}
 
-Internal gravity waves can be considered perturbations of the background atmospheric state. It is standard to take the background atmospheric state as \emph{hydrostatic}\sidenote{As we did in the section \Cref{sec:MTN-WVS}.}: $\vb{v} = 0$ and the pressure $p$ and density $\rho$ solve the equation \Cref{eq:HYDROSTATIC-P}
+Internal gravity waves can be considered perturbations of the background atmospheric state. It is standard to take the background atmospheric state as \emph{hydrostatic}\sidenote{As we did in \Cref{sec:MTN-WVS}.}: $\vb{v} = 0$ and the pressure $p$ and density $\rho$ solve the equation \Cref{eq:HYDROSTATIC-P}
 
 \begin{equations}[single,*]
 	\grad p = \rho \vb{g}.
@@ -255,14 +255,14 @@ where $p_i, \rho_i$ are some approximations of the solution \enquote{at time $i$
 \subsection{Implications for wave simulations}
 \label{sec:WB-WAVES}
 
-The failure to preserve hydrostatic balance is particularly damaging for simulations of internal gravity waves. As established earlier, internal gravity waves are small perturbations of the \emph{background state}. When the hydrostatic balance is not exactly, spurious forces influence the simulation and affect the flow field. 
+The failure to preserve hydrostatic balance is particularly damaging for simulations of internal gravity waves. As established earlier, internal gravity waves are small perturbations of the \emph{background state}. When the hydrostatic balance is not exactly preserved, spurious forces influence the simulation and affect the flow field.
 
 Käppeli and Mishra empirically demonstrate in \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} that, for small perturbations of the velocity field\sidenote{The authors used a sine perturbation of the form \begin{equations}[single,*]
 		\delta v = A\sin\left(\omega t\right),
 	\end{equations}
-with A = \num{e-8}.}
+with $A = \num{e-8}$.}
 spurious forces dominate the wave field. By contrast, well-balanced schemes give qualitatively correct wave dynamics. For large-amplitude flows, in \autocite[p.~6]{kappeliWellbalancedFiniteVolume2016a} it is shown that the effect is not critical. 
-For small-amplitude wave dynamics---relevant to internal gravity waves---exact discrete hydrostatic balance is therefore essential.
+For small-amplitude wave dynamics --- relevant to internal gravity waves --- exact discrete hydrostatic balance is therefore essential.
 
 \subsection{Well-balanced schemes}
 \label{sec:WB-SCHEMES}
