@@ -58,10 +58,10 @@ Let us discuss in more detail the main \emph{present} limitation of SILVA for mo
 Each cell $\omega_i$ is a material volume of fixed mass $M_i$ \autocite[p.~91]{kinclSemiimplicitLagrangianVoronoi2025}. For any material volume $\Sigma(t)$ the Reynolds transport theorem gives
 
 \begin{equations}[single,*]
-\tdot{\abs{\Sigma\left(t\right)}} = \int_{\Sigma(t)} \div \vb{v} \dd{\vb{x}} \eqcomma
+\btdot{\abs{\Sigma\left(t\right)}} = \int_{\Sigma(t)} \div \vb{v} \dd{\vb{x}} \eqcomma
 \end{equations}
 
-so the incompressibility constraint $\div \vb{v} = 0$ implies $\tdot{\abs{\Sigma(t)}} = 0$. In particular, we have $\tdot{\abs{\omega_i}} = 0$ \autocite[p.~97]{kinclSemiimplicitLagrangianVoronoi2025}, and since the mass $M_i$ is fixed, the parcel density is \emph{constant along its trajectory}, recovering in fact the mentioned $\tdot{\rho} = 0$.
+so the incompressibility constraint $\div \vb{v} = 0$ implies $\btdot{\abs{\Sigma(t)}} = 0$. In particular, we have $\btdot{\abs{\omega_i}} = 0$ \autocite[p.~97]{kinclSemiimplicitLagrangianVoronoi2025}, and since the mass $M_i$ is fixed, the parcel density is \emph{constant along its trajectory}, recovering in fact the mentioned $\tdot{\rho} = 0$.
 
 Here the incompatibility becomes evident. An air parcel (represented by a Voronoi cell) whose volume is constant along its trajectory can \emph{neither expand nor compress}. However, a rising air parcel does \emph{exactly that}: as it moves adiabatically into lower ambient pressure (upward), it adiabatically \emph{expands}. This expansion is why the air parcel feels buoyancy - a crucial mechanism for the emergence of internal gravity waves. What is more, the equation of state \textcolor{gray}{of an ideal gas} together with \textcolor{gray}{isothermal} hydrostatic balance is what creates the exponentially stratified background itself. As SILVA at the current state solves only incompressible problems in which no equation of state is present, SILVA reproduces neither the expansion/compression nor the governing thermodynamics beneath it.
 

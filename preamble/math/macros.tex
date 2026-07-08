@@ -406,6 +406,12 @@
     \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}}}}{#1}%
 }
 
+
+%% 2. Grouped time derivative (for complex expressions)
+\NewDocumentCommand{\btdot}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}}}}{\overbracket[0.5pt][1.5pt]{#1}}%
+}
+
 \NewDocumentCommand{\tddot}{m}{%
     \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}\mspace{-3mu}\bm{\cdot}}}}{#1}%
 }
