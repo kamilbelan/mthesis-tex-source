@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage[czech]{babel}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{parskip}
+\pagestyle{empty}
+
+\newcommand{\ThesisTitleCS}{Numerické metody pro simulaci proudění vzduchu kolem pohoří}
+\newcommand{\ThesisAuthorCS}{Bc.\ Kamil Belán}
+\newcommand{\KeywordsCS}{Smoothed Particle Hydrodynamics, Semi-Implicit Lagrangian Voronoi Approximation, well-balanced metody, orografické proudění, vnitřní gravitační vlny, dynamika atmosféry, tensile nestabilita}
+
+\begin{document}
+\begin{center}
+  {\large\bfseries \ThesisTitleCS}\\[0.4em]
+  {\normalsize \ThesisAuthorCS}
+\end{center}
+
+\bigskip
+{\large\bfseries Abstrakt}\par\medskip
+	Numerické simulace atmosférického proudění kolem topografie, a zejména jevů, jako jsou vnitřní gravitační vlny, vyžadují numerické metody schopné přesně zachovávat stratifikované hydrostatické pozadí na úrovni diskretizace. Metoda Smoothed Particle Hydrodynamics (SPH) i metoda Semi-Implicit Lagrangian Voronoi Approximation (SILVA) ve svých standardních formulacích tento požadavek nesplňují a dávají vzniknout nefyzikální rychlostem, které narušují dynamiku vnitřních gravitačních vln o malých amplitudách. Pro řešení tohoto problému navrhujeme novou formulaci SPH nevyužívající hustotu a používáme potenciální teplotu jako primární termodynamickou proměnnou, čímž metodu přibližujeme standardním konvencím ve fyzice atmosféry. Dále navrhujeme novou well-balanced diskretizaci této metody, jež zachovává hydrostatickou rovnováhu na diskrétní úrovni se strojovou přesností. Numerické experimenty ukazují, že navržené schéma úspěšně zachovává stacionární pozadí a dokáže zachytit vznik a počáteční vzestupné šíření vnitřních gravitační vln generovaných prouděním přes pohoří. Nakonec ilustrujeme následný numerický breakdown těchto simulací způsobený tensile nestabilitou a docházíme k závěru, že budoucí práce se musí zaměřit na propojení regularizačních technik, jako je $\delta$-SPH, a well-balanced schémat.
+
+\bigskip
+\noindent\textbf{Klíčová slova:} \KeywordsCS
+\end{document}
