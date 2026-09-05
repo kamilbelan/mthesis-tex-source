@@ -412,6 +412,28 @@
     \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}}}}{\overbracket[0.5pt][1.5pt]{#1}}%
 }
 
-\NewDocumentCommand{\tddot}{m}{%
-    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}\mspace{-3mu}\bm{\cdot}}}}{#1}%
+%% Gap between the two dots of \tddot; override per call with \tddot[<mu>]{...}.
+%% (-3mu, the value this started from, makes the two dots touch in Latin Modern.)
+\NewDocumentCommand{\tddotsep}{}{-2mu}
+\NewDocumentCommand{\tddot}{O{\tddotsep} m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\bm{\cdot}\mspace{#1}\bm{\cdot}}}}{#2}%
+}
+
+%% Objective rate rings (companion to the time-derivative dots above)
+%% Ported from ~/Templates/homework/preamble/math/macros.tex.
+%% Uses \circ rather than \mathring for better vertical alignment with \accentset.
+
+%% 1. Standard objective rate ring (for single variables like \tensorq{A})
+\NewDocumentCommand{\tring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{0.9}{\circ}}}{#1}%
+}
+
+%% 2. Grouped objective rate ring (with the explicit overbracket)
+\NewDocumentCommand{\btring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{0.9}{\circ}}}{\overbracket[0.5pt][1.5pt]{#1}}%
+}
+
+%% 3. Wide objective rate ring (with a standard overline)
+\NewDocumentCommand{\wring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{0.9}{\circ}}}{\overline{#1}}%
 }

@@ -20,6 +20,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{mathtools} % \overbracket and friends (needed by the \btdot/\btring macros)
+\usepackage{accents}   % \accentset (needed by the \tdot/\tring macros)
 \usepackage[bbgreekl]{mathbbol}
 \usepackage{eqnlines}
 
@@ -120,3 +122,9 @@
     \vspace*{\fill}
   \end{frame}
 }
+
+% ---------------------------------------------------------------------
+% 8. USER MACROS
+% ---------------------------------------------------------------------
+% Must come last: the macros use the colors and packages defined above.
+\input{macros}

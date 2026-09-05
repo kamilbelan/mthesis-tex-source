@@ -1,7 +1,7 @@
 %% User macros
 \DeclareMathOperator{\sym}{sym}
 \DeclareMathOperator{\asym}{asym}
-\DeclareMathOperator{\cof}{sym}
+\DeclareMathOperator{\cof}{cof}
 \DeclareMathOperator{\laplace}{\bigtriangleup}
 \newcommand{\tensorq}[1]{\symbb{#1}}      % tensorial quantity
 \newcommand{\identityM}{\ensuremath{\tensorq{I}}}
@@ -32,5 +32,85 @@
   }%
 }
 
+%% ---------------------------------------------------------------------
+%% Math-mode scaling/raising helpers
+%% ---------------------------------------------------------------------
+%% Ported from the thesis (`preamble/math/macros.tex`). Both pick the right size
+%% for the current math style via \mathpalette, so accents built on top of them
+%% shrink correctly in scripts and subscripts.
+\NewDocumentCommand{\raisemath}{m}{\mathpalette{\raisemathAux{#1}}}        % \raisemath{<len>}{...}
+\NewDocumentCommand{\raisemathAux}{mmm}{\raisebox{#1}{\(#2#3\)}}
+\NewDocumentCommand{\scalemath}{m O{}}{\mathpalette{\scalemathAux{#1}[#2]}} % \scalemath{<x>}[<y>]{...}
+\NewDocumentCommand{\scalemathAux}{m O{} mm}{%
+    \IfBlankTF{#2}{\scalebox{#1}{\(#3#4\)}}{\scalebox{#1}[#2]{\(#3#4\)}}%
+}
 
+%% ---------------------------------------------------------------------
+%% Time derivatives and objective rates
+%% ---------------------------------------------------------------------
+%% Ported from ~/Templates/homework/preamble/math/macros.tex, adapted for
+%% unicode-math:
+%%   - \bm{\cdot} -> \symbf{\cdot}  (bm must not be used together with unicode-math)
+%%   - \overbracket takes NO optional arguments here: unicode-math overrides the
+%%     mathtools version with a stretchy Unicode accent.
+%%
+%%   \tdot{\vb{v}}       -> single overdot        (material/time derivative)
+%%   \tddot{\vb{x}}      -> double overdot        (second time derivative)
+%%   \btdot{\rho\theta}  -> overbracket + overdot (derivative of a whole group)
+%%   \tring{\tensorq{A}} -> objective rate ring
+%%   \btring{...}        -> overbracket + ring
+%%   \wring{...}         -> overline + ring
+\NewDocumentCommand{\tdotsymbol}{}{\scalemath{1.5}{\symbf{\cdot}}}
+\NewDocumentCommand{\tringsymbol}{}{\scalemath{0.9}{\circ}}
 
+%% Gap between the two dots of \tddot. Garamond-Math has a narrow \cdot, so the
+%% thesis value (-3mu, tuned for Latin Modern) merges them into a single blob.
+\NewDocumentCommand{\tddotsep}{}{-1mu}
+
+\NewDocumentCommand{\tdot}{m}{%
+    \accentset{\raisemath{-0.15ex}{\tdotsymbol}}{#1}%
+}
+\NewDocumentCommand{\tddot}{O{\tddotsep} m}{%
+    \accentset{\raisemath{-0.15ex}{\scalemath{1.5}{\symbf{\cdot}\mspace{#1}\symbf{\cdot}}}}{#2}%
+}
+\NewDocumentCommand{\btdot}{m}{%
+    \accentset{\raisemath{-0.15ex}{\tdotsymbol}}{\overbracket{#1}}%
+}
+\NewDocumentCommand{\tring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\tringsymbol}}{#1}%
+}
+\NewDocumentCommand{\btring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\tringsymbol}}{\overbracket{#1}}%
+}
+\NewDocumentCommand{\wring}{m}{%
+    \accentset{\raisemath{-0.15ex}{\tringsymbol}}{\overline{#1}}%
+}
+
+%% ---------------------------------------------------------------------
+%% Equation annotations
+%% ---------------------------------------------------------------------
+%% A short description hung to the right of one line of a `columns` equations
+%% block. Open the annotation column with an extra `&`, exactly like alignat:
+%%
+%%   \begin{math-block}{System of equations}
+%%       \begin{equations}[columns,*]
+%%           \rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g}, && \eqnote{momentum balance} \\
+%%           \dv{\theta}{t}      &= 0,                      && \eqnote{isentropic evolution}
+%%       \end{equations}
+%%   \end{math-block}
+%%
+%% All annotations in one block line up automatically -- eqnlines treats the
+%% extra column like any other alignment column.
+%%
+%%   \eqnote{text}       normal: a \quad of air, then small gray text
+%%   \eqnote*{text}      no leading \quad (when the column is already far enough right)
+%%   \eqnote[7em]{text}  wrap the text in a top-aligned parbox of the given width
+\NewDocumentCommand{\eqnote}{s o m}{%
+    \text{%
+        \IfBooleanF{#1}{\quad}%
+        \normalfont\footnotesize\color{DragonGray}%
+        \IfValueTF{#2}
+            {\parbox[t]{#2}{\raggedright #3}}
+            {#3}%
+    }%
+}

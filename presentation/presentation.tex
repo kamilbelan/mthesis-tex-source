@@ -45,7 +45,7 @@
 		\column{0.45\textwidth}
 		\begin{itemize}
 			\setlength{\itemsep}{1.5em} 
-			\item clear air turbulence,
+			\item (clear air) turbulence,
 			\item transport and mixing dynamics,
 			\item downhill windstorms.
 		\end{itemize}
@@ -102,19 +102,22 @@
 
 	\begin{itemize}
 		\item air is modelled as a dry inviscid ideal gas
-		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain the evolution is given by the \emph{compressible Euler equations}
+		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain with curved bottom boundary the evolution is given by the \emph{compressible Euler equations}
 	\end{itemize}
 	\begin{math-block}{System of equations}
 		\begin{equations}[columns,*]
-			\rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g}, \\
-			\dv{\rho}{t} + \rho\left(\divergence{\vb{v}}\right) &= 0,\\
-			\dv{\theta}{t} &= 0,\\
-			p\left(\rho, T\right) &= \rho R T.
+			\rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g},                && \eqnote{momentum balance} \\
+			\dv{\rho}{t} + \rho\left(\divergence{\vb{v}}\right) &= 0,     && \eqnote{mass conservation} \\
+			\dv{\theta}{t} &= 0,                                      && \eqnote{isentropic evolution} \\
+			p\left(\rho, T\right) &= \rho R T.                     && \eqnote{thermal equation of state of an ideal gas}
 		\end{equations}
 	\end{math-block}
 \end{frame}
 
 \begin{frame}{Boundary Conditions}
+	%TODO: correct the BCS
+	%TODO: The domain is $\SI{400}{\kilo\meter}$ wide and $\SI{26}{\kilo\meter}$ high, the mountain is $\SI{100}{\meter}$ high.
+	%TODO: Top boundary is open
 	\begin{columns}[T,onlytextwidth]
 
 		\begin{column}{0.5\textwidth}
@@ -245,6 +248,15 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}{Well-balanced formulations}
+	%TODO: Add these
+\end{frame}
+
+\begin{frame}{The SILVA method}
+	The Semi-Implicit Lagrangian Voronoi Approximation Method--\emph{SILVA}
+  %TODO: ADD
+\end{frame}
+
 \section{Results}
 \label{sec:RESULTS}
 
@@ -278,6 +290,14 @@
 	\vspace*{\fill}
 \end{frame}
 
+\begin{frame}{Emergence of an mountain wave?}
+	%TODO: ADD
+\end{frame}
+
+\begin{frame}{Tensile instability}
+	% TODO: ADD
+\end{frame}
+
 \begin{frame}{Summary and future plans}
 	\begin{columns}[T,onlytextwidth]
 		\column{0.4\textwidth}
@@ -301,6 +321,17 @@
 		\vspace{0.5em}
 		{\tiny \textit{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}\par}
 	\end{columns}
+\end{frame}
+
+\section{Responses to reviews}
+\label{sec:RESPONSES}
+
+\begin{frame}{Opponent's questions}
+
+\end{frame}
+
+\begin{frame}{Supervisor's questions and discussion points}
+  
 \end{frame}
 
 \end{document}
