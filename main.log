@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  8 JUL 2026 22:47
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  5 SEP 2026 15:34
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3818,8 +3818,8 @@ Package biblatex Warning: No driver for 'artwork'.
 [111]
 
 [112]
-runsystem(latexminted cleantemp  --timestamp 20260708224739Z FAD58DE7366495DB465
-0CFEFAC2FCD61)...executed.
+runsystem(latexminted cleantemp  --timestamp 20260905153442Z FAD58DE7366495DB465
+0CFEFAC2FCD61)...failed. 
  (./build/main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
@@ -3831,7 +3831,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 83546 strings out of 475512
+ 83555 strings out of 475512
  244374,4921788 words of node,token memory allocated
  81609 words of node memory still in use:
    1129 hlist, 130 vlist, 50 rule, 351 disc, 45 local_par, 269 math, 1567 glue, 
@@ -3841,7 +3841,7 @@ _link, 18 pdf_action, 118 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_res
 tore nodes
    avail lists: 1:23,2:8383,3:5387,4:651,5:753,6:295,7:8999,8:120,9:2527,10:59,1
 1:692,12:15
- 101785 multiletter control sequences out of 65536+600000
+ 101794 multiletter control sequences out of 65536+600000
  181 fonts using 14121983 bytes
  109i,21n,166p,4410b,3714s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.ot
