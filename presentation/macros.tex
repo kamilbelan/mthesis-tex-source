@@ -114,3 +114,14 @@
             {#3}%
     }%
 }
+
+%% ---------------------------------------------------------------------
+%% Latin abbreviations
+%% ---------------------------------------------------------------------
+%% Same definitions as the thesis (`preamble/user/macros.tex`): American
+%% academic style, i.e. always a trailing comma, and \xspace so a following
+%% space is kept without needing `\eg\ ` or `\eg{}`.
+%%   \eg some example   ->  "e.g., some example"
+%%   \ie a restatement  ->  "i.e., a restatement"
+\newcommand{\eg}{e.g.,\xspace}   % exempli gratia -- non-exhaustive example
+\newcommand{\ie}{i.e.,\xspace}   % id est         -- clarification/restatement

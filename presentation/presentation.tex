@@ -90,7 +90,7 @@
 				\setlength{\itemsep}{1.5em} 
 				\item thermodynamic temperature of an air parcel if it were \emph{adiabatically} moved from $(T, P)$ to $(\theta, P_0)$
 				\item conserved under isentropic flows
-				\item \textbf{stability condition} $$\partial_{y} \theta > 0.$$ 
+				\item \textbf{stability condition} $$\partial_{z} \theta > 0$$.
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -102,9 +102,9 @@
 
 	\begin{itemize}
 		\item air is modelled as a dry inviscid ideal gas
-		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain with curved bottom boundary the evolution is given by the \emph{compressible Euler equations}
+		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain with curved bottom boundary the evolution is described as an initial-boundary value problem for the \textbf{compressible isentropic Euler equations}
 	\end{itemize}
-	\begin{math-block}{System of equations}
+	\begin{math-block}{Governing equations}
 		\begin{equations}[columns,*]
 			\rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g},                && \eqnote{momentum balance} \\
 			\dv{\rho}{t} + \rho\left(\divergence{\vb{v}}\right) &= 0,     && \eqnote{mass conservation} \\
@@ -114,51 +114,81 @@
 	\end{math-block}
 \end{frame}
 
+\begin{frame}{Initial conditions}
+	The initial conditions are given by an \textbf{isothermal hydrostatic balance} at $T_0 = \SI{250}{\kelvin}$
+	\begin{math-block}{Initial conditions}
+		\begin{equations}[columns,*]
+			\vb{v}\left(0, \vb{x}\right) &= \vb{0},\\
+			\rho\left(0, \vb{x}\right) &= \bar{\rho}(z) \coloneq \rho_0 \exp\left(-x_2 \frac{g}{R T_0}\right) \\
+			\theta\left(0, \vb{x}\right) &= \bar{\theta}(z) \coloneq T_0\left(\frac{p\left(\rho_0, T_0\right)}{P_0}\right)^{\frac{R}{c_p}}
+		\end{equations}
+	\end{math-block}
+	from the state equations it follows for the pressure
+
+	\begin{equations}[single,*]
+		p\left(0, \vb{x}\right) = \bar{p}(z) \coloneq \rho_0 R T_0 \exp\left(-x_2 \frac{g}{R T_0}\right).
+	\end{equations}
+
+\end{frame}
+
 \begin{frame}{Boundary Conditions}
-	%TODO: correct the BCS
-	%TODO: The domain is $\SI{400}{\kilo\meter}$ wide and $\SI{26}{\kilo\meter}$ high, the mountain is $\SI{100}{\meter}$ high.
-	%TODO: Top boundary is open
 	\begin{columns}[T,onlytextwidth]
 
 		\begin{column}{0.5\textwidth}
-			The boundary conditions on $\partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$ for the velocity field $\vb{v}$ read as
-			\begin{math-block}{Velocity boundary conditions}
+			The boundary conditions on $\partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$ read
+			\begin{math-block}{Imposed boundary conditions}
 				\begin{equations}[columns,*]
-					\vb{v} &= v_0 \vb{e}_x, \, \text{on} \, \Gamma_{\, \text{west} \,}, \\
-					\vb{v} \vdot \vb{n} &= 0, \, \text{on} \, \Gamma_{\, \text{bot} \,}, \\
-					\partial_{x} p &= 0, \, \text{on} \, \Gamma_{\, \text{east} \,}, \\
+					\vb{v} &= v_0 \vb{e}_x, \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{subsonic inflow: $v_0 < c$} \\
+					\theta &= \bar{\theta}\left(z\right), \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{hydrostatic profile} \\
+					\vb{v} \vdot \vb{n} &= 0, \, \text{on} \, \Gamma_{\, \text{bot} \,}, && \eqnote{no-penetration}\\
+					p &= \bar{p}\left(z\right), \, \text{on} \, \Gamma_{\, \text{east} \,},  && \eqnote{subsonic outflow}\\
 				\end{equations}
 			\end{math-block}
 			\vspace{0.5em}
 
-			together with a \emph{radiative boundary condition} on $\Gamma_{\, \text{top} \,}.$
+			together with the \emph{radiation boundary condition} on the \emph{artificial} boundary $\Gamma_{\, \text{top} \,}$.
 			\vspace{1em}
 		\end{column}
 
 		\begin{column}{0.45\textwidth}
 			\centering
 
-			\resizebox{0.9\textwidth}{!}{%
+			%% NOTE: the two pictures below are scaled to the SAME factor (0.71) so their
+			%% label sizes match. Natural widths: sketch 251pt, profile 207pt -> 207/251 = 0.824.
+			%% The sketch is the wider one, so it sets the scale by taking the full column.
+			\resizebox{\textwidth}{!}{%
 				\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
 					% Boundaries
 					\draw[thick, blue] (-3,0.5) -- (-3,3.5); % <--- FIX IS HERE
 					\node[left, black, font=\small] at (-3, 1) {$\Gamma_{\text{west}}$};
+					% inflow data on Gamma_west: velocity above the arrow, potential temperature below
+					\draw[->, thick] (-4.3, 2) -- (-3.4, 2)
+						node[midway, above, inner sep=2pt] {$\vb{v} = v_0\vb{e}_x$}
+						node[midway, below, inner sep=2pt] {$\theta = \bar{\theta}(z)$};
 
-					\draw[thick, red] (3,0.5) -- (3,3.5) node[midway, right, black] {$\Gamma_{\text{east}}$};
-					\draw[thick, gray, dashed] (-3,3.5) -- (3,3.5) node[midway, above, black] {$\Gamma_{\text{top}}$};
+					% outflow on Gamma_east: boundary name low, prescribed pressure at arrow height (mirrors west)
+					\draw[thick, red] (3,0.5) -- (3,3.5);
+					\node[right, black, font=\small] at (3, 1) {$\Gamma_{\text{east}}$};
+					\node[right, black, font=\small] at (3, 2) {$p = \bar{p}(z)$};
+
+					\draw[thick, gray, dashed] (-3,3.5) -- (3,3.5)
+						node[midway, above, black, font=\small, align=center]
+						{radiation boundary condition \\ $\Gamma_{\text{top}}$};
 
 					\draw[thick, brown, domain=-3:3, samples=100] plot (\x, {0.5 + 1.5/( \x*\x + 1 )});
-					\node[below] at (0,0.5) {$\Gamma_{\text{bot}}$};
+					\node[below, black, font=\small, align=center] at (0,0.5)
+						{$\Gamma_{\text{bot}}$ \\ $\vb{v} \vdot \vb{n} = 0$};
+
+
 
 					\node at (0,2.5) {\Large $\Omega$};
 
-					\draw[->, thick] (-4.3, 2) -- (-3.4, 2) node[midway, above] {$v_0\vb{e}_x$};
 				\end{tikzpicture}%
 			}
 
 			\vspace{0.5em}
 
-			\resizebox{\textwidth}{!}{%
+			\resizebox{0.824\textwidth}{!}{% same scale as the sketch above (see note there)
 				\begin{tikzpicture}
 					\begin{axis}[
 						xlabel={$x$ (km)},
@@ -179,23 +209,6 @@
 			}
 		\end{column}
 	\end{columns}
-\end{frame}
-
-\begin{frame}{Initial conditions}
-	The initial conditions are given by an \textbf{isothermal hydrostatic balance} at $T_0 = \SI{250}{\kelvin}$
-	\begin{math-block}{Initial conditions}
-		\begin{equations}[columns,*]
-			\vb{v}\left(0, \vb{x}\right) &= \vb{0},\\
-			\rho\left(0, \vb{x}\right) &= \rho_0 \exp\left(-x_2 \frac{g}{R T_0}\right) \\
-			\theta\left(0, \vb{x}\right) &= T_0\left(\frac{p\left(\rho_0, T_0\right)}{P_0}\right)^{\frac{R}{c_p}}
-		\end{equations}
-	\end{math-block}
-	from the state equations it follows for the pressure
-
-	\begin{equations}[single,*]
-		p\left(0, \vb{x}\right) = \rho_0 R T_0 \exp\left(-x_2 \frac{g}{R T_0}\right).
-	\end{equations}
-
 \end{frame}
 
 \section{Numerical solution}
@@ -228,8 +241,8 @@
 			\end{equations}
 		\end{math-block}
 		\begin{itemize}
-			\item poor conservation properties, $\theta$ has to be computed extra,
-			\item not suitable for advanced techniques \textit{e.g.} \emph{adaptive $h$}.
+			\item poor conservation properties with adaptive $h$, 
+			\item $\theta$ has to be computed at extra cost.
 		\end{itemize}
 
 		\column{0.55\textwidth}
@@ -242,8 +255,8 @@
 			\end{equations}
 		\end{math-block}
 		\begin{itemize}
-			\item guaranteed conservation properties, uses the primary variable $\theta$ directly
-			\item naturally includes formulations with adaptive $h$.
+			\item naturally guarantees conservation with adaptive $h$ via the $\grad h$ terms $f_{a}$,
+			\item uses the primary variable $\theta$ directly.
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -254,11 +267,13 @@
 
 \begin{frame}{The SILVA method}
 	The Semi-Implicit Lagrangian Voronoi Approximation Method--\emph{SILVA}
-  %TODO: ADD
+	%TODO: ADD
+	%NOTE: should this even be here?
 \end{frame}
 
 \section{Results}
 \label{sec:RESULTS}
+	%TODO: The domain is $\SI{400}{\kilo\meter}$ wide and $\SI{26}{\kilo\meter}$ high, the mountain is $\SI{100}{\meter}$ high.
 
 \begin{frame}{Without well-balancing}
 	\centering
