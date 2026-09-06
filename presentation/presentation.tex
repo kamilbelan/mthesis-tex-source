@@ -88,7 +88,7 @@
 			\vspace{0.5em}
 			\begin{itemize}
 				\setlength{\itemsep}{1.5em} 
-				\item thermodynamic temperature of an air parcel if it were \emph{adiabatically} moved from $(T, P)$ to $(\theta, P_0)$
+				\item thermodynamic temperature of an air parcel if it were \emph{adiabatically} moved from $(T, p)$ to $(\theta, p_0)$
 				\item conserved under isentropic flows
 				\item \textbf{stability condition} $$\partial_{z} \theta > 0$$.
 			\end{itemize}
@@ -119,14 +119,14 @@
 	\begin{math-block}{Initial conditions}
 		\begin{equations}[columns,*]
 			\vb{v}\left(0, \vb{x}\right) &= \vb{0},\\
-			\rho\left(0, \vb{x}\right) &= \bar{\rho}(z) \coloneq \rho_0 \exp\left(-x_2 \frac{g}{R T_0}\right) \\
-			\theta\left(0, \vb{x}\right) &= \bar{\theta}(z) \coloneq T_0\left(\frac{p\left(\rho_0, T_0\right)}{P_0}\right)^{\frac{R}{c_p}}
+			\rho\left(0, \vb{x}\right) &= \bar{\rho}(z) \coloneq \rho_0 \exp\left(-z \frac{g}{R T_0}\right), \\
+			\theta\left(0, \vb{x}\right) &= \bar{\theta}(z) \coloneq T_0 \exp\left(z\frac{R}{c_p}\frac{g}{R T_0}\right),
 		\end{equations}
 	\end{math-block}
-	from the state equations it follows for the pressure
+	and from the state equations it follows for the pressure
 
 	\begin{equations}[single,*]
-		p\left(0, \vb{x}\right) = \bar{p}(z) \coloneq \rho_0 R T_0 \exp\left(-x_2 \frac{g}{R T_0}\right).
+		p\left(0, \vb{x}\right) = \bar{p}(z) \coloneq \rho_0 R T_0 \exp\left(-z \frac{g}{R T_0}\right).
 	\end{equations}
 
 \end{frame}
@@ -138,10 +138,10 @@
 			The boundary conditions on $\partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$ read
 			\begin{math-block}{Imposed boundary conditions}
 				\begin{equations}[columns,*]
-					\vb{v} &= v_0 \vb{e}_x, \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{subsonic inflow: $v_0 < c$} \\
+					\vb{v} &= v_0 \vb{e}_x \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{subsonic inflow: $v_0 < c$} \\
 					\theta &= \bar{\theta}\left(z\right), \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{hydrostatic profile} \\
-					\vb{v} \vdot \vb{n} &= 0, \, \text{on} \, \Gamma_{\, \text{bot} \,}, && \eqnote{no-penetration}\\
-					p &= \bar{p}\left(z\right), \, \text{on} \, \Gamma_{\, \text{east} \,},  && \eqnote{subsonic outflow}\\
+					\vb{v} \vdot \vb{n} &= 0 \, \text{on} \, \Gamma_{\, \text{bot} \,}, && \eqnote{no-penetration}\\
+					p &= \bar{p}\left(z\right) \, \text{on} \, \Gamma_{\, \text{east} \,},  && \eqnote{subsonic outflow}\\
 				\end{equations}
 			\end{math-block}
 			\vspace{0.5em}
@@ -218,15 +218,15 @@
 	\begin{itemize}
 		\item the fluid is partitioned into \emph{abstract material points}, so called \textbf{particles}
 		\item particle $a$ possess its $\vb{v}_a, \rho_a, \theta_a, p_a$ and interact \textbf{locally}
-		\item \emph{PDE's} for the continuum become \emph{ODE's} for the particles
+		\item \emph{PDE's} for the continuum become \textbf{ODE's} for the particles
 		\item main tool is the \textbf{interpolation kernel} $w_h\left(\vb{x}\right)$
 	\end{itemize}
 
 	\begin{equations}[columns,*]
-		\Phi\qty(t,\vb{x}) = \Phi\qty(t,\vb{x}) \star \delta\qty(\vb{x}) &=\int_{\Omega}\Phi\qty(t,\vb{x}') \delta\qty(\vb{x}-\vb{x}')\dd{\vb{x}'} \Rightarrow \\
-		[\Phi]^C_{w_h}\qty(t,\vb{x}) \coloneq \Phi\qty(t,\vb{x}) \star w_h\qty(\vb{x}) &= \int_{\Omega}\Phi\qty(t,\vb{x}')w_h\qty(\vb{x}-\vb{x}')\dd{\vb{x}'}, \\
-		\Phi_a(t) \equiv [\Phi]_{w_h}^D(t,\vb{x}_a) &\coloneq \sum_b \Phi_a w_{ab} V_b,\\
-		\Phi(t,\vb{x}) &\approx [\Phi]_{w_h}^C\qty(t,\vb{x}) \approx \Phi_a(t)
+		\Phi\qty(t,\vb{x}) = \Phi\qty(t,\vb{x}) \star \delta\qty(\vb{x}) &=\int_{\Omega}\Phi\qty(t,\vb{x}') \delta\qty(\vb{x}-\vb{x}')\dd{\vb{x}'} \Rightarrow && \eqnote{convolution identity} \\
+		[\Phi]^C_{w_h}\qty(t,\vb{x}) \coloneq \Phi\qty(t,\vb{x}) \star w_h\qty(\vb{x}) &= \int_{\Omega}\Phi\qty(t,\vb{x}')w_h\qty(\vb{x}-\vb{x}')\dd{\vb{x}'}, && \eqnote{continuous interpolation} \\
+		\Phi_a(t) \equiv [\Phi]_{w_h}^D(t,\vb{x}_a) &\coloneq \sum_b \Phi_a w_{ab} V_b, && \eqnote{discrete interpolation}\\
+		\Phi(t,\vb{x}) &\approx [\Phi]_{w_h}^C\qty(t,\vb{x}) \approx \Phi_a(t). && \eqnote{particle approximation}
 	\end{equations}
 \end{frame}
 
@@ -237,11 +237,12 @@
 		\begin{math-block}{Classical SPH}
 			\begin{equations}[columns,*]
 				\dv{\rho_a}{t} &= \sum_b m_b w'_{ab} \vb{v}_{ab}\vdot \vb{e}_{ab}, \\
-				\dv{\vb{v}_a}{t} &= -\sum_b\qty(\frac{p_a^{2}}{\rho_a}+\frac{p_b^{2}}{\rho_b})w'_{ab}\vb{e}_{ab} + \vb{g},
+				\dv{\vb{v}_a}{t} &= -\sum_b\qty(\frac{p_a^{2}}{\rho_a}+\frac{p_b^{2}}{\rho_b})w'_{ab}\vb{e}_{ab} + \vb{g}, \\
+				\theta &= T_a \left(p_0/p_a\right)^{\frac{R}{c_p}} \approx \, \text{const} \,,
 			\end{equations}
 		\end{math-block}
 		\begin{itemize}
-			\item poor conservation properties with adaptive $h$, 
+			\item poor conservation properties with \link[h]{adaptive $h$},
 			\item $\theta$ has to be computed at extra cost.
 		\end{itemize}
 
@@ -249,13 +250,13 @@
 		\centering
 		\begin{math-block}{$p-\theta$ formulation}
 			\begin{equations}[columns,*]
-				P_a &= \left(\sum_{b} \frac{m_b}{\tilde{\theta_0}} \theta_b w_{ab}\left(h_a\right)\right)^{\gamma},\\
-				\dv{\vb{v}_a}{t} &= - \sum_{b} m_b \frac{\theta_a \theta_b}{\tilde{\theta}_0^{2}}\left(\frac{f_{a}P_a}{P_a^{2/\gamma}} w'_{ab}\left(h_a\right) + \frac{f_{b}P_b}{P_b^{2/\gamma}} w'_{ab}\left(h_b\right)\right)\vb{e}_{ab} + \vb{g},\\
+				P_a &= \left(\sum_{b} \frac{m_b}{\tilde{\theta_0}} \theta_b w_{ab}\left(\link[h]{h_a}\right)\right)^{\gamma},\\
+				\dv{\vb{v}_a}{t} &= - \sum_{b} m_b \frac{\theta_a \theta_b}{\tilde{\theta}_0^{2}}\left(\frac{\link[f]{f_{a}}P_a}{P_a^{2/\gamma}} w'_{ab}\left(\link[h]{h_a}\right) + \frac{\link[f]{f_{b}}P_b}{P_b^{2/\gamma}} w'_{ab}\left(\link[h]{h_b}\right)\right)\vb{e}_{ab} + \vb{g},\\
 				\theta_a &= \, \text{const} \,
 			\end{equations}
 		\end{math-block}
 		\begin{itemize}
-			\item naturally guarantees conservation with adaptive $h$ via the $\grad h$ terms $f_{a}$,
+			\item naturally guarantees conservation with \link[h]{adaptive $h$} via the $\link[f]{\grad h}$ \link[f]{terms} $\link[f]{f_{a}}$,
 			\item uses the primary variable $\theta$ directly.
 		\end{itemize}
 	\end{columns}
@@ -263,10 +264,32 @@
 
 \begin{frame}{Well-balanced formulations}
 	%TODO: Add these
+	Hydrostatic equilibrium $\bar{\rho}, \bar{p}$ solves
+
+	\begin{equations}[single,*]
+		\cancel{\bar{\rho} \dv{\vb{v}}{t}} + \grad \bar{p} - \bar{\rho} \vb{g} = \vb{0},
+	\end{equations}
+
+but, generally, numerical approximations $\bar{\rho_h}, \bar{p_h}, \grad_h$ \alert{do not solve the hydrostatic balance}:
+
+\begin{equations}[single,*]
+	\grad_h \bar{p_h} - \bar{\rho_h} \vb{g} \neq \vb{0} \Rightarrow \, \text{\textbf{spurious force!}} \,
+\end{equations}
+
+A numerical scheme that preserves exactly the \emph{analytical stationary states} on the \textbf{discrete level} is said to be \textbf{well-balanced.}
+
+\textbf{Trick}: get rid of explicit gravity: 
+
+\begin{equations}[single,*]
+	\vb{g} = \frac{1}{\bar{\rho}} \grad \bar{p} \Rightarrow \dv{\vb{v}}{t} = - \frac{1}{\rho} \grad p + \frac{1}{\bar{\rho}} \grad \bar{p}
+\end{equations}
+
+The forces on the right-hand side are discretized identically, so when the initial state is hydrostatic, they cancel out.
+
 \end{frame}
 
 \begin{frame}{The SILVA method}
-	The Semi-Implicit Lagrangian Voronoi Approximation Method--\emph{SILVA}
+	The \textbf{Semi-Implicit Lagrangian Voronoi Approximation Method (SILVA)}
 	%TODO: ADD
 	%NOTE: should this even be here?
 \end{frame}
@@ -280,12 +303,12 @@
 	\vspace*{\fill}
 
 	\textbf{Classical SPH}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/standardWCSPH.pdf}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/standardWCSPH.pdf}
 
 	\vspace{0.5em} 
 
 	\textbf{$p-\theta$ formulation}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/standardHopkins.pdf}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/standardHopkins.pdf}
 
 	\vspace*{\fill}
 \end{frame}
@@ -295,17 +318,17 @@
 	\vspace*{\fill}
 
 	\textbf{Classical SPH} 
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/WBalancedWCSPH.pdf}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/WBalancedWCSPH.pdf}
 
 	\vspace{0.5em}
 
 	\textbf{$p-\theta$ formulation}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/WBalancedHopkins.pdf}
+	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/WBalancedHopkins.pdf}
 
 	\vspace*{\fill}
 \end{frame}
 
-\begin{frame}{Emergence of an mountain wave?}
+\begin{frame}{Emergence of a mountain wave?}
 	%TODO: ADD
 \end{frame}
 
@@ -332,7 +355,7 @@
 			\item \textbf{boundary conditions}, include real topography
 			\item comparison with other methods: \emph{finite differences, DG}
 		\end{itemize}
-		\includegraphics[width=\textwidth]{figures/results.jpg}
+		\includegraphics[width=\textwidth]{figures/reference.jpg}
 		\vspace{0.5em}
 		{\tiny \textit{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}\par}
 	\end{columns}

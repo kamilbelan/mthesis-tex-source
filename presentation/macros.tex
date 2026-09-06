@@ -125,3 +125,98 @@
 %%   \ie a restatement  ->  "i.e., a restatement"
 \newcommand{\eg}{e.g.,\xspace}   % exempli gratia -- non-exhaustive example
 \newcommand{\ie}{i.e.,\xspace}   % id est         -- clarification/restatement
+
+%% ---------------------------------------------------------------------
+%% Linking related items on a slide
+%% ---------------------------------------------------------------------
+%% \link[<thread>]{<stuff>} paints a phrase and the symbol it refers to in the
+%% same colour, so the eye ties the two together without an arrow or an extra
+%% sentence.  Everything sharing a <thread> name shares a colour; each new
+%% thread takes the next colour off \g_belan_link_palette_seq, in order of first
+%% use, so several independent threads can live on one frame:
+%%
+%%   \item poor conservation with \link[h]{adaptive $h$},
+%%   ...  w_{ab}\left(\link[h]{h_a}\right)  ...          % same gold
+%%   \item conservation via the $\link[f]{\grad h}$ terms $\link[f]{f_a}$,
+%%   ...  \frac{\link[f]{f_a} P_a}{P_a^{2/\gamma}}  ...  % teal, second thread
+%%
+%% The thread name is arbitrary; \link{...} with no name uses the thread `main'.
+%% A name that *is* a defined colour is taken literally, so \link[DragonRed]{x}
+%% still works as a one-off override.
+%%
+%%   \setlinkcolor{<thread>}{<colour>}   pin a thread instead of letting the
+%%                                       palette assign it (before first use)
+%%   \setlinkpalette{<c1,c2,...>}        replace the auto-assignment cycle
+%%
+%% Works in both modes: in math the argument stays math, so \link[h]{h_a} still
+%% typesets as h_a.  The colour is applied inside a group, which makes the
+%% argument a single Ord atom -- wrap symbols and subformulae with it, not
+%% relations or operators, or the surrounding math spacing shifts.
+%%
+%% The palette colours are darkened towards SumiInk: the raw Dragon hues are
+%% pale on PaperBg and wash out on a projector.
+\colorlet{LinkGold}{DragonGold!75!SumiInk}
+\colorlet{LinkTeal}{DragonTeal!85!SumiInk}
+\colorlet{LinkIndigo}{DragonIndigo!90!SumiInk}
+\colorlet{LinkRed}{DragonRed}
+
+%% Cancel macro
+\definecolor{cancelgray}{gray}{0.85}
+\tikzset{
+    main node/.style={inner sep=0,outer sep=0},
+    label node/.style={inner sep=0.3em,font=\tiny,overlay},
+    strike out/.style={shorten <=-.2em,shorten >=-.2em,overlay,thick,double distance = 0em,line cap=round},
+}
+\NewDocumentCommand{\cancel}{O{cancelgray}mo}{%
+    \tikz[baseline=(N.base)]{
+        \node[main node](N){\(#2\)};
+        \IfValueT{#3}{\node[label node, gray, anchor=south] at (N.north){#3};}
+        \draw[strike out, #1]  (N.south west) -- (N.north east);
+    }
+}
+
+
+\ExplSyntaxOn
+\prop_new:N \g_belan_link_prop          % thread name -> colour
+\seq_new:N  \g_belan_link_palette_seq   % colours handed out, in order
+\int_new:N  \g_belan_link_int           % how many threads are already assigned
+\tl_new:N   \l_belan_link_tl
+
+\seq_gset_from_clist:Nn \g_belan_link_palette_seq
+    { LinkGold , LinkTeal , LinkIndigo , LinkRed }
+
+%% Hand the next palette colour to a thread never seen before; wrap around when
+%% the palette runs out rather than erroring.
+\cs_new_protected:Npn \belan_link_assign:n #1
+  {
+    \int_gincr:N \g_belan_link_int
+    \prop_gput:Nnx \g_belan_link_prop {#1}
+      {
+        \seq_item:Nn \g_belan_link_palette_seq
+          {
+            \int_mod:nn { \g_belan_link_int - 1 }
+                        { \seq_count:N \g_belan_link_palette_seq } + 1
+          }
+      }
+  }
+
+\cs_new_protected:Npn \belan_link:nn #1#2
+  {
+    %% \ExplSyntaxOn gives @ catcode 12, so xcolor's test needs \use:c here.
+    \use:c { @ifundefinedcolor } {#1}
+      {   % not a colour name -> a thread
+        \prop_if_in:NnF \g_belan_link_prop {#1} { \belan_link_assign:n {#1} }
+        \prop_get:NnN \g_belan_link_prop {#1} \l_belan_link_tl
+      }
+      { \tl_set:Nn \l_belan_link_tl {#1} }   % a colour -> use it as given
+    \mode_if_math:TF
+      { { \exp_args:NV \color \l_belan_link_tl #2 } }
+      { \exp_args:NV \textcolor \l_belan_link_tl {#2} }
+  }
+
+\NewDocumentCommand{\link}{O{main} m}{ \belan_link:nn {#1} {#2} }
+\NewDocumentCommand{\setlinkcolor}{mm}
+  { \prop_gput:Nnn \g_belan_link_prop {#1} {#2} }
+\NewDocumentCommand{\setlinkpalette}{m}
+  { \seq_gset_from_clist:Nn \g_belan_link_palette_seq {#1} }
+\ExplSyntaxOff
