@@ -314,7 +314,6 @@ The gradients (forces) on the right-hand side are discretized identically $\Righ
 	%% such export, hence the same panel in both rows -- swap in a per-
 	%% formulation one if you export it.
 	\begingroup
-	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
 	\captionsetup{font=scriptsize,skip=2pt}
 	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
 	\newcommand{\wbpanelh}{0.21\textheight}
@@ -374,10 +373,9 @@ The gradients (forces) on the right-hand side are discretized identically $\Righ
 	%% the panels larger.  Sizes below are tuned to the frame, not to \linewidth
 	%% alone -- keep \wavepanel * 3 + the two \hfill gaps at or under \linewidth.
 	\begingroup
-	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
 	\captionsetup{font=scriptsize,skip=2pt}
 	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
-	\newcommand{\wavepanel}{0.325\linewidth}
+	\newcommand{\wavepanel}{0.29\linewidth}
 \begin{figure}[H]
     \centering
 
@@ -385,19 +383,19 @@ The gradients (forces) on the right-hand side are discretized identically $\Righ
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_1.png}
         \caption{$t = \SI{360}{\second}$}
-        \label{fig:wave-30}
+        \label{fig:wave-360}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{\wavepanel}
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_2.png}
         \caption{$t = \SI{420}{\second}$}
-        \label{fig:wave-35}
+        \label{fig:wave-420}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{\wavepanel}
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_3.png}
         \caption{$t = \SI{480}{\second}$}
-        \label{fig:wave-40}
+        \label{fig:wave-480}
     \end{subfigure}
 
     \vspace{0.15cm}
@@ -406,22 +404,22 @@ The gradients (forces) on the right-hand side are discretized identically $\Righ
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_4.png}
         \caption{$t = \SI{540}{\second}$}
-        \label{fig:wave-45}
+        \label{fig:wave-540}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{\wavepanel}
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_5.png}
         \caption{$t = \SI{600}{\second}$}
-        \label{fig:sph-wave-50}
+        \label{fig:wave-600}
     \end{subfigure}\hfill
     \begin{subfigure}[b]{\wavepanel}
         \centering
         \includegraphics[width=\linewidth]{figures/results/wave_6.png}
         \caption{$t = \SI{660}{\second}$}
-        \label{fig:sph-wave-55}
+        \label{fig:wave-660}
     \end{subfigure}
 
-    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate the \emph{upward propagation} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:pth-wave-60}, the simulation is ruined due to the onset of \emph{tensile instability}.}
+    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate the \emph{upward propagation} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:wave-660}, the simulation is ruined due to the onset of \emph{tensile instability}.}
     \label{fig:WAVE-EMERGENCE-SPH}
 \end{figure}
 	\endgroup
@@ -429,12 +427,13 @@ The gradients (forces) on the right-hand side are discretized identically $\Righ
 
 \begin{frame}{Tensile instability}
 	%% instab_01 -- instab_08 in reading order (time increasing), 4 columns x 2
-	%% rows.  The panels are 2.4:1, so a four-wide grid is width-limited and
-	%% leaves them as large as the frame allows; a 2 x 4 grid would be
-	%% height-limited and come out a third smaller.  The formulation is named
-	%% once in the figure caption so the subcaptions stay one line each.
+	%% rows.  The panels are 2.4:1, so every grid here is width-limited and the
+	%% column count sets the panel size; three rows of three would need panels
+	%% *narrower* than these to fit the frame height (measured: 61pt too tall
+	%% at 0.31\linewidth), so 4 x 2 is the largest the panels get.  The
+	%% formulation is named once in the figure caption so the subcaptions stay
+	%% one line each.
 	\begingroup
-	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
 	\captionsetup{font=scriptsize,skip=2pt}
 	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
 	\newcommand{\instabpanel}{0.24\linewidth}
