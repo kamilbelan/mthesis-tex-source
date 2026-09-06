@@ -126,40 +126,6 @@
 \newcommand{\eg}{e.g.,\xspace}   % exempli gratia -- non-exhaustive example
 \newcommand{\ie}{i.e.,\xspace}   % id est         -- clarification/restatement
 
-%% ---------------------------------------------------------------------
-%% Linking related items on a slide
-%% ---------------------------------------------------------------------
-%% \link[<thread>]{<stuff>} paints a phrase and the symbol it refers to in the
-%% same colour, so the eye ties the two together without an arrow or an extra
-%% sentence.  Everything sharing a <thread> name shares a colour; each new
-%% thread takes the next colour off \g_belan_link_palette_seq, in order of first
-%% use, so several independent threads can live on one frame:
-%%
-%%   \item poor conservation with \link[h]{adaptive $h$},
-%%   ...  w_{ab}\left(\link[h]{h_a}\right)  ...          % same gold
-%%   \item conservation via the $\link[f]{\grad h}$ terms $\link[f]{f_a}$,
-%%   ...  \frac{\link[f]{f_a} P_a}{P_a^{2/\gamma}}  ...  % teal, second thread
-%%
-%% The thread name is arbitrary; \link{...} with no name uses the thread `main'.
-%% A name that *is* a defined colour is taken literally, so \link[DragonRed]{x}
-%% still works as a one-off override.
-%%
-%%   \setlinkcolor{<thread>}{<colour>}   pin a thread instead of letting the
-%%                                       palette assign it (before first use)
-%%   \setlinkpalette{<c1,c2,...>}        replace the auto-assignment cycle
-%%
-%% Works in both modes: in math the argument stays math, so \link[h]{h_a} still
-%% typesets as h_a.  The colour is applied inside a group, which makes the
-%% argument a single Ord atom -- wrap symbols and subformulae with it, not
-%% relations or operators, or the surrounding math spacing shifts.
-%%
-%% The palette colours are darkened towards SumiInk: the raw Dragon hues are
-%% pale on PaperBg and wash out on a projector.
-\colorlet{LinkGold}{DragonGold!75!SumiInk}
-\colorlet{LinkTeal}{DragonTeal!85!SumiInk}
-\colorlet{LinkIndigo}{DragonIndigo!90!SumiInk}
-\colorlet{LinkRed}{DragonRed}
-
 %% Cancel macro
 \definecolor{cancelgray}{gray}{0.85}
 \tikzset{
@@ -175,15 +141,173 @@
     }
 }
 
+%% ---------------------------------------------------------------------
+%% Linking related items on a slide
+%% ---------------------------------------------------------------------
+%% \link[<keys>]{<stuff>} paints a phrase and the symbol it refers to in the
+%% same colour, so the eye ties the two together without an arrow or an extra
+%% sentence.  Everything sharing a <thread> name shares a colour; each new
+%% thread takes the next colour off \g_belan_link_palette_seq, in order of first
+%% use, so several independent threads can live on one frame:
+%%
+%%   \item poor conservation with \link[h]{adaptive $h$},
+%%   ...  w_{ab}\left(\link[h]{h_a}\right)  ...          % same gold
+%%   \item conservation via the $\link[f]{\grad h}$ terms $\link[f]{f_a}$,
+%%   ...  \frac{\link[f]{f_a} P_a}{P_a^{2/\gamma}}  ...  % teal, second thread
+%%
+%% The optional argument is a key=value list, but a bare word that is not one of
+%% the keys below is still read as the thread name, so the short form keeps
+%% working: \link{x} uses the thread `main', \link[h]{x} the thread `h', and a
+%% name that *is* a defined colour is taken literally, so \link[DragonRed]{x}
+%% remains a one-off override.
+%%
+%% Keys:
+%%   thread=<name>   thread whose colour to use (default `main'); same as the
+%%                   bare form, but needed when the name clashes with a key
+%%   color=<colour>  paint with this colour and skip the thread bookkeeping;
+%%                   any xcolor expression works (color=DragonRed!60!SumiInk)
+%%   mix=<0-100>     strength of the *text* colour, blended towards `bg':
+%%                   mix=45 fades a thread that should stay legible but quiet
+%%                   (default 100 = the thread colour as is)
+%%   bg=<colour>     what mix and tint blend into (default PaperBg, i.e. the
+%%                   slide background -- set it on a coloured block)
+%%   bold            embolden the argument as well (\textbf / \symbf)
+%%   box             tinted rounded background behind the argument
+%%   frame           thin outline in the thread colour
+%%   under           coloured rule just under the baseline
+%%   tint=<0-100>    strength of the `box' fill (default 15)
+%%   plain           leave the text in the running colour and only decorate;
+%%                   pairs with box/under when full colouring is too loud
+%%   on=<overlay>    beamer overlay spec: the colour and the decorations appear
+%%                   only on those slides, the text is untouched elsewhere
+%%                   (\link[h,on=2-]{h_a}).  The quiet slides still reserve the
+%%                   padding of box/frame, so the line does not reflow when the
+%%                   highlight arrives -- a gated `bold' does move things, though
+%%   name=<node>     also drop a remembered tikz node of that name around the
+%%                   argument, so a later \tikz[remember picture,overlay] can
+%%                   draw an arrow to it (costs the usual two extra runs)
+%%
+%% Thread bookkeeping and document-wide defaults:
+%%   \setlinkcolor{<thread>}{<colour>}   pin a thread instead of letting the
+%%                                       palette assign it (before first use)
+%%   \setlinkpalette{<c1,c2,...>}        replace the auto-assignment cycle
+%%   \setlinkstyle{<keys>}               keys applied to every later \link,
+%%                                       overridden per call (\setlinkstyle{under}
+%%                                       makes the whole talk underline instead
+%%                                       of recolour)
+%%
+%% Works in both modes: in math the argument stays math, so \link[h]{h_a} still
+%% typesets as h_a.  The colour is applied inside a group, which makes the
+%% argument a single Ord atom -- wrap symbols and subformulae with it, not
+%% relations or operators, or the surrounding math spacing shifts.  The
+%% decorating keys (box/frame/under/name) put the argument in a tikz node, which
+%% is an Ord atom too, but it does freeze the size: a \link[box]{...} inside
+%% \left(...\right) will not grow with the fence.
+%%
+%% The palette colours are darkened towards SumiInk: the raw Dragon hues are
+%% pale on PaperBg and wash out on a projector.
+\colorlet{LinkGold}{DragonGold!75!SumiInk}
+\colorlet{LinkTeal}{DragonTeal!85!SumiInk}
+\colorlet{LinkIndigo}{DragonIndigo!90!SumiInk}
+\colorlet{LinkRed}{DragonRed}
+
+%% Overlay gate, kept out of \ExplSyntaxOn so beamer sees a literal `<' spec.
+\newcommand{\belanLinkAlt}[3]{\alt<#1>{#2}{#3}}
+
+%% Node wrapper, likewise kept out of \ExplSyntaxOn: tikz parses its own
+%% arguments and is happier with catcodes it recognises.
+%%   #1 picture options   #2 node options   #3 underline colour (empty: none)
+%%   #4 content, already coloured and back in the right mode
+\newcommand{\belanLinkNode}[4]{%
+    \tikz[baseline=(belanlink.base)#1]{%
+        \node[#2](belanlink){#4};%
+        \if\relax\detokenize{#3}\relax\else
+            \draw[#3,line width=0.6pt]
+                ([yshift=-0.22em]belanlink.base-|belanlink.west) --
+                ([yshift=-0.22em]belanlink.base-|belanlink.east);%
+        \fi
+    }%
+}
 
 \ExplSyntaxOn
 \prop_new:N \g_belan_link_prop          % thread name -> colour
 \seq_new:N  \g_belan_link_palette_seq   % colours handed out, in order
 \int_new:N  \g_belan_link_int           % how many threads are already assigned
-\tl_new:N   \l_belan_link_tl
+\tl_new:N   \g_belan_link_style_tl      % keys prepended to every call
+
+\tl_new:N   \l_belan_link_thread_tl
+\tl_new:N   \l_belan_link_given_tl      % colour= , empty when unused
+\tl_new:N   \l_belan_link_color_tl      % resolved thread colour
+\tl_new:N   \l_belan_link_text_tl       % ... after the mix= blend
+\tl_new:N   \l_belan_link_bg_tl
+\tl_new:N   \l_belan_link_on_tl
+\tl_new:N   \l_belan_link_name_tl
+\tl_new:N   \l_belan_link_opts_tl
+\tl_new:N   \l_belan_link_pic_tl
+\int_new:N  \l_belan_link_tint_int
+\int_new:N  \l_belan_link_mix_int
+\bool_new:N \l_belan_link_bold_bool
+\bool_new:N \l_belan_link_box_bool
+\bool_new:N \l_belan_link_frame_bool
+\bool_new:N \l_belan_link_under_bool
+\bool_new:N \l_belan_link_plain_bool
+\bool_new:N \l_belan_link_math_bool   % mode at the call site, sampled once
+\bool_new:N \l_belan_link_off_bool    % an on=<spec> link, on a slide it is off
 
 \seq_gset_from_clist:Nn \g_belan_link_palette_seq
     { LinkGold , LinkTeal , LinkIndigo , LinkRed }
+
+\keys_define:nn { belan / link }
+  {
+    thread    .tl_set:N    = \l_belan_link_thread_tl ,
+    color     .tl_set:N    = \l_belan_link_given_tl ,
+    colour    .tl_set:N    = \l_belan_link_given_tl ,
+    bg        .tl_set:N    = \l_belan_link_bg_tl ,
+    on        .tl_set:N    = \l_belan_link_on_tl ,
+    name      .tl_set:N    = \l_belan_link_name_tl ,
+    tint      .int_set:N   = \l_belan_link_tint_int ,
+    mix       .int_set:N   = \l_belan_link_mix_int ,
+    bold      .bool_set:N  = \l_belan_link_bold_bool ,
+    bold      .default:n   = true ,
+    box       .bool_set:N  = \l_belan_link_box_bool ,
+    box       .default:n   = true ,
+    frame     .bool_set:N  = \l_belan_link_frame_bool ,
+    frame     .default:n   = true ,
+    under     .bool_set:N  = \l_belan_link_under_bool ,
+    under     .default:n   = true ,
+    underline .bool_set:N  = \l_belan_link_under_bool ,
+    underline .default:n   = true ,
+    plain     .bool_set:N  = \l_belan_link_plain_bool ,
+    plain     .default:n   = true ,
+    %% anything else is the thread name -- this is what keeps \link[h]{...}
+    %% and \link[DragonRed]{...} working after the switch to key=value.
+    unknown   .code:n      = { \tl_set:Nx \l_belan_link_thread_tl { \l_keys_key_str } } ,
+  }
+
+%% Per-call state: the keys are set inside a group, but the defaults have to be
+%% re-established explicitly because \setlinkstyle may have moved them.
+\cs_new_protected:Npn \belan_link_reset:
+  {
+    \tl_set:Nn \l_belan_link_thread_tl { main }
+    \tl_clear:N \l_belan_link_given_tl
+    \tl_set:Nn \l_belan_link_bg_tl { PaperBg }
+    \tl_clear:N \l_belan_link_on_tl
+    \tl_clear:N \l_belan_link_name_tl
+    \int_set:Nn \l_belan_link_tint_int { 15 }
+    \int_set:Nn \l_belan_link_mix_int  { 100 }
+    \bool_set_false:N \l_belan_link_bold_bool
+    \bool_set_false:N \l_belan_link_box_bool
+    \bool_set_false:N \l_belan_link_frame_bool
+    \bool_set_false:N \l_belan_link_under_bool
+    \bool_set_false:N \l_belan_link_plain_bool
+    \bool_set_false:N \l_belan_link_off_bool
+  }
+
+%% True when the name is *not* a defined colour, i.e. when it names a thread.
+%% \@ifundefinedcolor{<name>}{<undefined>}{<defined>}; \ExplSyntaxOn gives @
+%% catcode 12, hence \use:c.
+\cs_new_protected:Npn \belan_link_if_thread:nTF #1#2#3
+  { \use:c { @ifundefinedcolor } {#1} {#2} {#3} }
 
 %% Hand the next palette colour to a thread never seen before; wrap around when
 %% the palette runs out rather than erroring.
@@ -200,23 +324,157 @@
       }
   }
 
-\cs_new_protected:Npn \belan_link:nn #1#2
+\cs_new_protected:Npn \belan_link_resolve:
   {
-    %% \ExplSyntaxOn gives @ catcode 12, so xcolor's test needs \use:c here.
-    \use:c { @ifundefinedcolor } {#1}
-      {   % not a colour name -> a thread
-        \prop_if_in:NnF \g_belan_link_prop {#1} { \belan_link_assign:n {#1} }
-        \prop_get:NnN \g_belan_link_prop {#1} \l_belan_link_tl
+    \tl_if_empty:NTF \l_belan_link_given_tl
+      {
+        \exp_args:NV \belan_link_if_thread:nTF \l_belan_link_thread_tl
+          {   % not a colour name -> a thread
+            \prop_if_in:NVF \g_belan_link_prop \l_belan_link_thread_tl
+              { \exp_args:NV \belan_link_assign:n \l_belan_link_thread_tl }
+            \prop_get:NVN \g_belan_link_prop \l_belan_link_thread_tl
+              \l_belan_link_color_tl
+          }
+          { \tl_set_eq:NN \l_belan_link_color_tl \l_belan_link_thread_tl }
       }
-      { \tl_set:Nn \l_belan_link_tl {#1} }   % a colour -> use it as given
-    \mode_if_math:TF
-      { { \exp_args:NV \color \l_belan_link_tl #2 } }
-      { \exp_args:NV \textcolor \l_belan_link_tl {#2} }
+      { \tl_set_eq:NN \l_belan_link_color_tl \l_belan_link_given_tl }
+    %% mix=100 is left alone: `<expr>!100!<bg>' is not a legal xcolor
+    %% expression when <expr> already carries a `!'.
+    \int_compare:nNnTF \l_belan_link_mix_int = { 100 }
+      { \tl_set_eq:NN \l_belan_link_text_tl \l_belan_link_color_tl }
+      {
+        \tl_set:Nx \l_belan_link_text_tl
+          {
+            \l_belan_link_color_tl ! \int_use:N \l_belan_link_mix_int
+            ! \l_belan_link_bg_tl
+          }
+      }
   }
 
-\NewDocumentCommand{\link}{O{main} m}{ \belan_link:nn {#1} {#2} }
+%% The content, bolded and coloured.  The mode is read from
+%% \l_belan_link_math_bool, sampled before anything is opened: inside a tikz
+%% node TeX is in text mode again, so \mode_if_math: would answer for the node,
+%% not for the call site.
+\cs_new_protected:Npn \belan_link_body:n #1
+  {
+    \bool_if:NTF \l_belan_link_plain_bool
+      { \belan_link_bold:n {#1} }
+      {
+        \bool_if:NTF \l_belan_link_math_bool
+          { { \exp_args:NV \color \l_belan_link_text_tl \belan_link_bold:n {#1} } }
+          { \exp_args:NV \textcolor \l_belan_link_text_tl { \belan_link_bold:n {#1} } }
+      }
+  }
+
+\cs_new_protected:Npn \belan_link_bold:n #1
+  {
+    \bool_if:NTF \l_belan_link_bold_bool
+      { \bool_if:NTF \l_belan_link_math_bool { \symbf {#1} } { \textbf {#1} } }
+      {#1}
+  }
+
+%% box / frame / under / name all need a node; everything is hung on the one
+%% node `belanlink' so the underline can be measured from its baseline.  A math
+%% argument goes back into math with \ensuremath, since the node body is text.
+\cs_new_protected:Npn \belan_link_node:n #1
+  {
+    \tl_set:Nn \l_belan_link_opts_tl { outer~sep=0pt }
+    \bool_lazy_or:nnTF { \l_belan_link_box_bool } { \l_belan_link_frame_bool }
+      {
+        \tl_put_right:Nn \l_belan_link_opts_tl
+          { ,inner~xsep=0.22em,inner~ysep=0.12em,rounded~corners=1.5pt }
+      }
+      { \tl_put_right:Nn \l_belan_link_opts_tl { ,inner~sep=0pt } }
+    \bool_lazy_and:nnT { \l_belan_link_box_bool } { ! \l_belan_link_off_bool }
+      {
+        \tl_put_right:Nx \l_belan_link_opts_tl
+          {
+            ,fill= \l_belan_link_color_tl ! \int_use:N \l_belan_link_tint_int
+                   ! \l_belan_link_bg_tl
+          }
+      }
+    \bool_lazy_and:nnT { \l_belan_link_frame_bool } { ! \l_belan_link_off_bool }
+      {
+        \tl_put_right:Nx \l_belan_link_opts_tl
+          { ,draw= \l_belan_link_color_tl ,line~width=0.4pt }
+      }
+    \tl_clear:N \l_belan_link_pic_tl
+    \tl_if_empty:NF \l_belan_link_name_tl
+      {
+        \tl_put_right:Nx \l_belan_link_opts_tl { ,alias= \l_belan_link_name_tl }
+        \tl_set:Nn \l_belan_link_pic_tl { ,remember~picture }
+      }
+    \use:x
+      {
+        \exp_not:N \belanLinkNode
+          { \l_belan_link_pic_tl }
+          { \l_belan_link_opts_tl }
+          {
+            \bool_lazy_and:nnT { \l_belan_link_under_bool } { ! \l_belan_link_off_bool }
+              { \l_belan_link_color_tl }
+          }
+      }
+      {
+        \bool_if:NTF \l_belan_link_math_bool
+          { \ensuremath { \belan_link_body:n {#1} } }
+          { \belan_link_body:n {#1} }
+      }
+  }
+
+\cs_new_protected:Npn \belan_link_render:n #1
+  {
+    \bool_lazy_any:nTF
+      {
+        { \l_belan_link_box_bool }
+        { \l_belan_link_frame_bool }
+        { \l_belan_link_under_bool }
+        { ! \tl_if_empty_p:N \l_belan_link_name_tl }
+      }
+      { \belan_link_node:n {#1} }
+      { \belan_link_body:n {#1} }
+  }
+
+%% on=<spec>: styled on those overlays, quiet everywhere else.  The quiet branch
+%% still builds the node, so the padding of box/frame is reserved on every slide
+%% and the line does not reflow when the highlight switches on; only `bold' can
+%% still move things, since bolding is a change of width.
+\cs_new_protected:Npn \belan_link_gate:n #1
+  {
+    \tl_if_empty:NTF \l_belan_link_on_tl
+      { \belan_link_render:n {#1} }
+      {
+        \use:x { \exp_not:N \belanLinkAlt { \l_belan_link_on_tl } }
+          { \belan_link_render:n {#1} }
+          { \belan_link_render_off:n {#1} }
+      }
+  }
+
+%% The `off' slides of an on=<spec> link: geometry kept, every colour dropped.
+\cs_new_protected:Npn \belan_link_render_off:n #1
+  {
+    \bool_set_true:N  \l_belan_link_off_bool
+    \bool_set_true:N  \l_belan_link_plain_bool
+    \bool_set_false:N \l_belan_link_bold_bool
+    \belan_link_render:n {#1}
+  }
+
+\cs_new_protected:Npn \belan_link:nn #1#2
+  {
+    \group_begin:
+      \bool_set:Nn \l_belan_link_math_bool { \mode_if_math_p: }
+      \belan_link_reset:
+      \exp_args:NnV \keys_set:nn { belan / link } \g_belan_link_style_tl
+      \keys_set:nn { belan / link } {#1}
+      \belan_link_resolve:
+      \belan_link_gate:n {#2}
+    \group_end:
+  }
+
+\NewDocumentCommand{\link}{O{} m}{ \belan_link:nn {#1} {#2} }
 \NewDocumentCommand{\setlinkcolor}{mm}
   { \prop_gput:Nnn \g_belan_link_prop {#1} {#2} }
 \NewDocumentCommand{\setlinkpalette}{m}
   { \seq_gset_from_clist:Nn \g_belan_link_palette_seq {#1} }
+\NewDocumentCommand{\setlinkstyle}{m}
+  { \tl_gset:Nn \g_belan_link_style_tl {#1} }
 \ExplSyntaxOff

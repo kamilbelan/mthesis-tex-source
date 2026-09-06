@@ -270,21 +270,21 @@
 		\cancel{\bar{\rho} \dv{\vb{v}}{t}} + \grad \bar{p} - \bar{\rho} \vb{g} = \vb{0},
 	\end{equations}
 
-but, generally, numerical approximations $\bar{\rho_h}, \bar{p_h}, \grad_h$ \alert{do not solve the hydrostatic balance}:
+however, due to discretization errors, general numerical approximations $\bar{\rho_h}, \bar{p_h}, \grad_h$ \alert{do not solve the hydrostatic balance on the discrete level}:
 
 \begin{equations}[single,*]
 	\grad_h \bar{p_h} - \bar{\rho_h} \vb{g} \neq \vb{0} \Rightarrow \, \text{\textbf{spurious force!}} \,
 \end{equations}
 
-A numerical scheme that preserves exactly the \emph{analytical stationary states} on the \textbf{discrete level} is said to be \textbf{well-balanced.}
+A numerical scheme that preserves exactly the \emph{analytical stationary solutions} on the \textbf{discrete level} is said to be \textbf{well-balanced.}
 
-\textbf{Trick}: get rid of explicit gravity: 
-
+\begin{math-block}{Well-balancing: substituting for gravity}
 \begin{equations}[single,*]
 	\vb{g} = \frac{1}{\bar{\rho}} \grad \bar{p} \Rightarrow \dv{\vb{v}}{t} = - \frac{1}{\rho} \grad p + \frac{1}{\bar{\rho}} \grad \bar{p}
 \end{equations}
+\end{math-block}
 
-The forces on the right-hand side are discretized identically, so when the initial state is hydrostatic, they cancel out.
+The gradients (forces) on the right-hand side are discretized identically $\Rightarrow$ \textbf{identical truncation errors cancel out}.
 
 \end{frame}
 
@@ -298,42 +298,206 @@ The forces on the right-hand side are discretized identically, so when the initi
 \label{sec:RESULTS}
 	%TODO: The domain is $\SI{400}{\kilo\meter}$ wide and $\SI{26}{\kilo\meter}$ high, the mountain is $\SI{100}{\meter}$ high.
 
-\begin{frame}{Without well-balancing}
+\begin{frame}{Be or not to be: well-balancing}
+	%% 2 x 3.  Columns: velocity field of the standard run | the |v| norms in
+	%% time | velocity field of the well-balanced run.  Rows: SPH on top,
+	%% pressure-potential temperature below.
+	%%
+	%% The three plots have different aspect ratios (2.86 : 1.8 : 2.86), so the
+	%% panels are sized by a common *height* and the subfigure widths follow
+	%% from it -- that is what keeps the two rows aligned.  Budget:
+	%% \wbpanelh * (2.86 + 1.8 + 2.86) plus the two \hfill gaps <= \linewidth.
+	%%
+	%% NOTE: figures/results/field_WB.png does not exist; norms_WB.png is the
+	%% well-balanced *field* (same 3000x1050 shape as field_SPH/field_PTH,
+	%% |v| ~ 1e-7), so that is what the third column shows.  There is only one
+	%% such export, hence the same panel in both rows -- swap in a per-
+	%% formulation one if you export it.
+	\begingroup
+	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
+	\captionsetup{font=scriptsize,skip=2pt}
+	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
+	\newcommand{\wbpanelh}{0.21\textheight}
+\begin{figure}[H]
 	\centering
-	\vspace*{\fill}
 
-	\textbf{Classical SPH}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/standardWCSPH.pdf}
+	\begin{subfigure}[b]{0.36\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/field_SPH.png}
+		\caption{standard SPH}
+		\label{fig:WB-SPH-field}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.23\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/norms_SPH.png}
+		\caption{$\abs{v}$ in time, SPH}
+		\label{fig:WB-SPH-norms}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.36\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/norms_WB.png}
+		\caption{well-balanced}
+		\label{fig:WB-SPH-wb}
+	\end{subfigure}
 
-	\vspace{0.5em} 
+	\vspace{0.15cm}
 
-	\textbf{$p-\theta$ formulation}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/standardHopkins.pdf}
+	\begin{subfigure}[b]{0.36\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/field_PTH.png}
+		\caption{standard $p-\theta$}
+		\label{fig:WB-PTH-field}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.23\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/norms_PTH.png}
+		\caption{$\abs{v}$ in time, $p-\theta$}
+		\label{fig:WB-PTH-norms}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.36\linewidth}
+		\centering
+		\includegraphics[height=\wbpanelh]{figures/results/norms_WB.png}
+		\caption{well-balanced}
+		\label{fig:WB-PTH-wb}
+	\end{subfigure}
 
-	\vspace*{\fill}
+	%TODO: refine the wording
+	\caption{Velocity magnitude $\abs{v}$ for a resting atmosphere: the field left by the standard discretisation (left), its $L^\infty$ and $L^2$ norms in time against the well-balanced ones (middle), and the well-balanced field (right).}
+	\label{fig:NO-WB}
+\end{figure}
+	\endgroup
 \end{frame}
-
-\begin{frame}{With well-balancing}
-	\centering
-	\vspace*{\fill}
-
-	\textbf{Classical SPH} 
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/WBalancedWCSPH.pdf}
-
-	\vspace{0.5em}
-
-	\textbf{$p-\theta$ formulation}
-	\includegraphics[width=0.95\textwidth, height=0.35\textheight]{figures/_obsolete/WBalancedHopkins.pdf}
-
-	\vspace*{\fill}
-\end{frame}
-
 \begin{frame}{Emergence of a mountain wave?}
 	%TODO: ADD
+	%% 3 x 2 does not fit: the panels are 2.2:1, so a three-row grid is taller
+	%% than the frame.  2 rows x 3 columns is width-limited instead and leaves
+	%% the panels larger.  Sizes below are tuned to the frame, not to \linewidth
+	%% alone -- keep \wavepanel * 3 + the two \hfill gaps at or under \linewidth.
+	\begingroup
+	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
+	\captionsetup{font=scriptsize,skip=2pt}
+	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
+	\newcommand{\wavepanel}{0.325\linewidth}
+\begin{figure}[H]
+    \centering
+
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_1.png}
+        \caption{$t = \SI{360}{\second}$}
+        \label{fig:wave-30}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_2.png}
+        \caption{$t = \SI{420}{\second}$}
+        \label{fig:wave-35}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_3.png}
+        \caption{$t = \SI{480}{\second}$}
+        \label{fig:wave-40}
+    \end{subfigure}
+
+    \vspace{0.15cm}
+
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_4.png}
+        \caption{$t = \SI{540}{\second}$}
+        \label{fig:wave-45}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_5.png}
+        \caption{$t = \SI{600}{\second}$}
+        \label{fig:sph-wave-50}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{\wavepanel}
+        \centering
+        \includegraphics[width=\linewidth]{figures/results/wave_6.png}
+        \caption{$t = \SI{660}{\second}$}
+        \label{fig:sph-wave-55}
+    \end{subfigure}
+
+    \caption{The emerging mountain wave captured using the well-balanced pressure-potential temperature formulation. The panels illustrate the \emph{upward propagation} of the wave, visualized via the vertical velocity $w$ and lines of constant potential temperature. However, as seen in the final panel \subref{fig:pth-wave-60}, the simulation is ruined due to the onset of \emph{tensile instability}.}
+    \label{fig:WAVE-EMERGENCE-SPH}
+\end{figure}
+	\endgroup
 \end{frame}
 
 \begin{frame}{Tensile instability}
-	% TODO: ADD
+	%% instab_01 -- instab_08 in reading order (time increasing), 4 columns x 2
+	%% rows.  The panels are 2.4:1, so a four-wide grid is width-limited and
+	%% leaves them as large as the frame allows; a 2 x 4 grid would be
+	%% height-limited and come out a third smaller.  The formulation is named
+	%% once in the figure caption so the subcaptions stay one line each.
+	\begingroup
+	\setlength{\intextsep}{0pt}   %% the figure is the whole frame; no float padding
+	\captionsetup{font=scriptsize,skip=2pt}
+	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
+	\newcommand{\instabpanel}{0.24\linewidth}
+\begin{figure}[H]
+	\centering
+
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_01.png}
+		\caption{$t = \SI{690}{\second}$}
+		\label{fig:PTH-CRASH-01}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_02.png}
+		\caption{$t = \SI{700}{\second}$}
+		\label{fig:PTH-CRASH-02}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_03.png}
+		\caption{$t = \SI{710}{\second}$}
+		\label{fig:PTH-CRASH-03}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_04.png}
+		\caption{$t = \SI{720}{\second}$}
+		\label{fig:PTH-CRASH-04}
+	\end{subfigure}
+
+	\vspace{0.15cm}
+
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_05.png}
+		\caption{$t = \SI{725}{\second}$}
+		\label{fig:PTH-CRASH-05}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_06.png}
+		\caption{$t = \SI{726}{\second}$}
+		\label{fig:PTH-CRASH-06}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_07.png}
+		\caption{$t = \SI{727}{\second}$}
+		\label{fig:PTH-CRASH-07}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{\instabpanel}
+		\centering
+		\includegraphics[width=\linewidth]{figures/results/instab_08.png}
+		\caption{$t = \SI{728}{\second}$}
+		\label{fig:PTH-CRASH-08}
+	\end{subfigure}
+
+	%TODO: refine the wording
+	\caption{Onset of the tensile instability in the well-balanced pressure-potential temperature formulation, from $t = \SI{690}{\second}$ to $t = \SI{728}{\second}$.}
+	\label{fig:PTH-CRASH}
+\end{figure}
+	\endgroup
 \end{frame}
 
 \begin{frame}{Summary and future plans}

@@ -3,6 +3,9 @@
 % ---------------------------------------------------------------------
 
 \usepackage{physics}
+%% siunitx loads after physics and therefore leaves \qty alone: here \qty is
+%% the physics one (auto-sized fences).  Quantities go through \SI{<num>}{<unit>}
+%% -- \qty{540}{\second} silently becomes (540)(\second) and errors on \second.
 \usepackage{siunitx}
 \usepackage{fontspec}
 \usepackage{unicode-math}
