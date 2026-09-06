@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  5 SEP 2026 17:21
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2025.3.10)  6 SEP 2026 16:45
  system commands enabled.
 **main.tex
 (./main.tex
@@ -3818,7 +3818,7 @@ Package biblatex Warning: No driver for 'artwork'.
 [111]
 
 [112]
-runsystem(latexminted cleantemp  --timestamp 20260905172158Z FAD58DE7366495DB465
+runsystem(latexminted cleantemp  --timestamp 20260906164524Z FAD58DE7366495DB465
 0CFEFAC2FCD61)...failed. 
  (./build/main.aux)
  ***********
@@ -3832,7 +3832,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
 Here is how much of LuaTeX's memory you used:
  83555 strings out of 475512
- 244374,4921788 words of node,token memory allocated
+ 244374,4101490 words of node,token memory allocated
  81609 words of node memory still in use:
    1129 hlist, 130 vlist, 50 rule, 351 disc, 45 local_par, 269 math, 1567 glue, 
 439 kern, 175 penalty, 105 margin_kern, 4410 glyph, 3713 attribute, 116 glue_spe
