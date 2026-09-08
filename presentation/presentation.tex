@@ -11,7 +11,7 @@
 	Supervisor: doc. RNDr. Michal Pavelka, Ph.D.\\[0.2em]
 	Consultant: doc. RNDr. Petr Šácha, Ph.D.%
 }
-\date{\today}
+\date{September 9, 2026}
 \addtobeamertemplate{frametitle}{}{\vspace{0.5em}}
 \begin{document}
 
@@ -43,104 +43,158 @@
 \section{Problem settings}
 \label{sec:SETTINGS}
 
-\begin{frame}{Phenomena}
-	The presence of complicated topography can have significant influence on the atmospheric state, leading to complicated \textbf{mesoscale phenomena.} Our main goal is to capture \textbf{internal gravity waves}, which influence
-	\vspace{1em}
-	\begin{columns}[T,onlytextwidth]
-		\column{0.45\textwidth}
+% 0.42 + 0.53 leaves a 0.05\textwidth (20pt) gutter: columns that sum to 1.0
+% under `onlytextwidth' touch, which is what made the frame feel lopsided.
+% [c] balances the two columns against each other -- stable here because the
+% revealed items are \uncover'ed, so their space is reserved on every slide.
+\begin{frame}{Physical phenomena}
+	\begin{columns}[c,onlytextwidth]
+		\column{0.42\textwidth}
 		\begin{itemize}
-			\setlength{\itemsep}{1.5em} 
-			\item (clear air) turbulence,
-			\item transport and mixing dynamics,
-			\item downhill windstorms.
+			% The text block is what fills the body: at 0.9em it stopped 80pt short
+			% of the bottom and the frame read top-heavy.  2.2em/1.4em spreads the nine
+			% lines over the 187pt body (2.4em/1.6em overflows it by 1.8pt), and [c]
+			% then centres the
+			% picture against that instead of against a short stub.
+			\setlength{\itemsep}{2.2em}
+			\item nontrivial topography $\Rightarrow$ \emph{multiscale atmospheric phenomena}
+			\item goal: capture \textbf{internal gravity waves (IGWs)}
+			\item \textbf{IGWs influence}
+				% <+(1)-> : one per click, starting on the second slide.  Drop the
+				% (1) to have the first of them up with the lead-in line.
+				\begin{itemize}[<+(1)->]
+					\setlength{\itemsep}{1.4em}
+					\item (clear air) turbulence
+					\item transport and mixing
+					\item downhill windstorms
+				\end{itemize}
 		\end{itemize}
-		\column{0.55\textwidth}
+		\column{0.53\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/clouds.jpg}
+		\includegraphics[width=\linewidth,height=\solofigbody,keepaspectratio]{figures/clouds.jpg}
 		\vspace{0.5em}
 		{\tiny \textit{Mountain waves. \href{https://unsplash.com/photos/white-clouds-over-mountains-during-daytime-I8CF-ST8WxE}{Source: Marc Thunis}}\par}
 	\end{columns}
 \end{frame}
+\begin{frame}{Internal gravity wave prototype}
+	\begin{itemize}
+		\item \emph{air density} and \emph{atmospheric pressure} are stratified
+		\item a displaced air parcel is pushed back by buoyancy \& gravity $\Rightarrow$ \textbf{internal gravity wave}
+	\end{itemize}
 
-\begin{frame}{Stratification}
-	The source of all interesting phenomena of our interest is the \textbf{stratification} of some physical quantities - \emph{density, pressure} and mainly \textbf{potential temperature.}
+	\vspace{0.5em}
 
-	\vspace{1em}
+	\begin{center}
+		\resizebox{!}{135pt}{%
+			\begin{tikzpicture}[node distance = 2cm]
+				\node (A) [draw, align=center, text width=3.5cm] at (0,2) {\scriptsize an air parcel ascends to a region of lower density};
+				\node (B) [draw, align=center, text width=3.5cm] at (3.5,0) {\scriptsize buoyancy decreases; gravity drives it downward};
+				\node (C) [draw, align=center, text width=3.5cm] at (0,-2) {\scriptsize the parcel reaches a region of higher density};
+				\node (D) [draw, align=center, text width=3.5cm] at (-3.5,0) {\scriptsize buoyancy increases; buoyancy force drives it upward};
 
-	\begin{columns}[T,onlytextwidth]
-		\begin{column}{0.55\textwidth}
-			\centering
-			\textbf{Internal gravity wave prototype}\\[1em]
-			\resizebox{\textwidth}{!}{%
-				\begin{tikzpicture}[node distance = 2cm]
-					\node (A) [draw, align=center, text width=3.5cm] at (0,2) {\scriptsize an air parcel ascends to a region of lower density};
-					\node (B) [draw, align=center, text width=3.5cm] at (3.5,0) {\scriptsize buoyancy decreases; gravity drives it downward};
-					\node (C) [draw, align=center, text width=3.5cm] at (0,-2) {\scriptsize the parcel reaches a region of higher density};
-					\node (D) [draw, align=center, text width=3.5cm] at (-3.5,0) {\scriptsize buoyancy increases; buoyancy force drives it upward};
-
-					\draw[->,thick] (A) -- (B);
-					\draw[->,thick] (B) -- (C);
-					\draw[->,thick] (C) -- (D);
-					\draw[->,thick] (D) -- (A);
-				\end{tikzpicture}%
-			}
-
-			\vspace{1em}
-		\end{column}
-
-		\begin{column}{0.40\textwidth}
-			\textbf{Potential Temperature} $\theta$
-			\vspace{0.5em}
-			\begin{itemize}
-				\setlength{\itemsep}{1.5em} 
-				\item thermodynamic temperature of an air parcel if it were \emph{adiabatically} moved from $(T, p)$ to $(\theta, p_0)$
-				\item conserved under isentropic flows
-				\item \textbf{stability condition} $$\partial_{z} \theta > 0$$.
-			\end{itemize}
-		\end{column}
-	\end{columns}
+				\draw[->,thick] (A) -- (B);
+				\draw[->,thick] (B) -- (C);
+				\draw[->,thick] (C) -- (D);
+				\draw[->,thick] (D) -- (A);
+			\end{tikzpicture}%
+		}
+	\end{center}
+\begin{itemize}
+	\item initial displacement caused by hitting the mountain profile
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Potential temperature $\theta$}
+	\begin{columns}[c,onlytextwidth]
+		\column{0.52\textwidth}
+		\begin{itemize}
+			\setlength{\itemsep}{1.2em}
+			\item thermodynamic temperature a parcel would have if moved \textbf{adiabatically} from $(T, p)$ to $(\theta, p_0)$
+			\item conserved under \emph{isentropic flows}
+			\item \textbf{stratification stability condition}: $\partial_{z} \theta > 0$.
+		\end{itemize}
+
+		\vspace{1em}
+
+		\begin{math-block}{Potential temperature expression}
+			\begin{equations}[single,*,noskip]
+				\theta = T \left(\frac{p_0}{p}\right)^{\frac{R}{c_p}}.
+			\end{equations}
+		\end{math-block}
+
+		\column{0.43\textwidth}
+		\centering
+		% The parcel is drawn twice: solid where it actually is, dashed at the
+		% reference pressure, because that lower state is hypothetical -- it is
+		% the definition of theta, not a place the parcel has been.  No tikz
+		% library needed: the blob is a smooth cycle through seven points.
+		%
+		% Labels sit above the isobars and the p_0 note below them rather than
+		% out to the right: that keeps the drawing taller than it is wide (0.8),
+		% so scaling it to the frame height rather than the column width is what
+		% makes it big -- 136pt wide against the 171pt column, but the isobars
+		% themselves are half again as long as they were in a width-scaled version.
+		\resizebox{!}{170pt}{%
+			\begin{tikzpicture}[x=1cm, y=1cm]
+				% isobars
+				\draw[thick, dashed, DragonGray] (-1.7,2.8) -- (1.7,2.8);
+				\draw[thick, dashed, DragonGray] (-1.7,0)   -- (1.7,0);
+				\node[above right, SumiInk] at (0.55,2.85) {$(T, p)$};
+				\node[above right, SumiInk] at (0.55,0.05) {$(\theta, p_0)$};
+
+				% the parcel where it is
+				\begin{scope}[shift={(-0.7,2.8)}]
+					\draw[DragonTeal, thick, fill=DragonTeal!20]
+						plot[smooth cycle] coordinates
+						{(0,0.45) (0.45,0.28) (0.6,-0.1) (0.2,-0.45)
+						 (-0.35,-0.35) (-0.6,0.05) (-0.35,0.38)};
+				\end{scope}
+
+				% the same parcel brought down to p_0
+				\begin{scope}[shift={(-0.7,0)}]
+					\draw[DragonTeal, thick, dashed, fill=DragonTeal!8]
+						plot[smooth cycle] coordinates
+						{(0,0.45) (0.45,0.28) (0.6,-0.1) (0.2,-0.45)
+						 (-0.35,-0.35) (-0.6,0.05) (-0.35,0.38)};
+				\end{scope}
+
+				\draw[->, thick, DragonRed] (-0.7,2.2) -- (-0.7,0.6)
+					node[midway, right=3pt, font=\small, DragonGray] {adiabatic};
+
+				\node[below, DragonGray, font=\small] at (0,-0.85)
+					{$p_0 = \SI{1013.25}{\hecto\pascal}$};
+			\end{tikzpicture}%
+		}
+	\end{columns}
+\end{frame}
 \section{Mathematical description}
 \label{sec:MATH}
 \begin{frame}{Governing equations}
-
-	\begin{itemize}
-		\item air is modelled as a dry inviscid ideal gas
-		\item inside $\Omega \subset \mathbb{R}^2$ a rectangular domain with curved bottom boundary the evolution is described as an initial-boundary value problem for the \textbf{compressible isentropic Euler equations}
-	\end{itemize}
-	\begin{math-block}{Governing equations}
+	\begin{math-block}{Compressible isentropic Euler equations}
 		\begin{equations}[columns,*]
 			\rho \dv{\vb{v}}{t} &= -\grad p + \rho \vb{g},                && \eqnote{momentum balance} \\
 			\dv{\rho}{t} + \rho\left(\divergence{\vb{v}}\right) &= 0,     && \eqnote{mass conservation} \\
-			\dv{\theta}{t} &= 0,                                      && \eqnote{isentropic evolution} \\
+			\dv{\theta}{t} &= 0,                                      && \eqnote{isentropic evolution, $\theta = T \left(\frac{p_0}{p}\right)^{\frac{R}{c_p}}$} \\
 			p\left(\rho, T\right) &= \rho R T.                     && \eqnote{thermal equation of state of an ideal gas}
 		\end{equations}
 	\end{math-block}
 \end{frame}
 
 \begin{frame}{Initial conditions}
-	The initial conditions are given by an \textbf{isothermal hydrostatic balance} at $T_0 = \SI{250}{\kelvin}$
-	\begin{math-block}{Initial conditions}
+	\begin{math-block}{Isothermal hydrostatic balance, $T_0 = \SI{250}{\kelvin}$}
 		\begin{equations}[columns,*]
 			\vb{v}\left(0, \vb{x}\right) &= \vb{0},\\
 			\rho\left(0, \vb{x}\right) &= \bar{\rho}(z) \coloneq \rho_0 \exp\left(-z \frac{g}{R T_0}\right), \\
-			\theta\left(0, \vb{x}\right) &= \bar{\theta}(z) \coloneq T_0 \exp\left(z\frac{R}{c_p}\frac{g}{R T_0}\right),
+			\theta\left(0, \vb{x}\right) &= \bar{\theta}(z) \coloneq T_0 \exp\left(z\frac{R}{c_p}\frac{g}{R T_0}\right), \\
+			p\left(0, \vb{x}\right) &= \bar{p}(z) \coloneq \rho_0 R T_0 \exp\left(-z \frac{g}{R T_0}\right) && \eqnote{ $\Leftarrow$ equation of state}.
 		\end{equations}
 	\end{math-block}
-	and from the state equations it follows for the pressure
-
-	\begin{equations}[single,*]
-		p\left(0, \vb{x}\right) = \bar{p}(z) \coloneq \rho_0 R T_0 \exp\left(-z \frac{g}{R T_0}\right).
-	\end{equations}
-
 \end{frame}
 
-\begin{frame}{Boundary Conditions}
+\begin{frame}{Domain \& boundary conditions}
 	\begin{columns}[T,onlytextwidth]
-
 		\begin{column}{0.5\textwidth}
-			The boundary conditions on $\partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$ read
+			$ \Omega \subset \mathbb{R}^2, \partial \Omega = \Gamma_{\, \text{west} \,} \cup \Gamma_{\, \text{east} \,} \cup \Gamma_{\, \text{bot} \,} \cup \Gamma_{\, \text{top} \,}$
 			\begin{math-block}{Imposed boundary conditions}
 				\begin{equations}[columns,*]
 					\vb{v} &= v_0 \vb{e}_x \, \text{on} \, \Gamma_{\, \text{west} \,}, && \eqnote{subsonic inflow: $v_0 < c$} \\
@@ -158,20 +212,15 @@
 		\begin{column}{0.45\textwidth}
 			\centering
 
-			%% NOTE: the two pictures below are scaled to the SAME factor (0.71) so their
-			%% label sizes match. Natural widths: sketch 251pt, profile 207pt -> 207/251 = 0.824.
-			%% The sketch is the wider one, so it sets the scale by taking the full column.
 			\resizebox{\textwidth}{!}{%
 				\begin{tikzpicture}[scale=1, every node/.style={transform shape}]
 					% Boundaries
-					\draw[thick, blue] (-3,0.5) -- (-3,3.5); % <--- FIX IS HERE
+					\draw[thick, blue] (-3,0.5) -- (-3,3.5); 
 					\node[left, black, font=\small] at (-3, 1) {$\Gamma_{\text{west}}$};
-					% inflow data on Gamma_west: velocity above the arrow, potential temperature below
 					\draw[->, thick] (-4.3, 2) -- (-3.4, 2)
 					node[midway, above, inner sep=2pt] {$\vb{v} = v_0\vb{e}_x$}
 					node[midway, below, inner sep=2pt] {$\theta = \bar{\theta}(z)$};
 
-					% outflow on Gamma_east: boundary name low, prescribed pressure at arrow height (mirrors west)
 					\draw[thick, red] (3,0.5) -- (3,3.5);
 					\node[right, black, font=\small] at (3, 1) {$\Gamma_{\text{east}}$};
 					\node[right, black, font=\small] at (3, 2) {$p = \bar{p}(z)$};
@@ -183,8 +232,6 @@
 					\draw[thick, brown, domain=-3:3, samples=100] plot (\x, {0.5 + 1.5/( \x*\x + 1 )});
 					\node[below, black, font=\small, align=center] at (0,0.5)
 					{$\Gamma_{\text{bot}}$ \\ $\vb{v} \vdot \vb{n} = 0$};
-
-
 
 					\node at (0,2.5) {\Large $\Omega$};
 
@@ -236,12 +283,7 @@
 \end{frame}
 
 \begin{frame}{Why SPH?}
-	\begin{figure}[htbp]
-		\includegraphics[width=\linewidth]{figures/reference.jpg}
-		\caption{Reference results: vertical component of the velocity field \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}
-		\label{fig:COMPARISON}
-	\end{figure}
-
+	\solofigure{figures/divergence.png}{Reference results: vertical component of the velocity field \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}{fig:WHY}
 \end{frame}
 
 \begin{frame}{Different formulations}
@@ -304,120 +346,137 @@
 \section{Results}
 \label{sec:RESULTS}
 
-\begin{frame}{The failure of classical SPH: field}
+\begin{frame}{The failure of classical SPH: velocity field}
 	\solofigure{figures/results/field_SPH.png}{Caption.}{fig:SPH_FIELD}
 \end{frame}
 
-\begin{frame}{The failure of classical SPH: norms}
+\begin{frame}{The failure of classical SPH: velocity norms}
 	\solofigure{figures/results/norms_SPH.png}{Caption.}{fig:SPH_NORMS}
 \end{frame}
 
-\begin{frame}{The success of well-balanced $p-\theta$: field}
+\begin{frame}{The success of well-balanced $p-\theta$: velocity field}
 	\solofigure{figures/results/field_WB.png}{Caption.}{fig:WB_FIELD}
 \end{frame}
 
-\begin{frame}{The success of well-balanced $p-\theta$: norms}
+\begin{frame}{The success of well-balanced $p-\theta$: velocity norms}
 	\solofigure{figures/results/norms_PTH.png}{Caption.}{fig:WB_NORMS}
 \end{frame}
 
 \begin{frame}{Emergence of a mountain wave?}
-\begingroup
-	\captionsetup{font=scriptsize,skip=2pt}
-	\captionsetup[subfigure]{font=scriptsize,skip=1pt}
-	\newcommand{\wavepanel}{0.29\linewidth}
-	\begin{figure}[H]
-		\centering
-
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_1.png}
-			\caption{$t = \SI{360}{\second}$}
-			\label{fig:wave-360}
-		\end{subfigure}\hfill
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_2.png}
-			\caption{$t = \SI{420}{\second}$}
-			\label{fig:wave-420}
-		\end{subfigure}\hfill
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_3.png}
-			\caption{$t = \SI{480}{\second}$}
-			\label{fig:wave-480}
-		\end{subfigure}
-
-		\vspace{0.15cm}
-
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_4.png}
-			\caption{$t = \SI{540}{\second}$}
-			\label{fig:wave-540}
-		\end{subfigure}\hfill
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_5.png}
-			\caption{$t = \SI{600}{\second}$}
-			\label{fig:wave-600}
-		\end{subfigure}\hfill
-		\begin{subfigure}[b]{\wavepanel}
-			\centering
-			\includegraphics[width=\linewidth]{figures/results/wave_6.png}
-			\caption{$t = \SI{660}{\second}$}
-			\label{fig:wave-660}
-		\end{subfigure}
-		\caption{Caption.}
-		\label{fig:WAVE-EMERGENCE}
-	\end{figure}
-	\endgroup
+	\panelgrid[3]{%
+		\panel{figures/results/wave_1.png}{$t = \SI{360}{\second}$}
+		\panel{figures/results/wave_2.png}{$t = \SI{420}{\second}$}
+		\panel{figures/results/wave_3.png}{$t = \SI{480}{\second}$}
+		\panel{figures/results/wave_4.png}{$t = \SI{540}{\second}$}
+		\panel{figures/results/wave_5.png}{$t = \SI{600}{\second}$}
+		\panel{figures/results/wave_6.png}{$t = \SI{660}{\second}$}
+	}
 \end{frame}
 
-\begin{frame}{Tensile instability}
-	% figures/results/instab_02.png
-	% figures/results/instab_05.png
-	% figures/results/instab_07.png
+\begin{frame}{Tensile instability: clustering}
+	\solofigure{figures/results/instab_02.png}{$t = \SI{690}{\second}$}{fig:INSTAB1}
 \end{frame}
 
-\begin{frame}{Summary and future plans}
-	\begin{columns}[T,onlytextwidth]
-		\column{0.4\textwidth}
-		\centering
-		\textbf{Summary}
+\begin{frame}{Tensile instability: explosion}
+	\solofigure{figures/results/instab_05.png}{$t = \SI{710}{\second}$}{fig:INSTAB2}
+\end{frame}
+
+\begin{frame}{Tensile instability: breakdown}
+	\solofigure{figures/results/instab_07.png}{$t = \SI{720}{\second}$}{fig:INSTAB3}
+\end{frame}
+
+\begin{frame}{Summary}
+	\begin{columns}[c,onlytextwidth]
+		\column{0.42\textwidth}
 		\begin{itemize}
-			\setlength{\itemsep}{1.5em} 
+			\setlength{\itemsep}{1.2em}
 			\item flows around a topography induce internal gravity waves
 			\item IGWs play a significant role in mesoscale atmospheric dynamics
-			\item large scale hydrostatic balance is problematic for classical SPH 
+			\item large scale hydrostatic balance is problematic for classical SPH
 			\item well-balanced schemes with adaptive smoothing lengths must be used for non-stationary flows
 		\end{itemize}
 		\column{0.55\textwidth}
 		\centering
-		\textbf{Plans}
+		\includegraphics[width=\linewidth,height=\solofigbody,keepaspectratio]{figures/results/wave_5.png}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Future plans}
+	\begin{columns}[c,onlytextwidth]
+		\column{0.42\textwidth}
 		\begin{itemize}
-			\item fix tensile instability - by \eg $\delta-$SPH regularization
-			\item boundary conditions, include real topography
-			\item comparison with other methods: \emph{FD, FVM, DG}
+			\setlength{\itemsep}{1.2em}
+			\item resolve tensile instability by $\delta-$SPH regularization
+			\item implement other boundary conditions, include real topography
+			\item compare the results with the analytic solution
+			\item compare the results with other models \& methods.
 		\end{itemize}
-		\includegraphics[width=\textwidth]{figures/reference.jpg}
+		\column{0.55\textwidth}
+		\centering
+		% the credit line below the plot is what the 16pt buys back
+		\includegraphics[width=\linewidth,height=\dimexpr\solofigbody-16pt\relax,keepaspectratio]{figures/reference.jpg}
 		\vspace{0.5em}
 		{\tiny \textit{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}\par}
 	\end{columns}
 \end{frame}
+\appendix
+\selectlanguage{czech}
 
-\section{Responses to reviews}
+\section{Reakce na otázky z posudků}
 \label{sec:RESPONSES}
 
-\begin{frame}{Opponent's questions}
-	Vztah (2.4), uvažovala/testovala se i jiná volba okrajových podmínky na vstupu a výstupu, viz komentář v práci na str. 27?
-	Numerické experimenty v Kapitole 6 potvrzují schopnost metody zachovávat stacionární stavy. Částečně však postrádám další numerické verifikace, např. vyšetřování přesnosti či stability metody. Byly prováděny též experimenty v této oblasti?
-	Na základě zkušeností s řešením práce, jaký je potenciál částicových metod ve srovnání s "sítovými metodami" (FEM, FVM, DG) pro řešení komplikovanějších 3D úloh?
-\end{frame}
+\begin{qaframe}{Oponent, otázka 1}
+	\begin{question}
+		Vztah (2.4), uvažovala/testovala se i jiná volba okrajových podmínky na vstupu a výstupu, viz komentář v práci na str. 27?
+	\end{question}
 
-\begin{frame}{Supervisor's questions and discussion points}
-	Dá se pozorovaná vertikální vlna nazvat gravitační vlnou v meteorologickém kontextu?
-	Dal by se proměnlivý kernel začlenit do hamiltonovské formulace?
-	Jak obtížné by bylo vyvinout well-balanced implementaci SPH s $\delta-$SPH regularizací?
-\end{frame}
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Oponent, otázka 2}
+	\begin{question}
+		Numerické experimenty v Kapitole 6 potvrzují schopnost metody zachovávat stacionární stavy. Částečně však postrádám další numerické verifikace, např. vyšetřování přesnosti či stability metody. Byly prováděny též experimenty v této oblasti?
+	\end{question}
+
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Oponent, otázka 3}
+	\begin{question}
+		Na základě zkušeností s řešením práce, jaký je potenciál částicových metod ve srovnání se \uv{sítovými metodami} (FEM, FVM, DG) pro řešení komplikovanějších 3D úloh?
+	\end{question}
+
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Vedoucí, otázka 1}
+	\begin{question}
+		Dá se pozorovaná vertikální vlna nazvat gravitační vlnou v meteorologickém kontextu?
+	\end{question}
+
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Vedoucí, otázka 2}
+	\begin{question}
+		Dal by se proměnlivý kernel začlenit do hamiltonovské formulace?
+	\end{question}
+
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Vedoucí, otázka 3}
+	\begin{question}
+		Jak obtížné by bylo vyvinout well-balanced implementaci SPH s $\delta-$SPH regularizací?
+	\end{question}
+
+	% \begin{answer}
+	% \end{answer}
+\end{qaframe}
 
 \end{document}

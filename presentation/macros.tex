@@ -482,6 +482,20 @@
 % ---------------------------------------------------------------------
 % \solofigure -- one plot filling a whole results frame
 % ---------------------------------------------------------------------
+%
+%   USAGE -- one plot per frame, sized to the frame automatically:
+%
+%     \begin{frame}{The failure of classical SPH: field}
+%         \solofigure{figures/results/field_SPH.png}{Velocity magnitude
+%             $\abs{v}$ for the standard formulation.}{fig:SPH_FIELD}
+%     \end{frame}
+%
+%   Arguments are {image}{caption}{label}.  Do not add \includegraphics
+%   options -- the size is computed, and passing your own will either shrink
+%   the plot or push it out of the frame.  Write the caption as long as you
+%   like: it is measured, and the image shrinks to make room.
+%
+% ---------------------------------------------------------------------
 % The "failure/success" result frames each carry a single plot that should be
 % as large as the frame allows.  Measured for this deck (10pt, aspectratio=169,
 % class option t, plus the 0.5em appended to the frametitle template in
@@ -521,8 +535,262 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=\linewidth,height=\solofigheight,keepaspectratio]{#1}
-		\caption{#2}%
-		\label{#3}
+		% An empty caption would still print a bare "Figure N:".
+		\IfBlankTF{#2}{}{\caption{#2}\label{#3}}%
 	\end{figure}%
 	\endgroup
 }
+
+% ---------------------------------------------------------------------
+
+% ---------------------------------------------------------------------
+% \panelgrid -- several plots filling a whole results frame
+% ---------------------------------------------------------------------
+%
+%   USAGE -- the six-panel wave sequence, three panels per row:
+%
+%     \begin{frame}{Emergence of a mountain wave?}
+%         \panelgrid[3]{%
+%             \panel{figures/results/wave_1.png}{$t = \SI{360}{\second}$}
+%             ...
+%             \panel{figures/results/wave_6.png}{$t = \SI{660}{\second}$}
+%         }
+%     \end{frame}
+%
+%   \panelgrid[<columns>]{<\panel calls>}; the optional argument defaults to 3,
+%   and \panelgrid[1]{...} is the one-column filmstrip.  \panel{<image>}{<caption>}
+%   takes an empty caption -- \panel{img}{} -- and a grid in which *no* panel is
+%   captioned reserves no caption space at all.  As with \solofigure, do not pass
+%   \includegraphics options: both bounds are computed and handed to
+%   keepaspectratio.
+%
+% ---------------------------------------------------------------------
+% Same body height as \solofigure (\solofigbody, 183pt: the smaller of the two
+% measured frame bodies), minus one caption line and one \panelgridvsep per row.
+% What is left is split evenly between the rows, so the panels are as large as
+% the frame allows and every row is the same height.
+%
+% The grid is centred vertically by measuring the first panel at the computed
+% bounds: keepaspectratio means the real height is only known after the fact --
+% these plots are wide enough that the width bound is what actually binds -- so
+% the leftover is halved into a rigid \vspace* before the grid.  Rigid, because
+% \vfill is swallowed by beamer (see the note on \solofigure).
+%
+% Which way round a grid should go is worth computing before it is drawn.  With
+% \linewidth = 398.3pt and a 183pt body: the 2.22:1 wave panels come out
+% 130.1 x 58.6pt as 2 rows of 3 (width-limited) but only 111.2 x 50.0pt as
+% 3 rows of 2 (height-limited), so the sequence is 3 across; the 2.4:1
+% instability panels come out 139.7 x 58.2pt stacked in one column
+% (height-limited) against 130.1 x 54.2pt in one row, so the filmstrip is
+% vertical -- which is also the order in which the snapshots are read.
+% The figure environment costs about 9pt of height even with \intextsep zeroed
+% (measured: a three-row grid budgeted against the bare 183pt body overflowed by
+% 8.87pt), so the budget loses \panelgridchrome before it is split.
+\newlength{\panelgridchrome} \setlength{\panelgridchrome}{10pt}
+\newlength{\panelgridhsep} \setlength{\panelgridhsep}{4pt}
+\newlength{\panelgridvsep} \setlength{\panelgridvsep}{4pt}
+\newlength{\panelwd}
+\newlength{\panelht}
+\newlength{\panelgridcap}
+\newlength{\panelgridlead}
+\newlength{\panelgridrowht}
+\newsavebox{\panelgridcapbox}
+\newsavebox{\panelgridprobe}
+\newcounter{panelgridn}
+\newcounter{panelgridi}
+\newcounter{panelgridrows}
+\newif\ifpanelgridcaptioned
+\newcommand{\panelgridfirst}{}
+\newcommand{\panel}[2]{} % redefined inside \panelgrid; a no-op elsewhere
+% \par may not travel inside a macro argument, so the row break is a command.
+\newcommand{\panelgridrowbreak}{\par\vspace{\panelgridvsep}}
+
+\ExplSyntaxOn
+% ceil(#1/#2) -- \numexpr would round 8/3 up to 3 and 7/3 down to 2 alike.
+\NewExpandableDocumentCommand{\panelgridceil}{mm}
+	{\int_eval:n {\int_div_truncate:nn {#1 + #2 - 1} {#2}}}
+% true when panel #1 (1-based) opens a new row of #2 columns.
+\NewDocumentCommand{\panelgridnewrow}{mmmm}
+	{\int_compare:nTF {\int_mod:nn {#1 - 1} {#2} = 0} {#3} {#4}}
+\ExplSyntaxOff
+
+% \panelgrid[<columns>]{<\panel calls>}
+\NewDocumentCommand{\panelgrid}{O{3} +m}{%
+	\begingroup
+	\setlength{\intextsep}{0pt}%
+	\setlength{\abovecaptionskip}{0pt}%
+	\setlength{\belowcaptionskip}{0pt}%
+	\captionsetup[subfigure]{font=scriptsize,skip=1pt}%
+	% Pass one: count the panels, note whether any of them is captioned, and
+	% keep the first image to measure with.
+	\setcounter{panelgridn}{0}%
+	\panelgridcaptionedfalse
+	\renewcommand{\panel}[2]{%
+		\stepcounter{panelgridn}%
+		\IfBlankTF{##2}{}{\panelgridcaptionedtrue}%
+		\ifnum\value{panelgridn}=1 \renewcommand{\panelgridfirst}{##1}\fi
+	}%
+	#2%
+	\setcounter{panelgridrows}{\panelgridceil{\value{panelgridn}}{#1}}%
+	% One scriptsize line plus the subcaption skip, or nothing at all.
+	\sbox{\panelgridcapbox}{\scriptsize\strut(a)\strut}%
+	\ifpanelgridcaptioned
+		\setlength{\panelgridcap}{%
+			\dimexpr\ht\panelgridcapbox+\dp\panelgridcapbox+1pt\relax}%
+	\else
+		\setlength{\panelgridcap}{0pt}%
+	\fi
+	\setlength{\panelwd}{%
+		\dimexpr(\linewidth-\the\numexpr#1-1\relax\panelgridhsep)/#1\relax}%
+	\setlength{\panelht}{%
+		\dimexpr(\solofigbody-\panelgridchrome-\number\value{panelgridrows}\panelgridcap
+		        -\the\numexpr\number\value{panelgridrows}-1\relax\panelgridvsep)
+		        /\number\value{panelgridrows}\relax}%
+	% Pass two: typeset.  The separator goes before each panel but the first, so
+	% no trailing glue is added below the last row -- the centring depends on it.
+	\sbox{\panelgridprobe}{%
+		\includegraphics[width=\panelwd,height=\panelht,keepaspectratio]
+			{\panelgridfirst}}%
+	\setlength{\panelgridrowht}{\dimexpr\ht\panelgridprobe+\panelgridcap\relax}%
+	\setlength{\panelgridlead}{%
+		\dimexpr(\solofigbody-\panelgridchrome-\number\value{panelgridrows}\panelgridrowht
+		         -\the\numexpr\number\value{panelgridrows}-1\relax\panelgridvsep)/2\relax}%
+	\ifdim\panelgridlead>0pt\vspace*{\panelgridlead}\fi
+	\setcounter{panelgridi}{0}%
+	\renewcommand{\panel}[2]{%
+		\stepcounter{panelgridi}%
+		\ifnum\value{panelgridi}>1
+			\panelgridnewrow{\value{panelgridi}}{#1}{\panelgridrowbreak}{\hfill}%
+		\fi
+		\begin{subfigure}[b]{\panelwd}%
+			\centering
+			\includegraphics[width=\panelwd,height=\panelht,keepaspectratio]{##1}%
+			\IfBlankTF{##2}{}{\caption{##2}}%
+		\end{subfigure}%
+	}%
+	% subfigure insists on living inside a float, so the grid goes into a
+	% caption-less figure -- with \intextsep zeroed above it costs no height.
+	\begin{figure}
+		\centering
+		#2%
+	\end{figure}%
+	\endgroup
+}
+
+% ---------------------------------------------------------------------
+
+% ---------------------------------------------------------------------
+% qaframe / question / answer -- the defence discussion frames
+% ---------------------------------------------------------------------
+%
+%   USAGE -- one question and its reply, one frame:
+%
+%     \begin{qaframe}{Opponent, question 1}
+%         \begin{question}
+%             The author states that gravity is substituted by a background
+%             pressure gradient,
+%             \begin{equations}[single,*,noskip]
+%                 \dv{\vb{v}}{t} = - \frac{1}{\rho} \grad p
+%                                  + \frac{1}{\bar{\rho}} \grad \bar{p},
+%             \end{equations}
+%             but does not discuss a non-hydrostatic background state.
+%         \end{question}
+%
+%         \begin{answer}
+%             The background state is hydrostatic by construction, ...
+%         \end{answer}
+%     \end{qaframe}
+%
+%   \begin{qaframe}[<beamer frame options>]{<attribution>} is a plain beamer
+%   frame whose title is the attribution -- "Opponent, question 2",
+%   "Supervisor, question 1".  One question and its answer live on one frame,
+%   so the attribution is said once, in the title, and neither box repeats it.
+%   The optional argument is passed straight to `frame' (\eg [t], [shrink]).
+%
+%   qaframe has to grab its own body (the `+b' argument) and hand it to
+%   `frame' as one token list: beamer scans the input for a literal
+%   \end{frame} to close the frame, so a wrapper that merely says
+%   \begin{frame} in its begin code and \end{frame} in its end code runs to
+%   the end of the file ('File ended while scanning use of
+%   \beamer@collect@@body').  Displays survive the collection -- an
+%   `equations' block inside a question or an answer typesets normally --
+%   but verbatim does not, so a frame that needs [fragile] must be written as
+%   a plain \begin{frame} with the two boxes inside.
+%
+%   Both boxes still take an optional label if a frame ever has to carry more
+%   than one exchange -- \begin{question}[Second part] -- but the answer is the
+%   only one labelled by default („Odpověď“ -- the defence is held in Czech),
+%   because the question is already named by the frame title.
+%
+% ---------------------------------------------------------------------
+%
+% Environments rather than macros: a question may quote a display, and
+% \begin{equations} does not survive being passed as a macro argument.
+%
+% The style deliberately mirrors math-block / code-block in preamble.tex
+% section 5 -- same hidden frame, same 2pt west borderline, same left=10pt --
+% so the deck keeps one visual vocabulary.  The two colours are a pair:
+% DragonGold for the reviewer (the one palette colour not already spoken for)
+% and DragonRed for you, the same red as the frametitles, because the answer is
+% the deck's own voice.
+%
+% The question is italic and enquoted; the bar alone would be enough to mark a
+% quotation, but the marks make it unambiguous that these are the reviewer's
+% words and not a paraphrase.  To drop them, delete \qopen/\qclose from the
+% `before upper' / `after upper' keys.  The answer is upright and unquoted --
+% it is not a citation, and italic paragraphs are tiring to read from the back
+% of a lecture hall.
+%
+% The label is drawn inside `before upper' rather than through tcolorbox's
+% title machinery: with the attribution gone from the boxes the title was empty
+% far more often than not, and an optional label is one branch instead of a
+% detached title that has to be re-attached by hand.
+\tcbset{
+	voicebox/.style={
+		enhanced,
+		frame hidden,
+		colback=PaperBg,
+		sharp corners,
+		left=10pt,
+		coltext=SumiInk,
+		before skip=0.6em,
+		after skip=0.6em,
+	}
+}
+
+% Czech quotation marks -- the defence is held in Czech and so is the whole
+% appendix, so the pair is low-opening „ + high-closing “, not the English
+% “…”.  Swap \quotedblbase for \textquotedblleft to go back to English.
+% Upright: italic quotation marks lean the wrong way against the text.
+% \/ is the italic correction before the closing mark.
+\newcommand{\qopen}{\textup{\quotedblbase}}
+\newcommand{\qclose}{\/\textup{\textquotedblleft}}
+
+% \voicelabel{<colour>}{<text>} -- the optional heading of a voice box.
+% Always upright: `question' sets fontupper=\itshape, which would slant it too.
+\NewDocumentCommand{\voicelabel}{mm}{%
+	\IfBlankTF{#2}{}{{\bfseries\upshape\color{#1}#2\par\vspace{0.2em}}}%
+}
+
+% \begin{question}[<label>] ... \end{question} -- unlabelled by default.
+\NewTColorBox{question}{O{}}{%
+	voicebox,
+	borderline west={2pt}{0pt}{DragonGold},
+	fontupper=\itshape,
+	before upper={\voicelabel{DragonGold}{#1}\qopen},
+	after upper={\qclose},
+}
+
+% \begin{answer}[<label>] ... \end{answer}
+\NewTColorBox{answer}{O{Odpověď}}{%
+	voicebox,
+	borderline west={2pt}{0pt}{DragonRed},
+	before upper={\voicelabel{DragonRed}{#1}},
+}
+
+% \begin{qaframe}[<frame options>]{<attribution>} ... \end{qaframe}
+\NewDocumentEnvironment{qaframe}{O{} m +b}{%
+	\IfBlankTF{#1}{\begin{frame}{#2}}{\begin{frame}[#1]{#2}}%
+	#3%
+	\end{frame}%
+}{}
