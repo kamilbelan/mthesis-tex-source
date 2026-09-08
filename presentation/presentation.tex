@@ -295,7 +295,7 @@
 	\begin{columns}[T,onlytextwidth]
 		\column{0.4\textwidth}
 		\centering
-		\begin{math-block}{Classical SPH}
+		\begin{math-block}{Standard SPH}
 			\begin{equations}[columns,*]
 				\dv{\rho_a}{t} &= \sum_b m_b w'_{ab} \vb{v}_{ab}\vdot \vb{e}_{ab}, \\
 				\dv{\vb{v}_a}{t} &= -\sum_b m_b \qty(\frac{p_a}{\rho_a^2}+\frac{p_b}{\rho_b^2})w'_{ab}\vb{e}_{ab} + \vb{g}, \\
@@ -366,20 +366,12 @@
 \section{Results}
 \label{sec:RESULTS}
 
-\begin{frame}{The failure of classical SPH: velocity field}
-	\solofigure{figures/results/field_SPH.png}{Nonzero velocity field computed by classical SPH - a failure of hydrostatic balance.}{fig:SPH_FIELD}
-\end{frame}
-
-\begin{frame}{The failure of classical SPH: velocity norms}
-	\solofigure{figures/results/norms_SPH.png}{Nonzero norms of the velocity field - a failure of hydrostatic balance}{fig:SPH_NORMS}
-\end{frame}
-
-\begin{frame}{The success of well-balanced $p-\theta$: velocity field}
-	\solofigure{figures/results/field_WB.png}{Caption.}{fig:WB_FIELD}
+\begin{frame}{The failure of standard SPH: velocity field}
+	\solofigure{figures/results/field_SPH.png}{Nonzero velocity field computed by standard SPH - a failure of hydrostatic balance.}{fig:SPH_FIELD}
 \end{frame}
 
 \begin{frame}{The success of well-balanced $p-\theta$: velocity norms}
-	\solofigure{figures/results/norms_PTH.png}{Caption.}{fig:WB_NORMS}
+	\solofigure{figures/results/stationary_norms_compare.pdf}{Comparison of standard SPH and well-balanced $p-\theta$. $p-\theta$ preserves hydrostatic balance exactly.}{fig:WB_NORMS}
 \end{frame}
 
 \begin{frame}{Partial success: emergence of a wave}
@@ -393,7 +385,7 @@
 	}
 \end{frame}
 
-\begin{frame}{Tensile instability: clustering}
+\begin{frame}{Tensile instability: clumping}
 	\solofigure{figures/results/instab_02.png}{$t = \SI{690}{\second}$}{fig:INSTAB1}
 \end{frame}
 
@@ -412,7 +404,7 @@
 			\setlength{\itemsep}{1.2em}
 			\item flows around a topography induce internal gravity waves
 			\item IGWs play a significant role in mesoscale atmospheric dynamics
-			\item large scale hydrostatic balance is problematic for classical SPH
+			\item large scale hydrostatic balance is problematic for standard SPH
 			\item well-balanced schemes with adaptive smoothing lengths must be used for non-stationary flows
 		\end{itemize}
 		\column{0.55\textwidth}
