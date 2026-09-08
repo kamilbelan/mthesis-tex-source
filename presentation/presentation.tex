@@ -266,34 +266,39 @@
 \section{Numerical solution}
 \label{sec:NUMERICS}
 \begin{frame}{Smoothed Particle Hydrodynamics}
-	The governing equations are solved numericaly using the \textbf{Smoothed Particle Hydrodynamics (SPH)} method
 	\begin{itemize}
-		\item the fluid is partitioned into \emph{abstract material points}, so called \textbf{particles}
-		\item particle $a$ possess its $\vb{v}_a, \rho_a, \theta_a, p_a$ and interact \textbf{locally}
-		\item \emph{PDE's} for the continuum become \textbf{ODE's} for the particles
-		\item main tool is the \textbf{interpolation kernel} $w_h\left(\vb{x}\right)$
+		\item fluid is partitioned into \emph{abstract material points} $\{\vb{x}_a\}$, so called \textbf{particles}
+	\item equations are discretised using an \textbf{interpolation kernel} $w_h\left(\vb{x}\right), h \propto \mathrm{diam} \, \mathrm{supp} w_h$
 	\end{itemize}
 
 	\begin{equations}[columns,*]
-		\Phi\qty(t,\vb{x}) = \Phi\qty(t,\vb{x}) \star \delta\qty(\vb{x}) &=\int_{\Omega}\Phi\qty(t,\vb{x}') \delta\qty(\vb{x}-\vb{x}')\dd{\vb{x}'} \Rightarrow && \eqnote{convolution identity} \\
-		[\Phi]^C_{w_h}\qty(t,\vb{x}) \coloneq \Phi\qty(t,\vb{x}) \star w_h\qty(\vb{x}) &= \int_{\Omega}\Phi\qty(t,\vb{x}')w_h\qty(\vb{x}-\vb{x}')\dd{\vb{x}'}, && \eqnote{continuous interpolation} \\
-		\Phi_a(t) \equiv [\Phi]_{w_h}^D(t,\vb{x}_a) &\coloneq \sum_b \Phi_a w_{ab} V_b, && \eqnote{discrete interpolation}\\
-		\Phi(t,\vb{x}) &\approx [\Phi]_{w_h}^C\qty(t,\vb{x}) \approx \Phi_a(t). && \eqnote{particle approximation}
+		\uncover<2->{\Phi\qty(t,\vb{x}) = \Phi\qty(t,\vb{x}) \star \delta\qty(\vb{x})} &\uncover<2->{=\int_{\Omega}\Phi\qty(t,\vb{x}') \delta\qty(\vb{x}-\vb{x}')\dd{\vb{x}'} \Rightarrow} && \uncover<2->{\eqnote{convolution identity}} \\
+		\uncover<3->{[\Phi]^C_{w_h}\qty(t,\vb{x}) \coloneq \Phi\qty(t,\vb{x}) \star w_h\qty(\vb{x})} &\uncover<3->{= \int_{\Omega}\Phi\qty(t,\vb{x}')w_h\qty(\vb{x}-\vb{x}')\dd{\vb{x}'},} && \uncover<3->{\eqnote{continuous interpolation}} \\
+		\uncover<4->{[\Phi]_{w_h}^C(t,\vb{x}_a)} &\uncover<4->{\approx \sum_{\vb{x}_b \in \mathrm{supp}w_h} \Phi\left(t, \vb{x}_b\right) w_h\left(\vb{x}_a - \vb{x}_b\right) V_b \coloneq \Phi_a\left(t\right),} && \uncover<4->{\eqnote{discrete interpolation}}\\
+		\uncover<5->{\Phi(t,\vb{x}_a)} &\uncover<5->{\approx [\Phi]_{w_h}^C\qty(t,\vb{x}_a) \approx \Phi_a(t).} && \uncover<5->{\eqnote{particle approximation}}
 	\end{equations}
+
+	\begin{itemize}
+		\item<6-> the resulting system of \emph{ODEs} is solved numerically using a \textbf{symplectic integrator}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Why SPH?}
+	\begin{itemize}
+		\item \textbf{conservative} properties, accessible \textbf{trajectories}
+	\end{itemize}
+
 	\solofigure{figures/divergence.png}{Reference results: vertical component of the velocity field \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}{fig:WHY}
 \end{frame}
 
-\begin{frame}{Different formulations}
+\begin{frame}{$p-\theta$ formulation}
 	\begin{columns}[T,onlytextwidth]
 		\column{0.4\textwidth}
 		\centering
 		\begin{math-block}{Classical SPH}
 			\begin{equations}[columns,*]
 				\dv{\rho_a}{t} &= \sum_b m_b w'_{ab} \vb{v}_{ab}\vdot \vb{e}_{ab}, \\
-				\dv{\vb{v}_a}{t} &= -\sum_b\qty(\frac{p_a^{2}}{\rho_a}+\frac{p_b^{2}}{\rho_b})w'_{ab}\vb{e}_{ab} + \vb{g}, \\
+				\dv{\vb{v}_a}{t} &= -\sum_b m_b \qty(\frac{p_a}{\rho_a^2}+\frac{p_b}{\rho_b^2})w'_{ab}\vb{e}_{ab} + \vb{g}, \\
 				\theta &= T_a \left(p_0/p_a\right)^{\frac{R}{c_p}} \approx \, \text{const} \,,
 			\end{equations}
 		\end{math-block}
@@ -304,10 +309,10 @@
 
 		\column{0.55\textwidth}
 		\centering
-		\begin{math-block}{$p-\theta$ formulation}
+		\begin{math-block}{Novel $p-\theta$ formulation}
 			\begin{equations}[columns,*]
-				P_a &= \left(\sum_{b} \frac{m_b}{\tilde{\theta_0}} \theta_b w_{ab}\left(\link[h]{h_a}\right)\right)^{\gamma},\\
-				\dv{\vb{v}_a}{t} &= - \sum_{b} m_b \frac{\theta_a \theta_b}{\tilde{\theta}_0^{2}}\left(\frac{\link[f]{f_{a}}P_a}{P_a^{2/\gamma}} w'_{ab}\left(\link[h]{h_a}\right) + \frac{\link[f]{f_{b}}P_b}{P_b^{2/\gamma}} w'_{ab}\left(\link[h]{h_b}\right)\right)\vb{e}_{ab} + \vb{g},\\
+				p_a &= \left(\sum_{b} \frac{m_b}{\tilde{\theta_0}} \theta_b w_{ab}\left(\link[h]{h_a}\right)\right)^{\gamma},\\
+				\dv{\vb{v}_a}{t} &= - \sum_{b} m_b \frac{\theta_a \theta_b}{\tilde{\theta}_0^{2}}\left(\frac{\link[f]{f_{a}}p_a}{p_a^{2/\gamma}} w'_{ab}\left(\link[h]{h_a}\right) + \frac{\link[f]{f_{b}}p_b}{p_b^{2/\gamma}} w'_{ab}\left(\link[h]{h_b}\right)\right)\vb{e}_{ab} + \vb{g},\\
 				\theta_a &= \, \text{const} \,
 			\end{equations}
 		\end{math-block}
@@ -318,40 +323,55 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Well-balanced formulations}
-	Hydrostatic equilibrium $\bar{\rho}, \bar{p}$ solves
+\begin{frame}{Well-balanced SPH formulations}
+	\begin{itemize}
+		\item hydrostatic $\bar{\rho}, \bar{p}$ solve
+	\end{itemize}
 
 	\begin{equations}[single,*,noskip]
 		\cancel{\bar{\rho} \dv{\vb{v}}{t}} + \grad \bar{p} - \bar{\rho} \vb{g} = \vb{0},
 	\end{equations}
 
-	however, due to discretisation errors, general numerical approximations $\bar{\rho_h}, \bar{p_h}, \grad_h$ \alert{do not solve the hydrostatic balance on the discrete level}:
+	\begin{itemize}
+		\item<2-> general numerical approximations $\bar{\rho_h}, \bar{p_h}, \grad_h$
+	\end{itemize}
 
 	\begin{equations}[single,*,noskip]
-		\grad_h \bar{p_h} - \bar{\rho_h} \vb{g} \neq \vb{0} \Rightarrow \, \text{\textbf{spurious force!}} \,
+		\uncover<2->{\grad_h \bar{p_h} - \bar{\rho_h} \vb{g} \neq \vb{0} \Rightarrow \, \text{\textbf{spurious force}} \,}
 	\end{equations}
 
-	A numerical scheme that preserves exactly the \emph{analytical stationary solutions} on the \textbf{discrete level} is said to be \textbf{well-balanced.}
+	\uncover<2->{%
+		\begin{alert-block}
+			Hydrostatic balance does not generally hold on the discrete level!
+		\end{alert-block}
+	}
 
+	\begin{itemize}
+		\item<3-> \textbf{well-balanced scheme}: stationary states preserved \textbf{after discretisation}
+	\end{itemize}
+
+	\uncover<3->{%
 	\begin{math-block}{Well-balancing: substituting for gravity}
 		\begin{equations}[single,*,noskip]
 			\vb{g} = \frac{1}{\bar{\rho}} \grad \bar{p} \Rightarrow \dv{\vb{v}}{t} = - \frac{1}{\rho} \grad p + \frac{1}{\bar{\rho}} \grad \bar{p}
 		\end{equations}
 	\end{math-block}
+	}
 
-	The gradients (forces) on the right-hand side are discretised identically $\Rightarrow$ \textbf{identical truncation errors cancel out}.
-
+	\begin{itemize}
+	\item<3-> identical discretisation of gradients $\Rightarrow$ identical truncation errors $\Rightarrow$ they \textbf{subtract}
+	\end{itemize}
 \end{frame}
 
 \section{Results}
 \label{sec:RESULTS}
 
 \begin{frame}{The failure of classical SPH: velocity field}
-	\solofigure{figures/results/field_SPH.png}{Caption.}{fig:SPH_FIELD}
+	\solofigure{figures/results/field_SPH.png}{Nonzero velocity field computed by classical SPH - a failure of hydrostatic balance.}{fig:SPH_FIELD}
 \end{frame}
 
 \begin{frame}{The failure of classical SPH: velocity norms}
-	\solofigure{figures/results/norms_SPH.png}{Caption.}{fig:SPH_NORMS}
+	\solofigure{figures/results/norms_SPH.png}{Nonzero norms of the velocity field - a failure of hydrostatic balance}{fig:SPH_NORMS}
 \end{frame}
 
 \begin{frame}{The success of well-balanced $p-\theta$: velocity field}
@@ -362,7 +382,7 @@
 	\solofigure{figures/results/norms_PTH.png}{Caption.}{fig:WB_NORMS}
 \end{frame}
 
-\begin{frame}{Emergence of a mountain wave?}
+\begin{frame}{Partial success: emergence of a wave}
 	\panelgrid[3]{%
 		\panel{figures/results/wave_1.png}{$t = \SI{360}{\second}$}
 		\panel{figures/results/wave_2.png}{$t = \SI{420}{\second}$}

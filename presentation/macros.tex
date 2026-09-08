@@ -794,3 +794,36 @@
 	#3%
 	\end{frame}%
 }{}
+
+% ---------------------------------------------------------------------
+% alert-block -- the third member of the preamble's block family
+% ---------------------------------------------------------------------
+% math-block (indigo) and code-block (teal) live in preamble.tex section 5;
+% this one is their red sibling and belongs here only because macros.tex is
+% where new slide macros go.  It is deliberately louder than the other two --
+% a tinted background and a 3pt rule instead of 2pt, text in bold -- because
+% it carries the one sentence on a frame that the audience must not skim.
+%
+%   \begin{alert-block}            ... \end{alert-block}   % no heading
+%   \begin{alert-block}[Careful!]  ... \end{alert-block}   % with one
+%
+% Nesting it inside \uncover<2->{...} works (verified): the box is drawn only
+% on the slides where it is uncovered, and its space is reserved on the others,
+% so nothing below it moves as the frame advances.
+\NewTColorBox{alert-block}{O{}}{%
+	enhanced,
+	frame hidden,
+	colback=DragonRed!7,
+	borderline west={3pt}{0pt}{DragonRed},
+	coltext=SumiInk,
+	fontupper=\bfseries,
+	halign=center,   % the shout line reads better centred in the full-width box
+	left=10pt,
+	top=4pt, bottom=4pt,
+	% Tighter than the tcolorbox default \medskipamount on both sides: on the
+	% well-balanced frame the box is the difference between fitting the body and
+	% overflowing it by 3.5pt.
+	before skip=4pt, after skip=4pt,
+	sharp corners,
+	before upper={\IfBlankTF{#1}{}{{\color{DragonRed}#1\par\vspace{0.2em}}}},
+}
