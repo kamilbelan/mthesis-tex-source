@@ -478,3 +478,51 @@
 \NewDocumentCommand{\setlinkstyle}{m}
   { \tl_gset:Nn \g_belan_link_style_tl {#1} }
 \ExplSyntaxOff
+
+% ---------------------------------------------------------------------
+% \solofigure -- one plot filling a whole results frame
+% ---------------------------------------------------------------------
+% The "failure/success" result frames each carry a single plot that should be
+% as large as the frame allows.  Measured for this deck (10pt, aspectratio=169,
+% class option t, plus the 0.5em appended to the frametitle template in
+% presentation.tex): the frame body is 186.9pt tall under a plain frametitle and
+% 183.1pt when the title contains math.  \solofigbody takes the smaller of the
+% two so all four plots come out the same size -- the norms plots are compared
+% across frames, so a uniform size matters more than the 3.9pt.
+%
+% \solofigchrome is the constant vertical cost of the figure environment with
+% the skips set below (calibrated by sweep: a one-line scriptsize caption tops
+% out at exactly 163pt of image, a two-line one at 155pt).  The caption itself
+% is measured at use time, so a caption that wraps shrinks the image instead of
+% spilling out of the frame.
+%
+% Both bounds are handed to keepaspectratio: the 2.9:1 field plots are
+% width-limited and the 1.8:1 norms plots are height-limited, and each ends up
+% at whichever bound binds first.
+\newlength{\solofigbody}   \setlength{\solofigbody}{183pt}
+\newlength{\solofigchrome} \setlength{\solofigchrome}{12pt}
+\newlength{\solofigheight}
+\newsavebox{\solofigcapbox}
+
+% \solofigure{<image>}{<caption>}{<label>}
+\newcommand{\solofigure}[3]{%
+	\begingroup
+	\setlength{\intextsep}{0pt}%
+	\setlength{\abovecaptionskip}{4pt}%
+	\setlength{\belowcaptionskip}{0pt}%
+	\captionsetup{font=scriptsize}%
+	% Measure the caption as it will be set.  The number is padded to two digits
+	% so the estimate is never short of the real "Figure N:" prefix.
+	\sbox{\solofigcapbox}{%
+		\parbox{\linewidth}{\scriptsize\strut\figurename~00: #2\strut}}%
+	\setlength{\solofigheight}{%
+		\dimexpr\solofigbody-\solofigchrome
+		       -\ht\solofigcapbox-\dp\solofigcapbox\relax}%
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth,height=\solofigheight,keepaspectratio]{#1}
+		\caption{#2}%
+		\label{#3}
+	\end{figure}%
+	\endgroup
+}

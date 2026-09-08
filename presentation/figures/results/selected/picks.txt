@@ -1,0 +1,3 @@
+/home/moschehaus/studium/mthesis-tex-source/presentation/figures/results/instab_02.png
+/home/moschehaus/studium/mthesis-tex-source/presentation/figures/results/instab_05.png
+/home/moschehaus/studium/mthesis-tex-source/presentation/figures/results/instab_07.png
