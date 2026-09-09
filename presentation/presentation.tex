@@ -441,16 +441,10 @@
 	\begin{question}
 		Vztah (2.4), uvažovala/testovala se i jiná volba okrajových podmínky na vstupu a výstupu, viz komentář v práci na str. 27?
 	\end{question}
+\end{qaframe}
 
-	\begin{answer}
-		\centering
-		% No float here: inside the answer box the "Figure N:" caption and the float
-		% skips cost about 30pt, which is what pushed these two frames ~48pt past the
-		% body.  0.30\textheight is what is left once the question box, the answer
-		% label and the credit line have taken their share (0.38 still ran 15pt over).
-		\includegraphics[height=0.30\textheight,keepaspectratio]{figures/reference.jpg}\\[0.3em]
-		{\tiny\itshape Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}
-	\end{answer}
+\begin{qaframe}{Oponent, otázka 1: odpověď}
+	\solofigure{figures/reference.jpg}{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}{fig:ANSWER-OPONENT-1}
 \end{qaframe}
 
 \begin{qaframe}{Oponent, otázka 2}
@@ -472,16 +466,10 @@
 	\begin{question}
 		Dá se pozorovaná vertikální vlna nazvat gravitační vlnou v meteorologickém kontextu?
 	\end{question}
+\end{qaframe}
 
-		\begin{answer}
-		\centering
-		% No float here: inside the answer box the "Figure N:" caption and the float
-		% skips cost about 30pt, which is what pushed these two frames ~48pt past the
-		% body.  0.30\textheight is what is left once the question box, the answer
-		% label and the credit line have taken their share (0.38 still ran 15pt over).
-		\includegraphics[height=0.30\textheight,keepaspectratio]{figures/reference.jpg}\\[0.3em]
-		{\tiny\itshape Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}
-	\end{answer}
+\begin{qaframe}{Vedoucí, otázka 1: odpověď}
+	\solofigure{figures/reference.jpg}{Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}{fig:ANSWER-VEDOUCI-1}
 \end{qaframe}
 
 \begin{qaframe}{Vedoucí, otázka 2}
@@ -491,7 +479,7 @@
 
 	\begin{answer}
 		\textbf{Obecná evoluce}
-		\begin{equations}[single,!,numberline=all]
+		\begin{equations}[single,!,numberline=all,noskip]
 		\label{eq:OBECNA}
 		\dv{F}{t} = \partial_t F + \{F, E\},
 		\end{equations}
@@ -503,7 +491,7 @@
 		\end{equations}
 
 		\textbf{SPH energie}
-		\begin{equations}[single,!,numberline=all]
+		\begin{equations}[single,!,numberline=all,noskip]
 		\label{eq:ENERGY}
 		E = \sum_{a} \left(\frac{\abs{\vb{M}_{a}}^{2}}{2 m_a} + \frac{m_a}{\rho_a}e\left(\link[h]{\rho_a}, \eta_a\right)\right),
 		\end{equations}
