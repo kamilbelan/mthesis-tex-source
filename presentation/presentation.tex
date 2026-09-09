@@ -442,8 +442,15 @@
 		Vztah (2.4), uvažovala/testovala se i jiná volba okrajových podmínky na vstupu a výstupu, viz komentář v práci na str. 27?
 	\end{question}
 
-	% \begin{answer}
-	% \end{answer}
+	\begin{answer}
+		\centering
+		% No float here: inside the answer box the "Figure N:" caption and the float
+		% skips cost about 30pt, which is what pushed these two frames ~48pt past the
+		% body.  0.30\textheight is what is left once the question box, the answer
+		% label and the credit line have taken their share (0.38 still ran 15pt over).
+		\includegraphics[height=0.30\textheight,keepaspectratio]{figures/reference.jpg}\\[0.3em]
+		{\tiny\itshape Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}
+	\end{answer}
 \end{qaframe}
 
 \begin{qaframe}{Oponent, otázka 2}
@@ -459,9 +466,6 @@
 	\begin{question}
 		Na základě zkušeností s řešením práce, jaký je potenciál částicových metod ve srovnání se \uv{sítovými metodami} (FEM, FVM, DG) pro řešení komplikovanějších 3D úloh?
 	\end{question}
-
-	% \begin{answer}
-	% \end{answer}
 \end{qaframe}
 
 \begin{qaframe}{Vedoucí, otázka 1}
@@ -469,8 +473,15 @@
 		Dá se pozorovaná vertikální vlna nazvat gravitační vlnou v meteorologickém kontextu?
 	\end{question}
 
-	% \begin{answer}
-	% \end{answer}
+		\begin{answer}
+		\centering
+		% No float here: inside the answer box the "Figure N:" caption and the float
+		% skips cost about 30pt, which is what pushed these two frames ~48pt past the
+		% body.  0.30\textheight is what is left once the question box, the answer
+		% label and the credit line have taken their share (0.38 still ran 15pt over).
+		\includegraphics[height=0.30\textheight,keepaspectratio]{figures/reference.jpg}\\[0.3em]
+		{\tiny\itshape Reference results. \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}
+	\end{answer}
 \end{qaframe}
 
 \begin{qaframe}{Vedoucí, otázka 2}
@@ -478,8 +489,49 @@
 		Dal by se proměnlivý kernel začlenit do hamiltonovské formulace?
 	\end{question}
 
-	% \begin{answer}
-	% \end{answer}
+	\begin{answer}
+		\textbf{Obecná evoluce}
+		\begin{equations}[single,!,numberline=all]
+		\label{eq:OBECNA}
+		\dv{F}{t} = \partial_t F + \{F, E\},
+		\end{equations}
+
+		\textbf{SPH závorka}
+		\begin{equations}[single,!,numberline=all,noskip]
+		\label{eq:PB}
+			\{F\left(\vb{x}_a, \vb{M}_a\right), G\left(\vb{x}_a, \vb{M}_a\right)\} = \sum_{a}\left(\pdv{F}{x^i_a} \pdv{G}{M_{a,i}} - \pdv{F}{M_{a,i}}\pdv{G}{x^i_a}\right),
+		\end{equations}
+
+		\textbf{SPH energie}
+		\begin{equations}[single,!,numberline=all]
+		\label{eq:ENERGY}
+		E = \sum_{a} \left(\frac{\abs{\vb{M}_{a}}^{2}}{2 m_a} + \frac{m_a}{\rho_a}e\left(\link[h]{\rho_a}, \eta_a\right)\right),
+		\end{equations}
+
+
+	\end{answer}
+\end{qaframe}
+
+\begin{qaframe}{Vedoucí, otázka 2}
+	\begin{answer}[Odpověď (pokračování)]
+		\textbf{Evoluce rychlosti}
+		\begin{equations}[single,!,numberline=all]
+		\label{eq:CANONICAL}
+		\dv{\vb{v}_a}{t} = \frac{1}{m_a} \dv{\vb{M}_a}{t} = - \frac{1}{m_a} \link[h]{\grad_a} E,
+		\end{equations}
+
+		\textbf{SPH energie}
+		\begin{equations}[single,!,numberline=all]
+		\label{eq:ENERGY}
+		E = \sum_{a} \left(\frac{\abs{\vb{M}_{a}}^{2}}{2 m_a} + \frac{m_a}{\rho_a}e\left(\link[h]{\rho_a}, \eta_a\right)\right),
+		\end{equations}
+
+		\textbf{Hustota}
+		\begin{equations}[single,!,numberline=all]
+		\label{eq:DENSITY}
+		\link[h]{\rho_a} = \sum_{b} m_b w_{ab}\left(h_b\right)
+		\end{equations}
+	\end{answer}
 \end{qaframe}
 
 \begin{qaframe}{Vedoucí, otázka 3}
