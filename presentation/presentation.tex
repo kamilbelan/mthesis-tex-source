@@ -76,33 +76,6 @@
 		{\tiny \textit{Mountain waves. \href{https://unsplash.com/photos/white-clouds-over-mountains-during-daytime-I8CF-ST8WxE}{Source: Marc Thunis}}\par}
 	\end{columns}
 \end{frame}
-\begin{frame}{Internal gravity wave prototype}
-	\begin{itemize}
-		\item \emph{air density} and \emph{atmospheric pressure} are stratified
-		\item a displaced air parcel is pushed back by buoyancy \& gravity $\Rightarrow$ \textbf{internal gravity wave}
-	\end{itemize}
-
-	\vspace{0.5em}
-
-	\begin{center}
-		\resizebox{!}{135pt}{%
-			\begin{tikzpicture}[node distance = 2cm]
-				\node (A) [draw, align=center, text width=3.5cm] at (0,2) {\scriptsize an air parcel ascends to a region of lower density};
-				\node (B) [draw, align=center, text width=3.5cm] at (3.5,0) {\scriptsize buoyancy decreases; gravity drives it downward};
-				\node (C) [draw, align=center, text width=3.5cm] at (0,-2) {\scriptsize the parcel reaches a region of higher density};
-				\node (D) [draw, align=center, text width=3.5cm] at (-3.5,0) {\scriptsize buoyancy increases; buoyancy force drives it upward};
-
-				\draw[->,thick] (A) -- (B);
-				\draw[->,thick] (B) -- (C);
-				\draw[->,thick] (C) -- (D);
-				\draw[->,thick] (D) -- (A);
-			\end{tikzpicture}%
-		}
-	\end{center}
-\begin{itemize}
-	\item initial displacement caused by hitting the mountain profile
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Potential temperature $\theta$}
 	\begin{columns}[c,onlytextwidth]
@@ -283,14 +256,6 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Why SPH?}
-	\begin{itemize}
-		\item \textbf{conservative} properties, accessible \textbf{trajectories}
-	\end{itemize}
-
-	\solofigure{figures/divergence.png}{Reference results: vertical component of the velocity field \href{https://doi.org/10.1175/MWR-D-10-05042.1}{Monthly Weather Review 139, 9; 10.1175/MWR-D-10-05042.1}}{fig:WHY}
-\end{frame}
-
 \begin{frame}{$p-\theta$ formulation}
 	\begin{columns}[T,onlytextwidth]
 		\column{0.4\textwidth}
@@ -347,28 +312,11 @@
 	}
 
 	\begin{itemize}
-		\item<3-> \textbf{well-balanced scheme}: stationary states preserved \textbf{after discretisation}
-	\end{itemize}
-
-	\uncover<3->{%
-	\begin{math-block}{Well-balancing: substituting for gravity}
-		\begin{equations}[single,*,noskip]
-			\vb{g} = \frac{1}{\bar{\rho}} \grad \bar{p} \Rightarrow \dv{\vb{v}}{t} = - \frac{1}{\rho} \grad p + \frac{1}{\bar{\rho}} \grad \bar{p}
-		\end{equations}
-	\end{math-block}
-	}
-
-	\begin{itemize}
-	\item<3-> identical discretisation of gradients $\Rightarrow$ identical truncation errors $\Rightarrow$ they \textbf{subtract}
+		\item<3-> \textbf{well-balanced schemes} - stationary states preserved \textbf{after discretisation} - needed for nonstationary flows 
 	\end{itemize}
 \end{frame}
-
 \section{Results}
 \label{sec:RESULTS}
-
-\begin{frame}{The failure of standard SPH: velocity field}
-	\solofigure{figures/results/field_SPH.png}{Nonzero velocity field computed by standard SPH - a failure of hydrostatic balance.}{fig:SPH_FIELD}
-\end{frame}
 
 \begin{frame}{The success of well-balanced $p-\theta$: velocity norms}
 	\solofigure{figures/results/stationary_norms_compare.pdf}{Comparison of standard SPH and well-balanced $p-\theta$. $p-\theta$ preserves hydrostatic balance exactly.}{fig:WB_NORMS}
